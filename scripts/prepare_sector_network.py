@@ -82,27 +82,25 @@ def prepare_costs(cost_file, USD_to_EUR, discount_rate, Nyears, lifetime):
     costs.loc[costs.unit.str.contains("USD"), "value"] *= USD_to_EUR
 
     # min_count=1 is important to generate NaNs which are then filled by fillna
-    costs = (
-        costs.loc[:, "value"].unstack(level=1).groupby("technology").sum(min_count=1)
-    )
-    costs = costs.fillna(
-        {
-            "CO2 intensity": 0,
-            "FOM": 0,
-            "VOM": 0,
-            "discount rate": discount_rate,
-            "efficiency": 1,
-            "fuel": 0,
-            "investment": 0,
-            "lifetime": lifetime,
-        }
-    )
+    costs = (costs.loc[:, "value"].unstack(level=1).groupby("technology").sum(
+        min_count=1))
+    costs = costs.fillna({
+        "CO2 intensity": 0,
+        "FOM": 0,
+        "VOM": 0,
+        "discount rate": discount_rate,
+        "efficiency": 1,
+        "fuel": 0,
+        "investment": 0,
+        "lifetime": lifetime,
+    })
 
     def annuity_factor(v):
         return annuity(v["lifetime"], v["discount rate"]) + v["FOM"] / 100
 
     costs["fixed"] = [
-        annuity_factor(v) * v["investment"] * Nyears for i, v in costs.iterrows()
+        annuity_factor(v) * v["investment"] * Nyears
+        for i, v in costs.iterrows()
     ]
 
     return costs
@@ -135,8 +133,8 @@ def add_hydrogen(n, costs):
         carrier="H2 Fuel Cell",
         efficiency=costs.at["fuel cell", "efficiency"],
         # NB: fixed cost is per MWel
-        capital_cost=costs.at["fuel cell", "fixed"]
-        * costs.at["fuel cell", "efficiency"],
+        capital_cost=costs.at["fuel cell", "fixed"] *
+        costs.at["fuel cell", "efficiency"],
         lifetime=costs.at["fuel cell", "lifetime"],
     )
 
@@ -146,7 +144,9 @@ if __name__ == "__main__":
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
         # from helper import mock_snakemake #TODO remove func from here to helper script
-        snakemake = mock_snakemake("prepare_sector_network", simpl="", clusters="4")
+        snakemake = mock_snakemake("prepare_sector_network",
+                                   simpl="",
+                                   clusters="4")
     # TODO add mock_snakemake func
 
     # TODO fetch from config
