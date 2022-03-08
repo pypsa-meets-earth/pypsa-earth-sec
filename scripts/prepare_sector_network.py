@@ -13,7 +13,6 @@ import xarray as xr
 spatial = SimpleNamespace()
 
 
-
 def generate_periodic_profiles(dt_index, nodes, weekly_profile, localize=None):
     """
     Give a 24*7 long list of weekly hourly profiles, generate this for each
@@ -34,12 +33,13 @@ def generate_periodic_profiles(dt_index, nodes, weekly_profile, localize=None):
 
     return week_df
 
+
 def transport_degree_factor(
-    temperature,
-    deadband_lower=15,
-    deadband_upper=20,
-    lower_degree_factor=0.5,
-    upper_degree_factor=1.6):
+        temperature,
+        deadband_lower=15,
+        deadband_upper=20,
+        lower_degree_factor=0.5,
+        upper_degree_factor=1.6):
     """
     Work out how much energy demand in vehicles increases due to heating and cooling.
     There is a deadband where there is no increase.
@@ -63,23 +63,27 @@ def transport_degree_factor(
 # TODO separate sectors and move into own rules
 def prepare_transport_data(n):
 
-    energy_totals = pd.read_csv(snakemake.input.energy_totals_name, index_col=0)
+    energy_totals = pd.read_csv(
+        snakemake.input.energy_totals_name, index_col=0)
 
-    nodal_energy_totals = energy_totals.loc[n.buses.country.dropna()].fillna(0.)
+    nodal_energy_totals = energy_totals.loc[n.buses.country.dropna()].fillna(
+        0.)
     nodal_energy_totals.index = nodes
     # district heat share not weighted by population
     district_heat_share = nodal_energy_totals["district heat share"].round(2)
-    nodal_energy_totals = nodal_energy_totals.multiply(0.25, axis=0)    #TODO change 0.25 by pop_layout.fraction
+    nodal_energy_totals = nodal_energy_totals.multiply(
+        0.25, axis=0)  # TODO change 0.25 by pop_layout.fraction
 
     ##############
-    #Transport
+    # Transport
     ##############
 
-    ## Get overall demand curve for all vehicles
+    # Get overall demand curve for all vehicles
 
-    traffic = pd.read_csv(snakemake.input.traffic_data_KFZ, skiprows=2, usecols=["count"], squeeze=True)
+    traffic = pd.read_csv(snakemake.input.traffic_data_KFZ,
+                          skiprows=2, usecols=["count"], squeeze=True)
 
-    #Generate profiles
+    # Generate profiles
     transport_shape = generate_periodic_profiles(
         dt_index=n.snapshots.tz_localize("UTC"),
         nodes=nodes,
@@ -89,20 +93,25 @@ def prepare_transport_data(n):
 
     transport_data = pd.read_csv(snakemake.input.transport_name, index_col=0)
 
-    nodal_transport_data = transport_data.loc[n.buses.country.dropna()].fillna(0.)
+    nodal_transport_data = transport_data.loc[n.buses.country.dropna()].fillna(
+        0.)
     nodal_transport_data.index = nodes
-    nodal_transport_data["number cars"] =  0.25 * nodal_transport_data["number cars"] #TODO pop_layout["fraction"] instead of 0.25
-    nodal_transport_data.loc[nodal_transport_data["average fuel efficiency"] == 0., "average fuel efficiency"] = transport_data["average fuel efficiency"].mean()
-
+    # TODO pop_layout["fraction"] instead of 0.25
+    nodal_transport_data["number cars"] = 0.25 * \
+        nodal_transport_data["number cars"]
+    nodal_transport_data.loc[nodal_transport_data["average fuel efficiency"] == 0.,
+                             "average fuel efficiency"] = transport_data["average fuel efficiency"].mean()
 
     # electric motors are more efficient, so alter transport demand
 
     plug_to_wheels_eta = options.get("bev_plug_to_wheel_efficiency", 0.2)
-    battery_to_wheels_eta = plug_to_wheels_eta * options.get("bev_charge_efficiency", 0.9)
+    battery_to_wheels_eta = plug_to_wheels_eta * \
+        options.get("bev_charge_efficiency", 0.9)
 
-    efficiency_gain = nodal_transport_data["average fuel efficiency"] / battery_to_wheels_eta
+    efficiency_gain = nodal_transport_data["average fuel efficiency"] / \
+        battery_to_wheels_eta
 
-    #get heating demand for correction to demand time series
+    # get heating demand for correction to demand time series
     temperature = xr.open_dataarray(snakemake.input.temp_air_total).to_pandas()
 
     # correction factors for vehicle heating
@@ -124,20 +133,26 @@ def prepare_transport_data(n):
 
     # divide out the heating/cooling demand from ICE totals
     # and multiply back in the heating/cooling demand for EVs
-    ice_correction = (transport_shape * (1 + dd_ICE)).sum() / transport_shape.sum()
+    ice_correction = (transport_shape * (1 + dd_ICE)
+                      ).sum() / transport_shape.sum()
 
-    energy_totals_transport = nodal_energy_totals["total road"] + nodal_energy_totals["total rail"] - nodal_energy_totals["electricity rail"]
+    energy_totals_transport = nodal_energy_totals["total road"] + \
+        nodal_energy_totals["total rail"] - \
+        nodal_energy_totals["electricity rail"]
 
-    transport = (transport_shape.multiply(energy_totals_transport) * 1e6 * Nyears).divide(efficiency_gain * ice_correction).multiply(1 + dd_EV)
+    transport = (transport_shape.multiply(energy_totals_transport) * 1e6 *
+                 Nyears).divide(efficiency_gain * ice_correction).multiply(1 + dd_EV)
 
-    ## derive plugged-in availability for PKW's (cars)
+    # derive plugged-in availability for PKW's (cars)
 
-    traffic = pd.read_csv(snakemake.input.traffic_data_Pkw, skiprows=2, usecols=["count"], squeeze=True)
+    traffic = pd.read_csv(snakemake.input.traffic_data_Pkw,
+                          skiprows=2, usecols=["count"], squeeze=True)
 
     avail_max = options.get("bev_avail_max", 0.95)
     avail_mean = options.get("bev_avail_mean", 0.8)
 
-    avail = avail_max - (avail_max - avail_mean) * (traffic - traffic.min()) / (traffic.mean() - traffic.min())
+    avail = avail_max - (avail_max - avail_mean) * (traffic -
+                                                    traffic.min()) / (traffic.mean() - traffic.min())
 
     avail_profile = generate_periodic_profiles(
         dt_index=n.snapshots.tz_localize("UTC"),
@@ -147,14 +162,14 @@ def prepare_transport_data(n):
 
     dsm_week = np.zeros((24*7,))
 
-    dsm_week[(np.arange(0,7,1) * 24 + options['bev_dsm_restriction_time'])] = options['bev_dsm_restriction_value']
+    dsm_week[(np.arange(0, 7, 1) * 24 + options['bev_dsm_restriction_time'])
+             ] = options['bev_dsm_restriction_value']
 
     dsm_profile = generate_periodic_profiles(
         dt_index=n.snapshots.tz_localize("UTC"),
         nodes=nodes,
         weekly_profile=dsm_week
     )
-
 
     return nodal_energy_totals, transport, avail_profile, dsm_profile, nodal_transport_data, district_heat_share
 
@@ -1031,8 +1046,8 @@ if __name__ == "__main__":
     h2_hc_conversions(n, costs)
 
     add_industry(n, costs)
-    
-    #prepare_transport_data(n)
+
+    # prepare_transport_data(n)
 
     # Add_land_transport doesn't run yet, data preparation missing and under progress
     # add_land_transport(n, costs)
