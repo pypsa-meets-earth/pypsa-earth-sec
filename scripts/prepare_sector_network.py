@@ -6,8 +6,10 @@ import pandas as pd
 import pypsa
 import pytz
 import xarray as xr
-from helpers import (create_dummy_data, create_network_topology,
-                     mock_snakemake, prepare_costs)
+from helpers import create_dummy_data
+from helpers import create_network_topology
+from helpers import mock_snakemake
+from helpers import prepare_costs
 
 spatial = SimpleNamespace()
 

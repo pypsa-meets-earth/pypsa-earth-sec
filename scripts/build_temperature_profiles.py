@@ -1,5 +1,4 @@
 """Build temperature profiles."""
-
 import atlite
 import geopandas as gpd
 import numpy as np
