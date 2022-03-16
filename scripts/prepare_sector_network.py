@@ -17,7 +17,6 @@ from prepare_transport_data import prepare_transport_data
 spatial = SimpleNamespace()
 
 
-
 def add_carrier_buses(n, carriers):
     """
     Add buses to connect e.g. coal, nuclear and oil plants
@@ -372,28 +371,31 @@ def add_co2(n, costs):
 
 
 def add_aviation(n, cost):
-     all_aviation = ["total international aviation", "total domestic aviation"]
-     nodal_energy_totals = pd.DataFrame(np.ones((4,2)), columns=all_aviation, index=nodes)
-     #temporary data nodal_energy_totals
-     
-     p_set = nodal_energy_totals.loc[nodes, all_aviation].sum(axis=1).sum() * 1e6 / 8760
-     
-     n.add("Load",
-         "kerosene for aviation",
-         bus="EU oil",
-         carrier="kerosene for aviation",
-         p_set=p_set
-     )
+    all_aviation = ["total international aviation", "total domestic aviation"]
+    nodal_energy_totals = pd.DataFrame(
+        np.ones((4, 2)), columns=all_aviation, index=nodes)
+    # temporary data nodal_energy_totals
 
-     co2_release = ["kerosene for aviation"]
-     co2 = n.loads.loc[co2_release, "p_set"].sum() * costs.at["oil", 'CO2 intensity'] / 8760
+    p_set = nodal_energy_totals.loc[nodes, all_aviation].sum(
+        axis=1).sum() * 1e6 / 8760
 
-     n.add("Load",
-         "oil emissions",
-         bus="co2 atmosphere",
-         carrier="oil emissions",
-         p_set=-co2
-     )
+    n.add("Load",
+          "kerosene for aviation",
+          bus="EU oil",
+          carrier="kerosene for aviation",
+          p_set=p_set
+          )
+
+    co2_release = ["kerosene for aviation"]
+    co2 = n.loads.loc[co2_release, "p_set"].sum(
+    ) * costs.at["oil", 'CO2 intensity'] / 8760
+
+    n.add("Load",
+          "oil emissions",
+          bus="co2 atmosphere",
+          carrier="oil emissions",
+          p_set=-co2
+          )
 
 
 def add_storage(n, costs):
@@ -809,7 +811,8 @@ def add_land_transport(n, costs):
             suffix=" land transport fuel cell",
             bus=nodes + " H2",
             carrier="land transport fuel cell",
-            p_set=fuel_cell_share / options["transport_fuel_cell_efficiency"] * transport[nodes],
+            p_set=fuel_cell_share /
+            options["transport_fuel_cell_efficiency"] * transport[nodes],
         )
 
     if ice_share > 0:
@@ -865,7 +868,6 @@ if __name__ == "__main__":
 
     investment_year = int(snakemake.wildcards.planning_horizons[-4:])
 
-
     costs = prepare_costs(
         snakemake.input.costs,
         snakemake.config["costs"]["USD2013_to_EUR2013"],
@@ -895,19 +897,21 @@ if __name__ == "__main__":
     h2_hc_conversions(n, costs)
 
     add_industry(n, costs)
-    
+
     # Add_aviation runs with dummy data
     add_aviation(n, costs)
-    
-    #prepare_transport_data(n)
 
+    # prepare_transport_data(n)
 
     # Get the data required for land transport
     nodal_energy_totals = pd.read_csv(snakemake.input.nodal_energy_totals,
                                       index_col=0)
-    transport = pd.read_csv(snakemake.input.transport, index_col=0, parse_dates=True)
-    avail_profile = pd.read_csv(snakemake.input.avail_profile, index_col=0, parse_dates=True)
-    dsm_profile = pd.read_csv(snakemake.input.dsm_profile, index_col=0, parse_dates=True)
+    transport = pd.read_csv(snakemake.input.transport,
+                            index_col=0, parse_dates=True)
+    avail_profile = pd.read_csv(
+        snakemake.input.avail_profile, index_col=0, parse_dates=True)
+    dsm_profile = pd.read_csv(
+        snakemake.input.dsm_profile, index_col=0, parse_dates=True)
     nodal_transport_data = pd.read_csv(snakemake.input.nodal_transport_data,
                                        index_col=0)
 
@@ -915,7 +919,7 @@ if __name__ == "__main__":
 
     n.export_to_netcdf(snakemake.output[0])
 
-    #n.lopf()
+    # n.lopf()
     # TODO define spatial (for biomass and co2)
 
     # TODO changes in case of myopic oversight
