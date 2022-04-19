@@ -4,16 +4,11 @@ from types import SimpleNamespace
 import numpy as np
 import pandas as pd
 import pypsa
-from helpers import create_dummy_data
-from helpers import create_network_topology
-from helpers import cycling_shift
-from helpers import mock_snakemake
-from helpers import prepare_costs, override_component_attrs
-from helpers import locate_bus
-from helpers import three_2_two_digits_country
-
 import pytz
 import xarray as xr
+from helpers import (create_dummy_data, create_network_topology, cycling_shift,
+                     locate_bus, mock_snakemake, override_component_attrs,
+                     prepare_costs, three_2_two_digits_country)
 from prepare_transport_data import prepare_transport_data
 
 spatial = SimpleNamespace()
