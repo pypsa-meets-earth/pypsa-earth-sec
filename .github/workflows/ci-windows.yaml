@@ -15,7 +15,7 @@ on:
   - cron: "0 5 * * TUE"
 
 env:
-  CACHE_NUMBER: 1  # Change this value to manually reset the environment cache
+  CACHE_NUMBER: 2  # Change this value to manually reset the environment cache
 
 jobs:
   build:
@@ -60,7 +60,7 @@ jobs:
 
     - name: Update environment due to outdated or unavailable cache
       if: steps.cache.outputs.cache-hit != 'true'
-      run: mamba env update -n pypsa-africa -f ../pypsa-africa/envs/environment.yaml
+      run: mamba env update -n pypsa-africa -f environment.yaml
 
     - name: Test snakemake workflow
       run: |

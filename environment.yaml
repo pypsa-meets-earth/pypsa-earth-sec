@@ -1,0 +1,75 @@
+# SPDX-FileCopyrightText: : 2017-2020 The PyPSA-Eur Authors
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+name: pypsa-africa
+channels:
+- conda-forge
+- bioconda
+dependencies:
+- python>=3.8
+- pip
+- mamba   # esp for windows build
+
+- pypsa>=0.17.1
+- atlite>=0.2.4
+- dask
+  # - powerplantmatching>=0.4.8
+
+  # Dependencies of the workflow itself
+- xlrd
+- openpyxl
+- pycountry
+- seaborn
+- snakemake-minimal>=7.5.0
+- memory_profiler
+- yaml
+- pytables
+- lxml
+- numpy
+- pandas
+- geopandas
+- fiona <= 1.18.20  # Till issue https://github.com/Toblerity/Fiona/issues/1085 is not solved
+- xarray
+- netcdf4
+- networkx
+- scipy
+- shapely>=1.8a1
+- pre-commit
+- pyomo
+- matplotlib
+
+  # Keep in conda environment when calling ipython
+- ipython
+  # Jupyter notebook requirement
+- ipykernel
+- jupyterlab
+
+  # GIS dependencies:
+- cartopy
+- descartes
+- rasterio
+- rioxarray
+- geoviews
+- hvplot
+
+  # PyPSA-Eur-Sec Dependencies
+- geopy
+- tqdm
+- pytz
+- country_converter
+
+  # Cloud download
+- googledrivedownloader
+
+# Default solver for tests (moved to the CI)
+- glpk
+- ipopt < 3.13.3
+
+- pip:
+  # - git+https://github.com/pypsa/pypsa.git#egg=pypsa
+  - git+https://github.com/davide-f/powerplantmatching.git@pypsa-africa#egg=powerplantmatching
+  - vresutils>=0.3.1
+  - tsam>=1.1.0
+  - esy-osm-pbf
+  - esy-osmfilter
