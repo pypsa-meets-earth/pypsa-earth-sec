@@ -40,6 +40,9 @@ jobs:
       run: |
         git clone https://github.com/pypsa-meets-africa/pypsa-africa ../pypsa-africa
 
+        dir .
+        dir ..
+
     - name: Setup Mambaforge
       uses: conda-incubator/setup-miniconda@v2
       with:
