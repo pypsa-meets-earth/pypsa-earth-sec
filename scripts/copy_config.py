@@ -19,4 +19,5 @@ if __name__ == '__main__':
         sets_path_to_root("pypsa-earth-sec")
 
     for f, name in files_to_copy.items():
-        copy(f,snakemake.config['summary_dir'] + '/' + snakemake.config['run'] + '/configs/' + name)
+        copy(f, snakemake.config['summary_dir'] + '/' +
+             snakemake.config['run'] + '/configs/' + name)
