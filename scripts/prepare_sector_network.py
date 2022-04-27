@@ -19,7 +19,6 @@ from prepare_transport_data import prepare_transport_data
 spatial = SimpleNamespace()
 
 
-
 def add_carrier_buses(n, carriers):
     """
     Add buses to connect e.g. coal, nuclear and oil plants
@@ -163,9 +162,9 @@ def add_hydrogen(n, costs):
 
     n.add("Carrier", "H2")
 
-    n.madd("Bus", nodes + " H2", location=nodes, carrier="H2", 
-           x = n.buses.loc[list(nodes)].x.values,
-           y = n.buses.loc[list(nodes)].y.values,
+    n.madd("Bus", nodes + " H2", location=nodes, carrier="H2",
+           x=n.buses.loc[list(nodes)].x.values,
+           y=n.buses.loc[list(nodes)].y.values,
            )
 
     n.madd(
@@ -323,13 +322,14 @@ def add_co2(n, costs):
            location=spatial.co2.locations,
            carrier="co2 stored",
            x=spatial.co2.x[0],
-           y=spatial.co2.y[0] )
-    
-    co2_stored_x= n.buses.filter(like='co2 stored', axis=0).loc[:, 'x']
-    co2_stored_y= n.buses.loc[n.buses[n.buses.carrier=="co2 stored"].location].y
-    
-    n.buses[n.buses.carrier=="co2 stored"].x = co2_stored_x.values
-    n.buses[n.buses.carrier=="co2 stored"].y = co2_stored_y.values
+           y=spatial.co2.y[0])
+
+    co2_stored_x = n.buses.filter(like='co2 stored', axis=0).loc[:, 'x']
+    co2_stored_y = n.buses.loc[n.buses[n.buses.carrier ==
+                                       "co2 stored"].location].y
+
+    n.buses[n.buses.carrier == "co2 stored"].x = co2_stored_x.values
+    n.buses[n.buses.carrier == "co2 stored"].y = co2_stored_y.values
 
     n.madd(
         "Store",
@@ -396,51 +396,52 @@ def add_co2(n, costs):
 
 
 def add_aviation(n, cost):
-     #all_aviation = ["total international aviation", "total domestic aviation"]
+    #all_aviation = ["total international aviation", "total domestic aviation"]
 
-     airports = pd.read_csv(snakemake.input.airports, index_col=None, squeeze=True)
-    
-     gadm_level = options["gadm_level"] 
-     
-     airports["gadm_{}".format(gadm_level)] = airports[["x", "y", "country"]].apply(
-             lambda airport: locate_bus(airport[['x','y']], airport['country'], gadm_level), axis=1) 
-     
-     #To change 3 country code to 2
-     #airports["gadm_{}".format(gadm_level)] = airports["gadm_{}".format(gadm_level)].apply(
-         #lambda cocode: three_2_two_digits_country(cocode[:3]) + " " + cocode[4:-2])
-     
-     airports = airports.set_index("gadm_{}".format(gadm_level))
-    
-     ind = pd.DataFrame(n.buses.index[n.buses.carrier == "AC"])
-    
-     ind = ind.set_index(n.buses.index[n.buses.carrier == "AC"])
-    
-     airports["p_set"] = airports["fraction"].apply(
-         lambda frac: frac * 1e6 / 8760) #TODO use real data here
-     
-     airports = pd.concat([airports,ind])
+    airports = pd.read_csv(snakemake.input.airports,
+                           index_col=None, squeeze=True)
 
-     airports = airports[~airports.index.duplicated(keep='first')]
-        
-     airports = airports.fillna(0)
-     
-     n.madd("Load",
-         nodes,
-         suffix=" kerosene for aviation",
-         bus="Africa oil",
-         carrier="kerosene for aviation",
-         p_set=airports["p_set"]
-     ) 
+    gadm_level = options["gadm_level"]
 
-     #co2_release = ["kerosene for aviation"]
-     co2 = airports["p_set"].sum() * costs.at["oil", 'CO2 intensity'] / 8760
+    airports["gadm_{}".format(gadm_level)] = airports[["x", "y", "country"]].apply(
+        lambda airport: locate_bus(airport[['x', 'y']], airport['country'], gadm_level), axis=1)
 
-     n.add("Load",
-         "oil emissions",
-         bus="co2 atmosphere",
-         carrier="oil emissions",
-         p_set=-co2
-     )
+    # To change 3 country code to 2
+    # airports["gadm_{}".format(gadm_level)] = airports["gadm_{}".format(gadm_level)].apply(
+    # lambda cocode: three_2_two_digits_country(cocode[:3]) + " " + cocode[4:-2])
+
+    airports = airports.set_index("gadm_{}".format(gadm_level))
+
+    ind = pd.DataFrame(n.buses.index[n.buses.carrier == "AC"])
+
+    ind = ind.set_index(n.buses.index[n.buses.carrier == "AC"])
+
+    airports["p_set"] = airports["fraction"].apply(
+        lambda frac: frac * 1e6 / 8760)  # TODO use real data here
+
+    airports = pd.concat([airports, ind])
+
+    airports = airports[~airports.index.duplicated(keep='first')]
+
+    airports = airports.fillna(0)
+
+    n.madd("Load",
+           nodes,
+           suffix=" kerosene for aviation",
+           bus="Africa oil",
+           carrier="kerosene for aviation",
+           p_set=airports["p_set"]
+           )
+
+    #co2_release = ["kerosene for aviation"]
+    co2 = airports["p_set"].sum() * costs.at["oil", 'CO2 intensity'] / 8760
+
+    n.add("Load",
+          "oil emissions",
+          bus="co2 atmosphere",
+          carrier="oil emissions",
+          p_set=-co2
+          )
 
 
 def add_storage(n, costs):
@@ -448,8 +449,8 @@ def add_storage(n, costs):
     n.add("Carrier", "battery")
 
     n.madd("Bus", nodes + " battery", location=nodes, carrier="battery",
-           x = n.buses.loc[list(nodes)].x.values,
-           y = n.buses.loc[list(nodes)].y.values
+           x=n.buses.loc[list(nodes)].x.values,
+           y=n.buses.loc[list(nodes)].y.values
            )
 
     n.madd(
@@ -563,39 +564,40 @@ def h2_hc_conversions(n, costs):
             lifetime=costs.at["SMR", "lifetime"],
         )
 
-def add_shipping (n, costs):
-    
-    gadm_level = options["gadm_level"] 
-    
+
+def add_shipping(n, costs):
+
+    gadm_level = options["gadm_level"]
+
     efficiency = (options["shipping_average_efficiency"] /
                   costs.at["fuel cell", "efficiency"])
-    
+
     # check whether item depends on investment year
     shipping_hydrogen_share = get(options["shipping_hydrogen_share"],
                                   investment_year)
 
     ports = pd.read_csv(snakemake.input.ports, index_col=None, squeeze=True)
-    
+
     ports["gadm_{}".format(gadm_level)] = ports[["x", "y", "country"]].apply(
-            lambda port: locate_bus(port[['x','y']], port['country'], gadm_level), axis=1) 
-    
+        lambda port: locate_bus(port[['x', 'y']], port['country'], gadm_level), axis=1)
+
     ports = ports.set_index("gadm_{}".format(gadm_level))
-    
+
     ind = pd.DataFrame(n.buses.index[n.buses.carrier == "AC"])
-    
+
     ind = ind.set_index(n.buses.index[n.buses.carrier == "AC"])
 
     ports["p_set"] = ports["fraction"].apply(
-        lambda frac: shipping_hydrogen_share * frac * 1e6 * efficiency / 8760)  #TODO use real data here
-    
-    ports = pd.concat([ports,ind])
+        lambda frac: shipping_hydrogen_share * frac * 1e6 * efficiency / 8760)  # TODO use real data here
+
+    ports = pd.concat([ports, ind])
 
     ports = ports[~ports.index.duplicated(keep='first')]
-    
-    #TODO Where is MAR.7_1 ????? Only 13 nodes
-    
+
+    # TODO Where is MAR.7_1 ????? Only 13 nodes
+
     ports = ports.fillna(0)
-    
+
     if options["shipping_hydrogen_liquefaction"]:  # how to implement options?
 
         n.madd("Bus",
@@ -634,7 +636,7 @@ def add_shipping (n, costs):
     if shipping_hydrogen_share < 1:
 
         shipping_oil_share = 1 - shipping_hydrogen_share
-        
+
         ports["p_set"] = ports["fraction"].apply(
             lambda frac: shipping_oil_share * frac * 1e6 / 8760)
 
@@ -686,6 +688,7 @@ def add_shipping (n, costs):
             marginal_cost=costs.at["oil", "fuel"],
         )
 
+
 def add_industry(n, costs):
 
     #     print("adding industrial demand")
@@ -698,7 +701,8 @@ def add_industry(n, costs):
 
     # CARRIER = FOSSIL GAS
 
-    n.add("Bus", "gas for industry", location="Africa", carrier="gas for industry")
+    n.add("Bus", "gas for industry", location="Africa",
+          carrier="gas for industry")
 
     n.add(
         "Load",
@@ -750,7 +754,6 @@ def add_industry(n, costs):
         p_set=industrial_demand.loc[nodes, "hydrogen"] / 8760,
     )
 
-  
     # CARRIER = LIQUID HYDROCARBONS
     n.add(
         "Load",
@@ -909,8 +912,8 @@ def add_land_transport(n, costs):
                location=nodes,
                suffix=" EV battery",
                carrier="Li ion",
-               x = n.buses.loc[list(nodes)].x.values,
-               y = n.buses.loc[list(nodes)].y.values)
+               x=n.buses.loc[list(nodes)].x.values,
+               y=n.buses.loc[list(nodes)].y.values)
 
         p_set = (electric_share *
                  (transport[nodes] + cycling_shift(transport[nodes], 1) +
@@ -1024,13 +1027,14 @@ if __name__ == "__main__":
         snakemake = mock_snakemake("prepare_sector_network",
                                    simpl="",
                                    clusters="15",
-                                   planning_horizons="2030") 
+                                   planning_horizons="2030")
     # TODO add mock_snakemake func
 
     # TODO fetch from config
 
     overrides = override_component_attrs(snakemake.input.overrides)
-    n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides)
+    n = pypsa.Network(snakemake.input.network,
+                      override_component_attrs=overrides)
 
     nodes = n.buses.index
 
@@ -1039,7 +1043,6 @@ if __name__ == "__main__":
     # TODO fetch investment year from config
 
     investment_year = int(snakemake.wildcards.planning_horizons[-4:])
-
 
     costs = prepare_costs(
         snakemake.input.costs,
@@ -1054,7 +1057,7 @@ if __name__ == "__main__":
 
     # Get the data required for land transport
     nodal_energy_totals = pd.read_csv(snakemake.input.nodal_energy_totals,
-                                      index_col=0) #where is nodal_energy_totals_4
+                                      index_col=0)  # where is nodal_energy_totals_4
     transport = pd.read_csv(snakemake.input.transport,
                             index_col=0,
                             parse_dates=True)
@@ -1085,19 +1088,19 @@ if __name__ == "__main__":
     h2_hc_conversions(n, costs)
 
     add_industry(n, costs)
-    
+
     add_shipping(n, costs)
-    
+
     # Add_aviation runs with dummy data
     add_aviation(n, costs)
-    
-    #prepare_transport_data(n)
+
+    # prepare_transport_data(n)
 
     add_land_transport(n, costs)
 
     n.export_to_netcdf(snakemake.output[0])
 
-    #n.lopf()
+    # n.lopf()
     # TODO define spatial (for biomass and co2)
 
     # TODO changes in case of myopic oversight
