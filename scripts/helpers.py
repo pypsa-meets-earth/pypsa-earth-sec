@@ -230,7 +230,8 @@ def create_dummy_data(n, sector, carriers):
         ]
     else:
         raise Exception("sector not found")
-    data = np.random.randint(10, 500, size=(len(ind), len(col))) * 1000 * 1     #TODO change 1 with temp. resolution 
+    # TODO change 1 with temp. resolution
+    data = np.random.randint(10, 500, size=(len(ind), len(col))) * 1000 * 1
 
     return pd.DataFrame(data, index=ind, columns=col)
 
@@ -307,6 +308,7 @@ def override_component_attrs(directory):
             attrs[component] = overrides.combine_first(attrs[component])
 
     return attrs
+
 
 def get_country(target, **keys):
     """
@@ -399,6 +401,7 @@ def two_digits_2_name_country(two_code_country):
     full_name = get_country("name", alpha_2=two_code_country)
     return full_name
 
+
 def download_GADM(country_code, update=False, out_logging=False):
     """
     Download gpkg file from GADM for a given country code
@@ -455,7 +458,6 @@ def download_GADM(country_code, update=False, out_logging=False):
     return GADM_inputfile_gpkg, GADM_filename
 
 
-
 def get_GADM_layer(country_list, layer_id, update=False, outlogging=False):
     """
     Function to retrive a specific layer id of a geopackage for a selection of countries
@@ -509,6 +511,7 @@ def get_GADM_layer(country_list, layer_id, update=False, outlogging=False):
 
     return geodf_GADM
 
+
 def locate_bus(coords, co, gadm_level):
     """
     Function to locate the right node for a coordinate set
@@ -519,21 +522,22 @@ def locate_bus(coords, co, gadm_level):
     coords: pandas dataseries
         dataseries with 2 rows x & y representing the longitude and latitude
     co: string (code for country where coords are MA Morocco)
-	code of the countries where the coordinates are	
+        code of the countries where the coordinates are	
 
      """
-    country_list = ["MA"] #TODO connect with entire list of countries
+    country_list = ["MA"]  # TODO connect with entire list of countries
     gdf = get_GADM_layer(country_list, gadm_level)
-    gdf_co = gdf[gdf["GID_{}".format(gadm_level)].str.contains(co)] #geodataframe of entire continent - output of prev function {} are placeholders
-    #in strings - conditional formatting
-    #insert any variable into that place using .format - extract string and filter for those containing co (MA)
-    point = Point(coords["x"], coords["y"])      #point object  
-    
+    # geodataframe of entire continent - output of prev function {} are placeholders
+    gdf_co = gdf[gdf["GID_{}".format(gadm_level)].str.contains(co)]
+    # in strings - conditional formatting
+    # insert any variable into that place using .format - extract string and filter for those containing co (MA)
+    point = Point(coords["x"], coords["y"])  # point object
+
     try:
-        return gdf_co[gdf_co.contains(point)]["GID_{}".format(gadm_level)].item() #filter gdf_co which contains point and returns the bus 
-    
+        # filter gdf_co which contains point and returns the bus
+        return gdf_co[gdf_co.contains(point)]["GID_{}".format(gadm_level)].item()
+
     except ValueError:
-        return gdf_co[gdf_co.geometry==\
-                      min(gdf_co.geometry, 
-                          key=(point.distance))]["GID_{}".format(gadm_level)].item() #looks for closest one shape=node
-    
+        return gdf_co[gdf_co.geometry ==
+                      min(gdf_co.geometry,
+                          key=(point.distance))]["GID_{}".format(gadm_level)].item()  # looks for closest one shape=node
