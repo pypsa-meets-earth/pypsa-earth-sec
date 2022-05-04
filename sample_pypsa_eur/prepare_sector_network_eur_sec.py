@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from types import SimpleNamespace
 import logging
 import os
 import re
 from itertools import product
+from types import SimpleNamespace
 
 import numpy as np
 import pandas as pd
 import pypsa
 import pytz
 import xarray as xr
-from build_energy_totals import build_co2_totals, build_eea_co2, build_eurostat_co2
+from build_energy_totals import (build_co2_totals, build_eea_co2,
+                                 build_eurostat_co2)
 from helper import override_component_attrs
 from scipy.stats import beta
 from vresutils.costdata import annuity

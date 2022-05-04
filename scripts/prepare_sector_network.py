@@ -7,16 +7,9 @@ import pandas as pd
 import pypsa
 import pytz
 import xarray as xr
-from helpers import (
-    create_dummy_data,
-    create_network_topology,
-    cycling_shift,
-    locate_bus,
-    mock_snakemake,
-    override_component_attrs,
-    prepare_costs,
-    three_2_two_digits_country,
-)
+from helpers import (create_dummy_data, create_network_topology, cycling_shift,
+                     locate_bus, mock_snakemake, override_component_attrs,
+                     prepare_costs, three_2_two_digits_country)
 from prepare_transport_data import prepare_transport_data
 
 spatial = SimpleNamespace()
