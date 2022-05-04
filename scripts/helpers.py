@@ -48,7 +48,8 @@ def sets_path_to_root(root_directory_name):  # Imported from pypsa-africa
             print("Cant find the repo path.")
         # if repo_name NOT current folder name, go one dir higher
         else:
-            upper_path = os.path.dirname(os.path.abspath("."))  # name of upper folder
+            upper_path = os.path.dirname(
+                os.path.abspath("."))  # name of upper folder
             os.chdir(upper_path)
 
 
@@ -128,7 +129,8 @@ def prepare_costs(cost_file, USD_to_EUR, discount_rate, Nyears, lifetime):
 
     # min_count=1 is important to generate NaNs which are then filled by fillna
     costs = (
-        costs.loc[:, "value"].unstack(level=1).groupby("technology").sum(min_count=1)
+        costs.loc[:, "value"].unstack(level=1).groupby(
+            "technology").sum(min_count=1)
     )
     costs = costs.fillna(
         {

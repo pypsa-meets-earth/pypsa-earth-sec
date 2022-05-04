@@ -100,7 +100,8 @@ def plot_h2_infra(network):
     )
 
     # make a fake MultiIndex so that area is correct for legend
-    bus_sizes.index = pd.MultiIndex.from_product([bus_sizes.index, ["electrolysis"]])
+    bus_sizes.index = pd.MultiIndex.from_product(
+        [bus_sizes.index, ["electrolysis"]])
 
     n.links.drop(n.links.index[n.links.carrier != "H2 pipeline"], inplace=True)
 
@@ -150,7 +151,8 @@ def plot_h2_infra(network):
 
     for s in (50, 10):
         handles.append(
-            plt.Line2D([0], [0], color=link_color, linewidth=s * 1e3 / linewidth_factor)
+            plt.Line2D([0], [0], color=link_color,
+                       linewidth=s * 1e3 / linewidth_factor)
         )
         labels.append("{} GW".format(s))
     l1_1 = ax.legend(
@@ -186,7 +188,8 @@ def plot_transmission_topology(network):
 
     n.lines.append(DC_lines[["bus0", "bus1"]])
 
-    n.madd("Line", names=DC_lines.index, bus0=DC_lines.bus0, bus1=DC_lines.bus1)
+    n.madd("Line", names=DC_lines.index,
+           bus0=DC_lines.bus0, bus1=DC_lines.bus1)
 
     fig = plt.figure()
     fig.set_size_inches(10.5, 9)
@@ -332,7 +335,7 @@ def rename_techs(label):
 
     for ptr in prefix_to_remove:
         if label[: len(ptr)] == ptr:
-            label = label[len(ptr) :]
+            label = label[len(ptr):]
 
     for rif in rename_if_contains:
         if rif in label:

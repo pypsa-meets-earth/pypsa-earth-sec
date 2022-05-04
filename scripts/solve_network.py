@@ -67,7 +67,8 @@ def _add_land_use_constraint_m(n):
             ind2 = [
                 i for i in ind if i + " " + carrier + "-" + p_year in existing.index
             ]
-            sel_current = [i + " " + carrier + "-" + current_horizon for i in ind2]
+            sel_current = [i + " " + carrier +
+                           "-" + current_horizon for i in ind2]
             sel_p_year = [i + " " + carrier + "-" + p_year for i in ind2]
             n.generators.loc[sel_current, "p_nom_max"] -= existing.loc[
                 sel_p_year
@@ -186,7 +187,8 @@ def add_chp_constraints(n):
                 * n.links.loc[electric_ext, "p_nom_ratio"],
                 link_p_nom[electric_ext],
             ),
-            (-n.links.loc[heat_ext, "efficiency"].values, link_p_nom[heat_ext].values),
+            (-n.links.loc[heat_ext, "efficiency"].values,
+             link_p_nom[heat_ext].values),
         )
 
         define_constraints(n, lhs, "=", 0, "chplink", "fix_p_nom_ratio")
@@ -207,17 +209,20 @@ def add_chp_constraints(n):
 
         rhs = n.links.loc[electric_fix, "p_nom"].values
 
-        define_constraints(n, lhs, "<=", rhs, "chplink", "top_iso_fuel_line_fix")
+        define_constraints(n, lhs, "<=", rhs, "chplink",
+                           "top_iso_fuel_line_fix")
 
     if not electric.empty:
 
         # backpressure
         lhs = linexpr(
             (
-                n.links.loc[electric, "c_b"].values * n.links.loc[heat, "efficiency"],
+                n.links.loc[electric, "c_b"].values *
+                n.links.loc[heat, "efficiency"],
                 link_p[heat],
             ),
-            (-n.links.loc[electric, "efficiency"].values, link_p[electric].values),
+            (-n.links.loc[electric, "efficiency"].values,
+             link_p[electric].values),
         )
 
         define_constraints(n, lhs, "<=", 0, "chplink", "backpressure")
@@ -311,7 +316,8 @@ if __name__ == "__main__":
     with memory_logger(filename=fn, interval=30.0) as mem:
 
         overrides = override_component_attrs(snakemake.input.overrides)
-        n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides)
+        n = pypsa.Network(snakemake.input.network,
+                          override_component_attrs=overrides)
 
         n = prepare_network(n, solve_opts)
 
