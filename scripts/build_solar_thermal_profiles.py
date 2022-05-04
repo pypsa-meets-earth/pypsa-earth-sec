@@ -1,5 +1,4 @@
 """Build solar thermal collector time series."""
-
 import os
 
 import atlite
