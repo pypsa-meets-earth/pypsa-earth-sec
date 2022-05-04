@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Build COP time series for air- or ground-sourced heat pumps."""
-
 import xarray as xr
 
 

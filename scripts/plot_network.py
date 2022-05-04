@@ -13,7 +13,8 @@ import numpy as np
 import pandas as pd
 import pypsa
 from matplotlib.legend_handler import HandlerPatch
-from matplotlib.patches import Circle, Ellipse
+from matplotlib.patches import Circle
+from matplotlib.patches import Ellipse
 
 
 def assign_location(n):

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Build heat demand time series."""
-
 import os
 
 import atlite

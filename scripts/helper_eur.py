@@ -4,7 +4,8 @@ import os
 from pathlib import Path
 
 import pandas as pd
-from pypsa.components import component_attrs, components
+from pypsa.components import component_attrs
+from pypsa.components import components
 from pypsa.descriptors import Dict
 
 logger = logging.getLogger(__name__)

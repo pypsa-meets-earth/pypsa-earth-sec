@@ -7,8 +7,10 @@ import pypsa
 from helper import override_component_attrs
 from make_summary_eur import assign_carriers
 from matplotlib.legend_handler import HandlerPatch
-from matplotlib.patches import Circle, Ellipse
-from plot_summary_eur import preferred_order, rename_techs
+from matplotlib.patches import Circle
+from matplotlib.patches import Ellipse
+from plot_summary_eur import preferred_order
+from plot_summary_eur import rename_techs
 
 plt.style.use("ggplot")
 

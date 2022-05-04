@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import logging
 import os
 import re
@@ -11,8 +10,9 @@ import pandas as pd
 import pypsa
 import pytz
 import xarray as xr
-from build_energy_totals import (build_co2_totals, build_eea_co2,
-                                 build_eurostat_co2)
+from build_energy_totals import build_co2_totals
+from build_energy_totals import build_eea_co2
+from build_energy_totals import build_eurostat_co2
 from helper import override_component_attrs
 from scipy.stats import beta
 from vresutils.costdata import annuity

@@ -10,7 +10,8 @@ import geopandas as gpd
 import numpy as np
 import pandas as pd
 import requests
-from pypsa.components import component_attrs, components
+from pypsa.components import component_attrs
+from pypsa.components import components
 from pypsa.descriptors import Dict
 from shapely.geometry import Point
 from vresutils.costdata import annuity
