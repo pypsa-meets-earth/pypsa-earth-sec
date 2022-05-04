@@ -70,8 +70,7 @@ def calculate_cfs(n, label, cfs):
         | n.controllable_one_port_components ^ {"Load", "StorageUnit"}
     ):
         capacities_c = (
-            c.df[opt_name.get(c.name, "p") +
-                 "_nom_opt"].groupby(c.df.carrier).sum()
+            c.df[opt_name.get(c.name, "p") + "_nom_opt"].groupby(c.df.carrier).sum()
         )
 
         if c.name in ["Link", "Line", "Transformer"]:
@@ -102,8 +101,7 @@ def calculate_nodal_costs(n, label, nodal_costs):
         c.df["capital_costs"] = (
             c.df.capital_cost * c.df[opt_name.get(c.name, "p") + "_nom_opt"]
         )
-        capital_costs = c.df.groupby(["location", "carrier"])[
-            "capital_costs"].sum()
+        capital_costs = c.df.groupby(["location", "carrier"])["capital_costs"].sum()
         index = pd.MultiIndex.from_tuples(
             [(c.list_name, "capital") + t for t in capital_costs.index.to_list()]
         )
@@ -111,8 +109,7 @@ def calculate_nodal_costs(n, label, nodal_costs):
         nodal_costs.loc[index, label] = capital_costs.values
 
         if c.name == "Link":
-            p = c.pnl.p0.multiply(
-                n.snapshot_weightings.generators, axis=0).sum()
+            p = c.pnl.p0.multiply(n.snapshot_weightings.generators, axis=0).sum()
         elif c.name == "Line":
             continue
         elif c.name == "StorageUnit":
@@ -120,8 +117,7 @@ def calculate_nodal_costs(n, label, nodal_costs):
             p_all[p_all < 0.0] = 0.0
             p = p_all.sum()
         else:
-            p = c.pnl.p.multiply(
-                n.snapshot_weightings.generators, axis=0).sum()
+            p = c.pnl.p.multiply(n.snapshot_weightings.generators, axis=0).sum()
 
         # correct sequestration cost
         if c.name == "Store":
@@ -131,8 +127,7 @@ def calculate_nodal_costs(n, label, nodal_costs):
             c.df.loc[items, "marginal_cost"] = -20.0
 
         c.df["marginal_costs"] = p * c.df.marginal_cost
-        marginal_costs = c.df.groupby(["location", "carrier"])[
-            "marginal_costs"].sum()
+        marginal_costs = c.df.groupby(["location", "carrier"])["marginal_costs"].sum()
         index = pd.MultiIndex.from_tuples(
             [(c.list_name, "marginal") + t for t in marginal_costs.index.to_list()]
         )
@@ -147,22 +142,18 @@ def calculate_costs(n, label, costs):
     for c in n.iterate_components(
         n.branch_components | n.controllable_one_port_components ^ {"Load"}
     ):
-        capital_costs = c.df.capital_cost * \
-            c.df[opt_name.get(c.name, "p") + "_nom_opt"]
+        capital_costs = c.df.capital_cost * c.df[opt_name.get(c.name, "p") + "_nom_opt"]
         capital_costs_grouped = capital_costs.groupby(c.df.carrier).sum()
 
-        capital_costs_grouped = pd.concat(
-            [capital_costs_grouped], keys=["capital"])
-        capital_costs_grouped = pd.concat(
-            [capital_costs_grouped], keys=[c.list_name])
+        capital_costs_grouped = pd.concat([capital_costs_grouped], keys=["capital"])
+        capital_costs_grouped = pd.concat([capital_costs_grouped], keys=[c.list_name])
 
         costs = costs.reindex(capital_costs_grouped.index.union(costs.index))
 
         costs.loc[capital_costs_grouped.index, label] = capital_costs_grouped
 
         if c.name == "Link":
-            p = c.pnl.p0.multiply(
-                n.snapshot_weightings.generators, axis=0).sum()
+            p = c.pnl.p0.multiply(n.snapshot_weightings.generators, axis=0).sum()
         elif c.name == "Line":
             continue
         elif c.name == "StorageUnit":
@@ -170,8 +161,7 @@ def calculate_costs(n, label, costs):
             p_all[p_all < 0.0] = 0.0
             p = p_all.sum()
         else:
-            p = c.pnl.p.multiply(
-                n.snapshot_weightings.generators, axis=0).sum()
+            p = c.pnl.p.multiply(n.snapshot_weightings.generators, axis=0).sum()
 
         # correct sequestration cost
         if c.name == "Store":
@@ -184,10 +174,8 @@ def calculate_costs(n, label, costs):
 
         marginal_costs_grouped = marginal_costs.groupby(c.df.carrier).sum()
 
-        marginal_costs_grouped = pd.concat(
-            [marginal_costs_grouped], keys=["marginal"])
-        marginal_costs_grouped = pd.concat(
-            [marginal_costs_grouped], keys=[c.list_name])
+        marginal_costs_grouped = pd.concat([marginal_costs_grouped], keys=["marginal"])
+        marginal_costs_grouped = pd.concat([marginal_costs_grouped], keys=[c.list_name])
 
         costs = costs.reindex(marginal_costs_grouped.index.union(costs.index))
 
@@ -206,15 +194,13 @@ def calculate_cumulative_cost():
 
     cumulative_cost = pd.DataFrame(
         index=df["costs"].sum().index,
-        columns=pd.Series(data=np.arange(0, 0.1, 0.01),
-                          name="social discount rate"),
+        columns=pd.Series(data=np.arange(0, 0.1, 0.01), name="social discount rate"),
     )
 
     # discount cost and express them in money value of planning_horizons[0]
     for r in cumulative_cost.columns:
         cumulative_cost[r] = [
-            df["costs"].sum()[index] / ((1 + r) **
-                                        (index[-1] - planning_horizons[0]))
+            df["costs"].sum()[index] / ((1 + r) ** (index[-1] - planning_horizons[0]))
             for index in cumulative_cost.index
         ]
 
@@ -248,8 +234,7 @@ def calculate_nodal_capacities(n, label, nodal_capacities):
         index = pd.MultiIndex.from_tuples(
             [(c.list_name,) + t for t in nodal_capacities_c.index.to_list()]
         )
-        nodal_capacities = nodal_capacities.reindex(
-            index.union(nodal_capacities.index))
+        nodal_capacities = nodal_capacities.reindex(index.union(nodal_capacities.index))
         nodal_capacities.loc[index, label] = nodal_capacities_c.values
 
     return nodal_capacities
@@ -261,11 +246,9 @@ def calculate_capacities(n, label, capacities):
         n.branch_components | n.controllable_one_port_components ^ {"Load"}
     ):
         capacities_grouped = (
-            c.df[opt_name.get(c.name, "p") +
-                 "_nom_opt"].groupby(c.df.carrier).sum()
+            c.df[opt_name.get(c.name, "p") + "_nom_opt"].groupby(c.df.carrier).sum()
         )
-        capacities_grouped = pd.concat(
-            [capacities_grouped], keys=[c.list_name])
+        capacities_grouped = pd.concat([capacities_grouped], keys=[c.list_name])
 
         capacities = capacities.reindex(
             capacities_grouped.index.union(capacities.index)
@@ -360,8 +343,7 @@ def calculate_supply(n, label, supply):
 
             for end in [col[3:] for col in c.df.columns if col[:3] == "bus"]:
 
-                items = c.df.index[c.df["bus" +
-                                        end].map(bus_map, na_action=False)]
+                items = c.df.index[c.df["bus" + end].map(bus_map, na_action=False)]
 
                 if len(items) == 0:
                     continue
@@ -407,16 +389,14 @@ def calculate_supply_energy(n, label, supply_energy):
             s = pd.concat([s], keys=[c.list_name])
             s = pd.concat([s], keys=[i])
 
-            supply_energy = supply_energy.reindex(
-                s.index.union(supply_energy.index))
+            supply_energy = supply_energy.reindex(s.index.union(supply_energy.index))
             supply_energy.loc[s.index, label] = s
 
         for c in n.iterate_components(n.branch_components):
 
             for end in [col[3:] for col in c.df.columns if col[:3] == "bus"]:
 
-                items = c.df.index[c.df["bus" +
-                                        str(end)].map(bus_map, na_action=False)]
+                items = c.df.index[c.df["bus" + str(end)].map(bus_map, na_action=False)]
 
                 if len(items) == 0:
                     continue
@@ -453,8 +433,7 @@ def calculate_metrics(n, label, metrics):
     metrics.at["line_volume_DC", label] = (n.links.length * n.links.p_nom_opt)[
         n.links.carrier == "DC"
     ].sum()
-    metrics.at["line_volume_AC", label] = (
-        n.lines.length * n.lines.s_nom_opt).sum()
+    metrics.at["line_volume_AC", label] = (n.lines.length * n.lines.s_nom_opt).sum()
     metrics.at["line_volume", label] = metrics.loc[
         ["line_volume_AC", "line_volume_DC"], label
     ].sum()
@@ -464,8 +443,7 @@ def calculate_metrics(n, label, metrics):
         metrics.at["line_volume_shadow", label] = n.line_volume_limit_dual
 
     if "CO2Limit" in n.global_constraints.index:
-        metrics.at["co2_shadow",
-                   label] = n.global_constraints.at["CO2Limit", "mu"]
+        metrics.at["co2_shadow", label] = n.global_constraints.at["CO2Limit", "mu"]
 
     return metrics
 
@@ -475,8 +453,7 @@ def calculate_prices(n, label, prices):
     prices = prices.reindex(prices.index.union(n.buses.carrier.unique()))
 
     # WARNING: this is time-averaged, see weighted_prices for load-weighted average
-    prices[label] = n.buses_t.marginal_price.mean().groupby(
-        n.buses.carrier).mean()
+    prices[label] = n.buses_t.marginal_price.mean().groupby(n.buses.carrier).mean()
 
     return prices
 
@@ -538,15 +515,13 @@ def calculate_weighted_prices(n, label, weighted_prices):
 
         for tech in link_loads[carrier]:
 
-            names = n.links.index[n.links.index.to_series(
-            ).str[-len(tech):] == tech]
+            names = n.links.index[n.links.index.to_series().str[-len(tech) :] == tech]
 
             if names.empty:
                 continue
 
             load += (
-                n.links_t.p0[names].groupby(
-                    n.links.loc[names, "bus0"], axis=1).sum()
+                n.links_t.p0[names].groupby(n.links.loc[names, "bus0"], axis=1).sum()
             )
 
         # Add H2 Store when charging
@@ -574,8 +549,7 @@ def calculate_market_values(n, label, market_values):
 
     ## First do market value of generators ##
 
-    generators = n.generators.index[n.buses.loc[n.generators.bus,
-                                                "carrier"] == carrier]
+    generators = n.generators.index[n.buses.loc[n.generators.bus, "carrier"] == carrier]
 
     techs = n.generators.loc[generators, "carrier"].value_counts().index
 
@@ -593,14 +567,12 @@ def calculate_market_values(n, label, market_values):
 
         revenue = dispatch * n.buses_t.marginal_price[buses]
 
-        market_values.at[tech, label] = revenue.sum().sum() / \
-            dispatch.sum().sum()
+        market_values.at[tech, label] = revenue.sum().sum() / dispatch.sum().sum()
 
     ## Now do market value of links ##
 
     for i in ["0", "1"]:
-        all_links = n.links.index[n.buses.loc[n.links["bus" + i],
-                                              "carrier"] == carrier]
+        all_links = n.links.index[n.buses.loc[n.links["bus" + i], "carrier"] == carrier]
 
         techs = n.links.loc[all_links, "carrier"].value_counts().index
 
@@ -618,8 +590,7 @@ def calculate_market_values(n, label, market_values):
 
             revenue = dispatch * n.buses_t.marginal_price[buses]
 
-            market_values.at[tech, label] = revenue.sum().sum() / \
-                dispatch.sum().sum()
+            market_values.at[tech, label] = revenue.sum().sum() / dispatch.sum().sum()
 
     return market_values
 

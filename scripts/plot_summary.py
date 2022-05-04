@@ -62,7 +62,7 @@ def rename_techs(label):
 
     for ptr in prefix_to_remove:
         if label[: len(ptr)] == ptr:
-            label = label[len(ptr):]
+            label = label[len(ptr) :]
 
     for rif in rename_if_contains:
         if rif in label:
@@ -132,8 +132,7 @@ def plot_costs():
 
     df = df.groupby(df.index.map(rename_techs)).sum()
 
-    to_drop = df.index[df.max(
-        axis=1) < snakemake.config["plotting"]["costs_threshold"]]
+    to_drop = df.index[df.max(axis=1) < snakemake.config["plotting"]["costs_threshold"]]
 
     print("dropping")
 
@@ -155,8 +154,7 @@ def plot_costs():
         kind="bar",
         ax=ax,
         stacked=True,
-        color=[snakemake.config["plotting"]["tech_colors"][i]
-               for i in new_index],
+        color=[snakemake.config["plotting"]["tech_colors"][i] for i in new_index],
     )
 
     handles, labels = ax.get_legend_handles_labels()
@@ -221,8 +219,7 @@ def plot_energy():
         kind="bar",
         ax=ax,
         stacked=True,
-        color=[snakemake.config["plotting"]["tech_colors"][i]
-               for i in new_index],
+        color=[snakemake.config["plotting"]["tech_colors"][i] for i in new_index],
     )
 
     handles, labels = ax.get_legend_handles_labels()
@@ -275,8 +272,7 @@ def plot_balances():
         df = df.groupby(df.index.map(rename_techs)).sum()
 
         to_drop = df.index[
-            df.abs().max(
-                axis=1) < snakemake.config["plotting"]["energy_threshold"] / 10
+            df.abs().max(axis=1) < snakemake.config["plotting"]["energy_threshold"] / 10
         ]
 
         print("dropping")
@@ -302,8 +298,7 @@ def plot_balances():
             kind="bar",
             ax=ax,
             stacked=True,
-            color=[snakemake.config["plotting"]["tech_colors"][i]
-                   for i in new_index],
+            color=[snakemake.config["plotting"]["tech_colors"][i] for i in new_index],
             title=k,
         )
 
@@ -331,8 +326,7 @@ def plot_balances():
         )
         plt.xticks(rotation=0)
 
-        fig.savefig(
-            snakemake.output.balances[:-10] + k + ".pdf", bbox_inches="tight")
+        fig.savefig(snakemake.output.balances[:-10] + k + ".pdf", bbox_inches="tight")
 
 
 def historical_emissions(cts):
@@ -384,8 +378,7 @@ def historical_emissions(cts):
         .rename(index=pd.Series(e.index, e.values))
     )
 
-    co2_totals = (1 / 1e6) * co2_totals.groupby(level=0,
-                                                axis=0).sum()  # Gton CO2
+    co2_totals = (1 / 1e6) * co2_totals.groupby(level=0, axis=0).sum()  # Gton CO2
 
     co2_totals.loc["industrial non-elec"] = (
         co2_totals.loc["total energy"]
@@ -406,8 +399,7 @@ def historical_emissions(cts):
 
     emissions = co2_totals.loc["electricity"]
     if "T" in opts:
-        emissions += co2_totals.loc[[i +
-                                     " non-elec" for i in ["rail", "road"]]].sum()
+        emissions += co2_totals.loc[[i + " non-elec" for i in ["rail", "road"]]].sum()
     if "H" in opts:
         emissions += co2_totals.loc[
             [i + " non-elec" for i in ["residential", "services"]]
@@ -447,16 +439,13 @@ def plot_carbon_budget_distribution():
     ax1 = plt.subplot(gs1[0, 0])
     ax1.set_ylabel("CO$_2$ emissions (Gt per year)", fontsize=22)
     ax1.set_ylim([0, 5])
-    ax1.set_xlim([1990, snakemake.config["scenario"]
-                 ["planning_horizons"][-1] + 1])
+    ax1.set_xlim([1990, snakemake.config["scenario"]["planning_horizons"][-1] + 1])
 
-    path_cb = snakemake.config["results_dir"] + \
-        snakemake.config["run"] + "/csvs/"
+    path_cb = snakemake.config["results_dir"] + snakemake.config["run"] + "/csvs/"
     countries = pd.read_csv(path_cb + "countries.csv", index_col=1)
     cts = countries.index.to_list()
     e_1990 = co2_emissions_year(cts, opts, year=1990)
-    CO2_CAP = pd.read_csv(
-        path_cb + "carbon_budget_distribution.csv", index_col=0)
+    CO2_CAP = pd.read_csv(path_cb + "carbon_budget_distribution.csv", index_col=0)
 
     ax1.plot(e_1990 * CO2_CAP[o], linewidth=3, color="dodgerblue", label=None)
 

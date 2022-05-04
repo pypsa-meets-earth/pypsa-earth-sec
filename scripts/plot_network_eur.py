@@ -221,8 +221,7 @@ def plot_map(
 
     for s in (10, 5):
         handles.append(
-            plt.Line2D([0], [0], color=ac_color,
-                       linewidth=s * 1e3 / linewidth_factor)
+            plt.Line2D([0], [0], color=ac_color, linewidth=s * 1e3 / linewidth_factor)
         )
         labels.append("{} GW".format(s))
 
@@ -268,8 +267,7 @@ def plot_h2_map(network):
     )
 
     # make a fake MultiIndex so that area is correct for legend
-    bus_sizes.index = pd.MultiIndex.from_product(
-        [bus_sizes.index, ["electrolysis"]])
+    bus_sizes.index = pd.MultiIndex.from_product([bus_sizes.index, ["electrolysis"]])
 
     n.links.drop(n.links.index[n.links.carrier != "H2 pipeline"], inplace=True)
 
@@ -321,8 +319,7 @@ def plot_h2_map(network):
 
     for s in (50, 10):
         handles.append(
-            plt.Line2D([0], [0], color=link_color,
-                       linewidth=s * 1e3 / linewidth_factor)
+            plt.Line2D([0], [0], color=link_color, linewidth=s * 1e3 / linewidth_factor)
         )
         labels.append("{} GW".format(s))
 
@@ -368,8 +365,7 @@ def plot_map_without(network):
     # hack because impossible to drop buses...
     n.buses.loc["EU gas", ["x", "y"]] = n.buses.loc["DE0 0", ["x", "y"]]
 
-    to_drop = n.links.index[(n.links.carrier != "DC")
-                            & (n.links.carrier != "B2B")]
+    to_drop = n.links.index[(n.links.carrier != "DC") & (n.links.carrier != "B2B")]
     n.links.drop(to_drop, inplace=True)
 
     if snakemake.wildcards["lv"] == "1.0":
@@ -400,8 +396,7 @@ def plot_map_without(network):
 
     for s in (10, 5):
         handles.append(
-            plt.Line2D([0], [0], color=ac_color,
-                       linewidth=s * 1e3 / linewidth_factor)
+            plt.Line2D([0], [0], color=ac_color, linewidth=s * 1e3 / linewidth_factor)
         )
         labels.append("{} GW".format(s))
     l1_1 = ax.legend(
@@ -496,8 +491,7 @@ def plot_series(network, carrier="AC", name="test"):
     )
     supply.columns = supply.columns.str.replace("residential ", "")
     supply.columns = supply.columns.str.replace("services ", "")
-    supply.columns = supply.columns.str.replace(
-        "urban decentral ", "decentral ")
+    supply.columns = supply.columns.str.replace("urban decentral ", "decentral ")
 
     preferred_order = pd.Index(
         [
@@ -542,8 +536,7 @@ def plot_series(network, carrier="AC", name="test"):
             stacked=True,
             linewidth=0.0,
             color=[
-                snakemake.config["plotting"]["tech_colors"][i.replace(
-                    suffix, "")]
+                snakemake.config["plotting"]["tech_colors"][i.replace(suffix, "")]
                 for i in new_columns
             ],
         )
@@ -660,8 +653,7 @@ def plot_series(network, carrier="AC", name="test"):
     )
     supply.columns = supply.columns.str.replace("residential ", "")
     supply.columns = supply.columns.str.replace("services ", "")
-    supply.columns = supply.columns.str.replace(
-        "urban decentral ", "decentral ")
+    supply.columns = supply.columns.str.replace("urban decentral ", "decentral ")
 
     preferred_order = pd.Index(
         [
@@ -706,8 +698,7 @@ def plot_series(network, carrier="AC", name="test"):
             stacked=True,
             linewidth=0.0,
             color=[
-                snakemake.config["plotting"]["tech_colors"][i.replace(
-                    suffix, "")]
+                snakemake.config["plotting"]["tech_colors"][i.replace(suffix, "")]
                 for i in new_columns
             ],
         )
@@ -762,8 +753,7 @@ if __name__ == "__main__":
         )
 
     overrides = override_component_attrs(snakemake.input.overrides)
-    n = pypsa.Network(snakemake.input.network,
-                      override_component_attrs=overrides)
+    n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides)
 
     map_opts = snakemake.config["plotting"]["map"]
 
