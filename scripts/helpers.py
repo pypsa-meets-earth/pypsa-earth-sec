@@ -1,20 +1,18 @@
-import os
-from pathlib import Path
-
 import logging
 import os
 import shutil
 import zipfile
+from pathlib import Path
+
 import fiona
-import requests
+import geopandas as gpd
 import numpy as np
 import pandas as pd
-import geopandas as gpd
-from pypsa.components import component_attrs
-from pypsa.components import components
+import requests
+from pypsa.components import component_attrs, components
 from pypsa.descriptors import Dict
-from vresutils.costdata import annuity
 from shapely.geometry import Point
+from vresutils.costdata import annuity
 
 
 def sets_path_to_root(root_directory_name):  # Imported from pypsa-africa

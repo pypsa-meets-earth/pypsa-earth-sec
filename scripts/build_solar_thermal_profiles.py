@@ -1,11 +1,12 @@
 """Build solar thermal collector time series."""
 
-import geopandas as gpd
+import os
+
 import atlite
+import geopandas as gpd
+import numpy as np
 import pandas as pd
 import xarray as xr
-import numpy as np
-import os
 
 if __name__ == "__main__":
     if "snakemake" not in globals():

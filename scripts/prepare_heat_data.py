@@ -1,4 +1,5 @@
 import os
+from itertools import product
 
 import numpy as np
 import pandas as pd
@@ -6,8 +7,6 @@ import pypsa
 import pytz
 import xarray as xr
 from helpers import mock_snakemake
-
-from itertools import product
 
 
 def generate_periodic_profiles(dt_index, nodes, weekly_profile, localize=None):
