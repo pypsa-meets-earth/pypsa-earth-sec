@@ -19,7 +19,9 @@ def rename_techs_tyndp(tech):
     tech = rename_techs(tech)
     if "heat pump" in tech or "resistive heater" in tech:
         return "power-to-heat"
-    elif tech in ["H2 Electrolysis", "methanation", "helmeth", "H2 liquefaction"]:
+    elif tech in [
+            "H2 Electrolysis", "methanation", "helmeth", "H2 liquefaction"
+    ]:
         return "power-to-gas"
     elif tech == "H2":
         return "H2 storage"
@@ -41,9 +43,8 @@ def make_handler_map_to_scale_circles_as_in(ax, dont_resize_actively=False):
     fig = ax.get_figure()
 
     def axes2pt():
-        return np.diff(ax.transData.transform([(0, 0), (1, 1)]), axis=0)[0] * (
-            72.0 / fig.dpi
-        )
+        return np.diff(ax.transData.transform([(0, 0), (1, 1)]),
+                       axis=0)[0] * (72.0 / fig.dpi)
 
     ellipses = []
     if not dont_resize_actively:
@@ -57,9 +58,8 @@ def make_handler_map_to_scale_circles_as_in(ax, dont_resize_actively=False):
         ax.callbacks.connect("xlim_changed", update_width_height)
         ax.callbacks.connect("ylim_changed", update_width_height)
 
-    def legend_circle_handler(
-        legend, orig_handle, xdescent, ydescent, width, height, fontsize
-    ):
+    def legend_circle_handler(legend, orig_handle, xdescent, ydescent, width,
+                              height, fontsize):
         w, h = 2.0 * orig_handle.get_radius() * axes2pt()
         e = Ellipse(
             xy=(0.5 * width - 0.5 * xdescent, 0.5 * height - 0.5 * ydescent),
@@ -73,7 +73,7 @@ def make_handler_map_to_scale_circles_as_in(ax, dont_resize_actively=False):
 
 
 def make_legend_circles_for(sizes, scale=1.0, **kw):
-    return [Circle((0, 0), radius=(s / scale) ** 0.5, **kw) for s in sizes]
+    return [Circle((0, 0), radius=(s / scale)**0.5, **kw) for s in sizes]
 
 
 def assign_location(n):
@@ -107,13 +107,8 @@ def plot_map(
 
         attr = "e_nom_opt" if comp == "stores" else "p_nom_opt"
 
-        costs_c = (
-            (df_c.capital_cost * df_c[attr])
-            .groupby([df_c.location, df_c.nice_group])
-            .sum()
-            .unstack()
-            .fillna(0.0)
-        )
+        costs_c = ((df_c.capital_cost * df_c[attr]).groupby(
+            [df_c.location, df_c.nice_group]).sum().unstack().fillna(0.0))
         costs = pd.concat([costs, costs_c], axis=1)
 
         print(comp, costs)
@@ -123,8 +118,7 @@ def plot_map(
     costs.drop(list(costs.columns[(costs == 0.0).all()]), axis=1, inplace=True)
 
     new_columns = preferred_order.intersection(costs.columns).append(
-        costs.columns.difference(preferred_order)
-    )
+        costs.columns.difference(preferred_order))
     costs = costs[new_columns]
 
     for item in new_columns:
@@ -188,20 +182,18 @@ def plot_map(
     fig, ax = plt.subplots(subplot_kw={"projection": ccrs.PlateCarree()})
     fig.set_size_inches(7, 6)
 
-    n.plot(
-        bus_sizes=costs / bus_size_factor,
-        bus_colors=snakemake.config["plotting"]["tech_colors"],
-        line_colors=ac_color,
-        link_colors=dc_color,
-        line_widths=line_widths / linewidth_factor,
-        link_widths=link_widths / linewidth_factor,
-        ax=ax,
-        **map_opts
-    )
+    n.plot(bus_sizes=costs / bus_size_factor,
+           bus_colors=snakemake.config["plotting"]["tech_colors"],
+           line_colors=ac_color,
+           link_colors=dc_color,
+           line_widths=line_widths / linewidth_factor,
+           link_widths=link_widths / linewidth_factor,
+           ax=ax,
+           **map_opts)
 
-    handles = make_legend_circles_for(
-        [5e9, 1e9], scale=bus_size_factor, facecolor="gray"
-    )
+    handles = make_legend_circles_for([5e9, 1e9],
+                                      scale=bus_size_factor,
+                                      facecolor="gray")
 
     labels = ["{} bEUR/a".format(s) for s in (5, 1)]
 
@@ -223,8 +215,9 @@ def plot_map(
 
     for s in (10, 5):
         handles.append(
-            plt.Line2D([0], [0], color=ac_color, linewidth=s * 1e3 / linewidth_factor)
-        )
+            plt.Line2D([0], [0],
+                       color=ac_color,
+                       linewidth=s * 1e3 / linewidth_factor))
         labels.append("{} GW".format(s))
 
     l1_1 = ax.legend(
@@ -263,13 +256,12 @@ def plot_h2_map(network):
 
     elec = n.links.index[n.links.carrier == "H2 Electrolysis"]
 
-    bus_sizes = (
-        n.links.loc[elec, "p_nom_opt"].groupby(n.links.loc[elec, "bus0"]).sum()
-        / bus_size_factor
-    )
+    bus_sizes = (n.links.loc[elec, "p_nom_opt"].groupby(
+        n.links.loc[elec, "bus0"]).sum() / bus_size_factor)
 
     # make a fake MultiIndex so that area is correct for legend
-    bus_sizes.index = pd.MultiIndex.from_product([bus_sizes.index, ["electrolysis"]])
+    bus_sizes.index = pd.MultiIndex.from_product(
+        [bus_sizes.index, ["electrolysis"]])
 
     n.links.drop(n.links.index[n.links.carrier != "H2 pipeline"], inplace=True)
 
@@ -283,23 +275,20 @@ def plot_h2_map(network):
 
     print(n.links[["bus0", "bus1"]])
 
-    fig, ax = plt.subplots(
-        figsize=(7, 6), subplot_kw={"projection": ccrs.PlateCarree()}
-    )
+    fig, ax = plt.subplots(figsize=(7, 6),
+                           subplot_kw={"projection": ccrs.PlateCarree()})
 
-    n.plot(
-        bus_sizes=bus_sizes,
-        bus_colors={"electrolysis": bus_color},
-        link_colors=link_color,
-        link_widths=link_widths,
-        branch_components=["Link"],
-        ax=ax,
-        **map_opts
-    )
+    n.plot(bus_sizes=bus_sizes,
+           bus_colors={"electrolysis": bus_color},
+           link_colors=link_color,
+           link_widths=link_widths,
+           branch_components=["Link"],
+           ax=ax,
+           **map_opts)
 
-    handles = make_legend_circles_for(
-        [50000, 10000], scale=bus_size_factor, facecolor=bus_color
-    )
+    handles = make_legend_circles_for([50000, 10000],
+                                      scale=bus_size_factor,
+                                      facecolor=bus_color)
 
     labels = ["{} GW".format(s) for s in (50, 10)]
 
@@ -321,8 +310,9 @@ def plot_h2_map(network):
 
     for s in (50, 10):
         handles.append(
-            plt.Line2D([0], [0], color=link_color, linewidth=s * 1e3 / linewidth_factor)
-        )
+            plt.Line2D([0], [0],
+                       color=link_color,
+                       linewidth=s * 1e3 / linewidth_factor))
         labels.append("{} GW".format(s))
 
     l1_1 = ax.legend(
@@ -353,9 +343,8 @@ def plot_map_without(network):
     # Drop non-electric buses so they don't clutter the plot
     n.buses.drop(n.buses.index[n.buses.carrier != "AC"], inplace=True)
 
-    fig, ax = plt.subplots(
-        figsize=(7, 6), subplot_kw={"projection": ccrs.PlateCarree()}
-    )
+    fig, ax = plt.subplots(figsize=(7, 6),
+                           subplot_kw={"projection": ccrs.PlateCarree()})
 
     # PDF has minimum width, so set these to zero
     line_lower_threshold = 200.0
@@ -367,7 +356,8 @@ def plot_map_without(network):
     # hack because impossible to drop buses...
     n.buses.loc["EU gas", ["x", "y"]] = n.buses.loc["DE0 0", ["x", "y"]]
 
-    to_drop = n.links.index[(n.links.carrier != "DC") & (n.links.carrier != "B2B")]
+    to_drop = n.links.index[(n.links.carrier != "DC")
+                            & (n.links.carrier != "B2B")]
     n.links.drop(to_drop, inplace=True)
 
     if snakemake.wildcards["lv"] == "1.0":
@@ -383,23 +373,22 @@ def plot_map_without(network):
     line_widths[line_widths > line_upper_threshold] = line_upper_threshold
     link_widths[link_widths > line_upper_threshold] = line_upper_threshold
 
-    n.plot(
-        bus_colors="k",
-        line_colors=ac_color,
-        link_colors=dc_color,
-        line_widths=line_widths / linewidth_factor,
-        link_widths=link_widths / linewidth_factor,
-        ax=ax,
-        **map_opts
-    )
+    n.plot(bus_colors="k",
+           line_colors=ac_color,
+           link_colors=dc_color,
+           line_widths=line_widths / linewidth_factor,
+           link_widths=link_widths / linewidth_factor,
+           ax=ax,
+           **map_opts)
 
     handles = []
     labels = []
 
     for s in (10, 5):
         handles.append(
-            plt.Line2D([0], [0], color=ac_color, linewidth=s * 1e3 / linewidth_factor)
-        )
+            plt.Line2D([0], [0],
+                       color=ac_color,
+                       linewidth=s * 1e3 / linewidth_factor))
         labels.append("{} GW".format(s))
     l1_1 = ax.legend(
         handles,
@@ -431,11 +420,10 @@ def plot_series(network, carrier="AC", name="test"):
             supply = pd.concat(
                 (
                     supply,
-                    (-1)
-                    * c.pnl["p" + str(i)]
-                    .loc[:, c.df.index[c.df["bus" + str(i)].isin(buses)]]
-                    .groupby(c.df.carrier, axis=1)
-                    .sum(),
+                    (-1) * c.pnl["p" + str(i)].
+                    loc[:,
+                        c.df.index[c.df["bus" + str(i)].isin(buses)]].groupby(
+                            c.df.carrier, axis=1).sum(),
                 ),
                 axis=1,
             )
@@ -445,9 +433,9 @@ def plot_series(network, carrier="AC", name="test"):
         supply = pd.concat(
             (
                 supply,
-                ((c.pnl["p"].loc[:, comps]).multiply(c.df.loc[comps, "sign"]))
-                .groupby(c.df.carrier, axis=1)
-                .sum(),
+                ((c.pnl["p"].loc[:, comps]).multiply(
+                    c.df.loc[comps, "sign"])).groupby(c.df.carrier,
+                                                      axis=1).sum(),
             ),
             axis=1,
         )
@@ -488,61 +476,59 @@ def plot_series(network, carrier="AC", name="test"):
 
     supply = supply / 1e3
 
-    supply.rename(
-        columns={"electricity": "electric demand", "heat": "heat demand"}, inplace=True
-    )
+    supply.rename(columns={
+        "electricity": "electric demand",
+        "heat": "heat demand"
+    },
+                  inplace=True)
     supply.columns = supply.columns.str.replace("residential ", "")
     supply.columns = supply.columns.str.replace("services ", "")
-    supply.columns = supply.columns.str.replace("urban decentral ", "decentral ")
+    supply.columns = supply.columns.str.replace("urban decentral ",
+                                                "decentral ")
 
-    preferred_order = pd.Index(
-        [
-            "electric demand",
-            "transmission lines",
-            "hydroelectricity",
-            "hydro reservoir",
-            "run of river",
-            "pumped hydro storage",
-            "CHP",
-            "onshore wind",
-            "offshore wind",
-            "solar PV",
-            "solar thermal",
-            "building retrofitting",
-            "ground heat pump",
-            "air heat pump",
-            "resistive heater",
-            "OCGT",
-            "gas boiler",
-            "gas",
-            "natural gas",
-            "methanation",
-            "hydrogen storage",
-            "battery storage",
-            "hot water storage",
-        ]
-    )
+    preferred_order = pd.Index([
+        "electric demand",
+        "transmission lines",
+        "hydroelectricity",
+        "hydro reservoir",
+        "run of river",
+        "pumped hydro storage",
+        "CHP",
+        "onshore wind",
+        "offshore wind",
+        "solar PV",
+        "solar thermal",
+        "building retrofitting",
+        "ground heat pump",
+        "air heat pump",
+        "resistive heater",
+        "OCGT",
+        "gas boiler",
+        "gas",
+        "natural gas",
+        "methanation",
+        "hydrogen storage",
+        "battery storage",
+        "hot water storage",
+    ])
 
     new_columns = preferred_order.intersection(supply.columns).append(
-        supply.columns.difference(preferred_order)
-    )
+        supply.columns.difference(preferred_order))
 
     supply = supply.groupby(supply.columns, axis=1).sum()
     fig, ax = plt.subplots()
     fig.set_size_inches((8, 5))
 
-    (
-        supply.loc[start:stop, new_columns].plot(
-            ax=ax,
-            kind="area",
-            stacked=True,
-            linewidth=0.0,
-            color=[
-                snakemake.config["plotting"]["tech_colors"][i.replace(suffix, "")]
-                for i in new_columns
-            ],
-        )
-    )
+    (supply.loc[start:stop, new_columns].plot(
+        ax=ax,
+        kind="area",
+        stacked=True,
+        linewidth=0.0,
+        color=[
+            snakemake.config["plotting"]["tech_colors"][i.replace(suffix, "")]
+            for i in new_columns
+        ],
+    ))
 
     handles, labels = ax.get_legend_handles_labels()
 
@@ -593,11 +579,10 @@ def plot_series(network, carrier="AC", name="test"):
             supply = pd.concat(
                 (
                     supply,
-                    (-1)
-                    * c.pnl["p" + str(i)]
-                    .loc[:, c.df.index[c.df["bus" + str(i)].isin(buses)]]
-                    .groupby(c.df.carrier, axis=1)
-                    .sum(),
+                    (-1) * c.pnl["p" + str(i)].
+                    loc[:,
+                        c.df.index[c.df["bus" + str(i)].isin(buses)]].groupby(
+                            c.df.carrier, axis=1).sum(),
                 ),
                 axis=1,
             )
@@ -607,9 +592,9 @@ def plot_series(network, carrier="AC", name="test"):
         supply = pd.concat(
             (
                 supply,
-                ((c.pnl["p"].loc[:, comps]).multiply(c.df.loc[comps, "sign"]))
-                .groupby(c.df.carrier, axis=1)
-                .sum(),
+                ((c.pnl["p"].loc[:, comps]).multiply(
+                    c.df.loc[comps, "sign"])).groupby(c.df.carrier,
+                                                      axis=1).sum(),
             ),
             axis=1,
         )
@@ -650,61 +635,59 @@ def plot_series(network, carrier="AC", name="test"):
 
     supply = supply / 1e3
 
-    supply.rename(
-        columns={"electricity": "electric demand", "heat": "heat demand"}, inplace=True
-    )
+    supply.rename(columns={
+        "electricity": "electric demand",
+        "heat": "heat demand"
+    },
+                  inplace=True)
     supply.columns = supply.columns.str.replace("residential ", "")
     supply.columns = supply.columns.str.replace("services ", "")
-    supply.columns = supply.columns.str.replace("urban decentral ", "decentral ")
+    supply.columns = supply.columns.str.replace("urban decentral ",
+                                                "decentral ")
 
-    preferred_order = pd.Index(
-        [
-            "electric demand",
-            "transmission lines",
-            "hydroelectricity",
-            "hydro reservoir",
-            "run of river",
-            "pumped hydro storage",
-            "CHP",
-            "onshore wind",
-            "offshore wind",
-            "solar PV",
-            "solar thermal",
-            "building retrofitting",
-            "ground heat pump",
-            "air heat pump",
-            "resistive heater",
-            "OCGT",
-            "gas boiler",
-            "gas",
-            "natural gas",
-            "methanation",
-            "hydrogen storage",
-            "battery storage",
-            "hot water storage",
-        ]
-    )
+    preferred_order = pd.Index([
+        "electric demand",
+        "transmission lines",
+        "hydroelectricity",
+        "hydro reservoir",
+        "run of river",
+        "pumped hydro storage",
+        "CHP",
+        "onshore wind",
+        "offshore wind",
+        "solar PV",
+        "solar thermal",
+        "building retrofitting",
+        "ground heat pump",
+        "air heat pump",
+        "resistive heater",
+        "OCGT",
+        "gas boiler",
+        "gas",
+        "natural gas",
+        "methanation",
+        "hydrogen storage",
+        "battery storage",
+        "hot water storage",
+    ])
 
     new_columns = preferred_order.intersection(supply.columns).append(
-        supply.columns.difference(preferred_order)
-    )
+        supply.columns.difference(preferred_order))
 
     supply = supply.groupby(supply.columns, axis=1).sum()
     fig, ax = plt.subplots()
     fig.set_size_inches((8, 5))
 
-    (
-        supply.loc[start:stop, new_columns].plot(
-            ax=ax,
-            kind="area",
-            stacked=True,
-            linewidth=0.0,
-            color=[
-                snakemake.config["plotting"]["tech_colors"][i.replace(suffix, "")]
-                for i in new_columns
-            ],
-        )
-    )
+    (supply.loc[start:stop, new_columns].plot(
+        ax=ax,
+        kind="area",
+        stacked=True,
+        linewidth=0.0,
+        color=[
+            snakemake.config["plotting"]["tech_colors"][i.replace(suffix, "")]
+            for i in new_columns
+        ],
+    ))
 
     handles, labels = ax.get_legend_handles_labels()
 
@@ -755,7 +738,8 @@ if __name__ == "__main__":
         )
 
     overrides = override_component_attrs(snakemake.input.overrides)
-    n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides)
+    n = pypsa.Network(snakemake.input.network,
+                      override_component_attrs=overrides)
 
     map_opts = snakemake.config["plotting"]["map"]
 

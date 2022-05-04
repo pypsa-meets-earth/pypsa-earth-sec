@@ -60,8 +60,8 @@ def rename_techs(label):
     }
 
     for ptr in prefix_to_remove:
-        if label[: len(ptr)] == ptr:
-            label = label[len(ptr) :]
+        if label[:len(ptr)] == ptr:
+            label = label[len(ptr):]
 
     for rif in rename_if_contains:
         if rif in label:
@@ -77,52 +77,50 @@ def rename_techs(label):
     return label
 
 
-preferred_order = pd.Index(
-    [
-        "transmission lines",
-        "hydroelectricity",
-        "hydro reservoir",
-        "run of river",
-        "pumped hydro storage",
-        "solid biomass",
-        "biogas",
-        "onshore wind",
-        "offshore wind",
-        "offshore wind (AC)",
-        "offshore wind (DC)",
-        "solar PV",
-        "solar thermal",
-        "solar rooftop",
-        "solar",
-        "building retrofitting",
-        "ground heat pump",
-        "air heat pump",
-        "heat pump",
-        "resistive heater",
-        "power-to-heat",
-        "gas-to-power/heat",
-        "CHP",
-        "OCGT",
-        "gas boiler",
-        "gas",
-        "natural gas",
-        "helmeth",
-        "methanation",
-        "hydrogen storage",
-        "power-to-gas",
-        "power-to-liquid",
-        "battery storage",
-        "hot water storage",
-        "CO2 sequestration",
-    ]
-)
+preferred_order = pd.Index([
+    "transmission lines",
+    "hydroelectricity",
+    "hydro reservoir",
+    "run of river",
+    "pumped hydro storage",
+    "solid biomass",
+    "biogas",
+    "onshore wind",
+    "offshore wind",
+    "offshore wind (AC)",
+    "offshore wind (DC)",
+    "solar PV",
+    "solar thermal",
+    "solar rooftop",
+    "solar",
+    "building retrofitting",
+    "ground heat pump",
+    "air heat pump",
+    "heat pump",
+    "resistive heater",
+    "power-to-heat",
+    "gas-to-power/heat",
+    "CHP",
+    "OCGT",
+    "gas boiler",
+    "gas",
+    "natural gas",
+    "helmeth",
+    "methanation",
+    "hydrogen storage",
+    "power-to-gas",
+    "power-to-liquid",
+    "battery storage",
+    "hot water storage",
+    "CO2 sequestration",
+])
 
 
 def plot_costs():
 
-    cost_df = pd.read_csv(
-        snakemake.input.costs, index_col=list(range(3)), header=list(range(n_header))
-    )
+    cost_df = pd.read_csv(snakemake.input.costs,
+                          index_col=list(range(3)),
+                          header=list(range(n_header)))
 
     df = cost_df.groupby(cost_df.index.get_level_values(2)).sum()
 
@@ -131,7 +129,8 @@ def plot_costs():
 
     df = df.groupby(df.index.map(rename_techs)).sum()
 
-    to_drop = df.index[df.max(axis=1) < snakemake.config["plotting"]["costs_threshold"]]
+    to_drop = df.index[df.max(
+        axis=1) < snakemake.config["plotting"]["costs_threshold"]]
 
     print("dropping")
 
@@ -142,8 +141,7 @@ def plot_costs():
     print(df.sum())
 
     new_index = preferred_order.intersection(df.index).append(
-        df.index.difference(preferred_order)
-    )
+        df.index.difference(preferred_order))
 
     new_columns = df.sum().sort_values().index
 
@@ -153,7 +151,9 @@ def plot_costs():
         kind="bar",
         ax=ax,
         stacked=True,
-        color=[snakemake.config["plotting"]["tech_colors"][i] for i in new_index],
+        color=[
+            snakemake.config["plotting"]["tech_colors"][i] for i in new_index
+        ],
     )
 
     handles, labels = ax.get_legend_handles_labels()
@@ -169,9 +169,12 @@ def plot_costs():
 
     ax.grid(axis="x")
 
-    ax.legend(
-        handles, labels, ncol=1, loc="upper left", bbox_to_anchor=[1, 1], frameon=False
-    )
+    ax.legend(handles,
+              labels,
+              ncol=1,
+              loc="upper left",
+              bbox_to_anchor=[1, 1],
+              frameon=False)
     plt.xticks(rotation=0)
 
     fig.savefig(snakemake.output.costs, bbox_inches="tight")
@@ -179,9 +182,9 @@ def plot_costs():
 
 def plot_energy():
 
-    energy_df = pd.read_csv(
-        snakemake.input.energy, index_col=list(range(2)), header=list(range(n_header))
-    )
+    energy_df = pd.read_csv(snakemake.input.energy,
+                            index_col=list(range(2)),
+                            header=list(range(n_header)))
 
     df = energy_df.groupby(energy_df.index.get_level_values(1)).sum()
 
@@ -190,9 +193,8 @@ def plot_energy():
 
     df = df.groupby(df.index.map(rename_techs)).sum()
 
-    to_drop = df.index[
-        df.abs().max(axis=1) < snakemake.config["plotting"]["energy_threshold"]
-    ]
+    to_drop = df.index[df.abs().max(
+        axis=1) < snakemake.config["plotting"]["energy_threshold"]]
 
     print("dropping")
 
@@ -205,8 +207,7 @@ def plot_energy():
     print(df)
 
     new_index = preferred_order.intersection(df.index).append(
-        df.index.difference(preferred_order)
-    )
+        df.index.difference(preferred_order))
 
     new_columns = df.columns.sort_values()
 
@@ -218,7 +219,9 @@ def plot_energy():
         kind="bar",
         ax=ax,
         stacked=True,
-        color=[snakemake.config["plotting"]["tech_colors"][i] for i in new_index],
+        color=[
+            snakemake.config["plotting"]["tech_colors"][i] for i in new_index
+        ],
     )
 
     handles, labels = ax.get_legend_handles_labels()
@@ -233,9 +236,12 @@ def plot_energy():
     ax.set_xlabel("")
 
     ax.grid(axis="x")
-    ax.legend(
-        handles, labels, ncol=1, loc="upper left", bbox_to_anchor=[1, 1], frameon=False
-    )
+    ax.legend(handles,
+              labels,
+              ncol=1,
+              loc="upper left",
+              bbox_to_anchor=[1, 1],
+              frameon=False)
     plt.xticks(rotation=0)
 
     fig.savefig(snakemake.output.energy, bbox_inches="tight")
@@ -245,9 +251,9 @@ def plot_balances():
 
     co2_carriers = ["co2", "co2 stored", "process emissions"]
 
-    balances_df = pd.read_csv(
-        snakemake.input.balances, index_col=list(range(3)), header=list(range(n_header))
-    )
+    balances_df = pd.read_csv(snakemake.input.balances,
+                              index_col=list(range(3)),
+                              header=list(range(n_header)))
 
     balances = {i.replace(" ", "_"): [i] for i in balances_df.index.levels[0]}
     balances["energy"] = [
@@ -264,15 +270,15 @@ def plot_balances():
 
         # remove trailing link ports
         df.index = [
-            i[:-1] if ((i != "co2") and (i[-1:] in ["0", "1", "2", "3"])) else i
+            i[:-1] if
+            ((i != "co2") and (i[-1:] in ["0", "1", "2", "3"])) else i
             for i in df.index
         ]
 
         df = df.groupby(df.index.map(rename_techs)).sum()
 
-        to_drop = df.index[
-            df.abs().max(axis=1) < snakemake.config["plotting"]["energy_threshold"] / 10
-        ]
+        to_drop = df.index[df.abs().max(
+            axis=1) < snakemake.config["plotting"]["energy_threshold"] / 10]
 
         print("dropping")
 
@@ -286,8 +292,7 @@ def plot_balances():
             continue
 
         new_index = preferred_order.intersection(df.index).append(
-            df.index.difference(preferred_order)
-        )
+            df.index.difference(preferred_order))
 
         new_columns = df.columns.sort_values()
 
@@ -297,7 +302,10 @@ def plot_balances():
             kind="bar",
             ax=ax,
             stacked=True,
-            color=[snakemake.config["plotting"]["tech_colors"][i] for i in new_index],
+            color=[
+                snakemake.config["plotting"]["tech_colors"][i]
+                for i in new_index
+            ],
             title=k,
         )
 
@@ -325,7 +333,8 @@ def plot_balances():
         )
         plt.xticks(rotation=0)
 
-        fig.savefig(snakemake.output.balances[:-10] + k + ".pdf", bbox_inches="tight")
+        fig.savefig(snakemake.output.balances[:-10] + k + ".pdf",
+                    bbox_inches="tight")
 
 
 def historical_emissions(cts):
@@ -339,8 +348,8 @@ def historical_emissions(cts):
     df.loc[df["Year"] == "1985-1987", "Year"] = 1986
     df["Year"] = df["Year"].astype(int)
     df = df.set_index(
-        ["Year", "Sector_name", "Country_code", "Pollutant_name"]
-    ).sort_index()
+        ["Year", "Sector_name", "Country_code",
+         "Pollutant_name"]).sort_index()
 
     e = pd.Series()
     e["electricity"] = "1.A.1.a - Public Electricity and Heat Production"
@@ -371,49 +380,44 @@ def historical_emissions(cts):
     year = np.arange(1990, 2018).tolist()
 
     idx = pd.IndexSlice
-    co2_totals = (
-        df.loc[idx[year, e.values, cts, pol], "emissions"]
-        .unstack("Year")
-        .rename(index=pd.Series(e.index, e.values))
-    )
+    co2_totals = (df.loc[idx[year, e.values, cts, pol],
+                         "emissions"].unstack("Year").rename(
+                             index=pd.Series(e.index, e.values)))
 
-    co2_totals = (1 / 1e6) * co2_totals.groupby(level=0, axis=0).sum()  # Gton CO2
+    co2_totals = (1 / 1e6) * co2_totals.groupby(level=0,
+                                                axis=0).sum()  # Gton CO2
 
-    co2_totals.loc["industrial non-elec"] = (
-        co2_totals.loc["total energy"]
-        - co2_totals.loc[
-            [
-                "electricity",
-                "services non-elec",
-                "residential non-elec",
-                "road non-elec",
-                "rail non-elec",
-                "domestic aviation",
-                "international aviation",
-                "domestic navigation",
-                "international navigation",
-            ]
-        ].sum()
-    )
+    co2_totals.loc["industrial non-elec"] = (co2_totals.loc["total energy"] -
+                                             co2_totals.loc[[
+                                                 "electricity",
+                                                 "services non-elec",
+                                                 "residential non-elec",
+                                                 "road non-elec",
+                                                 "rail non-elec",
+                                                 "domestic aviation",
+                                                 "international aviation",
+                                                 "domestic navigation",
+                                                 "international navigation",
+                                             ]].sum())
 
     emissions = co2_totals.loc["electricity"]
     if "T" in opts:
-        emissions += co2_totals.loc[[i + " non-elec" for i in ["rail", "road"]]].sum()
+        emissions += co2_totals.loc[[
+            i + " non-elec" for i in ["rail", "road"]
+        ]].sum()
     if "H" in opts:
-        emissions += co2_totals.loc[
-            [i + " non-elec" for i in ["residential", "services"]]
-        ].sum()
+        emissions += co2_totals.loc[[
+            i + " non-elec" for i in ["residential", "services"]
+        ]].sum()
     if "I" in opts:
-        emissions += co2_totals.loc[
-            [
-                "industrial non-elec",
-                "industrial processes",
-                "domestic aviation",
-                "international aviation",
-                "domestic navigation",
-                "international navigation",
-            ]
-        ].sum()
+        emissions += co2_totals.loc[[
+            "industrial non-elec",
+            "industrial processes",
+            "domestic aviation",
+            "international aviation",
+            "domestic navigation",
+            "international navigation",
+        ]].sum()
     return emissions
 
 
@@ -438,13 +442,16 @@ def plot_carbon_budget_distribution():
     ax1 = plt.subplot(gs1[0, 0])
     ax1.set_ylabel("CO$_2$ emissions (Gt per year)", fontsize=22)
     ax1.set_ylim([0, 5])
-    ax1.set_xlim([1990, snakemake.config["scenario"]["planning_horizons"][-1] + 1])
+    ax1.set_xlim(
+        [1990, snakemake.config["scenario"]["planning_horizons"][-1] + 1])
 
-    path_cb = snakemake.config["results_dir"] + snakemake.config["run"] + "/csvs/"
+    path_cb = snakemake.config["results_dir"] + snakemake.config[
+        "run"] + "/csvs/"
     countries = pd.read_csv(path_cb + "countries.csv", index_col=1)
     cts = countries.index.to_list()
     e_1990 = co2_emissions_year(cts, opts, year=1990)
-    CO2_CAP = pd.read_csv(path_cb + "carbon_budget_distribution.csv", index_col=0)
+    CO2_CAP = pd.read_csv(path_cb + "carbon_budget_distribution.csv",
+                          index_col=0)
 
     ax1.plot(e_1990 * CO2_CAP[o], linewidth=3, color="dodgerblue", label=None)
 
@@ -515,13 +522,14 @@ def plot_carbon_budget_distribution():
         label="EU commited target",
     )
 
-    ax1.legend(
-        fancybox=True, fontsize=18, loc=(0.01, 0.01), facecolor="white", frameon=True
-    )
+    ax1.legend(fancybox=True,
+               fontsize=18,
+               loc=(0.01, 0.01),
+               facecolor="white",
+               frameon=True)
 
-    path_cb_plot = (
-        snakemake.config["results_dir"] + snakemake.config["run"] + "/graphs/"
-    )
+    path_cb_plot = (snakemake.config["results_dir"] + snakemake.config["run"] +
+                    "/graphs/")
     plt.savefig(path_cb_plot + "carbon_budget_plot.pdf", dpi=300)
 
 
