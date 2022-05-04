@@ -20,12 +20,8 @@ if __name__ == "__main__":
     cutout_config = snakemake.input.cutout
     cutout = atlite.Cutout(cutout_config).sel(time=time)
 
-    clustered_regions = (
-        gpd.read_file(snakemake.input.regions_onshore)
-        .set_index("name")
-        .buffer(0)
-        .squeeze()
-    )
+    clustered_regions = (gpd.read_file(
+        snakemake.input.regions_onshore).set_index("name").buffer(0).squeeze())
 
     I = cutout.indicatormatrix(clustered_regions)
 
@@ -36,6 +32,7 @@ if __name__ == "__main__":
         stacked_pop = pop_layout.stack(spatial=("y", "x"))
         M = I.T.dot(np.diag(I.dot(stacked_pop)))
 
-        heat_demand = cutout.heat_demand(matrix=M.T, index=clustered_regions.index)
+        heat_demand = cutout.heat_demand(matrix=M.T,
+                                         index=clustered_regions.index)
 
         heat_demand.to_netcdf(snakemake.output[f"heat_demand_{area}"])

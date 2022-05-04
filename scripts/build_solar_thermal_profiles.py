@@ -25,12 +25,8 @@ if __name__ == "__main__":
     cutout_config = snakemake.input.cutout
     cutout = atlite.Cutout(cutout_config).sel(time=time)
 
-    clustered_regions = (
-        gpd.read_file(snakemake.input.regions_onshore)
-        .set_index("name")
-        .buffer(0)
-        .squeeze()
-    )
+    clustered_regions = (gpd.read_file(
+        snakemake.input.regions_onshore).set_index("name").buffer(0).squeeze())
 
     I = cutout.indicatormatrix(clustered_regions)
 
@@ -45,8 +41,8 @@ if __name__ == "__main__":
         nonzero_sum[nonzero_sum == 0.0] = 1.0
         M_tilde = M / nonzero_sum
 
-        solar_thermal = cutout.solar_thermal(
-            **config, matrix=M_tilde.T, index=clustered_regions.index
-        )
+        solar_thermal = cutout.solar_thermal(**config,
+                                             matrix=M_tilde.T,
+                                             index=clustered_regions.index)
 
         solar_thermal.to_netcdf(snakemake.output[f"solar_thermal_{area}"])
