@@ -65,7 +65,7 @@ def prepare_GID_database(regions):
     Change hotmaps to more descriptive name, etc.
     """
 
-    df = pd.read_csv(snakemake.input.hotmaps_industrial_database, sep=",", header=0)
+    df = pd.read_csv(snakemake.input.GID_industrial_database, sep=",", header=0, encoding=('latin1'))
 
     df["gadm_{}".format(gadm_level)] = df[["x", "y", "country"]].apply(
         lambda site: locate_bus(site[["x", "y"]].astype("float"), site["country"], gadm_level),

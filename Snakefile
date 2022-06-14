@@ -182,6 +182,30 @@ rule build_population_layouts:
     script:
         "scripts/build_population_layouts.py"
 
+rule build_industrial_distribution_key:
+    input:
+        regions_onshore="resources/regions_onshore_elec_s{simpl}_{clusters}.geojson",
+        clustered_pop_layout="resources/pop_layout_elec_s{simpl}_{clusters}.csv",
+        GID_industrial_database="data/Industrial_Database.csv", 
+    output:
+        industrial_distribution_key="resources/industrial_distribution_key_elec_s{simpl}_{clusters}.csv"
+    threads: 1
+    resources: mem_mb=1000
+    benchmark: "benchmarks/build_industrial_distribution_key/s{simpl}_{clusters}"
+    script: 'scripts/build_industrial_distribution_key.py'
+
+
+rule build_industrial_production_per_node:
+    input:
+        industrial_distribution_key="resources/industrial_distribution_key_elec_s{simpl}_{clusters}.csv",
+        industrial_production_per_country_tomorrow="resources/industrial_production_per_country_tomorrow_{planning_horizons}.csv"
+    output:
+        industrial_production_per_node="resources/industrial_production_elec_s{simpl}_{clusters}_{planning_horizons}.csv"
+    threads: 1
+    resources: mem_mb=1000
+    benchmark: "benchmarks/build_industrial_production_per_node/s{simpl}_{clusters}_{planning_horizons}"
+    script: 'scripts/build_industrial_production_per_node.py'
+
 
 rule move_hardcoded_files_temp:
     input:
