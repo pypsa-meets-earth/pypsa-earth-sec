@@ -713,6 +713,7 @@ def add_industry(n, costs):
 
     # print("adding industrial demand")
     # 1e6 to convert TWh to MWh
+    #values loaded must be TWh
     industrial_demand = pd.read_csv(snakemake.input.industrial_demand, index_col=0) * 1e6
 
     industrial_demand.reset_index(inplace=True)
@@ -721,7 +722,7 @@ def add_industry(n, costs):
 
     # CARRIER = FOSSIL GAS
 
-    nodes = pop_layout.index #TODO Which format do we want? 3 or 2 letter country codes. 
+    nodes = pop_layout.index #TODO where to change country code? 2 letter country codes. 
 
     industrial_demand['TWh/a (MtCO2/a)'] = industrial_demand['TWh/a (MtCO2/a)'].apply(
         lambda cocode: two_2_three_digits_country(cocode[:2]) + "." + cocode[3:])
@@ -737,8 +738,8 @@ def add_industry(n, costs):
         bus="gas for industry",
         carrier="gas for industry",
         p_set=industrial_demand["methane"].apply(
-            lambda frac: frac * 1e6 / 8760
-        ),  # TODO Multiply by gas demand and find true gas fraction
+            lambda frac: frac * 1e6 / 8760 #TODO change for resolution 
+        ),  
     )
 
     n.add(
@@ -792,7 +793,7 @@ def add_industry(n, costs):
         suffix=" naphtha for industry",
         bus="Africa oil",
         carrier="naphtha for industry",
-        p_set=industrial_demand["naphta"].apply(
+        p_set=industrial_demand["naphtha"].apply(
             lambda frac: frac * 1e6 / 8760
         ),  # TODO Multiply by gas demand and find true gas fraction
     )
@@ -886,7 +887,7 @@ def add_industry(n, costs):
             industrial_demand["process emission from feedstock"]
             + industrial_demand["process emission"]
         )
-        / 8760,  # TODO multiply by total emissions
+        / 8760,  
     )
 
     n.add(
@@ -1533,7 +1534,7 @@ if __name__ == "__main__":
     # TODO fetch from config
 
     overrides = override_component_attrs(snakemake.input.overrides)
-    n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides)
+    n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides) 
 
     nodes = n.buses.index
 
