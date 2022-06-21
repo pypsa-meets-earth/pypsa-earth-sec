@@ -16,6 +16,7 @@ from helpers import (
     override_component_attrs,
     prepare_costs,
     three_2_two_digits_country,
+    two_2_three_digits_country,
 )
 from prepare_transport_data import prepare_transport_data
 
@@ -742,46 +743,25 @@ def add_shipping(n, costs):
             marginal_cost=costs.at["oil", "fuel"],
         )
 
-
 def add_industry(n, costs):
 
-    #     print("adding industrial demand")
+    # print("adding industrial demand")
+    # 1e6 to convert TWh to MWh
+    #values loaded must be TWh
+    industrial_demand = pd.read_csv(snakemake.input.industrial_demand, index_col=0) * 1e6
 
-    #     # 1e6 to convert TWh to MWh
-    #     industrial_demand = pd.read_csv(snakemake.input.industrial_demand, index_col=0) * 1e6
-    industrial_demand = create_dummy_data(n, "industry", "")
-
+    industrial_demand.reset_index(inplace=True)
+    
     # TODO carrier Biomass
 
     # CARRIER = FOSSIL GAS
 
-    demand_locations = pd.read_csv(
-        snakemake.input.industry_demands, index_col=None, squeeze=True
-    )
+    nodes = pop_layout.index #TODO where to change country code? 2 letter country codes. 
 
-    gadm_level = options["gadm_level"]
-    # carrier = "kerosene for aviation"
-
-    demand_locations["gadm_{}".format(gadm_level)] = demand_locations[
-        ["x", "y", "country"]
-    ].apply(lambda loc: locate_bus(loc[["x", "y"]], loc["country"], gadm_level), axis=1)
-
-    demand_locations = demand_locations.set_index("gadm_{}".format(gadm_level))
-
-    ind = pd.DataFrame(n.buses.index[n.buses.carrier == "AC"])
-
-    ind = ind.set_index(n.buses.index[n.buses.carrier == "AC"])
-
-    # demand_locations["p_set_{}".format(carrier)] = demand_locations["fraction"].apply(
-    #        lambda frac: frac * 1e6 / 8760)
-
-    demand_locations = pd.concat([demand_locations, ind])
-
-    demand_locations = demand_locations[
-        ~demand_locations.index.duplicated(keep="first")
-    ]
-
-    demand_locations = demand_locations.fillna(0)
+    industrial_demand['TWh/a (MtCO2/a)'] = industrial_demand['TWh/a (MtCO2/a)'].apply(
+        lambda cocode: two_2_three_digits_country(cocode[:2]) + "." + cocode[3:])
+    
+    industrial_demand.set_index('TWh/a (MtCO2/a)',inplace=True)
 
     n.add("Bus", "gas for industry", location="Africa", carrier="gas for industry")
 
@@ -791,9 +771,9 @@ def add_industry(n, costs):
         suffix=" gas for industry",
         bus="gas for industry",
         carrier="gas for industry",
-        p_set=demand_locations["gas fraction"].apply(
-            lambda frac: frac * 1e6 / 8760
-        ),  # TODO Multiply by gas demand and find true gas fraction
+        p_set=industrial_demand["methane"].apply(
+            lambda frac: frac * 1e6 / 8760 #TODO change for resolution 
+        ),  
     )
 
     n.add(
@@ -835,7 +815,7 @@ def add_industry(n, costs):
         suffix=" H2 for industry",
         bus=nodes + " H2",
         carrier="H2 for industry",
-        p_set=demand_locations["H2 fraction"].apply(
+        p_set=industrial_demand["hydrogen"].apply(
             lambda frac: frac * 1e6 / 8760
         ),  # TODO Multiply by gas demand and find true gas fraction
     )
@@ -847,7 +827,7 @@ def add_industry(n, costs):
         suffix=" naphtha for industry",
         bus=spatial.oil.nodes,
         carrier="naphtha for industry",
-        p_set=demand_locations["naphta fraction"].apply(
+        p_set=industrial_demand["naphtha"].apply(
             lambda frac: frac * 1e6 / 8760
         ),  # TODO Multiply by gas demand and find true gas fraction
     )
@@ -862,7 +842,7 @@ def add_industry(n, costs):
     co2 = (
         n.loads.loc[nodes + co2_release, "p_set"].sum()
         * costs.at["oil", "CO2 intensity"]
-        - demand_locations["feedstock emissions fraction"].sum() / 8760
+        - industrial_demand["process emission from feedstock"].sum() / 8760
     )
 
     n.add(
@@ -922,7 +902,7 @@ def add_industry(n, costs):
         suffix=" industry electricity",
         bus=nodes,
         carrier="industry electricity",
-        p_set=demand_locations["electricity fraction"].apply(
+        p_set=industrial_demand["current electricity"].apply(
             lambda frac: frac * 1e6 / 8760
         ),  # TODO Multiply by demand and find true fraction
     )
@@ -938,10 +918,10 @@ def add_industry(n, costs):
         bus="process emissions",
         carrier="process emissions",
         p_set=-(
-            demand_locations["feedstock emissions fraction"]
-            + demand_locations["process emissions fraction"]
+            industrial_demand["process emission from feedstock"]
+            + industrial_demand["process emission"]
         )
-        / 8760,  # TODO multiply by total emissions
+        / 8760,  
     )
 
     n.add(
@@ -949,7 +929,7 @@ def add_industry(n, costs):
         "process emissions",
         bus0="process emissions",
         bus1="co2 atmosphere",
-        carrier="process emissions",
+        carrier="process emission",
         p_nom_extendable=True,
         efficiency=1.0,
     )
@@ -1595,7 +1575,7 @@ if __name__ == "__main__":
     pop_layout = pd.read_csv(snakemake.input.clustered_pop_layout, index_col=0)
 
     overrides = override_component_attrs(snakemake.input.overrides)
-    n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides)
+    n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides) 
 
     nodes = n.buses[
         n.buses.carrier == "AC"
