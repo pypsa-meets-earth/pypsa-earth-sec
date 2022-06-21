@@ -5,7 +5,7 @@ results_dir: results/
 summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
-run: test_4
+run: test_new_1406_lowcarbon_26_3H
 
 foresight: overnight
 
@@ -13,9 +13,15 @@ scenario:
   simpl: # only relevant for PyPSA-Eur
   - ""
   clusters: # number of nodes in Europe, any integer between 37 (1 node per country-zone) and several hundred
-  - 50
+  - 73
   planning_horizons: # investment years for myopic and perfect; or costs year for overnight
   - 2030
+  ll:
+  - "c1"
+  opts:
+  - "Co2L-3H"
+
+
 
 costs:
   lifetime: 25 #default lifetime
@@ -48,6 +54,7 @@ solar_thermal:
     azimuth: 180.
 
 sector:
+  gas_network: false
   district_heating:
     potential: 0.3 #maximum fraction of urban demand which can be supplied by district heating
       #increase of today's district heating demand to potential maximum district heating share
@@ -113,7 +120,7 @@ sector:
     # 2030: 0.05
     # 2040: 0.1
     # 2050: 0.15
-  land_transport_electric_share: 0. # 1 means all EVs  # This leads to problems when non-zero
+  land_transport_electric_share: 0.8 # 1 means all EVs  # This leads to problems when non-zero
     # 2020: 0
     # 2030: 0.25
     # 2040: 0.6
@@ -126,7 +133,7 @@ sector:
   shipping_hydrogen_liquefaction: true
   shipping_average_efficiency: 0.4 #For conversion of fuel oil to propulsion in 2011
   shipping_hydrogen_share: 1.0
-  gadm_level: 1
+  gadm_level: 2
   h2_cavern: true
   marginal_cost_storage: 0
   methanation: true
@@ -141,8 +148,8 @@ sector:
 # snapshots are originally set in PyPSA-Africa/config.yaml but used again by PyPSA-Earth-Sec
 snapshots:
   # arguments to pd.date_range
-  start: "2013-03-1"
-  end: "2013-03-8"
+  start: "2013-01-01"
+  end: "2014-01-01"
   closed: "left" # end is not inclusive
 
 # atlite:
