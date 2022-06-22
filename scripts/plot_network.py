@@ -170,6 +170,36 @@ def plot_h2_infra(network):
         snakemake.output.map.replace("-costs-all", "-h2_network"), bbox_inches="tight"
     )
 
+def plot_demand(n):
+    bus_size_factor = 7e3 #Def 1e5
+    linewidth_factor = 2e3 #Def 1e4
+    line_lower_threshold = 9e9 # MW below which not drawn. Def 1e3
+    
+    industry_nodes = n.loads.index[n.loads.carrier == "H2 for industry"]
+    shipping_nodes = n.loads.index[n.loads.carrier == "H2 for shipping"]
+    
+    if len(shipping_nodes) == 0:
+        sizes = n.loads.loc[industry_nodes,"p_set"]/bus_size_factor
+    else:  
+        sizes = (n.loads.loc[industry_nodes,"p_set"] 
+                 + n.loads.loc[shipping_nodes,"p_set"].values)/bus_size_factor
+        
+    sizes=sizes.to_frame()
+    sizes['bus']=sizes.index
+    sizes.bus=sizes.bus.apply(lambda x: x.replace(' H2 for industry',""))
+    bus_sizes = pd.Series(sizes['p_set'].values, index=sizes.bus)
+                                                      
+    n.links=n.links[n.links.carrier=='H2 pipeline']
+    n.links.bus0 = n.links.bus0.str.replace(" H2", "")
+    n.links.bus1 = n.links.bus1.str.replace(" H2", "")
+    
+    link_widths = n.links.p_nom_opt / linewidth_factor
+    link_widths[n.links.p_nom_opt < line_lower_threshold] = 0.
+    
+    plt.figure('H2 demand')
+    n.plot(branch_components=["Link"],
+       color_geomap=True, link_colors='darkseagreen', bus_sizes=bus_sizes,
+       bus_colors='tab:red', link_widths=link_widths)
 
 def plot_transmission_topology(network):
 
@@ -573,9 +603,9 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "plot_network",
             simpl="",
-            clusters="59",
-            ll="copt",
-            opts="Co2L0-72H",
+            clusters="73",
+            ll="c1",
+            opts="Co2L-730H",
             planning_horizons="2030",
         )
 

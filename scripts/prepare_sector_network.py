@@ -1570,9 +1570,9 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="46",
-            ll="copt",
-            opts="Co2L-72H",
+            clusters="73",
+            ll="c1",
+            opts="Co2L-730H",
             planning_horizons="2030",
         )
     # TODO add mock_snakemake func
