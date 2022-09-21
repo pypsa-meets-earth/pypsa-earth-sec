@@ -774,11 +774,12 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "plot_network",
             simpl="",
-            clusters="270",
+            clusters="20",
             ll="c1.0",
             opts="Co2L",
+            sopts="730H",
             planning_horizons="2030",
-            sopts="73H",
+            discountrate = "0.069",
         )
 
     n = pypsa.Network(snakemake.input.network)
