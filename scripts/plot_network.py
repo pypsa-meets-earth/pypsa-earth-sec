@@ -779,7 +779,7 @@ if __name__ == "__main__":
             opts="Co2L",
             sopts="730H",
             planning_horizons="2030",
-            discountrate = "0.069",
+            discountrate="0.069",
         )
 
     n = pypsa.Network(snakemake.input.network)
