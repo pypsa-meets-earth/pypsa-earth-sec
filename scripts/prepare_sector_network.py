@@ -1962,6 +1962,38 @@ def add_dac(n, costs):
     )
 
 
+def add_residential(n, costs):
+
+    # TODO make compatible with more counties
+    profile_residential = n.loads_t.p_set[nodes] / n.loads_t.p_set[nodes].sum().sum()
+
+    p_set_oil = (
+        profile_residential
+        * energy_totals.loc[countries, "residential oil"].sum()
+        * 1e6
+        / 8760
+    )
+    # p_set_biomass = profile_residential * energy_totals.loc[countries, "residential biomass"].sum()* 1e6 / 8760
+
+    n.madd(
+        "Load",
+        nodes,
+        suffix=" residential",
+        bus=spatial.oil.nodes,
+        carrier="residential oil",
+        p_set=p_set_oil,
+    )
+
+    # n.madd(
+    #     "Load",
+    #     nodes,
+    #     suffix=" residential",
+    #     bus=spatial.biomass.nodes,
+    #     carrier="residential biomass",
+    #     p_set=p_set_oil,
+    # )
+
+
 if __name__ == "__main__":
     if "snakemake" not in globals():
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -1970,7 +2002,7 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="120",
+            clusters="128",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
@@ -2110,6 +2142,8 @@ if __name__ == "__main__":
     # prepare_transport_data(n)
 
     add_land_transport(n, costs)
+
+    add_residential(n, costs)
 
     sopts = snakemake.wildcards.sopts.split("-")
 
