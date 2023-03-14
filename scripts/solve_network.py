@@ -290,6 +290,7 @@ def add_co2_sequestration_limit(n, sns):
         n, lhs, "<=", rhs, "GlobalConstraint", "mu", axes=pd.Index([name]), spec=name
     )
 
+
 def add_emission_limit(n, sns):
     co2_atmosphere = n.stores.loc[n.stores.carrier == "co2"].index
 
@@ -308,6 +309,7 @@ def add_emission_limit(n, sns):
         n, lhs, "<=", rhs, "GlobalConstraint", "mu", axes=pd.Index([name]), spec=name
     )
 
+
 def extra_functionality(n, snapshots):
     add_battery_constraints(n)
     if snakemake.config["policy_config"]["policy"] == "H2_export_yearly_constraint":
@@ -319,6 +321,7 @@ def extra_functionality(n, snapshots):
             add_h2_network_cap(n, snakemake.config["H2_network_limit"])
     add_co2_sequestration_limit(n, snapshots)
     add_emission_limit(n, snapshots)
+
 
 def solve_network(n, config, opts="", **kwargs):
     solver_options = config["solving"]["solver"].copy()
