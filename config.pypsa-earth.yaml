@@ -21,7 +21,7 @@ scenario:
   clusters: [10]
   opts: [Co2L1-144H]
 
-countries: ["NA"]
+countries: ["MA"]
 # Can be replaced by country ["NG", "BJ"], continent ["Africa"] or user-specific region, see more at https://pypsa-earth.readthedocs.io/en/latest/configuration.html#top-level-configuration
 
 snapshots:
@@ -116,8 +116,8 @@ load_options:
 
 electricity:
   voltages: [220., 300., 380.]
-  co2limit: 4.0e+3  # European default, 0.05 * 3.1e9*0.5, needs to be adjusted for Africa
-  co2base: 1.487e+8  # European default, adjustment to Africa necessary
+  co2limit: 4.0e+100  # European default, 0.05 * 3.1e9*0.5, needs to be adjusted for Africa
+  co2base: 4.0e+100  # European default, adjustment to Africa necessary
   agg_p_nom_limits: data/agg_p_nom_minmax.csv
   hvdc_as_lines: true # should HVDC lines be modeled as `Line` or as `Link` component?
 

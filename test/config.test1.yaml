@@ -135,6 +135,7 @@ solar_thermal:
     azimuth: 180.
 
 sector:
+  co2_emission_limit: 54.79 #Mtons
   gas_network: true
   oil_network: true
   district_heating:
