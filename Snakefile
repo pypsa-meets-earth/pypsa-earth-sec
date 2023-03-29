@@ -137,13 +137,13 @@ rule add_export:
 rule override_respot:
     input:
         **{
-            f"custom_res_pot_{tech}_{planning_horizons}_{discountrate}": f"resources/custom_renewables/{tech}_{planning_horizons}_{discountrate}_potential.csv"
+            f"custom_res_pot_{tech}_{planning_horizons}_{discountrate}": f"data_custom/custom_renewables/{tech}_{planning_horizons}_{discountrate}_potential.csv"
             for tech in config["custom_data"]["renewables"]
             for discountrate in config["costs"]["discountrate"]
             for planning_horizons in config["scenario"]["planning_horizons"]
         },
         **{
-            f"custom_res_ins_{tech}_{planning_horizons}_{discountrate}": f"resources/custom_renewables/{tech}_{planning_horizons}_{discountrate}_installable.csv"
+            f"custom_res_ins_{tech}_{planning_horizons}_{discountrate}": f"data_custom/custom_renewables/{tech}_{planning_horizons}_{discountrate}_installable.csv"
             for tech in config["custom_data"]["renewables"]
             for discountrate in config["costs"]["discountrate"]
             for planning_horizons in config["scenario"]["planning_horizons"]
@@ -511,7 +511,7 @@ if config["custom_data"].get("industry_demand", False) == True:
                 "resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson"
             ),
             clustered_pop_layout="resources/population_shares/pop_layout_elec_s{simpl}_{clusters}.csv",
-            industrial_database="resources/custom_data/industrial_database.csv",
+            industrial_database="custom_data/industrial_database.csv",
             #shapes_path=pypsaearth("resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson")
             shapes_path="../pypsa-earth/resources/shapes/MAR2.geojson",
         output:
@@ -526,9 +526,9 @@ if config["custom_data"].get("industry_demand", False) == True:
 
     rule build_industry_demand:  #custom data
         input:
-            industry_sector_ratios="resources/custom_data/industry_sector_ratios_{demand}_{planning_horizons}.csv",
+            industry_sector_ratios="custom_data/industry_sector_ratios_{demand}_{planning_horizons}.csv",
             industrial_distribution_key="resources/demand/industrial_distribution_key_elec_s{simpl}_{clusters}.csv",
-            industrial_production_per_country_tomorrow="resources/custom_data/industrial_production_per_country_tomorrow_{planning_horizons}_{demand}.csv",
+            industrial_production_per_country_tomorrow="custom_data/industrial_production_per_country_tomorrow_{planning_horizons}_{demand}.csv",
             costs=CDIR
             + "costs_{}.csv".format(config["scenario"]["planning_horizons"][0]),
         output:
