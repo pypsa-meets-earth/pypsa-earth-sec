@@ -47,7 +47,7 @@ def build_nodal_distribution_key(
     keys = pd.DataFrame(index=regions.name, columns=technology, dtype=float)
 
     pop = pd.read_csv(snakemake.input.clustered_pop_layout, index_col=0)
-
+    #pop.index = pop.reset_index().name.apply(lambda i: three_2_two_digits_country(i[:3]) + i[3:]) # TODO traceback three-letter region codes in pypsa-earth 
     # pop["country"] = pop.index.str[:2]
     keys["population"] = pop["total"].values / pop["total"].sum()
 
@@ -86,7 +86,7 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "build_industrial_distribution_key",
             simpl="",
-            clusters=10,
+            clusters=4,
             demand="DF",
             planning_horizons=2030,
         )

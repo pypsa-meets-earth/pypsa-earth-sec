@@ -18,10 +18,10 @@ run:
 scenario:
   simpl: ['']
   ll: ['1.0']
-  clusters: [10]
+  clusters: [27]
   opts: [Co2L1-144H]
 
-countries: ["MA"]
+countries: ["BR"]
 # Can be replaced by country ["NG", "BJ"], continent ["Africa"] or user-specific region, see more at https://pypsa-earth.readthedocs.io/en/latest/configuration.html#top-level-configuration
 
 snapshots:
@@ -60,13 +60,13 @@ cluster_options:
     algorithm: kmeans   # choose from: [hac, kmeans]
     feature: solar+onwind-time   # only for hac. choose from: [solar+onwind-time, solar+onwind-cap, solar-time, solar-cap, solar+offwind-cap] etc.
     exclude_carriers: []
-    remove_stubs: true
+    remove_stubs: false
     remove_stubs_across_borders: true
   cluster_network:
     algorithm: kmeans
     feature: solar+onwind-time
     exclude_carriers: []
-  alternative_clustering: false  # "False" use Voronoi shapes, "True" use GADM shapes
+  alternative_clustering: true  # "False" use Voronoi shapes, "True" use GADM shapes
   distribute_cluster: ['load'] # Distributes cluster nodes per country according to ['load'],['pop'] or ['gdp']
   out_logging: true  # When "True", logging is printed to console
   aggregation_strategies:
@@ -82,7 +82,7 @@ cluster_options:
       efficiency: mean
 
 build_shape_options:
-  gadm_layer_id: 2  # GADM level area used for the gadm_shapes. Codes are country-dependent but roughly: 0: country, 1: region/county-like, 2: municipality-like
+  gadm_layer_id: 1  # GADM level area used for the gadm_shapes. Codes are country-dependent but roughly: 0: country, 1: region/county-like, 2: municipality-like
   update_file: false  # When true, all the input files are downloaded again and replace the existing files
   out_logging: true  # When true, logging is printed to console
   year: 2020  # reference year used to derive shapes, info on population and info on GDP
