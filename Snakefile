@@ -512,10 +512,10 @@ if config["custom_data"].get("industry_demand", False) == True:
             ),
             clustered_pop_layout="resources/population_shares/pop_layout_elec_s{simpl}_{clusters}.csv",
             industrial_database="resources/custom_data/industrial_database.csv",
-            #shapes_path=pypsaearth("resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson")
-            shapes_path="../pypsa-earth/resources/shapes/MAR2.geojson",
+            shapes_path=pypsaearth("resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson")
+            #shapes_path="../pypsa-earth/resources/shapes/MAR2.geojson",
         output:
-            industrial_distribution_key="resources/industry/industrial_distribution_key_elec_s{simpl}_{clusters}.csv",
+            industrial_distribution_key="resources/demand/industrial_distribution_key_elec_s{simpl}_{clusters}.csv",
         threads: 1
         resources:
             mem_mb=1000,

@@ -768,17 +768,19 @@ nice_names_n = {
 if __name__ == "__main__":
     if "snakemake" not in globals():
         from helpers import mock_snakemake
+        import os
 
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
         snakemake = mock_snakemake(
             "plot_network",
             simpl="",
-            clusters="23",
+            clusters="8",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
             sopts="144H",
             discountrate=0.071,
-            demand="NZ",
+            demand="BS",
         )
 
     n = pypsa.Network(snakemake.input.network)
