@@ -103,6 +103,7 @@ build_osm_network:  # Options of the build_osm_network script; osm = OpenStreetM
   group_tolerance_buses: 500  # [m] (default 500) Tolerance in meters of the close buses to merge
   split_overpassing_lines: true  # When True, lines overpassing buses are splitted and connected to the bueses
   overpassing_lines_tolerance: 1  # [m] (default 1) Tolerance to identify lines overpassing buses
+  force_ac: true  # When true, it forces all components (lines and substation) to be AC-only. To be used if DC assets create problem.
 
 base_network:
   min_voltage_substation_offshore: 35000  # [V] minimum voltage of the offshore substations
@@ -116,8 +117,8 @@ load_options:
 
 electricity:
   voltages: [220., 300., 380.]
-  co2limit: 4.0e+3  # European default, 0.05 * 3.1e9*0.5, needs to be adjusted for Africa
-  co2base: 1.487e+8  # European default, adjustment to Africa necessary
+  co2limit: 4.0e+10  # European default, 0.05 * 3.1e9*0.5, needs to be adjusted for Africa
+  co2base: 4.0e+10 #1.487e+8  # European default, adjustment to Africa necessary
   agg_p_nom_limits: data/agg_p_nom_minmax.csv
   hvdc_as_lines: true # should HVDC lines be modeled as `Line` or as `Link` component?
 

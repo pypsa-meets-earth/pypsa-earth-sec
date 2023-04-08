@@ -317,23 +317,41 @@ def add_hydrogen(n, costs):
         capital_cost=h2_capital_cost,
     )
 
-    attrs = ["bus0", "bus1", "length"]
-    h2_links = pd.DataFrame(columns=attrs)
+    if snakemake.config["custom_data"]["gas_grid"]:
+        h2_links = pd.read_csv(snakemake.input.pipelines)
 
-    candidates = pd.concat(
-        {"lines": n.lines[attrs], "links": n.links.loc[n.links.carrier == "DC", attrs]}
-    )
+        #Create index column
+        buses_ordered = h2_links.apply(lambda p: sorted([p.bus0, p.bus1]), axis=1)
+        h2_links['bus0'] = buses_ordered.str[0] + '_AC'
+        h2_links['bus1'] = buses_ordered.str[1] + '_AC'
+        h2_links['buses_idx'] = 'H2 pipeline ' + h2_links['bus0'] + ' -> ' + h2_links['bus1']
 
-    for candidate in candidates.index:
-        buses = [candidates.at[candidate, "bus0"], candidates.at[candidate, "bus1"]]
-        buses.sort()
-        name = f"H2 pipeline {buses[0]} -> {buses[1]}"
-        if name not in h2_links.index:
-            h2_links.at[name, "bus0"] = buses[0]
-            h2_links.at[name, "bus1"] = buses[1]
-            h2_links.at[name, "length"] = candidates.at[candidate, "length"]
+        #Aggregate pipelines applying mean on length and sum on capacities
+        h2_links = h2_links.groupby('buses_idx').agg({
+            'bus0':'first',
+            'bus1':'first',
+            'length':'mean',
+            'capacity':'sum'
+        })
 
-    # TODO Add efficiency losses
+    else:
+        attrs = ["bus0", "bus1", "length"]
+        h2_links = pd.DataFrame(columns=attrs)
+
+        candidates = pd.concat(
+            {"lines": n.lines[attrs], "links": n.links.loc[n.links.carrier == "DC", attrs]}
+        )
+
+        for candidate in candidates.index:
+            buses = [candidates.at[candidate, "bus0"], candidates.at[candidate, "bus1"]]
+            buses.sort()
+            name = f"H2 pipeline {buses[0]} -> {buses[1]}"
+            if name not in h2_links.index:
+                h2_links.at[name, "bus0"] = buses[0]
+                h2_links.at[name, "bus1"] = buses[1]
+                h2_links.at[name, "length"] = candidates.at[candidate, "length"]
+
+        # TODO Add efficiency losses
     if snakemake.config["H2_network"]:
         n.madd(
             "Link",
@@ -2142,13 +2160,13 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="4",
+            clusters="20",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="144H",
+            sopts="24H",
             discountrate="0.071",
-            demand="DF",
+            demand="AP",
         )
 
     # Load population layout
