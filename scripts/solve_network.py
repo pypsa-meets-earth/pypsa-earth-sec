@@ -277,6 +277,47 @@ def monthly_constraints(n, n_ref):
         logger.info("ignoring H2 export constraint as wildcard is set to 0")
 
 
+def add_emission_limit(n, sns): #294
+    co2_atmosphere = n.stores.loc[n.stores.carrier == "co2"].index
+
+    # if co2_stores.empty or ("Store", "e") not in n.variables.index:
+    #     return
+
+    vars_final_co2_stored = get_var(n, "Store", "e").loc[sns[-1], co2_atmosphere]
+    #vars_conv_gens = get_var(n, "Store", "e").loc[sns[-1], co2_atmosphere]
+
+    conv_gens = list(n.carriers[n.carriers.co2_emissions > 0].index)
+    conv_index = n.generators[n.generators.carrier.isin(conv_gens)].index
+    #vars_conv_gens = n.generators_t.p[conv_index]
+    
+    n.generators.loc[n.generators.carrier.isin(conv_gens),"emissions"] = 0
+    n.generators.loc[conv_index, "emissions"] = n.generators.loc[conv_index, "carrier"].apply(lambda x: n.carriers.loc[x].co2_emissions)
+    n.generators.emissions = n.generators.emissions.fillna(0)
+
+    emission_factors = pd.DataFrame(
+        np.outer([1.0] *len(n.snapshot_weightings["generators"]),  n.generators.loc[conv_index, "emissions"]),
+            index=n.snapshots,
+            columns=conv_index,
+    )
+
+    vars_conv_gens = get_var(n, "Generator", "p")
+    
+    lhs_store = linexpr((1, vars_final_co2_stored)).sum()
+    lhs_gens = join_exprs(
+        linexpr((emission_factors, get_var(n, "Generator", "p")[conv_index]))
+        )
+    lhs = lhs_store # + lhs_gens
+
+    rhs = (
+        n.config["sector"].get("co2_emission_limit", 50) * 1e6
+    )  # TODO change 200 limit (Europe)
+
+    name = "co2_emission_limit"
+    define_constraints(
+        n, lhs, "<=", rhs, "GlobalConstraint", "mu", axes=pd.Index([name]), spec=name
+    )
+
+
 def add_chp_constraints(n):
     electric_bool = (
         n.links.index.str.contains("urban central")
@@ -386,6 +427,7 @@ def extra_functionality(n, snapshots):
         if snakemake.config["H2_network_limit"]:
             add_h2_network_cap(n, snakemake.config["H2_network_limit"])
     add_co2_sequestration_limit(n, snapshots)
+    add_emission_limit(n, snapshots) 
 
 
 def solve_network(n, config, opts="", **kwargs):
@@ -462,7 +504,7 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "solve_network",
             simpl="",
-            clusters="26",
+            clusters="28",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
