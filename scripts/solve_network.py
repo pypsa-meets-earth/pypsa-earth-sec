@@ -294,6 +294,12 @@ def add_emission_limit(n, sns): #294
     n.generators.loc[conv_index, "emissions"] = n.generators.loc[conv_index, "carrier"].apply(lambda x: n.carriers.loc[x].co2_emissions)
     n.generators.emissions = n.generators.emissions.fillna(0)
 
+    weightings = pd.DataFrame(
+        np.outer(n.snapshot_weightings["generators"], [1.0] * len(conv_index)),
+        index=n.snapshots,
+        columns=conv_index,
+    )
+
     emission_factors = pd.DataFrame(
         np.outer([1.0] *len(n.snapshot_weightings["generators"]),  n.generators.loc[conv_index, "emissions"]),
             index=n.snapshots,
@@ -304,9 +310,9 @@ def add_emission_limit(n, sns): #294
     
     lhs_store = linexpr((1, vars_final_co2_stored)).sum()
     lhs_gens = join_exprs(
-        linexpr((emission_factors, get_var(n, "Generator", "p")[conv_index]))
+        linexpr((emission_factors * weightings, get_var(n, "Generator", "p")[conv_index]))
         )
-    lhs = lhs_store # + lhs_gens
+    lhs = lhs_store  + lhs_gens
 
     rhs = (
         n.config["sector"].get("co2_emission_limit", 50) * 1e6
