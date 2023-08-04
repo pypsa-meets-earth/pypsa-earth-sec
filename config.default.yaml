@@ -5,7 +5,7 @@ results_dir: results/
 summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
-run: test_h2_cons_yearly
+run: runname
 
 foresight: overnight
 
@@ -26,13 +26,10 @@ scenario:
   - "DF"
 
 policy_config:
-  policy: "H2_export_yearly_constraint" #either "H2_export_yearly_constraint", "H2_export_monthly_constraint", "no_res_matching"
-  monthly: # Specify attributes for the monthly constraint
-    allowed_excess: 1.0
-    reference_case: false # RE electricity is equal to the amount required for additional hydrogen export compared to the 0 export case ("reference_case")
-  yearly: # Specify attributes for the yearly constraint
-    re_country_load: false # Set to "True" to force the RE electricity to be equal to the electricity required for hydrogen export and the country electricity load. "False" excludes the country electricity load from the constraint.
-
+  policy: "H2_export_monthly_constraint" #either "H2_export_yearly_constraint", "H2_export_monthly_constraint", "no_res_matching" # TODO check wether "export" is required here or misleading
+  allowed_excess: 3 # currently only implemented for the monthly constraint
+  reference_case: true
+  allowed_excess: 1.0
 
 clustering_options:
   alternative_clustering: true
@@ -49,9 +46,7 @@ hydrogen_underground_storage: false
 
 
 export:
-  h2export: [120] # Yearly export demand in TWh
-  store: true # [True, False] # specifies wether an export store to balance demand is implemented
-  store_capital_costs: "no_costs" # ["standard_costs", "no_costs"] # specifies the costs of the export store. "standard_costs" takes CAPEX of "hydrogen storage tank incl. compressor"
+  h2export: [1, 5] # Yearly export demand in TWh
 
 custom_data:
   renewables: [] # ['csp', 'rooftop-solar', 'solar']
@@ -264,7 +259,7 @@ snapshots:
   # arguments to pd.date_range
   start: "2013-01-01"
   end: "2014-01-01"
-  inclusive: "left" # end is not inclusive
+  closed: "left" # end is not inclusive
 
 # atlite:
 #   cutout: ./cutouts/africa-2013-era5.nc
