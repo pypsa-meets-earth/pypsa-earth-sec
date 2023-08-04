@@ -30,10 +30,10 @@ def override_values(tech, year, dr):
 
     custom_res["Generator"] = custom_res["Generator"].apply(lambda x: x + " " + tech)
     custom_res = custom_res.set_index("Generator")
+    to_drop = n.generators[n.generators.carrier == tech]
 
     if tech.replace("-", " ") in n.generators.carrier.unique():
-        to_drop = n.generators[n.generators.carrier == tech].index
-        n.mremove("Generator", to_drop)
+        n.mremove("Generator", to_drop.index)
 
     if snakemake.wildcards["planning_horizons"] == 2050:
         directory = "results/" + snakemake.config.run.replace("2050", "2030")
@@ -45,7 +45,10 @@ def override_values(tech, year, dr):
         existing_res = df.loc[tech]
         existing_res.index = existing_res.index.str.apply(lambda x: x + tech)
     else:
-        existing_res = custom_res["installedcapacity"].values
+        if len(to_drop) > 0:
+            existing_res = to_drop.p_nom_min.values #custom_res["installedcapacity"].values
+        else:
+            existing_res = custom_res["installedcapacity"].values
 
     n.madd(
         "Generator",
@@ -61,6 +64,7 @@ def override_values(tech, year, dr):
         efficiency=1.0,
         p_max_pu=custom_res_t,
         lifetime=custom_res["lifetime"][0],
+        p_nom=existing_res,
         p_nom_min=existing_res,
     )
 
@@ -72,13 +76,13 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "override_respot",
             simpl="",
-            clusters="16",
+            clusters="236",
             ll="c1.0",
             opts="Co2L",
-            planning_horizons="2030",
+            planning_horizons="2050",
             sopts="3H",
-            demand="AP",
-            discountrate=0.071,
+            demand="BS",
+            discountrate=0.175,
         )
         sets_path_to_root("pypsa-earth-sec")
 
@@ -97,6 +101,7 @@ if __name__ == "__main__":
             m = n.copy()
 
             for tech in techs:
+                print(tech)
                 override_values(tech, year, dr)
 
         else:
