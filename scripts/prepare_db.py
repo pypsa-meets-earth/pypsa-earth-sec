@@ -29,16 +29,16 @@ import pypsa
 if __name__ == "__main__":
     if "snakemake" not in globals():
         from helpers import mock_snakemake
-
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
         snakemake = mock_snakemake(
             "prepare_db",
             simpl="",
-            clusters="244",
+            clusters="73",
             ll="c1.0",
-            opts="Co2L1",
+            opts="Co2L",
             planning_horizons="2030",
-            sopts="720H",
-            discountrate=0.071,
+            sopts="24H",
+            discountrate=0.076,
             demand="AP",
             h2export="0",
         )
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 # %%
 # def summary_h2(n, t):
-t = 720
+t = 24
 
 n = n0.copy()
 # n = pypsa.Network("../results/MA_REALISTIC_2030/postnetworks/elec_s_195_ec_lc1.0_Co2L_3H_2030_0.071_AP_428export.nc")
@@ -445,6 +445,7 @@ def calc_energy_flow(carrier, node_id):
         agg = agg.groupby("tech").sum().reset_index()
     else:
         agg = agg[agg.node_id.str.contains(node_id)].groupby("tech").sum().reset_index()
+    #agg.to_csv('/home/cas96273/Thesis_Code/pypsa-earth-sec/results/zzz_low_cap_new/summaries/energy_flow_{}.csv'.format(carrier))
     return agg
 
 
@@ -494,3 +495,19 @@ def energy_pie(carrier, node_id, sign):
         ),
         dpi=100,
     )
+
+
+energy_pie('co2', 'all', 1)
+energy_pie('co2', 'all', -1)
+
+calc_energy_flow("co2", "all").to_csv(snakemake.output.db.replace(".csv","_co2_balance.csv" ))
+
+calc_energy_flow("co2 stored", "all").to_csv(snakemake.output.db.replace(".csv","_co2stored_balance.csv" ))
+
+calc_energy_flow("oil", "all").to_csv(snakemake.output.db.replace(".csv","_oil_balance.csv" ))
+
+calc_energy_flow("h2", "all").to_csv(snakemake.output.db.replace(".csv","_h2_balance.csv" ))
+
+calc_energy_flow("hv", "all").to_csv(snakemake.output.db.replace(".csv","_hv_balance.csv" ))
+
+print('end')
