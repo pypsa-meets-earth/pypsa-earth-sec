@@ -128,10 +128,6 @@ def add_oil(n, costs):
     if "oil" not in n.carriers.index:
         n.add("Carrier", "oil")
 
-    # Set the "co2_emissions" of the carrier "oil" to 0, because the emissions of oil usage taken from the spatial.oil.nodes are accounted seperately (directly linked to the co2 atmosphere bus). Setting the carrier to 0 here avoids double counting. Be aware to link oil emissions to the co2 atmosphere bus.
-    n.carriers.loc["oil", "co2_emissions"] = 0
-    print("co2_emissions of oil set to 0 for testing")  # TODO add logger.info
-
     n.madd(
         "Bus",
         spatial.oil.nodes,
@@ -176,14 +172,16 @@ def add_gas(n, costs):
         spatial.gas.locations = nodes
         spatial.gas.biogas = nodes + " biogas"
         spatial.gas.industry = nodes + " gas for industry"
-        spatial.gas.industry_cc = nodes + " gas for industry CC"
+        if snakemake.config['sector']['cc']:
+            spatial.gas.industry_cc = nodes + " gas for industry CC"
         spatial.gas.biogas_to_gas = nodes + " biogas to gas"
     else:
         spatial.gas.nodes = ["Africa gas"]
         spatial.gas.locations = ["Africa"]
         spatial.gas.biogas = ["Africa biogas"]
         spatial.gas.industry = ["gas for industry"]
-        spatial.gas.industry_cc = ["gas for industry CC"]
+        if snakemake.config['sector']['cc']:
+            spatial.gas.industry_cc = ["gas for industry CC"]
         spatial.gas.biogas_to_gas = ["Africa biogas to gas"]
 
     spatial.gas.df = pd.DataFrame(vars(spatial.gas), index=nodes)
@@ -258,22 +256,25 @@ def add_hydrogen(n, costs):
     cavern_nodes = pd.DataFrame()
 
     if snakemake.config["hydrogen_underground_storage"]:
-        if snakemake.config["custom_data"]["h2_underground"]:
-            custom_cavern = pd.read_csv("resources/custom_data/h2_underground.csv")
+        if snakemake.config["custom_data"]["h2_underground"]: 
+            custom_cavern = pd.read_csv("resources/custom_data/h2_underground_{0}_{1}.csv".format(demand_sc, investment_year))
             # countries = n.buses.country.unique().to_list()
             countries = snakemake.config["countries"]
             custom_cavern = custom_cavern[custom_cavern.country.isin(countries)]
-            cavern_nodes = n.buses[n.buses.country.isin(custom_cavern.country.index)]
+            
+            cavern_nodes = n.buses[n.buses.country.isin(custom_cavern.country)]
+
+            h2_pot = custom_cavern.set_index("id_region")["storage_cap_MWh"]
+
             h2_capital_cost = costs.at["hydrogen storage underground", "fixed"]
 
-            h2_pot = custom_cavern.loc[cavern_nodes.country]
-            h2_pot.index = cavern_nodes.index
+            #h2_pot.index = cavern_nodes.index
 
             n.madd(
                 "Store",
                 cavern_nodes.index + " H2 Store",
                 bus=cavern_nodes.index + " H2",
-                e_nom_extendable=False,
+                e_nom_extendable=True,
                 e_nom_max=h2_pot.values,
                 e_cyclic=True,
                 carrier="H2 Store",
@@ -282,8 +283,8 @@ def add_hydrogen(n, costs):
 
         else:
             h2_salt_cavern_potential = pd.read_csv(
-                snakemake.input.h2_cavern, index_col=0
-            ).squeeze()
+                snakemake.input.h2_cavern, index_col=0, squeeze=True
+            )
             h2_cavern_ct = h2_salt_cavern_potential[~h2_salt_cavern_potential.isna()]
             cavern_nodes = n.buses[n.buses.country.isin(h2_cavern_ct.index)]
 
@@ -321,36 +322,92 @@ def add_hydrogen(n, costs):
         capital_cost=h2_capital_cost,
     )
 
-    attrs = ["bus0", "bus1", "length"]
-    h2_links = pd.DataFrame(columns=attrs)
+    if snakemake.config["custom_data"]["gas_grid"]:
+        h2_links = pd.read_csv(snakemake.input.pipelines)
 
-    candidates = pd.concat(
-        {"lines": n.lines[attrs], "links": n.links.loc[n.links.carrier == "DC", attrs]}
-    )
+        #Order buses to detect equal pairs for bidirectional pipelines
+        buses_ordered = h2_links.apply(lambda p: sorted([p.bus0, p.bus1]), axis=1)
 
-    for candidate in candidates.index:
-        buses = [candidates.at[candidate, "bus0"], candidates.at[candidate, "bus1"]]
-        buses.sort()
-        name = f"H2 pipeline {buses[0]} -> {buses[1]}"
-        if name not in h2_links.index:
-            h2_links.at[name, "bus0"] = buses[0]
-            h2_links.at[name, "bus1"] = buses[1]
-            h2_links.at[name, "length"] = candidates.at[candidate, "length"]
+        #Appending string for carrier specification '_AC'
+        h2_links['bus0'] = buses_ordered.str[0] + '_AC'
+        h2_links['bus1'] = buses_ordered.str[1] + '_AC'
 
-    # TODO Add efficiency losses
-    if snakemake.config["H2_network"]:
-        n.madd(
-            "Link",
-            h2_links.index,
-            bus0=h2_links.bus0.values + " H2",
-            bus1=h2_links.bus1.values + " H2",
-            p_min_pu=-1,
-            p_nom_extendable=True,
-            length=h2_links.length.values,
-            capital_cost=costs.at["H2 (g) pipeline", "fixed"] * h2_links.length.values,
-            carrier="H2 pipeline",
-            lifetime=costs.at["H2 (g) pipeline", "lifetime"],
+        #Conversion of GADM id to from 3 to 2-digit
+        h2_links['bus0'] = h2_links['bus0'].str.split('.').apply(
+            lambda id: three_2_two_digits_country(id[0]) + "." + id[1])
+        h2_links['bus1'] = h2_links['bus1'].str.split('.').apply(
+            lambda id: three_2_two_digits_country(id[0]) + "." + id[1])
+
+        #Create index column
+        h2_links['buses_idx'] = 'H2 pipeline ' + h2_links['bus0'] + ' -> ' + h2_links['bus1']
+
+        #Aggregate pipelines applying mean on length and sum on capacities
+        h2_links = h2_links.groupby('buses_idx').agg({
+            'bus0':'first',
+            'bus1':'first',
+            'length':'mean',
+            'capacity':'sum'
+        })
+
+    else:
+        attrs = ["bus0", "bus1", "length"]
+        h2_links = pd.DataFrame(columns=attrs)
+
+        candidates = pd.concat(
+            {"lines": n.lines[attrs], "links": n.links.loc[n.links.carrier == "DC", attrs]}
         )
+
+        for candidate in candidates.index:
+            buses = [candidates.at[candidate, "bus0"], candidates.at[candidate, "bus1"]]
+            buses.sort()
+            name = f"H2 pipeline {buses[0]} -> {buses[1]}"
+            if name not in h2_links.index:
+                h2_links.at[name, "bus0"] = buses[0]
+                h2_links.at[name, "bus1"] = buses[1]
+                h2_links.at[name, "length"] = candidates.at[candidate, "length"]
+                h2_links.at[name, "capacity"] = candidates.at[candidate, "capacity"]
+
+        # TODO Add efficiency losses
+    if snakemake.config["H2_network"]:
+        if investment_year == 2050:
+            n.madd(
+            "Link",
+                h2_links.index + ' repurposed',
+                bus0=h2_links.bus0.values + " H2",
+                bus1=h2_links.bus1.values + " H2",
+                p_min_pu=-1,
+                p_nom_extendable=True,
+                p_nom_max=h2_links.capacity.values * 0.8, #https://gasforclimate2050.eu/wp-content/uploads/2020/07/2020_European-Hydrogen-Backbone_Report.pdf
+                length=h2_links.length.values,
+                capital_cost=costs.at["H2 (g) pipeline repurposed", "fixed"] * h2_links.length.values,
+                carrier="H2 pipeline repurposed",
+                lifetime=costs.at["H2 (g) pipeline repurposed", "lifetime"],
+        )
+            n.madd(
+                "Link",
+                h2_links.index,
+                bus0=h2_links.bus0.values + " H2",
+                bus1=h2_links.bus1.values + " H2",
+                p_min_pu=-1,
+                p_nom_extendable=True,
+                length=h2_links.length.values,
+                capital_cost=costs.at["H2 (g) pipeline", "fixed"] * h2_links.length.values,
+                carrier="H2 pipeline",
+                lifetime=costs.at["H2 (g) pipeline", "lifetime"],
+        )
+        else:
+            n.madd(
+                "Link",
+                h2_links.index,
+                bus0=h2_links.bus0.values + " H2",
+                bus1=h2_links.bus1.values + " H2",
+                p_min_pu=-1,
+                p_nom_extendable=True,
+                length=h2_links.length.values,
+                capital_cost=costs.at["H2 (g) pipeline", "fixed"] * h2_links.length.values,
+                carrier="H2 pipeline",
+                lifetime=costs.at["H2 (g) pipeline", "lifetime"],
+            )
 
 
 def define_spatial(nodes):
@@ -375,12 +432,14 @@ def define_spatial(nodes):
         spatial.biomass.nodes = nodes + " solid biomass"
         spatial.biomass.locations = nodes
         spatial.biomass.industry = nodes + " solid biomass for industry"
-        spatial.biomass.industry_cc = nodes + " solid biomass for industry CC"
+        if snakemake.config['sector']['cc']:
+            spatial.biomass.industry_cc = nodes + " solid biomass for industry CC"
     else:
         spatial.biomass.nodes = ["Africa solid biomass"]
         spatial.biomass.locations = ["Africa"]
         spatial.biomass.industry = ["solid biomass for industry"]
-        spatial.biomass.industry_cc = ["solid biomass for industry CC"]
+        if snakemake.config['sector']['cc']:
+            spatial.biomass.industry_cc = ["solid biomass for industry CC"]
 
     spatial.biomass.df = pd.DataFrame(vars(spatial.biomass), index=nodes)
 
@@ -462,8 +521,8 @@ def add_biomass(n, costs):
         bus0=spatial.biomass.nodes,
         bus1=nodes,
         bus2="co2 atmosphere",
-        marginal_cost=costs.at[biomass_gen, "efficiency"]
-        * costs.at[biomass_gen, "VOM"],  # NB: VOM is per MWel
+        marginal_cost=1, #costs.at[biomass_gen, "efficiency"]
+        #* costs.at[biomass_gen, "VOM"],  # NB: VOM is per MWel
         # NB: fixed cost is per MWel
         capital_cost=costs.at[biomass_gen, "efficiency"]
         * costs.at[biomass_gen, "fixed"],
@@ -491,8 +550,9 @@ def add_biomass(n, costs):
         transport_costs = pd.read_csv(
             snakemake.input.biomass_transport_costs,
             index_col=0,
+            squeeze=True,
             keep_default_na=False,
-        ).squeeze()
+        )
 
         # add biomass transport
         biomass_transport = create_network_topology(
@@ -553,40 +613,40 @@ def add_biomass(n, costs):
             efficiency2=costs.at[key, "efficiency-heat"],
             lifetime=costs.at[key, "lifetime"],
         )
-
-        n.madd(
-            "Link",
-            urban_central + " urban central solid biomass CHP CC",
-            bus0=spatial.biomass.df.loc[urban_central, "nodes"].values,
-            bus1=urban_central,
-            bus2=urban_central + " urban central heat",
-            bus3="co2 atmosphere",
-            bus4=spatial.co2.df.loc[urban_central, "nodes"].values,
-            carrier="urban central solid biomass CHP CC",
-            p_nom_extendable=True,
-            capital_cost=costs.at[key, "fixed"] * costs.at[key, "efficiency"]
-            + costs.at["biomass CHP capture", "fixed"]
-            * costs.at["solid biomass", "CO2 intensity"],
-            marginal_cost=costs.at[key, "VOM"],
-            efficiency=costs.at[key, "efficiency"]
-            - costs.at["solid biomass", "CO2 intensity"]
-            * (
-                costs.at["biomass CHP capture", "electricity-input"]
-                + costs.at["biomass CHP capture", "compression-electricity-input"]
-            ),
-            efficiency2=costs.at[key, "efficiency-heat"]
-            + costs.at["solid biomass", "CO2 intensity"]
-            * (
-                costs.at["biomass CHP capture", "heat-output"]
-                + costs.at["biomass CHP capture", "compression-heat-output"]
-                - costs.at["biomass CHP capture", "heat-input"]
-            ),
-            efficiency3=-costs.at["solid biomass", "CO2 intensity"]
-            * costs.at["biomass CHP capture", "capture_rate"],
-            efficiency4=costs.at["solid biomass", "CO2 intensity"]
-            * costs.at["biomass CHP capture", "capture_rate"],
-            lifetime=costs.at[key, "lifetime"],
-        )
+        if snakemake.config['sector']['cc']:
+            n.madd(
+                "Link",
+                urban_central + " urban central solid biomass CHP CC",
+                bus0=spatial.biomass.df.loc[urban_central, "nodes"].values,
+                bus1=urban_central,
+                bus2=urban_central + " urban central heat",
+                bus3="co2 atmosphere",
+                bus4=spatial.co2.df.loc[urban_central, "nodes"].values,
+                carrier="urban central solid biomass CHP CC",
+                p_nom_extendable=True,
+                capital_cost=costs.at[key, "fixed"] * costs.at[key, "efficiency"]
+                + costs.at["biomass CHP capture", "fixed"]
+                * costs.at["solid biomass", "CO2 intensity"],
+                marginal_cost=costs.at[key, "VOM"],
+                efficiency=costs.at[key, "efficiency"]
+                - costs.at["solid biomass", "CO2 intensity"]
+                * (
+                    costs.at["biomass CHP capture", "electricity-input"]
+                    + costs.at["biomass CHP capture", "compression-electricity-input"]
+                ),
+                efficiency2=costs.at[key, "efficiency-heat"]
+                + costs.at["solid biomass", "CO2 intensity"]
+                * (
+                    costs.at["biomass CHP capture", "heat-output"]
+                    + costs.at["biomass CHP capture", "compression-heat-output"]
+                    - costs.at["biomass CHP capture", "heat-input"]
+                ),
+                efficiency3=-costs.at["solid biomass", "CO2 intensity"]
+                * costs.at["biomass CHP capture", "capture_rate"],
+                efficiency4=costs.at["solid biomass", "CO2 intensity"]
+                * costs.at["biomass CHP capture", "capture_rate"],
+                lifetime=costs.at[key, "lifetime"],
+            )
 
 
 def add_co2(n, costs):
@@ -673,7 +733,7 @@ def add_co2(n, costs):
         "Store",
         spatial.co2.nodes,
         e_nom_extendable=True,
-        e_nom_max=np.inf,
+        e_nom_max=(snakemake.config["sector"]["co2_sequestration_potential"] * 1e6)/len(nodes),
         capital_cost=options["co2_sequestration_cost"],
         carrier="co2 stored",
         bus=spatial.co2.nodes,
@@ -731,10 +791,12 @@ def add_aviation(n, cost):
     )
 
     airports = pd.concat([airports, ind])
-
-    airports = airports[~airports.index.duplicated(keep="first")]
-
     airports = airports.fillna(0)
+
+    #airports = airports[~airports.index.duplicated(keep="first")]
+    airports = airports.groupby(airports.index).sum()
+
+    
 
     n.madd(
         "Load",
@@ -878,8 +940,8 @@ def h2_hc_conversions(n, costs):
 
 def add_shipping(n, costs):
     ports = pd.read_csv(
-        snakemake.input.ports, index_col=None, keep_default_na=False
-    ).squeeze()
+        snakemake.input.ports, index_col=None, squeeze=True, keep_default_na=False
+    )
     ports = ports[ports.country.isin(countries)]
 
     gadm_level = options["gadm_level"]
@@ -927,9 +989,12 @@ def add_shipping(n, costs):
 
     ports = pd.concat([ports, ind])
 
-    ports = ports[~ports.index.duplicated(keep="first")]
+    # ports = ports[~ports.index.duplicated(keep="first")]
+    # ports = ports.groupby(ports.index).sum()
 
-    ports = ports.fillna(0)
+    ports = ports.fillna(0)     
+    ports = ports.groupby(ports.index).sum()
+
 
     if options["shipping_hydrogen_liquefaction"]:
         n.madd("Bus", nodes, suffix=" H2 liquid", carrier="H2 liquid", location=nodes)
@@ -1054,25 +1119,24 @@ def add_industry(n, costs):
         p_nom_extendable=True,
         efficiency=1.0,
     )
-
-    n.madd(
-        "Link",
-        spatial.biomass.industry_cc,
-        bus0=spatial.biomass.nodes,
-        bus1=spatial.biomass.industry,
-        bus2="co2 atmosphere",
-        bus3=spatial.co2.nodes,
-        carrier="solid biomass for industry CC",
-        p_nom_extendable=True,
-        capital_cost=costs.at["cement capture", "fixed"]
-        * costs.at["solid biomass", "CO2 intensity"],
-        efficiency=0.9,  # TODO: make config option
-        efficiency2=-costs.at["solid biomass", "CO2 intensity"]
-        * costs.at["cement capture", "capture_rate"],
-        efficiency3=costs.at["solid biomass", "CO2 intensity"]
-        * costs.at["cement capture", "capture_rate"],
-        lifetime=costs.at["cement capture", "lifetime"],
-    )
+    if snakemake.config['sector']['cc']:
+        n.madd(
+            "Link",
+            spatial.biomass.industry_cc,
+            bus0=spatial.biomass.nodes,
+            bus1=spatial.biomass.industry,
+            bus2="co2 atmosphere",
+            bus3=spatial.co2.nodes,
+            carrier="solid biomass for industry CC",
+            p_nom_extendable=True,
+            capital_cost=costs.at["cement capture", "fixed"]
+            * costs.at["solid biomass", "CO2 intensity"],
+            efficiency=0.9,  # TODO: make config option
+            efficiency2=-costs.at["solid biomass", "CO2 intensity"] * costs.at["cement capture", "capture_rate"],
+            efficiency3=costs.at["solid biomass", "CO2 intensity"]
+            * costs.at["cement capture", "capture_rate"],
+            lifetime=costs.at["cement capture", "lifetime"],
+        )
 
     # CARRIER = FOSSIL GAS
 
@@ -1121,27 +1185,27 @@ def add_industry(n, costs):
         efficiency=1.0,
         efficiency2=costs.at["gas", "CO2 intensity"],
     )
-
-    n.madd(
-        "Link",
-        spatial.gas.industry_cc,
-        # suffix=" gas for industry CC",
-        # bus0="Africa gas",
-        bus0=spatial.gas.nodes,
-        bus1=spatial.gas.industry,
-        bus2="co2 atmosphere",
-        bus3=spatial.co2.nodes,
-        carrier="gas for industry CC",
-        p_nom_extendable=True,
-        capital_cost=costs.at["cement capture", "fixed"]
-        * costs.at["gas", "CO2 intensity"],
-        efficiency=0.9,
-        efficiency2=costs.at["gas", "CO2 intensity"]
-        * (1 - costs.at["cement capture", "capture_rate"]),
-        efficiency3=costs.at["gas", "CO2 intensity"]
-        * costs.at["cement capture", "capture_rate"],
-        lifetime=costs.at["cement capture", "lifetime"],
-    )
+    if snakemake.config['sector']['cc']:
+        n.madd(
+            "Link",
+            spatial.gas.industry_cc,
+            # suffix=" gas for industry CC",
+            # bus0="Africa gas",
+            bus0=spatial.gas.nodes,
+            bus1=spatial.gas.industry,
+            bus2="co2 atmosphere",
+            bus3=spatial.co2.nodes,
+            carrier="gas for industry CC",
+            p_nom_extendable=True,
+            capital_cost=costs.at["cement capture", "fixed"]
+            * costs.at["gas", "CO2 intensity"],
+            efficiency=0.9,
+            efficiency2=costs.at["gas", "CO2 intensity"]
+            * (1 - costs.at["cement capture", "capture_rate"]),
+            efficiency3=costs.at["gas", "CO2 intensity"]
+            * costs.at["cement capture", "capture_rate"],
+            lifetime=costs.at["cement capture", "lifetime"],
+        )
 
     #################################################### CARRIER = HYDROGEN
 
@@ -1172,7 +1236,7 @@ def add_industry(n, costs):
     # check land tranport
 
     co2 = (
-        n.loads.loc[nodes + co2_release, "p_set"].sum()
+        n.loads.loc[nodes + co2_release, "p_set"].sum().sum()
         * costs.at["oil", "CO2 intensity"]
         # - industrial_demand["process emission from feedstock"].sum()
         / 8760
@@ -1270,20 +1334,21 @@ def add_industry(n, costs):
     )
 
     # assume enough local waste heat for CC
-    n.madd(
-        "Link",
-        spatial.co2.locations,
-        suffix=" process emissions CC",
-        bus0="process emissions",
-        bus1="co2 atmosphere",
-        bus2=spatial.co2.nodes,
-        carrier="process emissions CC",
-        p_nom_extendable=True,
-        capital_cost=costs.at["cement capture", "fixed"],
-        efficiency=1 - costs.at["cement capture", "capture_rate"],
-        efficiency2=costs.at["cement capture", "capture_rate"],
-        lifetime=costs.at["cement capture", "lifetime"],
-    )
+    if snakemake.config['sector']['cc']:
+        n.madd(
+            "Link",
+            spatial.co2.locations,
+            suffix=" process emissions CC",
+            bus0="process emissions",
+            bus1="co2 atmosphere",
+            bus2=spatial.co2.nodes,
+            carrier="process emissions CC",
+            p_nom_extendable=True,
+            capital_cost=costs.at["cement capture", "fixed"],
+            efficiency=1 - costs.at["cement capture", "capture_rate"],
+            efficiency2=costs.at["cement capture", "capture_rate"],
+            lifetime=costs.at["cement capture", "lifetime"],
+        )
 
 
 def get(item, investment_year=None):
@@ -1446,12 +1511,17 @@ def add_land_transport(n, costs):
             p_set=ice_share / ice_efficiency * transport[nodes],
         )
 
+        bio_share_dict = {2030:{'BS':0.378, 'AP':0.378, 'NZ':0.378}, 2050:{'BS':0.267, 'AP':0.267, 'NZ':0.048}} # TODO
+        bio_share = bio_share_dict[snakemake.config['scenario']['planning_horizons'][0]][snakemake.config['scenario']['demand'][0]]
+
         co2 = (
             ice_share
             / ice_efficiency
             * transport[nodes].sum().sum()
             / 8760
             * costs.at["oil", "CO2 intensity"]
+            * (1 - bio_share) 
+            / ice_share
         )
 
         n.add(
@@ -1737,42 +1807,43 @@ def add_heat(n, costs):
                 lifetime=costs.at["central gas CHP", "lifetime"],
             )
 
-            n.madd(
-                "Link",
-                nodes[name] + " urban central gas CHP CC",
-                # bus0="Africa gas",
-                bus0=spatial.gas.nodes,
-                bus1=nodes[name],
-                bus2=nodes[name] + " urban central heat",
-                bus3="co2 atmosphere",
-                bus4=spatial.co2.df.loc[nodes[name], "nodes"].values,
-                carrier="urban central gas CHP CC",
-                p_nom_extendable=True,
-                capital_cost=costs.at["central gas CHP", "fixed"]
-                * costs.at["central gas CHP", "efficiency"]
-                + costs.at["biomass CHP capture", "fixed"]
-                * costs.at["gas", "CO2 intensity"],
-                marginal_cost=costs.at["central gas CHP", "VOM"],
-                efficiency=costs.at["central gas CHP", "efficiency"]
-                - costs.at["gas", "CO2 intensity"]
-                * (
-                    costs.at["biomass CHP capture", "electricity-input"]
-                    + costs.at["biomass CHP capture", "compression-electricity-input"]
-                ),
-                efficiency2=costs.at["central gas CHP", "efficiency"]
-                / costs.at["central gas CHP", "c_b"]
-                + costs.at["gas", "CO2 intensity"]
-                * (
-                    costs.at["biomass CHP capture", "heat-output"]
-                    + costs.at["biomass CHP capture", "compression-heat-output"]
-                    - costs.at["biomass CHP capture", "heat-input"]
-                ),
-                efficiency3=costs.at["gas", "CO2 intensity"]
-                * (1 - costs.at["biomass CHP capture", "capture_rate"]),
-                efficiency4=costs.at["gas", "CO2 intensity"]
-                * costs.at["biomass CHP capture", "capture_rate"],
-                lifetime=costs.at["central gas CHP", "lifetime"],
-            )
+            if snakemake.config['sector']['cc']:
+                n.madd(
+                    "Link",
+                    nodes[name] + " urban central gas CHP CC",
+                    # bus0="Africa gas",
+                    bus0=spatial.gas.nodes,
+                    bus1=nodes[name],
+                    bus2=nodes[name] + " urban central heat",
+                    bus3="co2 atmosphere",
+                    bus4=spatial.co2.df.loc[nodes[name], "nodes"].values,
+                    carrier="urban central gas CHP CC",
+                    p_nom_extendable=True,
+                    capital_cost=costs.at["central gas CHP", "fixed"]
+                    * costs.at["central gas CHP", "efficiency"]
+                    + costs.at["biomass CHP capture", "fixed"]
+                    * costs.at["gas", "CO2 intensity"],
+                    marginal_cost=costs.at["central gas CHP", "VOM"],
+                    efficiency=costs.at["central gas CHP", "efficiency"]
+                    - costs.at["gas", "CO2 intensity"]
+                    * (
+                        costs.at["biomass CHP capture", "electricity-input"]
+                        + costs.at["biomass CHP capture", "compression-electricity-input"]
+                    ),
+                    efficiency2=costs.at["central gas CHP", "efficiency"]
+                    / costs.at["central gas CHP", "c_b"]
+                    + costs.at["gas", "CO2 intensity"]
+                    * (
+                        costs.at["biomass CHP capture", "heat-output"]
+                        + costs.at["biomass CHP capture", "compression-heat-output"]
+                        - costs.at["biomass CHP capture", "heat-input"]
+                    ),
+                    efficiency3=costs.at["gas", "CO2 intensity"]
+                    * (1 - costs.at["biomass CHP capture", "capture_rate"]),
+                    efficiency4=costs.at["gas", "CO2 intensity"]
+                    * costs.at["biomass CHP capture", "capture_rate"],
+                    lifetime=costs.at["central gas CHP", "lifetime"],
+                )
 
         if options["chp"] and options["micro_chp"] and name != "urban central":
             n.madd(
@@ -1878,17 +1949,17 @@ def add_services(n, costs):
         carrier="services biomass",
         p_set=p_set_biomass,
     )
-    co2 = (
-        p_set_biomass.sum().sum() * costs.at["solid biomass", "CO2 intensity"]
-    ) / 8760
+    # co2 = (
+    #     p_set_biomass.sum().sum() * costs.at["solid biomass", "CO2 intensity"]
+    # ) / 8760
 
-    n.add(
-        "Load",
-        "services biomass emissions",
-        bus="co2 atmosphere",
-        carrier="biomass emissions",
-        p_set=-co2,
-    )
+    # n.add(
+    #     "Load",
+    #     "services biomass emissions",
+    #     bus="co2 atmosphere",
+    #     carrier="biomass emissions",
+    #     p_set=-co2,
+    # )
 
 
 def add_agriculture(n, costs):
@@ -1910,8 +1981,9 @@ def add_agriculture(n, costs):
         p_set=nodal_energy_totals.loc[nodes, "agriculture oil"] * 1e6 / 8760,
     )
     co2 = (
-        nodal_energy_totals.loc[nodes, "agriculture oil"]
+        nodal_energy_totals.loc[nodes, "agriculture oil"].sum()
         * 1e6
+        / 8760
         * costs.at["oil", "CO2 intensity"]
     )
 
@@ -1952,11 +2024,19 @@ def add_residential(n, costs):
             .dropna(axis=1)
             .columns
         )
+        
+        #Correction using August profile in July scaled by 1.05
+        heat_demand.loc['2013-07-01':'2013-07-31', 'residential space'] = heat_demand.loc['2013-08-01':'2013-08-31', 'residential space'].iloc[::-1].values * 1.05
+        heat_shape = heat_demand['residential space'] / heat_demand['residential space'].sum().sum()
 
-        heat_shape = (
-            n.loads_t.p_set.loc[:, heat_ind]
-            / n.loads_t.p_set.loc[:, heat_ind].sum().sum()
-        )
+        #Correction of SP and MG, substituting profile with profile from Rio Grande do Sul and Paraná
+        # heat_shape['BR.25_1_AC'] = heat_shape['BR.21_1_AC'] * heat_shape['BR.25_1_AC'].sum()/heat_shape['BR.21_1_AC'].sum()
+        # heat_shape['BR.13_1_AC'] = heat_shape['BR.16_1_AC'] * heat_shape['BR.13_1_AC'].sum()/heat_shape['BR.16_1_AC'].sum()
+
+        # (
+        #     n.loads_t.p_set.loc[:, heat_ind]
+        #     / n.loads_t.p_set.loc[:, heat_ind].sum().sum()
+        # )
         heat_oil_demand = (
             heat_shape * energy_totals.loc[countries[0], "residential heat oil"] * 1e6
         )
@@ -2021,17 +2101,17 @@ def add_residential(n, costs):
             p_set=p_set_biomass,
         )
 
-        co2 = (
-            p_set_oil.sum().sum() * costs.at["solid biomass", "CO2 intensity"]
-        ) / 8760
+        # co2 = (
+        #     p_set_biomass.sum().sum() * costs.at["solid biomass", "CO2 intensity"]
+        # ) / 8760
 
-        n.add(
-            "Load",
-            "residential biomass emissions",
-            bus="co2 atmosphere",
-            carrier="biomass emissions",
-            p_set=-co2,
-        )
+        # n.add(
+        #     "Load",
+        #     "residential biomass emissions",
+        #     bus="co2 atmosphere",
+        #     carrier="biomass emissions",
+        #     p_set=-co2,
+        # )
 
         for country in countries:
             rem_heat_demand = (
@@ -2092,23 +2172,23 @@ def add_residential(n, costs):
 #     )
 
 
-def add_custom_water_cost(n):
-    for country in countries:
-        water_costs = pd.read_csv(
-            "resources/custom_data/{}_water_costs.csv".format(country),
-            sep=",",
-            index_col=0,
-        )
-        water_costs = water_costs.filter(like=country, axis=0).loc[nodes]
-        electrolysis_links = n.links.filter(like=country, axis=0).filter(
-            like="lectrolysis", axis=0
-        )
+# def add_custom_water_cost(n):
+#     for country in countries:
+#         water_costs = pd.read_csv(
+#             "resources/custom_data/{}_water_costs.csv".format(country),
+#             sep=",",
+#             index_col=0,
+#         )
+#         water_costs = water_costs.filter(like=country, axis=0).loc[nodes]
+#         electrolysis_links = n.links.filter(like=country, axis=0).filter(
+#             like="lectrolysis", axis=0
+#         )
 
-        elec_index = n.links[
-            (n.links.carrier == "H2 Electrolysis")
-            & (n.links.bus0.str.contains(country))
-        ].index
-        n.links.loc[elec_index, "marginal_cost"] = water_costs.values
+#         elec_index = n.links[
+#             (n.links.carrier == "H2 Electrolysis")
+#             & (n.links.bus0.str.contains(country))
+#         ].index
+#         n.links.loc[elec_index, "marginal_cost"] = water_costs.values
         # n.links.filter(like=country, axis=0).filter(like='lectrolysis', axis=0)["marginal_cost"] = water_costs.values
         # n.links.filter(like=country, axis=0).filter(like='lectrolysis', axis=0).apply(lambda x: water_costs[x.index], axis=0)
         # print(n.links.filter(like=country, axis=0).filter(like='lectrolysis', axis=0).marginal_cost)
@@ -2145,13 +2225,13 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="10",
+            clusters="255",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="144H",
-            discountrate="0.071",
-            demand="DF",
+            sopts="3H",
+            discountrate="0.175",
+            demand="BS",
         )
 
     # Load population layout
@@ -2226,7 +2306,7 @@ if __name__ == "__main__":
     # Load data required for the heat sector
     heat_demand = pd.read_csv(
         snakemake.input.heat_demand, index_col=0, header=[0, 1], parse_dates=True
-    )
+    ).fillna(0)
     # Ground-sourced heatpump coefficient of performance
     gshp_cop = pd.read_csv(
         snakemake.input.gshp_cop, index_col=0, parse_dates=True
@@ -2253,6 +2333,12 @@ if __name__ == "__main__":
     # Load industry demand data
     industrial_demand = pd.read_csv(snakemake.input.industrial_demand)  # * 1e6
     print(industrial_demand)
+    # if (
+    #     len(industrial_demand["TWh/a (MtCO2/a)"][0]) > 6
+    # ):  # TODO do it nicely, this is done to catch the custom gadm
+    #     industrial_demand["TWh/a (MtCO2/a)"] = industrial_demand[
+    #         "TWh/a (MtCO2/a)"
+    #     ].apply(lambda cocode: two_2_three_digits_country(cocode[:2]) + cocode[2:])
 
     industrial_demand.set_index("TWh/a (MtCO2/a)", inplace=True)
 
@@ -2267,7 +2353,7 @@ if __name__ == "__main__":
 
     add_gas(n, costs)
     add_generation(n, costs)
-    add_biomass(n, costs)
+    
 
     add_hydrogen(n, costs)  # TODO add costs
 
@@ -2277,6 +2363,7 @@ if __name__ == "__main__":
 
     h2_hc_conversions(n, costs)
     add_heat(n, costs)
+    add_biomass(n, costs)
 
     add_industry(n, costs)
 
@@ -2321,8 +2408,8 @@ if __name__ == "__main__":
     if options["dac"]:
         add_dac(n, costs)
 
-    if snakemake.config["custom_data"]["water_costs"]:
-        add_custom_water_cost(n)
+    #if snakemake.config["custom_data"]["water_costs"]:
+        #add_custom_water_cost(n)
 
     n.export_to_netcdf(snakemake.output[0])
 
