@@ -336,8 +336,7 @@ def calculate_supply(n, label, supply):
             for end in [col[3:] for col in c.df.columns if col[:3] == "bus"]:
                 print(c.name, end)
                 items = c.df.index[
-                    c.df["bus" + end].map(bus_map, na_action=None)
-                ]  # .fillna(False)]
+                    c.df["bus" + end].map(bus_map, na_action=None)]
 
                 if len(items) == 0:
                     continue
@@ -654,6 +653,7 @@ def make_summaries(networks_dict):
         print(label, filename)
 
         overrides = override_component_attrs(snakemake.input.overrides)
+        #os.chdir('../')
         n = pypsa.Network(filename, override_component_attrs=overrides)
 
         assign_carriers(n)
@@ -678,7 +678,7 @@ def to_csv(df):
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
-        # os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
         from helpers import mock_snakemake
 
@@ -719,7 +719,6 @@ if __name__ == "__main__":
         Nyears,
         snakemake.config["costs"]["lifetime"],
     )
-
     df = make_summaries(networks_dict)
 
     df["metrics"].loc["total costs"] = df["costs"].sum()
