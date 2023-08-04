@@ -12,9 +12,6 @@ if not exists("config.yaml"):
 configfile: "config.yaml"
 
 
-PYPSAEARTH_FOLDER = "./pypsa-earth"
-
-
 SDIR = config["summary_dir"] + config["run"]
 RDIR = config["results_dir"] + config["run"]
 CDIR = config["costs_dir"]
@@ -39,9 +36,9 @@ wildcard_constraints:
 
 subworkflow pypsaearth:
     workdir:
-        PYPSAEARTH_FOLDER
+        "../pypsa-earth"
     snakefile:
-        PYPSAEARTH_FOLDER + "/Snakefile"
+        "../pypsa-earth/Snakefile"
     configfile:
         "./config.pypsa-earth.yaml"
 
@@ -78,14 +75,6 @@ rule solve_all_networks:
         ),
 
 
-rule prepare_ports:
-    output:
-        ports="data/ports.csv",
-        # TODO move from data to resources
-    script:
-        "scripts/prepare_ports.py"
-
-
 rule prepare_sector_network:
     input:
         network=RDIR
@@ -113,6 +102,7 @@ rule prepare_sector_network:
         shapes_path=pypsaearth(
             "resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson"
         ),
+        pipelines="resources/custom_data/pipelines.csv",
     output:
         RDIR
         + "/prenetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}.nc",
@@ -132,7 +122,6 @@ rule add_export:
     input:
         overrides="data/override_component_attrs",
         export_ports="data/export_ports.csv",
-        costs=CDIR + "costs_{planning_horizons}.csv",
         network=RDIR
         + "/prenetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}.nc",
         shapes_path=pypsaearth(
@@ -496,9 +485,8 @@ rule run_test:
     run:
         import yaml
 
-        with open(PYPSAEARTH_FOLDER + "/config.tutorial.yaml") as file:
+        with open("../pypsa-earth/config.tutorial.yaml") as file:
             config_pypsaearth = yaml.full_load(file)
-            config_pypsaearth["retrieve_databundle"] = {"show_progress": False}
             config_pypsaearth["electricity"]["extendable_carriers"]["Store"] = []
             config_pypsaearth["electricity"]["extendable_carriers"]["Link"] = []
             config_pypsaearth["electricity"]["co2limit"] = 7.75e7
@@ -512,8 +500,8 @@ rule run_test:
 
 rule clean:
     run:
-        shell("rm -r " + PYPSAEARTH_FOLDER + "/resources")
-        shell("rm -r " + PYPSAEARTH_FOLDER + "/networks")
+        shell("rm -r ../pypsa-earth/resources")
+        shell("rm -r ../pypsa-earth/networks")
 
 
 if config["custom_data"].get("industry_demand", False) == True:
@@ -525,8 +513,8 @@ if config["custom_data"].get("industry_demand", False) == True:
             ),
             clustered_pop_layout="resources/population_shares/pop_layout_elec_s{simpl}_{clusters}.csv",
             industrial_database="resources/custom_data/industrial_database.csv",
-            #shapes_path=pypsaearth("resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson")
-            shapes_path=PYPSAEARTH_FOLDER + "/resources/shapes/MAR2.geojson",
+            shapes_path=pypsaearth("resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson")
+            #shapes_path="../pypsa-earth/resources/shapes/MAR2.geojson",
         output:
             industrial_distribution_key="resources/demand/industrial_distribution_key_elec_s{simpl}_{clusters}.csv",
         threads: 1
