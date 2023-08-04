@@ -64,7 +64,7 @@ FT fuel transport ship,lifetime,15.0,years,"Assume comparable tanker as for LOHC
 Fischer-Tropsch,FOM,3.0,%/year,"Agora Energiewende (2018): The Future Cost of Electricity-Based Synthetic Fuels (https://www.agora-energiewende.de/en/publications/the-future-cost-of-electricity-based-synthetic-fuels-1/), section 6.3.2.1.",
 Fischer-Tropsch,capture rate,0.98,per unit,Assumption based on doi:10.1016/j.biombioe.2015.01.006,
 Fischer-Tropsch,efficiency,0.8,per unit,"Agora Energiewende (2018): The Future Cost of Electricity-Based Synthetic Fuels (https://www.agora-energiewende.de/en/publications/the-future-cost-of-electricity-based-synthetic-fuels-1/), section 6.3.2.2.",
-Fischer-Tropsch,investment,760000,EUR/MW_FT,"6. IEA. The Future of Hydrogen: Seizing Today’s Opportunities: Report Prepared by the IEA for the G20 (https://www.iea.org/events/the-future-of-hydrogen-seizing-todays-opportunities), table 8: “Reference scenario”.",
+Fischer-Tropsch,investment,565000,EUR/MW_FT,"6. IEA. The Future of Hydrogen: Seizing Today’s Opportunities: Report Prepared by the IEA for the G20 (https://www.iea.org/events/the-future-of-hydrogen-seizing-todays-opportunities), table 8: “Reference scenario”.",
 Fischer-Tropsch,lifetime,20.0,years,"Danish Energy Agency, Technology Data for Renewable Fuels (04/2022), Data sheet “Methanol to Power”.",
 Gasnetz,FOM,2.5,%,"WEGE ZU EINEM KLIMANEUTRALEN ENERGIESYSEM, Anhang zur Studie, Fraunhofer-Institut für Solare Energiesysteme ISE, Freiburg",Gasnetz
 Gasnetz,investment,28.0,EUR/kWGas,"WEGE ZU EINEM KLIMANEUTRALEN ENERGIESYSEM, Anhang zur Studie, Fraunhofer-Institut für Solare Energiesysteme ISE, Freiburg",Gasnetz
@@ -427,7 +427,7 @@ hydrogen storage tank incl. compressor,investment,44.91,EUR/kWh,"Danish Energy A
 hydrogen storage tank incl. compressor,lifetime,30.0,years,"Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",151a Hydrogen Storage - Tanks:  Technical lifetime
 hydrogen storage underground,FOM,0.0,%/year,"Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",151c Hydrogen Storage - Caverns:  Fixed O&M
 hydrogen storage underground,VOM,0.0,EUR/MWh,"Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",151c Hydrogen Storage - Caverns:  Variable O&M
-hydrogen storage underground,investment,2.0,EUR/kWh,"Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",151c Hydrogen Storage - Caverns:  Specific investment
+hydrogen storage underground,investment,1.2,EUR/kWh,"Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",151c Hydrogen Storage - Caverns:  Specific investment
 hydrogen storage underground,lifetime,100.0,years,"Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",151c Hydrogen Storage - Caverns:  Technical lifetime
 industrial heat pump high temperature,FOM,0.09,%/year,"Danish Energy Agency, technology_data_for_industrial_process_heat.xlsx",302.b High temp. hp Up to 150:  Fixed O&M
 industrial heat pump high temperature,VOM,3.2,EUR/MWh,"Danish Energy Agency, technology_data_for_industrial_process_heat.xlsx",302.b High temp. hp Up to 150:  Variable O&M
