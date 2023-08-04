@@ -46,6 +46,13 @@ doc/_build
 /scripts/data
 /sample_pypsa_eur
 
+/data/energy_totals_BS_2030.csv
+/data/energy_totals_BS_2050.csv
+/data/energy_totals_AP_2030.csv
+/data/energy_totals_AP_2050.csv
+/data/energy_totals_NZ_2030.csv
+/data/energy_totals_NZ_2050.csv
+
 # File extensions
 *.org
 *.nc
