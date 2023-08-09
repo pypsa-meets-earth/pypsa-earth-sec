@@ -520,7 +520,7 @@ def add_biomass(n, costs):
         nodes + " biomass EOP",
         bus0=spatial.biomass.nodes,
         bus1=nodes,
-        bus2="co2 atmosphere",
+        #bus2="co2 atmosphere",
         marginal_cost=1, #costs.at[biomass_gen, "efficiency"]
         #* costs.at[biomass_gen, "VOM"],  # NB: VOM is per MWel
         # NB: fixed cost is per MWel
@@ -529,7 +529,7 @@ def add_biomass(n, costs):
         p_nom_extendable=True,
         carrier=biomass_gen,
         efficiency=costs.at[biomass_gen, "efficiency"],
-        efficiency2=costs.at["solid biomass", "CO2 intensity"],
+        #efficiency2=costs.at["solid biomass", "CO2 intensity"],
         lifetime=costs.at[biomass_gen, "lifetime"],
     )
     n.madd(
@@ -1236,10 +1236,10 @@ def add_industry(n, costs):
     # check land tranport
 
     co2 = (
-        n.loads.loc[nodes + co2_release, "p_set"].sum().sum()
+        n.loads.loc[nodes + co2_release, "p_set"].sum()
         * costs.at["oil", "CO2 intensity"]
         # - industrial_demand["process emission from feedstock"].sum()
-        / 8760
+        #/ 8760
     )
 
     n.add(
@@ -1247,6 +1247,22 @@ def add_industry(n, costs):
         "industry oil emissions",
         bus="co2 atmosphere",
         carrier="industry oil emissions",
+        p_set=-co2,
+    )
+
+
+    co2 = (
+        industrial_demand["coal"].sum()
+        * costs.at["coal", "CO2 intensity"]
+        # - industrial_demand["process emission from feedstock"].sum()
+        / 8760
+    )
+
+    n.add(
+        "Load",
+        "industry coal emissions",
+        bus="co2 atmosphere",
+        carrier="industry coal emissions",
         p_set=-co2,
     )
 
@@ -1520,8 +1536,8 @@ def add_land_transport(n, costs):
             * transport[nodes].sum().sum()
             / 8760
             * costs.at["oil", "CO2 intensity"]
-            * (1 - bio_share) 
-            / ice_share
+            #* (1 - bio_share) 
+            #/ ice_share
         )
 
         n.add(
@@ -1949,6 +1965,7 @@ def add_services(n, costs):
         carrier="services biomass",
         p_set=p_set_biomass,
     )
+
     # co2 = (
     #     p_set_biomass.sum().sum() * costs.at["solid biomass", "CO2 intensity"]
     # ) / 8760
@@ -1960,6 +1977,60 @@ def add_services(n, costs):
     #     carrier="biomass emissions",
     #     p_set=-co2,
     # )
+
+    p_set_oil = (
+        profile_residential
+        * energy_totals.loc[countries, "services oil"].sum()
+        * 1e6
+    )
+
+    n.madd(
+        "Load",
+        nodes,
+        suffix=" services oil",
+        bus=spatial.oil.nodes,
+        carrier="services oil",
+        p_set=p_set_oil,
+    )
+
+    co2 = (
+        p_set_oil.sum().sum() * costs.at["oil", "CO2 intensity"]
+    ) / 8760
+
+    n.add(
+        "Load",
+        "services oil emissions",
+        bus="co2 atmosphere",
+        carrier="oil emissions",
+        p_set=-co2,
+    )
+
+    p_set_gas = (
+        profile_residential
+        * energy_totals.loc[countries, "services gas"].sum()
+        * 1e6
+    )
+
+    n.madd(
+        "Load",
+        nodes,
+        suffix=" services gas",
+        bus=spatial.gas.nodes,
+        carrier="services gas",
+        p_set=p_set_gas,
+    )
+
+    co2 = (
+        p_set_gas.sum().sum() * costs.at["gas", "CO2 intensity"]
+    ) / 8760
+
+    n.add(
+        "Load",
+        "services gas emissions",
+        bus="co2 atmosphere",
+        carrier="gas emissions",
+        p_set=-co2,
+    )
 
 
 def add_agriculture(n, costs):
@@ -2024,6 +2095,13 @@ def add_residential(n, costs):
             .dropna(axis=1)
             .columns
         )
+        gas_ind = (
+            n.loads_t.p_set.filter(like=countries[0])
+            .filter(like="residential")
+            .filter(like="gas")
+            .dropna(axis=1)
+            .columns
+        )
         
         #Correction using August profile in July scaled by 1.05
         heat_demand.loc['2013-07-01':'2013-07-31', 'residential space'] = heat_demand.loc['2013-08-01':'2013-08-31', 'residential space'].iloc[::-1].values * 1.05
@@ -2046,6 +2124,11 @@ def add_residential(n, costs):
             * energy_totals.loc[countries[0], "residential heat biomass"]
             * 1e6
         )
+        heat_gas_demand = (
+            heat_shape
+            * energy_totals.loc[countries[0], "residential heat gas"]
+            * 1e6
+        )
 
         n.loads_t.p_set.loc[:, heat_ind] = (
             heat_shape
@@ -2054,6 +2137,7 @@ def add_residential(n, costs):
                 + energy_totals.loc[countries, "total residential water"].sum()
                 - energy_totals.loc[countries[0], "residential heat biomass"]
                 - energy_totals.loc[countries[0], "residential heat oil"]
+                - energy_totals.loc[countries[0], "residential heat gas"]
             )
             * 1e6
         )
@@ -2074,6 +2158,12 @@ def add_residential(n, costs):
             * energy_totals.loc[countries, "residential biomass"].sum()
             * 1e6
         ) + heat_biomass_demand.values
+
+        p_set_gas = (
+            profile_residential
+            * energy_totals.loc[countries, "residential gas"].sum()
+            * 1e6
+        ) + heat_gas_demand.values
 
         n.madd(
             "Load",
@@ -2100,6 +2190,23 @@ def add_residential(n, costs):
             carrier="residential biomass",
             p_set=p_set_biomass,
         )
+        n.madd(
+            "Load",
+            nodes,
+            suffix=" residential gas",
+            bus=spatial.gas.nodes,
+            carrier="residential gas",
+            p_set=p_set_gas,
+        )
+        co2 = (p_set_gas.sum().sum() * costs.at["gas", "CO2 intensity"]) / 8760
+
+        n.add(
+            "Load",
+            "residential gas emissions",
+            bus="co2 atmosphere",
+            carrier="gas emissions",
+            p_set=-co2,
+        )
 
         # co2 = (
         #     p_set_biomass.sum().sum() * costs.at["solid biomass", "CO2 intensity"]
@@ -2119,6 +2226,7 @@ def add_residential(n, costs):
                 + energy_totals.loc[country, "total residential water"]
                 - energy_totals.loc[country, "residential heat biomass"]
                 - energy_totals.loc[country, "residential heat oil"]
+                - energy_totals.loc[country, "residential heat gas"]
             )
 
             heat_buses = (n.loads_t.p_set.filter(regex="heat")).columns
@@ -2172,23 +2280,23 @@ def add_residential(n, costs):
 #     )
 
 
-# def add_custom_water_cost(n):
-#     for country in countries:
-#         water_costs = pd.read_csv(
-#             "resources/custom_data/{}_water_costs.csv".format(country),
-#             sep=",",
-#             index_col=0,
-#         )
-#         water_costs = water_costs.filter(like=country, axis=0).loc[nodes]
-#         electrolysis_links = n.links.filter(like=country, axis=0).filter(
-#             like="lectrolysis", axis=0
-#         )
+def add_custom_water_cost(n):
+    for country in countries:
+        water_costs = pd.read_csv(
+            "resources/custom_data/{}_water_costs.csv".format(country),
+            sep=",",
+            index_col=0,
+        )
+        water_costs = water_costs.filter(like=country, axis=0).loc[nodes]
+        electrolysis_links = n.links.filter(like=country, axis=0).filter(
+            like="lectrolysis", axis=0
+        )
 
-#         elec_index = n.links[
-#             (n.links.carrier == "H2 Electrolysis")
-#             & (n.links.bus0.str.contains(country))
-#         ].index
-#         n.links.loc[elec_index, "marginal_cost"] = water_costs.values
+        elec_index = n.links[
+            (n.links.carrier == "H2 Electrolysis")
+            & (n.links.bus0.str.contains(country))
+        ].index
+        n.links.loc[elec_index, "marginal_cost"] = water_costs.values
         # n.links.filter(like=country, axis=0).filter(like='lectrolysis', axis=0)["marginal_cost"] = water_costs.values
         # n.links.filter(like=country, axis=0).filter(like='lectrolysis', axis=0).apply(lambda x: water_costs[x.index], axis=0)
         # print(n.links.filter(like=country, axis=0).filter(like='lectrolysis', axis=0).marginal_cost)
@@ -2225,13 +2333,13 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="255",
+            clusters="184",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
             sopts="3H",
-            discountrate="0.175",
-            demand="BS",
+            discountrate="0.098",
+            demand="NZ",
         )
 
     # Load population layout
@@ -2408,8 +2516,9 @@ if __name__ == "__main__":
     if options["dac"]:
         add_dac(n, costs)
 
-    #if snakemake.config["custom_data"]["water_costs"]:
-        #add_custom_water_cost(n)
+    if snakemake.config["custom_data"]["water_costs"]:
+        add_custom_water_cost(n)
+
 
     n.export_to_netcdf(snakemake.output[0])
 
