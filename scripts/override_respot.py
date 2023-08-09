@@ -46,7 +46,9 @@ def override_values(tech, year, dr):
         existing_res.index = existing_res.index.str.apply(lambda x: x + tech)
     else:
         if len(to_drop) > 0:
-            existing_res = to_drop.p_nom_min.values #custom_res["installedcapacity"].values
+            existing_res = (
+                to_drop.p_nom_min.values
+            )  # custom_res["installedcapacity"].values
         else:
             existing_res = custom_res["installedcapacity"].values
 

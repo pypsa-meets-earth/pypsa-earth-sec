@@ -57,7 +57,7 @@ custom_data:
   water_costs: true
   h2_underground: true
   add_existing: false
-  existing_params: {"run":"BR_2030_FINAL_flat_heat_2", "H": 3, "clusters": 146, "year": 2030, "rate": "0.076", "demand": "AP"}
+  existing_params: {"run": "BR_2030_FINAL_flat_heat_2", "H": 3, "clusters": 146, "year": 2030, "rate": "0.076", "demand": "AP"}
   custom_sectors: true
   gas_grid: true
 

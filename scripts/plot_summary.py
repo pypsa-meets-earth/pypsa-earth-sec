@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import os
 
 plt.style.use("ggplot")
 

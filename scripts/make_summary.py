@@ -335,8 +335,7 @@ def calculate_supply(n, label, supply):
         for c in n.iterate_components(n.branch_components):
             for end in [col[3:] for col in c.df.columns if col[:3] == "bus"]:
                 print(c.name, end)
-                items = c.df.index[
-                    c.df["bus" + end].map(bus_map, na_action=None)]
+                items = c.df.index[c.df["bus" + end].map(bus_map, na_action=None)]
 
                 if len(items) == 0:
                     continue
@@ -653,7 +652,7 @@ def make_summaries(networks_dict):
         print(label, filename)
 
         overrides = override_component_attrs(snakemake.input.overrides)
-        #os.chdir('../')
+        # os.chdir('../')
         n = pypsa.Network(filename, override_component_attrs=overrides)
 
         assign_carriers(n)

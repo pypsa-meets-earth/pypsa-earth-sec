@@ -98,7 +98,7 @@ def add_export(n, hydrogen_buses_ports, export_h2):
         e_initial=0,
         marginal_cost=0,
         capital_cost=0,
-        e_cyclic=True
+        e_cyclic=True,
     )
 
     # add load

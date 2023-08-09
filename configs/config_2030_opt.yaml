@@ -56,7 +56,7 @@ custom_data:
   transport_demand: true
   water_costs: true
   h2_underground: false
-  existing_params: {"run":"FINAL_5", "H": 3, "clusters": 121, "year": 2030, "rate": "0.076", "demand": "AP"}
+  existing_params: {"run": "FINAL_5", "H": 3, "clusters": 121, "year": 2030, "rate": "0.076", "demand": "AP"}
   add_existing: false
   custom_sectors: true
   gas_grid: true

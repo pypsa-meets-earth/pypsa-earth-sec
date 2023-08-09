@@ -157,7 +157,10 @@ def add_battery_constraints(n):
 
 
 def add_h2_network_cap(n, cap):
-    h2_network = n.links.loc[(n.links.carrier == "H2 pipeline") | (n.links.carrier == "H2 pipeline repurposed")]
+    h2_network = n.links.loc[
+        (n.links.carrier == "H2 pipeline")
+        | (n.links.carrier == "H2 pipeline repurposed")
+    ]
     if h2_network.index.empty or ("Link", "p_nom") not in n.variables.index:
         return
     h2_network_cap = get_var(n, "Link", "p_nom")
@@ -179,7 +182,7 @@ def H2_export_yearly_constraint(n):
         "ror",
     ]
     res_index = n.generators.loc[n.generators.carrier.isin(res)].index
-    
+
     weightings = pd.DataFrame(
         np.outer(n.snapshot_weightings["generators"], [1.0] * len(res_index)),
         index=n.snapshots,
@@ -205,6 +208,7 @@ def H2_export_yearly_constraint(n):
 
     con = define_constraints(n, lhs, ">=", rhs, "H2ExportConstraint", "RESproduction")
 
+
 def monthly_constraints(n, n_ref):
     res_gen_techs = [
         "csp",
@@ -217,14 +221,14 @@ def monthly_constraints(n, n_ref):
         "ror",
     ]
 
-    res_stor_techs = [
-        "hydro"
-    ]
+    res_stor_techs = ["hydro"]
 
     allowed_excess = snakemake.config["policy_config"]["allowed_excess"]
 
     res_gen_index = n.generators.loc[n.generators.carrier.isin(res_gen_techs)].index
-    res_stor_index = n.storage_units.loc[n.storage_units.carrier.isin(res_stor_techs)].index
+    res_stor_index = n.storage_units.loc[
+        n.storage_units.carrier.isin(res_stor_techs)
+    ].index
 
     weightings_gen = pd.DataFrame(
         np.outer(n.snapshot_weightings["generators"], [1.0] * len(res_gen_index)),
@@ -240,9 +244,11 @@ def monthly_constraints(n, n_ref):
 
     res = linexpr((weightings_gen, get_var(n, "Generator", "p")[res_gen_index])).sum(
         axis=1
-    ) + linexpr((weightings_stor, get_var(n, "StorageUnit", "p_dispatch")[res_stor_index])).sum(
+    ) + linexpr(
+        (weightings_stor, get_var(n, "StorageUnit", "p_dispatch")[res_stor_index])
+    ).sum(
         axis=1
-    ) # single line sum
+    )  # single line sum
     res = res.groupby(res.index.month).sum()
 
     electrolysis = get_var(n, "Link", "p")[
@@ -266,11 +272,11 @@ def monthly_constraints(n, n_ref):
         snakemake.config["policy_config"]["reference_case"]
         and eval(snakemake.wildcards["h2export"]) != 0
     ):
-
         res_ref_gen = n_ref.generators_t.p[res_gen_index] * weightings_gen
-        res_ref_store =  n_ref.storage_units_t.p[res_stor_index] * weightings_stor
-        res_ref = res_ref_gen.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1) + \
-            res_ref_store.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1)
+        res_ref_store = n_ref.storage_units_t.p[res_stor_index] * weightings_stor
+        res_ref = res_ref_gen.groupby(n_ref.generators_t.p.index.month).sum().sum(
+            axis=1
+        ) + res_ref_store.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1)
 
         elec_input_ref = (
             n_ref.links_t.p0.loc[
@@ -298,7 +304,7 @@ def monthly_constraints(n, n_ref):
             )
     else:
         logger.info("ignoring H2 export constraint as wildcard is set to 0")
-        
+
 
 def add_chp_constraints(n):
     electric_bool = (
@@ -388,11 +394,11 @@ def add_co2_sequestration_limit(n, sns):
 
 
 def add_emission_limit(n, sns):  # 294
-    co2_atmosphere = n.stores.filter(like='co2 atmosphere', axis=0).index
+    co2_atmosphere = n.stores.filter(like="co2 atmosphere", axis=0).index
 
     # if co2_stores.empty or ("Store", "e") not in n.variables.index:
     #     return
-    AC_index = n.buses[n.buses.carrier == 'AC'].index
+    AC_index = n.buses[n.buses.carrier == "AC"].index
     vars_final_co2_stored = get_var(n, "Store", "e").loc[sns[-1], co2_atmosphere]
     # vars_conv_gens = get_var(n, "Store", "e").loc[sns[-1], co2_atmosphere]
 
@@ -401,7 +407,7 @@ def add_emission_limit(n, sns):  # 294
     # vars_conv_gens = n.generators_t.p[conv_index]
 
     convs = n.generators[n.generators.carrier.isin(conv_gens)]
-    conv_index = convs[convs['bus'].isin(AC_index)].index
+    conv_index = convs[convs["bus"].isin(AC_index)].index
 
     n.generators.loc[n.generators.carrier.isin(conv_gens), "emissions"] = 0
     n.generators.loc[conv_index, "emissions"] = n.generators.loc[
@@ -487,7 +493,7 @@ def solve_network(n, config, opts="", **kwargs):
             solver_name=solver_name,
             solver_options=solver_options,
             extra_functionality=extra_functionality,
-            **kwargs
+            **kwargs,
         )
     else:
         ilopf(
@@ -498,22 +504,24 @@ def solve_network(n, config, opts="", **kwargs):
             min_iterations=min_iterations,
             max_iterations=max_iterations,
             extra_functionality=extra_functionality,
-            **kwargs
+            **kwargs,
         )
     return n
 
 
 def add_existing(n):
     if snakemake.wildcards["planning_horizons"] == "2050":
-        directory = (
-            
-            "results/" + existing_params["run"] + "/optimal_capacities/"
-        )
+        directory = "results/" + existing_params["run"] + "/optimal_capacities/"
 
         n_name = "elec_s_{}_ec_lc1.0_Co2L_{}H_{}_{}_{}_{}export.csv".format(
-            existing_params["clusters"],existing_params["H"],
-               existing_params["year"],  existing_params["rate"], existing_params["demand"], snakemake.wildcards["h2export"])
-        
+            existing_params["clusters"],
+            existing_params["H"],
+            existing_params["year"],
+            existing_params["rate"],
+            existing_params["demand"],
+            snakemake.wildcards["h2export"],
+        )
+
         df = pd.read_csv(directory + "electrolyzer_caps_" + n_name, index_col=0)
         existing_electrolyzers = df.p_nom_opt.values
 
@@ -522,24 +530,24 @@ def add_existing(n):
         n.links.loc[h2_index, "p_nom_min"] = existing_electrolyzers
 
         df = pd.read_csv(directory + "pipeline_caps_" + n_name, index_col=0)
-        if df.shape != (0,1):
+        if df.shape != (0, 1):
             existing_pipelines = df.p_nom_opt.values
 
             h2_index_ppl = n.links[n.links.carrier == "H2 pipeline"].index
             n.links.loc[h2_index_ppl, "p_nom"] = existing_pipelines
             n.links.loc[h2_index_ppl, "p_nom_min"] = existing_pipelines
-            
-        df = pd.read_csv(directory + "/res_caps_" + n_name, index_col=0)
 
+        df = pd.read_csv(directory + "/res_caps_" + n_name, index_col=0)
 
         for tech in snakemake.config["custom_data"]["renewables"]:
             # df = pd.read_csv(snakemake.config["custom_data"]["existing_renewables"], index_col=0)
-            existing_res = df.loc[:,tech]
-            existing_res.index = existing_res.index.to_series().apply(lambda x: x + " " + tech)
+            existing_res = df.loc[:, tech]
+            existing_res.index = existing_res.index.to_series().apply(
+                lambda x: x + " " + tech
+            )
             tech_index = n.generators[n.generators.carrier == tech].index
             n.generators.loc[tech_index, "p_nom"] = existing_res
             n.generators.loc[tech_index, "p_nom_min"] = existing_res
-
 
 
 if __name__ == "__main__":
@@ -582,18 +590,19 @@ if __name__ == "__main__":
         ):
             existing_params = snakemake.config["custom_data"]["existing_params"]
             add_existing(n)
-        
+
         if (
             snakemake.config["policy_config"]["reference_case"]
             and eval(snakemake.wildcards["h2export"]) != 0
-            and snakemake.config["policy_config"]["policy"] == "H2_export_monthly_constraint"
+            and snakemake.config["policy_config"]["policy"]
+            == "H2_export_monthly_constraint"
         ):
             n_ref_path = snakemake.output[0].replace(
                 snakemake.output[0].split("_")[-1], "0export.nc"
             )
             n_ref = pypsa.Network(
                 n_ref_path
-                #"../../../" + n_ref_path
+                # "../../../" + n_ref_path
             )  # TODO better do it in a neater way
         else:
             n_ref = None

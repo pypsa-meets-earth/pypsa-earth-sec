@@ -8,12 +8,12 @@ Created on Wed Mar 16 15:50:42 2022
 import os
 
 import cartopy.crs as ccrs
+import geopandas as gpd
 import matplotlib.pyplot as plt
-from matplotlib import colors, cm
 import numpy as np
 import pandas as pd
-import geopandas as gpd
 import pypsa
+from matplotlib import cm, colors
 from matplotlib.legend_handler import HandlerPatch
 from matplotlib.patches import Circle, Ellipse
 
@@ -203,9 +203,9 @@ def plot_h2_infra(network):
     # make a fake MultiIndex so that area is correct for legend
     bus_sizes.index = pd.MultiIndex.from_product([bus_sizes.index, ["electrolysis"]])
 
-    n.links = n.links.filter(like='H2 pipeline', axis=0)
+    n.links = n.links.filter(like="H2 pipeline", axis=0)
 
-    #n.links.drop(n.links.index[n.links.carrier != "H2 pipeline"], inplace=True)
+    # n.links.drop(n.links.index[n.links.carrier != "H2 pipeline"], inplace=True)
 
     link_widths = n.links.p_nom_opt / linewidth_factor
     link_widths[n.links.p_nom_opt < line_lower_threshold] = 0.0
@@ -221,7 +221,7 @@ def plot_h2_infra(network):
 
     fig.set_size_inches(10.5, 9)
 
-    uhs = '1000_export'
+    uhs = "1000_export"
 
     n.plot(
         bus_sizes=bus_sizes,
@@ -230,42 +230,49 @@ def plot_h2_infra(network):
         link_widths=link_widths,
         branch_components=["Link"],
         color_geomap=uhs,
-        #color_geomap={"ocean": "lightblue", "land": "gainsboro"},
+        # color_geomap={"ocean": "lightblue", "land": "gainsboro"},
         ax=ax,
-        boundaries=(-75, -33, -35, 6)
+        boundaries=(-75, -33, -35, 6),
     )
-    
-    subregions = gpd.read_file('/nfs/home/cas96273/Thesis_Code/outputs/shapes_uhs.geojson')
-    subregions_uhs = subregions.loc[subregions.uhs_1000_delta != 0]
-    subregions_uhs[['uhs_0', 'uhs_1000_delta']] = subregions_uhs[['uhs_0', 'uhs_1000_delta']] / 1e6
 
-    if uhs == 'no_export':
+    subregions = gpd.read_file(
+        "/nfs/home/cas96273/Thesis_Code/outputs/shapes_uhs.geojson"
+    )
+    subregions_uhs = subregions.loc[subregions.uhs_1000_delta != 0]
+    subregions_uhs[["uhs_0", "uhs_1000_delta"]] = (
+        subregions_uhs[["uhs_0", "uhs_1000_delta"]] / 1e6
+    )
+
+    if uhs == "no_export":
         vmin, vmax, vcenter = subregions_uhs.uhs_0.min(), subregions_uhs.uhs_0.max(), 0
         span = vmax - vmin
-        cmap = cm.get_cmap('spring_r')
-        #cmap[:, -1] = np.linspace(0, 1, cmap.N)
-        norm = colors.Normalize(vmin=vmin, vmax=vmax) 
+        cmap = cm.get_cmap("spring_r")
+        # cmap[:, -1] = np.linspace(0, 1, cmap.N)
+        norm = colors.Normalize(vmin=vmin, vmax=vmax)
         cbar = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
         cax = fig.add_axes([0.85, 0.1, 0.03, 0.8])
         cbr = fig.colorbar(cbar, cax=cax)
         cbr.set_alpha(0.2)
         cbr.draw_all()
-        cbr.ax.tick_params(labelsize=12) 
-        cbr.set_label('UHS expansion in TWh', fontsize=15)
-    elif uhs == '1000_export':
-        vmin, vmax, vcenter = subregions_uhs.uhs_1000_delta.min(), subregions_uhs.uhs_1000_delta.max(), 0
+        cbr.ax.tick_params(labelsize=12)
+        cbr.set_label("UHS expansion in TWh", fontsize=15)
+    elif uhs == "1000_export":
+        vmin, vmax, vcenter = (
+            subregions_uhs.uhs_1000_delta.min(),
+            subregions_uhs.uhs_1000_delta.max(),
+            0,
+        )
         v_abs = max(abs(vmin), abs(vmax))
         norm = colors.TwoSlopeNorm(vmin=-v_abs, vcenter=vcenter, vmax=v_abs)
         # create a normalized colorbar
-        cmap = cm.get_cmap('PRGn')
+        cmap = cm.get_cmap("PRGn")
         cbar = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
-        cax = fig.add_axes([0.85, 0.1, 0.03, 0.8])  
+        cax = fig.add_axes([0.85, 0.1, 0.03, 0.8])
         cbr = fig.colorbar(cbar, cax=cax)
-        cbr.ax.tick_params(labelsize=12) 
-        cbr.set_label('UHS capacity deviation', fontsize=15)
+        cbr.ax.tick_params(labelsize=12)
+        cbr.set_label("UHS capacity deviation", fontsize=15)
         cbr.set_alpha(0.8)
         cbr.draw_all()
-
 
     handles = make_legend_circles_for(
         [5000, 1000], scale=bus_size_factor, facecolor=bus_color
@@ -275,7 +282,7 @@ def plot_h2_infra(network):
         handles,
         labels,
         loc="lower right",
-        #bbox_to_anchor=(0.01, 1.01),
+        # bbox_to_anchor=(0.01, 1.01),
         labelspacing=0.8,
         framealpha=1.0,
         title="Electrolyzer capacity",
@@ -295,7 +302,7 @@ def plot_h2_infra(network):
         handles,
         labels,
         loc="upper right",
-        #bbox_to_anchor=(0.32, 1.01),
+        # bbox_to_anchor=(0.32, 1.01),
         framealpha=1,
         labelspacing=0.8,
         handletextpad=1.5,
@@ -676,8 +683,8 @@ def plot_map(
     title = "Technologies"
 
     if transmission:
-        line_widths = line_widths#n.lines.s_nom_opt
-        link_widths = link_widths#n.links.p_nom_opt
+        line_widths = line_widths  # n.lines.s_nom_opt
+        link_widths = link_widths  # n.links.p_nom_opt
         linewidth_factor = 2e3
         line_lower_threshold = 0.0
         title = "Technologies"
@@ -724,7 +731,7 @@ def plot_map(
         handles,
         labels,
         loc="lower right",
-        #bbox_to_anchor=(0.75, 0.2),
+        # bbox_to_anchor=(0.75, 0.2),
         labelspacing=1.0,
         framealpha=1.0,
         title="Investment costs",
@@ -737,14 +744,16 @@ def plot_map(
     labels = []
     for s in (5, 1):
         handles.append(
-            plt.Line2D([0], [0], color='midnightblue', linewidth=s * 1e3 / linewidth_factor)
+            plt.Line2D(
+                [0], [0], color="midnightblue", linewidth=s * 1e3 / linewidth_factor
+            )
         )
         labels.append("{} GW".format(s))
     l3 = ax.legend(
         handles,
         labels,
         loc="upper right",
-        #bbox_to_anchor=(0.32, 1.01),
+        # bbox_to_anchor=(0.32, 1.01),
         framealpha=1,
         labelspacing=0.8,
         handletextpad=1.5,
@@ -763,7 +772,7 @@ def plot_map(
         handles,
         labels,
         loc="lower left",
-        #bbox_to_anchor=(0.001, 0.25),
+        # bbox_to_anchor=(0.001, 0.25),
         framealpha=1,
         labelspacing=0.4,
         handletextpad=1.5,
@@ -782,22 +791,21 @@ def plot_map(
         transparent=True,
         bbox_inches="tight",
     )
-    fig.savefig('plot_map.pdf', transparent=True,
-            bbox_inches="tight")#, dpi=300)
+    fig.savefig("plot_map.pdf", transparent=True, bbox_inches="tight")  # , dpi=300)
 
 
 plot_labeles = {
     "solar": "y",
-    "battery storage":"",
+    "battery storage": "",
     "onshore wind": "b",
     "power-to-gas": "#FF1493",
-    #"offshore wind": "c",
+    # "offshore wind": "c",
     "hydroelectricity": "",
     "power-to-liquid": "",
-    "biomass":"lawngreen",
-    "gas-to-power/heat":"brown",
-    #"DAC": "",
-    "solid biomass for industry CC":"green",
+    "biomass": "lawngreen",
+    "gas-to-power/heat": "brown",
+    # "DAC": "",
+    "solid biomass for industry CC": "green",
     "power-to-heat": "",
     "process emissions CC": "",
 }
@@ -828,8 +836,9 @@ nice_names_n = {
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
-        from helpers import mock_snakemake
         import os
+
+        from helpers import mock_snakemake
 
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
         snakemake = mock_snakemake(
@@ -842,7 +851,7 @@ if __name__ == "__main__":
             sopts="3H",
             discountrate=0.086,
             demand="AP",
-            h2export=1000
+            h2export=1000,
         )
 
     n = pypsa.Network(snakemake.input.network)
