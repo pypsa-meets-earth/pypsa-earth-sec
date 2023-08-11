@@ -109,13 +109,6 @@ def prepare_heat_data(n):
     heat_demand = pd.concat(heat_demand, axis=1)
     electric_heat_supply = pd.concat(electric_heat_supply, axis=1)
 
-    # subtract from electricity load since heat demand already in heat_demand #TODO v0.1
-    # electric_nodes = n.loads.index[n.loads.carrier == "electricity"]
-    # n.loads_t.p_set[electric_nodes] = (
-    #     n.loads_t.p_set[electric_nodes]
-    #     - electric_heat_supply.groupby(level=1, axis=1).sum()[electric_nodes]
-    # )
-
     return (
         nodal_energy_totals,
         heat_demand,
@@ -123,6 +116,7 @@ def prepare_heat_data(n):
         gshp_cop,
         solar_thermal,
         district_heat_share,
+        electric_heat_supply,
     )
 
 
@@ -165,6 +159,7 @@ if __name__ == "__main__":
         gshp_cop,
         solar_thermal,
         district_heat_share,
+        electric_heat_supply,
     ) = prepare_heat_data(n)
 
     # Save the generated output files to snakemake paths
@@ -174,3 +169,4 @@ if __name__ == "__main__":
     gshp_cop.to_csv(snakemake.output.gshp_cop)
     solar_thermal.to_csv(snakemake.output.solar_thermal)
     district_heat_share.to_csv(snakemake.output.district_heat_share)
+    electric_heat_supply.to_csv(snakemake.output.electric_heat_supply)

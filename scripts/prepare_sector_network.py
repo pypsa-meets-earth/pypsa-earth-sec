@@ -1588,6 +1588,18 @@ def add_heat(n, costs):
             p_set=heat_load,
         )
 
+    if not snakemake.config["custom_data"]["elec_demand"]:
+        electric_heat_supply = pd.read_csv(
+            snakemake.input.electric_heat_supply, index_col=0
+        )
+
+        # subtract from electricity load since heat demand already in heat_demand #TODO v0.1
+        electric_nodes = n.loads.index[n.loads.carrier == "electricity"]
+        n.loads_t.p_set[electric_nodes] = (
+            n.loads_t.p_set[electric_nodes]
+            - electric_heat_supply.groupby(level=1, axis=1).sum()[electric_nodes]
+        )
+
         ## Add heat pumps
 
         heat_pump_type = "air" if "urban" in name else "ground"
