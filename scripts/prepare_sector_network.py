@@ -1590,14 +1590,16 @@ def add_heat(n, costs):
 
     if not snakemake.config["custom_data"]["elec_demand"]:
         electric_heat_supply = pd.read_csv(
-            snakemake.input.electric_heat_supply, index_col=0
+            snakemake.input.electric_heat_supply, index_col=0, header=[0,1], parse_dates=True
         )
 
         # subtract from electricity load since heat demand already in heat_demand #TODO v0.1
-        electric_nodes = n.loads.index[n.loads.carrier == "electricity"]
+        electric_nodes = n.loads.index[n.loads.carrier == "AC"]
+        nodal_elec_heat_supply = electric_heat_supply.groupby(level=1, axis=1).sum()[electric_nodes]
+        nodal_elec_heat_supply.columns.name = "Load"
         n.loads_t.p_set[electric_nodes] = (
             n.loads_t.p_set[electric_nodes]
-            - electric_heat_supply.groupby(level=1, axis=1).sum()[electric_nodes]
+            - nodal_elec_heat_supply
         )
 
         ## Add heat pumps
@@ -2157,11 +2159,11 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="10",
+            clusters="12",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="144H",
+            sopts="24H",
             discountrate="0.071",
             demand="DF",
         )
