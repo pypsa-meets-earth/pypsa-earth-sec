@@ -1,0 +1,1673 @@
+uid,Country,iso3,y,x,status,plant_type,capacity,year,location,unit,technology,country
+GACTAFG0001,Afghanistan,AFG,35.9658,68.686338,Operating,Integrated,360.0,,Pol-e Khomri,Kt/yr,Industry NMM Cement,AF
+GACTAGO0001,Angola,AGO,-8.766173,13.316051,Operating,Integrated,1200.0,,Luanda,Kt/yr,Industry NMM Cement,AO
+GACTAGO0002,Angola,AGO,-8.796392,13.42678,Operating,Integrated,1830.0,2017.0,Cacuaco,Kt/yr,Industry NMM Cement,AO
+GACTAGO0003,Angola,AGO,-12.342644,13.581766,Operating,Grinding,350.0,,Lobito,Kt/yr,Industry NMM Cement,AO
+GACTAGO0004,Angola,AGO,-11.185243,14.030804,Operating,Integrated,1400.0,,Sumbe,Kt/yr,Industry NMM Cement,AO
+GACTAGO0005,Angola,AGO,-9.101295,13.567408,Operating,Integrated,4000.0,,Ícolo e Bengo,Kt/yr,Industry NMM Cement,AO
+GACTAGO0006,Angola,AGO,-12.537825,13.496729,Operating,Grinding,700.0,,Benguela,Kt/yr,Industry NMM Cement,AO
+GACTALB0001,Albania,ALB,41.83677,19.63345,Operating,Grinding,500.0,2010.0,Rrethi i Lezhës,Kt/yr,Industry NMM Cement,AL
+GACTALB0002,Albania,ALB,41.503079,19.743606,Operating,Integrated,1330.0,,Rrethi i Krujës,Kt/yr,Industry NMM Cement,AL
+GACTALB0003,Albania,ALB,41.549091,19.725338,Operating,Integrated,1400.0,2010.0,Rrethi i Krujës,Kt/yr,Industry NMM Cement,AL
+GACTALB0004,Albania,ALB,41.120103,20.045136,Operating,Integrated,300.0,,Rrethi i Elbasanit,Kt/yr,Industry NMM Cement,AL
+GACTARE0001,United Arab Emirates,ARE,24.003398,55.438602,Operating,Integrated,3600.0,,Eastern Region,Kt/yr,Industry NMM Cement,AE
+GACTARE0002,United Arab Emirates,ARE,24.137441,55.733956,Operating,Integrated,1140.0,1994.0,Al Ain,Kt/yr,Industry NMM Cement,AE
+GACTARE0004,United Arab Emirates,ARE,25.972745,56.070834,Operating,Integrated,3800.0,1982.0,Ghalilah,Kt/yr,Industry NMM Cement,AE
+GACTARE0005,United Arab Emirates,ARE,25.00427,55.12941,Operating,Grinding,840.0,1978.0,Dubai,Kt/yr,Industry NMM Cement,AE
+GACTARE0006,United Arab Emirates,ARE,25.548753,55.986541,Operating,Integrated,1000.0,2014.0,Ras Al-Khaimah,Kt/yr,Industry NMM Cement,AE
+GACTARE0007,United Arab Emirates,ARE,25.552944,56.226827,Operating,Integrated,3200.0,1996.0,Dibba Al Fujairah,Kt/yr,Industry NMM Cement,AE
+GACTARE0011,United Arab Emirates,ARE,25.157152,55.242025,Operating,Integrated,1500.0,,Dubai,Kt/yr,Industry NMM Cement,AE
+GACTARE0012,United Arab Emirates,ARE,25.386639,55.968218,Operating,Integrated,1200.0,2006.0,Adhen Village,Kt/yr,Industry NMM Cement,AE
+GACTARE0013,United Arab Emirates,ARE,25.975192,56.068896,Operating,Integrated,1000.0,,Ghalilah,Kt/yr,Industry NMM Cement,AE
+GACTARE0014,United Arab Emirates,ARE,25.964045,56.069847,Operating,Integrated,900.0,1978.0,Ghalilah,Kt/yr,Industry NMM Cement,AE
+GACTARE0015,United Arab Emirates,ARE,25.296089,55.617005,Operating,Integrated,4270.0,1977.0,Al Sajaa Industrial Area,Kt/yr,Industry NMM Cement,AE
+GACTARE0016,United Arab Emirates,ARE,25.967124,56.064911,Operating,Integrated,4800.0,1975.0,Ghalilah,Kt/yr,Industry NMM Cement,AE
+GACTARE0017,United Arab Emirates,ARE,24.291296,54.460784,Operating,Grinding,1200.0,2008.0,Abu Dhabi,Kt/yr,Industry NMM Cement,AE
+GACTARE0018,United Arab Emirates,ARE,25.556404,55.977484,Operating,Integrated,2090.0,1977.0,Ras Al-Khaimah,Kt/yr,Industry NMM Cement,AE
+GACTARG0001,Argentina,ARG,-36.982432,-60.243942,Operating,Integrated,2400.0,1937.0,Olavarría,Kt/yr,Industry NMM Cement,AR
+GACTARG0002,Argentina,ARG,-32.862443,-66.850896,Operating,Integrated,350.0,1975.0,Belgrano,Kt/yr,Industry NMM Cement,AR
+GACTARG0004,Argentina,ARG,-28.467957,-65.227789,Operating,Integrated,1560.0,1980.0,El Alto Department,Kt/yr,Industry NMM Cement,AR
+GACTARG0006,Argentina,ARG,-36.99286,-60.276544,Operating,Integrated,3080.0,1930.0,Villa Fortabat,Kt/yr,Industry NMM Cement,AR
+GACTARG0009,Argentina,ARG,-38.896776,-70.035152,Operating,Integrated,890.0,1970.0,Zapala,Kt/yr,Industry NMM Cement,AR
+GACTARG0011,Argentina,ARG,-32.739253,-68.845197,Operating,Integrated,1590.0,1935.0,Las Heras,Kt/yr,Industry NMM Cement,AR
+GACTARG0012,Argentina,ARG,-31.482087,-64.352965,Operating,Integrated,2540.0,1930.0,Santa María,Kt/yr,Industry NMM Cement,AR
+GACTARG0013,Argentina,ARG,-24.490598,-64.957567,Operating,Integrated,1310.0,1982.0,El Carmen,Kt/yr,Industry NMM Cement,AR
+GACTARG0014,Argentina,ARG,-46.789492,-67.927543,Operating,Integrated,2090.0,2008.0,Deseado,Kt/yr,Industry NMM Cement,AR
+GACTARG0018,Argentina,ARG,-34.378987,-55.280467,Operating,Integrated,1400.0,,Minas,Kt/yr,Industry NMM Cement,AR
+GACTARM0001,Armenia,ARM,40.569855,44.748048,Operating,Integrated,1200.0,1970.0,Hrazdan,Kt/yr,Industry NMM Cement,AM
+GACTARM0002,Armenia,ARM,39.855755,44.730945,Operating,Integrated,1200.0,1933.0,Ararat,Kt/yr,Industry NMM Cement,AM
+GACTAUS0001,Australia,AUS,-34.502107,139.028952,Operating,Integrated,250.0,1952.0,Angaston,Kt/yr,Industry NMM Cement,AU
+GACTAUS0002,Australia,AUS,-34.831591,138.502971,Operating,Integrated,1200.0,,Peterhead,Kt/yr,Industry NMM Cement,AU
+GACTAUS0003,Australia,AUS,-32.147573,115.799112,Operating,Integrated,700.0,,Munster,Kt/yr,Industry NMM Cement,AU
+GACTAUS0010,Australia,AUS,-34.45638,150.867508,Operating,Grinding,1200.0,,Spring Hill,Kt/yr,Industry NMM Cement,AU
+GACTAUS0011,Australia,AUS,-34.509613,150.33654,Operating,Integrated,1200.0,1929.0,New Berrima,Kt/yr,Industry NMM Cement,AU
+GACTAUS0013,Australia,AUS,-38.224925,144.268569,Operating,Grinding,250.0,1970.0,Waurn Ponds,Kt/yr,Industry NMM Cement,AU
+GACTAUS0014,Australia,AUS,-23.792892,151.15498,Operating,Integrated,1700.0,,Yarwun,Kt/yr,Industry NMM Cement,AU
+GACTAUS0015,Australia,AUS,-41.331127,146.416556,Operating,Integrated,1000.0,1923.0,Railton,Kt/yr,Industry NMM Cement,AU
+GACTAUS0017,Australia,AUS,-27.41312,153.141054,Operating,Grinding,1200.0,,Pinkenba,Kt/yr,Industry NMM Cement,AU
+GACTAUS0021,Australia,AUS,-27.388321,153.161449,Operating,Grinding,1500.0,1985.0,Port of Brisbane,Kt/yr,Industry NMM Cement,AU
+GACTAUT0001,Austria,AUT,47.873176,16.085765,Operating,Integrated,270.0,,Wopfing,Kt/yr,Industry NMM Cement,AT
+GACTAUT0002,Austria,AUT,47.908647,14.116847,Operating,Integrated,550.0,1888.0,Kirchdorf an der Krems,Kt/yr,Industry NMM Cement,AT
+GACTAUT0004,Austria,AUT,46.737096,15.573051,Operating,Integrated,1150.0,1908.0,Retznei,Kt/yr,Industry NMM Cement,AT
+GACTAUT0005,Austria,AUT,47.723208,13.051516,Operating,Integrated,700.0,,Hallein,Kt/yr,Industry NMM Cement,AT
+GACTAUT0006,Austria,AUT,47.921903,13.777083,Operating,Integrated,580.0,1908.0,Altmünster am Traunsee,Kt/yr,Industry NMM Cement,AT
+GACTAUT0007,Austria,AUT,47.550979,12.168075,Operating,Grinding,600.0,1865.0,Söll,Kt/yr,Industry NMM Cement,AT
+GACTAZE0001,Azerbaijan,AZE,40.224409,49.556633,Operating,Integrated,2570.0,1950.0,Bakı,Kt/yr,Industry NMM Cement,AZ
+GACTAZE0002,Azerbaijan,AZE,41.16592,45.254606,Operating,Integrated,2290.0,,Qazax,Kt/yr,Industry NMM Cement,AZ
+GACTAZE0003,Azerbaijan,AZE,40.251212,49.447206,Operating,Integrated,2070.0,,Bakı,Kt/yr,Industry NMM Cement,AZ
+GACTBDI0001,Burundi,BDI,-2.883556,29.114364,Operating,Grinding,100.0,,Cibitoke,Kt/yr,Industry NMM Cement,BI
+GACTBEL0003,Belgium,BEL,50.600652,3.486634,Operating,Integrated,1800.0,,Tournai,Kt/yr,Industry NMM Cement,BE
+GACTBEL0004,Belgium,BEL,51.163852,3.766917,Operating,Grinding,1000.0,,Gent,Kt/yr,Industry NMM Cement,BE
+GACTBEL0005,Belgium,BEL,50.576126,3.442482,Operating,Integrated,900.0,1986.0,Antoing,Kt/yr,Industry NMM Cement,BE
+GACTBEL0006,Belgium,BEL,50.765227,5.673726,Operating,Integrated,1500.0,1950.0,Visé,Kt/yr,Industry NMM Cement,BE
+GACTBEL0007,Belgium,BEL,51.152206,3.786993,Operating,Grinding,1500.0,,Gent,Kt/yr,Industry NMM Cement,BE
+GACTBEL0008,Belgium,BEL,50.472411,3.992566,Operating,Integrated,2570.0,1911.0,Mons,Kt/yr,Industry NMM Cement,BE
+GACTBEN0001,Benin,BEN,6.37161,2.504159,Operating,Grinding,340.0,,Agblangandan,Kt/yr,Industry NMM Cement,BJ
+GACTBEN0002,Benin,BEN,7.149135,2.650478,Operating,Integrated,600.0,1983.0,Onigbolo,Kt/yr,Industry NMM Cement,BJ
+GACTBEN0003,Benin,BEN,7.143572,2.545286,Operating,Integrated,1700.0,,Ouinhi,Kt/yr,Industry NMM Cement,BJ
+GACTBEN0004,Benin,BEN,6.353237,2.43963,Operating,Grinding,700.0,,Cotonou,Kt/yr,Industry NMM Cement,BJ
+GACTBFA0001,Burkina Faso,BFA,12.437855,-1.47837,Operating,Grinding,500.0,,Ouagadougou,Kt/yr,Industry NMM Cement,BF
+GACTBFA0003,Burkina Faso,BFA,12.355061,-1.640093,Operating,Grinding,700.0,,Ouagadougou,Kt/yr,Industry NMM Cement,BF
+GACTBGD0001,Bangladesh,BGD,25.046629,91.65805,Operating,,190.0,1937.0,Chhatak,Kt/yr,Industry NMM Cement,BD
+GACTBGD0012,Bangladesh,BGD,23.599461,90.510752,Operating,Grinding,600.0,,Kadamrasul,Kt/yr,Industry NMM Cement,BD
+GACTBGD0027,Bangladesh,BGD,23.568618,90.524404,Operating,Grinding,1860.0,,Munshiganj District,Kt/yr,Industry NMM Cement,BD
+GACTBGD0029,Bangladesh,BGD,23.578555,90.513202,Operating,Grinding,2400.0,,Munshiganj District,Kt/yr,Industry NMM Cement,BD
+GACTBGR0001,Bulgaria,BGR,43.235208,27.594851,Operating,Integrated,2000.0,1958.0,Devnya,Kt/yr,Industry NMM Cement,BG
+GACTBGR0002,Bulgaria,BGR,42.073597,25.548066,Operating,,500.0,1947.0,Dimitrovgrad,Kt/yr,Industry NMM Cement,BG
+GACTBGR0003,Bulgaria,BGR,43.281929,23.466674,Operating,Integrated,1700.0,1960.0,Vratsa,Kt/yr,Industry NMM Cement,BG
+GACTBGR0004,Bulgaria,BGR,43.087727,24.174899,Operating,Integrated,1500.0,1907.0,Brestnitsa,Kt/yr,Industry NMM Cement,BG
+GACTBHR0002,Bahrain,BHR,26.03186,50.594119,Operating,Integrated,1241.0,,Askar,Kt/yr,Industry NMM Cement,BH
+GACTBIH0001,Bosnia and Herzegovina,BIH,44.116891,18.113319,Operating,Integrated,400.0,1978.0,Kakanj,Kt/yr,Industry NMM Cement,BA
+GACTBIH0002,Bosnia and Herzegovina,BIH,44.526342,18.526956,Operating,Integrated,800.0,,Lukavac,Kt/yr,Industry NMM Cement,BA
+GACTBLR0001,Belarus,BLR,53.39241,32.012274,Operating,Integrated,2900.0,,Kastsyukovichy District,Kt/yr,Industry NMM Cement,BY
+GACTBLR0002,Belarus,BLR,53.261694,24.447365,Operating,Integrated,2700.0,,Vaŭkavyski rajon,Kt/yr,Industry NMM Cement,BY
+GACTBLR0003,Belarus,BLR,53.731542,31.72404,Operating,Integrated,1800.0,,Krychaw,Kt/yr,Industry NMM Cement,BY
+GACTBOL0001,Bolivia,BOL,-19.014555,-57.70235,Operating,Grinding,200.0,1991.0,Puerto Quijarro,Kt/yr,Industry NMM Cement,BO
+GACTBOL0002,Bolivia,BOL,-16.647194,-68.316934,Operating,Integrated,2000.0,1928.0,El Alto,Kt/yr,Industry NMM Cement,BO
+GACTBOL0003,Bolivia,BOL,-21.247315,-65.20765,Operating,Integrated,338.0,,Eustaquio Méndez,Kt/yr,Industry NMM Cement,BO
+GACTBOL0004,Bolivia,BOL,-17.936151,-67.077067,Operating,Integrated,166.0,1980.0,Oruro,Kt/yr,Industry NMM Cement,BO
+GACTBOL0005,Bolivia,BOL,-17.568654,-63.150661,Operating,Grinding,202.0,1995.0,Provincia de Ignacio Warnes,Kt/yr,Industry NMM Cement,BO
+GACTBOL0006,Bolivia,BOL,-18.951114,-58.278028,Operating,Integrated,950.0,,Provincia de Germán Busch,Kt/yr,Industry NMM Cement,BO
+GACTBOL0007,Bolivia,BOL,-17.724835,-66.291682,Operating,Integrated,825.0,,Irpa Irpa,Kt/yr,Industry NMM Cement,BO
+GACTBOL0008,Bolivia,BOL,-17.399962,-67.272688,Operating,Integrated,1520.0,,Cercado,Kt/yr,Industry NMM Cement,BO
+GACTBOL0009,Bolivia,BOL,-19.00701,-65.238766,Operating,Integrated,1000.0,,Sucre,Kt/yr,Industry NMM Cement,BO
+GACTBRA0001,Brazil,BRA,-19.513164,-44.276622,Operating,Integrated,1000.0,,Sete Lagoas,Kt/yr,Industry NMM Cement,BR
+GACTBRA0002,Brazil,BRA,-7.477499,-34.844648,Operating,Integrated,1500.0,,Pitimbu,Kt/yr,Industry NMM Cement,BR
+GACTBRA0004,Brazil,BRA,-19.53878,-44.077607,Operating,Integrated,1060.0,1959.0,Matozinhos,Kt/yr,Industry NMM Cement,BR
+GACTBRA0007,Brazil,BRA,-25.458029,-49.610131,Operating,Integrated,2800.0,1976.0,Balsa Nova,Kt/yr,Industry NMM Cement,BR
+GACTBRA0008,Brazil,BRA,-2.65682,-44.306799,Operating,Grinding,500.0,,São Luís,Kt/yr,Industry NMM Cement,BR
+GACTBRA0010,Brazil,BRA,-13.895437,-41.281472,Operating,Integrated,2570.0,2012.0,Ituaçu,Kt/yr,Industry NMM Cement,BR
+GACTBRA0011,Brazil,BRA,-10.845763,-37.156458,Operating,Integrated,1790.0,,Nossa Senhora do Socorro,Kt/yr,Industry NMM Cement,BR
+GACTBRA0012,Brazil,BRA,-4.321762,-56.219968,Operating,Integrated,1590.0,,Itaituba,Kt/yr,Industry NMM Cement,BR
+GACTBRA0016,Brazil,BRA,-6.953261,-40.52013,Operating,Integrated,1730.0,,Fronteiras,Kt/yr,Industry NMM Cement,BR
+GACTBRA0017,Brazil,BRA,-3.090327,-59.915041,Operating,Integrated,740.0,,Manaus,Kt/yr,Industry NMM Cement,BR
+GACTBRA0023,Brazil,BRA,-5.042011,-37.773819,Operating,Integrated,2250.0,,Quixeré,Kt/yr,Industry NMM Cement,BR
+GACTBRA0028,Brazil,BRA,-24.518867,-48.856014,Operating,Integrated,1100.0,,Apiaí,Kt/yr,Industry NMM Cement,BR
+GACTBRA0029,Brazil,BRA,-20.473665,-56.72942,Operating,Integrated,1490.0,,Bodoquena,Kt/yr,Industry NMM Cement,BR
+GACTBRA0030,Brazil,BRA,-24.708727,-48.117464,Operating,Integrated,930.0,1972.0,Cajati,Kt/yr,Industry NMM Cement,BR
+GACTBRA0031,Brazil,BRA,-10.518039,-40.330504,Operating,Integrated,1720.0,,Campo Formoso,Kt/yr,Industry NMM Cement,BR
+GACTBRA0032,Brazil,BRA,-17.010255,-49.781312,Operating,Integrated,1400.0,,Cezarina,Kt/yr,Industry NMM Cement,BR
+GACTBRA0035,Brazil,BRA,-19.627181,-44.025928,Operating,Integrated,1450.0,,Pedro Leopoldo,Kt/yr,Industry NMM Cement,BR
+GACTBRA0036,Brazil,BRA,-9.762307,-36.151178,Operating,Integrated,1040.0,,São Miguel dos Campos,Kt/yr,Industry NMM Cement,BR
+GACTBRA0037,Brazil,BRA,-31.585375,-53.67145,Operating,Integrated,640.0,,Candiota,Kt/yr,Industry NMM Cement,BR
+GACTBRA0044,Brazil,BRA,-21.18078,-43.981104,Operating,Integrated,2040.0,1955.0,Barroso,Kt/yr,Industry NMM Cement,BR
+GACTBRA0046,Brazil,BRA,-21.941689,-42.271287,Operating,Integrated,1080.0,1981.0,Cantagalo,Kt/yr,Industry NMM Cement,BR
+GACTBRA0047,Brazil,BRA,-15.789679,-48.770272,Operating,Integrated,1120.0,,Cocalzinho de Goiás,Kt/yr,Industry NMM Cement,BR
+GACTBRA0049,Brazil,BRA,-16.680168,-43.883034,Operating,Integrated,2000.0,1959.0,Montes Claros,Kt/yr,Industry NMM Cement,BR
+GACTBRA0055,Brazil,BRA,-20.729127,-41.1287,Operating,Grinding,190.0,,Cachoeiro de Itapemirim,Kt/yr,Industry NMM Cement,BR
+GACTBRA0056,Brazil,BRA,-24.669459,-48.979959,Operating,Integrated,1800.0,2015.0,Adrianópolis,Kt/yr,Industry NMM Cement,BR
+GACTBRA0057,Brazil,BRA,-26.81867,-49.156976,Operating,Integrated,400.0,,Pomerode,Kt/yr,Industry NMM Cement,BR
+GACTBRA0058,Brazil,BRA,-15.570003,-47.854243,Operating,Integrated,1600.0,1960.0,Brasília,Kt/yr,Industry NMM Cement,BR
+GACTBRA0064,Brazil,BRA,-21.912475,-42.262257,Operating,Integrated,920.0,1970.0,Cantagalo,Kt/yr,Industry NMM Cement,BR
+GACTBRA0065,Brazil,BRA,-19.00333,-57.62406,Operating,Integrated,1180.0,1970.0,Corumbá,Kt/yr,Industry NMM Cement,BR
+GACTBRA0068,Brazil,BRA,-10.82468,-37.165,Operating,Integrated,2050.0,1985.0,Laranjeiras,Kt/yr,Industry NMM Cement,BR
+GACTBRA0073,Brazil,BRA,-23.629579,-47.499136,Operating,Integrated,1670.0,,Salto de Pirapora,Kt/yr,Industry NMM Cement,BR
+GACTBRA0074,Brazil,BRA,-15.586387,-47.874042,Operating,Integrated,2570.0,,Brasília,Kt/yr,Industry NMM Cement,BR
+GACTBRA0075,Brazil,BRA,-3.686432,-40.373895,Operating,Integrated,1940.0,1968.0,Sobral,Kt/yr,Industry NMM Cement,BR
+GACTBRB0001,Barbados,BRB,13.287233,-59.647826,Operating,Integrated,950.0,,Checker Hall,Kt/yr,Industry NMM Cement,BB
+GACTBRN0001,Brunei Darussalam,BRN,5.012333,115.064836,Operating,Grinding,500.0,1996.0,Mukim Serasa,Kt/yr,Industry NMM Cement,BN
+GACTBTN0001,Bhutan,BTN,26.872676,91.232077,Operating,Integrated,1300.0,,Menchu,Kt/yr,Industry NMM Cement,BT
+GACTBTN0002,Bhutan,BTN,26.816862,89.188009,Operating,Integrated,375.0,,Gomtu,Kt/yr,Industry NMM Cement,BT
+GACTBWA0001,Botswana,BWA,-24.690323,25.889149,Operating,Grinding,400.0,1995.0,Gaborone,Kt/yr,Industry NMM Cement,BW
+GACTCAN0001,Canada,CAN,46.030177,-73.401677,Operating,Integrated,1475.0,1951.0,Joliette,Kt/yr,Industry NMM Cement,CA
+GACTCAN0002,Canada,CAN,43.493688,-79.624239,Operating,Integrated,2000.0,1956.0,Mississauga,Kt/yr,Industry NMM Cement,CA
+GACTCAN0003,Canada,CAN,46.744581,-71.813859,Operating,Integrated,1571.0,1951.0,Saint-Basile,Kt/yr,Industry NMM Cement,CA
+GACTCAN0004,Canada,CAN,43.103861,-80.895863,Operating,Integrated,544.0,1979.0,Embro,Kt/yr,Industry NMM Cement,CA
+GACTCAN0005,Canada,CAN,45.768479,-74.613848,Operating,Integrated,300.0,,Argenteuil,Kt/yr,Industry NMM Cement,CA
+GACTCAN0006,Canada,CAN,44.054274,-77.121345,Operating,Integrated,1520.0,1958.0,Prince Edward,Kt/yr,Industry NMM Cement,CA
+GACTCAN0007,Canada,CAN,53.580487,-113.600661,Operating,Integrated,1380.0,,Edmonton,Kt/yr,Industry NMM Cement,CA
+GACTCAN0008,Canada,CAN,49.143998,-123.023077,Operating,Integrated,1356.0,1904.0,Delta,Kt/yr,Industry NMM Cement,CA
+GACTCAN0009,Canada,CAN,44.168779,-76.805344,Operating,Integrated,1176.0,1973.0,Bath,Kt/yr,Industry NMM Cement,CA
+GACTCAN0010,Canada,CAN,45.239364,-63.334263,Operating,Integrated,500.0,1965.0,Brookfield,Kt/yr,Industry NMM Cement,CA
+GACTCAN0011,Canada,CAN,51.060709,-115.171522,Operating,Integrated,2200.0,1906.0,Division No. 15,Kt/yr,Industry NMM Cement,CA
+GACTCAN0012,Canada,CAN,49.158286,-123.005621,Operating,Integrated,1319.0,,Richmond,Kt/yr,Industry NMM Cement,CA
+GACTCAN0013,Canada,CAN,45.339711,-73.523533,Operating,Integrated,1157.0,,Saint-Constant,Kt/yr,Industry NMM Cement,CA
+GACTCAN0014,Canada,CAN,43.223614,-79.687062,Operating,Grinding,814.0,,Hamilton,Kt/yr,Industry NMM Cement,CA
+GACTCAN0015,Canada,CAN,48.18713,-64.920197,Operating,Integrated,1580.0,,Port-Daniel,Kt/yr,Industry NMM Cement,CA
+GACTCAN0016,Canada,CAN,43.881616,-78.699895,Operating,Integrated,1800.0,1968.0,Bowmanville,Kt/yr,Industry NMM Cement,CA
+GACTCAN0017,Canada,CAN,43.243214,-81.147797,Operating,Integrated,645.0,1912.0,Lakeside,Kt/yr,Industry NMM Cement,CA
+GACTCHE0001,Switzerland,CHE,47.414148,8.158997,Operating,Integrated,860.0,1890.0,Wildegg,Kt/yr,Industry NMM Cement,CH
+GACTCHE0003,Switzerland,CHE,46.91631,9.54928,Operating,Integrated,1190.0,1957.0,Untervaz,Kt/yr,Industry NMM Cement,CH
+GACTCHE0005,Switzerland,CHE,46.655283,6.545972,Operating,Integrated,940.0,1953.0,Eclépens,Kt/yr,Industry NMM Cement,CH
+GACTCHL0005,Chile,CHL,-23.780668,-70.318803,Operating,Integrated,500.0,,Antofagasta,Kt/yr,Industry NMM Cement,CL
+GACTCHL0006,Chile,CHL,-36.744254,-73.118689,Operating,Integrated,750.0,1961.0,Talcahuano,Kt/yr,Industry NMM Cement,CL
+GACTCHL0007,Chile,CHL,-34.866335,-71.139321,Operating,Integrated,1700.0,1998.0,Teno,Kt/yr,Industry NMM Cement,CL
+GACTCHL0008,Chile,CHL,-33.596748,-71.588465,Operating,Grinding,300.0,2009.0,Barrancas,Kt/yr,Industry NMM Cement,CL
+GACTCHL0009,Chile,CHL,-32.790183,-71.197668,Operating,Integrated,980.0,1908.0,La Calera,Kt/yr,Industry NMM Cement,CL
+GACTCHN0001,China,CHN,31.229955,118.380624,Operating,Integrated,2700.0,1998.0,Wuhu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0002,China,CHN,26.720854,111.833275,Operating,Integrated,5000.0,2011.0,Yongzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0003,China,CHN,31.137582,118.169276,Operating,Integrated,15000.0,,Wuhu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0004,China,CHN,26.615974,107.241019,Operating,Integrated,1620.0,2009.0,Qiannan Buyizumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0005,China,CHN,30.687769,118.887302,Operating,Integrated,2800.0,1985.0,Xuancheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0006,China,CHN,26.667159,106.358115,Operating,Integrated,6600.0,2010.0,Guiyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0007,China,CHN,30.627842,116.860494,Operating,Integrated,3300.0,2002.0,Anqing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0008,China,CHN,30.744456,117.392989,Operating,Integrated,1100.0,2000.0,Tongling Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0009,China,CHN,30.844943,117.777036,Operating,Integrated,7000.0,1995.0,Tongling Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0010,China,CHN,32.189163,118.209739,Operating,Integrated,4400.0,2010.0,Chuzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0011,China,CHN,29.508298,113.407059,Operating,Integrated,2200.0,2010.0,Yueyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0012,China,CHN,27.859691,114.747611,Operating,Integrated,2800.0,1963.0,Xinyu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0013,China,CHN,22.709022,109.805221,Operating,Integrated,4000.0,2005.0,Yulin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0014,China,CHN,29.33424,119.050244,Operating,Integrated,2000.0,2003.0,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0015,China,CHN,35.614648,117.442907,Operating,Integrated,2200.0,2010.0,Jining Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0016,China,CHN,30.449154,117.2375,Operating,Integrated,12600.0,2000.0,Chizhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0017,China,CHN,27.40206,111.985983,Operating,Integrated,5000.0,2004.0,Loudi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0018,China,CHN,30.850812,107.326642,Operating,Integrated,4400.0,,Dazhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0019,China,CHN,30.788421,118.973163,Operating,Integrated,3200.0,2007.0,Xuancheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0020,China,CHN,24.268659,113.415031,Operating,Integrated,6400.0,2006.0,Qingyuan,Kt/yr,Industry NMM Cement,CN
+GACTCHN0021,China,CHN,22.372601,111.961909,Operating,Integrated,6600.0,2015.0,Yangjiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0022,China,CHN,35.469211,106.680729,Operating,Integrated,3240.0,2008.0,Pingliang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0023,China,CHN,27.834027,111.172324,Operating,Integrated,4400.0,2009.0,Loudi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0024,China,CHN,29.587404,111.279676,Operating,Integrated,4400.0,2008.0,Changde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0025,China,CHN,25.636225,110.658047,Operating,Integrated,4000.0,2004.0,Guilin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0026,China,CHN,22.659126,107.900941,Operating,Integrated,6200.0,2005.0,Chongzuo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0027,China,CHN,34.723693,107.026559,Operating,Integrated,2200.0,2010.0,Baoji Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0028,China,CHN,31.097962,118.025423,Operating,Integrated,4400.0,2000.0,Wuhu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0029,China,CHN,28.630062,117.37987,Operating,Integrated,4860.0,2016.0,Shangrao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0030,China,CHN,24.174723,112.763253,Operating,Integrated,1800.0,2009.0,Qingyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0031,China,CHN,34.536334,107.076911,Operating,Integrated,2200.0,2009.0,Baoji Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0032,China,CHN,25.118023,105.357339,Operating,Integrated,1500.0,2013.0,Qianxinan Buyizumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0033,China,CHN,34.474894,107.771682,Operating,Integrated,2200.0,,Baoji Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0034,China,CHN,25.07279,99.286018,Operating,Integrated,2200.0,2014.0,Baoshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0035,China,CHN,32.405777,106.770057,Operating,Integrated,2200.0,2014.0,Bazhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0036,China,CHN,31.521269,117.899484,Operating,Integrated,4500.0,2009.0,Hefei Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0037,China,CHN,32.16752,119.070801,Operating,Integrated,1800.0,2004.0,Nanjing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0038,China,CHN,30.189608,107.981388,Operating,Integrated,1600.0,2008.0,Zhongxian,Kt/yr,Industry NMM Cement,CN
+GACTCHN0039,China,CHN,25.45623,114.889669,Operating,Integrated,4050.0,,Ganzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0040,China,CHN,24.206132,106.602861,Operating,Integrated,1200.0,2009.0,Baise Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0041,China,CHN,32.615007,105.861036,Operating,Integrated,4400.0,2010.0,Guangyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0042,China,CHN,26.169977,105.664166,Operating,Integrated,3200.0,2014.0,Liupanshui Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0043,China,CHN,42.541113,94.235486,Operating,Integrated,750.0,2011.0,Hami Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0044,China,CHN,28.216826,111.660772,Operating,Integrated,2200.0,2014.0,Yiyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0045,China,CHN,26.68809,110.672331,Operating,Integrated,2520.0,2007.0,Shaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0046,China,CHN,25.171664,111.540559,Operating,Integrated,2200.0,2012.0,Yongzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0047,China,CHN,24.862777,103.388419,Operating,Integrated,1100.0,,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0048,China,CHN,30.506997,107.454266,Operating,Integrated,2200.0,2013.0,Liangping Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0049,China,CHN,27.673947,111.866676,Operating,Integrated,2200.0,2011.0,Loudi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0050,China,CHN,35.303294,103.26961,Operating,Integrated,1620.0,2013.0,Linxia Huizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0051,China,CHN,34.620156,108.558124,Operating,Integrated,4400.0,2011.0,Xianyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0052,China,CHN,23.126318,107.657118,Operating,Integrated,2000.0,2011.0,Nanning Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0053,China,CHN,24.628418,98.763266,Operating,Integrated,1100.0,2012.0,Baoshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0054,China,CHN,34.655986,108.217538,Operating,Integrated,2200.0,2013.0,Xianyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0055,China,CHN,35.010213,108.975283,Operating,Integrated,2000.0,2012.0,Tongchuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0056,China,CHN,27.172797,111.408151,Operating,Integrated,2200.0,2014.0,Shaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0057,China,CHN,26.546973,105.013761,Operating,Integrated,2100.0,2014.0,Liupanshui Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0058,China,CHN,32.308958,106.818799,Operating,Integrated,1100.0,2009.0,Bazhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0059,China,CHN,33.97101,117.112737,Operating,Integrated,4400.0,2012.0,Suzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0060,China,CHN,27.472125,109.122586,Operating,Integrated,4400.0,2015.0,Tongren Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0061,China,CHN,23.765311,103.667616,Operating,Integrated,4000.0,2014.0,Wenshan Zhuangzumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0062,China,CHN,24.522016,97.796247,Operating,Integrated,1440.0,2016.0,Dehong Daizujingpozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0063,China,CHN,23.743694,105.403465,Operating,Integrated,1000.0,2010.0,Wenshan Zhuangzumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0064,China,CHN,27.759302,106.956594,Operating,Integrated,3240.0,2014.0,Zunyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0065,China,CHN,28.492576,115.951121,Operating,Grinding,1500.0,2003.0,Nanchang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0066,China,CHN,31.355912,121.517068,Operating,Grinding,900.0,1995.0,Pudong Xinqu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0067,China,CHN,32.923638,117.439757,Operating,Grinding,2400.0,2002.0,Bengbu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0068,China,CHN,31.00661,121.442527,Operating,Grinding,1500.0,1972.0,Minhang Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0069,China,CHN,31.993157,120.576024,Operating,Grinding,3200.0,1998.0,Suzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0070,China,CHN,30.010728,120.804755,Operating,Grinding,1000.0,2003.0,Shaoxing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0071,China,CHN,33.417669,119.042408,Operating,Grinding,4400.0,2008.0,Huaian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0072,China,CHN,32.695577,116.748146,Operating,Grinding,4400.0,2011.0,Huainan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0073,China,CHN,31.748599,116.331386,Operating,Grinding,3300.0,2009.0,Luan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0074,China,CHN,22.979917,112.850388,Operating,Grinding,1000.0,2010.0,Foshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0075,China,CHN,29.907604,118.473234,Operating,Grinding,2200.0,2018.0,Huangshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0076,China,CHN,28.696463,121.468054,Operating,Grinding,1800.0,2008.0,Taizhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0077,China,CHN,31.78915,121.102005,Operating,Grinding,3200.0,2004.0,Nantong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0078,China,CHN,31.479261,121.213155,Operating,Grinding,1850.0,2004.0,Suzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0079,China,CHN,27.361589,118.109661,Operating,Grinding,60.0,2000.0,Nanping Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0080,China,CHN,31.76786,118.491851,Operating,Grinding,3800.0,2005.0,Maanshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0081,China,CHN,29.931804,121.855355,Operating,Grinding,3200.0,,Ningbo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0082,China,CHN,29.48981,121.504058,Operating,Grinding,4400.0,2005.0,Ningbo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0083,China,CHN,32.004975,117.248183,Operating,Grinding,1800.0,1998.0,Hefei Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0084,China,CHN,21.331892,110.303199,Operating,Grinding,3200.0,2008.0,Zhanjiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0086,China,CHN,22.215127,113.099766,Operating,Grinding,3200.0,2005.0,Jiangmen Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0087,China,CHN,28.833796,115.958428,Operating,Grinding,4000.0,2013.0,Nanchang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0088,China,CHN,33.415332,120.168946,Operating,Grinding,3200.0,2007.0,Yancheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0089,China,CHN,33.596743,118.966544,Operating,Grinding,1650.0,2004.0,Huaian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0090,China,CHN,29.50057,121.652595,Operating,Grinding,4400.0,,Ningbo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0091,China,CHN,29.605146,116.124686,Operating,Grinding,2900.0,2002.0,Jiujiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0092,China,CHN,28.301628,116.445885,Operating,Grinding,2200.0,2014.0,Nanchang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0093,China,CHN,21.690076,110.837207,Operating,Grinding,1500.0,2009.0,Maoming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0094,China,CHN,32.317452,119.825483,Operating,Grinding,4400.0,2012.0,Yangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0095,China,CHN,28.161762,121.095623,Operating,Grinding,2000.0,2015.0,Wenzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0096,China,CHN,32.17243,119.283709,Operating,Grinding,850.0,2012.0,Zhenjiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0098,China,CHN,25.742952,114.881873,Operating,Grinding,2050.0,,Ganzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0099,China,CHN,29.917936,115.420949,Operating,Integrated,2000.0,2009.0,Huanggang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0100,China,CHN,30.976399,103.908381,Operating,Integrated,6000.0,2006.0,Chengdu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0101,China,CHN,29.810669,115.580052,Operating,Integrated,14000.0,2000.0,Jiujiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0102,China,CHN,30.677735,114.543524,Operating,Integrated,2480.0,2009.0,Wuhan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0103,China,CHN,30.273756,114.32873,Operating,Integrated,1400.0,,Wuhan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0104,China,CHN,28.618066,115.964109,Operating,Grinding,650.0,,Nanchang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0105,China,CHN,30.60216,114.138749,Operating,Grinding,2300.0,2001.0,Wuhan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0106,China,CHN,32.268448,119.411291,Operating,Grinding,3000.0,,Yangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0107,China,CHN,39.326111,115.442273,Operating,Integrated,1470.0,,Baoding Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0108,China,CHN,40.186742,116.167224,Operating,Integrated,1960.0,,Changping Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0109,China,CHN,35.193917,112.846487,Operating,Integrated,1290.0,,Jiaozuo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0110,China,CHN,40.428409,116.671456,Operating,Integrated,1000.0,,Huairou Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0113,China,CHN,39.597982,116.032085,Operating,Integrated,1420.0,,Fangshan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0114,China,CHN,40.077829,116.977358,Operating,Integrated,1210.0,,Shunyi Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0115,China,CHN,40.586621,115.076826,Operating,Integrated,1140.0,,Zhangjiakou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0116,China,CHN,39.770898,116.021386,Operating,Integrated,2420.0,,Fangshan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0117,China,CHN,43.175134,124.396361,Operating,Integrated,2300.0,,Siping Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0118,China,CHN,37.598772,114.451868,Operating,Integrated,3300.0,,Shijiazhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0119,China,CHN,38.814099,114.630734,Operating,Integrated,1190.0,,Baoding Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0121,China,CHN,40.141971,115.266752,Operating,Integrated,1750.0,,Zhangjiakou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0122,China,CHN,29.225931,106.010656,Operating,Integrated,3000.0,,Jiangjin Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0123,China,CHN,39.875323,118.054964,Operating,Integrated,850.0,,Tangshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0124,China,CHN,34.538699,107.502136,Operating,Integrated,1400.0,,Baoji Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0125,China,CHN,41.185542,123.000903,Operating,Integrated,2400.0,,Anshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0126,China,CHN,41.309641,123.336599,Operating,Integrated,1160.0,,Liaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0128,China,CHN,34.551467,107.992271,Operating,Integrated,2940.0,,Baoji Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0129,China,CHN,41.879263,110.106906,Operating,Integrated,2130.0,,Baotou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0130,China,CHN,35.206282,113.109157,Operating,Integrated,1560.0,,Jiaozuo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0131,China,CHN,39.750306,118.799837,Operating,Integrated,1420.0,,Qinhuangdao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0132,China,CHN,40.522194,117.606141,Operating,Integrated,1880.0,,Chengde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0133,China,CHN,40.783722,118.259527,Operating,Integrated,1680.0,,Chengde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0135,China,CHN,39.818388,114.367697,Operating,Integrated,1830.0,,Datong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0136,China,CHN,36.514118,113.619087,Operating,Integrated,1440.0,,Handan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0137,China,CHN,38.181205,114.23499,Operating,Integrated,2910.0,,Shijiazhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0139,China,CHN,40.36517,109.961504,Operating,Integrated,1200.0,,Eerduosi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0140,China,CHN,43.625411,115.852039,Operating,Integrated,1280.0,,Xilinguole Meng,Kt/yr,Industry NMM Cement,CN
+GACTCHN0141,China,CHN,29.666575,106.166631,Operating,Integrated,1750.0,,Bishan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0142,China,CHN,29.964419,106.379901,Operating,Integrated,2000.0,,Hechuan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0143,China,CHN,45.3982,127.147103,Operating,Integrated,3190.0,,Haerbin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0145,China,CHN,42.872885,126.153327,Operating,Integrated,1800.0,,Jilin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0147,China,CHN,43.532882,126.268841,Operating,Integrated,2000.0,,Jilin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0148,China,CHN,35.402755,111.329331,Operating,Integrated,3000.0,,Yuncheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0149,China,CHN,37.406669,114.547772,Operating,Integrated,1470.0,,Xingtai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0150,China,CHN,39.410181,115.630481,Operating,Integrated,2000.0,,Baoding Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0151,China,CHN,38.245798,111.58081,Operating,Integrated,1660.0,,Lvliang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0152,China,CHN,35.84369,113.345858,Operating,Integrated,1290.0,,Jincheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0153,China,CHN,38.391778,114.337788,Operating,Integrated,1910.0,,Shijiazhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0154,China,CHN,29.701756,111.512822,Operating,Integrated,1370.0,,Changde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0155,China,CHN,41.022515,118.795963,Operating,Integrated,1000.0,,Chengde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0156,China,CHN,37.891743,112.666613,Operating,Integrated,1580.0,,Taiyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0157,China,CHN,38.861078,114.82963,Operating,Integrated,1800.0,,Baoding Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0159,China,CHN,39.763807,118.376732,Operating,Integrated,1990.0,,Tangshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0160,China,CHN,39.757913,118.463647,Operating,Integrated,1650.0,,Tangshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0161,China,CHN,37.452465,110.682016,Operating,Integrated,1040.0,,Yulin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0162,China,CHN,36.8812,114.315651,Operating,Integrated,1970.0,,Xingtai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0164,China,CHN,37.888766,113.666389,Operating,Integrated,2080.0,,Yangquan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0165,China,CHN,37.049849,113.370356,Operating,Integrated,970.0,,Jinzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0167,China,CHN,45.117174,126.141284,Operating,Grinding,800.0,,Songyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0168,China,CHN,43.888187,126.540238,Operating,Grinding,2000.0,,Jilin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0171,China,CHN,41.572957,123.360689,Operating,Grinding,1600.0,,Shenyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0176,China,CHN,31.741627,112.421607,Operating,Integrated,1560.0,,Xiangyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0177,China,CHN,31.145625,112.188412,Operating,Integrated,1210.0,,Jingmen Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0178,China,CHN,29.86611,113.802463,Operating,Integrated,1250.0,,Xianning Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0180,China,CHN,32.461163,111.658317,Operating,Integrated,2190.0,,Xiangyang,Kt/yr,Industry NMM Cement,CN
+GACTCHN0181,China,CHN,29.626508,111.307999,Operating,Integrated,1910.0,,Changde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0182,China,CHN,30.077065,111.500255,Operating,Integrated,2210.0,,Jingzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0183,China,CHN,31.178855,110.74609,Operating,Integrated,2690.0,,Yichang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0184,China,CHN,31.274959,112.272753,Operating,Integrated,3590.0,,Jingmen Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0187,China,CHN,36.087736,114.068821,Operating,Integrated,2555.0,2008.0,Anyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0188,China,CHN,35.614132,117.08003,Operating,Integrated,1410.0,,Jining Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0189,China,CHN,29.274489,119.297096,Operating,Integrated,1470.0,,Jinhua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0190,China,CHN,34.968495,117.893384,Operating,Integrated,2370.0,,Linyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0191,China,CHN,37.474426,116.23988,Operating,Integrated,1880.0,,Dezhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0192,China,CHN,35.939397,118.919357,Operating,Integrated,1680.0,,Rizhao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0193,China,CHN,32.213098,118.279162,Operating,Integrated,1990.0,,Chuzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0194,China,CHN,29.139568,111.614278,Operating,Integrated,1610.0,,Changde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0195,China,CHN,28.189018,113.306758,Operating,Integrated,1270.0,,Changsha Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0196,China,CHN,34.926747,117.528367,Operating,Integrated,3680.0,,Zaozhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0197,China,CHN,30.648885,120.366445,Operating,Integrated,1100.0,,Jiaxing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0198,China,CHN,35.405277,117.627232,Operating,Integrated,1470.0,,Linyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0199,China,CHN,31.063867,119.594509,Operating,Integrated,1440.0,,Xuancheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0200,China,CHN,34.046654,113.153132,Operating,Integrated,1940.0,,Pingdingshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0202,China,CHN,24.93015,110.829581,Operating,Integrated,1820.0,,Guilin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0203,China,CHN,26.340874,112.811689,Operating,Integrated,3200.0,,Hengyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0205,China,CHN,25.574033,113.006797,Operating,Integrated,1220.0,,Chenzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0206,China,CHN,27.6541,114.074635,Operating,Integrated,1230.0,,Pingxiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0207,China,CHN,28.699945,118.314033,Operating,Integrated,1830.0,,Shangrao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0208,China,CHN,31.357426,119.581498,Operating,Integrated,830.0,,Wuxi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0210,China,CHN,25.959229,113.238784,Operating,Integrated,2000.0,,Chenzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0211,China,CHN,37.304121,114.519444,Operating,Integrated,2180.0,1950.0,Xingtai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0212,China,CHN,41.712344,113.106074,Operating,Integrated,3570.0,1999.0,Wulanchabu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0213,China,CHN,34.372875,113.065124,Operating,Integrated,1890.0,,Zhengzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0214,China,CHN,33.10019,111.48759,Operating,Integrated,1320.0,,Nanyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0216,China,CHN,31.324863,119.647243,Operating,Integrated,1720.0,,Wuxi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0218,China,CHN,31.09595,119.751184,Operating,Integrated,1530.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0219,China,CHN,30.935667,119.946136,Operating,Integrated,2009.9999999999998,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0220,China,CHN,35.997904,116.372894,Operating,Integrated,1510.0,,Taian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0221,China,CHN,29.827321,119.686369,Operating,Integrated,1700.0,2003.0,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0222,China,CHN,36.759877,118.40628,Operating,Integrated,4380.0,2006.0,Weifang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0223,China,CHN,31.041526,119.602215,Operating,Integrated,1460.0,,Xuancheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0224,China,CHN,31.091001,119.68622,Operating,Integrated,3600.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0225,China,CHN,35.659014,118.831003,Operating,Integrated,2080.0,,Rizhao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0226,China,CHN,31.361481,119.330047,Operating,Integrated,1590.0,,Changzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0229,China,CHN,23.053386,111.998378,Operating,Integrated,2000.0,,Yunfu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0230,China,CHN,27.697284,113.825503,Operating,Integrated,3000.0,,Pingxiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0231,China,CHN,23.035191,111.98069,Operating,Integrated,1450.0,,Yunfu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0232,China,CHN,31.518947,117.752078,Operating,Integrated,5000.0,,Hefei Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0233,China,CHN,27.963997,113.216266,Operating,Integrated,2000.0,,Zhuzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0234,China,CHN,33.099215,106.992661,Operating,Integrated,2000.0,,Hanzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0235,China,CHN,29.311703,111.315189,Operating,Integrated,1000.0,,Changde Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0236,China,CHN,27.983793,112.847056,Operating,Integrated,2000.0,,Xiangtan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0237,China,CHN,30.723,119.701685,Operating,Integrated,1640.0,2003.0,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0238,China,CHN,36.167804,114.065663,Operating,Integrated,1290.0,,Anyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0239,China,CHN,32.782547,117.174059,Operating,Integrated,2020.0,,Bengbu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0240,China,CHN,31.110549,119.723102,Operating,Integrated,2700.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0241,China,CHN,30.559768,120.09114,Operating,Integrated,1650.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0243,China,CHN,29.936659,119.819031,Operating,Integrated,1130.0,,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0244,China,CHN,29.875153,119.742454,Operating,Integrated,1500.0,,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0245,China,CHN,31.077059,119.578067,Operating,Integrated,1740.0,,Xuancheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0246,China,CHN,22.730285,109.407823,Operating,Integrated,2550.0,,Nanning Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0247,China,CHN,34.415816,117.250549,Operating,Integrated,3150.0,,Xuzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0248,China,CHN,25.844446,115.865441,Operating,Integrated,2190.0,,Ganzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0249,China,CHN,26.553552,113.304149,Operating,Integrated,1060.0,,Chenzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0250,China,CHN,28.720093,109.882675,Operating,Integrated,1310.0,,Xiangxi Tujiazumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0251,China,CHN,26.828354,112.953578,Operating,Integrated,1490.0,,Hengyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0252,China,CHN,28.224586,112.682477,Operating,Integrated,1730.0,2004.0,Changsha Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0253,China,CHN,28.053748,112.892786,Operating,Integrated,1810.0,,Changsha Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0254,China,CHN,27.733621,112.218816,Operating,Integrated,2680.0,,Xiangtan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0256,China,CHN,31.116327,119.700671,Operating,Integrated,1310.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0257,China,CHN,30.943903,119.981004,Operating,Integrated,1130.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0258,China,CHN,31.04043,119.823512,Operating,Integrated,1200.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0259,China,CHN,31.245944,119.80014,Operating,Integrated,1580.0,,Wuxi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0261,China,CHN,27.40032,114.690611,Operating,Integrated,1430.0,,Jian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0262,China,CHN,28.222593,115.698101,Operating,Integrated,1740.0,,Yichun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0263,China,CHN,27.369127,114.669097,Operating,Integrated,1290.0,,Jian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0264,China,CHN,28.700614,118.339868,Operating,Integrated,1620.0,,Shangrao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0265,China,CHN,29.926156,116.565899,Operating,Integrated,2180.0,,Jiujiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0266,China,CHN,27.408521,116.669502,Operating,Integrated,1410.0,,Fuzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0268,China,CHN,28.180561,114.62973,Operating,Integrated,2029.9999999999998,,Yichun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0269,China,CHN,27.069471,115.741168,Operating,Integrated,2310.0,,Jian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0270,China,CHN,35.628638,117.316337,Operating,Integrated,1870.0,,Jining Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0271,China,CHN,35.140431,112.611989,Operating,Integrated,1270.0,,Jiyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0272,China,CHN,29.200945,119.510059,Operating,Integrated,1960.0,,Jinhua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0273,China,CHN,37.45393,114.45838,Operating,Integrated,1200.0,,Xingtai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0274,China,CHN,37.525584,114.441562,Operating,Integrated,1970.0,,Xingtai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0275,China,CHN,34.159013,112.403142,Operating,Integrated,1900.0,,Luoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0276,China,CHN,31.971305,118.970578,Operating,Integrated,2230.0,,Nanjing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0278,China,CHN,19.235544,108.999663,Operating,Integrated,2190.0,,Changjiang Lizuzizhixian,Kt/yr,Industry NMM Cement,CN
+GACTCHN0279,China,CHN,27.130987,111.49377,Operating,Integrated,1500.0,,Shaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0280,China,CHN,39.805178,112.508961,Operating,Integrated,1400.0,,Shuozhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0281,China,CHN,23.130214,111.768823,Operating,Integrated,1090.0,,Yunfu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0282,China,CHN,22.742819,111.732139,Operating,Integrated,2000.0,,Yunfu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0283,China,CHN,36.191336,116.892517,Operating,Integrated,1410.0,,Taian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0284,China,CHN,35.021182,117.347123,Operating,Integrated,1490.0,,Zaozhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0285,China,CHN,42.852202,120.687764,Operating,Integrated,1450.0,,Tongliao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0286,China,CHN,39.355998,106.840623,Operating,Integrated,1840.0,,Wuhai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0287,China,CHN,39.438069,106.81908,Operating,Integrated,3140.0,,Wuhai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0288,China,CHN,34.741398,112.048737,Operating,Integrated,2510.0,,Luoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0289,China,CHN,35.781709,117.766258,Operating,Integrated,1520.0,,Taian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0290,China,CHN,37.486988,121.061614,Operating,Integrated,2610.0,,Yantai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0291,China,CHN,35.675366,118.281929,Operating,Integrated,1640.0,,Linyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0292,China,CHN,30.125698,120.311397,Operating,Integrated,1210.0,2003.0,Shaoxing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0293,China,CHN,28.941969,118.491982,Operating,Integrated,1600.0,,Quzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0294,China,CHN,29.169091,119.571258,Operating,Integrated,910.0,,Jinhua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0298,China,CHN,30.148734,121.214294,Operating,Grinding,500.0,2004.0,Ningbo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0300,China,CHN,30.581061,120.189699,Operating,Grinding,2600.0,,Huzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0304,China,CHN,29.679576,118.237402,Operating,Grinding,1200.0,,Huangshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0305,China,CHN,25.751919,112.774096,Operating,Grinding,1000.0,,Chenzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0311,China,CHN,28.264659,117.145255,Operating,Grinding,2000.0,2011.0,Yingtan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0317,China,CHN,30.971,120.774617,Operating,Grinding,1200.0,,Jiaxing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0342,China,CHN,29.814858,120.347015,Operating,Grinding,1500.0,,Shaoxing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0344,China,CHN,24.826029,117.014467,Operating,Integrated,1870.0,,Longyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0345,China,CHN,22.934966,109.564835,Operating,Integrated,2280.0,,Guigang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0346,China,CHN,24.708562,111.390059,Operating,Integrated,2180.0,,Hezhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0348,China,CHN,23.737718,106.778815,Operating,Integrated,1400.0,,Baise Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0349,China,CHN,23.037389,108.081907,Operating,Integrated,2930.0,,Nanning Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0350,China,CHN,25.146517,117.159313,Operating,Integrated,1500.0,,Longyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0352,China,CHN,22.171185,107.928982,Operating,Integrated,3050.0,,Fangchenggang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0353,China,CHN,23.515795,109.705269,Operating,Integrated,2170.0,,Laibin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0354,China,CHN,21.73673,109.573362,Operating,Integrated,1860.0,,Beihai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0355,China,CHN,26.349949,105.93249,Operating,Integrated,1400.0,,Anshun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0356,China,CHN,36.297887,113.138464,Operating,Integrated,2630.0,,Changzhi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0357,China,CHN,37.462842,110.95127,Operating,Integrated,3450.0,,Lvliang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0358,China,CHN,23.209965,109.155783,Operating,Integrated,1710.0,,Nanning Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0359,China,CHN,23.642102,114.366638,Operating,Integrated,1300.0,,Huizhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0360,China,CHN,21.643025,110.152792,Operating,Integrated,1700.0,,Zhanjiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0361,China,CHN,25.055917,117.058837,Operating,Integrated,1470.0,,Longyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0362,China,CHN,22.559853,110.196576,Operating,Integrated,1680.0,,Yulin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0363,China,CHN,22.618681,111.723067,Operating,Integrated,1660.0,,Yunfu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0364,China,CHN,25.290296,100.549139,Operating,Integrated,1640.0,,Dali Baizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0365,China,CHN,25.277299,117.394263,Operating,Integrated,1000.0,,Longyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0366,China,CHN,26.669196,100.19484,Operating,Integrated,2029.9999999999998,,Dali Baizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0367,China,CHN,27.520101,106.553859,Operating,Integrated,1840.0,,Zunyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0375,China,CHN,33.410232,112.321117,Operating,Integrated,1820.0,,Nanyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0376,China,CHN,31.949452,114.630104,Operating,Integrated,1290.0,,Xinyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0378,China,CHN,34.299281,113.416752,Operating,Integrated,1630.0,,Xuchang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0381,China,CHN,34.656464,113.371716,Operating,Integrated,2920.0,,Zhengzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0383,China,CHN,35.433052,114.037664,Operating,Integrated,3430.0,,Xinxiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0384,China,CHN,34.13172,117.018244,Operating,Integrated,1730.0,,Suzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0385,China,CHN,40.81915,122.679399,Operating,Integrated,1390.0,,Anshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0386,China,CHN,34.690729,112.93392,Operating,Integrated,1760.0,,Zhengzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0387,China,CHN,41.314542,123.367797,Operating,Integrated,1270.0,,Liaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0388,China,CHN,34.270982,112.619899,Operating,Integrated,1800.0,,Pingdingshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0389,China,CHN,34.141317,113.422937,Operating,Integrated,2009.9999999999998,,Xuchang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0390,China,CHN,34.392625,113.237962,Operating,Integrated,1200.0,,Zhengzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0405,China,CHN,29.878435,120.144776,Operating,Integrated,1050.0,,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0407,China,CHN,44.755208,82.071995,Operating,Integrated,1270.0,,Boertala Mengguzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0409,China,CHN,44.442782,84.763185,Operating,Integrated,1860.0,,Tacheng Diqu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0415,China,CHN,24.864336,116.197732,Operating,Integrated,2650.0,,Longyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0416,China,CHN,24.599296,116.149067,Operating,Integrated,840.0,,Meizhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0417,China,CHN,24.755619,116.190774,Operating,Integrated,1550.0,,Meizhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0420,China,CHN,37.387134,114.686116,Operating,Integrated,1000.0,,Xingtai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0421,China,CHN,29.843562,119.701739,Operating,Integrated,1330.0,,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0422,China,CHN,29.423656,119.152434,Operating,Integrated,2130.0,,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0423,China,CHN,28.152583,115.505367,Operating,Integrated,2480.0,,Yichun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0424,China,CHN,30.188933,106.826575,Operating,Integrated,2410.0,,Guangan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0425,China,CHN,31.867406,104.760639,Operating,Integrated,1860.0,,Mianyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0427,China,CHN,24.998691,103.215129,Operating,Integrated,2720.0,,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0428,China,CHN,25.776757,117.713928,Operating,Integrated,2280.0,,Sanming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0429,China,CHN,29.187948,119.162736,Operating,Integrated,1820.0,,Quzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0431,China,CHN,28.43444,104.844946,Operating,Integrated,1570.0,,Yibin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0432,China,CHN,22.366812,107.297175,Operating,Integrated,2050.0,,Chongzuo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0433,China,CHN,22.701734,109.813109,Operating,Integrated,2100.0,,Yulin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0434,China,CHN,27.370378,108.934791,Operating,Integrated,2130.0,,Qiandongnan Miaozudongzuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0435,China,CHN,27.123236,113.111218,Operating,Integrated,1610.0,,Hengyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0436,China,CHN,27.08021,115.703197,Operating,Integrated,2310.0,,Jian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0437,China,CHN,41.763196,83.272359,Operating,Integrated,1970.0,,Akesu Diqu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0439,China,CHN,23.087391,108.210571,Operating,Integrated,1930.0,2011.0,Nanning Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0440,China,CHN,27.973142,114.395136,Operating,Integrated,2040.0,,Yichun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0441,China,CHN,25.383708,99.308613,Operating,Integrated,1230.0,,Dali Baizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0442,China,CHN,25.643099,111.941242,Operating,Integrated,1650.0,,Yongzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0443,China,CHN,26.603678,111.471374,Operating,Integrated,2190.0,,Yongzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0444,China,CHN,29.15327,119.537342,Operating,Integrated,3010.0,,Jinhua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0452,China,CHN,29.263564,91.927128,Operating,Integrated,2600.0,,Shannan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0453,China,CHN,32.037239,110.561639,Operating,Integrated,1200.0,2011.0,Shiyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0454,China,CHN,31.917594,114.02431,Operating,Integrated,2000.0,2014.0,Xinyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0455,China,CHN,29.893953,115.443373,Operating,Integrated,3800.0,2005.0,Huanggang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0456,China,CHN,30.192933,115.058655,Operating,Integrated,3300.0,,Huangshi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0457,China,CHN,29.591467,107.431126,Operating,Integrated,2200.0,2010.0,Fuling Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0458,China,CHN,30.114916,115.272579,Operating,Integrated,3530.0,2004.0,Huangshi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0459,China,CHN,29.742366,113.985854,Operating,Integrated,1600.0,2007.0,Xianning Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0460,China,CHN,25.620055,99.094852,Operating,Integrated,1000.0,,Dali Baizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0461,China,CHN,23.899932,99.688232,Operating,Integrated,1000.0,2013.0,Lincang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0462,China,CHN,23.696975,103.242141,Operating,Integrated,2000.0,1969.0,Honghe Hanizuyizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0463,China,CHN,26.571939,104.941286,Operating,Integrated,1100.0,1989.0,Liupanshui Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0464,China,CHN,26.620871,101.454145,Operating,Integrated,1300.0,2005.0,Lijiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0465,China,CHN,29.338635,106.401066,Operating,Integrated,1000.0,1971.0,Jiangjin Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0466,China,CHN,29.948981,106.362761,Operating,Integrated,1400.0,,Hechuan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0467,China,CHN,30.521327,111.229041,Operating,Integrated,2600.0,,Yichang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0468,China,CHN,27.541595,99.556958,Operating,Integrated,750.0,2011.0,Diqing Zangzuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0469,China,CHN,21.906467,101.051228,Operating,Integrated,1000.0,2011.0,Xishuangbanna Daizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0470,China,CHN,26.130707,103.168809,Operating,Integrated,1000.0,2012.0,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0471,China,CHN,27.621464,111.419666,Operating,Integrated,1620.0,2012.0,Loudi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0472,China,CHN,25.714919,112.893295,Operating,Integrated,2200.0,2009.0,Chenzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0473,China,CHN,30.767029,107.060274,Operating,Integrated,1440.0,2010.0,Dazhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0474,China,CHN,31.794833,111.89658,Operating,Integrated,1700.0,2009.0,Xiangyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0475,China,CHN,30.317354,111.493135,Operating,Integrated,3500.0,2003.0,Yichang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0476,China,CHN,27.442529,103.794044,Operating,Integrated,1500.0,,Zhaotong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0477,China,CHN,27.553634,113.126645,Operating,Integrated,2100.0,2009.0,Zhuzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0478,China,CHN,30.920549,110.709316,Operating,Integrated,1800.0,2009.0,Yichang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0479,China,CHN,25.60795,111.42199,Operating,Integrated,2000.0,2010.0,Yongzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0480,China,CHN,30.208389,114.858977,Operating,Integrated,2480.0,2013.0,Huangshi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0481,China,CHN,22.026117,112.356406,Operating,Integrated,1800.0,,Jiangmen Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0482,China,CHN,30.268679,109.436413,Operating,Integrated,1000.0,2004.0,Enshi Tujiazumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0483,China,CHN,25.229735,102.549576,Operating,Integrated,1410.0,2009.0,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0484,China,CHN,29.826554,109.908444,Operating,Integrated,600.0,2008.0,Enshi Tujiazumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0485,China,CHN,26.587838,99.932958,Operating,Integrated,1000.0,1987.0,Dali Baizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0486,China,CHN,29.405916,110.2482,Operating,Integrated,1000.0,2014.0,Zhangjiajie Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0487,China,CHN,32.136481,108.068223,Operating,Integrated,900.0,,Dazhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0488,China,CHN,25.167761,105.037116,Operating,Integrated,720.0,2002.0,Qianxinan Buyizumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0489,China,CHN,32.752551,110.841097,Operating,Integrated,2000.0,,Shiyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0490,China,CHN,25.101186,102.903083,Operating,Integrated,1400.0,2006.0,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0491,China,CHN,25.068883,101.573088,Operating,Grinding,600.0,1993.0,Chuxiong Yizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0492,China,CHN,30.247099,112.321899,Operating,Grinding,600.0,2009.0,Jingzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0493,China,CHN,31.135873,114.894846,Operating,Grinding,1100.0,,Huanggang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0494,China,CHN,31.974124,120.857121,Operating,Grinding,1000.0,,Nantong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0495,China,CHN,30.390413,113.42949,Operating,Grinding,600.0,2000.0,Xiantao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0496,China,CHN,30.533073,114.760078,Operating,Grinding,400.0,2013.0,Ezhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0497,China,CHN,23.400412,103.233822,Operating,Grinding,800.0,2005.0,Honghe Hanizuyizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0498,China,CHN,24.930353,102.840932,Operating,Grinding,600.0,1996.0,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0499,China,CHN,31.755759,113.197478,Operating,Grinding,800.0,,Suizhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0500,China,CHN,31.895544,112.149581,Operating,Grinding,1000.0,2009.0,Xiangyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0501,China,CHN,29.497966,113.199387,Operating,Grinding,1400.0,,Yueyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0503,China,CHN,26.52425,101.854559,Operating,Grinding,700.0,2016.0,Panzhihua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0505,China,CHN,49.254792,119.865058,Operating,Integrated,970.0,,Hulunbeier Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0506,China,CHN,43.167148,126.041253,Operating,Integrated,2200.0,,Jilin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0509,China,CHN,41.804666,126.248334,Operating,Integrated,990.0,,Tonghua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0510,China,CHN,43.346185,125.332517,Operating,Integrated,1330.0,,Siping Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0520,China,CHN,37.876862,105.944429,Operating,Integrated,3000.0,,Wuzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0522,China,CHN,38.514533,105.979095,Operating,Integrated,3740.0,,Yinchuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0523,China,CHN,36.594548,104.119308,Operating,Integrated,1250.0,,Baiyin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0524,China,CHN,42.014954,118.974762,Operating,Integrated,1670.0,,Chifeng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0525,China,CHN,34.621473,105.398327,Operating,Integrated,1720.0,,Tianshui Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0527,China,CHN,41.449538,120.040669,Operating,Integrated,1230.0,,Chaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0528,China,CHN,42.201655,118.890757,Operating,Integrated,2540.0,,Chifeng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0529,China,CHN,36.581954,116.917226,Operating,Integrated,2170.0,,Jinan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0530,China,CHN,36.675572,118.983956,Operating,Integrated,1570.0,1958.0,Weifang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0531,China,CHN,36.55831,116.855479,Operating,Integrated,960.0,,Jinan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0532,China,CHN,35.361077,116.375794,Operating,Integrated,1850.0,,Jining Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0533,China,CHN,37.686461,120.830683,Operating,Integrated,2500.0,2007.0,Yantai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0535,China,CHN,37.473146,121.055879,Operating,Integrated,2320.0,2007.0,Yantai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0536,China,CHN,39.473451,121.627325,Operating,Integrated,2570.0,,Dalian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0537,China,CHN,41.224779,123.340701,Operating,Integrated,2140.0,,Liaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0538,China,CHN,34.53229,117.620869,Operating,Integrated,1360.0,2010.0,Zaozhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0541,China,CHN,43.911207,120.117266,Operating,Integrated,2960.0,,Chifeng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0542,China,CHN,41.95505,126.562648,Operating,Integrated,1480.0,,Baishan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0543,China,CHN,36.311173,116.339123,Operating,Integrated,1050.0,,Liaocheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0544,China,CHN,35.458594,113.900559,Operating,Integrated,2050.0,,Xinxiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0545,China,CHN,35.369146,112.437858,Operating,Integrated,1130.0,,Jincheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0546,China,CHN,35.556184,112.982692,Operating,Integrated,1720.0,,Jincheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0547,China,CHN,36.428406,118.39612,Operating,Integrated,2820.0,2010.0,Weifang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0548,China,CHN,37.62541,111.012098,Operating,Integrated,1270.0,,Lvliang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0549,China,CHN,37.441699,120.982457,Operating,Integrated,1440.0,,Yantai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0550,China,CHN,38.180728,112.700594,Operating,Integrated,1330.0,,Taiyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0551,China,CHN,35.132117,116.73837,Operating,Integrated,1530.0,,Jining Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0552,China,CHN,36.79428,113.141125,Operating,Integrated,820.0,,Changzhi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0553,China,CHN,46.746438,122.677667,Operating,Integrated,1270.0,,Xingan Meng,Kt/yr,Industry NMM Cement,CN
+GACTCHN0587,China,CHN,29.476399,103.533149,Operating,Integrated,2530.0,,Leshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0590,China,CHN,38.993604,121.538527,Operating,Integrated,1690.0,,Dalian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0591,China,CHN,40.006837,119.519288,Operating,Integrated,1990.0,,Qinhuangdao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0592,China,CHN,27.596557,110.095778,Operating,Integrated,2070.0,,Huaihua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0595,China,CHN,32.191549,119.258714,Operating,Integrated,3300.0,,Zhenjiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0596,China,CHN,25.95292,105.574632,Operating,Integrated,1370.0,,Anshun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0597,China,CHN,28.089658,105.53624,Operating,Integrated,1250.0,,Luzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0599,China,CHN,30.477089,106.870174,Operating,Integrated,2060.0,,Guangan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0600,China,CHN,30.196568,106.684955,Operating,Integrated,1670.0,,Guangan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0601,China,CHN,26.543535,109.601509,Operating,Integrated,1070.0,,Huaihua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0602,China,CHN,41.346859,123.471943,Operating,Integrated,1780.0,,Liaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0606,China,CHN,32.833914,109.29456,Operating,Integrated,1110.0,,Ankang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0607,China,CHN,34.051482,109.264958,Operating,Integrated,2150.0,,Xian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0608,China,CHN,33.142724,106.83695,Operating,Integrated,1160.0,,Hanzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0609,China,CHN,33.195209,107.455092,Operating,Integrated,1380.0,,Hanzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0610,China,CHN,32.723698,108.976569,Operating,Integrated,1240.0,,Ankang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0611,China,CHN,35.614787,110.538786,Operating,Integrated,2430.0,,Weinan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0612,China,CHN,32.942648,107.757042,Operating,Integrated,840.0,,Hanzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0614,China,CHN,26.350624,106.628521,Operating,Integrated,1800.0,,Guiyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0615,China,CHN,34.821067,109.041689,Operating,Integrated,2350.0,,Weinan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0616,China,CHN,34.93405,109.218235,Operating,Integrated,1660.0,,Weinan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0617,China,CHN,34.945884,109.016777,Operating,Integrated,1120.0,,Tongchuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0618,China,CHN,33.721699,110.228472,Operating,Integrated,1030.0,,Shangluo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0620,China,CHN,43.971067,81.093612,Operating,Integrated,1450.0,,Yili Hasakezizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0621,China,CHN,36.784484,81.851636,Operating,Integrated,1630.0,,Hetian Diqu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0623,China,CHN,28.948186,118.481525,Operating,Integrated,1800.0,,Quzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0624,China,CHN,28.727886,118.598681,Operating,Integrated,1030.0,,Quzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0625,China,CHN,28.706505,118.317316,Operating,Integrated,930.0,,Shangrao Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0626,China,CHN,31.031065,119.55845,Operating,Integrated,1490.0,,Xuancheng,Kt/yr,Industry NMM Cement,CN
+GACTCHN0627,China,CHN,31.653674,117.871302,Operating,Integrated,1150.0,,Hefei Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0628,China,CHN,38.16403,114.311851,Operating,Integrated,1340.0,,Shijiazhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0630,China,CHN,31.529802,118.001629,Operating,Integrated,1620.0,,Maanshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0631,China,CHN,31.608497,104.36403,Operating,Integrated,1490.0,,Mianyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0632,China,CHN,31.001906,103.781474,Operating,Integrated,3000.0,,Chengdu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0633,China,CHN,35.859504,117.153674,Operating,Integrated,2560.0,,Taian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0634,China,CHN,29.432429,119.24394,Operating,Integrated,1080.0,,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0635,China,CHN,25.816004,115.465874,Operating,Integrated,1570.0,,Ganzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0636,China,CHN,31.787767,104.447624,Operating,Integrated,1630.0,,Mianyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0637,China,CHN,28.214784,114.929166,Operating,Integrated,940.0,,Yichun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0638,China,CHN,42.790351,125.288359,Operating,Integrated,2120.0,,Liaoyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0639,China,CHN,29.121747,117.335493,Operating,Integrated,2050.0,,Jingdezhen Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0640,China,CHN,23.338436,113.146664,Operating,Integrated,1810.0,,Guangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0641,China,CHN,30.059726,106.574215,Operating,Integrated,1450.0,,Hechuan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0642,China,CHN,29.829142,106.512012,Operating,Integrated,1140.0,,Beibei Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0643,China,CHN,29.95032,106.323663,Operating,Integrated,2330.0,,Hechuan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0644,China,CHN,28.930187,106.883641,Operating,Integrated,1310.0,,Qijiang Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0645,China,CHN,30.744038,108.43677,Operating,Integrated,1500.0,,Wanzhou Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0646,China,CHN,29.437024,108.772678,Operating,Integrated,1200.0,,Qianjiang Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0647,China,CHN,29.827,106.973088,Operating,Integrated,1910.0,,Changshou Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0648,China,CHN,29.320039,106.39081,Operating,Integrated,2100.0,,Jiangjin Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0649,China,CHN,28.381475,109.064032,Operating,Integrated,910.0,,Xiushan Tujiazumiaozuzizhixian,Kt/yr,Industry NMM Cement,CN
+GACTCHN0650,China,CHN,29.367677,106.406097,Operating,Integrated,2130.0,,Jiulongpo Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0653,China,CHN,37.67245,120.594091,Operating,Integrated,1850.0,,Yantai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0654,China,CHN,39.258536,121.721231,Operating,Integrated,1850.0,,Dalian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0655,China,CHN,39.642017,122.068928,Operating,Integrated,1660.0,,Dalian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0657,China,CHN,34.324148,112.899467,Operating,Integrated,1330.0,,Zhengzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0658,China,CHN,31.000114,120.749155,Operating,Integrated,1060.0,,Suzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0659,China,CHN,26.026833,117.156908,Operating,Integrated,1700.0,,Sanming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0660,China,CHN,26.041899,117.330501,Operating,Integrated,1020.0,,Sanming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0661,China,CHN,26.781996,117.776157,Operating,Integrated,2140.0,,Nanping Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0663,China,CHN,25.051339,117.078033,Operating,Integrated,1740.0,,Longyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0664,China,CHN,25.241489,117.159443,Operating,Integrated,1990.0,,Longyan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0666,China,CHN,23.541681,107.119462,Operating,Integrated,1660.0,,Baise Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0668,China,CHN,22.980084,112.042043,Operating,Integrated,740.0,,Yunfu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0669,China,CHN,27.699877,107.370876,Operating,Integrated,710.0,,Zunyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0670,China,CHN,26.629925,106.36395,Operating,Integrated,1360.0,,Guiyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0671,China,CHN,27.996967,108.939454,Operating,Integrated,1130.0,,Tongren Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0673,China,CHN,38.19829,114.244064,Operating,Integrated,1630.0,,Shijiazhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0674,China,CHN,46.717812,129.596909,Operating,Integrated,2430.0,,Yichun Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0675,China,CHN,35.406136,113.863583,Operating,Integrated,1550.0,,Xinxiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0676,China,CHN,34.528787,112.237389,Operating,Integrated,3020.0,,Luoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0677,China,CHN,35.869613,114.163746,Operating,Integrated,2600.0,,Hebi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0678,China,CHN,35.436589,113.932603,Operating,Integrated,1200.0,,Xinxiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0679,China,CHN,32.781218,114.036487,Operating,Integrated,2220.0,,Zhumadian Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0682,China,CHN,34.031397,116.807392,Operating,Integrated,2390.0,,Huaibei Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0683,China,CHN,32.612065,116.828634,Operating,Integrated,1570.0,,Huainan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0684,China,CHN,30.049354,114.926217,Operating,Integrated,820.0,,Huangshi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0685,China,CHN,31.36194,113.515703,Operating,Integrated,1170.0,,Xiaogan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0686,China,CHN,35.756476,104.139021,Operating,Integrated,1170.0,,Lanzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0692,China,CHN,39.901668,111.703148,Operating,Integrated,1900.0,,Huhehaote Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0693,China,CHN,39.412026,107.040181,Operating,Integrated,1370.0,,Eerduosi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0694,China,CHN,26.679686,117.478502,Operating,Integrated,1060.0,,Sanming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0696,China,CHN,32.783066,120.379172,Operating,Integrated,1780.0,,Yancheng Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0697,China,CHN,31.479388,119.142827,Operating,Integrated,1200.0,,Nanjing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0698,China,CHN,25.955913,115.313243,Operating,Integrated,1510.0,,Ganzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0700,China,CHN,25.843353,115.880486,Operating,Integrated,2720.0,,Ganzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0701,China,CHN,35.314936,113.335577,Operating,Integrated,2920.0,,Jiaozuo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0702,China,CHN,42.693097,129.091246,Operating,Integrated,850.0,,Yanbian Chaoxianzuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0703,China,CHN,38.078495,112.754815,Operating,Integrated,1380.0,,Taiyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0704,China,CHN,39.408386,112.575635,Operating,Integrated,1450.0,,Shuozhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0705,China,CHN,29.147825,119.564835,Operating,Integrated,1890.0,,Jinhua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0706,China,CHN,29.608914,115.862955,Operating,Integrated,1440.0,,Jiujiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0707,China,CHN,35.085114,112.547011,Operating,Integrated,1320.0,,Jiyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0709,China,CHN,46.163121,130.848327,Operating,Integrated,1200.0,,Jiamusi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0710,China,CHN,24.927159,99.085014,Operating,Integrated,2000.0,,Baoshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0711,China,CHN,24.933562,102.422905,Operating,Integrated,1530.0,,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0712,China,CHN,24.782393,102.621828,Operating,Integrated,770.0,,Kunming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0713,China,CHN,27.51354,106.895981,Operating,Integrated,1310.0,,Zunyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0714,China,CHN,28.426844,104.719403,Operating,Integrated,1650.0,,Yibin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0715,China,CHN,29.478591,106.593213,Operating,Integrated,2060.0,,Nanan Qu,Kt/yr,Industry NMM Cement,CN
+GACTCHN0717,China,CHN,41.361209,123.715717,Operating,Integrated,1240.0,,Benxi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0719,China,CHN,31.541073,119.588267,Operating,Integrated,1950.0,,Changzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0720,China,CHN,33.409405,104.893022,Operating,Integrated,920.0,,Longnan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0721,China,CHN,21.692207,110.870937,Operating,Integrated,1680.0,,Maoming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0722,China,CHN,24.530418,115.86299,Operating,Integrated,1310.0,,Meizhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0723,China,CHN,23.302424,103.376217,Operating,Integrated,1530.0,,Honghe Hanizuyizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0724,China,CHN,36.341062,102.811812,Operating,Integrated,1580.0,,Haidong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0725,China,CHN,44.42682,129.482342,Operating,Integrated,2550.0,,Mudanjiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0726,China,CHN,39.922611,111.706638,Operating,Integrated,1620.0,,Huhehaote Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0727,China,CHN,30.064887,121.141022,Operating,Integrated,1310.0,,Ningbo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0728,China,CHN,38.535267,106.086429,Operating,Integrated,1970.0,,Yinchuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0729,China,CHN,34.808107,104.764615,Operating,Integrated,1580.0,,Tianshui Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0730,China,CHN,37.436024,105.635785,Operating,Integrated,1900.0,,Zhongwei Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0731,China,CHN,31.720378,119.393717,Operating,Integrated,1350.0,,Changzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0732,China,CHN,38.171953,114.218443,Operating,Integrated,1230.0,,Shijiazhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0733,China,CHN,41.355049,123.502592,Operating,Integrated,2120.0,,Liaoyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0734,China,CHN,36.903221,101.741715,Operating,Integrated,1500.0,,Xining Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0736,China,CHN,27.606108,106.971585,Operating,Integrated,1050.0,,Zunyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0737,China,CHN,28.316772,106.257557,Operating,Integrated,1160.0,,Zunyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0738,China,CHN,23.441647,112.873468,Operating,Integrated,860.0,,Foshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0739,China,CHN,34.200773,107.770744,Operating,Integrated,1300.0,,Baoji Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0741,China,CHN,36.819271,118.084607,Operating,Integrated,1010.0,,Zibo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0742,China,CHN,34.515155,117.495078,Operating,Integrated,2390.0,,Zaozhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0743,China,CHN,36.735359,118.097083,Operating,Integrated,3430.0,,Zibo Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0744,China,CHN,34.523527,117.649026,Operating,Integrated,1630.0,,Zaozhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0745,China,CHN,35.071625,109.581696,Operating,Integrated,2160.0,,Weinan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0748,China,CHN,29.742323,104.784537,Operating,Integrated,1050.0,,Neijiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0749,China,CHN,30.394521,106.840045,Operating,Integrated,1410.0,,Guangan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0750,China,CHN,30.467873,106.901423,Operating,Integrated,2080.0,,Guangan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0751,China,CHN,29.924718,103.396921,Operating,Integrated,1800.0,,Meishan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0752,China,CHN,30.344727,106.762879,Operating,Integrated,1390.0,,Guangan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0753,China,CHN,29.233457,103.900304,Operating,Integrated,1250.0,,Leshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0754,China,CHN,29.491246,103.511867,Operating,Integrated,2430.0,,Leshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0755,China,CHN,30.065027,106.751738,Operating,Integrated,1540.0,,Guangan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0756,China,CHN,26.625866,107.568138,Operating,Integrated,1630.0,,Qiannan Buyizumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0757,China,CHN,31.318555,104.522271,Operating,Integrated,2520.0,,Deyang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0758,China,CHN,26.639871,102.6106,Operating,Integrated,1330.0,,Liangshan Yizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0759,China,CHN,29.757563,102.237912,Operating,Integrated,1000.0,,Ganzi Zangzuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0760,China,CHN,30.083042,102.731675,Operating,Integrated,1070.0,,Yaan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0761,China,CHN,23.231542,112.818221,Operating,Integrated,2130.0,,Zhaoqing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0762,China,CHN,22.779399,100.881431,Operating,Integrated,2100.0,,Puer Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0764,China,CHN,42.394365,86.309503,Operating,Integrated,3230.0,,Bayinguoleng Mengguzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0765,China,CHN,35.480253,106.840563,Operating,Integrated,1510.0,,Pingliang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0766,China,CHN,43.94182,87.657838,Operating,Integrated,2390.0,,Wulumuqi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0767,China,CHN,31.482348,119.232616,Operating,Integrated,1520.0,,Changzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0768,China,CHN,36.440268,101.602884,Operating,Integrated,2710.0,,Xining Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0769,China,CHN,31.508528,119.587413,Operating,Integrated,1930.0,,Wuxi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0770,China,CHN,30.066305,111.478324,Operating,Integrated,1090.0,,Jingzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0771,China,CHN,19.236266,108.943118,Operating,Integrated,2200.0,,Changjiang Lizuzizhixian,Kt/yr,Industry NMM Cement,CN
+GACTCHN0772,China,CHN,28.584661,104.102491,Operating,Integrated,830.0,,Zhaotong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0773,China,CHN,36.035277,118.946918,Operating,Integrated,2290.0,,Linyi Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0774,China,CHN,37.877287,112.406201,Operating,Integrated,1470.0,,Taiyuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0775,China,CHN,37.813566,112.739482,Operating,Integrated,2470.0,,Jinzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0776,China,CHN,34.783814,111.922144,Operating,Integrated,1780.0,,Sanmenxia Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0777,China,CHN,35.445524,114.025604,Operating,Integrated,2870.0,,Xinxiang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0778,China,CHN,39.616455,106.904139,Operating,Integrated,3300.0,,Wuhai Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0779,China,CHN,31.133297,118.015041,Operating,Integrated,1970.0,,Wuhu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0780,China,CHN,31.147839,118.007633,Operating,Integrated,1080.0,,Wuhu Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0782,China,CHN,26.188783,104.126264,Operating,Integrated,1730.0,,Qujing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0784,China,CHN,23.360661,104.218378,Operating,Integrated,2290.0,,Wenshan Zhuangzumiaozuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0785,China,CHN,34.977981,117.479172,Operating,Integrated,1850.0,,Zaozhuang Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0786,China,CHN,29.840774,120.157322,Operating,Integrated,1530.0,,Shaoxing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0787,China,CHN,26.398324,115.772449,Operating,Integrated,2040.0,,Ganzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0788,China,CHN,28.688992,118.549415,Operating,Integrated,2850.0,,Quzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0789,China,CHN,26.285565,116.935316,Operating,Integrated,2080.0,,Sanming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0790,China,CHN,29.186592,119.518273,Operating,Integrated,1500.0,,Jinhua Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0791,China,CHN,29.993451,119.676741,Operating,Integrated,1470.0,,Hangzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0792,China,CHN,30.608139,120.818497,Operating,Integrated,760.0,,Jiaxing Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0793,China,CHN,34.523003,113.417567,Operating,Integrated,1640.0,,Zhengzhou Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0796,China,CHN,25.667275,100.333787,Operating,Integrated,2120.0,,Dali Baizuzizhizhou,Kt/yr,Industry NMM Cement,CN
+GACTCHN0797,China,CHN,26.016208,117.327571,Operating,Integrated,1690.0,,Sanming Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0798,China,CHN,28.118723,104.556073,Operating,Integrated,1750.0,,Yibin Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0800,China,CHN,34.914015,109.02806,Operating,Integrated,1150.0,,Tongchuan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0801,China,CHN,37.910847,105.971828,Operating,Integrated,1680.0,,Wuzhong Shi,Kt/yr,Industry NMM Cement,CN
+GACTCHN0802,China,CHN,39.857458,118.195767,Operating,Integrated,3130.0,,Tangshan Shi,Kt/yr,Industry NMM Cement,CN
+GACTCIV0001,Côte d'Ivoire,CIV,5.385615,-4.078556,Operating,Grinding,1000.0,,Abidjan,Kt/yr,Industry NMM Cement,CI
+GACTCIV0002,Côte d'Ivoire,CIV,4.74646,-6.616524,Operating,Grinding,1000.0,,San-Pédro,Kt/yr,Industry NMM Cement,CI
+GACTCIV0003,Côte d'Ivoire,CIV,5.296145,-4.011121,Operating,Grinding,2500.0,1965.0,Abidjan,Kt/yr,Industry NMM Cement,CI
+GACTCIV0004,Côte d'Ivoire,CIV,4.745844,-6.614652,Operating,Grinding,100.0,,San-Pédro,Kt/yr,Industry NMM Cement,CI
+GACTCMR0001,Cameroon,CMR,4.064646,9.676607,Operating,,1600.0,,Bonabéri,Kt/yr,Industry NMM Cement,CM
+GACTCMR0002,Cameroon,CMR,4.068957,9.699083,Operating,Grinding,1500.0,2015.0,Douala,Kt/yr,Industry NMM Cement,CM
+GACTCOD0001,"Congo, Democratic Republic of the",COD,-5.50852,14.526127,Operating,Integrated,1360.0,,Lukala,Kt/yr,Industry NMM Cement,CD
+GACTCOD0003,"Congo, Democratic Republic of the",COD,-5.555034,29.341047,Operating,,50.0,,Tanganyika,Kt/yr,Industry NMM Cement,CD
+GACTCOD0004,"Congo, Democratic Republic of the",COD,-5.538946,14.336493,Operating,Integrated,1250.0,,Cataractes,Kt/yr,Industry NMM Cement,CD
+GACTCOD0005,"Congo, Democratic Republic of the",COD,-5.546977,14.455124,Operating,Integrated,300.0,,Kimpese,Kt/yr,Industry NMM Cement,CD
+GACTCOG0001,Congo,COG,-4.593023,12.048903,Operating,Grinding,500.0,,Pointe Noire,Kt/yr,Industry NMM Cement,CG
+GACTCOG0003,Congo,COG,-4.289625,13.857125,Operating,Integrated,560.0,,Madingou,Kt/yr,Industry NMM Cement,CG
+GACTCOG0004,Congo,COG,-4.164698,12.614788,Operating,Integrated,300.0,,Louvakou,Kt/yr,Industry NMM Cement,CG
+GACTCOL0006,Colombia,COL,4.308374,-75.099702,Operating,Integrated,1710.0,,Ibagué,Kt/yr,Industry NMM Cement,CO
+GACTCOL0011,Colombia,COL,5.762585,-72.889119,Operating,Integrated,880.0,,Sogamoso,Kt/yr,Industry NMM Cement,CO
+GACTCOL0012,Colombia,COL,5.856569,-74.850201,Operating,Integrated,1400.0,1986.0,Sonsón,Kt/yr,Industry NMM Cement,CO
+GACTCOL0013,Colombia,COL,5.865521,-75.533408,Operating,Integrated,450.0,1946.0,El Cairo,Kt/yr,Industry NMM Cement,CO
+GACTCOL0014,Colombia,COL,3.562197,-76.489076,Operating,Integrated,1500.0,1938.0,Yumbo,Kt/yr,Industry NMM Cement,CO
+GACTCOL0015,Colombia,COL,10.335029,-75.503214,Operating,Integrated,1250.0,1977.0,Provincia de Cartagena,Kt/yr,Industry NMM Cement,CO
+GACTCOL0016,Colombia,COL,9.47198,-75.466151,Operating,Integrated,980.0,,Tolú Viejo,Kt/yr,Industry NMM Cement,CO
+GACTCOL0017,Colombia,COL,6.218763,-74.572736,Operating,Integrated,210.0,1943.0,Puerto Nare,Kt/yr,Industry NMM Cement,CO
+GACTCOL0018,Colombia,COL,11.032356,-74.816797,Operating,,1500.0,1944.0,Barranquilla,Kt/yr,Industry NMM Cement,CO
+GACTCOL0019,Colombia,COL,5.763334,-72.933394,Operating,Integrated,910.0,1961.0,Nobsa,Kt/yr,Industry NMM Cement,CO
+GACTCRI0001,Costa Rica,CRI,10.199791,-85.182032,Operating,Integrated,900.0,1980.0,Quebrada Honda,Kt/yr,Industry NMM Cement,CR
+GACTCRI0003,Costa Rica,CRI,9.831578,-83.904531,Operating,Integrated,1200.0,1964.0,Cartago,Kt/yr,Industry NMM Cement,CR
+GACTCUB0002,Cuba,CUB,21.98745,-79.306978,Operating,Integrated,300.0,,Siguaney,Kt/yr,Industry NMM Cement,CU
+GACTCUB0003,Cuba,CUB,22.155264,-80.317675,Operating,Integrated,1500.0,,Cienfuegos,Kt/yr,Industry NMM Cement,CU
+GACTCUB0004,Cuba,CUB,23.010941,-82.744378,Operating,Integrated,1110.0,,Mariel,Kt/yr,Industry NMM Cement,CU
+GACTCUB0005,Cuba,CUB,22.799237,-82.682339,Operating,Grinding,600.0,,Artemisa,Kt/yr,Industry NMM Cement,CU
+GACTCYP0001,Cyprus,CYP,35.324213,34.006432,Operating,Grinding,450.0,,Kalecik,Kt/yr,Industry NMM Cement,CY
+GACTCYP0002,Cyprus,CYP,34.722838,33.316702,Operating,Integrated,2400.0,1967.0,Tatlısu,Kt/yr,Industry NMM Cement,CY
+GACTCZE0001,Czechia,CZE,49.558913,17.766342,Operating,Integrated,1100.0,,Hranice,Kt/yr,Industry NMM Cement,CZ
+GACTCZE0002,Czechia,CZE,49.895604,15.639497,Operating,Integrated,1200.0,,Prachovice,Kt/yr,Industry NMM Cement,CZ
+GACTCZE0004,Czechia,CZE,49.215622,16.773065,Operating,Integrated,1400.0,,Sivice,Kt/yr,Industry NMM Cement,CZ
+GACTCZE0005,Czechia,CZE,49.995919,14.341059,Operating,,800.0,,Hlavní město Praha,Kt/yr,Industry NMM Cement,CZ
+GACTCZE0006,Czechia,CZE,50.489936,14.043957,Operating,Integrated,1200.0,,Sulejovice,Kt/yr,Industry NMM Cement,CZ
+GACTDEU0001,Germany,DEU,51.364109,10.481936,Operating,Integrated,2610.0,1975.0,Deuna,Kt/yr,Industry NMM Cement,DE
+GACTDEU0004,Germany,DEU,52.17459,7.887637,Operating,Integrated,1410.0,1872.0,Lengerich,Kt/yr,Industry NMM Cement,DE
+GACTDEU0005,Germany,DEU,50.032201,8.258075,Operating,Integrated,2430.0,1931.0,Wiesbaden,Kt/yr,Industry NMM Cement,DE
+GACTDEU0009,Germany,DEU,51.270124,11.660638,Operating,Integrated,2300.0,,Karsdorf,Kt/yr,Industry NMM Cement,DE
+GACTDEU0011,Germany,DEU,50.520752,6.560266,Operating,Grinding,450.0,,Kall,Kt/yr,Industry NMM Cement,DE
+GACTDEU0012,Germany,DEU,52.489222,13.836808,Operating,Integrated,1790.0,,Rüdersdorf bei Berlin,Kt/yr,Industry NMM Cement,DE
+GACTDEU0017,Germany,DEU,52.374756,9.876779,Operating,Integrated,900.0,1897.0,Hannover,Kt/yr,Industry NMM Cement,DE
+GACTDEU0020,Germany,DEU,48.368982,9.735574,Operating,Integrated,1900.0,,Schelklingen,Kt/yr,Industry NMM Cement,DE
+GACTDEU0025,Germany,DEU,51.595161,8.336089,Operating,Integrated,1210.0,,Erwitte,Kt/yr,Industry NMM Cement,DE
+GACTDEU0026,Germany,DEU,48.227348,8.7786,Operating,Integrated,1600.0,,Dotternhausen,Kt/yr,Industry NMM Cement,DE
+GACTDEU0027,Germany,DEU,53.875099,9.584787,Operating,Integrated,1290.0,,Rethwisch,Kt/yr,Industry NMM Cement,DE
+GACTDEU0038,Germany,DEU,47.791873,12.181552,Operating,Integrated,970.0,,Rohrdorf,Kt/yr,Industry NMM Cement,DE
+GACTDEU0039,Germany,DEU,51.813271,11.753223,Operating,Integrated,2260.0,,Nienburg (Saale),Kt/yr,Industry NMM Cement,DE
+GACTDEU0040,Germany,DEU,48.333264,9.732415,Operating,Integrated,2290.0,,Allmendingen,Kt/yr,Industry NMM Cement,DE
+GACTDEU0041,Germany,DEU,48.652954,10.162965,Operating,Integrated,1280.0,,Heidenheim an der Brenz,Kt/yr,Industry NMM Cement,DE
+GACTDEU0042,Germany,DEU,49.954669,9.768927,Operating,Integrated,1310.0,,Karlstadt,Kt/yr,Industry NMM Cement,DE
+GACTDJI0001,Djibouti,DJI,11.12999,42.691774,Operating,Integrated,240.0,,Ali Sabieh ,Kt/yr,Industry NMM Cement,DJ
+GACTDNK0001,Denmark,DNK,57.061731,9.977316,Operating,Integrated,2950.0,1889.0,Aalborg,Kt/yr,Industry NMM Cement,DK
+GACTDOM0001,Dominican Republic,DOM,18.506193,-69.339805,Operating,Integrated,2600.0,,Quisqueya,Kt/yr,Industry NMM Cement,DO
+GACTDZA0001,Algeria,DZA,36.180377,3.750383,Operating,Integrated,1000.0,,Sour El-Ghozlane,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0002,Algeria,DZA,36.762981,7.309254,Operating,Integrated,900.0,,Hadjar El-Soud,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0003,Algeria,DZA,36.63025,3.232432,Operating,Integrated,800.0,,Meftah,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0004,Algeria,DZA,36.815388,3.015907,Operating,Integrated,450.0,,Raïs Hamidou,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0005,Algeria,DZA,36.127206,1.242088,Operating,Integrated,1200.0,,Oued Sly,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0006,Algeria,DZA,35.350288,5.762104,Operating,Integrated,1000.0,,Tilatou,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0007,Algeria,DZA,36.430427,6.622378,Operating,Integrated,1620.0,,Didouche Mourad,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0008,Algeria,DZA,34.797336,0.328081,Operating,Integrated,500.0,,El Hassasna,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0009,Algeria,DZA,35.231931,8.174786,Operating,Integrated,500.0,,El Ma Labiodh,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0010,Algeria,DZA,36.334151,5.480683,Operating,Integrated,1000.0,,Ouled Adouane,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0011,Algeria,DZA,35.311588,-1.34234,Operating,Integrated,1200.0,,Beni Saf,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0012,Algeria,DZA,35.460084,-0.3962,Operating,Integrated,1200.0,,Zahana,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0015,Algeria,DZA,35.096288,5.646743,Operating,Integrated,2700.0,2016.0,Djemorah,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0016,Algeria,DZA,35.877318,4.445901,Operating,Integrated,5000.0,2003.0,Hammam Dalaa,Kt/yr,Industry NMM Cement,DZ
+GACTDZA0017,Algeria,DZA,35.532649,-0.27516,Operating,Integrated,3700.0,2007.0,OGGAZ,Kt/yr,Industry NMM Cement,DZ
+GACTECU0003,Ecuador,ECU,-2.725123,-78.849008,Operating,Integrated,600.0,,Azogues,Kt/yr,Industry NMM Cement,EC
+GACTECU0004,Ecuador,ECU,-1.654233,-78.756758,Operating,Integrated,1000.0,,Riobamba,Kt/yr,Industry NMM Cement,EC
+GACTECU0005,Ecuador,ECU,0.240886,-78.312163,Operating,Integrated,1600.0,,Otavalo,Kt/yr,Industry NMM Cement,EC
+GACTEGY0001,Egypt,EGY,29.797708,32.14832,Operating,Integrated,5000.0,2008.0,Suez Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0003,Egypt,EGY,30.727486,33.776028,Operating,Integrated,410.0,,El Hassana,Kt/yr,Industry NMM Cement,EG
+GACTEGY0004,Egypt,EGY,27.171458,31.017238,Operating,Integrated,4752.0,,Asyut Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0005,Egypt,EGY,26.253932,32.971024,Operating,Integrated,1500.0,2012.0,Qena El Gadida City,Kt/yr,Industry NMM Cement,EG
+GACTEGY0006,Egypt,EGY,29.822687,31.308586,Operating,Integrated,3615.0,1929.0,Helwan,Kt/yr,Industry NMM Cement,EG
+GACTEGY0008,Egypt,EGY,29.769909,32.211601,Operating,Integrated,4200.0,1979.0,Suez Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0009,Egypt,EGY,29.926087,31.301513,Operating,Integrated,4625.0,,Tura,Kt/yr,Industry NMM Cement,EG
+GACTEGY0010,Egypt,EGY,30.881107,29.465165,Operating,Integrated,5000.0,,Qesm Borg Al Arab,Kt/yr,Industry NMM Cement,EG
+GACTEGY0011,Egypt,EGY,29.805655,32.08967,Operating,Integrated,10600.0,,Suez Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0012,Egypt,EGY,28.924156,31.080767,Operating,Integrated,2800.0,,New Bani Suef,Kt/yr,Industry NMM Cement,EG
+GACTEGY0013,Egypt,EGY,28.411565,30.96557,Operating,Integrated,2000.0,,Al Minya Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0014,Egypt,EGY,26.02644,32.93963,Operating,Integrated,2000.0,,Qena Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0015,Egypt,EGY,23.489928,32.22991,Operating,Integrated,1870.0,,Abo Simbel Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0016,Egypt,EGY,28.296926,30.85609,Operating,Integrated,450.0,,Al Minya Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0017,Egypt,EGY,30.724086,33.772929,Operating,Integrated,3800.0,2001.0,El Hassana,Kt/yr,Industry NMM Cement,EG
+GACTEGY0018,Egypt,EGY,29.12715,31.268796,Operating,Integrated,1500.0,2009.0,Bani Suef Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0019,Egypt,EGY,31.142363,29.83813,Operating,Integrated,1310.0,1948.0,Dekhela,Kt/yr,Industry NMM Cement,EG
+GACTEGY0021,Egypt,EGY,29.128441,31.284221,Operating,Integrated,1800.0,,Bani Suef Desert,Kt/yr,Industry NMM Cement,EG
+GACTEGY0023,Egypt,EGY,28.301352,30.746827,Operating,Integrated,1220.0,,Samalout,Kt/yr,Industry NMM Cement,EG
+GACTERI0001,Eritrea,ERI,15.512604,39.575015,Operating,Integrated,350.0,,Foro,Kt/yr,Industry NMM Cement,ER
+GACTERI0002,Eritrea,ERI,15.64169,39.473441,Operating,Integrated,45.0,,Massawa,Kt/yr,Industry NMM Cement,ER
+GACTESP0001,Spain,ESP,38.3792,-6.483272,Operating,Integrated,1130.0,2005.0,Badajoz,Kt/yr,Industry NMM Cement,ES
+GACTESP0003,Spain,ESP,37.276257,-5.992723,Operating,Grinding,1000.0,2003.0,Dos Hermanas,Kt/yr,Industry NMM Cement,ES
+GACTESP0006,Spain,ESP,38.209846,-1.008607,Operating,Grinding,1500.0,2002.0,Abanilla,Kt/yr,Industry NMM Cement,ES
+GACTESP0009,Spain,ESP,42.874825,-4.15978,Operating,Integrated,830.0,1930.0,Cantabria,Kt/yr,Industry NMM Cement,ES
+GACTESP0010,Spain,ESP,40.244961,-3.474441,Operating,Integrated,2900.0,1972.0,Morata de Tajuña,Kt/yr,Industry NMM Cement,ES
+GACTESP0011,Spain,ESP,42.882983,-2.190187,Operating,Integrated,1055.0,1903.0,Olazagutía,Kt/yr,Industry NMM Cement,ES
+GACTESP0012,Spain,ESP,41.941676,-4.46587,Operating,Integrated,815.0,1952.0,Venta de Baños,Kt/yr,Industry NMM Cement,ES
+GACTESP0013,Spain,ESP,37.359736,-5.865094,Operating,Integrated,1450.0,1964.0,Sevilla,Kt/yr,Industry NMM Cement,ES
+GACTESP0014,Spain,ESP,41.316271,1.729998,Operating,,1800.0,1902.0,Barcelona,Kt/yr,Industry NMM Cement,ES
+GACTESP0015,Spain,ESP,39.436556,-0.77638,Operating,Integrated,1870.0,1917.0,Buñol,Kt/yr,Industry NMM Cement,ES
+GACTESP0017,Spain,ESP,38.378014,-0.542867,Operating,Integrated,1680.0,1925.0,Alicante,Kt/yr,Industry NMM Cement,ES
+GACTESP0018,Spain,ESP,40.576824,0.54329,Operating,Integrated,1530.0,1967.0,Alcanar,Kt/yr,Industry NMM Cement,ES
+GACTESP0019,Spain,ESP,39.934332,-3.74396,Operating,Integrated,2870.0,1911.0,Yepes,Kt/yr,Industry NMM Cement,ES
+GACTESP0024,Spain,ESP,43.560582,-5.722483,Operating,Integrated,936.0,1953.0,Asturias,Kt/yr,Industry NMM Cement,ES
+GACTESP0025,Spain,ESP,42.798654,-5.619632,Operating,Integrated,1430.0,2004.0,La Robla,Kt/yr,Industry NMM Cement,ES
+GACTESP0026,Spain,ESP,43.33011,-5.775146,Operating,Integrated,1870.0,1898.0,Asturias,Kt/yr,Industry NMM Cement,ES
+GACTESP0033,Spain,ESP,36.966885,-1.904785,Operating,Integrated,2870.0,,Carboneras,Kt/yr,Industry NMM Cement,ES
+GACTESP0034,Spain,ESP,36.618249,-6.073448,Operating,Integrated,1390.0,,Cádiz,Kt/yr,Industry NMM Cement,ES
+GACTESP0035,Spain,ESP,40.009935,-3.901136,Operating,Integrated,2920.0,1928.0,Villaluenga de la Sagra,Kt/yr,Industry NMM Cement,ES
+GACTESP0037,Spain,ESP,39.663613,-0.246962,Operating,Integrated,2310.0,1957.0,Sagunto,Kt/yr,Industry NMM Cement,ES
+GACTESP0038,Spain,ESP,41.510001,0.891293,Operating,Grinding,1000.0,2005.0,Lleida,Kt/yr,Industry NMM Cement,ES
+GACTESP0039,Spain,ESP,37.902032,-4.764202,Operating,Integrated,880.0,,Córdoba,Kt/yr,Industry NMM Cement,ES
+GACTESP0040,Spain,ESP,37.359766,-6.672312,Operating,Integrated,980.0,,Niebla,Kt/yr,Industry NMM Cement,ES
+GACTESP0042,Spain,ESP,42.553519,-6.768733,Operating,Integrated,1370.0,,Toral de los Vados,Kt/yr,Industry NMM Cement,ES
+GACTESP0045,Spain,ESP,41.402821,2.054826,Operating,Integrated,970.0,,Sant Feliu de Llobregat,Kt/yr,Industry NMM Cement,ES
+GACTEST0001,Estonia,EST,59.496786,26.5284,Operating,Integrated,750.0,1965.0,Kunda,Kt/yr,Industry NMM Cement,EE
+GACTETH0001,Ethiopia,ETH,9.42172,38.341658,Operating,Integrated,2500.0,2015.0,West Shewa,Kt/yr,Industry NMM Cement,ET
+GACTETH0002,Ethiopia,ETH,9.472855,38.656177,Operating,Integrated,2520.0,2012.0,North Shewa,Kt/yr,Industry NMM Cement,ET
+GACTETH0003,Ethiopia,ETH,13.570278,39.475063,Operating,Integrated,2100.0,1999.0,South Tigray,Kt/yr,Industry NMM Cement,ET
+GACTETH0004,Ethiopia,ETH,9.569756,41.856906,Operating,Integrated,1350.0,2012.0,East Hararghe,Kt/yr,Industry NMM Cement,ET
+GACTETH0005,Ethiopia,ETH,9.116914,38.455043,Operating,Integrated,1400.0,2014.0,West Shewa,Kt/yr,Industry NMM Cement,ET
+GACTETH0006,Ethiopia,ETH,9.300697,38.739807,Operating,Integrated,1000.0,,Chancho ,Kt/yr,Industry NMM Cement,ET
+GACTETH0007,Ethiopia,ETH,9.482392,38.353944,Operating,Integrated,2276.0,,West Shewa,Kt/yr,Industry NMM Cement,ET
+GACTFIN0001,Finland,FIN,61.031247,28.174569,Operating,Integrated,780.0,1938.0,Lappeenranta,Kt/yr,Industry NMM Cement,FI
+GACTFIN0002,Finland,FIN,60.285141,22.288667,Operating,Integrated,1560.0,1983.0,Ålön,Kt/yr,Industry NMM Cement,FI
+GACTFJI0001,Fiji,FJI,-18.101198,178.389222,Operating,,215.0,,Rewa,Kt/yr,Industry NMM Cement,FJ
+GACTFRA0001,France,FRA,50.586554,1.619138,Operating,Integrated,1140.0,,Dannes,Kt/yr,Industry NMM Cement,FR
+GACTFRA0003,France,FRA,50.699073,2.11344,Operating,Integrated,820.0,,Lumbres,Kt/yr,Industry NMM Cement,FR
+GACTFRA0004,France,FRA,47.135245,5.552513,Operating,Integrated,910.0,,Rochefort-sur-Nenon,Kt/yr,Industry NMM Cement,FR
+GACTFRA0012,France,FRA,46.809772,-0.138968,Operating,Integrated,2080.0,1919.0,Airvault,Kt/yr,Industry NMM Cement,FR
+GACTFRA0013,France,FRA,43.80483,4.621082,Operating,Integrated,990.0,1999.0,Beaucaire,Kt/yr,Industry NMM Cement,FR
+GACTFRA0014,France,FRA,45.226037,-0.365494,Operating,Integrated,1390.0,1985.0,Bussac-Forêt,Kt/yr,Industry NMM Cement,FR
+GACTFRA0016,France,FRA,48.980312,1.820137,Operating,Integrated,2000.0,1993.0,Juziers,Kt/yr,Industry NMM Cement,FR
+GACTFRA0017,France,FRA,47.587909,0.328983,Operating,Integrated,760.0,1966.0,Villiers-au-Bouin,Kt/yr,Industry NMM Cement,FR
+GACTFRA0018,France,FRA,48.768805,4.564675,Operating,Integrated,1780.0,1974.0,Couvrot,Kt/yr,Industry NMM Cement,FR
+GACTFRA0024,France,FRA,45.614734,0.10411,Operating,Integrated,1140.0,,La Couronne,Kt/yr,Industry NMM Cement,FR
+GACTFRA0025,France,FRA,49.467215,0.317085,Operating,Integrated,2590.0,,Saint-Vigor-d'Ymonville,Kt/yr,Industry NMM Cement,FR
+GACTFRA0026,France,FRA,44.520718,4.688932,Operating,Integrated,940.0,,Le Teil,Kt/yr,Industry NMM Cement,FR
+GACTFRA0029,France,FRA,43.024394,3.029105,Operating,Integrated,670.0,,Port-la-Nouvelle,Kt/yr,Industry NMM Cement,FR
+GACTFRA0030,France,FRA,48.108869,-1.035972,Operating,Integrated,1160.0,,Saint-Pierre-la-Cour,Kt/yr,Industry NMM Cement,FR
+GACTFRA0031,France,FRA,43.419334,5.386825,Operating,Integrated,1120.0,1958.0,Bouc-Bel-Air,Kt/yr,Industry NMM Cement,FR
+GACTFRA0037,France,FRA,46.250804,3.424963,Operating,Integrated,1120.0,,Créchy,Kt/yr,Industry NMM Cement,FR
+GACTFRA0038,France,FRA,43.793674,7.374769,Operating,Integrated,1750.0,,Peille,Kt/yr,Industry NMM Cement,FR
+GACTFRA0039,France,FRA,45.804972,5.421124,Operating,Integrated,1260.0,,Montalieu-Vercieu,Kt/yr,Industry NMM Cement,FR
+GACTFRA0040,France,FRA,45.230667,5.668787,Operating,Integrated,910.0,,Saint-Egrève,Kt/yr,Industry NMM Cement,FR
+GACTFRA0041,France,FRA,48.563372,6.109185,Operating,Integrated,1470.0,,Xeuilley,Kt/yr,Industry NMM Cement,FR
+GACTGAB0001,Gabon,GAB,0.312079,9.490582,Operating,Grinding,500.0,,Libreville,Kt/yr,Industry NMM Cement,GA
+GACTGAB0002,Gabon,GAB,0.373289,9.750836,Operating,Integrated,690.0,,Nkan,Kt/yr,Industry NMM Cement,GA
+GACTGAB0003,Gabon,GAB,1.637393,13.545565,Operating,Grinding,250.0,,Souanke,Kt/yr,Industry NMM Cement,GA
+GACTGBR0001,United Kingdom,GBR,53.337916,-1.751755,Operating,Integrated,1500.0,1929.0,Derbyshire,Kt/yr,Industry NMM Cement,GB
+GACTGBR0002,United Kingdom,GBR,51.397546,-3.392125,Operating,Integrated,500.0,1914.0,Rhoose,Kt/yr,Industry NMM Cement,GB
+GACTGBR0003,United Kingdom,GBR,53.265267,-1.851891,Operating,Integrated,1000.0,1966.0,Derbyshire,Kt/yr,Industry NMM Cement,GB
+GACTGBR0004,United Kingdom,GBR,55.979125,-2.47192,Operating,Integrated,1000.0,1963.0,East Lothian Council,Kt/yr,Industry NMM Cement,GB
+GACTGBR0006,United Kingdom,GBR,53.675822,-0.529654,Operating,Integrated,700.0,1938.0,Winteringham,Kt/yr,Industry NMM Cement,GB
+GACTGBR0007,United Kingdom,GBR,52.377293,-1.286254,Operating,Integrated,1800.0,1870.0,Warwickshire,Kt/yr,Industry NMM Cement,GB
+GACTGBR0009,United Kingdom,GBR,53.888913,-2.383373,Operating,Integrated,1300.0,1936.0,Lancashire,Kt/yr,Industry NMM Cement,GB
+GACTGBR0010,United Kingdom,GBR,53.152678,-3.061635,Operating,Integrated,910.0,1949.0,Flintshire,Kt/yr,Industry NMM Cement,GB
+GACTGBR0011,United Kingdom,GBR,52.640356,-0.547016,Operating,Integrated,2160.0,1929.0,Ketton,Kt/yr,Industry NMM Cement,GB
+GACTGBR0015,United Kingdom,GBR,54.618105,-6.767677,Operating,Integrated,480.0,1968.0,Mid Ulster,Kt/yr,Industry NMM Cement,GB
+GACTGBR0016,United Kingdom,GBR,53.044003,-1.875169,Operating,Integrated,960.0,1957.0,Waterhouses,Kt/yr,Industry NMM Cement,GB
+GACTGBR0018,United Kingdom,GBR,54.143487,-7.572383,Operating,Integrated,1170.0,1989.0,Fermanagh and Omagh,Kt/yr,Industry NMM Cement,GB
+GACTGEO0002,Georgia,GEO,41.513089,45.047818,Operating,Integrated,1090.0,1952.0,Rustavi,Kt/yr,Industry NMM Cement,GE
+GACTGHA0001,Ghana,GHA,5.704645,0.017442,Operating,Grinding,1000.0,,Tema,Kt/yr,Industry NMM Cement,GH
+GACTGHA0002,Ghana,GHA,5.621991,-0.014344,Operating,Grinding,1500.0,2011.0,Tema,Kt/yr,Industry NMM Cement,GH
+GACTGHA0003,Ghana,GHA,4.891983,-1.745828,Operating,Grinding,2200.0,,Takoradi,Kt/yr,Industry NMM Cement,GH
+GACTGHA0004,Ghana,GHA,5.637128,0.007768,Operating,Grinding,2200.0,,Tema,Kt/yr,Industry NMM Cement,GH
+GACTGHA0005,Ghana,GHA,8.790301,-1.502071,Operating,Integrated,300.0,2002.0,Central Gonja,Kt/yr,Industry NMM Cement,GH
+GACTGHA0006,Ghana,GHA,6.15335,1.179772,Operating,Grinding,1500.0,2002.0,Ketu,Kt/yr,Industry NMM Cement,GH
+GACTGIN0001,Guinea,GIN,9.723527,-13.495906,Operating,Grinding,500.0,,Conakry,Kt/yr,Industry NMM Cement,GN
+GACTGIN0002,Guinea,GIN,9.678982,-13.532937,Operating,Grinding,300.0,,Conakry,Kt/yr,Industry NMM Cement,GN
+GACTGRC0001,Greece,GRC,38.035179,23.592877,Operating,Integrated,1000.0,1934.0,Aspropirgos,Kt/yr,Industry NMM Cement,GR
+GACTGRC0002,Greece,GRC,38.375031,24.063021,Operating,Integrated,2200.0,1982.0,Taminei,Kt/yr,Industry NMM Cement,GR
+GACTGRC0003,Greece,GRC,39.353176,22.985873,Operating,Integrated,4900.0,1924.0,Volos,Kt/yr,Industry NMM Cement,GR
+GACTGRC0004,Greece,GRC,38.334436,21.848612,Operating,Integrated,1900.0,1968.0,Ρίο,Kt/yr,Industry NMM Cement,GR
+GACTGRC0005,Greece,GRC,40.699271,22.9527,Operating,Integrated,1130.0,1962.0,Efkarpia,Kt/yr,Industry NMM Cement,GR
+GACTGRC0006,Greece,GRC,38.129892,23.527035,Operating,Integrated,2900.0,1976.0,Magoula,Kt/yr,Industry NMM Cement,GR
+GACTGRC0007,Greece,GRC,38.041955,23.533322,Operating,Grinding,400.0,1902.0,Elefsina,Kt/yr,Industry NMM Cement,GR
+GACTGTM0001,Guatemala,GTM,14.667587,-90.496936,Operating,Integrated,180.0,1899.0,Ciudad de Guatemala,Kt/yr,Industry NMM Cement,GT
+GACTGTM0002,Guatemala,GTM,14.735452,-90.703316,Operating,Integrated,2200.0,2019.0,San Juan Sacatepéquez,Kt/yr,Industry NMM Cement,GT
+GACTGTM0003,Guatemala,GTM,14.813632,-90.278771,Operating,Integrated,2930.0,1974.0,Sanarate,Kt/yr,Industry NMM Cement,GT
+GACTGTM0004,Guatemala,GTM,13.969258,-90.794927,Operating,Grinding,500.0,,San José,Kt/yr,Industry NMM Cement,GT
+GACTGUF0001,French Guiana,GUF,4.85719,-52.277433,Operating,Grinding,160.0,1992.0,Remire-Montjoly,Kt/yr,Industry NMM Cement,GF
+GACTHND0001,Honduras,HND,15.706281,-87.93079,Operating,Integrated,1100.0,1958.0,Río Blanquito,Kt/yr,Industry NMM Cement,HN
+GACTHND0002,Honduras,HND,14.513662,-87.651796,Operating,Integrated,1300.0,1981.0,Comayagua,Kt/yr,Industry NMM Cement,HN
+GACTHRV0002,Croatia,HRV,43.540248,16.44147,Operating,Integrated,890.0,1912.0,Kaštel Sućurac,Kt/yr,Industry NMM Cement,HR
+GACTHRV0004,Croatia,HRV,44.96591,14.121623,Operating,Integrated,1000.0,1926.0,Koromačno,Kt/yr,Industry NMM Cement,HR
+GACTHRV0005,Croatia,HRV,45.451822,18.035842,Operating,Integrated,110.0,,Zoljan,Kt/yr,Industry NMM Cement,HR
+GACTHTI0001,Haiti,HTI,18.713032,-72.386871,Operating,Integrated,600.0,2001.0,Aubry,Kt/yr,Industry NMM Cement,HT
+GACTHUN0001,Hungary,HUN,48.065841,20.797178,Operating,Integrated,1700.0,1890.0,Miskolc,Kt/yr,Industry NMM Cement,HU
+GACTHUN0002,Hungary,HUN,47.750282,18.505678,Operating,,300.0,1868.0,Lábatlan,Kt/yr,Industry NMM Cement,HU
+GACTHUN0003,Hungary,HUN,45.810911,18.39875,Operating,Integrated,2220.0,1972.0,Beremend,Kt/yr,Industry NMM Cement,HU
+GACTHUN0004,Hungary,HUN,47.809209,19.101728,Operating,Integrated,1720.0,1963.0,Vác,Kt/yr,Industry NMM Cement,HU
+GACTHUN0005,Hungary,HUN,46.015894,17.983862,Operating,Integrated,1000.0,2011.0,Királyegyháza,Kt/yr,Industry NMM Cement,HU
+GACTIDN0001,Indonesia,IDN,-0.997604,134.024306,Operating,Integrated,1700.0,2016.0,Manokwari,Kt/yr,Industry NMM Cement,ID
+GACTIDN0002,Indonesia,IDN,-2.060086,115.570212,Operating,Integrated,1500.0,2016.0,Tabalong Regency,Kt/yr,Industry NMM Cement,ID
+GACTIDN0003,Indonesia,IDN,0.895624,124.081963,Operating,Integrated,3600.0,2018.0,Bolaang Mongondow Regency,Kt/yr,Industry NMM Cement,ID
+GACTIDN0006,Indonesia,IDN,-6.000861,106.084451,Operating,Grinding,1200.0,,Kota Cilegon,Kt/yr,Industry NMM Cement,ID
+GACTIDN0007,Indonesia,IDN,-4.947312,119.626973,Operating,Integrated,4200.0,1999.0,Kabupaten Maros,Kt/yr,Industry NMM Cement,ID
+GACTIDN0008,Indonesia,IDN,1.058782,104.136023,Operating,Grinding,1200.0,,Kota Batam,Kt/yr,Industry NMM Cement,ID
+GACTIDN0009,Indonesia,IDN,-8.169005,114.3919,Operating,Grinding,1800.0,,Kabupaten Banyuwangi,Kt/yr,Industry NMM Cement,ID
+GACTIDN0010,Indonesia,IDN,-6.9545960000000004,106.247008,Operating,Integrated,4000.0,,Lebak Regency,Kt/yr,Industry NMM Cement,ID
+GACTIDN0011,Indonesia,IDN,-6.020475,105.958559,Operating,Grinding,600.0,,Kota Cilegon,Kt/yr,Industry NMM Cement,ID
+GACTIDN0011,Indonesia,IDN,-6.022556,105.960336,Operating,Grinding,1750.0,,Kota Cilegon,Kt/yr,Industry NMM Cement,ID
+GACTIDN0012,Indonesia,IDN,-7.11774,112.619226,Operating,Grinding,1000.0,,Kabupaten Gresik,Kt/yr,Industry NMM Cement,ID
+GACTIDN0013,Indonesia,IDN,3.731655,98.699808,Operating,Grinding,440.0,,Kota Medan,Kt/yr,Industry NMM Cement,ID
+GACTIDN0014,Indonesia,IDN,-7.089975,110.622539,Operating,Integrated,1560.0,2013.0,Kabupatén Grobogan,Kt/yr,Industry NMM Cement,ID
+GACTIDN0015,Indonesia,IDN,-6.479811,106.899118,Operating,Integrated,20500.0,,Bogor,Kt/yr,Industry NMM Cement,ID
+GACTIDN0016,Indonesia,IDN,-6.705337,108.401523,Operating,Integrated,4100.0,,Cirebon,Kt/yr,Industry NMM Cement,ID
+GACTIDN0017,Indonesia,IDN,-3.271007,116.105835,Operating,Integrated,2600.0,,Kotabaru Regency,Kt/yr,Industry NMM Cement,ID
+GACTIDN0018,Indonesia,IDN,-8.347011,113.493513,Operating,Integrated,2100.0,,Kabupaten Jember,Kt/yr,Industry NMM Cement,ID
+GACTIDN0019,Indonesia,IDN,-6.460507,107.212892,Operating,Integrated,2000.0,2001.0,Bekasi,Kt/yr,Industry NMM Cement,ID
+GACTIDN0020,Indonesia,IDN,-5.955711,106.10388,Operating,Grinding,600.0,,Serang,Kt/yr,Industry NMM Cement,ID
+GACTIDN0021,Indonesia,IDN,-4.11672,104.161595,Operating,Grinding,1250.0,1980.0,Kabupaten Ogan Komering Ulu,Kt/yr,Industry NMM Cement,ID
+GACTIDN0022,Indonesia,IDN,-3.023469,104.745325,Operating,Grinding,350.0,,Kota Palembang,Kt/yr,Industry NMM Cement,ID
+GACTIDN0023,Indonesia,IDN,-5.459666,105.316406,Operating,Grinding,350.0,,Kota Bandar Lampung,Kt/yr,Industry NMM Cement,ID
+GACTIDN0026,Indonesia,IDN,-6.816613,111.88583,Operating,Integrated,2620.0,2013.0,Tuban Regency,Kt/yr,Industry NMM Cement,ID
+GACTIDN0027,Indonesia,IDN,5.451139,95.246351,Operating,Integrated,1600.0,1983.0,Kabupaten Aceh Besar,Kt/yr,Industry NMM Cement,ID
+GACTIDN0028,Indonesia,IDN,-0.947827,100.469967,Operating,Integrated,8800.0,1910.0,Kota Padang,Kt/yr,Industry NMM Cement,ID
+GACTIDN0029,Indonesia,IDN,-6.866206,111.458833,Operating,Integrated,3000.0,,Kabupaten Rembang,Kt/yr,Industry NMM Cement,ID
+GACTIDN0030,Indonesia,IDN,-4.789565,119.616409,Operating,Integrated,5980.0,,Kabupaten Pangkajene Dan Kepulauan,Kt/yr,Industry NMM Cement,ID
+GACTIDN0031,Indonesia,IDN,-6.865493,111.91075,Operating,Integrated,2500.0,,Kabupaten Tuban,Kt/yr,Industry NMM Cement,ID
+GACTIDN0032,Indonesia,IDN,-6.037467,105.98515,Operating,Grinding,1000.0,2015.0,Kota Cilegon,Kt/yr,Industry NMM Cement,ID
+GACTIDN0033,Indonesia,IDN,-10.194909,123.540076,Operating,Integrated,420.0,1982.0,Kota Kupang,Kt/yr,Industry NMM Cement,ID
+GACTIDN0034,Indonesia,IDN,-6.976614,106.86075,Operating,Integrated,1800.0,,Sukabumi Regency,Kt/yr,Industry NMM Cement,ID
+GACTIDN0035,Indonesia,IDN,-7.437673,109.074232,Operating,Integrated,1650.0,2012.0,Kabupatén Banyumas,Kt/yr,Industry NMM Cement,ID
+GACTIND0001,India,IND,24.595585,80.858324,Operating,Integrated,2200.0,1982.0,Satna,Kt/yr,Industry NMM Cement,IN
+GACTIND0002,India,IND,24.930921,74.634164,Operating,Integrated,4000.0,,Chittorgarh,Kt/yr,Industry NMM Cement,IN
+GACTIND0003,India,IND,24.254955,80.797654,Operating,Integrated,3000.0,2013.0,Girgita,Kt/yr,Industry NMM Cement,IN
+GACTIND0004,India,IND,26.253459,81.250948,Operating,Grinding,1300.0,,Raebareli,Kt/yr,Industry NMM Cement,IN
+GACTIND0005,India,IND,23.562013,87.23354,Operating,Grinding,2300.0,,Durgapur,Kt/yr,Industry NMM Cement,IN
+GACTIND0006,India,IND,20.928244,78.922224,Operating,Grinding,580.0,2012.0,Gangapur,Kt/yr,Industry NMM Cement,IN
+GACTIND0007,India,IND,26.404843,81.130322,Operating,Grinding,2000.0,,Khairhani,Kt/yr,Industry NMM Cement,IN
+GACTIND0012,India,IND,17.333482,77.484197,Operating,Integrated,2180.0,,Karankote,Kt/yr,Industry NMM Cement,IN
+GACTIND0017,India,IND,21.497474,81.78279,Operating,Integrated,2400.0,1974.0,Baikunth,Kt/yr,Industry NMM Cement,IN
+GACTIND0018,India,IND,19.724394,79.176075,Operating,Integrated,6000.0,1987.0,Gadchandur,Kt/yr,Industry NMM Cement,IN
+GACTIND0019,India,IND,24.202644,80.799867,Operating,Integrated,4200.0,1979.0,Sagmaniha,Kt/yr,Industry NMM Cement,IN
+GACTIND0020,India,IND,24.388462,88.083237,Operating,Grinding,2000.0,2013.0,Dhalo,Kt/yr,Industry NMM Cement,IN
+GACTIND0021,India,IND,17.370099,77.445669,Operating,Integrated,2890.0,2012.0,Sangam K,Kt/yr,Industry NMM Cement,IN
+GACTIND0022,India,IND,10.712664,78.09319,Operating,Integrated,4500.0,2001.0,Karikkali,Kt/yr,Industry NMM Cement,IN
+GACTIND0024,India,IND,10.937116,78.152888,Operating,Integrated,1700.0,1968.0,Puliyur,Kt/yr,Industry NMM Cement,IN
+GACTIND0027,India,IND,25.512145,92.764963,Operating,Integrated,960.0,,16 Kilo,Kt/yr,Industry NMM Cement,IN
+GACTIND0028,India,IND,14.932014,78.339902,Operating,Integrated,1920.0,2011.0,YSR District,Kt/yr,Industry NMM Cement,IN
+GACTIND0030,India,IND,11.182995,79.09975,Operating,Integrated,2200.0,2009.0,Govindapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0031,India,IND,16.204723,75.209295,Operating,Integrated,2500.0,,Belagavi,Kt/yr,Industry NMM Cement,IN
+GACTIND0033,India,IND,22.201498,84.58922,Operating,Integrated,2310.0,1952.0,Rajgangpur,Kt/yr,Industry NMM Cement,IN
+GACTIND0039,India,IND,13.27022,76.723122,Operating,Integrated,700.0,,Tumkur,Kt/yr,Industry NMM Cement,IN
+GACTIND0040,India,IND,23.990282,79.392584,Operating,Integrated,2540.0,1989.0,Narsinghgarh,Kt/yr,Industry NMM Cement,IN
+GACTIND0041,India,IND,16.832064,80.036823,Operating,Integrated,2400.0,1984.0,Donda Padu,Kt/yr,Industry NMM Cement,IN
+GACTIND0042,India,IND,14.60521,78.522478,Operating,Integrated,4600.0,1985.0,YSR District,Kt/yr,Industry NMM Cement,IN
+GACTIND0044,India,IND,13.260661,80.306354,Operating,Grinding,1000.0,2011.0,Puzhuthivakkam,Kt/yr,Industry NMM Cement,IN
+GACTIND0045,India,IND,17.540668,76.034869,Operating,Grinding,950.0,2015.0,Auj Aherwadi,Kt/yr,Industry NMM Cement,IN
+GACTIND0046,India,IND,11.357619,79.223045,Operating,Integrated,1850.0,1996.0,Alathiyur,Kt/yr,Industry NMM Cement,IN
+GACTIND0047,India,IND,14.665693,78.457835,Operating,Integrated,1460.0,1984.0,Chilamakuru,Kt/yr,Industry NMM Cement,IN
+GACTIND0048,India,IND,17.308165,77.474324,Operating,Integrated,2400.0,2009.0,Karankote,Kt/yr,Industry NMM Cement,IN
+GACTIND0049,India,IND,11.454468,77.828686,Operating,Integrated,860.0,1963.0,Sankari West,Kt/yr,Industry NMM Cement,IN
+GACTIND0050,India,IND,8.78885,77.730918,Operating,Integrated,2050.0,1949.0,Sankarnagar,Kt/yr,Industry NMM Cement,IN
+GACTIND0051,India,IND,16.696363,79.648627,Operating,Integrated,2500.0,,Wadapally,Kt/yr,Industry NMM Cement,IN
+GACTIND0052,India,IND,14.642947,78.528902,Operating,Integrated,730.0,,YSR District,Kt/yr,Industry NMM Cement,IN
+GACTIND0053,India,IND,23.603059,74.256034,Operating,Integrated,1500.0,2011.0,Nokla,Kt/yr,Industry NMM Cement,IN
+GACTIND0054,India,IND,13.241161,80.291687,Operating,Grinding,1100.0,,Athipatttu,Kt/yr,Industry NMM Cement,IN
+GACTIND0055,India,IND,18.861883,76.542925,Operating,Grinding,1100.0,2009.0,Vaijwadi,Kt/yr,Industry NMM Cement,IN
+GACTIND0059,India,IND,16.205971,75.298457,Operating,Integrated,2760.0,2009.0,Bagalkot,Kt/yr,Industry NMM Cement,IN
+GACTIND0061,India,IND,21.372294,81.450134,Operating,Integrated,2410.0,2014.0,Malpuri Khurd,Kt/yr,Industry NMM Cement,IN
+GACTIND0068,India,IND,15.686282,78.458991,Operating,Integrated,4800.0,,Kurnool,Kt/yr,Industry NMM Cement,IN
+GACTIND0069,India,IND,22.576171,87.309609,Operating,Integrated,2400.0,2017.0,Jamdedya,Kt/yr,Industry NMM Cement,IN
+GACTIND0070,India,IND,18.682155,73.03803,Operating,Grinding,970.0,1999.0,Raigad,Kt/yr,Industry NMM Cement,IN
+GACTIND0071,India,IND,15.179579,76.700306,Operating,,600.0,,Bellary,Kt/yr,Industry NMM Cement,IN
+GACTIND0072,India,IND,24.565587,81.176433,Operating,Integrated,2640.0,1986.0,Rewa,Kt/yr,Industry NMM Cement,IN
+GACTIND0073,India,IND,16.468871,79.435689,Operating,Integrated,700.0,1958.0,Macherla,Kt/yr,Industry NMM Cement,IN
+GACTIND0074,India,IND,16.837636,80.063456,Operating,Integrated,3520.0,2011.0,Mukteswarapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0075,India,IND,18.712203,79.404569,Operating,Integrated,1880.0,1969.0,Basanth Nagar,Kt/yr,Industry NMM Cement,IN
+GACTIND0076,India,IND,17.160018,77.293503,Operating,Integrated,2340.0,1986.0,Gulbarga,Kt/yr,Industry NMM Cement,IN
+GACTIND0077,India,IND,21.372104,83.61546,Operating,Integrated,2160.0,,Bargarh,Kt/yr,Industry NMM Cement,IN
+GACTIND0078,India,IND,31.413701,76.834892,Operating,Integrated,1800.0,1984.0,Khatehr,Kt/yr,Industry NMM Cement,IN
+GACTIND0079,India,IND,19.919046,79.113259,Operating,Integrated,3180.0,1969.0,Ghugus,Kt/yr,Industry NMM Cement,IN
+GACTIND0081,India,IND,22.424461,85.753248,Operating,Integrated,2060.0,1947.0,West Singhbhum,Kt/yr,Industry NMM Cement,IN
+GACTIND0082,India,IND,24.054744,80.613003,Operating,Integrated,3200.0,1923.0,Kymore,Kt/yr,Industry NMM Cement,IN
+GACTIND0083,India,IND,25.670752,76.188927,Operating,Integrated,1330.0,1936.0,Lakheri,Kt/yr,Industry NMM Cement,IN
+GACTIND0084,India,IND,10.906571,76.955751,Operating,Integrated,820.0,,Madukkarai,Kt/yr,Industry NMM Cement,IN
+GACTIND0086,India,IND,20.83622,70.69306,Operating,Integrated,2460.0,1986.0,Gir Somnath,Kt/yr,Industry NMM Cement,IN
+GACTIND0087,India,IND,31.258581,76.924968,Operating,Integrated,2190.0,2010.0,Darlaghat,Kt/yr,Industry NMM Cement,IN
+GACTIND0104,India,IND,10.848197,76.835789,Operating,Integrated,660.0,1984.0,Walayar,Kt/yr,Industry NMM Cement,IN
+GACTIND0105,India,IND,9.748529,76.362414,Operating,Grinding,200.0,2003.0,Pallipuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0106,India,IND,19.787467,79.064451,Operating,Integrated,3200.0,2010.0,Chandrapur,Kt/yr,Industry NMM Cement,IN
+GACTIND0107,India,IND,16.715611,79.817766,Operating,Integrated,2100.0,1983.0,Nalgonda,Kt/yr,Industry NMM Cement,IN
+GACTIND0109,India,IND,21.63125,82.110036,Operating,Integrated,3000.0,2016.0,Baloda Bazar,Kt/yr,Industry NMM Cement,IN
+GACTIND0110,India,IND,21.969431,82.351432,Operating,Integrated,1730.0,1982.0,Janjgir-Champa,Kt/yr,Industry NMM Cement,IN
+GACTIND0111,India,IND,21.73034,82.212864,Operating,Integrated,3500.0,1993.0,Raseda,Kt/yr,Industry NMM Cement,IN
+GACTIND0112,India,IND,26.332138,73.847671,Operating,Integrated,1620.0,,Pali,Kt/yr,Industry NMM Cement,IN
+GACTIND0114,India,IND,23.439328,87.51119,Operating,Grinding,2500.0,2017.0,Kota Chandipur,Kt/yr,Industry NMM Cement,IN
+GACTIND0118,India,IND,20.920595,86.031122,Operating,Grinding,2500.0,2020.0,Badsulidihi,Kt/yr,Industry NMM Cement,IN
+GACTIND0119,India,IND,25.223534,83.461625,Operating,Grinding,800.0,2018.0,Kulharia,Kt/yr,Industry NMM Cement,IN
+GACTIND0120,India,IND,19.033435,79.349324,Operating,Integrated,3000.0,1982.0,Devapur,Kt/yr,Industry NMM Cement,IN
+GACTIND0121,India,IND,17.108274,77.132457,Operating,Integrated,3000.0,2015.0,Itga,Kt/yr,Industry NMM Cement,IN
+GACTIND0122,India,IND,21.021005,75.683457,Operating,Grinding,2000.0,2000.0,Jalgaon Kh.,Kt/yr,Industry NMM Cement,IN
+GACTIND0123,India,IND,14.951422,78.075824,Operating,Integrated,1800.0,1994.0,Talaricheruvu,Kt/yr,Industry NMM Cement,IN
+GACTIND0124,India,IND,17.296071,77.504923,Operating,Integrated,2000.0,2010.0,Chandravancha,Kt/yr,Industry NMM Cement,IN
+GACTIND0125,India,IND,15.061606,77.950937,Operating,Integrated,2000.0,2008.0,Anantapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0126,India,IND,16.718672,79.694801,Operating,Integrated,1200.0,2002.0,Wadapally,Kt/yr,Industry NMM Cement,IN
+GACTIND0127,India,IND,18.473438,74.484301,Operating,Grinding,1000.0,2018.0,Pune,Kt/yr,Industry NMM Cement,IN
+GACTIND0128,India,IND,14.27251,80.11508,Operating,Grinding,2000.0,2018.0,Thamminapatnam,Kt/yr,Industry NMM Cement,IN
+GACTIND0129,India,IND,15.221793,77.93196,Operating,Integrated,2210.0,,Kurnool,Kt/yr,Industry NMM Cement,IN
+GACTIND0130,India,IND,16.84395,79.984596,Operating,Integrated,1300.0,1986.0,Ramapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0131,India,IND,11.177107,79.08911,Operating,Integrated,3500.0,2008.0,Govindapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0132,India,IND,16.875719,80.1215,Operating,Integrated,3650.0,1986.0,Krishna,Kt/yr,Industry NMM Cement,IN
+GACTIND0133,India,IND,13.758783,76.422107,Operating,Integrated,290.0,,Mathodu,Kt/yr,Industry NMM Cement,IN
+GACTIND0134,India,IND,11.361772,79.232041,Operating,Integrated,3050.0,1997.0,Alathiyur,Kt/yr,Industry NMM Cement,IN
+GACTIND0135,India,IND,9.455703,77.927796,Operating,Integrated,2000.0,1961.0,Tulukkapatti,Kt/yr,Industry NMM Cement,IN
+GACTIND0136,India,IND,22.423362,87.862852,Operating,Grinding,1950.0,2010.0,Kolaghat,Kt/yr,Industry NMM Cement,IN
+GACTIND0137,India,IND,11.634286,78.403619,Operating,Grinding,1600.0,2009.0,Salem,Kt/yr,Industry NMM Cement,IN
+GACTIND0138,India,IND,17.617542,82.891222,Operating,Grinding,950.0,2015.0,Vishakhapatnam,Kt/yr,Industry NMM Cement,IN
+GACTIND0139,India,IND,12.643418,79.69946,Operating,,500.0,2009.0,Kanchipuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0140,India,IND,16.766967,79.862794,Operating,Integrated,1820.0,1985.0,Nalgonda,Kt/yr,Industry NMM Cement,IN
+GACTIND0141,India,IND,15.075325,77.982725,Operating,Integrated,1000.0,,Gudipadu,Kt/yr,Industry NMM Cement,IN
+GACTIND0155,India,IND,24.82232,73.093914,Operating,Integrated,6250.0,1997.0,Sirohi,Kt/yr,Industry NMM Cement,IN
+GACTIND0157,India,IND,24.449401,83.039567,Operating,Integrated,2360.0,2008.0,Dalla,Kt/yr,Industry NMM Cement,IN
+GACTIND0158,India,IND,24.528559,81.169019,Operating,Integrated,2190.0,1995.0,Madhepur,Kt/yr,Industry NMM Cement,IN
+GACTIND0159,India,IND,16.871085,80.021716,Operating,Integrated,2360.0,2011.0,Budawada,Kt/yr,Industry NMM Cement,IN
+GACTIND0163,India,IND,20.868289,71.397709,Operating,Integrated,1430.0,1979.0,Amreli,Kt/yr,Industry NMM Cement,IN
+GACTIND0168,India,IND,27.668801,76.128894,Operating,Integrated,3240.0,,Koojota,Kt/yr,Industry NMM Cement,IN
+GACTIND0169,India,IND,26.606036,73.684448,Operating,Integrated,1670.0,1988.0,Dhadhesri,Kt/yr,Industry NMM Cement,IN
+GACTIND0171,India,IND,11.105441,79.172074,Operating,Integrated,2000.0,,Reddipalayam,Kt/yr,Industry NMM Cement,IN
+GACTIND0173,India,IND,31.3282,76.894259,Operating,Integrated,1750.0,2010.0,Solan,Kt/yr,Industry NMM Cement,IN
+GACTIND0196,India,IND,14.586917,78.579757,Operating,Integrated,5000.0,2009.0,Jambapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0197,India,IND,17.303447,77.43615,Operating,Integrated,2750.0,2013.0,Chatarsal,Kt/yr,Industry NMM Cement,IN
+GACTIND0198,India,IND,22.429021,69.834138,Operating,Integrated,1770.0,1949.0,Sikka,Kt/yr,Industry NMM Cement,IN
+GACTIND0199,India,IND,16.648359,79.702465,Operating,Integrated,1970.0,,Gamalapadu,Kt/yr,Industry NMM Cement,IN
+GACTIND0200,India,IND,16.767007,80.014024,Operating,Integrated,1490.0,,Nalgonda,Kt/yr,Industry NMM Cement,IN
+GACTIND0201,India,IND,16.17713,75.681411,Operating,Integrated,1560.0,,Bagalkot,Kt/yr,Industry NMM Cement,IN
+GACTIND0203,India,IND,16.654684,79.81512,Operating,Integrated,1350.0,,Guntur,Kt/yr,Industry NMM Cement,IN
+GACTIND0204,India,IND,16.844308,79.989973,Operating,Integrated,580.0,,Ramapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0205,India,IND,23.620478,85.274431,Operating,Integrated,920.0,,Patratu,Kt/yr,Industry NMM Cement,IN
+GACTIND0208,India,IND,16.711862,79.711104,Operating,Integrated,1840.0,,Wadapally,Kt/yr,Industry NMM Cement,IN
+GACTIND0210,India,IND,20.867858,70.564701,Operating,Integrated,2620.0,,Gir Somnath,Kt/yr,Industry NMM Cement,IN
+GACTIND0213,India,IND,34.032635,75.015643,Operating,Integrated,1150.0,,Khrew,Kt/yr,Industry NMM Cement,IN
+GACTIND0214,India,IND,16.798253,79.912905,Operating,Integrated,890.0,,Nalgonda,Kt/yr,Industry NMM Cement,IN
+GACTIND0216,India,IND,24.71512,75.953886,Operating,Integrated,2070.0,,Chonsala,Kt/yr,Industry NMM Cement,IN
+GACTIND0219,India,IND,15.50002,78.210468,Operating,Integrated,1040.0,,Kurnool,Kt/yr,Industry NMM Cement,IN
+GACTIND0220,India,IND,16.624455,79.502704,Operating,Integrated,1460.0,,Goli,Kt/yr,Industry NMM Cement,IN
+GACTIND0223,India,IND,21.704422,69.719992,Operating,Integrated,2520.0,,Porbandar,Kt/yr,Industry NMM Cement,IN
+GACTIND0225,India,IND,15.364101,78.219484,Operating,Integrated,2450.0,,Venkatapuram,Kt/yr,Industry NMM Cement,IN
+GACTIND0227,India,IND,16.734616,79.881588,Operating,Integrated,1660.0,,Nalgonda,Kt/yr,Industry NMM Cement,IN
+GACTIND0232,India,IND,24.657581,73.8752,Operating,Integrated,1740.0,,Udaipur,Kt/yr,Industry NMM Cement,IN
+GACTIND0235,India,IND,24.44605,83.075826,Operating,Integrated,1590.0,,Vilemar Kundi,Kt/yr,Industry NMM Cement,IN
+GACTIRL0001,Ireland,IRL,53.432118,-7.143371,Operating,Integrated,700.0,2002.0,Kinnegad ,Kt/yr,Industry NMM Cement,IE
+GACTIRL0002,Ireland,IRL,52.641364,-8.688373,Operating,Integrated,800.0,1938.0,Limerick,Kt/yr,Industry NMM Cement,IE
+GACTIRL0003,Ireland,IRL,53.684307,-6.387712,Operating,Integrated,2800.0,1972.0,Drogheda ,Kt/yr,Industry NMM Cement,IE
+GACTIRN0001,Iran (Islamic Republic of),IRN,30.945723,52.893091,Operating,Integrated,930.0,1994.0,Abadeh County,Kt/yr,Industry NMM Cement,IR
+GACTIRN0002,Iran (Islamic Republic of),IRN,33.106796,52.059938,Operating,Integrated,1278.0,2000.0,Ardestan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0003,Iran (Islamic Republic of),IRN,32.676455,53.139147,Operating,Integrated,200.0,2004.0,Naein County,Kt/yr,Industry NMM Cement,IR
+GACTIRN0005,Iran (Islamic Republic of),IRN,35.828219,52.839301,Operating,Integrated,1000.0,1985.0,Katalan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0006,Iran (Islamic Republic of),IRN,35.699016,51.786417,Operating,Integrated,1180.0,,Tehran,Kt/yr,Industry NMM Cement,IR
+GACTIRN0007,Iran (Islamic Republic of),IRN,27.739943,52.171476,Operating,Integrated,2760.0,2000.0,Tonbak,Kt/yr,Industry NMM Cement,IR
+GACTIRN0009,Iran (Islamic Republic of),IRN,36.638397,53.333561,Operating,Integrated,2400.0,1981.0,Abelou,Kt/yr,Industry NMM Cement,IR
+GACTIRN0010,Iran (Islamic Republic of),IRN,28.691918,54.188961,Operating,Integrated,1300.0,2003.0,Hasan Abad,Kt/yr,Industry NMM Cement,IR
+GACTIRN0011,Iran (Islamic Republic of),IRN,35.222593,48.925357,Operating,Integrated,108.0,1995.0,Saravak,Kt/yr,Industry NMM Cement,IR
+GACTIRN0012,Iran (Islamic Republic of),IRN,38.432107,48.421896,Operating,Integrated,1050.0,1996.0,,Kt/yr,Industry NMM Cement,IR
+GACTIRN0013,Iran (Islamic Republic of),IRN,35.822461,52.805048,Operating,Integrated,1000.0,2007.0,Katalan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0014,Iran (Islamic Republic of),IRN,34.326126,50.561091,Operating,Integrated,1000.0,2011.0,Neyzar,Kt/yr,Industry NMM Cement,IR
+GACTIRN0016,Iran (Islamic Republic of),IRN,30.661475,50.306894,Operating,Integrated,1170.0,,Behbahan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0017,Iran (Islamic Republic of),IRN,37.452818,57.686191,Operating,Integrated,600.0,1993.0,Shirvan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0018,Iran (Islamic Republic of),IRN,33.482785,49.071954,Operating,Integrated,2330.0,1959.0,Dorud,Kt/yr,Industry NMM Cement,IR
+GACTIRN0019,Iran (Islamic Republic of),IRN,29.122595,52.64685,Operating,Integrated,2270.0,,Mook,Kt/yr,Industry NMM Cement,IR
+GACTIRN0020,Iran (Islamic Republic of),IRN,34.355663,47.286697,Operating,Integrated,2710.0,1977.0,Faraman Industrial Town,Kt/yr,Industry NMM Cement,IR
+GACTIRN0021,Iran (Islamic Republic of),IRN,28.206554,61.305658,Operating,Integrated,2310.0,,Khash,Kt/yr,Industry NMM Cement,IR
+GACTIRN0022,Iran (Islamic Republic of),IRN,36.650468,49.518731,Operating,Integrated,1600.0,,Lowshan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0023,Iran (Islamic Republic of),IRN,29.253013,54.475132,Operating,Integrated,165.0,,Hasanabad,Kt/yr,Industry NMM Cement,IR
+GACTIRN0025,Iran (Islamic Republic of),IRN,29.624192,52.44734,Operating,Integrated,2330.0,1955.0,Shiraz,Kt/yr,Industry NMM Cement,IR
+GACTIRN0026,Iran (Islamic Republic of),IRN,33.946034,51.240173,Operating,Integrated,1610.0,2005.0,Kashan County,Kt/yr,Industry NMM Cement,IR
+GACTIRN0028,Iran (Islamic Republic of),IRN,28.410447,53.230967,Operating,Integrated,2580.0,2012.0,Ghirokarzin,Kt/yr,Industry NMM Cement,IR
+GACTIRN0029,Iran (Islamic Republic of),IRN,36.85618,50.015024,Operating,Integrated,2020.0,,Gulak,Kt/yr,Industry NMM Cement,IR
+GACTIRN0030,Iran (Islamic Republic of),IRN,34.056017,48.499557,Operating,Integrated,1000.0,2011.0,Sohran,Kt/yr,Industry NMM Cement,IR
+GACTIRN0031,Iran (Islamic Republic of),IRN,37.296253,55.482199,Operating,Integrated,1000.0,2011.0,Tarajiq,Kt/yr,Industry NMM Cement,IR
+GACTIRN0032,Iran (Islamic Republic of),IRN,35.306548,49.211938,Operating,Integrated,3060.0,1988.0,Poli Kan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0033,Iran (Islamic Republic of),IRN,33.720436,46.510696,Operating,Integrated,1640.0,,Chardavol,Kt/yr,Industry NMM Cement,IR
+GACTIRN0035,Iran (Islamic Republic of),IRN,30.519905,51.543211,Operating,Integrated,210.0,2004.0,Tangari,Kt/yr,Industry NMM Cement,IR
+GACTIRN0036,Iran (Islamic Republic of),IRN,38.679266,45.027679,Operating,Integrated,1940.0,,Yarim Qayeh,Kt/yr,Industry NMM Cement,IR
+GACTIRN0039,Iran (Islamic Republic of),IRN,26.957779,55.543845,Operating,Integrated,2800.0,,Bandar Khamir,Kt/yr,Industry NMM Cement,IR
+GACTIRN0040,Iran (Islamic Republic of),IRN,36.480617,59.746534,Operating,Integrated,2330.0,,Farmad,Kt/yr,Industry NMM Cement,IR
+GACTIRN0042,Iran (Islamic Republic of),IRN,29.306934,51.270521,Operating,Integrated,2180.0,,Borazjan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0043,Iran (Islamic Republic of),IRN,35.928279,47.554208,Operating,Integrated,2029.9999999999998,,Bijar,Kt/yr,Industry NMM Cement,IR
+GACTIRN0044,Iran (Islamic Republic of),IRN,32.576741,51.582714,Operating,Integrated,1950.0,,Isfahan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0046,Iran (Islamic Republic of),IRN,31.728772,49.520077,Operating,Integrated,2430.0,,Golgir,Kt/yr,Industry NMM Cement,IR
+GACTIRN0049,Iran (Islamic Republic of),IRN,27.788613,54.484055,Operating,Integrated,1640.0,,Kourdeh,Kt/yr,Industry NMM Cement,IR
+GACTIRN0053,Iran (Islamic Republic of),IRN,26.904997,56.034479,Operating,Integrated,1130.0,,Qeshm,Kt/yr,Industry NMM Cement,IR
+GACTIRN0054,Iran (Islamic Republic of),IRN,34.298085,46.873216,Operating,Integrated,2210.0,,Qomishe-ye mirqāsem,Kt/yr,Industry NMM Cement,IR
+GACTIRN0056,Iran (Islamic Republic of),IRN,32.218819,51.137468,Operating,Integrated,2580.0,,Chah Gorg,Kt/yr,Industry NMM Cement,IR
+GACTIRN0058,Iran (Islamic Republic of),IRN,36.482013,54.901257,Operating,Integrated,2370.0,,Shahrud,Kt/yr,Industry NMM Cement,IR
+GACTIRN0059,Iran (Islamic Republic of),IRN,37.323522,45.279647,Operating,Integrated,2740.0,,Urmia,Kt/yr,Industry NMM Cement,IR
+GACTIRN0061,Iran (Islamic Republic of),IRN,36.228881,48.627891,Operating,Integrated,1790.0,,Majid Abad,Kt/yr,Industry NMM Cement,IR
+GACTIRN0063,Iran (Islamic Republic of),IRN,37.751775,45.043715,Operating,Integrated,670.0,,Urmia,Kt/yr,Industry NMM Cement,IR
+GACTIRN0065,Iran (Islamic Republic of),IRN,30.341309,56.513608,Operating,Integrated,800.0,,Rafsanjan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0066,Iran (Islamic Republic of),IRN,35.31556,59.486633,Operating,Integrated,1820.0,,Dowlat Abad,Kt/yr,Industry NMM Cement,IR
+GACTIRN0067,Iran (Islamic Republic of),IRN,32.924046,60.232765,Operating,Integrated,1750.0,,Darmiyan,Kt/yr,Industry NMM Cement,IR
+GACTIRN0069,Iran (Islamic Republic of),IRN,35.488833,50.206166,Operating,Integrated,2600.0,,Qeshlaq-E Karbala'i Javad,Kt/yr,Industry NMM Cement,IR
+GACTIRQ0001,Iraq,IRQ,34.257402,41.212474,Operating,Integrated,1000.0,1987.0,Qa'im,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0002,Iraq,IRQ,33.591386,42.504563,Operating,Integrated,2000.0,1983.0,Heet,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0003,Iraq,IRQ,35.605185,45.084727,Operating,Integrated,2700.0,2009.0,Sulaymaniyah,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0004,Iraq,IRQ,32.343069,43.327069,Operating,,2400.0,,Tullaiha,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0005,Iraq,IRQ,32.737861,44.271694,Operating,Integrated,198.0,,Musayyib,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0006,Iraq,IRQ,31.967338,44.44337,Operating,Integrated,1560.0,1973.0,Maz'al an Nasir,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0007,Iraq,IRQ,31.962637,44.435264,Operating,Integrated,1781.0,1977.0,Maz'al an Nasir,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0008,Iraq,IRQ,31.226161,45.002316,Operating,Integrated,1959.0,,Al-Rumaitha,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0009,Iraq,IRQ,31.300077,45.299682,Operating,Integrated,401.0,1955.0,Samawah,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0010,Iraq,IRQ,30.03508,47.944941,Operating,Grinding,600.0,1972.0,Um Qasr,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0014,Iraq,IRQ,35.625588,45.210679,Operating,Integrated,1810.0,,Sulaymaniyah,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0015,Iraq,IRQ,36.441836,42.931149,Operating,Integrated,2770.0,,Mosul,Kt/yr,Industry NMM Cement,IQ
+GACTIRQ0016,Iraq,IRQ,36.199215,43.214854,Operating,Integrated,870.0,,Mosul,Kt/yr,Industry NMM Cement,IQ
+GACTITA0001,Italy,ITA,37.193679,15.181599,Operating,Integrated,1900.0,,Provincia di Siracusa,Kt/yr,Industry NMM Cement,IT
+GACTITA0002,Italy,ITA,41.314178,16.291376,Operating,Integrated,1100.0,,Barletta,Kt/yr,Industry NMM Cement,IT
+GACTITA0003,Italy,ITA,42.007213,12.7164,Operating,Integrated,1900.0,,Guidonia Montecelio,Kt/yr,Industry NMM Cement,IT
+GACTITA0004,Italy,ITA,44.302532,7.507571,Operating,Integrated,1700.0,1965.0,Provincia di Cuneo,Kt/yr,Industry NMM Cement,IT
+GACTITA0005,Italy,ITA,40.556227,9.672135,Operating,Integrated,500.0,,Tanca Altara,Kt/yr,Industry NMM Cement,IT
+GACTITA0006,Italy,ITA,44.793451,9.810724,Operating,Integrated,1300.0,,Provincia di Piacenza,Kt/yr,Industry NMM Cement,IT
+GACTITA0007,Italy,ITA,46.17726,12.740098,Operating,Integrated,1000.0,,Zona Industriale Pedris,Kt/yr,Industry NMM Cement,IT
+GACTITA0008,Italy,ITA,45.253599,11.751795,Operating,Integrated,800.0,,L.p. Solana,Kt/yr,Industry NMM Cement,IT
+GACTITA0010,Italy,ITA,45.190403,8.287547,Operating,Grinding,780.0,1907.0,Trino,Kt/yr,Industry NMM Cement,IT
+GACTITA0011,Italy,ITA,43.855016,11.180725,Operating,Grinding,230.0,1962.0,Calenzano,Kt/yr,Industry NMM Cement,IT
+GACTITA0020,Italy,ITA,40.167204,18.200552,Operating,Integrated,1130.0,1926.0,Provincia di Lecce,Kt/yr,Industry NMM Cement,IT
+GACTITA0029,Italy,ITA,41.73642,13.00401,Operating,Integrated,1680.0,1921.0,Colleferro Scalo,Kt/yr,Industry NMM Cement,IT
+GACTITA0030,Italy,ITA,38.190035,13.248898,Operating,Integrated,2000.0,1957.0,Isola delle Femmine,Kt/yr,Industry NMM Cement,IT
+GACTITA0031,Italy,ITA,40.674977,16.657804,Operating,Integrated,1320.0,1974.0,Provincia di Matera,Kt/yr,Industry NMM Cement,IT
+GACTITA0033,Italy,ITA,39.470522,9.024111,Operating,Integrated,1510.0,1973.0,Italcementi,Kt/yr,Industry NMM Cement,IT
+GACTITA0049,Italy,ITA,43.219139,13.084847,Operating,Integrated,850.0,,Provincia di Macerata,Kt/yr,Industry NMM Cement,IT
+GACTJAM0001,Jamaica,JAM,17.96372,-76.730353,Operating,Integrated,1030.0,1952.0,Port Royal,Kt/yr,Industry NMM Cement,JM
+GACTJOR0001,Jordan,JOR,30.67859,35.631965,Operating,Integrated,2000.0,1984.0,Bsaira District,Kt/yr,Industry NMM Cement,JO
+GACTJOR0002,Jordan,JOR,32.215093,36.201654,Operating,Integrated,2900.0,,Bal'ama Sub-District,Kt/yr,Industry NMM Cement,JO
+GACTJOR0003,Jordan,JOR,32.099161,36.304134,Operating,Integrated,1060.0,,Dhlail Sub-District,Kt/yr,Industry NMM Cement,JO
+GACTJPN0001,Japan,JPN,36.028038,139.095128,Operating,Integrated,1860.0,2007.0,Chichibu,Kt/yr,Industry NMM Cement,JP
+GACTJPN0002,Japan,JPN,38.983894,141.2454,Operating,Integrated,1420.0,1958.0,Ichinoseki,Kt/yr,Industry NMM Cement,JP
+GACTJPN0004,Japan,JPN,41.407124,141.437617,Operating,Integrated,2140.0,1979.0,Higashidori,Kt/yr,Industry NMM Cement,JP
+GACTJPN0005,Japan,JPN,35.980882,139.103858,Operating,Integrated,2070.0,1969.0,Yokoze,Kt/yr,Industry NMM Cement,JP
+GACTJPN0006,Japan,JPN,40.515509,141.521831,Operating,Integrated,1500.0,,Hachinohe,Kt/yr,Industry NMM Cement,JP
+GACTJPN0007,Japan,JPN,35.501391,136.660357,Operating,Integrated,1600.0,,Motosu,Kt/yr,Industry NMM Cement,JP
+GACTJPN0008,Japan,JPN,33.40298,133.301771,Operating,Integrated,4350.0,,Susaki,Kt/yr,Industry NMM Cement,JP
+GACTJPN0009,Japan,JPN,36.404864,139.617052,Operating,Integrated,900.0,,Sano,Kt/yr,Industry NMM Cement,JP
+GACTJPN0010,Japan,JPN,34.754394,134.363342,Operating,Integrated,4200.0,,Ako,Kt/yr,Industry NMM Cement,JP
+GACTJPN0011,Japan,JPN,35.511879,139.726102,Operating,Integrated,1780.0,,Kawasaki,Kt/yr,Industry NMM Cement,JP
+GACTJPN0013,Japan,JPN,35.908489,139.343517,Operating,Integrated,1890.0,,Hidaka,Kt/yr,Industry NMM Cement,JP
+GACTJPN0017,Japan,JPN,39.071193,141.731349,Operating,Integrated,1730.0,,Ofunato,Kt/yr,Industry NMM Cement,JP
+GACTJPN0018,Japan,JPN,33.08406,131.858976,Operating,Integrated,2190.0,,Tsukumi,Kt/yr,Industry NMM Cement,JP
+GACTJPN0019,Japan,JPN,35.666816,136.080438,Operating,Integrated,760.0,,Tsuruga,Kt/yr,Industry NMM Cement,JP
+GACTJPN0020,Japan,JPN,34.169853,131.217994,Operating,Integrated,2029.9999999999998,,Mine,Kt/yr,Industry NMM Cement,JP
+GACTJPN0021,Japan,JPN,33.782392,131.000718,Operating,Integrated,1130.0,,Kanda,Kt/yr,Industry NMM Cement,JP
+GACTJPN0027,Japan,JPN,33.902573,130.854987,Operating,Integrated,790.0,,Kitakyushu,Kt/yr,Industry NMM Cement,JP
+GACTJPN0028,Japan,JPN,42.351163,140.998707,Operating,Integrated,1230.0,,Muroran,Kt/yr,Industry NMM Cement,JP
+GACTKAZ0001,Kazakhstan,KAZ,44.089136,52.120629,Operating,Integrated,800.0,,Mangystau District,Kt/yr,Industry NMM Cement,KZ
+GACTKAZ0002,Kazakhstan,KAZ,49.64296,83.575126,Operating,Integrated,1500.0,1964.0,Zyryan District,Kt/yr,Industry NMM Cement,KZ
+GACTKAZ0003,Kazakhstan,KAZ,42.292318,69.647017,Operating,Integrated,1300.0,1958.0,Shymkent,Kt/yr,Industry NMM Cement,KZ
+GACTKAZ0004,Kazakhstan,KAZ,45.389976,73.652932,Operating,Integrated,1930.0,2010.0,Moiynkum District,Kt/yr,Industry NMM Cement,KZ
+GACTKAZ0006,Kazakhstan,KAZ,42.549695,69.99013,Operating,Integrated,1090.0,,Tulkibas,Kt/yr,Industry NMM Cement,KZ
+GACTKAZ0007,Kazakhstan,KAZ,50.399459,80.182759,Operating,Integrated,2620.0,,Semey,Kt/yr,Industry NMM Cement,KZ
+GACTKAZ0009,Kazakhstan,KAZ,42.356075,69.734972,Operating,Integrated,3090.0,,Sayram District,Kt/yr,Industry NMM Cement,KZ
+GACTKAZ0010,Kazakhstan,KAZ,49.657354,81.177586,Operating,Integrated,2020.0,,Zharma District,Kt/yr,Industry NMM Cement,KZ
+GACTKEN0001,Kenya,KEN,-3.845269,39.633423,Operating,Integrated,820.0,2007.0,Kaloleni,Kt/yr,Industry NMM Cement,KE
+GACTKEN0004,Kenya,KEN,-1.453613,36.962209,Operating,Integrated,1300.0,1957.0,Athi River,Kt/yr,Industry NMM Cement,KE
+GACTKEN0005,Kenya,KEN,-4.006869,39.716398,Operating,Integrated,1550.0,,Mombasa,Kt/yr,Industry NMM Cement,KE
+GACTKGZ0001,Kyrgyzstan,KGZ,42.913489,74.874671,Operating,Integrated,1300.0,1964.0,Ysyk-Ata,Kt/yr,Industry NMM Cement,KG
+GACTKGZ0002,Kyrgyzstan,KGZ,42.912747,74.870767,Operating,Integrated,359.0,1975.0,Kant,Kt/yr,Industry NMM Cement,KG
+GACTKHM0001,Cambodia,KHM,12.87017,103.014868,Operating,Integrated,2000.0,2020.0,Rotanak Mondol,Kt/yr,Industry NMM Cement,KH
+GACTKHM0002,Cambodia,KHM,10.641965,104.527495,Operating,Integrated,1500.0,2017.0,Banteay Meas,Kt/yr,Industry NMM Cement,KH
+GACTKHM0003,Cambodia,KHM,10.683438,104.267917,Operating,Integrated,1240.0,2014.0,Tuek Chhou,Kt/yr,Industry NMM Cement,KH
+GACTKHM0004,Cambodia,KHM,10.688055,104.513181,Operating,Integrated,2000.0,2008.0,Dang Tong,Kt/yr,Industry NMM Cement,KH
+GACTKHM0005,Cambodia,KHM,10.718818,104.354834,Operating,Integrated,1000.0,2019.0,Dang Tong,Kt/yr,Industry NMM Cement,KH
+GACTKOR0001,"Korea, Republic of",KOR,37.205706,128.302288,Operating,Integrated,5000.0,,Jecheon,Kt/yr,Industry NMM Cement,KR
+GACTKOR0003,"Korea, Republic of",KOR,36.046135,128.34706,Operating,Grinding,1000.0,1977.0,Chilgok-gun,Kt/yr,Industry NMM Cement,KR
+GACTKOR0004,"Korea, Republic of",KOR,34.935518,127.764807,Operating,Grinding,1600.0,,Gwangyang-si,Kt/yr,Industry NMM Cement,KR
+GACTKOR0005,"Korea, Republic of",KOR,35.992477,129.362999,Operating,Grinding,1600.0,,Pohang,Kt/yr,Industry NMM Cement,KR
+GACTKOR0006,"Korea, Republic of",KOR,37.435793,126.614855,Operating,Grinding,1100.0,,Jung-gu,Kt/yr,Industry NMM Cement,KR
+GACTKOR0008,"Korea, Republic of",KOR,37.026538,128.320636,Operating,Integrated,8100.0,1961.0,Danyang-gun,Kt/yr,Industry NMM Cement,KR
+GACTKOR0009,"Korea, Republic of",KOR,37.084324,128.283321,Operating,Integrated,1500.0,1964.0,Danyang-gun,Kt/yr,Industry NMM Cement,KR
+GACTKOR0010,"Korea, Republic of",KOR,37.23037,128.323912,Operating,Integrated,2130.0,1992.0,Yeongweol,Kt/yr,Industry NMM Cement,KR
+GACTKOR0020,"Korea, Republic of",KOR,35.290658,126.779968,Operating,Integrated,1040.0,,Jangseong-gun,Kt/yr,Industry NMM Cement,KR
+GACTKOR0021,"Korea, Republic of",KOR,37.427431,129.179791,Operating,Integrated,9720.0,,Samcheog,Kt/yr,Industry NMM Cement,KR
+GACTKOR0022,"Korea, Republic of",KOR,37.495174,129.13202,Operating,Grinding,1367.0,,Donghae-si,Kt/yr,Industry NMM Cement,KR
+GACTKOR0023,"Korea, Republic of",KOR,34.937106,127.763227,Operating,Grinding,1200.0,,Gwangyang-si,Kt/yr,Industry NMM Cement,KR
+GACTKOR0024,"Korea, Republic of",KOR,35.076138,129.006504,Operating,Grinding,800.0,,Seo-gu,Kt/yr,Industry NMM Cement,KR
+GACTKOR0025,"Korea, Republic of",KOR,37.483696,129.053429,Operating,Integrated,11500.0,1968.0,Donghae-si,Kt/yr,Industry NMM Cement,KR
+GACTKOR0026,"Korea, Republic of",KOR,37.186617,128.322076,Operating,Integrated,3500.0,1962.0,Yeongweol,Kt/yr,Industry NMM Cement,KR
+GACTKWT0001,Kuwait,KWT,29.03909,48.146233,Operating,Integrated,3800.0,1972.0,Ahmadi,Kt/yr,Industry NMM Cement,KW
+GACTLAO0002,Lao People's Democratic Republic,LAO,18.881931,102.48007,Operating,Integrated,1450.0,,Khan Mak,Kt/yr,Industry NMM Cement,LA
+GACTLAO0003,Lao People's Democratic Republic,LAO,17.455261,104.99299,Operating,Integrated,1530.0,,Ban Nadou,Kt/yr,Industry NMM Cement,LA
+GACTLAO0004,Lao People's Democratic Republic,LAO,15.876415,106.374667,Operating,Integrated,1560.0,,Ban Yon,Kt/yr,Industry NMM Cement,LA
+GACTLAO0005,Lao People's Democratic Republic,LAO,18.873072,102.488023,Operating,Integrated,740.0,,Khan Mak,Kt/yr,Industry NMM Cement,LA
+GACTLBN0001,Lebanon,LBN,34.306375,35.723128,Operating,Integrated,860.0,1931.0,Batroun,Kt/yr,Industry NMM Cement,LB
+GACTLBN0002,Lebanon,LBN,33.628265,35.422609,Operating,Integrated,1200.0,1987.0,Chouf,Kt/yr,Industry NMM Cement,LB
+GACTLBN0003,Lebanon,LBN,34.335049,35.73103,Operating,Integrated,2110.0,,Batroun,Kt/yr,Industry NMM Cement,LB
+GACTLBY0002,Libya,LBY,32.52035,14.325074,Operating,Integrated,1890.0,,Khoms,Kt/yr,Industry NMM Cement,LY
+GACTLBY0003,Libya,LBY,32.42371,14.485477,Operating,Integrated,2090.0,,Zliten,Kt/yr,Industry NMM Cement,LY
+GACTLBY0005,Libya,LBY,32.61537,22.727181,Operating,Integrated,1000.0,,Matrubah,Kt/yr,Industry NMM Cement,LY
+GACTLBY0006,Libya,LBY,32.382952,14.499726,Operating,Integrated,3260.0,,Zliten,Kt/yr,Industry NMM Cement,LY
+GACTLKA0001,Sri Lanka,LKA,7.988093,79.867313,Operating,Integrated,1590.0,,Puttalam,Kt/yr,Industry NMM Cement,LK
+GACTLUX0001,Luxembourg,LUX,49.465827,6.006684,Operating,Integrated,1410.0,1973.0,Kayl,Kt/yr,Industry NMM Cement,LU
+GACTLVA0001,Latvia,LVA,56.690803,22.592287,Operating,Integrated,1600.0,2010.0,Brocēni,Kt/yr,Industry NMM Cement,LV
+GACTMAR0001,Morocco,MAR,32.989777,-7.147403,Operating,Integrated,1600.0,2011.0,Settat Province,Kt/yr,Industry NMM Cement,MA
+GACTMAR0002,Morocco,MAR,32.567512,-6.136444,Operating,Integrated,1600.0,2012.0,Province de Béni-Mellal,Kt/yr,Industry NMM Cement,MA
+GACTMAR0003,Morocco,MAR,30.220295,-9.15274,Operating,Integrated,2200.0,2010.0,Taroudant,Kt/yr,Industry NMM Cement,MA
+GACTMAR0004,Morocco,MAR,31.58524,-8.502384,Operating,Integrated,1400.0,1976.0,Mzoudia,Kt/yr,Industry NMM Cement,MA
+GACTMAR0005,Morocco,MAR,32.552532,-9.104544,Operating,Integrated,1000.0,1992.0,Safi,Kt/yr,Industry NMM Cement,MA
+GACTMAR0006,Morocco,MAR,27.077753,-13.418374,Operating,Grinding,500.0,,Marsa,Kt/yr,Industry NMM Cement,MA
+GACTMAR0007,Morocco,MAR,33.157611,-8.606479,Operating,Grinding,450.0,2014.0,El Jadida,Kt/yr,Industry NMM Cement,MA
+GACTMAR0008,Morocco,MAR,33.944648,-5.117676,Operating,Integrated,1610.0,1993.0,Province de Moulay Yacoub,Kt/yr,Industry NMM Cement,MA
+GACTMAR0010,Morocco,MAR,33.055221,-7.53345,Operating,Integrated,2110.0,2007.0,Settat Province,Kt/yr,Industry NMM Cement,MA
+GACTMAR0011,Morocco,MAR,33.366855,-7.748259,Operating,Integrated,2300.0,,Settat Province,Kt/yr,Industry NMM Cement,MA
+GACTMAR0012,Morocco,MAR,35.601558,-5.432029,Operating,Integrated,1580.0,2004.0,Province de Tétouan,Kt/yr,Industry NMM Cement,MA
+GACTMAR0013,Morocco,MAR,33.910502,-5.494702,Operating,Integrated,1980.0,1953.0,Meknes,Kt/yr,Industry NMM Cement,MA
+GACTMAR0016,Morocco,MAR,33.891542,-6.949145,Operating,Integrated,1180.0,,Témara,Kt/yr,Industry NMM Cement,MA
+GACTMDA0001,"Moldova, Republic of",MDA,47.789298,28.954486,Operating,Integrated,2350.0,,Păpăuți,Kt/yr,Industry NMM Cement,MD
+GACTMEX0001,Mexico,MEX,19.343802,-96.70478,Operating,Integrated,1000.0,2010.0,Chahuapan,Kt/yr,Industry NMM Cement,MX
+GACTMEX0002,Mexico,MEX,22.474087,-100.378977,Operating,Integrated,2000.0,2004.0,Montaña,Kt/yr,Industry NMM Cement,MX
+GACTMEX0003,Mexico,MEX,18.798161,-99.179188,Operating,Integrated,2000.0,1997.0,Chiconcuac,Kt/yr,Industry NMM Cement,MX
+GACTMEX0005,Mexico,MEX,18.968308,-97.962802,Operating,Integrated,7200.0,1995.0,Santa Cruz Ajajalpan,Kt/yr,Industry NMM Cement,MX
+GACTMEX0007,Mexico,MEX,28.927453,-110.826386,Operating,Integrated,2860.0,1991.0,Hermosillo,Kt/yr,Industry NMM Cement,MX
+GACTMEX0008,Mexico,MEX,20.384508,-99.690335,Operating,Integrated,2200.0,1986.0,Huichapan,Kt/yr,Industry NMM Cement,MX
+GACTMEX0011,Mexico,MEX,22.044582,-98.869286,Operating,Integrated,1970.0,,Tamuín,Kt/yr,Industry NMM Cement,MX
+GACTMEX0012,Mexico,MEX,19.578436,-99.201001,Operating,Integrated,1470.0,,Tlalnepantla de Baz,Kt/yr,Industry NMM Cement,MX
+GACTMEX0013,Mexico,MEX,20.603157,-103.343402,Operating,Integrated,1230.0,,San Pedro Tlaquepaque,Kt/yr,Industry NMM Cement,MX
+GACTMEX0015,Mexico,MEX,21.985989,-98.959692,Operating,Integrated,2310.0,1966.0,Ciudad Valles,Kt/yr,Industry NMM Cement,MX
+GACTMEX0018,Mexico,MEX,18.870811,-97.65888,Operating,Integrated,2200.0,2007.0,Palmar de Bravo,Kt/yr,Industry NMM Cement,MX
+GACTMEX0019,Mexico,MEX,22.185048,-102.205333,Operating,Integrated,2080.0,2000.0,Arroyo Hondo,Kt/yr,Industry NMM Cement,MX
+GACTMEX0020,Mexico,MEX,16.800889,-95.068016,Operating,Integrated,910.0,1944.0,Lagunas,Kt/yr,Industry NMM Cement,MX
+GACTMEX0021,Mexico,MEX,19.987639,-99.328073,Operating,Integrated,1680.0,1905.0,San Miguel Vindho,Kt/yr,Industry NMM Cement,MX
+GACTMEX0022,Mexico,MEX,20.417326,-99.021412,Operating,Integrated,850.0,,Santiago de Anaya,Kt/yr,Industry NMM Cement,MX
+GACTMEX0023,Mexico,MEX,20.012084,-99.17914,Operating,Integrated,2090.0,,Vito,Kt/yr,Industry NMM Cement,MX
+GACTMEX0026,Mexico,MEX,31.414784,-106.449726,Operating,Integrated,1620.0,,Villa Luz,Kt/yr,Industry NMM Cement,MX
+GACTMEX0028,Mexico,MEX,16.888668,-99.830602,Operating,Integrated,740.0,,Acapulco de Juárez,Kt/yr,Industry NMM Cement,MX
+GACTMEX0029,Mexico,MEX,19.974368,-99.18218,Operating,Integrated,1860.0,,Apaxco de Ocampo,Kt/yr,Industry NMM Cement,MX
+GACTMEX0032,Mexico,MEX,25.613532,-100.865863,Operating,Integrated,1830.0,,Santa María,Kt/yr,Industry NMM Cement,MX
+GACTMEX0034,Mexico,MEX,18.980846,-103.872494,Operating,Integrated,2130.0,,Caleras,Kt/yr,Industry NMM Cement,MX
+GACTMKD0001,North Macedonia,MKD,41.967972,21.457449,Operating,Integrated,1890.0,1955.0,Skopje,Kt/yr,Industry NMM Cement,MK
+GACTMLI0001,Mali,MLI,12.792925,-8.171903,Operating,Grinding,500.0,,Kati,Kt/yr,Industry NMM Cement,ML
+GACTMMR0003,Myanmar,MMR,21.577615,96.235897,Operating,Integrated,3060.0,,Kyaukse District,Kt/yr,Industry NMM Cement,MM
+GACTMMR0006,Myanmar,MMR,21.604788,96.256347,Operating,Integrated,1930.0,,Hpyauk Seik Pin ,Kt/yr,Industry NMM Cement,MM
+GACTMMR0009,Myanmar,MMR,21.512238,96.300802,Operating,Integrated,340.0,,Kyaukse District,Kt/yr,Industry NMM Cement,MM
+GACTMNG0001,Mongolia,MNG,49.095789,105.578404,Operating,Integrated,2920.0,,Khutul,Kt/yr,Industry NMM Cement,MN
+GACTMNG0003,Mongolia,MNG,44.727017,110.79477,Operating,Integrated,1670.0,,Urgun,Kt/yr,Industry NMM Cement,MN
+GACTMOZ0004,Mozambique,MOZ,-25.958721,32.485549,Operating,Grinding,700.0,,Matola,Kt/yr,Industry NMM Cement,MZ
+GACTMRT0001,Mauritania,MRT,17.99066,-16.008808,Operating,Grinding,500.0,,,Kt/yr,Industry NMM Cement,MR
+GACTMWI0002,Malawi,MWI,-12.873871,33.720562,Operating,Integrated,1060.0,,Kasungu,Kt/yr,Industry NMM Cement,MW
+GACTMYS0006,Malaysia,MYS,4.387662,101.09088,Operating,Integrated,1880.0,,Malim Nawar,Kt/yr,Industry NMM Cement,MY
+GACTMYS0007,Malaysia,MYS,4.633606,101.104468,Operating,Integrated,2300.0,1964.0,Ipoh,Kt/yr,Industry NMM Cement,MY
+GACTMYS0008,Malaysia,MYS,2.739681,102.394371,Operating,Integrated,3140.0,,Bahau,Kt/yr,Industry NMM Cement,MY
+GACTMYS0016,Malaysia,MYS,3.994745,103.138844,Operating,Integrated,1600.0,,Sungai Lembing,Kt/yr,Industry NMM Cement,MY
+GACTNAM0001,Namibia,NAM,-19.521548,17.449558,Operating,Integrated,1310.0,,Tsobis,Kt/yr,Industry NMM Cement,NA
+GACTNAM0002,Namibia,NAM,-20.419375,16.675476,Operating,Integrated,1530.0,,Otjiwarongo,Kt/yr,Industry NMM Cement,NA
+GACTNER0001,Niger,NER,13.952084,5.51864,Operating,Integrated,1310.0,,Malbaza,Kt/yr,Industry NMM Cement,NE
+GACTNGA0001,Nigeria,NGA,7.319348,6.365774,Operating,Integrated,3000.0,2015.0,Etsako East,Kt/yr,Industry NMM Cement,NG
+GACTNGA0002,Nigeria,NGA,7.35638,6.401469,Operating,Integrated,500.0,,Etsako East,Kt/yr,Industry NMM Cement,NG
+GACTNGA0003,Nigeria,NGA,13.061804,5.171114,Operating,Integrated,1500.0,2018.0,Sokoto,Kt/yr,Industry NMM Cement,NG
+GACTNGA0004,Nigeria,NGA,7.411613,8.975232,Operating,Integrated,4000.0,2007.0,Gboko,Kt/yr,Industry NMM Cement,NG
+GACTNGA0005,Nigeria,NGA,7.006077,3.047604,Operating,Integrated,12000.0,2012.0,Egbado North,Kt/yr,Industry NMM Cement,NG
+GACTNGA0006,Nigeria,NGA,7.927327,6.425156,Operating,Integrated,13250.0,2008.0,Obajana,Kt/yr,Industry NMM Cement,NG
+GACTNGA0008,Nigeria,NGA,6.893522,3.205342,Operating,Integrated,2670.0,1960.0,Ewekoro,Kt/yr,Industry NMM Cement,NG
+GACTNIC0001,Nicaragua,NIC,11.860059,-86.424014,Operating,Integrated,600.0,1941.0,San Rafael del Sur,Kt/yr,Industry NMM Cement,NI
+GACTNIC0003,Nicaragua,NIC,12.276255,-86.500882,Operating,Grinding,400.0,,Santa Rita de Plata,Kt/yr,Industry NMM Cement,NI
+GACTNLD0002,Netherlands,NLD,52.471076,4.621188,Operating,Grinding,1400.0,1931.0,Velsen-Noord,Kt/yr,Industry NMM Cement,NL
+GACTNLD0003,Netherlands,NLD,51.881235,4.245884,Operating,Grinding,600.0,1964.0,Botlek Rotterdam,Kt/yr,Industry NMM Cement,NL
+GACTNOR0001,Norway,NOR,68.094529,16.375326,Operating,Integrated,500.0,1918.0,Narvik,Kt/yr,Industry NMM Cement,NO
+GACTNPL0004,Nepal,NPL,27.996193,82.508701,Operating,Integrated,1390.0,,Laxmipur,Kt/yr,Industry NMM Cement,NP
+GACTNPL0006,Nepal,NPL,27.670849,83.836998,Operating,Integrated,2920.0,,Sardi Bagaicha,Kt/yr,Industry NMM Cement,NP
+GACTNPL0008,Nepal,NPL,27.61536,83.687655,Operating,Integrated,2000.0,,Sunwal,Kt/yr,Industry NMM Cement,NP
+GACTNPL0009,Nepal,NPL,28.090066,82.378918,Operating,Integrated,1140.0,,Bijauri,Kt/yr,Industry NMM Cement,NP
+GACTNZL0001,New Zealand,NZL,-35.807103,174.332897,Operating,Integrated,900.0,,Portland,Kt/yr,Industry NMM Cement,NZ
+GACTOMN0001,Oman,OMN,23.483698,58.282538,Operating,Integrated,2400.0,1983.0,Misfah As Safil,Kt/yr,Industry NMM Cement,OM
+GACTOMN0002,Oman,OMN,16.977182,53.987728,Operating,Integrated,3000.0,1984.0,Raysut,Kt/yr,Industry NMM Cement,OM
+GACTPAK0001,Pakistan,PAK,25.315639,68.215568,Operating,Integrated,50.0,1989.0,Jamshoro,Kt/yr,Industry NMM Cement,PK
+GACTPAK0002,Pakistan,PAK,33.802044,72.095823,Operating,Integrated,2070.0,1996.0,Nowshera,Kt/yr,Industry NMM Cement,PK
+GACTPAK0003,Pakistan,PAK,33.817001,72.721614,Operating,Integrated,1340.0,1994.0,Wah,Kt/yr,Industry NMM Cement,PK
+GACTPAK0004,Pakistan,PAK,32.721675,72.924369,Operating,Integrated,3430.0,2004.0,Chakwal,Kt/yr,Industry NMM Cement,PK
+GACTPAK0005,Pakistan,PAK,33.829331,72.831164,Operating,Integrated,3000.0,2005.0,Attock,Kt/yr,Industry NMM Cement,PK
+GACTPAK0006,Pakistan,PAK,33.849229,72.872128,Operating,Integrated,1230.0,1995.0,Haripur,Kt/yr,Industry NMM Cement,PK
+GACTPAK0007,Pakistan,PAK,32.717428,72.775661,Operating,,2494.2000000000003,2008.0,Chakwal,Kt/yr,Industry NMM Cement,PK
+GACTPAK0008,Pakistan,PAK,30.327399,70.538435,Operating,Integrated,2110.0,1986.0,Dera Ghazi Khan,Kt/yr,Industry NMM Cement,PK
+GACTPAK0009,Pakistan,PAK,32.725581,72.816963,Operating,Integrated,2110.0,2007.0,Chakwal,Kt/yr,Industry NMM Cement,PK
+GACTPAK0010,Pakistan,PAK,25.158018,66.784087,Operating,Integrated,2840.0,,Las Bela,Kt/yr,Industry NMM Cement,PK
+GACTPAK0011,Pakistan,PAK,32.644464,72.976899,Operating,Integrated,504.0,1983.0,Jhelum,Kt/yr,Industry NMM Cement,PK
+GACTPAK0012,Pakistan,PAK,33.856388,72.863033,Operating,Integrated,1390.0,,Haripur,Kt/yr,Industry NMM Cement,PK
+GACTPAK0013,Pakistan,PAK,24.909361,67.474854,Operating,Integrated,2080.0,1985.0,Karachi,Kt/yr,Industry NMM Cement,PK
+GACTPAK0014,Pakistan,PAK,33.690512,72.713367,Operating,Integrated,3430.0,1997.0,Attock,Kt/yr,Industry NMM Cement,PK
+GACTPAK0015,Pakistan,PAK,33.693119,72.859164,Operating,Integrated,900.0,,Islamabad,Kt/yr,Industry NMM Cement,PK
+GACTPAK0016,Pakistan,PAK,32.574803,72.565983,Operating,Integrated,600.0,,Khushab,Kt/yr,Industry NMM Cement,PK
+GACTPAK0017,Pakistan,PAK,32.726458,73.142329,Operating,Integrated,2450.0,1965.0,Gharibwal Cement Factory Housing Colony,Kt/yr,Industry NMM Cement,PK
+GACTPAK0018,Pakistan,PAK,33.905264,71.91052,Operating,Integrated,4500.0,1985.0,Lakari,Kt/yr,Industry NMM Cement,PK
+GACTPAK0019,Pakistan,PAK,33.548053,71.549005,Operating,Integrated,2950.0,1984.0,Togh Bala,Kt/yr,Industry NMM Cement,PK
+GACTPAK0020,Pakistan,PAK,32.907938,71.590321,Operating,Integrated,4380.0,,Iskandarabad,Kt/yr,Industry NMM Cement,PK
+GACTPAK0021,Pakistan,PAK,32.291163,70.73464,Operating,Integrated,4000.0,1996.0,Pezu,Kt/yr,Industry NMM Cement,PK
+GACTPAK0022,Pakistan,PAK,25.053071,67.494014,Operating,Integrated,8000.0,2005.0,Karachi,Kt/yr,Industry NMM Cement,PK
+GACTPAK0023,Pakistan,PAK,25.15328,67.672503,Operating,Integrated,1020.0,1986.0,Jamshoro,Kt/yr,Industry NMM Cement,PK
+GACTPAK0024,Pakistan,PAK,25.139196,66.914996,Operating,Integrated,3000.0,1988.0,Hub,Kt/yr,Industry NMM Cement,PK
+GACTPAK0025,Pakistan,PAK,32.387991,72.14237,Operating,Integrated,1300.0,1994.0,Khushab,Kt/yr,Industry NMM Cement,PK
+GACTPAK0026,Pakistan,PAK,25.154011,67.703129,Operating,Integrated,600.0,,Jamshoro,Kt/yr,Industry NMM Cement,PK
+GACTPAK0027,Pakistan,PAK,27.669985,68.891452,Operating,Integrated,1800.0,1938.0,RCW Rohri,Kt/yr,Industry NMM Cement,PK
+GACTPAK0028,Pakistan,PAK,24.648057,67.843569,Operating,Integrated,675.0,1982.0,Thatta,Kt/yr,Industry NMM Cement,PK
+GACTPAK0029,Pakistan,PAK,25.34692,68.396246,Operating,Integrated,576.0,1956.0,Hyderabad,Kt/yr,Industry NMM Cement,PK
+GACTPAN0001,Panama,PAN,9.167751,-79.536857,Operating,Integrated,2100.0,,Caimitillo,Kt/yr,Industry NMM Cement,PA
+GACTPER0002,Peru,PER,-7.407134,-79.554205,Operating,Integrated,2040.0,1957.0,Pacasmayo,Kt/yr,Industry NMM Cement,PE
+GACTPER0003,Peru,PER,-5.165161,-80.716113,Operating,Integrated,2340.0,2015.0,Piura,Kt/yr,Industry NMM Cement,PE
+GACTPER0006,Peru,PER,-16.255851,-71.683969,Operating,Integrated,2330.0,,Yura,Kt/yr,Industry NMM Cement,PE
+GACTPER0007,Peru,PER,-11.37685,-75.778032,Operating,Integrated,1270.0,1958.0,Provincia de Tarma,Kt/yr,Industry NMM Cement,PE
+GACTPHL0001,Philippines,PHL,14.543974,121.205298,Operating,Integrated,990.0,1970.0,Teresa,Kt/yr,Industry NMM Cement,PH
+GACTPHL0007,Philippines,PHL,10.19748,123.746854,Operating,Integrated,1520.0,1921.0,City of Naga,Kt/yr,Industry NMM Cement,PH
+GACTPHL0008,Philippines,PHL,14.587326,121.206163,Operating,Integrated,820.0,1964.0,Antipolo,Kt/yr,Industry NMM Cement,PH
+GACTPHL0009,Philippines,PHL,15.053512,121.068316,Operating,Integrated,7100.0,2010.0,San Ildefonso,Kt/yr,Industry NMM Cement,PH
+GACTPHL0010,Philippines,PHL,13.147362,123.611692,Operating,Integrated,580.0,2000.0,Camalig,Kt/yr,Industry NMM Cement,PH
+GACTPHL0011,Philippines,PHL,14.898089,121.07531,Operating,Integrated,1640.0,,Norzagaray,Kt/yr,Industry NMM Cement,PH
+GACTPHL0012,Philippines,PHL,7.173235,125.653605,Operating,Integrated,1380.0,,Davao City,Kt/yr,Industry NMM Cement,PH
+GACTPHL0013,Philippines,PHL,8.332219,124.254546,Operating,Integrated,1200.0,1970.0,Misamis Oriental,Kt/yr,Industry NMM Cement,PH
+GACTPHL0014,Philippines,PHL,16.766607,120.335164,Operating,Integrated,800.0,,Bacnotan,Kt/yr,Industry NMM Cement,PH
+GACTPOL0001,Poland,POL,50.806773,20.529912,Operating,Integrated,1600.0,1965.0,Nowiny,Kt/yr,Industry NMM Cement,PL
+GACTPOL0002,Poland,POL,50.930718,21.676587,Operating,Integrated,1840.0,,opatowski,Kt/yr,Industry NMM Cement,PL
+GACTPOL0004,Poland,POL,50.076716,20.116675,Operating,Integrated,1110.0,1959.0,Kraków,Kt/yr,Industry NMM Cement,PL
+GACTPOL0007,Poland,POL,51.138474,23.545301,Operating,Integrated,1060.0,,Chełm,Kt/yr,Industry NMM Cement,PL
+GACTPOL0013,Poland,POL,52.83777,17.99014,Operating,Integrated,2470.0,,żniński,Kt/yr,Industry NMM Cement,PL
+GACTPRI0001,Puerto Rico,PRI,18.018559,-66.638766,Operating,Integrated,1190.0,1941.0,Ponce,Kt/yr,Industry NMM Cement,PR
+GACTPRK0001,"Korea, Democratic People's Republic of",PRK,39.36864,127.214277,Operating,Integrated,1170.0,,Chŏnnae,Kt/yr,Industry NMM Cement,KP
+GACTPRT0002,Portugal,PRT,37.135933,-8.100041,Operating,Integrated,1180.0,1973.0,Loulé,Kt/yr,Industry NMM Cement,PT
+GACTPRT0005,Portugal,PRT,39.685773,-8.905132,Operating,Integrated,1500.0,1923.0,Marinha Grande,Kt/yr,Industry NMM Cement,PT
+GACTPRT0006,Portugal,PRT,39.655677,-8.987387,Operating,Integrated,620.0,1950.0,Pataias,Kt/yr,Industry NMM Cement,PT
+GACTPRT0007,Portugal,PRT,38.501466,-8.935936,Operating,Integrated,2000.0,1904.0,Setúbal,Kt/yr,Industry NMM Cement,PT
+GACTPRY0001,Paraguay,PRY,-25.108222,-57.537517,Operating,Integrated,750.0,,Villa Hayes,Kt/yr,Industry NMM Cement,PY
+GACTPRY0002,Paraguay,PRY,-22.17468,-57.956166,Operating,Integrated,1440.0,,San Lázaro,Kt/yr,Industry NMM Cement,PY
+GACTQAT0003,Qatar,QAT,25.146484,50.930064,Operating,Integrated,5500.0,2012.0,Bu Ghawlana,Kt/yr,Industry NMM Cement,QA
+GACTROU0001,Romania,ROU,45.952598,25.283033,Operating,Integrated,2250.0,,Fântâna,Kt/yr,Industry NMM Cement,RO
+GACTROU0004,Romania,ROU,45.95512,22.8678,Operating,Integrated,2020.0,,Chișcădaga,Kt/yr,Industry NMM Cement,RO
+GACTROU0005,Romania,ROU,45.121772,25.416704,Operating,Integrated,1810.0,,Fieni,Kt/yr,Industry NMM Cement,RO
+GACTROU0007,Romania,ROU,47.037724,22.332579,Operating,Integrated,1960.0,2004.0,Chistag,Kt/yr,Industry NMM Cement,RO
+GACTROU0008,Romania,ROU,45.290498,25.110988,Operating,Integrated,1770.0,,Comuna Valea Mare - Pravăț,Kt/yr,Industry NMM Cement,RO
+GACTRUS0001,Russian Federation,RUS,56.868466,62.056043,Operating,Integrated,3500.0,,Bogdanovichskiy Rayon,Kt/yr,Industry NMM Cement,RU
+GACTRUS0002,Russian Federation,RUS,54.873651,61.196847,Operating,,1000.0,1957.0,Pervomaiskii,Kt/yr,Industry NMM Cement,RU
+GACTRUS0003,Russian Federation,RUS,62.945251,40.194763,Operating,Integrated,1419.0,1966.0,Savinsky,Kt/yr,Industry NMM Cement,RU
+GACTRUS0004,Russian Federation,RUS,51.257872,37.762677,Operating,Integrated,4533.0,1969.0,Yugo-Zapadnyy Promrayon,Kt/yr,Industry NMM Cement,RU
+GACTRUS0005,Russian Federation,RUS,50.610789,36.555284,Operating,Integrated,4139.0,1949.0,Belgorod,Kt/yr,Industry NMM Cement,RU
+GACTRUS0006,Russian Federation,RUS,53.445099,34.407597,Operating,Integrated,4699.0,1899.0,Fokino,Kt/yr,Industry NMM Cement,RU
+GACTRUS0007,Russian Federation,RUS,44.125712,42.00998,Operating,Integrated,3400.0,1974.0,Ust-Dzhegutinsky District,Kt/yr,Industry NMM Cement,RU
+GACTRUS0008,Russian Federation,RUS,54.783097,58.201148,Operating,Integrated,1774.0,1967.0,Katav-Ivanovsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0009,Russian Federation,RUS,52.664946,39.632835,Operating,Integrated,2302.0,1963.0,Lipeck,Kt/yr,Industry NMM Cement,RU
+GACTRUS0010,Russian Federation,RUS,57.46959,60.145025,Operating,Integrated,1332.0,1914.0,Tsementnyi,Kt/yr,Industry NMM Cement,RU
+GACTRUS0011,Russian Federation,RUS,54.155892,48.360166,Operating,Integrated,2708.0,1961.0,Novoulyanovsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0012,Russian Federation,RUS,59.529312,34.14676,Operating,Integrated,2598.0,1949.0,Pikalyovo,Kt/yr,Industry NMM Cement,RU
+GACTRUS0013,Russian Federation,RUS,50.378073,39.633608,Operating,Integrated,3075.0,2013.0,Podgorenskii,Kt/yr,Industry NMM Cement,RU
+GACTRUS0014,Russian Federation,RUS,54.213699,38.922525,Operating,Integrated,2154.0,1963.0,Mikhaylovsky District,Kt/yr,Industry NMM Cement,RU
+GACTRUS0015,Russian Federation,RUS,54.003473,48.738773,Operating,Integrated,2365.0,2015.0,Tsemzavod,Kt/yr,Industry NMM Cement,RU
+GACTRUS0016,Russian Federation,RUS,53.421121,49.4198,Operating,Integrated,2009.9999999999998,1958.0,Zhigulevsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0017,Russian Federation,RUS,54.445485,45.870756,Operating,Integrated,10643.0,1956.0,Chamzinsky District,Kt/yr,Industry NMM Cement,RU
+GACTRUS0018,Russian Federation,RUS,59.061831,28.133623,Operating,,2602.0,2010.0,Tukhtovo,Kt/yr,Industry NMM Cement,RU
+GACTRUS0019,Russian Federation,RUS,53.6638,55.970997,Operating,Integrated,1800.0,,Sterlitamak,Kt/yr,Industry NMM Cement,RU
+GACTRUS0020,Russian Federation,RUS,59.112037,28.191385,Operating,Integrated,1200.0,1960.0,Slantsy,Kt/yr,Industry NMM Cement,RU
+GACTRUS0021,Russian Federation,RUS,54.482932,37.341077,Operating,Integrated,2000.0,2011.0,Aleksinsky District,Kt/yr,Industry NMM Cement,RU
+GACTRUS0023,Russian Federation,RUS,55.97676,92.920567,Operating,Integrated,1760.0,1944.0,Krasnoyarsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0024,Russian Federation,RUS,51.992432,106.590987,Operating,Integrated,1410.0,1953.0,Kamensk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0026,Russian Federation,RUS,52.051961,47.440041,Operating,Integrated,3180.0,1897.0,Volsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0027,Russian Federation,RUS,55.061288,38.83226,Operating,Integrated,2500.0,,Kolomna,Kt/yr,Industry NMM Cement,RU
+GACTRUS0028,Russian Federation,RUS,54.48167,36.807864,Operating,Integrated,2420.0,2014.0,Ferzikovsky District,Kt/yr,Industry NMM Cement,RU
+GACTRUS0029,Russian Federation,RUS,44.727849,37.822901,Operating,Integrated,2210.0,,Novorossiysk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0032,Russian Federation,RUS,53.792664,87.113177,Operating,Integrated,407.0,1936.0,Novokuznetsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0033,Russian Federation,RUS,51.218763,58.384833,Operating,,701.0,1954.0,Novotroitsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0037,Russian Federation,RUS,53.838652,85.528192,Operating,Integrated,400.0,,Zhulanikha,Kt/yr,Industry NMM Cement,RU
+GACTRUS0038,Russian Federation,RUS,54.245925,38.871206,Operating,Integrated,1510.0,,Mikhaylovsky District,Kt/yr,Industry NMM Cement,RU
+GACTRUS0040,Russian Federation,RUS,58.392181,58.327614,Operating,Integrated,3770.0,,Gornozavodsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0041,Russian Federation,RUS,54.657804,83.307465,Operating,Integrated,3230.0,,Iskitim,Kt/yr,Industry NMM Cement,RU
+GACTRUS0043,Russian Federation,RUS,53.470439,58.984563,Operating,Integrated,1450.0,,Magnitogorsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0044,Russian Federation,RUS,55.252357,61.448978,Operating,Integrated,500.0,,Chelyabinsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0046,Russian Federation,RUS,52.610353,103.900398,Operating,Integrated,830.0,,Angarsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0047,Russian Federation,RUS,51.197441,58.233304,Operating,Integrated,2250.0,,Novotroitsk,Kt/yr,Industry NMM Cement,RU
+GACTRUS0049,Russian Federation,RUS,52.080261,47.482776,Operating,Integrated,1220.0,,Kleny,Kt/yr,Industry NMM Cement,RU
+GACTRWA0001,Rwanda,RWA,-2.607006,29.017681,Operating,Integrated,750.0,2015.0,Shara,Kt/yr,Industry NMM Cement,RW
+GACTSAU0001,Saudi Arabia,SAU,26.491848,43.963161,Operating,Integrated,4000.0,1978.0,Buraydah,Kt/yr,Industry NMM Cement,SA
+GACTSAU0002,Saudi Arabia,SAU,19.52091,42.5382,Operating,Integrated,3640.0,1997.0,Bisha,Kt/yr,Industry NMM Cement,SA
+GACTSAU0004,Saudi Arabia,SAU,16.736325,43.050926,Operating,Integrated,2140.0,1981.0,Ahad Al Masarihah,Kt/yr,Industry NMM Cement,SA
+GACTSAU0005,Saudi Arabia,SAU,27.532753,35.538492,Operating,Integrated,3300.0,1998.0,Duba,Kt/yr,Industry NMM Cement,SA
+GACTSAU0006,Saudi Arabia,SAU,24.27617,37.56333,Operating,Integrated,7000.0,1979.0,Yanbu Al Bahr,Kt/yr,Industry NMM Cement,SA
+GACTSAU0008,Saudi Arabia,SAU,22.552074,39.435698,Operating,Integrated,3710.0,,Khulays,Kt/yr,Industry NMM Cement,SA
+GACTSAU0017,Saudi Arabia,SAU,20.713111,39.827264,Operating,Integrated,2450.0,,Al Lith,Kt/yr,Industry NMM Cement,SA
+GACTSDN0002,Sudan,SDN,17.870399,33.839672,Operating,Integrated,1940.0,,Ad Damer,Kt/yr,Industry NMM Cement,SD
+GACTSDN0004,Sudan,SDN,17.703691,33.802454,Operating,Integrated,2420.0,,Ad Damer,Kt/yr,Industry NMM Cement,SD
+GACTSDN0006,Sudan,SDN,13.170247,32.728836,Operating,Integrated,1270.0,,Rabak,Kt/yr,Industry NMM Cement,SD
+GACTSEN0001,Senegal,SEN,14.664971,-17.010887,Operating,Integrated,2160.0,,Kirène,Kt/yr,Industry NMM Cement,SN
+GACTSEN0002,Senegal,SEN,14.79656,-17.041497,Operating,Integrated,1500.0,2014.0,Thies,Kt/yr,Industry NMM Cement,SN
+GACTSEN0003,Senegal,SEN,14.707185,-17.248087,Operating,Integrated,1750.0,,Dakar,Kt/yr,Industry NMM Cement,SN
+GACTSLV0001,El Salvador,SLV,14.327109,-89.500665,Operating,Integrated,1700.0,1965.0,Metapán,Kt/yr,Industry NMM Cement,SV
+GACTSRB0001,Serbia,SRB,43.909249,21.510545,Operating,Integrated,1690.0,,Popovac,Kt/yr,Industry NMM Cement,RS
+GACTSRB0002,Serbia,SRB,45.207937,19.707231,Operating,Integrated,1000.0,,Beočin,Kt/yr,Industry NMM Cement,RS
+GACTSRB0003,Serbia,SRB,44.011147,19.889039,Operating,Integrated,940.0,,Galovići,Kt/yr,Industry NMM Cement,RS
+GACTSVK0001,Slovakia,SVK,48.457981,17.190668,Operating,Integrated,1720.0,1971.0,Rohožník,Kt/yr,Industry NMM Cement,SK
+GACTSVK0002,Slovakia,SVK,48.592391,20.84275,Operating,Integrated,1120.0,,Dvorníky - Včeláre,Kt/yr,Industry NMM Cement,SK
+GACTSVK0004,Slovakia,SVK,49.033415,18.292718,Operating,Integrated,1210.0,,Ilava,Kt/yr,Industry NMM Cement,SK
+GACTSWE0001,Sweden,SWE,58.384691,13.826921,Operating,Integrated,600.0,1930.0,Skövde,Kt/yr,Industry NMM Cement,SE
+GACTSWE0002,Sweden,SWE,57.710068,18.804074,Operating,Integrated,2500.0,1919.0,Slite,Kt/yr,Industry NMM Cement,SE
+GACTSYR0001,Syrian Arab Republic,SYR,33.645861,36.563859,Operating,Integrated,2970.0,,Adra Industrial City,Kt/yr,Industry NMM Cement,SY
+GACTSYR0004,Syrian Arab Republic,SYR,34.931754,36.750999,Operating,Integrated,360.0,,District de Hama,Kt/yr,Industry NMM Cement,SY
+GACTSYR0005,Syrian Arab Republic,SYR,36.305287,37.176797,Operating,Integrated,1360.0,,Sayfat,Kt/yr,Industry NMM Cement,SY
+GACTSYR0006,Syrian Arab Republic,SYR,35.072205,36.700006,Operating,Integrated,2120.0,,Kafr Buhum,Kt/yr,Industry NMM Cement,SY
+GACTTCD0001,Chad,TCD,12.208307,15.047131,Operating,Grinding,500.0,,N'Djaména,Kt/yr,Industry NMM Cement,TD
+GACTTCD0002,Chad,TCD,9.26689,14.602926,Operating,Integrated,200.0,,Mayo-Dallah,Kt/yr,Industry NMM Cement,TD
+GACTTGO0001,Togo,TGO,6.621423,1.573569,Operating,Integrated,1500.0,2014.0,Yoto,Kt/yr,Industry NMM Cement,TG
+GACTTGO0002,Togo,TGO,6.153305,1.2881,Operating,Grinding,750.0,,Lomé,Kt/yr,Industry NMM Cement,TG
+GACTTGO0003,Togo,TGO,9.459846,1.221515,Operating,,250.0,,Kozah,Kt/yr,Industry NMM Cement,TG
+GACTTHA0002,Thailand,THA,14.673757,100.803369,Operating,Integrated,5000.0,1993.0,Tambon Phu Khang,Kt/yr,Industry NMM Cement,TH
+GACTTHA0006,Thailand,THA,18.554322,99.572077,Operating,Integrated,1540.0,,Tambon Ban Sa,Kt/yr,Industry NMM Cement,TH
+GACTTHA0009,Thailand,THA,14.64631,101.126496,Operating,Integrated,13000.0,1992.0,Tambon Mittaphap,Kt/yr,Industry NMM Cement,TH
+GACTTHA0010,Thailand,THA,14.627492,101.087613,Operating,Integrated,1740.0,,Tambon Thap Kwang,Kt/yr,Industry NMM Cement,TH
+GACTTJK0001,Tajikistan,TJK,38.635966,68.774501,Operating,Integrated,1880.0,,Dushanbe,Kt/yr,Industry NMM Cement,TJ
+GACTTKM0002,Turkmenistan,TKM,39.684137,54.302807,Operating,Integrated,1810.0,,Jebel,Kt/yr,Industry NMM Cement,TM
+GACTTKM0003,Turkmenistan,TKM,38.260687,57.658348,Operating,Integrated,2090.0,,Yarajy,Kt/yr,Industry NMM Cement,TM
+GACTTUN0001,Tunisia,TUN,36.776903,10.202186,Operating,Integrated,1480.0,1977.0,Tunis,Kt/yr,Industry NMM Cement,TN
+GACTTUN0002,Tunisia,TUN,33.873998,9.993386,Operating,Integrated,1400.0,1977.0,Gabes West,Kt/yr,Industry NMM Cement,TN
+GACTTUN0003,Tunisia,TUN,36.502193,10.026738,Operating,Integrated,1800.0,1985.0,BIR MCHERGA GARE,Kt/yr,Industry NMM Cement,TN
+GACTTUN0004,Tunisia,TUN,36.592433,10.316942,Operating,Integrated,2210.0,,Mornag,Kt/yr,Industry NMM Cement,TN
+GACTTUN0005,Tunisia,TUN,37.259215,9.850271,Operating,Integrated,1600.0,,Bizerte,Kt/yr,Industry NMM Cement,TN
+GACTTUN0006,Tunisia,TUN,35.850358,8.592552,Operating,Integrated,2220.0,,Al-Jarissah,Kt/yr,Industry NMM Cement,TN
+GACTTUN0007,Tunisia,TUN,34.937544,8.530006,Operating,Integrated,1510.0,,Feriana,Kt/yr,Industry NMM Cement,TN
+GACTTUN0008,Tunisia,TUN,36.159702,10.287052,Operating,Integrated,2170.0,,Enfidha,Kt/yr,Industry NMM Cement,TN
+GACTTUR0001,Turkey,TUR,37.253415,30.441765,Operating,Integrated,2400.0,2005.0,Korkuteli,Kt/yr,Industry NMM Cement,TR
+GACTTUR0003,Turkey,TUR,40.41248,39.658071,Operating,Integrated,920.0,1988.0,Gümüşhane Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0004,Turkey,TUR,40.241962,29.925373,Operating,Integrated,1400.0,2010.0,Bilecik Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0005,Turkey,TUR,39.926231,40.669025,Operating,Integrated,1310.0,1971.0,Aşkale,Kt/yr,Industry NMM Cement,TR
+GACTTUR0006,Turkey,TUR,38.41792,43.237709,Operating,Integrated,1150.0,1969.0,Edremit,Kt/yr,Industry NMM Cement,TR
+GACTTUR0008,Turkey,TUR,37.770579,27.437337,Operating,Integrated,1450.0,,Söke,Kt/yr,Industry NMM Cement,TR
+GACTTUR0009,Turkey,TUR,38.456362,27.263922,Operating,Integrated,1950.0,1966.0,Bornova,Kt/yr,Industry NMM Cement,TR
+GACTTUR0010,Turkey,TUR,40.185986,29.22479,Operating,Integrated,2850.0,1969.0,Kestel,Kt/yr,Industry NMM Cement,TR
+GACTTUR0011,Turkey,TUR,40.575669,43.007643,Operating,Integrated,596.0,,Kars Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0012,Turkey,TUR,38.663862,39.235352,Operating,Integrated,1310.0,,Baskil,Kt/yr,Industry NMM Cement,TR
+GACTTUR0013,Turkey,TUR,38.427047,27.217029,Operating,Integrated,2300.0,,Bornova,Kt/yr,Industry NMM Cement,TR
+GACTTUR0014,Turkey,TUR,41.79704,26.702448,Operating,Integrated,2100.0,,Lalapaşa,Kt/yr,Industry NMM Cement,TR
+GACTTUR0016,Turkey,TUR,39.83764,30.299628,Operating,Integrated,1450.0,1957.0,Tepebaşı,Kt/yr,Industry NMM Cement,TR
+GACTTUR0018,Turkey,TUR,37.947507,34.684355,Operating,Integrated,820.0,1964.0,Niğde Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0020,Turkey,TUR,37.899013,30.492029,Operating,Integrated,5068.0,1969.0,Gönen,Kt/yr,Industry NMM Cement,TR
+GACTTUR0021,Turkey,TUR,40.935634,35.884591,Operating,Integrated,1170.0,1983.0,Ladik,Kt/yr,Industry NMM Cement,TR
+GACTTUR0023,Turkey,TUR,39.865142,26.244503,Operating,Integrated,2280.0,,Ezine,Kt/yr,Industry NMM Cement,TR
+GACTTUR0025,Turkey,TUR,41.025718,36.099433,Operating,Integrated,1497.6000000000001,1993.0,Kavak,Kt/yr,Industry NMM Cement,TR
+GACTTUR0026,Turkey,TUR,37.293693,37.157274,Operating,Integrated,4000.0,2008.0,Pazarcık,Kt/yr,Industry NMM Cement,TR
+GACTTUR0029,Turkey,TUR,41.634894,27.5048,Operating,Integrated,1410.0,1958.0,Pınarhisar,Kt/yr,Industry NMM Cement,TR
+GACTTUR0030,Turkey,TUR,38.278508,39.743449,Operating,Integrated,1330.0,1984.0,Ergani,Kt/yr,Industry NMM Cement,TR
+GACTTUR0031,Turkey,TUR,37.068936,37.430184,Operating,Integrated,930.0,1960.0,Şehitkamil,Kt/yr,Industry NMM Cement,TR
+GACTTUR0032,Turkey,TUR,37.962052,41.702529,Operating,Integrated,1200.0,1985.0,Kurtalan,Kt/yr,Industry NMM Cement,TR
+GACTTUR0033,Turkey,TUR,37.276316,38.731672,Operating,Integrated,1420.0,1986.0,Karaköprü,Kt/yr,Industry NMM Cement,TR
+GACTTUR0037,Turkey,TUR,36.264312,33.729843,Operating,Integrated,4140.0,2015.0,Silifke,Kt/yr,Industry NMM Cement,TR
+GACTTUR0038,Turkey,TUR,40.781692,29.601777,Operating,Integrated,4400.0,1969.0,Körfez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0040,Turkey,TUR,40.75892,29.361452,Operating,Integrated,1050.0,1911.0,Darıca,Kt/yr,Industry NMM Cement,TR
+GACTTUR0041,Turkey,TUR,40.756508,31.783672,Operating,Integrated,1390.0,1969.0,Bolu Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0042,Turkey,TUR,40.04886,32.650947,Operating,Integrated,1090.0,,Kahramankazan,Kt/yr,Industry NMM Cement,TR
+GACTTUR0043,Turkey,TUR,37.862301,29.37244,Operating,Integrated,2080.0,1987.0,Honaz,Kt/yr,Industry NMM Cement,TR
+GACTTUR0044,Turkey,TUR,37.338186,40.802231,Operating,Integrated,2480.0,1972.0,Artuklu,Kt/yr,Industry NMM Cement,TR
+GACTTUR0045,Turkey,TUR,41.107528,37.324142,Operating,Integrated,1180.0,1974.0,Ünye,Kt/yr,Industry NMM Cement,TR
+GACTTUR0048,Turkey,TUR,38.454928,38.727638,Operating,Integrated,2592.0,,Baskil,Kt/yr,Industry NMM Cement,TR
+GACTTUR0049,Turkey,TUR,41.639958,32.307311,Operating,Integrated,1640.0,1962.0,Bartın Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0050,Turkey,TUR,37.694944,38.086389,Operating,Integrated,1300.0,,Adıyaman Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0051,Turkey,TUR,37.351009,37.162784,Operating,Integrated,1860.0,2008.0,Pazarcık,Kt/yr,Industry NMM Cement,TR
+GACTTUR0053,Turkey,TUR,39.182334,27.498992,Operating,Integrated,2000.0,2018.0,Soma,Kt/yr,Industry NMM Cement,TR
+GACTTUR0054,Turkey,TUR,36.932588,36.00214,Operating,Integrated,2000.0,2014.0,Erzin,Kt/yr,Industry NMM Cement,TR
+GACTTUR0055,Turkey,TUR,40.104577,36.29338,Operating,Integrated,1060.0,2008.0,Artova,Kt/yr,Industry NMM Cement,TR
+GACTTUR0056,Turkey,TUR,41.015432,27.969977,Operating,Grinding,600.0,2006.0,Marmaraereğlisi,Kt/yr,Industry NMM Cement,TR
+GACTTUR0057,Turkey,TUR,41.630907,27.686888,Operating,Integrated,2000.0,2008.0,Vize,Kt/yr,Industry NMM Cement,TR
+GACTTUR0058,Turkey,TUR,39.944254,33.191786,Operating,Integrated,500.0,,Elmadağ,Kt/yr,Industry NMM Cement,TR
+GACTTUR0059,Turkey,TUR,37.938962,32.533761,Operating,Integrated,1500.0,,Selçuklu,Kt/yr,Industry NMM Cement,TR
+GACTTUR0060,Turkey,TUR,39.960456,33.144332,Operating,Integrated,990.0,1991.0,Elmadağ,Kt/yr,Industry NMM Cement,TR
+GACTTUR0061,Turkey,TUR,39.69594,34.674394,Operating,Integrated,1660.0,,Yerköy,Kt/yr,Industry NMM Cement,TR
+GACTTUR0062,Turkey,TUR,39.722346,36.938372,Operating,Integrated,1730.0,,Sivas Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTUR0065,Turkey,TUR,38.892444,41.568589,Operating,Integrated,1980.0,2008.0,Muş Merkez,Kt/yr,Industry NMM Cement,TR
+GACTTWN0001,"Taiwan, Province of China",TWN,24.133832,121.636743,Operating,Integrated,1900.0,1973.0,Hualien County,Kt/yr,Industry NMM Cement,TW
+GACTTWN0002,"Taiwan, Province of China",TWN,24.305891,121.753512,Operating,Integrated,1000.0,,Hualien County,Kt/yr,Industry NMM Cement,TW
+GACTTWN0003,"Taiwan, Province of China",TWN,24.009607,121.637525,Operating,Integrated,1000.0,,Hualien County,Kt/yr,Industry NMM Cement,TW
+GACTTWN0004,"Taiwan, Province of China",TWN,24.586075,121.851615,Operating,Integrated,900.0,,Yilan County,Kt/yr,Industry NMM Cement,TW
+GACTTWN0005,"Taiwan, Province of China",TWN,24.721512,121.138184,Operating,Integrated,1000.0,,Hsinchu County,Kt/yr,Industry NMM Cement,TW
+GACTTZA0001,"Tanzania, United Republic of",TZA,-5.101412,39.021158,Operating,Integrated,1490.0,,Tanga,Kt/yr,Industry NMM Cement,TZ
+GACTTZA0003,"Tanzania, United Republic of",TZA,-10.258078,40.038862,Operating,Integrated,3000.0,2015.0,Mtwara Rural,Kt/yr,Industry NMM Cement,TZ
+GACTTZA0004,"Tanzania, United Republic of",TZA,-8.942343,33.241146,Operating,Integrated,1240.0,,Songwe,Kt/yr,Industry NMM Cement,TZ
+GACTTZA0005,"Tanzania, United Republic of",TZA,-6.662689,39.166959,Operating,Integrated,2000.0,1959.0,Dar es Salaam,Kt/yr,Industry NMM Cement,TZ
+GACTTZA0006,"Tanzania, United Republic of",TZA,-6.994862,39.522639,Operating,Integrated,810.0,,Temeke,Kt/yr,Industry NMM Cement,TZ
+GACTTZA0007,"Tanzania, United Republic of",TZA,-5.107863,38.996714,Operating,Integrated,2330.0,,Tanga,Kt/yr,Industry NMM Cement,TZ
+GACTUGA0001,Uganda,UGA,0.291484,30.181853,Operating,Integrated,1400.0,1994.0,Hima,Kt/yr,Industry NMM Cement,UG
+GACTUKR0001,Ukraine,UKR,50.545261,26.260335,Operating,Integrated,2160.0,1870.0,Zdolbunivs'kyi district,Kt/yr,Industry NMM Cement,UA
+GACTUKR0002,Ukraine,UKR,47.172149,31.758953,Operating,Integrated,1266.0,1968.0,Mykolaivs'kyi district,Kt/yr,Industry NMM Cement,UA
+GACTUKR0003,Ukraine,UKR,49.518095,23.948406,Operating,Integrated,1900.0,1950.0,Mykolaivs'kyi district,Kt/yr,Industry NMM Cement,UA
+GACTUKR0008,Ukraine,UKR,47.834325,38.479859,Operating,Integrated,3120.0,,Amvrosiivs'kyi district,Kt/yr,Industry NMM Cement,UA
+GACTUKR0009,Ukraine,UKR,49.495188,36.74199,Operating,Integrated,4447.0,1963.0,Balakliis'kyi district,Kt/yr,Industry NMM Cement,UA
+GACTUKR0010,Ukraine,UKR,48.730626,37.544124,Operating,Integrated,725.0,1912.0,Kramators'k,Kt/yr,Industry NMM Cement,UA
+GACTURY0001,Uruguay,URY,-34.400505,-55.284705,Operating,Integrated,406.8,,Minas,Kt/yr,Industry NMM Cement,UY
+GACTURY0002,Uruguay,URY,-32.26368,-58.077014,Operating,Integrated,1290.0,,Paysandú,Kt/yr,Industry NMM Cement,UY
+GACTUSA0003,United States of America,USA,35.101255,-85.34367,Operating,Integrated,690.0,1923.0,Chattanooga,Kt/yr,Industry NMM Cement,US
+GACTUSA0004,United States of America,USA,38.181745,-90.337427,Operating,Integrated,1590.0,1965.0,Festus,Kt/yr,Industry NMM Cement,US
+GACTUSA0008,United States of America,USA,40.750707,-75.271596,Operating,Integrated,1050.0,1917.0,Stockertown,Kt/yr,Industry NMM Cement,US
+GACTUSA0009,United States of America,USA,28.760848,-82.025558,Operating,Integrated,1200.0,2006.0,Sumterville,Kt/yr,Industry NMM Cement,US
+GACTUSA0010,United States of America,USA,37.698646,-95.460495,Operating,Integrated,840.0,1908.0,Chanute,Kt/yr,Industry NMM Cement,US
+GACTUSA0013,United States of America,USA,33.694814,-94.420652,Operating,Integrated,860.0,1958.0,Foreman,Kt/yr,Industry NMM Cement,US
+GACTUSA0014,United States of America,USA,41.006191,-96.15416,Operating,Integrated,1030.0,1929.0,Louisville,Kt/yr,Industry NMM Cement,US
+GACTUSA0023,United States of America,USA,32.415567,-83.633103,Operating,Integrated,800.0,1920.0,Perry,Kt/yr,Industry NMM Cement,US
+GACTUSA0024,United States of America,USA,32.51394,-87.814993,Operating,Integrated,900.0,1901.0,Demopolis,Kt/yr,Industry NMM Cement,US
+GACTUSA0028,United States of America,USA,29.673765,-98.184297,Operating,Integrated,2420.0,1980.0,Canyon Lake,Kt/yr,Industry NMM Cement,US
+GACTUSA0029,United States of America,USA,38.035693,-85.906374,Operating,Integrated,860.0,1905.0,Louisville,Kt/yr,Industry NMM Cement,US
+GACTUSA0036,United States of America,USA,41.329439,-89.081771,Operating,Integrated,920.0,1973.0,LaSalle,Kt/yr,Industry NMM Cement,US
+GACTUSA0037,United States of America,USA,41.268408,-105.603709,Operating,Integrated,1740.0,1927.0,Laramie,Kt/yr,Industry NMM Cement,US
+GACTUSA0038,United States of America,USA,39.62013,-119.263039,Operating,Integrated,560.0,1964.0,Fernley,Kt/yr,Industry NMM Cement,US
+GACTUSA0039,United States of America,USA,44.084275,-69.157138,Operating,Integrated,700.0,1928.0,Thomaston,Kt/yr,Industry NMM Cement,US
+GACTUSA0042,United States of America,USA,33.103637,-86.79896,Operating,Integrated,1950.0,1960.0,Calera,Kt/yr,Industry NMM Cement,US
+GACTUSA0043,United States of America,USA,29.690855,-82.581724,Operating,Integrated,960.0,,Newberry,Kt/yr,Industry NMM Cement,US
+GACTUSA0044,United States of America,USA,33.226276,-80.452378,Operating,Integrated,1240.0,1974.0,Harleyville,Kt/yr,Industry NMM Cement,US
+GACTUSA0045,United States of America,USA,39.434947,-77.978002,Operating,Integrated,1460.0,1800.0,Martinsburg,Kt/yr,Industry NMM Cement,US
+GACTUSA0050,United States of America,USA,31.74675,-102.546613,Operating,Integrated,1550.0,1965.0,Odessa,Kt/yr,Industry NMM Cement,US
+GACTUSA0052,United States of America,USA,38.128944,-104.606057,Operating,Integrated,1500.0,2008.0,Pueblo,Kt/yr,Industry NMM Cement,US
+GACTUSA0056,United States of America,USA,37.317574,-122.091704,Operating,Integrated,970.0,1939.0,MONTE VISTA,Kt/yr,Industry NMM Cement,US
+GACTUSA0065,United States of America,USA,30.054328,-97.857287,Operating,Integrated,1150.0,1978.0,Mustang Ridge,Kt/yr,Industry NMM Cement,US
+GACTUSA0070,United States of America,USA,38.109989,-90.25769,Operating,Integrated,4500.0,2009.0,Bloomsdale,Kt/yr,Industry NMM Cement,US
+GACTUSA0071,United States of America,USA,34.767732,-96.697286,Operating,Integrated,682.0,1906.0,Ada,Kt/yr,Industry NMM Cement,US
+GACTUSA0072,United States of America,USA,38.386178,-105.017592,Operating,Integrated,1800.0,1912.0,Florence,Kt/yr,Industry NMM Cement,US
+GACTUSA0073,United States of America,USA,39.652858,-77.680576,Operating,Integrated,600.0,1903.0,Hagerstown,Kt/yr,Industry NMM Cement,US
+GACTUSA0074,United States of America,USA,33.277966,-80.430594,Operating,Integrated,2200.0,1966.0,Holly Hill,Kt/yr,Industry NMM Cement,US
+GACTUSA0075,United States of America,USA,32.512949,-96.972477,Operating,Integrated,2350.0,1986.0,Midlothian,Kt/yr,Industry NMM Cement,US
+GACTUSA0076,United States of America,USA,41.063898,-111.531617,Operating,Integrated,800.0,1904.0,Morgan,Kt/yr,Industry NMM Cement,US
+GACTUSA0077,United States of America,USA,30.534921,-88.112289,Operating,Integrated,1500.0,1981.0,Theodore,Kt/yr,Industry NMM Cement,US
+GACTUSA0078,United States of America,USA,45.073094,-83.405173,Operating,Integrated,2400.0,1907.0,Alpena,Kt/yr,Industry NMM Cement,US
+GACTUSA0079,United States of America,USA,37.2174,-88.87899,Operating,Integrated,500.0,1963.0,Massac County,Kt/yr,Industry NMM Cement,US
+GACTUSA0080,United States of America,USA,41.180945,-84.605239,Operating,Integrated,500.0,1956.0,Paulding,Kt/yr,Industry NMM Cement,US
+GACTUSA0081,United States of America,USA,42.498501,-73.813608,Operating,Integrated,2200.0,1962.0,Selkirk,Kt/yr,Industry NMM Cement,US
+GACTUSA0087,United States of America,USA,32.462785,-97.02502,Operating,Integrated,1890.0,1960.0,Midlothian,Kt/yr,Industry NMM Cement,US
+GACTUSA0088,United States of America,USA,29.805129,-98.040099,Operating,Integrated,1290.0,1980.0,Canyon Lake,Kt/yr,Industry NMM Cement,US
+GACTUSA0089,United States of America,USA,34.354387,-116.854593,Operating,Integrated,1220.0,1988.0,Lucerne Valley,Kt/yr,Industry NMM Cement,US
+GACTUSA0091,United States of America,USA,34.780061,-112.083155,Operating,Integrated,1450.0,1959.0,Clarkdale,Kt/yr,Industry NMM Cement,US
+GACTUSA0093,United States of America,USA,39.677755,-91.314585,Operating,Integrated,840.0,1903.0,Hannibal,Kt/yr,Industry NMM Cement,US
+GACTUSA0095,United States of America,USA,34.608111,-117.336373,Operating,Integrated,1350.0,2007.0,Oro Grande,Kt/yr,Industry NMM Cement,US
+GACTUSA0098,United States of America,USA,37.461112,-79.995105,Operating,Integrated,1280.0,,Troutville,Kt/yr,Industry NMM Cement,US
+GACTUSA0099,United States of America,USA,25.877824,-80.377344,Operating,Integrated,2100.0,,Miami,Kt/yr,Industry NMM Cement,US
+GACTUSA0100,United States of America,USA,34.820463,-118.7499,Operating,Integrated,1100.0,1960.0,Kern County,Kt/yr,Industry NMM Cement,US
+GACTUSA0101,United States of America,USA,33.733579,-86.154991,Operating,Integrated,1130.0,1908.0,Ragland,Kt/yr,Industry NMM Cement,US
+GACTUSA0102,United States of America,USA,45.317821,-85.299328,Operating,Integrated,1530.0,,Charlevoix,Kt/yr,Industry NMM Cement,US
+GACTUSA0103,United States of America,USA,41.860725,-89.455077,Operating,Integrated,1130.0,,Dixon,Kt/yr,Industry NMM Cement,US
+GACTUZB0001,Uzbekistan,UZB,40.931159,69.65255,Operating,Integrated,2180.0,1961.0,Ohangaron,Kt/yr,Industry NMM Cement,UZ
+GACTUZB0002,Uzbekistan,UZB,40.055815,65.291636,Operating,Integrated,3400.0,1977.0,Karmana tumani,Kt/yr,Industry NMM Cement,UZ
+GACTUZB0003,Uzbekistan,UZB,40.217722,69.219896,Operating,Integrated,818.0,1926.0,Bekobod,Kt/yr,Industry NMM Cement,UZ
+GACTUZB0004,Uzbekistan,UZB,40.304199,71.975405,Operating,Integrated,1100.0,1929.0,Quvasoy,Kt/yr,Industry NMM Cement,UZ
+GACTUZB0005,Uzbekistan,UZB,41.094656,69.048156,Operating,Grinding,990.0,2010.0,Yangiyo'l,Kt/yr,Industry NMM Cement,UZ
+GACTVEN0001,Venezuela,VEN,10.338289,-72.489518,Operating,Integrated,650.0,,La Luna,Kt/yr,Industry NMM Cement,VE
+GACTVEN0002,Venezuela,VEN,9.983709,-63.310672,Operating,Integrated,1000.0,,Piar,Kt/yr,Industry NMM Cement,VE
+GACTVEN0003,Venezuela,VEN,10.121046,-69.311738,Operating,Integrated,490.0,1945.0,Barquisimeto,Kt/yr,Industry NMM Cement,VE
+GACTVEN0004,Venezuela,VEN,10.565961,-71.61625,Operating,Integrated,730.0,1947.0,Maracaibo,Kt/yr,Industry NMM Cement,VE
+GACTVEN0005,Venezuela,VEN,10.161419,-66.800027,Operating,Integrated,1210.0,,Lander,Kt/yr,Industry NMM Cement,VE
+GACTVEN0006,Venezuela,VEN,10.234351,-64.559127,Operating,Integrated,2680.0,1949.0,Guanta,Kt/yr,Industry NMM Cement,VE
+GACTVEN0007,Venezuela,VEN,7.863313,-72.257487,Operating,Integrated,220.0,,Táriba,Kt/yr,Industry NMM Cement,VE
+GACTVEN0008,Venezuela,VEN,9.618822,-70.420148,Operating,Integrated,1680.0,,Candelaria,Kt/yr,Industry NMM Cement,VE
+GACTVEN0009,Venezuela,VEN,11.500079,-69.324507,Operating,Integrated,1590.0,,Zamora,Kt/yr,Industry NMM Cement,VE
+GACTVEN0010,Venezuela,VEN,9.929924,-67.240061,Operating,Integrated,2710.0,,San Sebastián,Kt/yr,Industry NMM Cement,VE
+GACTVEN0011,Venezuela,VEN,8.300387,-62.824383,Operating,,330.0,1970.0,Ciudad Guayana,Kt/yr,Industry NMM Cement,VE
+GACTVNM0001,Vietnam,VNM,13.815109,109.145511,Operating,,200.0,2001.0,Thôn Giang Nam,Kt/yr,Industry NMM Cement,VN
+GACTVNM0002,Vietnam,VNM,9.955604,105.847626,Operating,,1500.0,2016.0,Châu Thành,Kt/yr,Industry NMM Cement,VN
+GACTVNM0003,Vietnam,VNM,20.958752,106.755797,Operating,Integrated,2300.0,1997.0,Thủy Nguyên,Kt/yr,Industry NMM Cement,VN
+GACTVNM0004,Vietnam,VNM,10.648488,106.740599,Operating,Grinding,500.0,2006.0,Nhà Bè,Kt/yr,Industry NMM Cement,VN
+GACTVNM0005,Vietnam,VNM,16.540687,107.370252,Operating,Integrated,2000.0,2014.0,Phong Điền,Kt/yr,Industry NMM Cement,VN
+GACTVNM0006,Vietnam,VNM,20.18496,105.941269,Operating,Integrated,1800.0,,Hoa Lư,Kt/yr,Industry NMM Cement,VN
+GACTVNM0007,Vietnam,VNM,20.185013,105.941275,Operating,Integrated,3000.0,2007.0,Hoa Lư,Kt/yr,Industry NMM Cement,VN
+GACTVNM0008,Vietnam,VNM,11.626713,106.394197,Operating,Integrated,1500.0,2004.0,Tân Châu,Kt/yr,Industry NMM Cement,VN
+GACTVNM0009,Vietnam,VNM,20.482583,105.881301,Operating,Integrated,3000.0,2007.0,Thanh Liêm,Kt/yr,Industry NMM Cement,VN
+GACTVNM0010,Vietnam,VNM,21.021027,105.65369,Operating,,335.0,1958.0,Quốc Oai,Kt/yr,Industry NMM Cement,VN
+GACTVNM0011,Vietnam,VNM,18.939393,105.350969,Operating,Integrated,6000.0,,Đô Lương,Kt/yr,Industry NMM Cement,VN
+GACTVNM0012,Vietnam,VNM,21.566872,106.492178,Operating,Integrated,1000.0,2006.0,Thành phố Lạng Sơn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0013,Vietnam,VNM,20.453618,105.886442,Operating,Integrated,3000.0,,Thanh Liêm,Kt/yr,Industry NMM Cement,VN
+GACTVNM0014,Vietnam,VNM,20.341771,105.91308,Operating,Integrated,3600.0,,Gia Viễn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0015,Vietnam,VNM,20.075309,105.910951,Operating,Integrated,5000.0,2014.0,Thị xã Bỉm Sơn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0016,Vietnam,VNM,21.009432,106.557164,Operating,Integrated,4000.0,2005.0,Kinh Môn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0017,Vietnam,VNM,20.20227,105.93705,Operating,Integrated,1800.0,,Hoa Lư,Kt/yr,Industry NMM Cement,VN
+GACTVNM0018,Vietnam,VNM,16.50744,107.4662,Operating,Integrated,2800.0,1996.0,Thị xã Hương Trà,Kt/yr,Industry NMM Cement,VN
+GACTVNM0019,Vietnam,VNM,16.129181,108.117788,Operating,,150.0,,Liên Chiểu,Kt/yr,Industry NMM Cement,VN
+GACTVNM0021,Vietnam,VNM,21.017716,106.705675,Operating,Integrated,700.0,2000.0,Thành phố Uông Bí,Kt/yr,Industry NMM Cement,VN
+GACTVNM0022,Vietnam,VNM,21.026588,107.043731,Operating,Integrated,2500.0,2008.0,Hoành Bồ,Kt/yr,Industry NMM Cement,VN
+GACTVNM0023,Vietnam,VNM,10.652705,106.737668,Operating,Grinding,1300.0,2011.0,Nhà Bè,Kt/yr,Industry NMM Cement,VN
+GACTVNM0024,Vietnam,VNM,17.761155,106.279702,Operating,Integrated,2110.0,,Tuyên Hóa,Kt/yr,Industry NMM Cement,VN
+GACTVNM0025,Vietnam,VNM,17.796489,106.265715,Operating,Integrated,1300.0,,Tuyên Hóa,Kt/yr,Industry NMM Cement,VN
+GACTVNM0026,Vietnam,VNM,10.214842,104.601467,Operating,Integrated,1880.0,1998.0,Kiên Lương,Kt/yr,Industry NMM Cement,VN
+GACTVNM0029,Vietnam,VNM,10.653801,106.736921,Operating,Grinding,1100.0,2008.0,Nhà Bè,Kt/yr,Industry NMM Cement,VN
+GACTVNM0032,Vietnam,VNM,19.333214,105.789349,Operating,Integrated,4300.0,2000.0,Tĩnh Gia,Kt/yr,Industry NMM Cement,VN
+GACTVNM0033,Vietnam,VNM,21.840986,105.206246,Operating,Integrated,910.0,,Thành phố Tuyên Quang,Kt/yr,Industry NMM Cement,VN
+GACTVNM0033,Vietnam,VNM,21.86174,105.221656,Operating,Integrated,700.0,2008.0,Thành phố Tuyên Quang,Kt/yr,Industry NMM Cement,VN
+GACTVNM0034,Vietnam,VNM,19.332494,105.625768,Operating,Integrated,1960.0,2018.0,Quỳnh Lưu,Kt/yr,Industry NMM Cement,VN
+GACTVNM0037,Vietnam,VNM,19.378829,105.65744,Operating,Integrated,1000.0,2015.0,Tĩnh Gia,Kt/yr,Industry NMM Cement,VN
+GACTVNM0038,Vietnam,VNM,21.006744,106.543848,Operating,Integrated,930.0,,Kinh Môn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0039,Vietnam,VNM,20.406496,105.901139,Operating,Integrated,2300.0,2005.0,Thanh Liêm,Kt/yr,Industry NMM Cement,VN
+GACTVNM0040,Vietnam,VNM,20.770956,105.637605,Operating,Integrated,960.0,2015.0,Lương Sơn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0041,Vietnam,VNM,21.698028,105.901182,Operating,Integrated,1000.0,1996.0,Võ Nhai,Kt/yr,Industry NMM Cement,VN
+GACTVNM0042,Vietnam,VNM,11.713846,106.549508,Operating,Integrated,2000.0,,Bình Long,Kt/yr,Industry NMM Cement,VN
+GACTVNM0043,Vietnam,VNM,21.025041,107.092336,Operating,Integrated,2000.0,,Hoành Bồ,Kt/yr,Industry NMM Cement,VN
+GACTVNM0044,Vietnam,VNM,21.485296,105.155393,Operating,Integrated,1000.0,,Thanh Ba,Kt/yr,Industry NMM Cement,VN
+GACTVNM0045,Vietnam,VNM,20.091737,105.884771,Operating,Integrated,3800.0,1980.0,Thị xã Bỉm Sơn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0046,Vietnam,VNM,20.529883,105.867149,Operating,Integrated,1600.0,1997.0,Kim Bảng,Kt/yr,Industry NMM Cement,VN
+GACTVNM0047,Vietnam,VNM,10.272336,104.618284,Operating,Integrated,2000.0,1974.0,Kiên Lương,Kt/yr,Industry NMM Cement,VN
+GACTVNM0048,Vietnam,VNM,21.039317,106.58935,Operating,Integrated,2300.0,,Kinh Môn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0049,Vietnam,VNM,19.275347,105.705509,Operating,Integrated,1400.0,,Thị xã Hoàng Mai,Kt/yr,Industry NMM Cement,VN
+GACTVNM0050,Vietnam,VNM,20.147373,105.874093,Operating,Integrated,1400.0,,Thành phố Tam Điệp,Kt/yr,Industry NMM Cement,VN
+GACTVNM0051,Vietnam,VNM,10.781889,106.812486,Operating,Grinding,2600.0,2007.0,Quận 9,Kt/yr,Industry NMM Cement,VN
+GACTVNM0052,Vietnam,VNM,11.892375,109.12489,Operating,Grinding,600.0,2011.0,Thành phố Cam Ranh,Kt/yr,Industry NMM Cement,VN
+GACTVNM0053,Vietnam,VNM,10.602157,106.48492,Operating,Grinding,600.0,2009.0,Cần Đước,Kt/yr,Industry NMM Cement,VN
+GACTVNM0054,Vietnam,VNM,20.96342,106.756953,Operating,,1400.0,1997.0,Thủy Nguyên,Kt/yr,Industry NMM Cement,VN
+GACTVNM0055,Vietnam,VNM,16.129673,108.122981,Operating,,600.0,1994.0,Liên Chiểu,Kt/yr,Industry NMM Cement,VN
+GACTVNM0056,Vietnam,VNM,21.70006,105.88085,Operating,Integrated,1500.0,2009.0,Đồng Hỷ,Kt/yr,Industry NMM Cement,VN
+GACTVNM0057,Vietnam,VNM,10.344541,105.470274,Operating,,400.0,,Thành phố Long Xuyên,Kt/yr,Industry NMM Cement,VN
+GACTVNM0058,Vietnam,VNM,21.601376,105.772523,Operating,Integrated,1000.0,2008.0,An Khánh,Kt/yr,Industry NMM Cement,VN
+GACTVNM0059,Vietnam,VNM,21.000293,107.255375,Operating,Integrated,2300.0,2008.0,Thành phố Cẩm Phả,Kt/yr,Industry NMM Cement,VN
+GACTVNM0060,Vietnam,VNM,21.729031,104.974329,Operating,Integrated,910.0,,Yên Bình,Kt/yr,Industry NMM Cement,VN
+GACTVNM0061,Vietnam,VNM,21.748282,104.959888,Operating,Integrated,730.0,2008.0,Yên Bình,Kt/yr,Industry NMM Cement,VN
+GACTVNM0062,Vietnam,VNM,18.935972,105.066733,Operating,Integrated,600.0,2015.0,Anh Sơn,Kt/yr,Industry NMM Cement,VN
+GACTVNM0063,Vietnam,VNM,20.336018,105.721416,Operating,Integrated,100.0,,Yên Thuỷ,Kt/yr,Industry NMM Cement,VN
+GACTVNM0064,Vietnam,VNM,20.423681,105.902052,Operating,Integrated,5500.0,2012.0,Thanh Liêm,Kt/yr,Industry NMM Cement,VN
+GACTVNM0065,Vietnam,VNM,15.766071,107.860024,Operating,Integrated,1110.0,2014.0,Nam Giang,Kt/yr,Industry NMM Cement,VN
+GACTVNM0067,Vietnam,VNM,21.212366,104.132001,Operating,Integrated,1200.0,,Mai Sơn,Kt/yr,Industry NMM Cement,VN
+GACTXKX0001,Kosovo,XKX,42.146335,21.300077,Operating,Integrated,1140.0,1936.0,Hani i Elezit,Kt/yr,Industry NMM Cement,XK
+GACTYEM0001,Yemen,YEM,14.796499,49.164908,Operating,Integrated,1500.0,2009.0,Abdullah Gharib,Kt/yr,Industry NMM Cement,YE
+GACTYEM0002,Yemen,YEM,13.340538,44.753011,Operating,Integrated,1600.0,2008.0,Al Anad,Kt/yr,Industry NMM Cement,YE
+GACTYEM0003,Yemen,YEM,13.36352,45.314548,Operating,Integrated,1000.0,2010.0,Pattis,Kt/yr,Industry NMM Cement,YE
+GACTYEM0004,Yemen,YEM,15.649707,43.921802,Operating,Integrated,1500.0,1982.0,Amran,Kt/yr,Industry NMM Cement,YE
+GACTYEM0005,Yemen,YEM,15.032711,43.25929,Operating,Integrated,1070.0,1973.0,,Kt/yr,Industry NMM Cement,YE
+GACTYEM0006,Yemen,YEM,13.50015,43.726776,Operating,Integrated,500.0,1993.0,Asmad Rashid,Kt/yr,Industry NMM Cement,YE
+GACTZAF0005,South Africa,ZAF,-26.143888,25.851686,Operating,Integrated,1800.0,2013.0,Ngaka Modiri Molema,Kt/yr,Industry NMM Cement,ZA
+GACTZAF0006,South Africa,ZAF,-26.156285,28.692849,Operating,Grinding,1500.0,2013.0,Delmas,Kt/yr,Industry NMM Cement,ZA
+GACTZAF0007,South Africa,ZAF,-30.674835,30.345507,Operating,Integrated,1480.0,,Ugu District Municipality,Kt/yr,Industry NMM Cement,ZA
+GACTZAF0010,South Africa,ZAF,-26.133577,26.183382,Operating,Integrated,2860.0,,Lichtenburg,Kt/yr,Industry NMM Cement,ZA
+GACTZAF0013,South Africa,ZAF,-24.9836,27.546179,Operating,Integrated,1200.0,,Bosveld,Kt/yr,Industry NMM Cement,ZA
+GACTZAF0018,South Africa,ZAF,-25.722992,28.169487,Operating,Integrated,1920.0,,Pretoria,Kt/yr,Industry NMM Cement,ZA
+GACTZMB0001,Zambia,ZMB,-15.55503,28.492053,Operating,Integrated,2470.0,,Kafue,Kt/yr,Industry NMM Cement,ZM
+GACTZMB0002,Zambia,ZMB,-13.026214,28.778742,Operating,Integrated,1500.0,2015.0,Masaiti,Kt/yr,Industry NMM Cement,ZM
+GACTZMB0003,Zambia,ZMB,-12.976176,28.687307,Operating,Integrated,450.0,,Ndola,Kt/yr,Industry NMM Cement,ZM
+GACTZMB0004,Zambia,ZMB,-15.545704,28.270728,Operating,Integrated,1030.0,1949.0,Kafue,Kt/yr,Industry NMM Cement,ZM
+GACTZMB0006,Zambia,ZMB,-13.00312,28.70316,Operating,Integrated,510.0,,Ndola,Kt/yr,Industry NMM Cement,ZM
+GACTZWE0001,Zimbabwe,ZWE,-17.819981,31.198167,Operating,Integrated,450.0,,Harare,Kt/yr,Industry NMM Cement,ZW
+GACTZWE0002,Zimbabwe,ZWE,-20.114474,28.685907,Operating,Integrated,300.0,,Bulawayo,Kt/yr,Industry NMM Cement,ZW
+GACTZWE0003,Zimbabwe,ZWE,-21.0072,29.212761,Operating,Integrated,460.0,1946.0,Colleen Bawn,Kt/yr,Industry NMM Cement,ZW
+GACTZWE0004,Zimbabwe,ZWE,-17.859217,31.156976,Operating,Grinding,700.0,2016.0,Harare,Kt/yr,Industry NMM Cement,ZW
+GACTZWE0005,Zimbabwe,ZWE,-19.417322,30.050341,Operating,Integrated,250.0,,Shurugwi,Kt/yr,Industry NMM Cement,ZW

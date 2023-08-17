@@ -1,0 +1,537 @@
+,FID_,Company,Name,City,Facility,Prov_State,Country,Address,Zip,County,PADD,Capacity,Longitude,Latitude,Markets,CORPORATIO
+0,223,.,Petronas Melaka I Refinery,Melaka Tengah,Refinery,Melaka,Malaysia,.,0, ,0,126000,102.13786,2.25864,.,.
+1,224,.,Esso Port Dickson Refinery,Port Dickson,Refinery,Negeri Sembilan,Malaysia,.,0, ,0,86000,101.82398,2.53119,.,.
+2,225,.,Shell Port Dickson Refinery,Port Dickson,Refinery,Negeri Sembilan,Malaysia,.,0, ,0,155000,101.81248,2.53318,.,.
+3,226,.,Shell Lutong Refinery,Miri,Refinery,Sarawak,Malaysia,.,0, ,0,45000,114.00301,4.47662,.,.
+4,227,.,Petronas Kertih Refinery,Kemaman,Refinery,Terengganu,Malaysia,.,0, ,0,40000,103.4537,4.56734,.,.
+5,228,.,Corral Holdings Samir Sidi Kacem Refinery,Sidi Kacem,Refinery,Gharb-Chrarda-Beni Hssen,Morocco,.,0, ,0,50000,-5.72769,34.22774,.,.
+6,229,.,Corral Holdings Samir Mohammedia Refinery,Sidi Bern./Moham.-Znata,Refinery,Grand Casablanca,Morocco,.,0, ,0,104900,-7.42515,33.68227,.,.
+7,230,.,ExxonMobil Antwerp Refinery,Terneuzen,Refinery,Zeeland,Netherlands,.,0, ,0,265000,3.78077,51.34117,.,.
+8,231,.,Total/DOW Chemical Vlissingen Refinery,Borsele,Refinery,Zeeland,Netherlands,.,0, ,0,160000,3.72905,51.44563,.,.
+9,232,.,BP ChevronTexaco Nerefco Refinery,Rotterdam,Refinery,Zuid-Holland,Netherlands,.,0, ,0,400000,4.17818,51.93009,.,.
+10,233,.,ExxonMobil Rotterdam Refinery,Rotterdam,Refinery,Zuid-Holland,Netherlands,.,0, ,0,190000,4.29,51.8762,.,.
+11,234,.,PDVSA Refineria Isla Curacao Refinery,Willemstad,Refinery,Curacao,Netherlands Antilles,.,0, ,0,320000,-68.92914,12.13071,.,.
+12,235,.,New Zealand Refining Company Marsden Point Refinery,Whangarei,Refinery,Northland,New Zealand,.,0, ,0,90000,174.49396,-35.84179,.,.
+13,236,.,ExxonMobil Managua Refinery,Managua,Refinery,Managua,Nicaragua,.,0, ,0,20000,-86.31938,12.14571,.,.
+14,237,.,WRPG Warri Refinery,Warri,Refinery,Delta,Nigeria,.,0, ,0,125000,5.71685,5.5679,.,.
+15,238,.,KRPC Kaduna Refinery,Chikun,Refinery,Kaduna,Nigeria,.,0, ,0,110000,7.49065,10.41159,.,.
+16,239,.,PHRC Port Harcourt Refinery,Okrika,Refinery,Rivers,Nigeria,.,0, ,0,210000,7.1055,4.76,.,.
+17,240,Mongstad Refining,Statoil Mongstad Crude Oil Refiery Norway,Mongstad,Refinery,Hordaland,Norway,.,0, ,0,200000,5.0314,60.8102,.,.
+18,241,.,ExxonMobil Slagen Refinery Norway,Slagentangen,Refinery,Vestfold,Norway,.,0, ,0,116000,10.51568,59.31416,.,.
+19,242,.,PARCO Mid Country (Kot Addu) Refinery Pakistan,Dera Ghazi Khan,Refinery,Punjab,Pakistan,.,0, ,0,100000,70.98391,30.44458,.,.
+20,243,.,Bosicor Pakistan Limited Karachi Refinery,Karachi,Refinery,Sindh,Pakistan,.,0, ,0,30000,66.98283,24.81674,.,.
+21,244,Petroleos Paraguayos,Villa Elisa (Petropar) Refinery Paraguay,Villa Elisa,Refinery,Central,Paraguay,.,0, ,0,7500,-57.605699,-25.388252,.,.
+22,245,.,Repsol YPF la Pampilla Refinery,Islay,Refinery,Arequipa,Peru,.,0, ,0,102000,-71.79174,-17.16361,.,.
+23,246,.,Petron Limay Refinery,Limay,Refinery,Bataan,Philippines,.,0, ,0,180000,120.60171,14.53139,.,.
+24,247,.,Caltex(Chevron) Batangas Refinery,Batangas City,Refinery,Batangas,Philippines,.,0, ,0,86000,121.05595,13.67679,.,.
+25,248,.,Shell Tabangao Batangas Refinery,Batangas City,Refinery,Batangas,Philippines,.,0, ,0,120000,121.06726,13.72346,.,.
+26,249,.,Rafineria Trzebinia Refinery,Olkusz,Refinery,malopolskie,Poland,.,0, ,0,4000,19.46466,50.20654,.,.
+27,250,.,Mazovian Refinery &amp; Petrochemical Works Plock Refinery,Plock,Refinery,mazowieckie,Poland,.,0, ,0,260000,19.67793,52.58807,.,.
+28,251,.,Lotos Gdansk Refinery,Gdansk City,Refinery,pomorskie,Poland,.,0, ,0,120000,18.73541,54.34837,.,.
+29,252,.,Lotos Czechowice Refinery,Pszczyna,Refinery,slaskie,Poland,.,0, ,0,10000,19.01571,49.94005,.,.
+30,253,.,Galp Energia Porto Refinery,Matosinhos,Refinery,Porto,Portugal,.,0, ,0,100000,-8.70418,41.20912,.,.
+31,254,.,Galp Energia Sines Refinery,Sines,Refinery,Setubal,Portugal,.,0, ,0,200000,-8.81138,37.96134,.,.
+32,255,.,NODCO Um Said Refinery,Ad-Daẖirah,Refinery,Al Khawr,Qatar,.,0, ,0,80000,51.54442,25.89096,.,.
+33,256,.,Chinese Petroleum Corporation Kaohsiung Refinery,Kaohsiung,Refinery,Taiwan,Republic of China Taiwan,.,0, ,0,270000,120.31995,22.71178,.,.
+34,257,.,Chinese Petroleum Corporation Talin Refinery,Yunlin,Refinery,Taiwan,Republic of China Taiwan,.,0, ,0,300000,120.18335,23.76902,.,.
+35,258,.,Chinese Petroleum Corporation Taoyuan Refinery,Taipei,Refinery,Taiwan,Republic of China Taiwan,.,0, ,0,200000,121.30951,25.03486,.,.
+36,259,.,Formosa Mailiao Refinery,Changhwa,Refinery,Taiwan,Republic of China Taiwan,.,0, ,0,450000,120.20842,23.80591,.,.
+37,260,.,Hanwha Energy Incheon Refinery,Daesan-eup,Refinery,Chungcheongnam-do,Republic of Korea,.,0, ,0,275000,126.3494,36.9946,.,.
+38,261,.,Hyundai Incheon Oil Refinery,Daesan-eup,Refinery,Chungcheongnam-do,Republic of Korea,.,0, ,0,340000,126.37704,37.00218,.,.
+39,262,.,LG-Caltex(Chevron) Yosu Refinery,Yeosu,Refinery,Jeollanam-do,Republic of Korea,.,0, ,0,650000,127.75221,34.72004,.,.
+40,263,.,S-Oil Ulsan Refinery,Nam-gu,Refinery,Ulsan,Republic of Korea,.,0, ,0,500000,129.36163,35.47791,.,.
+41,264,.,SK Corp Ulsan Refinery,Ulju-gun,Refinery,Ulsan,Republic of Korea,.,0, ,0,880000,129.3429,35.43317,.,.
+42,265,.,Hellenic OKTA Skopje Refinery,Skopje,Refinery,Butel,Republic of Macedonia,.,0, ,0,50000,21.45919,42.02639,.,.
+43,266,.,Petrom/OMV Arpechim Pitesti Refinery,.,Refinery,Arges,Romania,.,0, ,0,70000,24.93267,44.79835,.,.
+44,267,.,Petrotel-LUKOIL Pitesti Refinery,.,Refinery,Arges,Romania,.,0, ,0,68000,24.93421,44.80773,.,.
+45,268,.,Rompetrol Petromidia Refinery,Constanta,Refinery,Constanta,Romania,.,0, ,0,100000,28.62614,44.13401,.,.
+46,269,.,Petrom/OMV Petrobrazi Ploiesti Refinery,Brazii de Sus,Refinery,Prahova,Romania,.,0, ,0,90000,26.01599,44.87176,.,.
+47,270,.,Rompetrol Vega Ploiesti Refinery,Ploiești,Refinery,Prahova,Romania,.,0, ,0,20000,26.02513,44.96185,.,.
+48,271,.,Bashneft Novo-Ufa Refinery,Ufimskiy rayon,Refinery,Bashkortostan,Russian Federation,.,0, ,0,380000,56.08533,54.86139,.,.
+49,272,.,Bashneft Salavatnefteorgsintez Refinery,Sterlitamakskiy rayon,Refinery,Bashkortostan,Russian Federation,.,0, ,0,250000,55.8907,53.42156,.,.
+50,273,.,Bashneft Ufaneftekhim Refinery,Blagoveshchenskiy rayon,Refinery,Bashkortostan,Russian Federation,.,0, ,0,250000,56.06204,54.93158,.,.
+51,274,.,Yukos OAO Angarsk Petrochemical Refinery,Angarskiy rayon,Refinery,Irkutsk,Russian Federation,.,0, ,0,384000,103.92894,52.51551,.,.
+52,275,.,TNK-BPL Nizhnevartovsk Refinery,Nizhnevartovskiy rayon,Refinery,Khanty-Mansi,Russian Federation,.,0, ,0,25100,76.4485,60.98358,.,.
+53,276,.,LUKOIL Ukhta Refinery,Sosnogorskiy rayon,Refinery,Komi,Russian Federation,.,0, ,0,72000,53.81896,63.64043,.,.
+54,277,.,Yukos OAO Achinsk Refinery,Achinskiy rayon,Refinery,Krasnoyarsk,Russian Federation,.,0, ,0,131000,90.41826,56.23515,.,.
+55,278,.,Surgutneftegas Kirishi Refinery,Kirishskiy rayon,Refinery,Leningrad,Russian Federation,.,0, ,0,337000,32.0708,59.48362,.,.
+56,279,.,Sibneft/Central Fuel Company Moscow Refinery,Moskva gorsovet,Refinery,Moskva,Russian Federation,.,0, ,0,213000,37.80642,55.65182,.,.
+57,280,.,LUKOIL Nizhny Novgorod Refinery,Kstovskiy rayon,Refinery,Nizhegorod,Russian Federation,.,0, ,0,292000,44.14273,56.12191,.,.
+58,281,.,Yukos OAO Kuibyshev Oil Refinery,Kuybyshevskiy rayon,Refinery,Novosibirsk,Russian Federation,.,0, ,0,139800,78.32097,55.42784,.,.
+59,282,.,Sibneft Omsk Refinery,Omskiy rayon,Refinery,Omsk,Russian Federation,.,0, ,0,380000,73.24142,55.07725,.,.
+60,283,.,TNK-BP Orsk Refinery,Gayskiy rayon,Refinery,Orenburg,Russian Federation,.,0, ,0,159000,58.52666,51.25948,.,.
+61,284,.,LUKOIL Perm Refinery,Permskiy rayon,Refinery,Penza,Russian Federation,.,0, ,0,235000,56.15172,57.91107,.,.
+62,285,.,TNK-BP Ryazan Refinery,Ryazan,Refinery,Rostov,Russian Federation,.,0, ,0,253000,39.75465,54.56251,.,.
+63,286,.,Yukos OAO Novokuibyshevsk Refinery,Volzhskiy rayon,Refinery,Samara,Russian Federation,.,0, ,0,191500,50.04317,53.1435,.,.
+64,287,.,Yukos OAO Syzran Refinery,Syzranskiy rayon,Refinery,Samara,Russian Federation,.,0, ,0,213400,48.38781,53.08928,.,.
+65,288,.,TNK-BPL Saratov Refinery,Saratovskiy rayon,Refinery,Saratov,Russian Federation,.,0, ,0,108000,45.94329,51.45089,.,.
+66,289,.,Yukos OAO Strezhevoy Refinery,Aleksandrovskiy rayon,Refinery,Tomsk,Russian Federation,.,0, ,0,5400,77.48155,60.6664,.,.
+67,290,.,LUKOIL Volgograd Refinery,Svetloyarskiy rayon,Refinery,Volgograd,Russian Federation,.,0, ,0,193000,44.65074,48.50495,.,.
+68,291,.,Slavneft YaNOS Yaroslavl Refinery,Yaroslavskiy rayon,Refinery,Yamal-Nenets,Russian Federation,.,0, ,0,132000,39.78512,57.55753,.,.
+69,292,.,Saudi Aramco Yanbu Refinery,Yanbu,Refinery,Al Madinah,Saudi Arabia,.,0, ,0,170000,38.29769,23.944,.,.
+70,293,.,Saudi Aramco/ExxonMobil Yanbu Refinery,Yanbu,Refinery,Al Madinah,Saudi Arabia,.,0, ,0,400000,38.23277,23.98139,.,.
+71,294,.,Saudi Aramco Riyadh Refinery,Riyadh,Refinery,Ar Riyad,Saudi Arabia,.,0, ,0,120000,46.86798,24.51852,.,.
+72,295,.,AOC Khafji Refinery Saudi Arabia,Khafji,Refinery,Ash Sharqiyah,Saudi Arabia,.,0, ,0,30000,48.53422,28.40713,.,.
+73,296,.,Saudi Aramco Ras Tanura Refinery,Ras Tanura,Refinery,Ash Sharqiyah,Saudi Arabia,.,0, ,0,325000,50.09207,26.70243,.,.
+74,297,.,Saudi Aramco/Shell Jubail Refinery,Al Jubail,Refinery,Ash Sharqiyah,Saudi Arabia,.,0, ,0,305000,49.59827,27.0496,.,.
+75,298,.,Rabigh Saudi Aramco Refinery,.,Refinery,Makkah,Saudi Arabia,.,0, ,0,400000,39.01535,22.72165,.,.
+76,299,.,Saudi Aramco Jiddah Refinery,.,Refinery,Makkah,Saudi Arabia,.,0, ,0,100000,39.5352,20.6745,.,.
+77,300,.,ExxonMobil Singapore Refinery,Jurong Island,Refinery,South West,Singapore,.,0, ,0,605000,103.72131,1.27994,.,.
+78,301,.,Shell Eastern Petroleum Singapore Pulau Bukom Refinery,Bukom Island,Refinery,South West,Singapore,.,0, ,0,458000,103.76577,1.23392,.,.
+79,302,.,Singapore Refining Corporation Refinery,Jurong Island,Refinery,South West,Singapore,.,0, ,0,285000,103.70087,1.27425,.,.
+80,303,.,Mol Slovnaft Bratislava Refinery,Bratislava II,Refinery,Bratislava,Slovakia,.,0, ,0,110000,17.11667,48.15,.,.
+81,304,.,Sasol/Total Natref Sasolburg Refinery,Sasolburg,Refinery,Free State,South Africa,.,0, ,0,87500,27.85592,-26.80628,.,.
+82,305,.,Petronas Durban Refinery,Durban,Refinery,KwaZulu-Natal,South Africa,.,0, ,0,125000,31.02216,-29.89345,.,.
+83,306,.,Shell BP Sapref Durban Refinery,Durban,Refinery,KwaZulu-Natal,South Africa,.,0, ,0,172000,31.03469,-29.88942,.,.
+84,307,.,Caltex(ChevronTexaco) Capetown Refinery,Cape Town,Refinery,Western Cape,South Africa,.,0, ,0,112000,18.53019,-33.84106,.,.
+85,308,.,CEPSA Gibraltar Refinery,Cadiz,Refinery,Andalusia,Spain,.,0, ,0,240000,-5.39725,36.18569,.,.
+86,309,.,CEPSA Palos de la Frontera La RÂ·bida Refinery,Huelva,Refinery,Andalusia,Spain,.,0, ,0,100000,-6.90394,37.18408,.,.
+87,310,.,Repsol YPF Bilbao Refinery,Vizcaya,Refinery,Basque Country,Spain,.,0, ,0,220000,-3.1106,43.32893,.,.
+88,311,.,CEPSA Tenerife Refinery,Las Palmas,Refinery,Canary Islands,Spain,.,0, ,0,90000,-16.26552,28.45372,.,.
+89,312,.,Repsol YPF Puertollano Refinery,Ciudad Real,Refinery,Castile-La Mancha,Spain,.,0, ,0,140000,-4.04945,38.6731,.,.
+90,313,.,Repsol YPF Tarragona Refinery,Tarragona,Refinery,Catalonia,Spain,.,0, ,0,160000,1.22275,41.18305,.,.
+91,314,.,Repsol YPF a Coruna Refinery,A Coruna,Refinery,Galicia,Spain,.,0, ,0,120000,-8.4453,43.35264,.,.
+92,315,.,Repsol YPF Cartagena Refinery,Murcia,Refinery,Murcia,Spain,.,0, ,0,100000,-0.92928,37.57512,.,.
+93,316,.,CNPC El Gily Refinery????,Northern,Refinery,Khartoum,Sudan,.,0, ,0,50000,32.2968,16.98083,.,.
+94,317,.,CNPC Khartoum Refinery,"70 Km North of Khartoum, 13 km east of the Nile",Refinery,Khartoum,Sudan,.,0, ,0,70000,32.492,16.13,.,.
+95,318,.,CNPC El Obeid Refinery,Kordufan,Refinery,North Kordufan,Sudan,.,0, ,0,10000,30.2362,13.2714,.,.
+96,319,.,CNPC Port Sudan Refinery,Eastern,Refinery,Red Sea,Sudan,.,0, ,0,21700,37.2343,19.5563,.,.
+97,320,.,Nyn0 s Petroleum Nynaeshamn Refinery,Nynashamn,Refinery,Stockholm,Sweden,.,0, ,0,90000,17.96447,58.92181,.,.
+98,321,.,Preem Petroleum Gothenburg Refinery,Goteborg,Refinery,Vastra Gotaland,Sweden,.,0, ,0,90000,11.88376,57.70412,.,.
+99,322,.,Preem Petroleum Lysekil Refinery,Lysekil,Refinery,Vastra Gotaland,Sweden,.,0, ,0,210000,11.42427,58.34458,.,.
+100,323,.,Petroplus Cressier Refinery,Cornaux,Refinery,NeuchÃ¢tel,Switzerland,.,0, ,0,68000,7.03617,47.03899,.,.
+101,324,.,Tamoil Colleombery-Muraz Refinery,Collombey-Muraz,Refinery,Valais,Switzerland,.,0, ,0,45000,6.95116,46.28432,.,.
+102,325,.,ExxonMobil Sriracha Refinery,Si Racha,Refinery,Chon Buri,Thailand,.,0, ,0,173500,100.90305,13.1123,.,.
+103,326,.,Thai Oil Co Sriracha Refinery,Si Racha,Refinery,Chon Buri,Thailand,.,0, ,0,193000,100.88902,13.10278,.,.
+104,327,.,Chevron Star Petroleum Map Ta Phut Refinery Thailand,Muang Rayong,Refinery,Rayong,Thailand,.,0, ,0,150000,101.1564,12.7009,.,.
+105,328,.,Shell Rayong Refinery,Muang Rayong,Refinery,Rayong,Thailand,.,0, ,0,275000,101.14697,12.70004,.,.
+106,329,.,Petrotrin Pointe-a-Pierre Refinery,Pointe-a-Pierre,Refinery,Couva/Tabaquite/Talparo,Trinidad and Tobago,.,0, ,0,165000,-61.46099,10.31627,.,.
+107,330,.,Societe Tunisienne des Industries de Raffinage Bizerte Refinery,Zarzouna,Refinery,Bizerte,Tunisia,.,0, ,0,34000,9.88962,37.25622,.,.
+108,331,.,Tupras Central Anatolian Refinery,Kırıkkale,Refinery,Ankara,Turkey,.,0, ,0,100000,33.4601,39.74427,.,.
+109,332,.,Tupras Batman Refinery,Batman Merkez,Refinery,Batman,Turkey,.,0, ,0,22000,41.14123,37.87263,.,.
+110,333,.,Tupras Aliaga Refinery,.,Refinery,Izmir,Turkey,.,0, ,0,200000,27.00556,38.47635,.,.
+111,334,.,Tupras Izmit Refinery Turkey,Korfez,Refinery,Kocaeli,Turkey,.,0, ,0,226000,29.77044,40.75063,.,.
+112,335,.,Ukrtransneft Neftekhimik Prikarpatya Nadvirna Refinery,Nadvirnians'kyi,Refinery,Kharkiv,Ukraine,.,0, ,0,39000,24.58456,48.64788,.,.
+113,336,.,Allianz Oil Kherson Refinery,Bilozers'kyi,Refinery,Kherson,Ukraine,.,0, ,0,36000,32.56865,46.67493,.,.
+114,337,.,TNK-BP LINOS Lisichansk Refinery,Popasnians'kyi,Refinery,Kirovohrad,Ukraine,.,0, ,0,320000,38.30783,48.85015,.,.
+115,338,.,Ukrtransneft Drogobych Refinery,Drohobyts'kyi,Refinery,Kirovohrad,Ukraine,.,0, ,0,40000,23.48165,49.34135,.,.
+116,339,.,LUKOIL Odessa Refinery,Odessa,Refinery,Odessa,Ukraine,.,0, ,0,70000,30.71767,46.52165,.,.
+117,340,.,Ukrtatnafta Kremenchuk Refinery,Kremenchuts'kyi,Refinery,Poltava,Ukraine,.,0, ,0,180000,33.46353,49.16027,.,.
+118,341,Abu Dhabi National Oil Company,Abu Dhabi National Oil Company Umm Al-Narr Refinery,Abu Dhabi,Refinery,Abu Dhabi,United Arab Emirates,.,0, ,0,90000,54.49262,24.43696,.,.
+119,342,Al-Ruwais Refinery,Abu Dhabi Oil Refining Company Al-Ruwais Refinery,Ruwais,Refinery,Abu Dhabi,United Arab Emirates,.,0, ,0,280000,52.71988,24.12462,.,.
+120,343,.,Sharjah Oil Refinery,Sharjah,Refinery,Ajman,United Arab Emirates,.,0, ,0,71300,55.49015,25.46267,.,.
+121,344,.,ENOC Jebel Ali Refinery UAE,Dubay,Refinery,Dubay,United Arab Emirates,.,0, ,0,120000,55.0593,25.00761,.,.
+122,345,.,Metro Oil Fujairah Refinery,Fujairah,Refinery,Fujayrah,United Arab Emirates,.,0, ,0,70000,56.35491,25.19427,.,.
+123,346,.,Shell Stanlow Refinery,Cheshire,Refinery,Cheshire,United Kingdom,.,0, ,0,246000,-2.84492,53.27379,.,.
+124,347,.,BP Coryton Refinery,Thurrock,Refinery,Essex,United Kingdom,.,0, ,0,208000,0.51861,51.51371,.,.
+125,348,ExxonMobil,Esso Fawley Southampton Refinery UK,Southhampton Water,Refinery,Hampshire,United Kingdom,.,0, ,0,330000,-1.36678,50.83316,.,.
+126,349,.,Petroplus Port Clarence Refinery,Hartlepool,Refinery,Middlesbrough,United Kingdom,.,0, ,0,117000,-1.20301,54.64633,.,.
+127,350,.,ConocoPhillips Humber Refinery,Immingham,Refinery,North Lincolnshire,United Kingdom,.,0, ,0,221000,-0.24234,53.63254,.,.
+128,351,.,Total Lindsey Oil Refinery,Immingham,Refinery,North Lincolnshire,United Kingdom,.,0, ,0,223000,-0.25692,53.64708,.,.
+129,352,.,ChevronTexaco Pembroke Refinery,Angle,Refinery,Pembrokeshire,United Kingdom,.,0, ,0,210000,-5.0271,51.6857,.,.
+130,353,.,TotalFinaElf/Murco Milford Haven Refinery,Milford Haven,Refinery,Pembrokeshire,United Kingdom,.,0, ,0,100000,-4.99308,51.70915,.,.
+131,354,.,BP Grangemouth Refinery,Falkirk,Refinery,West Lothian,United Kingdom,.,0, ,0,205000,-3.68497,56.01678,.,.
+132,355,.,PDVSA Puerto la Cruz/El Chaure Refinery,Sotillo,Refinery,Anzoategui,Venezuela,.,0, ,0,200000,-64.61704,10.22289,.,.
+133,356,.,PDVSA El Palito Refinery,El Palito,Refinery,Carabobo,Venezuela,.,0, ,0,176000,-68.12,10.48309,.,.
+134,357,.,PDVSA Amuay Refinery,Los Tanques,Refinery,Falcon,Venezuela,.,0, ,0,635000,-70.19558,11.74934,.,.
+135,358,.,PDVSA Cardon Refinery,Carirubana,Refinery,Falcon,Venezuela,.,0, ,0,297000,-70.22459,11.63107,.,.
+136,0,BP PLC,BP EXPLORATION ALASKA INC,PRUDHOE BAY,Refinery,Alaska,United States,.,99734,North Slope Borough,6,6935,-148.338429,70.255645,West Coast,BP PLC
+137,1,CONOCOPHILLIPS,CONOCOPHILLIPS ALASKA INC,PRUDHOE BAY,Refinery,Alaska,United States,.,99734,North Slope Borough,6,15000,-148.338429,70.255645,West Coast,CONOCOPHILLIPS
+138,2,ROYAL DUTCH/SHELL GROUP,Shell Oil Products US,MARTINEZ,Refinery,California,United States,3485 Pacheco Boulevard,94553,Contra Costa,5,156400,-122.106505,38.012392,West Coast,ROYAL DUTCH/SHELL GROUP
+139,3,SUNCOR ENERGY INC,SUNCOR ENERGY (USA) INC,COMMERCE CITY EAST,Refinery,Colorado,United States,5801 Brighton Boulevard,80022,Adams,4,36000,-104.946976,39.801684,Rocky Mountain,SUNCOR ENERGY INC
+140,4,EXXON MOBIL CORP,EXXONMOBIL REFINING & SUPPLY CO,TORRANCE,Refinery,California,United States,3700 West 190th Street,90504,Los Angeles,5,149500,-118.318768,33.858182,West Coast,EXXON MOBIL CORP
+141,5,VALERO ENERGY CORP,VALERO REFINING CO CALIFORNIA,BENICIA,Refinery,California,United States,3400 East 2nd Street,94510,Solano,5,132000,-122.145847,38.072986,West Coast,VALERO ENERGY CORP
+142,6,BP PLC,BP West Coast Products LLC,LOS ANGELES,Refinery,California,United States,2350 East 223rd Street,90745,Los Angeles,5,240000,-118.231906,33.822511,West Coast,.
+143,7,CHEVRON CORP,CHEVRON USA INC,RICHMOND,Refinery,California,United States,841 Chevron way,94801,Contra Costa,5,245271,-122.390721,37.931302,West Coast,CHEVRON CORP
+144,8,EXXON MOBIL CORP,EXXONMOBIL REFINING & SUPPLY CO,BAYTOWN,Refinery,Texas,United States,5000 Bayway Drive,77520,Harris/Chambers,3,560500,-95.024925,29.740335,Texas Gulf Coast,EXXON MOBIL CORP
+145,9,AMERICAN REFINING GROUP INC,AMERICAN REFINING GROUP INC,BRADFORD,Refinery,Pennsylvania,United States,77 North Kendall Avenue,16701,Bradford,1,10000,-78.628252,41.966714,Appalachian No. 1,AMERICAN REFINING GROUP INC
+146,10,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,RODEO,Refinery,California,United States,2101 Franklin Canyon Road,94572,Contra Costa,5,120200,-122.237399,38.018085,West Coast,PHILLIPS 66 COMPANY
+147,11,MOTIVA ENTERPRISES LLC,Motiva Enterprises LLC,NORCO,Refinery,Louisiana,United States,143 South Firehouse Road,70062,St. Charles,3,233500,-90.266029,29.986209,Louisiana Gulf Coast,MOTIVA ENTERPRISES LLC
+148,12,EXXON MOBIL CORP,EXXONMOBIL REFINING & SUPPLY CO,BEAUMONT,Refinery,Texas,United States,1795 Burt Street,77701,Jefferson,3,344500,-94.076964,30.064686,Texas Gulf Coast,EXXON MOBIL CORP
+149,13,MARATHON PETROLEUM CORP,MARATHON PETROLEUM CO LP,Texas City,Refinery,Texas,United States,2401 5th Avenue South,77590,.,3,459000,-94.929027,29.379001,Texas Gulf Coast,MARATHON PETROLEUM CORP
+150,14,HOLLYFRONTIER CORP,HOLLY REFINING & MARKETING CO,WOODS CROSS,Refinery,Utah,United States,985 West 500 South,84087,Davis,4,25050,-111.908271,40.883571,Rocky Mountain,HOLLYFRONTIER CORP
+151,15,ROYAL DUTCH/SHELL GROUP,Shell Oil Products US,ANACORTES,Refinery,Washington,United States,8505 South Texas Road,98221,Skagit,5,145000,-122.573426,48.480682,West Coast,ROYAL DUTCH/SHELL GROUP
+152,16,TESORO CORP,TESORO REFINING & MARKETING CO,WILMINGTON,Refinery,California,United States,2101 East Pacific Coast Highway,90744,Los Angeles,5,103800,-118.236475,33.791531,West Coast,TESORO CORP
+153,17,CHS INC,Cenex Harvest States Coop,LAUREL,Refinery,Montana,United States,803 U.S. 212,59044,Yellowstone,4,59600,-108.766166,45.659824,Rocky Mountain,CHS INC
+154,18,DEER PARK REFINING LTD PTNRSHP,DEER PARK REFINING LTD PARTNERSHIP,DEER PARK,Refinery,Texas,United States,5900 Texas 225,77536,Harris,3,327000,-95.1191,29.711145,Texas Gulf Coast,DEER PARK REFINING LTD PTNRSHP
+155,19,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,BILLINGS,Refinery,Montana,United States,401 South 23rd Street,59101,Yellowstone,4,58000,-108.491321,45.779638,Rocky Mountain,PHILLIPS 66 COMPANY
+156,20,CALUMET LUBRICANTS CO,CALUMET LUBRICANTS CO LP,PRINCETON,Refinery,Louisiana,United States,10234 Louisiana 157,71067,Bossier,3,8300,-93.515097,32.589214,North Louisiana-Arkansas,"CALUMET SPECIALTY PRODUCTS PARTNERS, L.P."
+157,21,CHEVRON CORP,CHEVRON USA INC,EL SEGUNDO,Refinery,California,United States,324 West El Segundo Boulevard,90245,Los Angeles,5,276000,-118.418555,33.916375,West Coast,CHEVRON CORP
+158,22,VALERO ENERGY CORP,VALERO REFINING CO CALIFORNIA,WILMINGTON REFINERY,Refinery,California,United States,2402 East Anaheim Street,90744,Los Angeles,5,78000,-118.237071,33.781323,West Coast,VALERO ENERGY CORP
+159,23,TESORO CORP,TESORO REFINING & MARKETING CO,MARTINEZ,Refinery,California,United States,150 Solano Way,94553,Contra Costa,5,166000,-122.071907,38.033363,West Coast,TESORO CORP
+160,24,VALERO ENERGY CORP,PREMCOR REFINING GROUP INC,PORT ARTHUR,Refinery,Texas,United States,1801 South Gulfway Drive,77640,Jefferson,3,290000,-93.965146,29.866498,Texas Gulf Coast,VALERO ENERGY CORP
+161,25,VALERO ENERGY CORP,VALERO REFINING CO TEXAS LP,HOUSTON,Refinery,Texas,United States,9701 Manchester Street,77012,Harris,3,88000,-95.25695,29.718992,Texas Gulf Coast,VALERO ENERGY CORP
+162,26,PBF ENERGY CO LLC,TOLEDO REFINING CO LLC,TOLEDO,Refinery,Ohio,United States,1819 Woodville Road,43616,Lucas,2,160000,-83.504856,41.628752,Indiana-Illinois-Kentucky,PBF ENERGY CO LLC
+163,27,EXXON MOBIL CORP,EXXONMOBIL REFINING & SUPPLY CO,BATON ROUGE,Refinery,Louisiana,United States,4045 Scenic Highway,70805,Baton Rouge,3,502500,-91.168588,30.47686,Louisiana Gulf Coast,EXXON MOBIL CORP
+164,28,HUNT CONSLD INC,HUNT REFINING CO,TUSCALOOSA,Refinery,Alabama,United States,1855 Fairlawn Road,35401,Tuscaloosa,3,36000,-87.609321,33.200524,North Louisiana-Arkansas,HUNT CONSLD INC
+165,29,BP PLC,BP PRODUCTS NORTH AMERICA INC,WHITING,Refinery,Indiana,United States,2815 Indianapolis Boulevard,46394,Lake,2,337000,-87.483557,41.662594,Indiana-Illinois-Kentucky,BP PLC
+166,30,EXXON MOBIL CORP,EXXONMOBIL REFINING & SUPPLY CO,BILLINGS,Refinery,Montana,United States,700 Exxonmobil Road,59101,Yellowstone,4,60000,-108.433534,45.81118,Rocky Mountain,EXXON MOBIL CORP
+167,31,WESTERN REFINING INC.,WESTERN REFINING SOUTHWEST INC,GALLUP,Refinery,New Mexico,United States,Route 3,87301,McKinley,3,21100,-108.742992,35.524548,New Mexico,WESTERN REFINING INC.
+168,32,BP PLC,BP West Coast Products LLC,FERNDALE,Refinery,Washington,United States,4519 Grandview Road,98230,Whatcom,5,225000,-122.733765,48.889496,West Coast,BP PLC
+169,33,SINCLAIR OIL CORP,SINCLAIR WYOMING REFINING CO,SINCLAIR,Refinery,Wyoming,United States,100 Washington Avenue,82334,Carbon,4,74000,-107.118126,41.78392,Rocky Mountain,SINCLAIR OIL CORP
+170,34,SUNCOR ENERGY INC,SUNCOR ENERGY (USA) INC,COMMERCE CITY WEST,Refinery,Colorado,United States,5801 Brighton Boulevard,80022,Adams,4,67000,-104.946976,39.801684,Rocky Mountain,SUNCOR ENERGY INC
+171,35,VALERO ENERGY CORP,VALERO REFINING CO OKLAHOMA,ARDMORE,Refinery,Oklahoma,United States,1 Valero Way,73401,Carter,2,85000,-97.108363,34.201717,Oklahoma-Kansas-Missouri,VALERO ENERGY CORP
+172,36,HOLLYFRONTIER CORP,FRONTIER REFINING INC,CHEYENNE,Refinery,Wyoming,United States,300 Morrie Avenue,82007,Laramie,4,47000,-104.796627,41.12538,Rocky Mountain,HOLLYFRONTIER CORP
+173,37,PBF ENERGY CO LLC,PAULSBORO REFINING CO LLC,PAULSBORO,Refinery,New Jersey,United States,800 Billingsport Road,8066,Gloucester,1,160000,-75.253147,39.834547,East Coast,PBF ENERGY CO LLC
+174,38,VALERO ENERGY CORP,VALERO REFINING NEW ORLEANS LLC,NORCO,Refinery,Louisiana,United States,14902 River Road  Destrehan,70047,St. Charles,3,205000,-90.395287,29.985737,Louisiana Gulf Coast,VALERO ENERGY CORP
+175,39,CHEVRON CORP,CHEVRON USA INC,PASCAGOULA,Refinery,Mississippi,United States,250 Industrial Road,39581,Jackson,3,330000,-88.500721,30.377991,Louisiana Gulf Coast,CHEVRON CORP
+176,40,HOLLYFRONTIER CORP,FRONTIER EL DORADO REFINING CO,EL DORADO,Refinery,Kansas,United States,1401 Douglas Road,67042,Butler,2,138000,-96.865517,37.802007,Oklahoma-Kansas-Missouri,HOLLYFRONTIER CORP
+177,41,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,LINDEN,Refinery,New Jersey,United States,1400 South Park Avenue,7036,Union,1,238000,-74.219364,40.640751,East Coast,PHILLIPS 66 COMPANY
+178,42,PDV AMERICA INC,CITGO PETROLEUM CORP,LAKE CHARLES,Refinery,Louisiana,United States,Calcasieu Ship Channel,70605,Calcasieu,3,427800,-93.278482,30.141252,Louisiana Gulf Coast,PDV AMERICA INC
+179,43,CHEVRON CORP,CHEVRON USA INC,HONOLULU,Refinery,Hawaii,United States,91-480 Malakole Street,96709,Honolulu,10,54000,-158.113774,21.313856,West Coast,CHEVRON CORP
+180,44,MOTIVA ENTERPRISES LLC,Motiva Enterprises LLC,CONVENT,Refinery,Louisiana,United States,10700 Louisiana 44,70723,St. James,3,235000,-90.904299,30.085646,Louisiana Gulf Coast,MOTIVA ENTERPRISES LLC
+181,45,MARTIN RESOURCE MANAGEMENT GRP,MARTIN MIDSTREAM PARTNERS LP,SMACKOVER,Refinery,Arkansas,United States,484 East 6th Street,71762,Union,3,7500,-92.719849,33.364878,North Louisiana-Arkansas,MARTIN RESOURCE MANAGEMENT GRP
+182,46,EXXON MOBIL CORP,EXXONMOBIL REFINING & SUPPLY CO,JOLIET,Refinery,Illinois,United States,Interstate 55 & Arsenal Road,60410,Will,2,238600,-88.195294,41.416247,Indiana-Illinois-Kentucky,EXXON MOBIL CORP
+183,47,WRB REFINING LP,WRB REFINING LP,WOOD RIVER,Refinery,Illinois,United States,900 South Central Avenue,62097,Madison,2,306000,-90.07901,38.84279,Indiana-Illinois-Kentucky,WRB REFINING LP
+184,48,CHS INC,NCRA,MCPHERSON,Refinery,Kansas,United States,1391 Iron Horse Road,67460,McPherson,2,85500,-97.668697,38.347141,Oklahoma-Kansas-Missouri,CHS INC
+185,49,SILVER EAGLE REFINING INC,Silver Eagle Refining,EVANSTON,Refinery,Wyoming,United States,2990 County Road 180,82930,Uinta,4,3000,-110.963565,41.273825,Rocky Mountain,SILVER EAGLE REFINING INC
+186,50,HOLLYFRONTIER CORP,HOLLY REFINING & MARKETING CO,TULSA,Refinery,Oklahoma,United States,1700 South Union Avenue,74107,Tulsa,2,70300,-96.011509,36.137681,Oklahoma-Kansas-Missouri,.
+187,51,ERGON INC,ERGON WEST VIRGINIA INC,NEWELL,Refinery,West Virginia,United States,9995 Ohio River Boulevard,26050,Hancock,1,20000,-80.629077,40.609189,Appalachian No. 1,ERGON INC
+188,52,PDV AMERICA INC,PDV Midwest Refining LLC,LEMONT,Refinery,Illinois,United States,135th Street & New Avenue,60439,Cook,2,167000,-88.048637,41.640928,Indiana-Illinois-Kentucky,PDV AMERICA INC
+189,53,SUNOCO INC,SUNOCO INC (R&M),PHILADELPHIA,Refinery,Pennsylvania,United States,3144 West Passyunk Avenue,19145,Philadelphia,1,335000,-75.197882,39.920113,East Coast,CARLYLE GROUP
+190,54,MARATHON PETROLEUM CORP,MARATHON PETROLEUM CO LLC,CATLETTSBURG,Refinery,Kentucky,United States,11631 Old US Highway 23,41129,Boyd,2,233000,-82.599501,38.349074,Indiana-Illinois-Kentucky,MARATHON PETROLEUM CORP
+191,55,ERGON INC,ERGON REFINING INC,VICKSBURG,Refinery,Mississippi,United States,2125 Haining Road,39183,Warren,3,23000,-90.899205,32.39009,North Louisiana-Arkansas,ERGON INC
+192,56,CALUMET LUBRICANTS CO,CALUMET LUBRICANTS CO LP,COTTON VALLEY,Refinery,Louisiana,United States,1756 Old Highway 7,71018,Webster,3,13020,-93.414838,32.797371,North Louisiana-Arkansas,"CALUMET SPECIALTY PRODUCTS PARTNERS, L.P."
+193,57,PDV AMERICA INC,CITGO REFINING & CHEMICAL INC,CORPUS CHRISTI,Refinery,Texas,United States,4806 Up River Road,78407,Nueces,3,163000,-97.443686,27.803426,Texas Gulf Coast,PDV AMERICA INC
+194,58,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,FERNDALE,Refinery,Washington,United States,3901 Unick Road  Ferndale,98248,Whatcom,5,100000,-122.691062,48.833948,West Coast,PHILLIPS 66 COMPANY
+195,59,CHALMETTE REFINING LLC,Chalmette Refining LLC,CHALMETTE,Refinery,Louisiana,United States,500 West Saint Bernard Highway,70043,St. Bernard,3,192500,-89.968358,29.937638,Louisiana Gulf Coast,PBF ENERGY CO LLC
+196,60,ALON ISRAEL OIL COMPANY LTD,ALON USA ENERGY INC,BIG SPRING,Refinery,Texas,United States,200 Refinery Road,79720,Howard,3,67000,-101.421452,32.268433,Texas Inland,ALON ISRAEL OIL COMPANY LTD
+197,61,SINCLAIR OIL CORP,LITTLE AMERICA REFINING CO,EVANSVILLE,Refinery,Wyoming,United States,5700 E Highway 20 26,82636,Natrona,4,24500,-106.069376,42.857347,Rocky Mountain,SINCLAIR OIL CORP
+198,62,TESORO CORP,Tesoro West Coast,SALT LAKE CITY,Refinery,Utah,United States,474 West 900 North,84103,Salt Lake,4,57500,-111.903631,40.788929,Rocky Mountain,TESORO CORP
+199,63,Marathon Oil,Catlettsburg Refinery,Catlettsburg,Refinery,Kentucky,United States,.,0,Boyd,2,240000,-82.598611,38.374167,.,.
+200,64,NORTHERN TIER ENERGY LLC,ST PAUL PARK REFINING CO LLC,SAINT PAUL,Refinery,Minnesota,United States,301 Saint Paul Park Road,55071,Ramsey,2,74000,-92.993552,44.84904,Minnesota-Wisconsin-North and South Dakota,NORTHERN TIER ENERGY LLC
+201,65,PLACID OIL CO,PLACID REFINING CO,PORT ALLEN,Refinery,Louisiana,United States,1940 La Highway 1 North,70767,West Baton Rouge,3,57000,-91.210859,30.476661,Louisiana Gulf Coast,PLACID OIL CO
+202,66,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,PONCA CITY,Refinery,Oklahoma,United States,1000 South Pine Street,74601,Kay,2,198400,-97.089757,36.691554,Oklahoma-Kansas-Missouri,PHILLIPS 66 COMPANY
+203,67,BP HUSKY REFINING LLC,BP-HUSKY REFINING LLC,TOLEDO,Refinery,Ohio,United States,4001 Cedar Point Road,43616,Lucas,2,135000,-83.457427,41.672848,Indiana-Illinois-Kentucky,BP HUSKY REFINING LLC
+204,68,VALERO ENERGY CORP,VALERO ENERGY CORPORATION,SUNRAY,Refinery,Texas,United States,6701 FM 119,79086,Moore,3,156000,-101.82471,36.156676,Texas Inland,VALERO ENERGY CORP
+205,69,VALERO ENERGY CORP,VALERO REFINING CO TEXAS LP,TEXAS CITY,Refinery,Texas,United States,1301 Texas 197 Loop,77590,Galveston,3,225000,-94.902681,29.397315,Texas Gulf Coast,VALERO ENERGY CORP
+206,70,VALERO ENERGY CORP,VALERO ENERGY CORPORATION,THREE RIVERS,Refinery,Texas,United States,301 Le Roy Street,78071,Live Oak,3,93000,-98.185656,28.458988,Texas Inland,VALERO ENERGY CORP
+207,71,CHEVRON CORP,CHEVRON USA INC,SALT LAKE CITY,Refinery,Utah,United States,2351 North 1100 West,84116,Salt Lake,4,45000,-111.921623,40.81937,Rocky Mountain,CHEVRON CORP
+208,72,HUSKY ENERGY INC,LIMA REFINING COMPANY,LIMA,Refinery,Ohio,United States,1150 South Metcalf Street,45804,Allen,2,155000,-84.114205,40.720917,Indiana-Illinois-Kentucky,HUSKY ENERGY INC
+209,73,DELTA AIR LINES INC,MONROE ENERGY LLC,Marcus Hook,Refinery,Pennsylvania,United States,4101 Post Road,19061,.,1,190000,-75.404609,39.826632,East Coast,DELTA AIR LINES INC
+210,74,FORELAND REFINING CORP,FORELAND REFINING CORP,ELY,Refinery,Nevada,United States,HC 34 Box 34830,89301,White Pine,5,2000,-114.88863,39.247439,West Coast,FORELAND REFINING CORP
+211,75,BLACK ELK REFINING LLC,WYOMING REFINING CO,NEW CASTLE,Refinery,Wyoming,United States,740 West Main Street,82701,Weston,4,14000,-104.214485,43.848835,Rocky Mountain,BLACK ELK REFINING LLC
+212,76,TOTAL SA,TOTAL PETROCHEMICALS INC,PORT ARTHUR,Refinery,Texas,United States,7600 32nd Street,77642,Jefferson,3,130000,-93.897527,29.957888,Texas Gulf Coast,TOTAL SA
+213,77,WESTERN REFINING INC.,WESTERN REFINING COMPANY LP,EL PASO,Refinery,Texas,United States,6500 Trowbridge Drive,79905,El Paso,3,122000,-106.403873,31.768998,Texas Inland,WESTERN REFINING INC.
+214,78,CALUMET LUBRICANTS CO,CALUMET LUBRICANTS CO LP,SUPERIOR,Refinery,Wisconsin,United States,4210 Hill Avenue,54880,Douglas,2,38000,-92.076977,46.705763,Minnesota-Wisconsin-North and South Dakota,"CALUMET SPECIALTY PRODUCTS PARTNERS, L.P."
+215,79,HOLLYFRONTIER CORP,HOLLYFRONTIER TULSA REFINING LLC,Tulsa,Refinery,Oklahoma,United States,4333 West 21st Street S,74107,.,2,85000,-96.039428,36.135039,Oklahoma-Kansas-Missouri,HOLLYFRONTIER CORP
+216,80,KOCH INDUSTRIES INC,Flint Hills Resources LP,CORPUS CHRISTI,Refinery,Texas,United States,2825 Suntide Road,78409,Nueces,3,284172,-97.520342,27.83508,Texas Gulf Coast,KOCH INDUSTRIES INC
+217,81,FJ MANAGEMENT INC,BIG WEST OIL CO,NORTH SALT LAKE,Refinery,Utah,United States,333 West Center Street,84054,Davis,4,29400,-111.925124,40.841896,Rocky Mountain,FJ MANAGEMENT INC
+218,82,HOLLYFRONTIER CORP,HOLLYFRONTIER TULSA REFINING LLC,Tulsa,Refinery,Oklahoma,United States,1700 South Union Avenue,74107,.,2,70300,-96.011608,36.137606,Oklahoma-Kansas-Missouri,HOLLYFRONTIER CORP
+219,83,MARATHON PETROLEUM CORP,MARATHON PETROLEUM CO LLC,TEXAS CITY,Refinery,Texas,United States,502 10th Street South,77590,Galveston,3,80000,-94.909318,29.379226,Texas Gulf Coast,MARATHON PETROLEUM CORP
+220,84,VALERO ENERGY CORP,VALERO ENERGY CORPORATION,MERAUX,Refinery,Louisiana,United States,2500 East Saint Bernard Highway,70075,St. Bernard,3,125000,-89.943813,29.930041,Louisiana Gulf Coast,VALERO ENERGY CORP
+221,85,WRB REFINING LP,WRB REFINING LP,BORGER,Refinery,Texas,United States,Philips Avenue,79007,Hutchinson,3,146000,-101.355312,35.694608,Texas Inland,WRB REFINING LP
+222,86,MARATHON PETROLEUM CORP,MARATHON PETROLEUM CO LLC,ROBINSON,Refinery,Illinois,United States,12345 East 1050th Avenue,62454,Crawford,2,206000,-87.758291,39.005613,Indiana-Illinois-Kentucky,MARATHON PETROLEUM CORP
+223,87,HOLLYFRONTIER CORP,NAVAJO REFINING CO LLC,ARTESIA,Refinery,New Mexico,United States,501 East Main,88210,Eddy,3,105000,-104.402484,32.841868,New Mexico,HOLLYFRONTIER CORP
+224,88,TESORO CORP,TESORO ALASKA PETROLEUM CO,KENAI,Refinery,Alaska,United States,54741 Tesoro Road,99611,Kenai Peninsula Borough,6,68000,-151.369957,60.686439,West Coast,TESORO CORP
+225,89,CVR ENERGY,COFFEYVILLE RESOURCES RFG & MKTG,COFFEYVILLE,Refinery,Kansas,United States,400 North Linden Street,67337,Montgomery,2,115700,-95.605154,37.044344,Oklahoma-Kansas-Missouri,CVR ENERGY
+226,90,BUCKEYE PARTNERS LP,BUCKEYE TEXAS PROCESSING LLC,Corpus Christi,Refinery,Texas,United States,1215 Southern Minerals Road,78409,.,3,46250,-97.502744,27.811521,Texas Gulf Coast,BUCKEYE PARTNERS LP
+227,91,MOTIVA ENTERPRISES LLC,Motiva Enterprises LLC,PORT ARTHUR,Refinery,Texas,United States,2555 Savannah Avenue,77640,Jefferson,3,285000,-93.950985,29.888462,Texas Gulf Coast,MOTIVA ENTERPRISES LLC
+228,92,PETROLEO BRASILEIRO SA,PASADENA REFINING SYSTEMS INC,PASADENA,Refinery,Texas,United States,111 Red Bluff Road,77506,Harris,3,100000,-95.210331,29.718599,Texas Gulf Coast,PETROBRAS AMERICA INC
+229,93,COUNTRYMARK COOP INC,COUNTRYMARK COOPERATIVE INC,MOUNT VERNON,Refinery,Indiana,United States,1200 Refinery Road,47620,Posey,2,26500,-87.909951,37.941822,Indiana-Illinois-Kentucky,COUNTRYMARK COOP INC
+230,94,UNITED REFINING INC,UNITED REFINING CO,WARREN,Refinery,Pennsylvania,United States,15 Bradley Street,16365,Warren,1,65000,-79.12446,41.82965,Appalachian No. 1,RED APPLE GROUP INC
+231,95,CALUMET LUBRICANTS CO,CALUMET SHREVEPORT LLC,SHREVEPORT,Refinery,Louisiana,United States,3333 Midway Street,71109,Caddo,3,57000,-93.792919,32.467318,North Louisiana-Arkansas,"CALUMET SPECIALTY PRODUCTS PARTNERS, L.P."
+232,96,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,BELLE CHASSE,Refinery,Louisiana,United States,15551 South Highway 23,70037,Plaquemines,3,247000,-89.981202,29.682012,Louisiana Gulf Coast,PHILLIPS 66 COMPANY
+233,97,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,WESTLAKE,Refinery,Louisiana,United States,2200 Old Spanish Trail,70669,Calcasieu,3,239400,-93.283685,30.245938,Louisiana Gulf Coast,PHILLIPS 66 COMPANY
+234,98,DELEK GROUP LTD,DELEK REFINING LTD,TYLER,Refinery,Texas,United States,425 McMurrey Drive,75702,Smith,3,60000,-95.280321,32.35462,Texas Inland,DELEK GROUP LTD
+235,99,CVR ENERGY,WYNNEWOOD REFINING CO,WYNNEWOOD,Refinery,Oklahoma,United States,906 South Powell Avenue,73098,Garvin,2,70000,-97.170494,34.650228,Oklahoma-Kansas-Missouri,CVR ENERGY
+236,100,TESORO CORP,TESORO HAWAII CORP,EWA BEACH,Refinery,Hawaii,United States,91-1669 Fort Weaver Road,96706,Honolulu,10,93500,-158.009855,21.316013,West Coast,PAR PETROLEUM INC
+237,101,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,WILMINGTON,Refinery,California,United States,1520 East Sepulveda Boulevard,90745,Los Angeles,5,139000,-118.243606,33.804002,West Coast,PHILLIPS 66 COMPANY
+238,102,ACCESS INDUSTRIES,HOUSTON REFINING LP,HOUSTON,Refinery,Texas,United States,12000 Lawndale,77017,Harris,3,273433,-95.23623,29.709696,Texas Gulf Coast,ACCESS INDUSTRIES
+239,103,KERN OIL & REFINING CO,KERN OIL & REFINING CO,BAKERSFIELD,Refinery,California,United States,7724 East Panama Lane,93307,Kern,5,26000,-118.918353,35.296234,West Coast,KERN OIL & REFINING CO
+240,104,TESORO CORP,Tesoro West Coast,Mandan,Refinery,North Dakota,United States,900 Old Red Trail NE,58554,.,2,73860,-100.901835,46.844484,Minnesota-Wisconsin-North and South Dakota,TESORO CORP
+241,105,SAN JOAQUIN REFINING CO INC,SAN JOAQUIN REFINING CO INC,BAKERSFIELD,Refinery,California,United States,7724 East Panama Lane,93307,Kern,5,15000,-118.918353,35.296234,West Coast,SAN JOAQUIN REFINING CO INC
+242,106,VALERO ENERGY CORP,PREMCOR REFINING GROUP INC,MEMPHIS,Refinery,Tennessee,United States,490 Rivergate Drive,38109,Shelby,2,180000,-90.072551,35.073896,Indiana-Illinois-Kentucky,VALERO ENERGY CORP
+243,107,CONNACHER OIL & GAS LTD,MONTANA REFINING CO,GREAT FALLS,Refinery,Montana,United States,1900 10th Street Northeast,59404,Cascade,4,10000,-111.29027,47.525914,Rocky Mountain,"CALUMET SPECIALTY PRODUCTS PARTNERS, L.P."
+244,108,MARATHON PETROLEUM CORP,MARATHON PETROLEUM CO LLC,CANTON,Refinery,Ohio,United States,2408 Gambrinus Avenue Southwest,44706,Stark,2,78000,-81.413558,40.775075,Indiana-Illinois-Kentucky,MARATHON PETROLEUM CORP
+245,109,DELEK GROUP LTD,LION OIL CO,EL DORADO,Refinery,Arkansas,United States,1000 Mchenry Street,71730,Union,3,83000,-92.673597,33.201502,North Louisiana-Arkansas,DELEK GROUP LTD
+246,110,TESORO CORP,Tesoro West Coast,ANACORTES,Refinery,Washington,United States,8505 South Texas Road,98221,Skagit,5,120000,-122.573426,48.480682,West Coast,TESORO CORP
+247,111,MARATHON PETROLEUM CORP,MARATHON PETROLEUM CO LLC,DETROIT,Refinery,Michigan,United States,1300 South Fort Street,48217,Wayne,2,106000,-83.151919,42.280615,Indiana-Illinois-Kentucky,MARATHON PETROLEUM CORP
+248,112,WORLD OIL CO,LUNDAY THAGARD CO,SOUTH GATE,Refinery,California,United States,9302 Garfield Avenue,90280,Los Angeles,5,8500,-118.165239,33.945304,West Coast,WORLD OIL CO
+249,113,ROYAL DUTCH/SHELL GROUP,SHELL CHEMICAL LP,SARALAND,Refinery,Alabama,United States,400 Industrial Parkway,36571,Mobile,3,80000,-88.081032,30.800661,Louisiana Gulf Coast,ROYAL DUTCH/SHELL GROUP
+250,114,COMPAGNIE NATIONALE A  PORTEFEUILLE,US OIL & REFINING CO,TACOMA,Refinery,Washington,United States,3001 Marshall Avenue,98421,Pierce,5,40700,-122.388459,47.256876,West Coast,TRAILSTONE LP
+251,115,CONOCOPHILLIPS,CONOCOPHILLIPS COMPANY,SWEENY,Refinery,Texas,United States,County Road 514,77480,Brazoria,3,247000,-95.761064,29.075048,Texas Gulf Coast,PHILLIPS 66 COMPANY
+252,116,VALERO ENERGY CORP,VALERO REFINING CO TEXAS LP,CORPUS CHRISTI,Refinery,Texas,United States,1147 Cantwell Lane,78407,Nueces,3,200000,-97.446245,27.807109,Texas Gulf Coast,VALERO ENERGY CORP
+253,117,TRANSWORLD OIL USA INC,CALCASIEU REFINING CO,LAKE CHARLES,Refinery,Louisiana,United States,4359 West Tank Farm Road,70605,Calcasieu,3,78000,-93.310882,30.124568,Louisiana Gulf Coast,TRANSWORLD OIL USA INC
+254,118,ACCESS INDUSTRIES,EQUISTAR CHEMICALS LP,La Porte,Refinery,Texas,United States,8280 Sheldon Road,77530,.,3,268000,-95.06781,29.718015,Texas Gulf Coast,ACCESS INDUSTRIES
+255,119,ALON ISRAEL OIL COMPANY LTD,ALON REFINING KROTZ SPRINGS INC,KROTZ SPRINGS,Refinery,Louisiana,United States,356 South Levee Road,70750,St. Landry,3,80000,-91.752053,30.540712,Louisiana Gulf Coast,ALON ISRAEL OIL COMPANY LTD
+256,120,HUNT CONSLD INC,HUNT SOUTHLAND REFINING CO,SANDERSVILLE,Refinery,Mississippi,United States,177 Haney Road,39439,Jones,3,11000,-89.012831,31.813529,North Louisiana-Arkansas,HUNT CONSLD INC
+257,121,TEXAS OIL & CHEMICAL CO,SOUTH HAMPTON RESOURCES INC,Silsbee,Refinery,Texas,United States,7752 W F-M 418,77656,.,3,17900,-94.227363,30.398936,Texas Gulf Coast,TEXAS OIL & CHEMICAL CO
+258,122,KOCH INDUSTRIES INC,Flint Hills Resources LP,SAINT PAUL,Refinery,Minnesota,United States,2209 Childs Road,55106,Ramsey,2,277200,-93.047179,44.930158,Minnesota-Wisconsin-North and South Dakota,KOCH INDUSTRIES INC
+259,123,GOODWAY REFINING LLC,GOODWAY REFINING LLC,ATMORE,Refinery,Alabama,United States,4745 Ross Road,36502,Escambia,3,4100,-87.438011,31.187143,North Louisiana-Arkansas,GOODWAY REFINING LLC
+260,124,ALON ISRAEL OIL COMPANY LTD,PARAMOUNT PETROLEUM CORPORATION,Paramount,Refinery,California,United States,14700 Downey Avenue,90723,.,5,84500,-118.151313,33.899794,West Coast,ALON ISRAEL OIL COMPANY LTD
+261,125,GREKA ENERGY,SANTA MARIA REFINING COMPANY,SANTA MARIA,Refinery,California,United States,1660 Sinton Road,93458,Santa Barbara,5,9500,-120.512047,34.929886,West Coast,GREKA ENERGY
+262,126,EXCEL PARALUBES,EXCEL PARALUBES,Westlake,Refinery,Louisiana,United States,2800 Old Spanish Trail,70669,.,3,285000,-93.283468,30.245624,Louisiana Gulf Coast,EXCEL PARALUBES
+263,127,NUSTAR ENERGY LP,NUSTAR REFINING LLC,SAN ANTONIO,Refinery,Texas,United States,19003 West Interstate 10,78257,Bexar,3,14021,-98.607096,29.618507,Texas Inland,"CALUMET SPECIALTY PRODUCTS PARTNERS, L.P."
+264,128,LINDSAY GOLDBERG LLC,AXEON SPECIALTY PRODUCTS LLC,Paulsboro,Refinery,New Jersey,United States,4 Paradise Road,8066,.,1,74000,-75.225719,39.841803,East Coast,LINDSAY GOLDBERG LLC
+265,129,KOCH INDUSTRIES INC,FLINT HILLS RESOURCES LP,NORTH POLE,Refinery,Alaska,United States,1200 H & H Lane,99705,Fairbanks North Star Borough,6,127459,-147.342582,64.735964,West Coast,.
+266,130,VALERO ENERGY CORP,VALERO REFINING CO CALIFORNIA,Wilmington,Asphalt Plant,California,United States,1651 Alameda Street,90744,Los Angeles,5,6300,-118.231149,33.777134,West Coast,VALERO ENERGY CORP
+267,131,MARATHON PETROLEUM CORP,MARATHON PETROLEUM CO LLC,GARYVILLE,Refinery,Louisiana,United States,4663 West Airline Highway,70051,St. John the Baptist,3,490000,-90.60384,30.073235,Louisiana Gulf Coast,MARATHON PETROLEUM CORP
+268,132,SILVER EAGLE REFINING INC,Silver Eagle Refining,WOODS CROSS,Refinery,Utah,United States,2355 South 1100 West,84087,Davis,4,10250,-111.910257,40.866428,Rocky Mountain,SILVER EAGLE REFINING INC
+269,133,GARCO ENERGY LLC,GARCO ENERGY LLC,DOUGLAS,Refinery,Wyoming,United States,2070 Wyoming 59,82633,Converse,4,3000,-105.264546,43.037363,Rocky Mountain,GENESIS ENERGY LP
+270,134,ARCTIC SLOPE REGIONAL CORP,PETRO STAR INC,VALDEZ,Refinery,Alaska,United States,2.5 Dayville Road,99686,Valdez-Cordova Census Area,6,55000,-146.276442,61.085861,West Coast,ARCTIC SLOPE REGIONAL CORP
+271,135,ROYAL DUTCH/SHELL GROUP,SHELL OIL PRODUCTS US,Saint Rose,Refinery,Louisiana,United States,11842 River Road,70087,.,3,45000,-90.329852,29.938503,Louisiana Gulf Coast,ROYAL DUTCH/SHELL GROUP
+272,136,PBF ENERGY CO LLC,DELAWARE CITY REFINING CO LLC,DELAWARE CITY,Refinery,Delaware,United States,2000 Wrangle Hill Road,19706,New Castle,1,182200,-75.615366,39.581761,East Coast,PBF ENERGY CO LLC
+273,137,ALON ISRAEL OIL COMPANY LTD,ALON BAKERSFIELD OPERATING INC,Bakersfield,Refinery,California,United States,6451 Rosedale Highway,93308,.,5,70000,-119.072157,35.381083,West Coast,ALON ISRAEL OIL COMPANY LTD
+274,138,CONTINENTAL REFINING CO LLC,CONTINENTAL REFINING COMPANY LLC,Somerset,Refinery,Kentucky,United States,Somerset Refinery Road,42501,.,2,5500,-84.613209,37.069359,Indiana-Illinois-Kentucky,CONTINENTAL REFINING CO LLC
+275,139,TESORO CORP,TESORO REFINING & MARKETING CO,Carson,Refinery,California,United States,2350 East 223rd Street,90810,Los Angeles,5,256830,-118.231158,33.824544,West Coast,TESORO CORP
+276,140,ARCTIC SLOPE REGIONAL CORP,PETRO STAR INC,NORTH POLE,Refinery,Alaska,United States,1200 H & H Lane,99705,Fairbanks North Star Borough,6,19700,-147.342582,64.735964,West Coast,ARCTIC SLOPE REGIONAL CORP
+277,141,DAKOTA PRAIRIE REFINING LLC,DAKOTA PRAIRIE REFINING LLC,Dickinson,Refinery,North Dakota,United States,3815 116th Avenue,58601,.,2,19500,-102.899893,46.858083,Minnesota-Wisconsin-North and South Dakota,DAKOTA PRAIRIE REFINING LLC
+278,142,BP PLC,BP PRODUCTS NORTH AMERICA INC,TEXAS CITY,Refinery,Texas,United States,2800 FM 519 East,77590,Galveston,3,400780,-94.934941,29.383915,Texas Gulf Coast,.
+279,143,KINDER MORGAN ENERGY PTNRS LP,KINDER MORGAN CRUDE & CONDENSATE,Galena Park,Refinery,Texas,United States,405 Clinton Drive,77547,.,3,84000,-95.219892,29.732728,Texas Gulf Coast,KINDER MORGAN ENERGY PTNRS LP
+280,144,BLUE DOLPHIN ENERGY CO,LAZARUS ENERGY LLC,Nixon,Refinery,Texas,United States,11372 US-87,78140,.,3,13765,-97.787876,29.261989,Texas Inland,BLUE DOLPHIN ENERGY CO
+281,145,PETROMAX REFINING CO LLC,PETROMAX REFINING CO LLC,Houston,Refinery,Texas,United States,1519 Sheldon Road,77015,.,3,25000,-95.123777,29.75212,Texas Gulf Coast,PETROMAX REFINING CO LLC
+282,0,Pemex,Ciudad Madero Refinery,.,Refinery,Ciudad Madero,Mexico,.,0,.,0,152000,-97.810621,22.280655,.,.
+283,1,Pemex,Salamanca Refinery,.,Refinery,Guanajuato,Mexico,.,0,.,0,207000,-101.180159,20.580329,.,.
+284,2,Pemex,Tula Refinery,.,Refinery,Hidalgo,Mexico,.,0,.,0,340000,-99.277164,20.044141,.,.
+285,3,Pemex,Minatitlan Refinery,.,Refinery,Minatitlan,Mexico,.,0,.,0,167000,-94.528945,17.980341,.,.
+286,4,Pemex,Cadereyta Refinery,.,Refinery,Nuevo León,Mexico,.,0,.,0,246000,-99.937898,25.595916,.,.
+287,5,Pemex,Salina Cruz Refinery,.,Refinery,Salina Cruz,Mexico,.,0, ,0,258500,-95.20207,16.167172,.,.
+288,0,Suncor Energy Inc,Oil Sands Contacts,Fort McMurray,Refinery,Alberta,Canada,885 Memorial Drive,0,.,0,428000,-111.252537,56.669238,.,.
+289,1,Syncrude,Fort McMurray,Fort McMurray,Refinery,Alberta,Canada, ,0,.,0,407000,-111.380278,56.726389,.,.
+290,2,Irving,Irving Oil Refinery, ,Refinery,Nova Scotia,Canada, ,0,.,0,300000,-66.0125,45.278889,.,.
+291,3,Ultramar (Valero),Utrlamar (Valero),Montreal,Refinery,Quebec,Canada,2200 McGill College,0,.,0,265000,-73.574368,45.503326,.,.
+292,4,Shell,Shell Fort Saskatchewan Shell,Fort Saskatchewan,Refinery, ,Canada,110 Town Crest Road,0,.,0,255000,-113.09395,53.79858,.,.
+293,5,Marathon Oil,Catlettsburg Refinery,Catlettsburg,Refinery,Ohio,Canada, ,0,.,0,240000,-82.598611,38.374167,.,.
+294,6,Imperial,Edmonton,Edmonton,Refinery,Alberta,Canada,Highway 16A East and 34 Street,0,.,0,187000,-113.498323,53.542892,.,.
+295,7,Co-op Refinery/Upgrader,Regina,Regina,Refinery,Saskatchewan,Canada,550E 9th Avenue North GD Stn Main,0,.,0,145000,-104.605865,50.444778,.,.
+296,8,Suncor Energy Inc,Suncor Energy Products Partnership - Edmonton Refinery,Edmonton,Refinery,Alberta,Canada,97 Stn Main,0,.,0,140000,-113.498323,53.542892,.,.
+297,9,Suncor Energy Inc,Suncor Energy Products Partnership - Montreal Refinery,Montreal,Refinery,Quebec,Canada,11701 Sherbrooke Street East,0,.,0,137000,-73.515493,45.639497,.,.
+298,10,CNRL Horizon,Fort McMurray,Fort McMurray,Refinery,Alberta,Canada, ,0,.,0,135000,-111.380278,56.726389,.,.
+299,11,Imperial Oil,Sarnia Refinery Plant,Sarnia,Refinery,Ontario,Canada,602 Christina Street South,0,.,0,121000,-82.415397,42.954428,.,.
+300,12,Nroth Atlantic Refining Limited,North Atlantic Refinery,Come By Chance,Refinery,Newfoundland & Labrador,Canada,1 Refinery Road,0,.,0,115000,-53.857718,47.363993,.,.
+301,13,Imperial Oil,Naticoke Refinery,Nanticoke,Refinery,Ontario,Canada,225 2nd Concession,0,.,0,112000,-79.94818,42.924982,.,.
+302,14,Shell,Edmonton, ,Refinery,Alberta,Canada, ,0,.,0,100000,-113.387778,53.541111,.,.
+303,15,Imperial Oil,Imperial Oil Marine Terminal,Dartmouth,Refinery,Nova Scotia,Canada,Pleasant Street,0,.,0,88000,-63.506941,44.667757,.,.
+304,16,Suncor Energy Inc,Suncor Energy Products Partnership - Sarnia Refinery,Sarnia,Refinery,Ontario,Canada,1900 River Road,0,.,0,85000,-82.323223,42.947317,.,.
+305,17,Husky Upgrader,Lloydminster, ,Refinery,Saskatchewan,Canada, ,0,.,0,82000,-109.94608,53.263,.,.
+306,18,NOVA Chemicals (Canada) Ltd.,Sarnia Refinery Plant,Corunna,Refinery,Ontario,Canada,785 Petrolia Line,0,.,0,80000,-82.401281,42.887626,.,.
+307,19,Shell,Sarnia Refinery Plant,Corunna,Refinery,Ontario,Canada,150 St. Clair Parkway,0,.,0,75000,-82.45771,42.90345,.,.
+308,20,Nexen,OPTI/Nexen Long Lake,Anzac,Refinery,Alberta,Canada, ,0,.,0,72000,-110.964444,56.424167,.,.
+309,21,Chevron,Burnaby Refiner,Burnaby,Refinery,British Columbia,Canada,355 North Willingdon Avenue,0,.,0,55000,-123.003212,49.28141,.,.
+310,22,Husky,Husky Oil Ltd, ,Refinery,Saskatchewan,Canada, ,0,.,0,29000,-109.94608,53.263,.,.
+311,23,Moose Jaw,Moose Jaw,Moose jaw,Refinery,Saskatchewan,Canada,641 Manitoba Street E,0,.,0,15000,-105.517415,50.3897,.,.
+312,24,Husky,Prince George, ,Refinery,British Columbia,Canada, ,0,.,0,12000,-122.698889,53.928333,.,.
+313,0,Refining Company of Adrar,CNPC Soralchin Adrar Refinery Algeria,Adrar,Refinery,Adrar,Algeria,.,0, ,0,12000,-0.15626,28.2072,.,.
+314,1,.,Sonatrach Algiers Refinery Algeria,Algiers,Refinery,Alger,Algeria,.,0, ,0,59000,3.11826,36.6753,.,.
+315,2,Sonatrach,Sonatrach Arzew Refinery Algeria,Arzew,Refinery,Oran,Algeria,.,0, ,0,54000,-0.32427,35.82992,.,.
+316,3,.,Sonatrach Hassi Messaoud Refinery Algeria,Hassi Messaoud,Refinery,Ouargla,Algeria,.,0, ,0,27000,6.05682,31.7922,.,.
+317,4,Sonatrach,Sonatrach Skikda Refinery Algeria,Skikda,Refinery,Skikda,Algeria,.,0, ,0,323000,6.97438,36.87311,.,.
+318,5,Fina Petroleos de Angola,Petrofina Luanda Refinery Angola,Cacuaco,Refinery,Luanda,Angola,.,0, ,0,39000,13.297,-8.7786,.,.
+319,6,.,Esso(ExxonMobil) Campana Refinery Argentina,Campana,Refinery,Buenos Aires,Argentina,.,0, ,0,84500,-58.94717,-34.16196,.,.
+320,7,.,Repsol YPF la Plata Refinery Argentina,Ensenada,Refinery,Buenos Aires,Argentina,.,0, ,0,189000,-57.92382,-34.87567,.,.
+321,8,.,Repsol YPF Lujan de Cuyo Refinery Argentina,Lujan de Cuyo,Refinery,Mendoza,Argentina,.,0, ,0,106000,-68.97048,-33.06757,.,.
+322,9,.,Repsol YPF Plaza Huincul Refinery Argentina,Confluencia,Refinery,Neuquen,Argentina,.,0, ,0,25000,-69.18378,-38.92718,.,.
+323,10,Rifinor,Refinor Campo Duran Refinery Argentina,Campo Durán,Refinery,Salta,Argentina,.,0, ,0,32500,-63.66516,-22.20347,.,.
+324,11,Oil Combustibles S.A.,Refisan S.A. San Lorenzo Refinery Argentina,San Lorenzo,Refinery,Santa Fe,Argentina,.,0, ,0,51000,-60.74311,-32.7271,.,.
+325,12,Valero Refining Company-Aruba N.V.,Valero Aruba Refinery Aruba,San Nicolas,Refinery,Aruba,Aruba,"Lagoweg 5, San Nicolas, Aruba, Aruba",0, ,0,275000,-69.90272,12.43146,.,.
+326,13,.,Caltex Kurnell Refinery,Sutherland,Refinery,New South Wales,Australia,.,0, ,0,117000,151.21703,-34.01623,.,.
+327,14,.,Shell Clyde Refinery,Parramatta,Refinery,New South Wales,Australia,.,0, ,0,100000,151.03766,-33.82848,.,.
+328,15,.,BP Bulwer Island Refinery,Brisbane,Refinery,Queensland,Australia,.,0, ,0,73000,153.1394,-27.40301,.,.
+329,16,.,Caltex Lytton Refinery,Brisbane,Refinery,Queensland,Australia,.,0, ,0,104000,153.15816,-27.41307,.,.
+330,17,.,ExxonMobil Port Stanvac Refinery,Onkaparinga,Refinery,South Australia,Australia,.,0, ,0,100000,138.4827,-35.10694,.,.
+331,18,.,ExxonMobil Altona Refinery,Hobsons Bay,Refinery,Victoria,Australia,.,0, ,0,130000,144.85036,-37.85014,.,.
+332,19,.,Shell Geelong Refinery,Greater Geelong,Refinery,Victoria,Australia,.,0, ,0,130000,144.38181,-38.078,.,.
+333,20,.,BP Kwinana Refinery,Kwinana,Refinery,Western Australia,Australia,.,0, ,0,138000,115.7639,-32.22658,.,.
+334,21,.,OMV Schwechat Refinery,Wien Umgebung,Refinery,Lower Austria,Austria,.,0, ,0,175000,16.49968,48.14442,.,.
+335,22,.,SOCAR Azerineftyag Refinery,Baku,Refinery,Baku city,Azerbaijan,.,0, ,0,239000,49.91125,40.39641,.,.
+336,23,.,SOCAR Haydar Aliev Refinery,Baku,Refinery,Baku city,Azerbaijan,.,0, ,0,200000,50.27612,40.43115,.,.
+337,24,.,Petrobangla Chittagong Refinery,Chittagong,Refinery,Chittagong,Bangladesh,.,0, ,0,33000,91.80463,22.26675,.,.
+338,25,.,Slavneft Mozyr Refinery,Mazyr,Refinery,Brest,Belarus,.,0, ,0,95000,29.32195,51.89131,.,.
+339,26,Vitol,Vitol Antwerp N.V. Refinery,Antwerpen,Refinery,Antwerp,Belgium,.,0, ,0,35000,4.37221,51.25078,.,.
+340,27,Total,Total Antwerp Refinery Belgium,Antwerpen,Refinery,Antwerp,Belgium,.,0, ,0,360000,4.32158,51.26557,.,.
+341,28,Petroplus (Belgian Refining Corporation N.V.),Petroplus BRC Antwerp Refinery Belgium,Antwerpen,Refinery,Antwerp,Belgium,"Haven 663  Scheldelaan 490  B-2040 Antwerp, Belgium",0, ,0,107500,4.2907,51.3343,.,.
+342,29,ExxonMobil,ExxonMobil Antwerp Refinery Belgium,Antwerpen,Refinery,Antwerp,Belgium,"Polderdijkweg 2030 Antwerp Haven 447, Belgium",0, ,0,270000,4.34045,51.25477,.,.
+343,30,.,Refisur SA. Carlos Montenegro Sucre Refinery,Oropeza,Refinery,Chuquisaca,Bolivia,.,0, ,0,3000,-65.23893,-19.00702,.,.
+344,31,.,Petrobras Gualberto Villarael Cochabamba Refinery,Chapare,Refinery,Cochabamba,Bolivia,.,0, ,0,40000,-66.12,-17.3543,.,.
+345,32,.,Petrobras Guillermo Elder Bell Santa Cruz Refinery Bolivia,Santa Cruz de la Sierra,Refinery,Santa Cruz,Bolivia,.,0, ,0,20000,-63.2,-17.87,.,.
+346,33,.,Petrobras REMAN (Issac Sabba) Manaus Refinery,Iranduba,Refinery,Amazonas,Brazil,.,0, ,0,46000,-60.09477,-3.16655,.,.
+347,34,.,Petrobras RLAM (Landulpho Alves) Sao Francisco do Conde Refinery,Sao Francisco do Conde,Refinery,Bahia,Brazil,.,0, ,0,307000,-38.570009,-12.708529,.,.
+348,35,.,Petrobras LUBNOR Fortaleza Refinery,Fortaleza,Refinery,Ceara,Brazil,"Avenida Leite Barbosa, S/N - Mucuripe, Av. Leite Barbosa - Cais do Porto, Fortaleza - CE, 60180-420",0, ,0,6000,-38.46931,-3.71657,.,.
+349,36,.,Petrobras REGAP (Gabriel Passos) Betim Refinery,Betim,Refinery,Minas Gerais,Brazil,.,0, ,0,151000,-44.09681,-19.97676,.,.
+350,37,.,Petrobras REPAR (Pres. Getulio Vargas) Araucaria Refinery,Araucaria,Refinery,Parana,Brazil,.,0, ,0,196000,-49.35821,-25.56763,.,.
+351,38,.,Grupo Peixoto de Castro/Repsol-YPF Manguinhos Refinery,Arraial do Cabo,Refinery,Rio de Janeiro,Brazil,.,0, ,0,14000,-42.03097,-22.95931,.,.
+352,39,.,Petrobras REDUC (Duque de Caxias) Refinery,Duque de Caxias,Refinery,Rio de Janeiro,Brazil,.,0, ,0,242000,-43.26698,-22.71987,.,.
+353,40,.,Ipiranga Pelotas Refinery,Pelotas,Refinery,Rio Grande do Sul,Brazil,.,0, ,0,12500,-52.27054,-31.75832,.,.
+354,41,.,Petrobras REFAP (Alberto Pasqualini) Canoas Refinery,Canoas,Refinery,Rio Grande do Sul,Brazil,.,0, ,0,189000,-51.16544,-29.87439,.,.
+355,42,.,Petrobras RECAP (Capuava) Maua Refinery,Maua,Refinery,Sao Paulo,Brazil,.,0, ,0,53000,-46.47564,-23.64112,.,.
+356,43,.,Petrobras REPLAN Paulinia Refinery,Paulinia,Refinery,Sao Paulo,Brazil,.,0, ,0,360000,-47.12836,-22.72756,.,.
+357,44,.,Petrobras REVAP (Henrique Lage) Sao Jose dos Campos Refinery,Sao Jose dos Campos,Refinery,Sao Paulo,Brazil,.,0, ,0,226000,-45.82072,-23.19085,.,.
+358,45,.,Petrobras RPBC (Pres. Bernardes) Cubatao Refinery,Cubatao,Refinery,Sao Paulo,Brazil,.,0, ,0,170000,-46.43462,-23.86779,.,.
+359,46,.,BSP Brunei Refinery,Seria,Refinery,Belait,Brunei Darussalam,.,0, ,0,8600,114.3433,4.61965,.,.
+360,47,LUKOIL Neftochim Burgas AD,LUKEOIL Neftokhim Burgas Refinery Bulgaria,Burgas,Refinery,Burgas,Bulgaria,.,0, ,0,208000,27.32689,42.5403,.,.
+361,48,Societe Nationale de Raffinage S.A. (SONARA),SONARA Limbe Refinery Cameroon,Fako,Refinery,Sud-Ouest,Cameroon,.,0, ,0,42000,9.12732,4.01347,.,.
+362,49,.,Empresa Nacional de Petroleo Concon Refinery,Valparaiso,Refinery,V Region de Valparaiso,Chile,.,0, ,0,97650,-71.50113,-32.92852,.,.
+363,50,.,Empresa Nacional de Petroleo Bio-Bio Refinery,Concepción,Refinery,VIII Region del Bio - Bio,Chile,.,0, ,0,113400,-73.12513,-36.77918,.,.
+364,51,.,Empresa Nacional de Petroleo Gregorio Refinery,Chacabuco,Refinery,XII Region de Magallanes y la Antartica Chilena,Chile,.,0, ,0,15700,-70.87444,-53.13453,.,.
+365,52,.,SINOPEC Anqing Company Refinery,Anqing,Refinery,Anhui,China,.,0, ,0,110000,117.01962,30.5286,.,.
+366,53,.,SINOPEC Beijing Yanshan Company Refinery,Beijing,Refinery,Beijing,China,.,0, ,0,165000,116.18633,39.91116,.,.
+367,54,.,CNCP (PetroChina) Lanzhou Refinery,Lanzhou,Refinery,Gansu,China,.,0, ,0,112000,103.60818,36.12593,.,.
+368,55,.,SINOPEC CPCC Guangzhou Branch Refinery,Dongguan,Refinery,Guangdong,China,.,0, ,0,150000,113.67684,22.7486,.,.
+369,56,.,SINOPEC Maoming Company Refinery,Maoming,Refinery,Guangdong,China,.,0, ,0,265000,110.84483,21.82415,.,.
+370,57,.,SINOPEC Beihai Company Refinery,Beihai,Refinery,Guangxi Zhuang,China,.,0, ,0,12000,109.06446,21.47044,.,.
+371,58,.,SINOPEC Cangzhou Company Refinery,Cangzhou,Refinery,Hebei,China,.,0, ,0,70000,116.87434,38.33889,.,.
+372,59,.,CNCP (PetroChina) Daqing Petrochemical Refinery,Daqing,Refinery,Heilongjiang,China,.,0, ,0,122000,124.82719,46.56157,.,.
+373,60,.,SINOPEC Luoyang Company,Luoyang,Refinery,Henan,China,.,0, ,0,100000,112.51956,34.70053,.,.
+374,61,.,SINOPEC Jingmen Company,Jingmen,Refinery,Hubei,China,.,0, ,0,100000,112.1857,30.97807,.,.
+375,62,.,SINOPEC Wuhan Company Refinery,Wuhan,Refinery,Hubei,China,.,0, ,0,80000,114.42901,30.65233,.,.
+376,63,.,SINOPEC CPCC Changling Company Refinery,Yueyang,Refinery,Hunan,China,.,0, ,0,100000,113.16294,29.37263,.,.
+377,64,.,SINOPEC Jinling Company Refinery,Nanjing,Refinery,Jiangsu,China,.,0, ,0,265000,118.78811,32.26196,.,.
+378,65,.,SINOPEC Jiujiang Company Refinery,Jiujiang,Refinery,Jiangxi,China,.,0, ,0,98000,116.06622,29.73893,.,.
+379,66,.,CNCP (PetroChina) Jilin Chemical Refinery,Jilin,Refinery,Jilin,China,.,0, ,0,115000,126.48232,43.96765,.,.
+380,67,.,CNCP (PetroChina) Dalian Petrochemical Refinery,Dalian,Refinery,Liaoning,China,.,0, ,0,144000,121.81665,39.0206,.,.
+381,68,.,CNCP (PetroChina) Fushun Petrochemical Refinery,Fushun,Refinery,Liaoning,China,.,0, ,0,186000,124.03889,41.83474,.,.
+382,69,.,CNCP (PetroChina) Jinxi Refinery,Jinzhou,Refinery,Liaoning,China,.,0, ,0,112000,121.04504,40.834,.,.
+383,70,.,CNCP (PetroChina) Jinzhou Petrochemical Refinery,Jinzhou,Refinery,Liaoning,China,.,0, ,0,112000,120.98251,41.05163,.,.
+384,71,.,WEPEC Dalain Refinery,Dalian,Refinery,Liaoning,China,.,0, ,0,200000,121.85343,38.98856,.,.
+385,72,.,SINOPEC Jinan Company,Jinan,Refinery,Shandong,China,.,0, ,0,21000,117.17723,36.73766,.,.
+386,73,.,SINOPEC Qilu Company Refinery,Zibo,Refinery,Shandong,China,.,0, ,0,195000,118.05707,36.76551,.,.
+387,74,.,SINOPEC Shanghai Gaoqiao Oil Refinery,Shanghai,Refinery,Shanghai,China,.,0, ,0,220000,121.40325,31.46353,.,.
+388,75,.,SINOPEC Tianjin Company Refinery,Tianjin,Refinery,Tianjin,China,.,0, ,0,100000,117.73339,38.97571,.,.
+389,76,.,CNCP (PetroChina) Dushanzi Refinery,Karamay,Refinery,Xinjiang Uygur,China,.,0, ,0,120000,84.8638,44.36397,.,.
+390,77,.,CNCP (PetroChina) Urumqi Petrochemical,Urumqi,Refinery,Xinjiang Uygur,China,.,0, ,0,101000,87.65048,43.74638,.,.
+391,78,.,SINOPEC Zhenhai Refinery,Ningbo,Refinery,Zhejiang,China,.,0, ,0,345000,121.66684,29.98097,.,.
+392,79,Ecopetrol S.A.,Ecopetrol Cartagena Refinery,Cartagena de Indias,Refinery,Bolivar,Colombia,.,0, ,0,76700,-75.50256,10.3166,.,.
+393,80,Ecopetrol S.A.,Ecopetrol Barrancabaermeja-Santander Refinery,Barrancabermeja,Refinery,Santander,Colombia,.,0, ,0,250000,-73.87823,7.07202,.,.
+394,81,.,CORAF Pointe Noire Refinery Congo,Loandjili (Pointe Noire,Refinery,Kouilou,Congo,.,0, ,0,21000,11.83433,-4.78921,.,.
+395,82,.,Recope Puerto Limon Refinery,Limon,Refinery,Limon,Costa Rica,.,0, ,0,25000,-83.02964,9.99399,.,.
+396,83,.,SMB Abidjan Refinery,Abidjan,Refinery,Lagunes,Cote DIvoire,.,0, ,0,65200,-3.99239,5.25976,.,.
+397,84,INA Industrija Nafte d.d.,INA Group Rijeka Refinery Croatia,Urinj,Refinery,Primorsko-Goranska,Croatia,.,0, ,0,102000,14.5352,45.28288,.,.
+398,85,INA Industrija Nafte d.d.,INA Group Sisak Refinery Croatia,Sisak,Refinery,Sisacko-Moslavacka,Croatia,.,0, ,0,61000,16.407,45.45482,.,.
+399,86,.,Cupet Cienfuegos Refinery,Cienfuegos,Refinery,Cienfuegos,Cuba,.,0, ,0,76000,-80.52041,22.1911,.,.
+400,87,.,Cupet Nico Lopez Refinery,Havana,Refinery,Ciudad de la Habana,Cuba,.,0, ,0,122000,-82.32186,23.13651,.,.
+401,88,.,Cupet Hermanos Diaz Refinery,Santiago de Cuba,Refinery,Santiago de Cuba,Cuba,.,0, ,0,102500,-75.87273,20.00581,.,.
+402,89,Paramo,PARAMO Pardubice Refinery Czech,Pardubice,Refinery,Pardubicky,Czech Republic,.,0, ,0,15000,15.743623,50.027138,.,.
+403,90,.,Ceska Rafinerska Kralupy Refinery,Kralupy,Refinery,Stredocesky,Czech Republic,.,0, ,0,66000,14.32684,50.25771,.,.
+404,91,.,Ceska Rafinerska Litvinov Refinery,Litvinov,Refinery,Ustecky,Czech Republic,.,0, ,0,110000,13.6123,50.56326,.,.
+405,92,Royal Dutch Shell,SHELL Fredericia Refinery Denmark,Fredericia,Refinery,Central Jutland,Denmark,.,0, ,0,68000,9.747105,55.593285,.,.
+406,93,.,StatOil Kalundborg Refinery,Kalundborg,Refinery,Zealand,Denmark,.,0, ,0,110000,11.0964,55.65622,.,.
+407,94,.,Cairo Petroleum Refining Company Tanta Refinery,Tanta,Refinery,Al Gharbiyah,Egypt,.,0, ,0,35000,30.96257,30.7934,.,.
+408,95,.,Alexandria Petroleum Company Amerya Refinery,Alexandria,Refinery,Al Iskandariyah,Egypt,.,0, ,0,75000,29.84092,31.01274,.,.
+409,96,.,Alexandria Petroleum Company El Mex Refinery,Alexandria,Refinery,Al Iskandariyah,Egypt,.,0, ,0,115000,29.67108,31.04917,.,.
+410,97,.,MIDOR Alexandria Refinery,Alexandria,Refinery,Al Iskandariyah,Egypt,.,0, ,0,100000,29.86311,31.0983,.,.
+411,98,.,Cairo Petroleum Refining Company Mostorod Refinery,Cairo,Refinery,Al Qalyubiyah,Egypt,.,0, ,0,145000,31.29882,30.14276,.,.
+412,99,.,El Suez Refining Company Suez Refinery,Suez,Refinery,As Suways,Egypt,.,0, ,0,65000,32.52024,29.95863,.,.
+413,100,.,El-Nasr Petroleum Company Suez Refinery,Suez,Refinery,As Suways,Egypt,.,0, ,0,80000,32.53276,29.95729,.,.
+414,101,.,Assyout Petroleum Company Asyut Refinery,Asyut,Refinery,Asyut,Egypt,.,0, ,0,52000,31.16276,27.21103,.,.
+415,102,.,El Nasr Refining Wadi Feiran Refinery,.,Refinery,Helwan,Egypt,.,0, ,0,10000,33.22279,28.72978,.,.
+416,103,.,ExxonMobil Acajutla Refinery Argentina,Acajutla,Refinery,Sonsonate,El Salvador,.,0, ,0,22000,-89.82771,13.56718,.,.
+417,104,.,Fortum Oyj Porvoo Refinery,Eastern Uusimaa,Refinery,Southern Finland,Finland,.,0, ,0,160000,25.53548,60.31073,.,.
+418,105,.,Fortum Oyj Naantali Refinery,Finland Proper,Refinery,Western Finland,Finland,.,0, ,0,40000,22.09287,60.45067,.,.
+419,106,.,Shell Reichstett Refinery,Bas-Rhin,Refinery,Bas-Rhin,France,.,0, ,0,77000,7.76679,48.66104,.,.
+420,107,.,BP Lavera Marseilles Refinery,Martigues,Refinery,Bouches-du-Rhone,France,.,0, ,0,220000,5.00396,43.39076,.,.
+421,108,.,ExxonMobil Fos-sur-Mer Refinery,Fos-sur-Mer,Refinery,Bouches-du-Rhone,France,.,0, ,0,140000,4.9243,43.45032,.,.
+422,109,.,Shell Berre L&apos;Etang Refinery,Berre-l'Etang,Refinery,Bouches-du-Rhone,France,.,0, ,0,80000,5.18753,43.503,.,.
+423,110,.,Total Provence Marseilles Refinery,Chateauneuf-les-Martigues,Refinery,Bouches-du-Rhone,France,.,0, ,0,155000,5.10314,43.39586,.,.
+424,111,.,Total Donges Refinery,Loire-Atlantique,Refinery,Loire-Atlantique,France,.,0, ,0,231000,-2.07209,47.31425,.,.
+425,112,.,Total Flandres Mardyck Refinery France,Dunkerque,Refinery,Nord,France,.,0, ,0,160000,2.25818,51.02159,.,.
+426,113,.,Total Feyzin Refinery,Rhone,Refinery,Rhone,France,.,0, ,0,119000,4.84185,45.67007,.,.
+427,114,.,Total Grandpuits Refinery,Seine-Et-Marne,Refinery,Seine-et-Marne,France,.,0, ,0,99000,2.94514,48.59059,.,.
+428,115,.,ExxonMobil Port Jerome-Gravenchon Refinery,Seine-Maritime,Refinery,Seine-Maritime,France,.,0, ,0,270000,0.55077,49.475,.,.
+429,116,.,Total Gonfreville lOrcher Refinery,Seine-Maritime,Refinery,Seine-Maritime,France,.,0, ,0,343000,0.24086,49.4868,.,.
+430,117,.,Total/Shell/Agip Sogara Refinery,Port-Gentil,Refinery,Ogooue-Maritime,Gabon,.,0, ,0,21000,8.76762,-0.68885,.,.
+431,118,.,Shell/ExxonMobil/Ruhr Oel/Conoco Karlsruhe Refinery,Karlsruhe,Refinery,Baden-Wurttemberg,Germany,.,0, ,0,285000,8.32988,49.05895,.,.
+432,119,.,Bayernoil Ingolstadt Refinery,Oberbayern,Refinery,Bavaria,Germany,.,0, ,0,262000,11.4843,48.74925,.,.
+433,120,.,ExxonMobile Ingolstadt Refinery,Oberbayern,Refinery,Bavaria,Germany,.,0, ,0,106000,11.47254,48.78943,.,.
+434,121,.,OMV Burghausen Refinery,Oberbayern,Refinery,Bavaria,Germany,.,0, ,0,70000,12.84201,48.19254,.,.
+435,122,.,PCK Raffinerie GmbH Schwedt Refinery,Brandenburg,Refinery,Brandenburg,Germany,.,0, ,0,210000,14.2352,53.09652,.,.
+436,123,.,Shell Elbe MineralÃ?lwerke Hamburg-Harburg Refinery,Hamburg,Refinery,Hamburg,Germany,.,0, ,0,110000,9.97071,53.4866,.,.
+437,124,.,Tamoil Holborn Hamburg Refinery,Hamburg,Refinery,Hamburg,Germany,.,0, ,0,95000,9.97078,53.48661,.,.
+438,125,.,Louis Dreyfus Group Wilhelmshaven Refinery,Weser-Ems,Refinery,Lower Saxony,Germany,.,0, ,0,220000,8.15151,53.54677,.,.
+439,126,.,Ruhr Oel (BP/PDVSA) Emsland Lingen Refinery,Weser-Ems,Refinery,Lower Saxony,Germany,.,0, ,0,80000,7.30787,52.5612,.,.
+440,127,.,Ruhr Oel (BP/PDVSA) Gelsenkirchen Horst Refinery,Munster,Refinery,North Rhine-Westphalia,Germany,.,0, ,0,246000,7.04736,51.53767,.,.
+441,128,.,Shell Rheinland Werk Godorf Cologne Refinery,Cologne,Refinery,North Rhine-Westphalia,Germany,.,0, ,0,162000,6.98656,50.8608,.,.
+442,129,.,Dow Chemical Buna SOW Leuna Refinery,Leipzig,Refinery,Saxony,Germany,.,0, ,0,222000,12.35685,51.19185,.,.
+443,130,.,TOTAL Raffinerie Mitteldeutschland Spergau Refinery,Halle,Refinery,Saxony-Anhalt,Germany,.,0, ,0,227000,11.99325,51.28805,.,.
+444,131,.,Shell ErdÃ?lwerk Holstein Heide Refinery,Schleswig-Holstein,Refinery,Schleswig-Holstein,Germany,.,0, ,0,84000,9.07351,54.15778,.,.
+445,132,.,TORC Tema Refinery,Tema,Refinery,Greater Accra,Ghana,.,0, ,0,45000,0.00538,5.6674,.,.
+446,133,Hellenic Petroleum,Hellenic Petroleum Aspropyrgos Refinery Greece,Attica,Refinery,Attica,Greece,.,0, ,0,135000,23.604,38.0329,.,.
+447,134,Hellenic Petroleum,Hellenic Petroleum Elefsina Refinery,Attica,Refinery,Attica,Greece,.,0, ,0,100000,23.50778,38.04497,.,.
+448,135,.,Motor Oil Hellas Corinth Refinery,Corinth,Refinery,Corinth,Greece,.,0, ,0,100000,23.0752,37.9185,.,.
+449,136,Hellenic Petroleum,Hellenic Petroleum Thessaloniki Refinery,Thessaloniki,Refinery,Thessaloniki,Greece,.,0, ,0,66500,22.88154,40.68008,.,.
+450,137,.,Mol Szazhalombatta Refinery,Százhalombatta ,Refinery,Fejer,Hungary,.,0, ,0,161000,18.89803,47.28644,.,.
+451,138,Hindustan Petroleum Corporation,HPCL Visakhapatnam Refinery India,Vishakhapatnam,Refinery,Andhra Pradesh,India,.,0, ,0,150000,83.24465,17.7048,.,.
+452,139,IOCL,IOCL Bongaigaon Refinery and Petrochemicals Ltd. (BRPL),Bongaigaon,Refinery,Assam,India,.,0, ,0,48000,90.53294,26.51502,.,.
+453,140,IOCL,IOCL Digboi Refinery,Digboi,Refinery,Assam,India,.,0, ,0,13000,95.61987,27.38502,.,.
+454,141,IOCL,IOCL Guwahati Refinery,"Noonmati, Guwahat",Refinery,Assam,India,.,0, ,0,20000,91.80725,26.18471,.,.
+455,142,Bharat Petroleum Corporation Limited (61.65%) Govt. of Assam (12.35%) Oil India Limited (26.00%),BPCL Numaligarh Refinery Ltd (NRL) India,"Numaligarh, Golaghat",Refinery,Assam,India,.,0, ,0,58000,93.78909,26.58068,.,.
+456,143,IOCL,IOCL Barauni Refinery,Begusarai Barauni,Refinery,Bihar,India,.,0, ,0,116000,86.06001,25.42778,.,.
+457,144,Essar Energy,Essar Oil Refinery India,Vadinar in Jamnagar,Refinery,Gujarat,India,.,0, ,0,240000,69.74739,22.32912,.,.
+458,145,IOCL,IOCL Gujarat Koyali Refinery,Koyali near Vadodara,Refinery,Gujarat,India,.,0, ,0,170000,73.11948,22.37425,.,.
+459,146,Reliance Industries,RPL (Reliance Petroleum Limited) Jamnagar Refinery India,West of Jamnagar,Refinery,Gujarat,India,.,0, ,0,660000,69.8596,22.34516,.,.
+460,147,IOCL,IOCL Panipat Refinery,Baholi Village Panipat,Refinery,Haryana,India,.,0, ,0,240000,76.87831,29.47308,.,.
+461,148,.,MRPL (Mangalore Refinery and Petrochemicals Ltd.) Refinery India,Mangaluru,Refinery,Karnataka,India,.,0, ,0,190000,74.84739,12.9869,.,.
+462,149,Bharat Petroleum Corporation Ltd.,BPCL Kochi Refineries Ltd (KRL),Kochi,Refinery,Kerala,India,.,0, ,0,146000,76.378,9.9722,.,.
+463,150,.,Bharat Oman Refinery (BORL) India,Bina,Refinery,Madhya Pradesh,India,.,0, ,0,120000,78.153,24.248,.,.
+464,151,Bharat Petroleum Corporation,BPCL Mumbai Refinery,Mahul Mumbai,Refinery,Maharashtra,India,.,0, ,0,135000,72.89415,19.01682,.,.
+465,152,Hindustan Petroleum Corporation,HPCL Mumbai Refinery,Mahul Mumbai,Refinery,Maharashtra,India,.,0, ,0,107000,72.90321,19.01794,.,.
+466,153,ONGC,ONGC Uran Refinery,Uran,Refinery,Maharashtra,India,.,0, ,0,320000,72.92784,18.86525,.,.
+467,154,Chennai Petroleum Corporation limited (CPCL),CPCL (Chennai Petroleum Corporation) Manali Refinery India,Tiruvottiyur Chennai,Refinery,Tamil Nadu,India,.,0, ,0,210000,80.27766,13.15994,.,.
+468,155,Chennai Petroleum Corporation limited (CPCL),CPCL (Chennai Petroleum Corporation) Nagapattinam Refinery India,Nagapattinam,Refinery,Tamil Nadu,India,.,0, ,0,20000,79.81099,10.82753,.,.
+469,156,IOCL,IOCL Mathura Refinery,Mathura,Refinery,Uttar Pradesh,India,.,0, ,0,156000,77.68662,27.37846,.,.
+470,157,IOCL,IOCL Haldia Refinery,East Midnapore,Refinery,West Bengal,India,.,0, ,0,116000,88.10433,22.04581,.,.
+471,158,.,Pertamina Musi Refinery,Lhokseumawe,Refinery,Aceh,Indonesia,.,0, ,0,135200,97.0829,5.22349,.,.
+472,159,.,Pertamina Balongan Refinery,Indramayu,Refinery,Jawa Barat,Indonesia,.,0, ,0,125000,108.38807,-6.3717,.,.
+473,160,.,Pertamina Cilacap Refinery,Cilacap,Refinery,Jawa Tengah,Indonesia,.,0, ,0,348000,109.00093,-7.69963,.,.
+474,161,.,Pertamina Balikpapan Refinery,Balikpapan,Refinery,Kalimantan Timur,Indonesia,.,0, ,0,260000,116.81618,-1.2627,.,.
+475,162,.,Pertamina Dumai Refinery,Dumai,Refinery,Riau,Indonesia,.,0, ,0,120000,101.47248,1.67846,.,.
+476,163,.,Pertamina Sungai Pakning Refinery,Palembang,Refinery,Sumatera Selatan,Indonesia,.,0, ,0,50000,104.79944,-2.97816,.,.
+477,164,.,INOC Haditha Refinery????,Al Haditha,Refinery,Al-Anbar,Iraq,.,0, ,0,14000,42.36076,34.07004,.,.
+478,165,.,INOC Basrah Refinery,Basrah,Refinery,Al-Basrah,Iraq,.,0, ,0,126000,47.82224,30.53828,.,.
+479,166,.,INOC Samawah Refinery????,As Samawah,Refinery,Al-Muthanna,Iraq,.,0, ,0,27000,45.26226,31.33652,.,.
+480,167,.,INOC Kirkuk Refinery,Kirkuk,Refinery,As-Sulaymaniyah,Iraq,.,0, ,0,27000,44.31313,35.51615,.,.
+481,168,.,INOC Daurah Refinery,Adhamiya,Refinery,Baghdad,Iraq,.,0, ,0,100000,44.43236,33.27492,.,.
+482,169,.,INOC Khanaqin/Alwand Refinery????,Khanaqin,Refinery,Diyala,Iraq,.,0, ,0,10000,45.38036,34.3206,.,.
+483,170,.,INOC Baiji North Refinery,Tikrit,Refinery,Salah ad-Din,Iraq,.,0, ,0,150000,43.505,35.012,.,.
+484,171,.,INOC Baiji Salahedden Refinery????,Tikrit,Refinery,Salah ad-Din,Iraq,.,0, ,0,140000,43.505,35.012,.,.
+485,172,ConocoPhillips,ConocoPhillips Whitegate Refinery Ireland,Whitegate,Refinery,Cork,Ireland,.,0, ,0,71000,-8.2441,51.8198,.,.
+486,173,.,NIOC Shiraz Refinery,Azarshahr,Refinery,East Azarbaijan,Islamic Republic of Iran,.,0, ,0,40000,45.92754,37.49055,.,.
+487,174,.,NIOC Tabriz Refinery,Tabriz,Refinery,East Azarbaijan,Islamic Republic of Iran,.,0, ,0,112000,46.16122,38.05921,.,.
+488,175,.,NIOC Abadan Refinery,Abadan,Refinery,Khuzestan,Islamic Republic of Iran,.,0, ,0,400000,48.27798,30.34983,.,.
+489,176,.,NIOC Arak Refinery,Arak,Refinery,Markazi,Islamic Republic of Iran,.,0, ,0,150000,49.47678,34.00805,.,.
+490,177,.,NIOC Isfahan Refinery,Rey,Refinery,Tehran,Islamic Republic of Iran,.,0, ,0,225000,51.42795,35.53887,.,.
+491,178,.,Oil Refineries Ltd Ashdod Refinery,Ashdod,Refinery,HaDarom,Israel,.,0, ,0,115000,34.68281,31.84453,.,.
+492,179,.,Oil Refineries Ltd Ashqelon Refinery,Ashkelon,Refinery,HaDarom,Israel,.,0, ,0,125000,34.52882,31.63562,.,.
+493,180,Anonima Petroli Italiana Corporation (API),API Falconara Marittima Ancona Oil Refinery Italy,Fiumesino,Refinery,Ancona,Italy,.,0, ,0,85000,13.37947,43.6387,.,.
+494,181,SARAS Group,Saras SPA Sarroch Oil Refinery Italy,Sarroch,Refinery,Cagliari,Italy,.,0, ,0,300000,9.0184,39.07734,.,.
+495,182,ENI Italy,ENI Gela Oil Refinery Italy,Gela,Refinery,Caltanissetta,Italy,.,0, ,0,100000,14.2745,37.05449,.,.
+496,183,.,Tamoil Cremona Oil Refinery Italy,Cremona,Refinery,Cremona,Italy,.,0, ,0,96000,9.99068,45.13808,.,.
+497,184,IPLOM,Iplom Busalla Oil Refinery Italy,Busalla,Refinery,Genoa,Italy,.,0, ,0,40000,8.94761,44.57471,.,.
+498,185,ENI Italy,ENI Livorno Oil Refinery Italy,Leghorn,Refinery,Livorno,Italy,.,0, ,0,84000,10.3374,43.58738,.,.
+499,186,Italiana Energia Servizi (IES) a susidary of the MOL Group,Italiana Energia Servizi (IES) Mantua Oil Refinery Italy,Frassino Industrial Estate,Refinery,Mantua,Italy,.,0, ,0,55000,10.8217,45.14839,.,.
+500,187,Raffineria Di Milazzo S.P.A.,ENI/Kuwait Petro Milazzo Oil Refinery Italy,Milazzo,Refinery,Messina,Italy,.,0, ,0,80000,15.27267,38.20341,.,.
+501,188,SARPOM,ExxonMobil/Erg Trecate Oil Refinery Italy,San Martino di Trecate,Refinery,Novara,Italy,.,0, ,0,200000,8.78739,45.4398,.,.
+502,189,ENI Italy,ENI Sannazzaro de Burgondi Oil Refinery Italy,Sannazzano,Refinery,Pavia,Italy,.,0, ,0,170000,8.87682,45.09985,.,.
+503,190,.,Total/ERG Rome Oil Refinery Italy,Rome,Refinery,Rome,Italy,.,0, ,0,90000,12.32272,41.85808,.,.
+504,191,ExxonMobil,ExxonMobil Augusta Oil Refinery Italy,Augusta,Refinery,Syracuse,Italy,.,0, ,0,190000,15.17163,37.21267,.,.
+505,192,ERG Raffinerie Mediterranee (ERGMed),ISAB ERG Impianti Nord Oil Refinery Italy,Syracuse,Refinery,Syracuse,Italy,.,0, ,0,160000,15.1886,37.18183,.,.
+506,193,.,ISAB ERG Impianti Sud Oil Refinery Italy,Syracuse,Refinery,Syracuse,Italy,.,0, ,0,214000,15.2155,37.12421,.,.
+507,194,ENI Italy,ENI Taranto Oil Refinery Italy,Punt Rondinella,Refinery,Taranto,Italy,.,0, ,0,110000,17.19333,40.48947,.,.
+508,195,ENI Italy,ENI Porto Marghera Oil Refinery Italy,San Giuliano,Refinery,Venice,Italy,.,0, ,0,80000,12.26971,45.4599,.,.
+509,196,.,NPRC Mizushima Refinery,Kurashiki,Refinery,Ehime,Japan,.,0, ,0,190000,133.754,34.499,.,.
+510,197,.,ExxonMobil Sakai Refinery??,.,Refinery,Gifu,Japan,.,0, ,0,280000,141.04576,45.30891,.,.
+511,198,.,NPRC Muroran Refinery,Muroran,Refinery,Gifu,Japan,.,0, ,0,180000,140.94669,42.36521,.,.
+512,199,.,Cosmo Oil Cosmo Refinery,Ichihara,Refinery,Ibaraki,Japan,.,0, ,0,228000,140.02956,35.48552,.,.
+513,200,.,ExxonMobil Chiba Refinery,Ichihara,Refinery,Ibaraki,Japan,.,0, ,0,176000,140.0634,35.53476,.,.
+514,201,.,Kyokuto Petroleum Ichihara Refinery,Ichihara,Refinery,Ibaraki,Japan,.,0, ,0,228000,140.04759,35.51662,.,.
+515,202,.,Showa Yokkaichi Refinery,Sodegaura,Refinery,Ibaraki,Japan,"1 Kitasode, Sodegaura-shi, Chiba-ken 299-0266, Japan",0, ,0,220000,140.00636,35.47298,.,.
+516,203,.,ExxonMobil Kawasaki Refinery,Kawasaki,Refinery,Kagawa,Japan,.,0, ,0,592000,139.77498,35.52331,.,.
+517,204,.,NPRC Negishi Refinery,Kawasaki,Refinery,Kagawa,Japan,.,0, ,0,366000,139.75652,35.51702,.,.
+518,205,.,NPRC Yokohama Refinery,Yokohoma,Refinery,Kagawa,Japan,.,0, ,0,115000,139.66235,35.4095,.,.
+519,206,.,Tonen Corp Kawasaki Refinery,Kawasaki,Refinery,Kagawa,Japan,.,0, ,0,293000,139.743,35.50957,.,.
+520,207,.,ExxonMobil Wakayama Refinery,Wakayama,Refinery,Nagano,Japan,.,0, ,0,320000,135.11459,34.10362,.,.
+521,208,.,ExxonMobil Okinawa Refinery,Uruma,Refinery,Saga,Japan,.,0, ,0,190000,127.96166,26.35024,.,.
+522,209,.,NPRC Sendai Refinery,Sendai,Refinery,Toyama,Japan,.,0, ,0,145000,141.03728,38.27926,.,.
+523,210,.,Tohoku Oil Co Sendai Complex Refinery,Sendai,Refinery,Toyama,Japan,.,0, ,0,100000,141.02386,38.2786,.,.
+524,211,.,Kazmunaigaz Atyrau Refinery,Makhambetskiy,Refinery,Atyrau,Kazakhstan,.,0, ,0,104400,51.8691,47.16514,.,.
+525,212,.,Kazmunaigaz Pavlodar Refinery,Pavlodarskiy,Refinery,Pavlodar,Kazakhstan,.,0, ,0,162666,76.91263,52.37081,.,.
+526,213,.,Kazmunaigaz Shymkent Refinery,Sayramskiy,Refinery,South Kazakhstan,Kazakhstan,.,0, ,0,160000,69.65261,42.26126,.,.
+527,214,.,Kenya Petroleum Mombasa Refinery,Mombasa,Refinery,Coast,Kenya,.,0, ,0,90000,39.65198,-4.05753,.,.
+528,215,.,KNPC Mina Abdullah Refinery,Kuwait City,Refinery,Al Ahmadi,Kuwait,.,0, ,0,240000,48.15125,29.0069,.,.
+529,216,.,KNPC Mina Al-Ahmadi Refinery,Kuwait City,Refinery,Al Ahmadi,Kuwait,.,0, ,0,412000,48.13481,29.06657,.,.
+530,217,.,KNPC Shuaiba Refinery,Kuwait City,Refinery,Al Ahmadi,Kuwait,.,0, ,0,179000,48.14025,29.03461,.,.
+531,218,.,NOC El-Brega Refinery,Marsa al Brega,Refinery,Ajdabiya,Libyan Arab Jamahiriya,.,0, ,0,10000,19.61702,30.39638,.,.
+532,219,.,NOC Zawia Refinery,Zawia,Refinery,Az Zawiyah,Libyan Arab Jamahiriya,.,0, ,0,120000,12.69664,32.78618,.,.
+533,220,.,NOC Ras Lanuf Refinery,Ras Lanuf,Refinery,Surt,Libyan Arab Jamahiriya,.,0, ,0,220000,18.57474,30.47701,.,.
+534,221,.,Mazeikiu Nafta Butinge Refinery,Palangos,Refinery,Klaipeda,Lithuania,.,0, ,0,263000,21.10592,56.0602,.,.
+535,222,.,Petronas Conoco Melaka II Refinery,Melaka Tengah,Refinery,Melaka,Malaysia,.,0, ,0,93000,102.13342,2.26908,.,.
