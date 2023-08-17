@@ -1,20 +1,22 @@
-#%%
+# -*- coding: utf-8 -*-
+# %%
 import os
-import requests
-import py7zr
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-import geopandas as gpd
-import country_converter as coco
-import shapely as shp
-from pathlib import Path
-from io import BytesIO
-from urllib.request import urlopen
-from zipfile import ZipFile
-from pyproj import CRS
 import re
 import zipfile
+from io import BytesIO
+from pathlib import Path
+from urllib.request import urlopen
+from zipfile import ZipFile
+
+import country_converter as coco
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import py7zr
+import requests
+import shapely as shp
+from pyproj import CRS
 from pypsa.geo import haversine_pts
 from shapely.geometry import Point
 from shapely.ops import unary_union
@@ -23,31 +25,32 @@ pd.set_option("display.max_columns", None)
 pd.set_option("display.max_colwidth", 70)
 
 
-
-#%%
+# %%
 
 # change current directory
 import os
 import sys
 
-module_path = os.path.abspath(os.path.join('../../../../pypsa-earth_old')) # To import helpers
+module_path = os.path.abspath(
+    os.path.join("../../../../pypsa-earth_old")
+)  # To import helpers
 if module_path not in sys.path:
-    sys.path.append(module_path+"/scripts")
-    
+    sys.path.append(module_path + "/scripts")
+
 from _helpers import sets_path_to_root, three_2_two_digits_country
 
 sets_path_to_root("pypsa-earth")
 
 
-#%%
+# %%
 
-# THE FOLLOWING SCRIPT IS DESIGNED AND TESTED FOR THER EUROPEAN DATASET OF IGGIELGN: 
+# THE FOLLOWING SCRIPT IS DESIGNED AND TESTED FOR THER EUROPEAN DATASET OF IGGIELGN:
 # HOWEVER THE SAME CONCEPT CAN BE USED FOR THE GGIT DATASET THAT CAN BE DOWLOADED USING THIS LINK
 # https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx
 
 # AND THEN USE THE FOLLOWING CODE TO FETCH AND START WORKING ON IT:
 
-# fn = "https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx" 
+# fn = "https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx"
 # storage_options = {'User-Agent': 'Mozilla/5.0'}
 # GGIT_gas_pipeline = pd.read_excel(fn, index_col=0, storage_options=storage_options, sheet_name='Gas Pipelines 2022-12-16', header=0)
 
@@ -71,7 +74,7 @@ sets_path_to_root("pypsa-earth")
 # pipelines = pipelines.to_crs(epsg=3857)
 
 
-#%%
+# %%
 
 #  NOW EVERYTHING THAT FOLLOWS IS USING THE IGGIELGN DATASET
 
@@ -79,12 +82,14 @@ sets_path_to_root("pypsa-earth")
 url = "https://zenodo.org/record/4767098/files/IGGIELGN.zip?download=1"
 
 
-#%%
+# %%
 
-IGGIELGN_gas_pipeline = gpd.read_file(r'/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/gas_pipelines/Scigrid/Data/IGGIELGN_PipeSegments.geojson')
+IGGIELGN_gas_pipeline = gpd.read_file(
+    r"/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/gas_pipelines/Scigrid/Data/IGGIELGN_PipeSegments.geojson"
+)
 
 
-#%%
+# %%
 
 df = IGGIELGN_gas_pipeline.copy()
 
@@ -97,7 +102,8 @@ to_drop = df.columns.intersection(to_drop)
 df.drop(to_drop, axis=1, inplace=True)
 
 
-#%%
+# %%
+
 
 def diameter_to_capacity(pipe_diameter_mm):
     """
@@ -133,12 +139,12 @@ def diameter_to_capacity(pipe_diameter_mm):
         return a3 + m3 * pipe_diameter_mm
 
 
-#%%
+# %%
 
-length_factor=1.5
-correction_threshold_length=4
-correction_threshold_p_nom=8
-bidirectional_below=10
+length_factor = 1.5
+correction_threshold_length = 4
+correction_threshold_p_nom = 8
+bidirectional_below = 10
 
 # extract start and end from LineString
 df["point0"] = df.geometry.apply(lambda x: Point(x.coords[0]))
@@ -209,8 +215,7 @@ df["length"].update(
 )
 
 
-
-#%%
+# %%
 
 pipelines = df.copy()
 
@@ -218,16 +223,20 @@ pipelines = df.copy()
 pipelines = pipelines.to_crs(epsg=3857)
 
 
-#%%
+# %%
 
 
 # states = gpd.read_file('/nfs/home/edd32710/projects/HyPAT/Ukraine/pypsa-earth/resources/shapes/gadm_shapes.geojson', encoding='utf-8')
-states = gpd.read_file('/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/gas_pipelines/GADM/gadm36_UKR_1.shp')
+states = gpd.read_file(
+    "/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/gas_pipelines/GADM/gadm36_UKR_1.shp"
+)
 
 # Convert CRS to EPSG:3857 so we can measure distances
-states = states.to_crs(epsg=3857) 
+states = states.to_crs(epsg=3857)
 
-states = states.rename({'GID_1':'gadm_id', 'NAME_1':'name'}, axis=1).loc[:, ['name', 'gadm_id', 'geometry']]
+states = states.rename({"GID_1": "gadm_id", "NAME_1": "name"}, axis=1).loc[
+    :, ["name", "gadm_id", "geometry"]
+]
 
 # states['gadm_id'] = states['gadm_id'].str.replace('UKR', 'UA')
 
@@ -239,9 +248,10 @@ country_borders = gpd.GeoDataFrame(geometry=[country_borders], crs=pipelines.crs
 states.head()
 
 
-#%%
+# %%
 
 from shapely.geometry import LineString, MultiLineString
+
 
 def get_states_in_order(pipeline):
     states_p = []
@@ -249,16 +259,24 @@ def get_states_in_order(pipeline):
     if pipeline.geom_type == "LineString":
         # Interpolate points along the LineString with a given step size (e.g., 5)
         step_size = 5000
-        interpolated_points = [pipeline.interpolate(i) for i in range(0, int(pipeline.length), step_size)]
-        interpolated_points.append(pipeline.interpolate(pipeline.length))  # Add the last point
+        interpolated_points = [
+            pipeline.interpolate(i) for i in range(0, int(pipeline.length), step_size)
+        ]
+        interpolated_points.append(
+            pipeline.interpolate(pipeline.length)
+        )  # Add the last point
 
     elif pipeline.geom_type == "MultiLineString":
         # Iterate over each LineString within the MultiLineString
         for line in pipeline.geoms:
             # Interpolate points along each LineString with a given step size (e.g., 5)
             step_size = 5000
-            interpolated_points = [line.interpolate(i) for i in range(0, int(line.length), step_size)]
-            interpolated_points.append(line.interpolate(line.length))  # Add the last point
+            interpolated_points = [
+                line.interpolate(i) for i in range(0, int(line.length), step_size)
+            ]
+            interpolated_points.append(
+                line.interpolate(line.length)
+            )  # Add the last point
 
     # Check each interpolated point against the state geometries
     for point in interpolated_points:
@@ -272,9 +290,9 @@ def get_states_in_order(pipeline):
     return states_p
 
 
-#%%
+# %%
 
-#Parse the states of the points which are connected by the pipeline geometry object
+# Parse the states of the points which are connected by the pipeline geometry object
 pipelines["nodes"] = None
 pipelines["states_passed"] = None
 pipelines["amount_states_passed"] = None
@@ -282,23 +300,31 @@ pipelines["amount_states_passed"] = None
 for pipeline, row in pipelines.iterrows():
     states_p = get_states_in_order(row.geometry)
     # states_p = pd.unique(states_p)
-    row['states_passed'] = states_p
+    row["states_passed"] = states_p
     row["amount_states_passed"] = len(states_p)
     row["nodes"] = list(zip(states_p[0::1], states_p[1::1]))
     pipelines.loc[pipeline] = row
-print("The maximum number of states which are passed by one single pipeline amounts to {}.".format(pipelines.states_passed.apply(lambda n: len(n)).max()))
+print(
+    "The maximum number of states which are passed by one single pipeline amounts to {}.".format(
+        pipelines.states_passed.apply(lambda n: len(n)).max()
+    )
+)
 
 
-#%%
+# %%
 
-#drop innerstatal pipelines
-pipelines_interstate = pipelines.drop(pipelines.loc[pipelines.amount_states_passed < 2].index)
+# drop innerstatal pipelines
+pipelines_interstate = pipelines.drop(
+    pipelines.loc[pipelines.amount_states_passed < 2].index
+)
 
 # Convert CRS to EPSG:3857 so we can measure distances
 pipelines_interstate = pipelines_interstate.to_crs(epsg=3857)  # 3857
 
 # Perform overlay operation to split lines by polygons
-pipelines_interstate = gpd.overlay(pipelines_interstate, states, how='intersection') # , keep_geom_type=False
+pipelines_interstate = gpd.overlay(
+    pipelines_interstate, states, how="intersection"
+)  # , keep_geom_type=False
 
 
 # Calculate length
@@ -307,69 +333,72 @@ pipelines_interstate = gpd.overlay(pipelines_interstate, states, how='intersecti
 pipelines_interstate
 
 
+# %%
 
-
-#%%
-
-column_set = ['name_1', 'nodes',  'gadm_id', "length" , 'p_nom'] #
+column_set = ["name_1", "nodes", "gadm_id", "length", "p_nom"]  #
 pipelines_per_state = pipelines_interstate.loc[:, column_set].reset_index(drop=True)
 
 # Explode the column containing lists of tuples
-df_exploded = pipelines_per_state.explode('nodes').reset_index(drop=True)
+df_exploded = pipelines_per_state.explode("nodes").reset_index(drop=True)
 
 # Create new columns for the tuples
-df_exploded.insert(0,"bus1", pd.DataFrame(df_exploded['nodes'].tolist())[1])
-df_exploded.insert(0,"bus0", pd.DataFrame(df_exploded['nodes'].tolist())[0])
+df_exploded.insert(0, "bus1", pd.DataFrame(df_exploded["nodes"].tolist())[1])
+df_exploded.insert(0, "bus0", pd.DataFrame(df_exploded["nodes"].tolist())[0])
 
 # Drop the original column
-df_exploded.drop('nodes', axis=1, inplace=True)
+df_exploded.drop("nodes", axis=1, inplace=True)
 
 # Reset the index if needed
 df_exploded.reset_index(drop=True, inplace=True)
 
+
 # Custom function to check if value in column 'gadm_id' exists in either column 'bus0' or column 'bus1'
 def check_existence(row):
-    return row['gadm_id'] in [row['bus0'], row['bus1']]
+    return row["gadm_id"] in [row["bus0"], row["bus1"]]
+
 
 # Apply the custom function to each row and keep only the rows that satisfy the condition
 df_filtered = df_exploded[df_exploded.apply(check_existence, axis=1)]
 
 
-#%%
+# %%
 
-df_grouped = df_filtered.groupby(['bus0', 'bus1', 'name_1'], as_index=False).agg({
-                                                                'length':'sum',
-                                                                'p_nom':'first',
-                                                                })
+df_grouped = df_filtered.groupby(["bus0", "bus1", "name_1"], as_index=False).agg(
+    {
+        "length": "sum",
+        "p_nom": "first",
+    }
+)
 df_grouped
 
 
-#%%
+# %%
 
 # Rename columns to match pypsa-earth-sec format
-df_grouped = df_grouped.rename({'p_nom':'capacity'}, axis=1).loc[:, ['bus0', 'bus1', 'length', 'capacity']]
+df_grouped = df_grouped.rename({"p_nom": "capacity"}, axis=1).loc[
+    :, ["bus0", "bus1", "length", "capacity"]
+]
 # df_exploded = df_exploded.loc[:, ['bus0', 'bus1', 'length']] # 'capacity'
 
 # Group by buses to get average length and sum of capacites of all pipelines between any two states on the route.
-grouped = df_grouped.groupby(['bus0', 'bus1'], as_index=False).agg({
-                                                                'length':'mean',
-                                                                'capacity':'sum'
-                                                                })
+grouped = df_grouped.groupby(["bus0", "bus1"], as_index=False).agg(
+    {"length": "mean", "capacity": "sum"}
+)
 
 grouped
 
 
-
-
-#%%
+# %%
 
 from shapely.geometry import Point
 
 states1 = states.copy()
-states1 = states1.set_index('gadm_id')
+states1 = states1.set_index("gadm_id")
 
 # Create center points for each polygon and store them in a new column 'center_point'
-states1['center_point'] = states1['geometry'].to_crs(3857).centroid.to_crs(4326) # ----> If haversine_pts method  for length calc is used
+states1["center_point"] = (
+    states1["geometry"].to_crs(3857).centroid.to_crs(4326)
+)  # ----> If haversine_pts method  for length calc is used
 # states1['center_point'] = states1['geometry'].centroid
 
 # Initialize a list to store adjacent polygon pairs and their distances
@@ -377,111 +406,129 @@ adjacent_polygons = []
 
 # Iterate over the GeoDataFrame to find adjacent pairs and calculate their distances
 for index, polygon in states1.iterrows():
-    neighbors = states1[states1.geometry.touches(polygon['geometry'])].reset_index()
+    neighbors = states1[states1.geometry.touches(polygon["geometry"])].reset_index()
     for _, neighbor in neighbors.iterrows():
         # Calculate distance between the center points of the two polygons
         # distance = polygon['center_point'].distance(neighbor['center_point'])
-        distance = haversine_pts([Point(polygon['center_point'].coords[0]).x, Point(polygon['center_point'].coords[-1]).y], 
-                                [Point(neighbor['center_point'].coords[0]).x, Point(neighbor['center_point'].coords[-1]).y]) # ----> If haversine_pts method  for length calc is used
+        distance = haversine_pts(
+            [
+                Point(polygon["center_point"].coords[0]).x,
+                Point(polygon["center_point"].coords[-1]).y,
+            ],
+            [
+                Point(neighbor["center_point"].coords[0]).x,
+                Point(neighbor["center_point"].coords[-1]).y,
+            ],
+        )  # ----> If haversine_pts method  for length calc is used
         adjacent_polygons.append((index, neighbor.gadm_id, distance))
 
 # Convert the list of adjacent polygon pairs and distances to a DataFrame
-distance_df = pd.DataFrame(adjacent_polygons, columns=['bus0', 'bus1', 'distance'])
+distance_df = pd.DataFrame(adjacent_polygons, columns=["bus0", "bus1", "distance"])
 
-distance_df['distance'] = distance_df['distance'] #/ 1000 # ----> If haversine_pts method  for length calc is used
+distance_df["distance"] = distance_df[
+    "distance"
+]  # / 1000 # ----> If haversine_pts method  for length calc is used
 # distance_df['distance'] = distance_df['distance'] / 1000
 
-merged_df = pd.merge(grouped, distance_df, on=['bus0', 'bus1'], how='left')
+merged_df = pd.merge(grouped, distance_df, on=["bus0", "bus1"], how="left")
 
 
-length_factor=1.25
+length_factor = 1.25
 
-merged_df['length'] = merged_df['distance'] * length_factor
+merged_df["length"] = merged_df["distance"] * length_factor
 
-merged_df = merged_df.drop('distance', axis=1)
+merged_df = merged_df.drop("distance", axis=1)
 
-merged_df['GWKm'] =  (merged_df['capacity'] / 1000) * merged_df['length']
+merged_df["GWKm"] = (merged_df["capacity"] / 1000) * merged_df["length"]
 
-merged_df.to_csv('/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/Plots/existing_infrastructure/gas_network/outputs/pipelines_IGGIELGN.csv', index=False)
+merged_df.to_csv(
+    "/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/Plots/existing_infrastructure/gas_network/outputs/pipelines_IGGIELGN.csv",
+    index=False,
+)
 merged_df
 
 
-#%%
+# %%
 
-average_length = merged_df['length'].mean
+average_length = merged_df["length"].mean
 print(average_length)
 
-total_system_capacity = merged_df['GWKm'].sum()
+total_system_capacity = merged_df["GWKm"].sum()
 print(total_system_capacity)
 
 
-#%%
+# %%
 
 # PLOT
 
-pipelines = gpd.overlay(pipelines, country_borders, how='intersection')
+pipelines = gpd.overlay(pipelines, country_borders, how="intersection")
 
 from matplotlib.lines import Line2D
 
-
-
-#plot pipelines
+# plot pipelines
 fig, ax = plt.subplots(1, 1)
 fig.set_size_inches(12, 7)
 states.to_crs(epsg=3857).plot(ax=ax, color="white", edgecolor="darkgrey", linewidth=0.5)
 pipelines.loc[(pipelines.amount_states_passed > 1)].to_crs(epsg=3857).plot(
-                                                ax=ax,
-                                                column='p_nom',
-                                                linewidth=2.5,
-                                                #linewidth=pipelines['capacity [MW]'],
-                                                #alpha=0.8,
-                                                categorical=False,
-                                                cmap='viridis_r',
-                                                #legend=True,
-                                                #legend_kwds={'label':'Pipeline capacity [MW]'},
-                                                )
+    ax=ax,
+    column="p_nom",
+    linewidth=2.5,
+    # linewidth=pipelines['capacity [MW]'],
+    # alpha=0.8,
+    categorical=False,
+    cmap="viridis_r",
+    # legend=True,
+    # legend_kwds={'label':'Pipeline capacity [MW]'},
+)
 
 pipelines.loc[(pipelines.amount_states_passed <= 1)].to_crs(epsg=3857).plot(
-                                                ax=ax,
-                                                column='p_nom',
-                                                linewidth=2.5,
-                                                #linewidth=pipelines['capacity [MW]'],
-                                                alpha=0.5,
-                                                categorical=False,
-                                                # color='darkgrey',
-                                                ls = 'dotted', 
-                                                )
+    ax=ax,
+    column="p_nom",
+    linewidth=2.5,
+    # linewidth=pipelines['capacity [MW]'],
+    alpha=0.5,
+    categorical=False,
+    # color='darkgrey',
+    ls="dotted",
+)
 
 # # Create custom legend handles for line types
 # line_types = [ 'solid', 'dashed', 'dotted'] # solid
 # legend_handles = [Line2D([0], [0], color='black', linestyle=line_type) for line_type in line_types]
 
 # Define line types and labels
-line_types = ['solid', 'dotted']
-line_labels = ['Operating', 'Not considered \n(within-state)']
+line_types = ["solid", "dotted"]
+line_labels = ["Operating", "Not considered \n(within-state)"]
 
 # Create custom legend handles for line types
-legend_handles = [Line2D([0], [0], color='black', linestyle=line_type, label=line_label)
-                  for line_type, line_label in zip(line_types, line_labels)]
+legend_handles = [
+    Line2D([0], [0], color="black", linestyle=line_type, label=line_label)
+    for line_type, line_label in zip(line_types, line_labels)
+]
 
 
 # Add the line type legend
-ax.legend(handles=legend_handles, title='Status',borderpad=1,
-            title_fontproperties={'weight':'bold'}, fontsize=11, loc=1,)
+ax.legend(
+    handles=legend_handles,
+    title="Status",
+    borderpad=1,
+    title_fontproperties={"weight": "bold"},
+    fontsize=11,
+    loc=1,
+)
 
 # # create the colorbar
 import matplotlib.colors as colors
 
-norm = colors.Normalize(vmin=pipelines['p_nom'].min(), vmax=pipelines['p_nom'].max())
-cbar = plt.cm.ScalarMappable(norm=norm, cmap='viridis_r')
+norm = colors.Normalize(vmin=pipelines["p_nom"].min(), vmax=pipelines["p_nom"].max())
+cbar = plt.cm.ScalarMappable(norm=norm, cmap="viridis_r")
 # fig.colorbar(cbar, ax=ax).set_label('Capacity [MW]')
 
 # add colorbar
-ax_cbar = fig.colorbar(cbar, ax=ax, location='left', shrink=0.8, pad=0.01)
+ax_cbar = fig.colorbar(cbar, ax=ax, location="left", shrink=0.8, pad=0.01)
 # add label for the colorbar
-ax_cbar.set_label('Natural gas pipeline capacity [MW]', fontsize=15)
+ax_cbar.set_label("Natural gas pipeline capacity [MW]", fontsize=15)
 
-                                                
 
-ax.set_axis_off()        
+ax.set_axis_off()
 # fig.savefig('/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/Plots/existing_infrastructure/existing_gas_pipelines_UA.png', dpi=300, bbox_inches="tight")
