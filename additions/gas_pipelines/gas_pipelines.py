@@ -41,6 +41,40 @@ sets_path_to_root("pypsa-earth")
 
 #%%
 
+# THE FOLLOWING SCRIPT IS DESIGNED AND TESTED FOR THER EUROPEAN DATASET OF IGGIELGN: 
+# HOWEVER THE SAME CONCEPT CAN BE USED FOR THE GGIT DATASET THAT CAN BE DOWLOADED USING THIS LINK
+# https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx
+
+# AND THEN USE THE FOLLOWING CODE TO FETCH AND START WORKING ON IT:
+
+# fn = "https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx" 
+# storage_options = {'User-Agent': 'Mozilla/5.0'}
+# GGIT_gas_pipeline = pd.read_excel(fn, index_col=0, storage_options=storage_options, sheet_name='Gas Pipelines 2022-12-16', header=0)
+
+# GGIT_gas_pipeline.to_csv(r'/nfs/home/edd32710/projects/HyPAT/Ukraine_old/documentation/notebooks/additions/gas_pipelines/GGIT_gas_pipeline_orig.csv', sep=';', encoding='utf-8', header='true')
+
+# df = GGIT_gas_pipeline.copy().reset_index()
+
+# # Drop rows containing "--" in the 'WKTFormat' column
+# df = df[df['WKTFormat'] != '--']
+
+# # Keep pipelines that are as below
+# df = df[(df['Status'] == 'Construction') | (df['Status'] == 'Operating') | (df['Status'] == 'Idle') | (df['Status'] == 'Shelved') | (df['Status'] == 'Mothballed')] # | (df['Status'] == 'Mothballed')
+
+# # Convert the WKT column to a GeoDataFrame
+# pipelines = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkt(df['WKTFormat']))
+
+# # Set the CRS to EPSG:4326
+# pipelines.crs = CRS.from_epsg(4326)
+
+# # Convert CRS to EPSG:3857 so we can measure distances
+# pipelines = pipelines.to_crs(epsg=3857)
+
+
+#%%
+
+#  NOW EVERYTHING THAT FOLLOWS IS USING THE IGGIELGN DATASET
+
 # URL to the zip file
 url = "https://zenodo.org/record/4767098/files/IGGIELGN.zip?download=1"
 
