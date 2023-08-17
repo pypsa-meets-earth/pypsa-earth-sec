@@ -1,0 +1,4245 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -11.04853,
+                    54.183069999999994
+                ]
+            },
+            "properties": {
+                "name": "Prod0",
+                "id": "Prod0",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    28.09757,
+                    43.155390000000004
+                ]
+            },
+            "properties": {
+                "name": "Prod1",
+                "id": "Prod1",
+                "country_code": "BG",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "BG3",
+                    "nuts_id_2": "BG33",
+                    "nuts_id_3": "BG331",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.496889999999999,
+                    34.39425
+                ]
+            },
+            "properties": {
+                "name": "Prod2",
+                "id": "Prod2",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.37273,
+                    45.42187
+                ]
+            },
+            "properties": {
+                "name": "Prod3",
+                "id": "Prod3",
+                "country_code": "UA",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "UA",
+                    "nuts_id_2": "UA",
+                    "nuts_id_3": "UA",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    28.39614000000001,
+                    43.15453
+                ]
+            },
+            "properties": {
+                "name": "Prod4",
+                "id": "Prod4",
+                "country_code": "BG",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "BG3",
+                    "nuts_id_2": "BG33",
+                    "nuts_id_3": "BG332",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    28.060879999999997,
+                    43.1029
+                ]
+            },
+            "properties": {
+                "name": "Prod5",
+                "id": "Prod5",
+                "country_code": "BG",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "BG3",
+                    "nuts_id_2": "BG33",
+                    "nuts_id_3": "BG331",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.797735,
+                    52.264705
+                ]
+            },
+            "properties": {
+                "name": "Prod6",
+                "id": "Prod6",
+                "country_code": "NL",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "NL3",
+                    "nuts_id_2": "NL33",
+                    "nuts_id_3": "NL33C",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.977779999999996,
+                    45.51566
+                ]
+            },
+            "properties": {
+                "name": "Prod7",
+                "id": "Prod7",
+                "country_code": "UA",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "UA",
+                    "nuts_id_2": "UA",
+                    "nuts_id_3": "UA",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.1589800000000015,
+                    55.51781999999999
+                ]
+            },
+            "properties": {
+                "name": "Prod8",
+                "id": "Prod8",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.5156099999999997,
+                    53.722590000000004
+                ]
+            },
+            "properties": {
+                "name": "Prod9",
+                "id": "Prod9",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "UKD",
+                    "nuts_id_2": "UKD1",
+                    "nuts_id_3": "UKD12",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.42415,
+                    32.12608
+                ]
+            },
+            "properties": {
+                "name": "Prod10",
+                "id": "Prod10",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.58376,
+                    43.87352
+                ]
+            },
+            "properties": {
+                "name": "Prod11",
+                "id": "Prod11",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.01499,
+                    51.45021
+                ]
+            },
+            "properties": {
+                "name": "Prod12",
+                "id": "Prod12",
+                "country_code": "IE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "IE0",
+                    "nuts_id_2": "IE05",
+                    "nuts_id_3": "IE053",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.18736,
+                    45.13994
+                ]
+            },
+            "properties": {
+                "name": "Prod13",
+                "id": "Prod13",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.48413,
+                    44.3355
+                ]
+            },
+            "properties": {
+                "name": "Prod14",
+                "id": "Prod14",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.182109999999998,
+                    44.46848
+                ]
+            },
+            "properties": {
+                "name": "Prod15",
+                "id": "Prod15",
+                "country_code": "RO",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "RO2",
+                    "nuts_id_2": "RO22",
+                    "nuts_id_3": "RO225",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.45083,
+                    44.0054
+                ]
+            },
+            "properties": {
+                "name": "Prod17",
+                "id": "Prod17",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.575795,
+                    33.253165
+                ]
+            },
+            "properties": {
+                "name": "Prod18",
+                "id": "Prod18",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.91494,
+                    45.31751
+                ]
+            },
+            "properties": {
+                "name": "Prod19",
+                "id": "Prod19",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.48694,
+                    54.612669999999994
+                ]
+            },
+            "properties": {
+                "name": "Prod20",
+                "id": "Prod20",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.6848600000000005,
+                    65.70589
+                ]
+            },
+            "properties": {
+                "name": "Prod21",
+                "id": "Prod21",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.7831800000000015,
+                    64.28153
+                ]
+            },
+            "properties": {
+                "name": "Prod22",
+                "id": "Prod22",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.047259999999998,
+                    32.24282
+                ]
+            },
+            "properties": {
+                "name": "Prod23",
+                "id": "Prod23",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    28.51016,
+                    42.99639000000001
+                ]
+            },
+            "properties": {
+                "name": "Prod24",
+                "id": "Prod24",
+                "country_code": "BG",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "BG3",
+                    "nuts_id_2": "BG33",
+                    "nuts_id_3": "BG332",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.73709,
+                    32.42212
+                ]
+            },
+            "properties": {
+                "name": "Prod25",
+                "id": "Prod25",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.886590000000005,
+                    32.3248
+                ]
+            },
+            "properties": {
+                "name": "Prod26",
+                "id": "Prod26",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.89533,
+                    54.2194
+                ]
+            },
+            "properties": {
+                "name": "Prod27",
+                "id": "Prod27",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.615740000000002,
+                    45.271305
+                ]
+            },
+            "properties": {
+                "name": "Prod28",
+                "id": "Prod28",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.54606,
+                    56.1227
+                ]
+            },
+            "properties": {
+                "name": "Prod29",
+                "id": "Prod29",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.980085000000001,
+                    65.973415
+                ]
+            },
+            "properties": {
+                "name": "Prod30",
+                "id": "Prod30",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.861160000000001,
+                    65.94639000000001
+                ]
+            },
+            "properties": {
+                "name": "Prod31",
+                "id": "Prod31",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.5689100000000025,
+                    65.67103
+                ]
+            },
+            "properties": {
+                "name": "Prod32",
+                "id": "Prod32",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.61159,
+                    64.98232
+                ]
+            },
+            "properties": {
+                "name": "Prod33",
+                "id": "Prod33",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.936690000000002,
+                    32.11804
+                ]
+            },
+            "properties": {
+                "name": "Prod34",
+                "id": "Prod34",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.44032,
+                    32.33194
+                ]
+            },
+            "properties": {
+                "name": "Prod35",
+                "id": "Prod35",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    28.26869000000001,
+                    40.73811
+                ]
+            },
+            "properties": {
+                "name": "Prod36",
+                "id": "Prod36",
+                "country_code": "TR",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "TR1",
+                    "nuts_id_2": "TR10",
+                    "nuts_id_3": "TR100",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9032100000000005,
+                    51.39759
+                ]
+            },
+            "properties": {
+                "name": "Prod37",
+                "id": "Prod37",
+                "country_code": "IE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "IE0",
+                    "nuts_id_2": "IE05",
+                    "nuts_id_3": "IE053",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.95703,
+                    43.55604
+                ]
+            },
+            "properties": {
+                "name": "Prod38",
+                "id": "Prod38",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.27395,
+                    53.73811
+                ]
+            },
+            "properties": {
+                "name": "Prod39",
+                "id": "Prod39",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.28618,
+                    54.38332
+                ]
+            },
+            "properties": {
+                "name": "Prod40",
+                "id": "Prod40",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    33.090090000000004,
+                    31.95676
+                ]
+            },
+            "properties": {
+                "name": "Prod41",
+                "id": "Prod41",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.791079999999997,
+                    32.514720000000004
+                ]
+            },
+            "properties": {
+                "name": "Prod42",
+                "id": "Prod42",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.168770000000002,
+                    32.35902
+                ]
+            },
+            "properties": {
+                "name": "Prod43",
+                "id": "Prod43",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.04055,
+                    32.5665
+                ]
+            },
+            "properties": {
+                "name": "Prod44",
+                "id": "Prod44",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.7383,
+                    57.398419999999994
+                ]
+            },
+            "properties": {
+                "name": "Prod46",
+                "id": "Prod46",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.84402,
+                    53.56514
+                ]
+            },
+            "properties": {
+                "name": "Prod47",
+                "id": "Prod47",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.93389,
+                    53.69984
+                ]
+            },
+            "properties": {
+                "name": "Prod48",
+                "id": "Prod48",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.87711,
+                    54.05486
+                ]
+            },
+            "properties": {
+                "name": "Prod49",
+                "id": "Prod49",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.82934,
+                    57.78984000000001
+                ]
+            },
+            "properties": {
+                "name": "Prod50",
+                "id": "Prod50",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.83319,
+                    32.19238
+                ]
+            },
+            "properties": {
+                "name": "Prod51",
+                "id": "Prod51",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.5096,
+                    32.171640000000004
+                ]
+            },
+            "properties": {
+                "name": "Prod52",
+                "id": "Prod52",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.27863,
+                    32.20794
+                ]
+            },
+            "properties": {
+                "name": "Prod53",
+                "id": "Prod53",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.93439,
+                    57.2925
+                ]
+            },
+            "properties": {
+                "name": "Prod54",
+                "id": "Prod54",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.8844,
+                    57.265190000000004
+                ]
+            },
+            "properties": {
+                "name": "Prod56",
+                "id": "Prod56",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.68827000000001,
+                    45.61847
+                ]
+            },
+            "properties": {
+                "name": "Prod57",
+                "id": "Prod57",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.1486400000000003,
+                    53.16141999999999
+                ]
+            },
+            "properties": {
+                "name": "Prod58",
+                "id": "Prod58",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "UKH",
+                    "nuts_id_2": "UKH1",
+                    "nuts_id_3": "UKH15",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.864,
+                    53.074059999999996
+                ]
+            },
+            "properties": {
+                "name": "Prod59",
+                "id": "Prod59",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "UKH",
+                    "nuts_id_2": "UKH1",
+                    "nuts_id_3": "UKH17",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.00237,
+                    57.15221
+                ]
+            },
+            "properties": {
+                "name": "Prod60",
+                "id": "Prod60",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.89624,
+                    56.92576999999999
+                ]
+            },
+            "properties": {
+                "name": "Prod61",
+                "id": "Prod61",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.1747799999999997,
+                    61.35524
+                ]
+            },
+            "properties": {
+                "name": "Prod62",
+                "id": "Prod62",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.244439,
+                    64.367549
+                ]
+            },
+            "properties": {
+                "name": "Prod63",
+                "id": "Prod63",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.323410000000001,
+                    64.3921
+                ]
+            },
+            "properties": {
+                "name": "Prod64",
+                "id": "Prod64",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.559040000000003,
+                    32.44425
+                ]
+            },
+            "properties": {
+                "name": "Prod65",
+                "id": "Prod65",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.8375,
+                    57.6198
+                ]
+            },
+            "properties": {
+                "name": "Prod66",
+                "id": "Prod66",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.7605,
+                    57.855819999999994
+                ]
+            },
+            "properties": {
+                "name": "Prod67",
+                "id": "Prod67",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.0278400000000003,
+                    57.994409999999995
+                ]
+            },
+            "properties": {
+                "name": "Prod68",
+                "id": "Prod68",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.99848,
+                    59.19034
+                ]
+            },
+            "properties": {
+                "name": "Prod69",
+                "id": "Prod69",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.755214,
+                    64.994189
+                ]
+            },
+            "properties": {
+                "name": "Prod70",
+                "id": "Prod70",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.95724,
+                    58.5369
+                ]
+            },
+            "properties": {
+                "name": "Prod71",
+                "id": "Prod71",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.74205,
+                    58.464969999999994
+                ]
+            },
+            "properties": {
+                "name": "Prod72",
+                "id": "Prod72",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.48451,
+                    63.32893000000001
+                ]
+            },
+            "properties": {
+                "name": "Prod73",
+                "id": "Prod73",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.36658,
+                    32.72161
+                ]
+            },
+            "properties": {
+                "name": "Prod74",
+                "id": "Prod74",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.5551,
+                    32.68294
+                ]
+            },
+            "properties": {
+                "name": "Prod75",
+                "id": "Prod75",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.82418,
+                    43.89683
+                ]
+            },
+            "properties": {
+                "name": "Prod76",
+                "id": "Prod76",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.0326,
+                    43.98256
+                ]
+            },
+            "properties": {
+                "name": "Prod77",
+                "id": "Prod77",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.36824,
+                    53.42418000000001
+                ]
+            },
+            "properties": {
+                "name": "Prod78",
+                "id": "Prod78",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "UKH",
+                    "nuts_id_2": "UKH1",
+                    "nuts_id_3": "UKH16",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.43508,
+                    53.40756
+                ]
+            },
+            "properties": {
+                "name": "Prod79",
+                "id": "Prod79",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "UKH",
+                    "nuts_id_2": "UKH1",
+                    "nuts_id_3": "UKH16",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.96875,
+                    60.44403000000001
+                ]
+            },
+            "properties": {
+                "name": "Prod80",
+                "id": "Prod80",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.239961,
+                    59.172433999999996
+                ]
+            },
+            "properties": {
+                "name": "Prod81",
+                "id": "Prod81",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.499794,
+                    59.17465600000001
+                ]
+            },
+            "properties": {
+                "name": "Prod82",
+                "id": "Prod82",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.7101599999999997,
+                    58.8782
+                ]
+            },
+            "properties": {
+                "name": "Prod83",
+                "id": "Prod83",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.8993800000000025,
+                    65.03563
+                ]
+            },
+            "properties": {
+                "name": "Prod84",
+                "id": "Prod84",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.30784,
+                    60.23457
+                ]
+            },
+            "properties": {
+                "name": "Prod85",
+                "id": "Prod85",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.5137699999999996,
+                    60.29139
+                ]
+            },
+            "properties": {
+                "name": "Prod86",
+                "id": "Prod86",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.37545,
+                    63.316669999999995
+                ]
+            },
+            "properties": {
+                "name": "Prod87",
+                "id": "Prod87",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.26474,
+                    64.43615
+                ]
+            },
+            "properties": {
+                "name": "Prod88",
+                "id": "Prod88",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.86071,
+                    32.021370000000005
+                ]
+            },
+            "properties": {
+                "name": "Prod89",
+                "id": "Prod89",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.72095,
+                    60.603
+                ]
+            },
+            "properties": {
+                "name": "Prod90",
+                "id": "Prod90",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.0908700000000002,
+                    60.84458000000001
+                ]
+            },
+            "properties": {
+                "name": "Prod91",
+                "id": "Prod91",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.190334,
+                    60.397953
+                ]
+            },
+            "properties": {
+                "name": "Prod92",
+                "id": "Prod92",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.60443,
+                    60.713359999999994
+                ]
+            },
+            "properties": {
+                "name": "Prod93",
+                "id": "Prod93",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.66443,
+                    61.23191
+                ]
+            },
+            "properties": {
+                "name": "Prod94",
+                "id": "Prod94",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.92746,
+                    57.68124
+                ]
+            },
+            "properties": {
+                "name": "Prod95",
+                "id": "Prod95",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.70398,
+                    58.650859999999994
+                ]
+            },
+            "properties": {
+                "name": "Prod96",
+                "id": "Prod96",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.5827299999999997,
+                    58.07062
+                ]
+            },
+            "properties": {
+                "name": "Prod97",
+                "id": "Prod97",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.092375,
+                    58.160165
+                ]
+            },
+            "properties": {
+                "name": "Prod98",
+                "id": "Prod98",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.528993,
+                    58.557247
+                ]
+            },
+            "properties": {
+                "name": "Prod99",
+                "id": "Prod99",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.38341,
+                    60.077980000000004
+                ]
+            },
+            "properties": {
+                "name": "Prod100",
+                "id": "Prod100",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.2161,
+                    60.720330000000004
+                ]
+            },
+            "properties": {
+                "name": "Prod101",
+                "id": "Prod101",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.90682,
+                    60.683859999999996
+                ]
+            },
+            "properties": {
+                "name": "Prod102",
+                "id": "Prod102",
+                "country_code": "XX",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "XX",
+                    "nuts_id_2": "XX",
+                    "nuts_id_3": "XX",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0.5,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 100,
+                    "nuts_id_2": 100,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num(): Estimated",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.106537,
+                    53.022223
+                ]
+            },
+            "properties": {
+                "name": "Production (DE) (GUD) H-Gas-Summe Produktion",
+                "id": "LKD_PD_0",
+                "country_code": "DE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 2180.446943519577,
+                    "nuts_id_1": "DE9",
+                    "nuts_id_2": "DE93",
+                    "nuts_id_3": "DE938",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0,
+                    "max_supply_M_m3_per_d": 0.0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "raw",
+                    "max_supply_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.130456,
+                    52.600632999999995
+                ]
+            },
+            "properties": {
+                "name": "Schneeren",
+                "id": "LKD_PD_1",
+                "country_code": "DE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 253.6622600743284,
+                    "nuts_id_1": "DE9",
+                    "nuts_id_2": "DE92",
+                    "nuts_id_3": "DE927",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0,
+                    "max_supply_M_m3_per_d": 0.0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "raw",
+                    "max_supply_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.882478,
+                    51.35175
+                ]
+            },
+            "properties": {
+                "name": "Aggregate Production H-Gas (Thyssengas)",
+                "id": "LKD_PD_2",
+                "country_code": "DE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1334.0455078111888,
+                    "nuts_id_1": "DEA",
+                    "nuts_id_2": "DEA1",
+                    "nuts_id_3": "DEA1C",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0,
+                    "max_supply_M_m3_per_d": 0.0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "raw",
+                    "max_supply_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.89157,
+                    51.099864000000004
+                ]
+            },
+            "properties": {
+                "name": "Aggregate Production L-Gas (Thyssengas)",
+                "id": "LKD_PD_3",
+                "country_code": "DE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1230.405195054132,
+                    "nuts_id_1": "DEA",
+                    "nuts_id_2": "DEA1",
+                    "nuts_id_3": "DEA1C",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0,
+                    "max_supply_M_m3_per_d": 854.5400547601708,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "raw",
+                    "max_supply_M_m3_per_d": "Median(max_supply_M_m3_per_d)",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.275472,
+                    53.472621
+                ]
+            },
+            "properties": {
+                "name": "Production (OGE) (DE)",
+                "id": "LKD_PD_4",
+                "country_code": "DE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 1161.3116532160939,
+                    "nuts_id_1": "DE9",
+                    "nuts_id_2": "DE94",
+                    "nuts_id_3": "DE947",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0,
+                    "max_supply_M_m3_per_d": 0.0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "raw",
+                    "max_supply_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.011674000000001,
+                    52.317116
+                ]
+            },
+            "properties": {
+                "name": "Nowega Zone Production",
+                "id": "LKD_PD_5",
+                "country_code": "DE",
+                "tags": {},
+                "param": {
+                    "is_H_gas": 1,
+                    "max_supply_M_m3_per_d": 3403.5869308146425,
+                    "nuts_id_1": "DE9",
+                    "nuts_id_2": "DE94",
+                    "nuts_id_3": "DE944",
+                    "status": "operational"
+                },
+                "uncertainty": {
+                    "is_H_gas": 0,
+                    "max_supply_M_m3_per_d": 0.0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "status": 0
+                },
+                "method": {
+                    "is_H_gas": "raw",
+                    "max_supply_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "status": "make_Attrib(const)"
+                }
+            }
+        }
+    ]
+}

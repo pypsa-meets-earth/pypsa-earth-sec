@@ -1,0 +1,2015 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.174,
+                    41.398
+                ]
+            },
+            "properties": {
+                "name": "Barcelona",
+                "id": "INET_LG_2",
+                "country_code": "ES",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.65,
+                    "end_year": null,
+                    "entsog_id": 309,
+                    "exact": 3,
+                    "from_TSO": "Enagas",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 51.1831809156,
+                    "max_vessel_size_M_m3": 155.344,
+                    "max_workingGas_M_m3": 489.28688,
+                    "median_cap_store2pipe_M_m3_per_d": 51.1831809156,
+                    "nuts_id_1": "ES5",
+                    "nuts_id_2": "ES51",
+                    "nuts_id_3": "ES511",
+                    "start_year": 1969,
+                    "to_TSO": "Enagas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.09859,
+                    43.353617
+                ]
+            },
+            "properties": {
+                "name": "Bilbao",
+                "id": "INET_LG_3",
+                "country_code": "ES",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.65,
+                    "end_year": null,
+                    "entsog_id": 314,
+                    "exact": 3,
+                    "from_TSO": "BBG",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 20.9955689628,
+                    "max_vessel_size_M_m3": 157.68,
+                    "max_workingGas_M_m3": 262.11672,
+                    "median_cap_store2pipe_M_m3_per_d": 20.9955689628,
+                    "nuts_id_1": "ES2",
+                    "nuts_id_2": "ES21",
+                    "nuts_id_3": "ES213",
+                    "start_year": 2003,
+                    "to_TSO": "Enagas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.9921,
+                    37.61455
+                ]
+            },
+            "properties": {
+                "name": "Cartagena",
+                "id": "INET_LG_5",
+                "country_code": "ES",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.65,
+                    "end_year": null,
+                    "entsog_id": 311,
+                    "exact": 3,
+                    "from_TSO": "Enagas",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 35.4294333912,
+                    "max_vessel_size_M_m3": 155.344,
+                    "max_workingGas_M_m3": 341.92032,
+                    "median_cap_store2pipe_M_m3_per_d": 35.4294333912,
+                    "nuts_id_1": "ES6",
+                    "nuts_id_2": "ES62",
+                    "nuts_id_3": "ES620",
+                    "start_year": 1989,
+                    "to_TSO": "Enagas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.080219999999999,
+                    45.133742
+                ]
+            },
+            "properties": {
+                "name": "Cavarzere",
+                "id": "INET_LG_6",
+                "country_code": "IT",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.602,
+                    "end_year": null,
+                    "entsog_id": 307,
+                    "exact": 3,
+                    "from_TSO": "GNL Adriatico",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 20.94466471232877,
+                    "max_vessel_size_M_m3": 88.768,
+                    "max_workingGas_M_m3": 146.0,
+                    "median_cap_store2pipe_M_m3_per_d": 19.79246820622703,
+                    "nuts_id_1": "ITH",
+                    "nuts_id_2": "ITH3",
+                    "nuts_id_3": "ITH35",
+                    "start_year": 2009,
+                    "to_TSO": "multiple_TSOs"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0.0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0.0,
+                    "median_cap_store2pipe_M_m3_per_d": 1.9410609617201626,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_cap_store2pipe_M_m3_per_d, max_workingGas_M_m3)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.556524,
+                    35.82883599999999
+                ]
+            },
+            "properties": {
+                "name": "Delimara",
+                "id": "INET_LG_7",
+                "country_code": "MT",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 1.643835616438356,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 73.0,
+                    "median_cap_store2pipe_M_m3_per_d": 3.0303442311799835,
+                    "nuts_id_1": "MT0",
+                    "nuts_id_2": "MT00",
+                    "nuts_id_3": "MT001",
+                    "start_year": 2017,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0.0,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 0.0,
+                    "median_cap_store2pipe_M_m3_per_d": 1.9410609617201626,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_cap_store2pipe_M_m3_per_d, max_workingGas_M_m3)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": null
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.989186,
+                    51.695443
+                ]
+            },
+            "properties": {
+                "name": "Dragon",
+                "id": "INET_LG_8",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.0,
+                    "end_year": null,
+                    "entsog_id": 303,
+                    "exact": 3,
+                    "from_TSO": "multiple_TSOs",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 83.34545454794521,
+                    "max_vessel_size_M_m3": 126.728,
+                    "max_workingGas_M_m3": 186.88,
+                    "median_cap_store2pipe_M_m3_per_d": 71.01097322183986,
+                    "nuts_id_1": "UKL",
+                    "nuts_id_2": "UKL1",
+                    "nuts_id_3": "UKL14",
+                    "start_year": 2009,
+                    "to_TSO": "National Grid Gas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0.0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0.0,
+                    "median_cap_store2pipe_M_m3_per_d": 1.9410609617201626,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_cap_store2pipe_M_m3_per_d, max_workingGas_M_m3)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.1926759999999996,
+                    51.033962
+                ]
+            },
+            "properties": {
+                "name": "Dunkerque",
+                "id": "INET_LG_9",
+                "country_code": "FR",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.75,
+                    "end_year": null,
+                    "entsog_id": 320,
+                    "exact": 3,
+                    "from_TSO": "Dunkerque LNG",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 49.005373807199994,
+                    "max_vessel_size_M_m3": 155.928,
+                    "max_workingGas_M_m3": 350.4,
+                    "median_cap_store2pipe_M_m3_per_d": 49.005373807199994,
+                    "nuts_id_1": "FRE",
+                    "nuts_id_2": "FRE1",
+                    "nuts_id_3": "FRE11",
+                    "start_year": 2016,
+                    "to_TSO": "GRTgaz"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.664,
+                    43.534
+                ]
+            },
+            "properties": {
+                "name": "El Musel",
+                "id": "INET_LG_10",
+                "country_code": "ES",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 19.17808219178082,
+                    "max_vessel_size_M_m3": 155.344,
+                    "max_workingGas_M_m3": 175.2,
+                    "median_cap_store2pipe_M_m3_per_d": 18.8052067942779,
+                    "nuts_id_1": "ES1",
+                    "nuts_id_2": "ES12",
+                    "nuts_id_3": "ES120",
+                    "start_year": 2012,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0.0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0.0,
+                    "median_cap_store2pipe_M_m3_per_d": 1.9410609617201626,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_cap_store2pipe_M_m3_per_d, max_workingGas_M_m3)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": null
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.902115,
+                    43.429695
+                ]
+            },
+            "properties": {
+                "name": "Fos Cavaou",
+                "id": "INET_LG_11",
+                "country_code": "FR",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 12.05,
+                    "end_year": null,
+                    "entsog_id": 305,
+                    "exact": 3,
+                    "from_TSO": "Fosmax LNG",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 28.2832092,
+                    "max_vessel_size_M_m3": 155.928,
+                    "max_workingGas_M_m3": 192.72,
+                    "median_cap_store2pipe_M_m3_per_d": 25.0589233512,
+                    "nuts_id_1": "FRL",
+                    "nuts_id_2": "FRL0",
+                    "nuts_id_3": "FRL04",
+                    "start_year": 2020,
+                    "to_TSO": "GRTgaz"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.8516699999999995,
+                    43.45399999999999
+                ]
+            },
+            "properties": {
+                "name": "Fos Tonkin",
+                "id": "INET_LG_12",
+                "country_code": "FR",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 12.05,
+                    "end_year": null,
+                    "entsog_id": 305,
+                    "exact": 3,
+                    "from_TSO": "Elengy",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 15.7537475244,
+                    "max_vessel_size_M_m3": 43.8,
+                    "max_workingGas_M_m3": 87.6,
+                    "median_cap_store2pipe_M_m3_per_d": 9.0411992076,
+                    "nuts_id_1": "FRL",
+                    "nuts_id_2": "FRL0",
+                    "nuts_id_3": "FRL04",
+                    "start_year": 1972,
+                    "to_TSO": "GRTgaz"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.077814,
+                    51.965418
+                ]
+            },
+            "properties": {
+                "name": "Gate Rotterdam",
+                "id": "INET_LG_13",
+                "country_code": "NL",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": 316,
+                    "exact": 3,
+                    "from_TSO": "Gate Terminal ",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 43.461864804,
+                    "max_vessel_size_M_m3": 155.344,
+                    "max_workingGas_M_m3": 315.36,
+                    "median_cap_store2pipe_M_m3_per_d": 43.461864804,
+                    "nuts_id_1": "NL3",
+                    "nuts_id_2": "NL33",
+                    "nuts_id_3": "NL33C",
+                    "start_year": 2018,
+                    "to_TSO": "Gasunie TS"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.97456,
+                    57.70887
+                ]
+            },
+            "properties": {
+                "name": "Gothenburg",
+                "id": "INET_LG_14",
+                "country_code": "SE",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 10.3991909496003,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 19.230536,
+                    "median_cap_store2pipe_M_m3_per_d": 6.498299046021174,
+                    "nuts_id_1": "SE2",
+                    "nuts_id_2": "SE23",
+                    "nuts_id_3": "SE232",
+                    "start_year": 2018,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 8.265853904790944,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 0.0,
+                    "median_cap_store2pipe_M_m3_per_d": 5.680852280654031,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "Lasso(max_workingGas_M_m3)",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_workingGas_M_m3)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": null
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.9508,
+                    37.2583
+                ]
+            },
+            "properties": {
+                "name": "Huelva",
+                "id": "INET_LG_15",
+                "country_code": "ES",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.65,
+                    "end_year": null,
+                    "entsog_id": 312,
+                    "exact": 3,
+                    "from_TSO": "Enagas",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 35.4294333912,
+                    "max_vessel_size_M_m3": 101.26559999999999,
+                    "max_workingGas_M_m3": 360.84776000000005,
+                    "median_cap_store2pipe_M_m3_per_d": 35.4294333912,
+                    "nuts_id_1": "ES6",
+                    "nuts_id_2": "ES61",
+                    "nuts_id_3": "ES615",
+                    "start_year": 1988,
+                    "to_TSO": "Enagas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.703933,
+                    51.444666999999995
+                ]
+            },
+            "properties": {
+                "name": "Isle Of Grain",
+                "id": "INET_LG_16",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.0,
+                    "end_year": null,
+                    "entsog_id": 302,
+                    "exact": 3,
+                    "from_TSO": "Grain LNG",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 60.714622416000005,
+                    "max_vessel_size_M_m3": 154.76,
+                    "max_workingGas_M_m3": 599.4176000000001,
+                    "median_cap_store2pipe_M_m3_per_d": 60.714622416000005,
+                    "nuts_id_1": "UKJ",
+                    "nuts_id_2": "UKJ4",
+                    "nuts_id_3": "UKJ41",
+                    "start_year": 2020,
+                    "to_TSO": "National Grid Gas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.101954,
+                    55.7253
+                ]
+            },
+            "properties": {
+                "name": "Klaipeda",
+                "id": "INET_LG_17",
+                "country_code": "LT",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.7115,
+                    "end_year": null,
+                    "entsog_id": 319,
+                    "exact": 3,
+                    "from_TSO": "AB Klaipedos Nafta",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 11.831809182,
+                    "max_vessel_size_M_m3": 93.44,
+                    "max_workingGas_M_m3": 97.56888,
+                    "median_cap_store2pipe_M_m3_per_d": 11.831809182,
+                    "nuts_id_1": "LT0",
+                    "nuts_id_2": "LT02",
+                    "nuts_id_3": "LT023",
+                    "start_year": 2014,
+                    "to_TSO": "Amber Grid"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.14,
+                    47.32
+                ]
+            },
+            "properties": {
+                "name": "Montoir De Bretagne",
+                "id": "INET_LG_19",
+                "country_code": "FR",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.93,
+                    "end_year": null,
+                    "entsog_id": 304,
+                    "exact": 3,
+                    "from_TSO": "Elengy",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 32.5445460528,
+                    "max_vessel_size_M_m3": 155.928,
+                    "max_workingGas_M_m3": 210.23999999999998,
+                    "median_cap_store2pipe_M_m3_per_d": 31.771471668,
+                    "nuts_id_1": "FRG",
+                    "nuts_id_2": "FRG0",
+                    "nuts_id_3": "FRG01",
+                    "start_year": 1980,
+                    "to_TSO": "GRTgaz"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.253,
+                    43.4578
+                ]
+            },
+            "properties": {
+                "name": "Mugardos",
+                "id": "INET_LG_20",
+                "country_code": "ES",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.63,
+                    "end_year": null,
+                    "entsog_id": 313,
+                    "exact": 3,
+                    "from_TSO": "Reganosa",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 10.8607523328,
+                    "max_vessel_size_M_m3": 155.344,
+                    "max_workingGas_M_m3": 175.2,
+                    "median_cap_store2pipe_M_m3_per_d": 10.8607523328,
+                    "nuts_id_1": "ES1",
+                    "nuts_id_2": "ES11",
+                    "nuts_id_3": "ES111",
+                    "start_year": 2007,
+                    "to_TSO": "Reganosa"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    25.023455,
+                    59.406335
+                ]
+            },
+            "properties": {
+                "name": "Tallinn",
+                "id": "INET_LG_21",
+                "country_code": "EE",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 10.95890410958904,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 2.323152,
+                    "median_cap_store2pipe_M_m3_per_d": 9.505767657539437,
+                    "nuts_id_1": "EE0",
+                    "nuts_id_2": "EE00",
+                    "nuts_id_3": "EE001",
+                    "start_year": 2019,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0.0,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 0.0,
+                    "median_cap_store2pipe_M_m3_per_d": 1.9410609617201626,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_cap_store2pipe_M_m3_per_d, max_workingGas_M_m3)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": null
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.127558,
+                    54.57551899999999
+                ]
+            },
+            "properties": {
+                "name": "Teesside",
+                "id": "INET_LG_22",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.0,
+                    "end_year": null,
+                    "entsog_id": 301,
+                    "exact": 3,
+                    "from_TSO": "multiple_TSOs",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 11.718181819178081,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 120.04713289651852,
+                    "median_cap_store2pipe_M_m3_per_d": 11.777906914940115,
+                    "nuts_id_1": "UKC",
+                    "nuts_id_2": "UKC1",
+                    "nuts_id_3": "UKC12",
+                    "start_year": null,
+                    "to_TSO": "National Grid Gas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0.0,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 55.51035833975396,
+                    "median_cap_store2pipe_M_m3_per_d": 1.966927421139969,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": null,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "Lasso(max_cap_store2pipe_M_m3_per_d, median_cap_store2pipe_M_m3_per_d)",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_cap_store2pipe_M_m3_per_d)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": null,
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.830632000000001,
+                    44.073876
+                ]
+            },
+            "properties": {
+                "name": "Panigaglia",
+                "id": "INET_LG_25",
+                "country_code": "IT",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.944,
+                    "end_year": null,
+                    "entsog_id": 306,
+                    "exact": 3,
+                    "from_TSO": "GNL Italia",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 11.266144998,
+                    "max_vessel_size_M_m3": 40.88,
+                    "max_workingGas_M_m3": 46.72,
+                    "median_cap_store2pipe_M_m3_per_d": 11.266144998,
+                    "nuts_id_1": "ITC",
+                    "nuts_id_2": "ITC3",
+                    "nuts_id_3": "ITC34",
+                    "start_year": 1971,
+                    "to_TSO": "Snam Rete Gas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.39881,
+                    61.638169999999995
+                ]
+            },
+            "properties": {
+                "name": "Pori",
+                "id": "INET_LG_26",
+                "country_code": "FI",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 10.164824640657752,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 16.649256,
+                    "median_cap_store2pipe_M_m3_per_d": 6.251708201925016,
+                    "nuts_id_1": "FI1",
+                    "nuts_id_2": "FI19",
+                    "nuts_id_3": "FI196",
+                    "start_year": null,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 8.265853904790944,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 0.0,
+                    "median_cap_store2pipe_M_m3_per_d": 5.680852280654031,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": null,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "Lasso(max_workingGas_M_m3)",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_workingGas_M_m3)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": null,
+                    "to_TSO": null
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.4023,
+                    37.96
+                ]
+            },
+            "properties": {
+                "name": "Revithoussa",
+                "id": "INET_LG_27",
+                "country_code": "EL",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.994,
+                    "end_year": null,
+                    "entsog_id": 308,
+                    "exact": 3,
+                    "from_TSO": "DESFA",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 25.4454605436,
+                    "max_vessel_size_M_m3": 151.84,
+                    "max_workingGas_M_m3": 131.4,
+                    "median_cap_store2pipe_M_m3_per_d": 19.373998302,
+                    "nuts_id_1": "EL3",
+                    "nuts_id_2": "EL30",
+                    "nuts_id_3": "EL307",
+                    "start_year": 2000,
+                    "to_TSO": "DESFA"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    24.1788,
+                    56.9904
+                ]
+            },
+            "properties": {
+                "name": "Riga",
+                "id": "INET_LG_28",
+                "country_code": "LV",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 13.698630136986301,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 134.53748837389253,
+                    "median_cap_store2pipe_M_m3_per_d": 13.618930948402951,
+                    "nuts_id_1": "LV0",
+                    "nuts_id_2": "LV00",
+                    "nuts_id_3": "LV006",
+                    "start_year": 2019,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0.0,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 55.51035833975396,
+                    "median_cap_store2pipe_M_m3_per_d": 1.966927421139969,
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "Lasso(max_cap_store2pipe_M_m3_per_d, median_cap_store2pipe_M_m3_per_d)",
+                    "median_cap_store2pipe_M_m3_per_d": "Lasso(max_cap_store2pipe_M_m3_per_d)",
+                    "nuts_id_1": null,
+                    "nuts_id_2": null,
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": null
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.2344,
+                    39.6426
+                ]
+            },
+            "properties": {
+                "name": "Sagunto",
+                "id": "INET_LG_29",
+                "country_code": "ES",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.63,
+                    "end_year": null,
+                    "entsog_id": 310,
+                    "exact": 3,
+                    "from_TSO": "Saggas",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 26.237390401200003,
+                    "max_vessel_size_M_m3": 155.928,
+                    "max_workingGas_M_m3": 349.48895999999996,
+                    "median_cap_store2pipe_M_m3_per_d": 26.237390401200003,
+                    "nuts_id_1": "ES5",
+                    "nuts_id_2": "ES52",
+                    "nuts_id_3": "ES523",
+                    "start_year": 2006,
+                    "to_TSO": "Enagas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.797445,
+                    37.951235
+                ]
+            },
+            "properties": {
+                "name": "Sines",
+                "id": "INET_LG_30",
+                "country_code": "PT",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.9,
+                    "end_year": null,
+                    "entsog_id": 315,
+                    "exact": 3,
+                    "from_TSO": "REN Atlantico",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 18.8554728,
+                    "max_vessel_size_M_m3": 126.14399999999999,
+                    "max_workingGas_M_m3": 227.76000000000002,
+                    "median_cap_store2pipe_M_m3_per_d": 18.1766757792,
+                    "nuts_id_1": "PT1",
+                    "nuts_id_2": "PT18",
+                    "nuts_id_3": "PT181",
+                    "start_year": 2003,
+                    "to_TSO": "REN Gasodutos"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.078012,
+                    51.713781
+                ]
+            },
+            "properties": {
+                "name": "South Hook",
+                "id": "INET_LG_31",
+                "country_code": "GB",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 61.280286600000004,
+                    "max_vessel_size_M_m3": 146.0,
+                    "max_workingGas_M_m3": 438.98112000000003,
+                    "median_cap_store2pipe_M_m3_per_d": 61.280286600000004,
+                    "nuts_id_1": "UKL",
+                    "nuts_id_2": "UKL1",
+                    "nuts_id_3": "UKL14",
+                    "start_year": 2009,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": null
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.294722,
+                    53.909167000000004
+                ]
+            },
+            "properties": {
+                "name": "Swinoujscie",
+                "id": "INET_LG_32",
+                "country_code": "PL",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.55,
+                    "end_year": null,
+                    "entsog_id": 321,
+                    "exact": 3,
+                    "from_TSO": "Polskie LNG",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 15.348354859200002,
+                    "max_vessel_size_M_m3": 126.14399999999999,
+                    "max_workingGas_M_m3": 186.88,
+                    "median_cap_store2pipe_M_m3_per_d": 15.348354859200002,
+                    "nuts_id_1": "PL4",
+                    "nuts_id_2": "PL42",
+                    "nuts_id_3": "PL428",
+                    "start_year": 2020,
+                    "to_TSO": "GAZ-SYSTEM"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.2808,
+                    43.548
+                ]
+            },
+            "properties": {
+                "name": "Toscana",
+                "id": "INET_LG_33",
+                "country_code": "IT",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.6885,
+                    "end_year": null,
+                    "entsog_id": 317,
+                    "exact": 3,
+                    "from_TSO": "OLT",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 15.716036578799999,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 80.10144,
+                    "median_cap_store2pipe_M_m3_per_d": 15.697181106,
+                    "nuts_id_1": "ITI",
+                    "nuts_id_2": "ITI1",
+                    "nuts_id_3": "ITI17",
+                    "start_year": 2013,
+                    "to_TSO": "Snam Rete Gas"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.19745,
+                    51.326
+                ]
+            },
+            "properties": {
+                "name": "Zeebrugge",
+                "id": "INET_LG_34",
+                "country_code": "BE",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": 11.63,
+                    "end_year": null,
+                    "entsog_id": 300,
+                    "exact": 3,
+                    "from_TSO": "Fluxys LNG",
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 51.004053924000004,
+                    "max_vessel_size_M_m3": 155.344,
+                    "max_workingGas_M_m3": 329.084,
+                    "median_cap_store2pipe_M_m3_per_d": 41.906288298,
+                    "nuts_id_1": "BE2",
+                    "nuts_id_2": "BE25",
+                    "nuts_id_3": "BE251",
+                    "start_year": 2019,
+                    "to_TSO": "Fluxys Belgium"
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": 0,
+                    "end_year": null,
+                    "entsog_id": 0,
+                    "exact": 0,
+                    "from_TSO": 0,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": 0.0,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": 0,
+                    "to_TSO": 0
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": "raw",
+                    "end_year": null,
+                    "entsog_id": "raw",
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": "raw",
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": "raw",
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": "raw",
+                    "to_TSO": "raw"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.35345,
+                    45.04514
+                ]
+            },
+            "properties": {
+                "name": "Porto Levante LNG Terminal",
+                "id": "GIE_LG_16",
+                "country_code": "IT",
+                "tags": {},
+                "param": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 3,
+                    "from_TSO": null,
+                    "is_H_gas": 1,
+                    "max_cap_store2pipe_M_m3_per_d": 21.542377674,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 146.0,
+                    "median_cap_store2pipe_M_m3_per_d": 21.542377674,
+                    "nuts_id_1": "ITH",
+                    "nuts_id_2": "ITH3",
+                    "nuts_id_3": "ITH37",
+                    "start_year": null,
+                    "to_TSO": null
+                },
+                "uncertainty": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": 0,
+                    "from_TSO": null,
+                    "is_H_gas": 0.5,
+                    "max_cap_store2pipe_M_m3_per_d": 0,
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": 0,
+                    "median_cap_store2pipe_M_m3_per_d": 0,
+                    "nuts_id_1": 0,
+                    "nuts_id_2": 0,
+                    "nuts_id_3": 0,
+                    "start_year": null,
+                    "to_TSO": null
+                },
+                "method": {
+                    "GCV_mean_kWh_per_m3": null,
+                    "end_year": null,
+                    "entsog_id": null,
+                    "exact": "make_Attrib(const)",
+                    "from_TSO": null,
+                    "is_H_gas": "make_Attrib(const)",
+                    "max_cap_store2pipe_M_m3_per_d": "raw",
+                    "max_vessel_size_M_m3": null,
+                    "max_workingGas_M_m3": "raw",
+                    "median_cap_store2pipe_M_m3_per_d": "raw",
+                    "nuts_id_1": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_2": "M_Consumers.add_Nuts_Num()",
+                    "nuts_id_3": "raw",
+                    "start_year": null,
+                    "to_TSO": null
+                }
+            }
+        }
+    ]
+}

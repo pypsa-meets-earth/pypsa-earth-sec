@@ -1,0 +1,57 @@
+## License
+
+SciGRID_gas is free and open data, based on freely available data.  
+
+
+## Project details 
+
+    Project title: 	Open Source Reference Model of European Gas Transport Networks for Scientific Studies on Sector Coupling (Offenes Referenzmodell europäischer Gastransportnetze für wissenschaftliche Untersuchungen zur Sektorkopplung)
+
+    Acronym: 		SciGRID_gas (Scientific GRID gas)
+
+    Funding period: Januar 2018 - July 21
+
+    Funding agency: Federal Ministry for Economic Affairs and Energy (Bundesministerium für Wirtschaft und Energie), Germany
+
+    Funding Code: 	03ET4063
+
+    Project partner(s): DLR Institute of Networked Energy Systems (individual project)
+
+
+## System requirements
+
+To visualize the abstracted gas transmission network resulting from the SciGRID_gas code, you can use internal SciGRID_gas functionlity, or export the data as GeoJson, and use geojson.io.
+
+
+## Installation 
+
+No installation required to use the data.
+
+
+## Documentation
+
+A detailed documentation of the SciGRID_gas data is available in the userguide (in folder doc). The userguide includes detailed information about the SciGRID_gas code structure, SciGRID_gas data structure, and how to run the SciGRID_gas model. Moreover, the userguide includes information about the simplifications and assumptions of the SciGRID_gas model as well as information about how the different data sources can be merged and missing data be estimated.
+
+
+## Help
+
+In case of any questions, comments or suggestions please do not hesitate to contact us by email via developers.gas(at)scigrid.de .
+
+If you would like to be informed about developments from within the project and the availability of new software and releases please register for our newsletter by sending an email to:
+news.gas-subscribe(at)scigrid.de . 
+
+
+## Contributors
+
+Project team:
+Dr. Wided Medjroubi  (project leader)
+Dr. Jan C. Diettrich (scientist)
+Dr. Adam Pluta 	 	 (scientist)
+
+
+
+## Contact
+
+Contact email: developers.gas(at)scigrid.de .
+
+
