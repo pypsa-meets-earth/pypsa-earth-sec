@@ -1,28 +1,19 @@
 # -*- coding: utf-8 -*-
 
+import json
+import math
 import os
+import pprint
 from pathlib import Path
 
 import country_converter as coco
+import matplotlib.pyplot as plt
 import openpyxl
 import pandas as pd
-import requests
-import math
-
-import json
-import pprint
-from geopy.geocoders import Nominatim
-
-import pandas as pd
 import pycountry
-
-import matplotlib.pyplot as plt
-import pandas as pd
 import requests
 import seaborn as sns
-
-
-
+from geopy.geocoders import Nominatim
 
 
 def get_cocode_from_name(df, country_column_name):
@@ -31,42 +22,41 @@ def get_cocode_from_name(df, country_column_name):
     for country in pycountry.countries:
         country_codes[country.name] = country.alpha_2
 
-    df['country'] = df[country_column_name].map(country_codes)
+    df["country"] = df[country_column_name].map(country_codes)
     return df
+
 
 def get_cocode_from_coords(df):
     geolocator = Nominatim(user_agent="geoapi")  # Initialize geolocator
-    
+
     # Initialize an empty list to store country codes
     country_codes = []
-    
-    
+
     for index, row in df.iterrows():
         # Get latitude and longitude from the row
-        latitude = row['Latitude']
-        longitude = row['Longitude']
-        
+        latitude = row["Latitude"]
+        longitude = row["Longitude"]
+
         # Perform reverse geocoding to get location information
         location = geolocator.reverse((latitude, longitude), exactly_one=True)
-        
-        if location and location.raw.get('address', {}).get('country_code'):
+
+        if location and location.raw.get("address", {}).get("country_code"):
             # Extract and append the country code to the list
-            country_code = location.raw['address']['country_code'].upper()
+            country_code = location.raw["address"]["country_code"].upper()
             country_codes.append(country_code)
         else:
             country_codes.append(None)
-    
-    # Add the country code list as a new column to the DataFrame
-    df['country'] = country_codes
-    
-    return df
 
+    # Add the country code list as a new column to the DataFrame
+    df["country"] = country_codes
+
+    return df
 
 
 def create_steel_db():
     # Global Steel Plant Tracker data set you requested from Global Energy Monitor from the link below:
 
-    # The following excel file was downloaded from the following webpage 
+    # The following excel file was downloaded from the following webpage
     # https://globalenergymonitor.org/wp-content/uploads/2023/03/Global-Steel-Plant-Tracker-2023-03.xlsx . The dataset contains 1433 Steel plants globally.
 
     fn = "https://globalenergymonitor.org/wp-content/uploads/2023/03/Global-Steel-Plant-Tracker-2023-03.xlsx"
@@ -78,7 +68,6 @@ def create_steel_db():
         sheet_name="Steel Plants",
         header=0,
     )
-
 
     df_steel = steel_orig.copy()
     df_steel = df_steel[
@@ -103,7 +92,7 @@ def create_steel_db():
             "Pelletizing plant capacity (ttpa)",
             "Category steel product",
             "Main production process",
-            "Municipality"
+            "Municipality",
         ]
     ]
 
@@ -115,17 +104,16 @@ def create_steel_db():
     Country = pd.Series(df_steel["Country"])
     df_steel["country"] = cc.pandas_convert(series=Country, to="ISO2")
 
-
     # Split Coordeinates column into x and y columns
     df_steel[["y", "x"]] = df_steel["Coordinates"].str.split(",", expand=True)
-
 
     # Drop Coordinates column as it contains a ',' and is not needed anymore
     df_steel = df_steel.drop(columns="Coordinates", axis=1)
 
-
     # Fetch steel plants that uses DRI and BF techs and drop them from main df
-    mixed_steel_plants = df_steel[df_steel["Main production process"] == "integrated (BF and DRI)"].copy()
+    mixed_steel_plants = df_steel[
+        df_steel["Main production process"] == "integrated (BF and DRI)"
+    ].copy()
     df_steel = df_steel.drop(mixed_steel_plants.index)
 
     # Separate the two techs in two dataframes
@@ -135,48 +123,83 @@ def create_steel_db():
     DRI_share["Main production process"] = "integrated (DRI)"
 
     # Calculate the share of both techs according to the capacities of iron production
-    BF_share["Nominal crude steel capacity (ttpa)"] = BF_share["Nominal crude steel capacity (ttpa)"] * mixed_steel_plants.apply(lambda x: x["Nominal BF capacity (ttpa)"] / x["Nominal iron capacity (ttpa)"], axis=1)
-    DRI_share["Nominal crude steel capacity (ttpa)"] = mixed_steel_plants["Nominal crude steel capacity (ttpa)"] - BF_share["Nominal crude steel capacity (ttpa)"] 
+    BF_share["Nominal crude steel capacity (ttpa)"] = BF_share[
+        "Nominal crude steel capacity (ttpa)"
+    ] * mixed_steel_plants.apply(
+        lambda x: x["Nominal BF capacity (ttpa)"] / x["Nominal iron capacity (ttpa)"],
+        axis=1,
+    )
+    DRI_share["Nominal crude steel capacity (ttpa)"] = (
+        mixed_steel_plants["Nominal crude steel capacity (ttpa)"]
+        - BF_share["Nominal crude steel capacity (ttpa)"]
+    )
 
-    #Add suffix to the index to differentiate between them in the main df
-    DRI_share.index += '_DRI'
-    BF_share.index += '_BF'
+    # Add suffix to the index to differentiate between them in the main df
+    DRI_share.index += "_DRI"
+    BF_share.index += "_BF"
 
     # Merge them back to the main df
-    df_steel=pd.concat([df_steel, BF_share, DRI_share])
+    df_steel = pd.concat([df_steel, BF_share, DRI_share])
     df_steel["Main production process"].value_counts()
 
     # Remove plants with unknown production technology
-    unknown_ind = df_steel[df_steel["Main production process"].str.contains("unknown")].index
+    unknown_ind = df_steel[
+        df_steel["Main production process"].str.contains("unknown")
+    ].index
     df_steel = df_steel.drop(unknown_ind)
     if len(unknown_ind) > 0:
-        print("dropped {0} steel/iron plants with unknown production technology of total {1} plants".format(len(unknown_ind), len(df_steel)))
+        print(
+            "dropped {0} steel/iron plants with unknown production technology of total {1} plants".format(
+                len(unknown_ind), len(df_steel)
+            )
+        )
     df_steel["Main production process"].value_counts()
 
     # Dict to map the technology names of the source to that expected in the workflow
-    iron_techs={"electric":"Electric arc",
-                "integrated (BF)": "Integrated steelworks",
-                "integrated (DRI)": "DRI + Electric arc",
-                "ironmaking (BF)": "Integrated steelworks",
-                "ironmaking (DRI)":"DRI + Electric arc",
-                "oxygen":"Integrated steelworks",
-                "electric, oxygen": "Electric arc",
+    iron_techs = {
+        "electric": "Electric arc",
+        "integrated (BF)": "Integrated steelworks",
+        "integrated (DRI)": "DRI + Electric arc",
+        "ironmaking (BF)": "Integrated steelworks",
+        "ironmaking (DRI)": "DRI + Electric arc",
+        "oxygen": "Integrated steelworks",
+        "electric, oxygen": "Electric arc",
     }
 
     # Creating the necessary columns in the dataframe
-    df_steel["technology"] = df_steel["Main production process"].apply(lambda x: iron_techs[x])
-    df_steel["unit"]="kt/yr"
-    df_steel["quality"]="exact"
-    df_steel=df_steel.reset_index()
-    df_steel=df_steel.rename(columns={"Nominal crude steel capacity (ttpa)":"capacity", "Municipality":"location", "Plant ID": "ID"})
-    return df_steel[["country", "y", "x", "location","technology", "capacity", "unit", "quality", "ID"]]
+    df_steel["technology"] = df_steel["Main production process"].apply(
+        lambda x: iron_techs[x]
+    )
+    df_steel["unit"] = "kt/yr"
+    df_steel["quality"] = "exact"
+    df_steel = df_steel.reset_index()
+    df_steel = df_steel.rename(
+        columns={
+            "Nominal crude steel capacity (ttpa)": "capacity",
+            "Municipality": "location",
+            "Plant ID": "ID",
+        }
+    )
+    return df_steel[
+        [
+            "country",
+            "y",
+            "x",
+            "location",
+            "technology",
+            "capacity",
+            "unit",
+            "quality",
+            "ID",
+        ]
+    ]
 
 
 def create_cement_db():
     # -------------
     # CEMENT
     # -------------
-    # The following excel file was downloaded from the following webpage https://www.cgfi.ac.uk/spatial-finance-initiative/geoasset-project/cement/. 
+    # The following excel file was downloaded from the following webpage https://www.cgfi.ac.uk/spatial-finance-initiative/geoasset-project/cement/.
     # The dataset contains 3117 cement plants globally.
     fn = "https://www.cgfi.ac.uk/wp-content/uploads/2021/08/SFI-Global-Cement-Database-July-2021.xlsx"
     storage_options = {"User-Agent": "Mozilla/5.0"}
@@ -187,7 +210,7 @@ def create_cement_db():
         sheet_name="SFI_ALD_Cement_Database",
         header=0,
     )
- 
+
     df_cement = cement_orig.copy()
     df_cement = df_cement[
         [
@@ -221,29 +244,47 @@ def create_cement_db():
     iso3 = pd.Series(df_cement["iso3"])
     df_cement["country"] = cc.pandas_convert(series=iso3, to="ISO2")
 
-
     # Dropping the null capacities reduces the dataframe from 3000+  rows to 1672 rows
     na_index = df_cement[df_cement.capacity.isna()].index
-    print("There are {} out of {} total cement plants with unknown capcities, setting value to country average".format(len(na_index), len(df_cement)))
+    print(
+        "There are {} out of {} total cement plants with unknown capcities, setting value to country average".format(
+            len(na_index), len(df_cement)
+        )
+    )
     avg_c_cap = df_cement.groupby(df_cement.country)["capacity"].mean()
-    df_cement["capacity"] = df_cement.apply(lambda x: avg_c_cap[x["country"]] if math.isnan(x["capacity"]) else x["capacity"], axis=1)
+    df_cement["capacity"] = df_cement.apply(
+        lambda x: avg_c_cap[x["country"]]
+        if math.isnan(x["capacity"])
+        else x["capacity"],
+        axis=1,
+    )
 
     df_cement["quality"] = "actual"
-    df_cement.loc[na_index, "quality"] = "actual" #TODO change 
-
+    df_cement.loc[na_index, "quality"] = "actual"  # TODO change
 
     df_cement = df_cement.reset_index()
-    df_cement = df_cement.rename(columns={"uid":"ID"})
+    df_cement = df_cement.rename(columns={"uid": "ID"})
 
-
-    return df_cement[["country", "y", "x", "location","technology", "capacity", "unit", "quality", "ID"]]
+    return df_cement[
+        [
+            "country",
+            "y",
+            "x",
+            "location",
+            "technology",
+            "capacity",
+            "unit",
+            "quality",
+            "ID",
+        ]
+    ]
 
 
 def create_refineries_df():
     # -------------
     # OIL REFINERIES
     # -------------
-    # The data were downloaded directly from arcgis server using a query found on this webpage: 
+    # The data were downloaded directly from arcgis server using a query found on this webpage:
     # https://www.arcgis.com/home/item.html?id=a6979b6bccbf4e719de3f703ea799259&sublayer=0#data
     # and https://www.arcgis.com/home/item.html?id=a917ac2766bc47e1877071f0201b6280
 
@@ -254,7 +295,6 @@ def create_refineries_df():
 
     first_response = requests.get(base_url + facts)
     response_list = first_response.json()
-
 
     data = []
     for response in response_list["features"]:
@@ -281,27 +321,45 @@ def create_refineries_df():
 
     df = pd.DataFrame(data)
 
-    df = get_cocode_from_name(df, 'Country')
+    df = get_cocode_from_name(df, "Country")
 
     df_nans = df[df.country.isna()]
     df = df.dropna(axis=0)
 
+    df_bylocation = get_cocode_from_coords(df_nans)
 
-    df_bylocation=get_cocode_from_coords(df_nans)
-
-    df_refineries = pd.concat([df, df_bylocation]) 
-
+    df_refineries = pd.concat([df, df_bylocation])
 
     # Creating the necessary columns in the dataframe
-    #df_refineries["technology"] = df_refineries["Main production process"].apply(lambda x: iron_techs[x])
-    df_refineries["unit"]="bpd"
-    df_refineries["quality"]="exact"
-    df_refineries["technology"]="HVC"
+    # df_refineries["technology"] = df_refineries["Main production process"].apply(lambda x: iron_techs[x])
+    df_refineries["unit"] = "bpd"
+    df_refineries["quality"] = "exact"
+    df_refineries["technology"] = "HVC"
 
-    df_refineries=df_refineries.rename(columns={"Capacity":"capacity", "Prov_State":"location", "Latitude": "y", "Longitude":"x", "FID_": "ID"})
-    df_refineries=df_refineries.reset_index()
+    df_refineries = df_refineries.rename(
+        columns={
+            "Capacity": "capacity",
+            "Prov_State": "location",
+            "Latitude": "y",
+            "Longitude": "x",
+            "FID_": "ID",
+        }
+    )
+    df_refineries = df_refineries.reset_index()
 
-    return df_refineries[["country", "y", "x", "location","technology", "capacity", "unit", "quality", "ID"]]
+    return df_refineries[
+        [
+            "country",
+            "y",
+            "x",
+            "location",
+            "technology",
+            "capacity",
+            "unit",
+            "quality",
+            "ID",
+        ]
+    ]
 
 
 if __name__ == "__main__":
@@ -325,7 +383,15 @@ if __name__ == "__main__":
     industrial_database_steel = create_steel_db()
     industrial_database_cement = create_cement_db()
     industrial_database_refineries = create_refineries_df()
-    
-    industrial_database = pd.concat([industrial_database_steel, industrial_database_cement, industrial_database_refineries])
 
-    industrial_database.to_csv(snakemake.output["industrial_database"], header=True, index=0)
+    industrial_database = pd.concat(
+        [
+            industrial_database_steel,
+            industrial_database_cement,
+            industrial_database_refineries,
+        ]
+    )
+
+    industrial_database.to_csv(
+        snakemake.output["industrial_database"], header=True, index=0
+    )
