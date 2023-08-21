@@ -473,6 +473,10 @@ rule plot_summary:
     script:
         "scripts/plot_summary.py"
 
+rule build_industrial_database:
+    output:
+        industrial_database="data/industrial_database.csv"
+
 
 rule prepare_db:
     input:

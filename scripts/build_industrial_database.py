@@ -61,15 +61,13 @@ def get_cocode_from_coords(df):
     
     return df
 
-    # -------------
-    # CEMENT
-    # -------------
-    # The following excel file was downloaded from the following webpage https://www.cgfi.ac.uk/spatial-finance-initiative/geoasset-project/cement/ . The dataset contains 3117 cement plants globally.
+
 
 def create_steel_db():
     # Global Steel Plant Tracker data set you requested from Global Energy Monitor from the link below:
 
-    # The following excel file was downloaded from the following webpage https://globalenergymonitor.org/wp-content/uploads/2023/03/Global-Steel-Plant-Tracker-2023-03.xlsx . The dataset contains 1433 Steel plants globally.
+    # The following excel file was downloaded from the following webpage 
+    # https://globalenergymonitor.org/wp-content/uploads/2023/03/Global-Steel-Plant-Tracker-2023-03.xlsx . The dataset contains 1433 Steel plants globally.
 
     fn = "https://globalenergymonitor.org/wp-content/uploads/2023/03/Global-Steel-Plant-Tracker-2023-03.xlsx"
     storage_options = {"User-Agent": "Mozilla/5.0"}
@@ -175,6 +173,11 @@ def create_steel_db():
 
 
 def create_cement_db():
+    # -------------
+    # CEMENT
+    # -------------
+    # The following excel file was downloaded from the following webpage https://www.cgfi.ac.uk/spatial-finance-initiative/geoasset-project/cement/. 
+    # The dataset contains 3117 cement plants globally.
     fn = "https://www.cgfi.ac.uk/wp-content/uploads/2021/08/SFI-Global-Cement-Database-July-2021.xlsx"
     storage_options = {"User-Agent": "Mozilla/5.0"}
     cement_orig = pd.read_excel(
@@ -184,10 +187,7 @@ def create_cement_db():
         sheet_name="SFI_ALD_Cement_Database",
         header=0,
     )
-
-
-
-    # 
+ 
     df_cement = cement_orig.copy()
     df_cement = df_cement[
         [
@@ -243,7 +243,8 @@ def create_refineries_df():
     # -------------
     # OIL REFINERIES
     # -------------
-    # The data were downloaded directly from arcgis server using a query found on this webpage: https://www.arcgis.com/home/item.html?id=a6979b6bccbf4e719de3f703ea799259&sublayer=0#data
+    # The data were downloaded directly from arcgis server using a query found on this webpage: 
+    # https://www.arcgis.com/home/item.html?id=a6979b6bccbf4e719de3f703ea799259&sublayer=0#data
     # and https://www.arcgis.com/home/item.html?id=a917ac2766bc47e1877071f0201b6280
 
     # The dataset contains 536 global Oil refineries.
@@ -325,7 +326,6 @@ if __name__ == "__main__":
     industrial_database_cement = create_cement_db()
     industrial_database_refineries = create_refineries_df()
     
+    industrial_database = pd.concat([industrial_database_steel, industrial_database_cement, industrial_database_refineries])
 
-
-
-
+    industrial_database.to_csv(snakemake.output["industrial_database"], header=True, index=0)
