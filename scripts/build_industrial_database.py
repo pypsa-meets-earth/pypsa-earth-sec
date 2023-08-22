@@ -167,8 +167,12 @@ def create_steel_db():
     }
 
     # Creating the necessary columns in the dataframe
-    iron_making = df_steel[df_steel["Main production process"].str.contains("ironmaking")].index
-    df_steel.loc[iron_making, "Nominal crude steel capacity (ttpa)"] = df_steel.loc[iron_making, "Nominal iron capacity (ttpa)"]
+    iron_making = df_steel[
+        df_steel["Main production process"].str.contains("ironmaking")
+    ].index
+    df_steel.loc[iron_making, "Nominal crude steel capacity (ttpa)"] = df_steel.loc[
+        iron_making, "Nominal iron capacity (ttpa)"
+    ]
     df_steel["unit"] = "kt/yr"
     df_steel["quality"] = "exact"
     df_steel = df_steel.reset_index()
