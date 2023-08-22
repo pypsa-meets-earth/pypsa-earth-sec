@@ -182,7 +182,7 @@ def create_steel_db():
     )
     df_steel.x = df_steel.x.apply(lambda x: eval(x))
     df_steel.y = df_steel.y.apply(lambda y: eval(y))
-    
+
     return df_steel[
         [
             "country",
