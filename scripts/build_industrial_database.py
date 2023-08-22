@@ -167,9 +167,8 @@ def create_steel_db():
     }
 
     # Creating the necessary columns in the dataframe
-    df_steel["technology"] = df_steel["Main production process"].apply(
-        lambda x: iron_techs[x]
-    )
+    iron_making = df_steel[df_steel["Main production process"].str.contains("ironmaking")].index
+    df_steel.loc[iron_making, "Nominal crude steel capacity (ttpa)"] = df_steel.loc[iron_making, "Nominal iron capacity (ttpa)"]
     df_steel["unit"] = "kt/yr"
     df_steel["quality"] = "exact"
     df_steel = df_steel.reset_index()
@@ -179,6 +178,10 @@ def create_steel_db():
             "Municipality": "location",
             "Plant ID": "ID",
         }
+    )
+    df_steel.capacity = pd.to_numeric(df_steel.capacity)
+    df_steel["technology"] = df_steel["Main production process"].apply(
+        lambda x: iron_techs[x]
     )
     df_steel.x = df_steel.x.apply(lambda x: eval(x))
     df_steel.y = df_steel.y.apply(lambda y: eval(y))
@@ -195,7 +198,7 @@ def create_steel_db():
             "quality",
             "ID",
         ]
-    ]
+    ].dropna()
 
 
 def create_cement_db():
