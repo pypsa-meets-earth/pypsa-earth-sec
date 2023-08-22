@@ -274,6 +274,7 @@ def create_cement_db():
 
     df_cement = df_cement.reset_index()
     df_cement = df_cement.rename(columns={"uid": "ID"})
+    df_cement.capacity = pd.to_numeric(df_cement.capacity)
 
     return df_cement[
         [
@@ -356,6 +357,7 @@ def create_refineries_df():
         }
     )
     df_refineries = df_refineries.reset_index()
+    df_refineries.capacity = pd.to_numeric(df_refineries.capacity)
 
     return df_refineries[
         [
