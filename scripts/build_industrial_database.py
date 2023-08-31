@@ -8,13 +8,13 @@ from pathlib import Path
 
 import country_converter as coco
 import matplotlib.pyplot as plt
+import numpy as np
 import openpyxl
 import pandas as pd
 import pycountry
 import requests
 import seaborn as sns
 from geopy.geocoders import Nominatim
-import numpy as np
 
 
 def get_cocode_from_name(df, country_column_name):
@@ -374,8 +374,8 @@ def create_refineries_df():
         ]
     ]
 
+
 def create_paper_df():
-    
     # -------------
     # Paper
     # -------------
@@ -406,57 +406,84 @@ def create_paper_df():
         ]
     ]
 
-
     df_paper = df_paper.rename(
         columns={
             "country": "Country",
             "latitude": "y",
             "longitude": "x",
             "city": "location",
-            "capacity_paper": "capacity"
+            "capacity_paper": "capacity",
         }
     )
     df_paper["unit"] = "10kt/yr"
     df_paper["technology"] = "Paper"
     df_paper["capacity"] = df_paper["capacity"]
 
-    df_paper.capacity=df_paper.capacity.apply(lambda x: x if type(x) == int or type(x) == int  == float else np.nan)
+    df_paper.capacity = df_paper.capacity.apply(
+        lambda x: x if type(x) == int or type(x) == int == float else np.nan
+    )
 
     # Keep only operating steel plants
-    #df_paper = df_paper.loc[df_paper["status"] == "Operating"]
+    # df_paper = df_paper.loc[df_paper["status"] == "Operating"]
 
     # Create a column with iso2 country code
     cc = coco.CountryConverter()
     iso3 = pd.Series(df_paper["iso3"])
     df_paper["country"] = cc.pandas_convert(series=iso3, to="ISO2")
 
-
-
     # Dropping the null capacities reduces the dataframe from 3000+  rows to 1672 rows
     na_index = df_paper[df_paper.capacity.isna()].index
-    print("There are {} out of {} total paper plants with unknown capcities, setting value to country average".format(len(na_index), len(df_paper)))
+    print(
+        "There are {} out of {} total paper plants with unknown capcities, setting value to country average".format(
+            len(na_index), len(df_paper)
+        )
+    )
     avg_c_cap = df_paper.groupby(df_paper.country)["capacity"].mean()
     na_index
 
-
-    df_paper["capacity"] = df_paper.apply(lambda x: avg_c_cap[x["country"]] if math.isnan(x["capacity"]) else x["capacity"], axis=1)/100
+    df_paper["capacity"] = (
+        df_paper.apply(
+            lambda x: avg_c_cap[x["country"]]
+            if math.isnan(x["capacity"])
+            else x["capacity"],
+            axis=1,
+        )
+        / 100
+    )
 
     df_paper["quality"] = "actual"
-    df_paper.loc[na_index, "quality"] = "actual" #TODO change 
-
+    df_paper.loc[na_index, "quality"] = "actual"  # TODO change
 
     df_paper = df_paper.reset_index()
-    df_paper = df_paper.rename(columns={"uid":"ID"})
+    df_paper = df_paper.rename(columns={"uid": "ID"})
 
+    industrial_database_paper = df_paper[
+        [
+            "country",
+            "y",
+            "x",
+            "location",
+            "technology",
+            "capacity",
+            "unit",
+            "quality",
+            "ID",
+        ]
+    ]
 
-    industrial_database_paper = df_paper[["country", "y", "x", "location","technology", "capacity", "unit", "quality", "ID"]]
-
-    no_infp_index = industrial_database_paper[industrial_database_paper.y == "No information"].index
-    print("Setting plants of countries with no values for paper plants to 1.0".format(len(na_index), len(df_paper)))
+    no_infp_index = industrial_database_paper[
+        industrial_database_paper.y == "No information"
+    ].index
+    print(
+        "Setting plants of countries with no values for paper plants to 1.0".format(
+            len(na_index), len(df_paper)
+        )
+    )
     industrial_database_paper = industrial_database_paper.drop(no_infp_index)
-    industrial_database_paper.capacity=industrial_database_paper.capacity.fillna(1)
+    industrial_database_paper.capacity = industrial_database_paper.capacity.fillna(1)
 
     return industrial_database_paper
+
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
