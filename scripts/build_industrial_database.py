@@ -14,6 +14,7 @@ import pycountry
 import requests
 import seaborn as sns
 from geopy.geocoders import Nominatim
+import numpy as np
 
 
 def get_cocode_from_name(df, country_column_name):
@@ -373,6 +374,89 @@ def create_refineries_df():
         ]
     ]
 
+def create_paper_df():
+    
+    # -------------
+    # Paper
+    # -------------
+    # The following excel file was downloaded from the following webpage https://www.cgfi.ac.uk/spatial-finance-initiative/geoasset-project/cement/ . The dataset contains 3117 cement plants globally.
+
+    fn = "https://www.cgfi.ac.uk/wp-content/uploads/2023/03/SFI_ALD_Pulp_Paper_Sample_LatAm_Jan_2023.xlsx"
+
+    storage_options = {"User-Agent": "Mozilla/5.0"}
+    paper_orig = pd.read_excel(
+        fn,
+        index_col=0,
+        storage_options=storage_options,
+        sheet_name="SFI_ALD_PPM_LatAm",
+        header=0,
+    )
+
+    df_paper = paper_orig.copy()
+    df_paper = df_paper[
+        [
+            "country",
+            "iso3",
+            "latitude",
+            "longitude",
+            "status",
+            "primary_product",
+            "capacity_paper",
+            "city",
+        ]
+    ]
+
+
+    df_paper = df_paper.rename(
+        columns={
+            "country": "Country",
+            "latitude": "y",
+            "longitude": "x",
+            "city": "location",
+            "capacity_paper": "capacity"
+        }
+    )
+    df_paper["unit"] = "10kt/yr"
+    df_paper["technology"] = "Paper"
+    df_paper["capacity"] = df_paper["capacity"]
+
+    df_paper.capacity=df_paper.capacity.apply(lambda x: x if type(x) == int or type(x) == int  == float else np.nan)
+
+    # Keep only operating steel plants
+    #df_paper = df_paper.loc[df_paper["status"] == "Operating"]
+
+    # Create a column with iso2 country code
+    cc = coco.CountryConverter()
+    iso3 = pd.Series(df_paper["iso3"])
+    df_paper["country"] = cc.pandas_convert(series=iso3, to="ISO2")
+
+
+
+    # Dropping the null capacities reduces the dataframe from 3000+  rows to 1672 rows
+    na_index = df_paper[df_paper.capacity.isna()].index
+    print("There are {} out of {} total paper plants with unknown capcities, setting value to country average".format(len(na_index), len(df_paper)))
+    avg_c_cap = df_paper.groupby(df_paper.country)["capacity"].mean()
+    na_index
+
+
+    df_paper["capacity"] = df_paper.apply(lambda x: avg_c_cap[x["country"]] if math.isnan(x["capacity"]) else x["capacity"], axis=1)/100
+
+    df_paper["quality"] = "actual"
+    df_paper.loc[na_index, "quality"] = "actual" #TODO change 
+
+
+    df_paper = df_paper.reset_index()
+    df_paper = df_paper.rename(columns={"uid":"ID"})
+
+
+    industrial_database_paper = df_paper[["country", "y", "x", "location","technology", "capacity", "unit", "quality", "ID"]]
+
+    no_infp_index = industrial_database_paper[industrial_database_paper.y == "No information"].index
+    print("Setting plants of countries with no values for paper plants to 1.0".format(len(na_index), len(df_paper)))
+    industrial_database_paper = industrial_database_paper.drop(no_infp_index)
+    industrial_database_paper.capacity=industrial_database_paper.capacity.fillna(1)
+
+    return industrial_database_paper
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
@@ -395,12 +479,14 @@ if __name__ == "__main__":
     industrial_database_steel = create_steel_db()
     industrial_database_cement = create_cement_db()
     industrial_database_refineries = create_refineries_df()
+    industrial_database_paper = create_paper_df()
 
     industrial_database = pd.concat(
         [
             industrial_database_steel,
             industrial_database_cement,
             industrial_database_refineries,
+            industrial_database_paper,
         ]
     )
 
