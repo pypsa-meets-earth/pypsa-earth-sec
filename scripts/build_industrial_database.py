@@ -448,11 +448,11 @@ def create_paper_df():
             else x["capacity"],
             axis=1,
         )
-        / 100
     )
 
     df_paper["quality"] = "actual"
     df_paper.loc[na_index, "quality"] = "actual"  # TODO change
+    df_paper.capacity = pd.to_numeric(df_paper.capacity)
 
     df_paper = df_paper.reset_index()
     df_paper = df_paper.rename(columns={"uid": "ID"})
