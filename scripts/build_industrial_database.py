@@ -441,13 +441,11 @@ def create_paper_df():
     avg_c_cap = df_paper.groupby(df_paper.country)["capacity"].mean()
     na_index
 
-    df_paper["capacity"] = (
-        df_paper.apply(
-            lambda x: avg_c_cap[x["country"]]
-            if math.isnan(x["capacity"])
-            else x["capacity"],
-            axis=1,
-        )
+    df_paper["capacity"] = df_paper.apply(
+        lambda x: avg_c_cap[x["country"]]
+        if math.isnan(x["capacity"])
+        else x["capacity"],
+        axis=1,
     )
 
     df_paper["quality"] = "actual"
