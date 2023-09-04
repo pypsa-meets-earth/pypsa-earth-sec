@@ -2090,20 +2090,21 @@ def add_residential(n, costs):
         n.loads_t.p_set.loc[:, heat_ind] / n.loads_t.p_set.loc[:, heat_ind].sum().sum()
     )
 
-    heat_shape = heat_shape.groupby(
+    heat_shape_agg = heat_shape.groupby(
         lambda x: next((substring for substring in nodes if substring in x), x), axis=1
     ).sum()
 
+    
     heat_oil_demand = (
-        heat_shape * energy_totals.loc[countries[0], "residential heat oil"] * 1e6
+        heat_shape_agg * energy_totals.loc[countries[0], "residential heat oil"] * 1e6
     )
 
     heat_biomass_demand = (
-        heat_shape * energy_totals.loc[countries[0], "residential heat biomass"] * 1e6
+        heat_shape_agg * energy_totals.loc[countries[0], "residential heat biomass"] * 1e6
     )
 
     heat_gas_demand = (
-        heat_shape * energy_totals.loc[countries[0], "residential heat gas"] * 1e6
+        heat_shape_agg * energy_totals.loc[countries[0], "residential heat gas"] * 1e6
     )
 
     n.loads_t.p_set.loc[:, heat_ind] = (
@@ -2316,13 +2317,13 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="14",
+            clusters="33",
             ll="c1.0",
             opts="Co2L",
-            planning_horizons="2030",
-            sopts="24H",
+            planning_horizons="2050",
+            sopts="3H",
             discountrate="0.071",
-            demand="XX",
+            demand="EG",
         )
 
     # Load population layout

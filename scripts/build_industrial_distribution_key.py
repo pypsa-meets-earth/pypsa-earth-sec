@@ -91,9 +91,9 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "build_industrial_distribution_key",
             simpl="",
-            clusters=10,
-            demand="DF",
-            planning_horizons=2030,
+            clusters=33,
+            demand="EG",
+            planning_horizons=2050,
         )
         sets_path_to_root("pypsa-earth-sec")
 
@@ -115,6 +115,8 @@ if __name__ == "__main__":
         header=0,
         keep_default_na=False,  # , index_col=0
     )
+
+    geo_locs.capacity = pd.to_numeric(geo_locs.capacity)
 
     gadm_clustering = snakemake.config["clustering_options"]["alternative_clustering"]
 
