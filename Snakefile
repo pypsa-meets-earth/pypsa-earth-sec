@@ -93,6 +93,7 @@ rule prepare_airports:
     script:
         "scripts/prepare_airports.py"
 
+
 rule prepare_gas_network:
     input:
         gas_network="data/gas_network/scigrid-gas/data/IGGIELGN_PipeSegments.geojson",
