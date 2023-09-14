@@ -8,22 +8,21 @@ import logging
 logger = logging.getLogger(__name__)
 
 import os
-import geopandas as gpd
-import pandas as pd
-from packaging.version import Version, parse
-from pypsa.geo import haversine_pts
-from shapely import wkt
-from pyproj import CRS
-from shapely.ops import unary_union
-from shapely.geometry import LineString, MultiLineString
-from shapely.geometry import Point
-from matplotlib.lines import Line2D
-import matplotlib.colors as colors
-import matplotlib.pyplot as plt
 import zipfile
 from pathlib import Path
-from helpers import (progress_retrieve, two_2_three_digits_country)
 
+import geopandas as gpd
+import matplotlib.colors as colors
+import matplotlib.pyplot as plt
+import pandas as pd
+from helpers import progress_retrieve, two_2_three_digits_country
+from matplotlib.lines import Line2D
+from packaging.version import Version, parse
+from pyproj import CRS
+from pypsa.geo import haversine_pts
+from shapely import wkt
+from shapely.geometry import LineString, MultiLineString, Point
+from shapely.ops import unary_union
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
@@ -80,14 +79,17 @@ def download_GGIT_gas_network():
     The following xlsx file was downloaded from the webpage https://globalenergymonitor.org/projects/global-gas-infrastructure-tracker/
     The dataset contains 3144 pipelines.
     """
-    fn = "https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx" 
+    fn = "https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx"
     storage_options = {"User-Agent": "Mozilla/5.0"}
     GGIT_gas_pipeline = pd.read_excel(
-        fn, index_col=0, storage_options=storage_options, sheet_name='Gas Pipelines 2022-12-16', header=0
+        fn,
+        index_col=0,
+        storage_options=storage_options,
+        sheet_name="Gas Pipelines 2022-12-16",
+        header=0,
     )
 
-    return (GGIT_gas_pipeline)
-
+    return GGIT_gas_pipeline
 
 
 def diameter_to_capacity(pipe_diameter_mm):
@@ -125,19 +127,19 @@ def diameter_to_capacity(pipe_diameter_mm):
 
 
 def inch_to_mm(len_inch):
-    return len_inch/0.0393701
+    return len_inch / 0.0393701
 
 
 def bcm_to_MW(cap_bcm):
-    return (cap_bcm*9769444.44/8760)  
+    return cap_bcm * 9769444.44 / 8760
 
 
 def correct_Diameter_col(value):
     value = str(value)
     # Check if the value contains a comma
-    if ',' in value:
+    if "," in value:
         # Split the value by comma and convert each part to a float
-        diameter_values = [float(val) for val in value.split(',')]
+        diameter_values = [float(val) for val in value.split(",")]
         # Calculate the mean of the values
         return sum(diameter_values) / len(diameter_values)
     elif "/" in value:
@@ -155,18 +157,23 @@ def correct_Diameter_col(value):
         return float(value)
 
 
-
 def prepare_GGIT_data(GGIT_gas_pipeline):
     df = GGIT_gas_pipeline.copy().reset_index()
 
     # Drop rows containing "--" in the 'WKTFormat' column
-    df = df[df['WKTFormat'] != '--']
+    df = df[df["WKTFormat"] != "--"]
 
     # Keep pipelines that are as below
-    df = df[(df['Status'] == 'Construction') | (df['Status'] == 'Operating') | (df['Status'] == 'Idle') | (df['Status'] == 'Shelved') | (df['Status'] == 'Mothballed')]
+    df = df[
+        (df["Status"] == "Construction")
+        | (df["Status"] == "Operating")
+        | (df["Status"] == "Idle")
+        | (df["Status"] == "Shelved")
+        | (df["Status"] == "Mothballed")
+    ]
 
     # Convert the WKT column to a GeoDataFrame
-    df = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkt(df['WKTFormat']))
+    df = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkt(df["WKTFormat"]))
 
     # Set the CRS to EPSG:4326
     df.crs = CRS.from_epsg(4326)
@@ -175,19 +182,31 @@ def prepare_GGIT_data(GGIT_gas_pipeline):
     df = df.to_crs(epsg=3857)
 
     # Convert and correct diameter column to be in mm
-    df.loc[df['DiameterUnits'] == 'mm', 'diameter_mm'] = df.loc[df['DiameterUnits'] == 'mm', 'Diameter'].apply(correct_Diameter_col)
-    df.loc[df['DiameterUnits'] == 'in', 'diameter_mm'] = df.loc[df['DiameterUnits'] == 'in', 'Diameter'].apply(correct_Diameter_col).apply(lambda ds: pd.Series(ds).apply(lambda d: inch_to_mm(float(d))))
+    df.loc[df["DiameterUnits"] == "mm", "diameter_mm"] = df.loc[
+        df["DiameterUnits"] == "mm", "Diameter"
+    ].apply(correct_Diameter_col)
+    df.loc[df["DiameterUnits"] == "in", "diameter_mm"] = (
+        df.loc[df["DiameterUnits"] == "in", "Diameter"]
+        .apply(correct_Diameter_col)
+        .apply(lambda ds: pd.Series(ds).apply(lambda d: inch_to_mm(float(d))))
+    )
 
     # Convert Bcm/y to MW
-    df['CapacityBcm/y'] = pd.to_numeric(df['CapacityBcm/y'], errors='coerce')
-    df['capacity [MW]'] = df['CapacityBcm/y'].apply(lambda d: bcm_to_MW(d))
+    df["CapacityBcm/y"] = pd.to_numeric(df["CapacityBcm/y"], errors="coerce")
+    df["capacity [MW]"] = df["CapacityBcm/y"].apply(lambda d: bcm_to_MW(d))
 
     # Get capacity from diameter for rows where no capacity is given
-    df.loc[df['CapacityBcm/y'] == '--', 'capacity [MW]'] = df.loc[df['CapacityBcm/y'] == '--', 'diameter_mm'].apply(lambda d: diameter_to_capacity(int(d)))
-    df['diameter_mm'] = pd.to_numeric(df['diameter_mm'], errors='coerce', downcast='integer')
-    df.loc[pd.isna(df['CapacityBcm/y']), 'capacity [MW]'] = df.loc[pd.isna(df['CapacityBcm/y']), 'diameter_mm'].apply(lambda d: diameter_to_capacity(d))
+    df.loc[df["CapacityBcm/y"] == "--", "capacity [MW]"] = df.loc[
+        df["CapacityBcm/y"] == "--", "diameter_mm"
+    ].apply(lambda d: diameter_to_capacity(int(d)))
+    df["diameter_mm"] = pd.to_numeric(
+        df["diameter_mm"], errors="coerce", downcast="integer"
+    )
+    df.loc[pd.isna(df["CapacityBcm/y"]), "capacity [MW]"] = df.loc[
+        pd.isna(df["CapacityBcm/y"]), "diameter_mm"
+    ].apply(lambda d: diameter_to_capacity(d))
 
-    return(df)
+    return df
 
 
 def load_IGGIELGN_data(fn):
@@ -208,7 +227,7 @@ def prepare_IGGIELGN_data(
     correction_threshold_length=4,
     correction_threshold_p_nom=8,
     bidirectional_below=10,
-): # Taken from pypsa-eur and adapted
+):  # Taken from pypsa-eur and adapted
     # extract start and end from LineString
     df["point0"] = df.geometry.apply(lambda x: Point(x.coords[0]))
     df["point1"] = df.geometry.apply(lambda x: Point(x.coords[-1]))
@@ -281,20 +300,20 @@ def prepare_IGGIELGN_data(
     df = df.to_crs(epsg=3857)
 
     return df
-  
 
 
 def load_bus_region(onshore_path, pipelines):
     """
-    Load pypsa-earth-sec onshore regions. 
+    Load pypsa-earth-sec onshore regions.
     TODO: Think about including Offshore regions but only for states that have offshore pipelines.
     """
     bus_regions_onshore = gpd.read_file(onshore_path)
     # Convert CRS to EPSG:3857 so we can measure distances
-    bus_regions_onshore = bus_regions_onshore.to_crs(epsg=3857) 
+    bus_regions_onshore = bus_regions_onshore.to_crs(epsg=3857)
 
-    bus_regions_onshore = bus_regions_onshore.rename(
-        {'name':'gadm_id'}, axis=1).loc[:, ['gadm_id', 'geometry']]
+    bus_regions_onshore = bus_regions_onshore.rename({"name": "gadm_id"}, axis=1).loc[
+        :, ["gadm_id", "geometry"]
+    ]
 
     if snakemake.config["clustering_options"]["alternative_clustering"]:
         # Conversion of GADM id to from 3 to 2-digit
@@ -303,7 +322,9 @@ def load_bus_region(onshore_path, pipelines):
             .str.split(".")
             .apply(lambda id: two_2_three_digits_country(id[0]) + "." + id[1])
         )
-        bus_regions_onshore['gadm_id'] = bus_regions_onshore['gadm_id'].str.replace('_AC', '')
+        bus_regions_onshore["gadm_id"] = bus_regions_onshore["gadm_id"].str.replace(
+            "_AC", ""
+        )
 
     country_borders = unary_union(bus_regions_onshore.geometry)
 
@@ -313,24 +334,31 @@ def load_bus_region(onshore_path, pipelines):
     return bus_regions_onshore, country_borders
 
 
-
 def get_states_in_order(pipeline, bus_regions_onshore):
     states_p = []
 
     if pipeline.geom_type == "LineString":
         # Interpolate points along the LineString with a given step size (e.g., 5)
         step_size = 10000
-        interpolated_points = [pipeline.interpolate(i) for i in range(0, int(pipeline.length), step_size)]
-        interpolated_points.append(pipeline.interpolate(pipeline.length))  # Add the last point
+        interpolated_points = [
+            pipeline.interpolate(i) for i in range(0, int(pipeline.length), step_size)
+        ]
+        interpolated_points.append(
+            pipeline.interpolate(pipeline.length)
+        )  # Add the last point
 
     elif pipeline.geom_type == "MultiLineString":
-        interpolated_points=[]
+        interpolated_points = []
         # Iterate over each LineString within the MultiLineString
         for line in pipeline.geoms:
             # Interpolate points along each LineString with a given step size (e.g., 5)
             step_size = 10000
-            interpolated_points_line = [line.interpolate(i) for i in range(0, int(line.length), step_size)]
-            interpolated_points_line.append(line.interpolate(line.length))  # Add the last point
+            interpolated_points_line = [
+                line.interpolate(i) for i in range(0, int(line.length), step_size)
+            ]
+            interpolated_points_line.append(
+                line.interpolate(line.length)
+            )  # Add the last point
             interpolated_points.extend(interpolated_points_line)
 
     # Check each interpolated point against the state geometries
@@ -346,7 +374,7 @@ def get_states_in_order(pipeline, bus_regions_onshore):
 
 
 def parse_states(pipelines, bus_regions_onshore):
-    #Parse the states of the points which are connected by the pipeline geometry object
+    # Parse the states of the points which are connected by the pipeline geometry object
     pipelines["nodes"] = None
     pipelines["states_passed"] = None
     pipelines["amount_states_passed"] = None
@@ -354,67 +382,89 @@ def parse_states(pipelines, bus_regions_onshore):
     for pipeline, row in pipelines.iterrows():
         states_p = get_states_in_order(row.geometry, bus_regions_onshore)
         # states_p = pd.unique(states_p)
-        row['states_passed'] = states_p
+        row["states_passed"] = states_p
         row["amount_states_passed"] = len(states_p)
         row["nodes"] = list(zip(states_p[0::1], states_p[1::1]))
         pipelines.loc[pipeline] = row
-    print("The maximum number of states which are passed by one single pipeline amounts to {}.".format(pipelines.states_passed.apply(lambda n: len(n)).max()))
+    print(
+        "The maximum number of states which are passed by one single pipeline amounts to {}.".format(
+            pipelines.states_passed.apply(lambda n: len(n)).max()
+        )
+    )
     return pipelines
 
+
 def cluster_gas_network(pipelines, bus_regions_onshore, length_factor):
-    #drop innerstatal pipelines
-    pipelines_interstate = pipelines.drop(pipelines.loc[pipelines.amount_states_passed < 2].index)
+    # drop innerstatal pipelines
+    pipelines_interstate = pipelines.drop(
+        pipelines.loc[pipelines.amount_states_passed < 2].index
+    )
 
     # Convert CRS to EPSG:3857 so we can measure distances
     pipelines_interstate = pipelines_interstate.to_crs(epsg=3857)  # 3857
 
     # Perform overlay operation to split lines by polygons
-    pipelines_interstate = gpd.overlay(pipelines_interstate, bus_regions_onshore, how='intersection')
+    pipelines_interstate = gpd.overlay(
+        pipelines_interstate, bus_regions_onshore, how="intersection"
+    )
 
-    column_set = ['ProjectID', 'nodes',  'gadm_id', 'capacity [MW]'] 
+    column_set = ["ProjectID", "nodes", "gadm_id", "capacity [MW]"]
 
-    if snakemake.config["sector"]["gas_network_dataset"] == 'IGGIELGN':
-        pipelines_per_state = pipelines_interstate.rename({'p_nom':'capacity [MW]', 'name':'ProjectID'}, axis=1).loc[:, column_set].reset_index(drop=True)
-    elif snakemake.config["sector"]["gas_network_dataset"] == 'GGIT':
-        pipelines_per_state = pipelines_interstate.loc[:, column_set].reset_index(drop=True)
-
+    if snakemake.config["sector"]["gas_network_dataset"] == "IGGIELGN":
+        pipelines_per_state = (
+            pipelines_interstate.rename(
+                {"p_nom": "capacity [MW]", "name": "ProjectID"}, axis=1
+            )
+            .loc[:, column_set]
+            .reset_index(drop=True)
+        )
+    elif snakemake.config["sector"]["gas_network_dataset"] == "GGIT":
+        pipelines_per_state = pipelines_interstate.loc[:, column_set].reset_index(
+            drop=True
+        )
 
     # Explode the column containing lists of tuples
-    df_exploded = pipelines_per_state.explode('nodes').reset_index(drop=True)
+    df_exploded = pipelines_per_state.explode("nodes").reset_index(drop=True)
 
     # Create new columns for the tuples
-    df_exploded.insert(0,"bus1", pd.DataFrame(df_exploded['nodes'].tolist())[1])
-    df_exploded.insert(0,"bus0", pd.DataFrame(df_exploded['nodes'].tolist())[0])
+    df_exploded.insert(0, "bus1", pd.DataFrame(df_exploded["nodes"].tolist())[1])
+    df_exploded.insert(0, "bus0", pd.DataFrame(df_exploded["nodes"].tolist())[0])
 
     # Drop the original column
-    df_exploded.drop('nodes', axis=1, inplace=True)
+    df_exploded.drop("nodes", axis=1, inplace=True)
 
     # Reset the index if needed
     df_exploded.reset_index(drop=True, inplace=True)
 
     # Custom function to check if value in column 'gadm_id' exists in either column 'bus0' or column 'bus1'
     def check_existence(row):
-        return row['gadm_id'] in [row['bus0'], row['bus1']]
+        return row["gadm_id"] in [row["bus0"], row["bus1"]]
 
     # Apply the custom function to each row and keep only the rows that satisfy the condition
     df_filtered = df_exploded[df_exploded.apply(check_existence, axis=1)]
-    df_grouped = df_filtered.groupby(['bus0', 'bus1', 'ProjectID'], as_index=False).agg({
-                                                                    'capacity [MW]':'first',
-                                                                    })
+    df_grouped = df_filtered.groupby(["bus0", "bus1", "ProjectID"], as_index=False).agg(
+        {
+            "capacity [MW]": "first",
+        }
+    )
 
     # Rename columns to match pypsa-earth-sec format
-    df_grouped = df_grouped.rename({'capacity [MW]':'capacity'}, axis=1).loc[:, ['bus0', 'bus1', 'capacity']]
+    df_grouped = df_grouped.rename({"capacity [MW]": "capacity"}, axis=1).loc[
+        :, ["bus0", "bus1", "capacity"]
+    ]
     # df_exploded = df_exploded.loc[:, ['bus0', 'bus1', 'length']] # 'capacity'
 
     # Group by buses to get average length and sum of capacites of all pipelines between any two states on the route.
-    grouped = df_grouped.groupby(['bus0', 'bus1'], as_index=False).agg({
-                                                                    'capacity':'sum'
-                                                                    })
+    grouped = df_grouped.groupby(["bus0", "bus1"], as_index=False).agg(
+        {"capacity": "sum"}
+    )
     states1 = bus_regions_onshore.copy()
-    states1 = states1.set_index('gadm_id')
+    states1 = states1.set_index("gadm_id")
 
     # Create center points for each polygon and store them in a new column 'center_point'
-    states1['center_point'] = states1['geometry'].to_crs(3857).centroid.to_crs(4326) # ----> If haversine_pts method  for length calc is used
+    states1["center_point"] = (
+        states1["geometry"].to_crs(3857).centroid.to_crs(4326)
+    )  # ----> If haversine_pts method  for length calc is used
     # states1['center_point'] = states1['geometry'].centroid
 
     # Create an empty DataFrame to store distances
@@ -428,8 +478,16 @@ def cluster_gas_network(pipelines, bus_regions_onshore, length_factor):
                 polygon2 = states1.iloc[j]
 
                 # Calculate Haversine distance
-                distance = haversine_pts([Point(polygon1['center_point'].coords[0]).x, Point(polygon1['center_point'].coords[-1]).y], 
-                                    [Point(polygon2['center_point'].coords[0]).x, Point(polygon2['center_point'].coords[-1]).y]) # ----> If haversine_pts method  for length calc is used
+                distance = haversine_pts(
+                    [
+                        Point(polygon1["center_point"].coords[0]).x,
+                        Point(polygon1["center_point"].coords[-1]).y,
+                    ],
+                    [
+                        Point(polygon2["center_point"].coords[0]).x,
+                        Point(polygon2["center_point"].coords[-1]).y,
+                    ],
+                )  # ----> If haversine_pts method  for length calc is used
 
                 # Store the distance along with polygon IDs or other relevant information
                 polygon_id1 = states1.index[i]
@@ -437,113 +495,125 @@ def cluster_gas_network(pipelines, bus_regions_onshore, length_factor):
                 distance_data.append([polygon_id1, polygon_id2, distance])
 
     # Create a DataFrame from the distance data
-    distance_df = pd.DataFrame(distance_data, columns=['bus0', 'bus1', 'distance'])
+    distance_df = pd.DataFrame(distance_data, columns=["bus0", "bus1", "distance"])
 
-    merged_df = pd.merge(grouped, distance_df, on=['bus0', 'bus1'], how='left')
+    merged_df = pd.merge(grouped, distance_df, on=["bus0", "bus1"], how="left")
 
-    length_factor=1.25
+    length_factor = 1.25
 
-    merged_df['length'] = merged_df['distance'] * length_factor
+    merged_df["length"] = merged_df["distance"] * length_factor
 
-    merged_df = merged_df.drop('distance', axis=1)
+    merged_df = merged_df.drop("distance", axis=1)
 
-    merged_df['GWKm'] =  (merged_df['capacity'] / 1000) * merged_df['length']
+    merged_df["GWKm"] = (merged_df["capacity"] / 1000) * merged_df["length"]
 
     return merged_df
 
 
 def plot_gas_network(pipelines, country_borders, bus_regions_onshore):
     df = pipelines.copy()
-    df = gpd.overlay(df, country_borders, how='intersection')
+    df = gpd.overlay(df, country_borders, how="intersection")
 
-    if snakemake.config["sector"]["gas_network_dataset"] == 'IGGIELGN':
-        df = df.rename({'p_nom':'capacity [MW]'}, axis=1)
+    if snakemake.config["sector"]["gas_network_dataset"] == "IGGIELGN":
+        df = df.rename({"p_nom": "capacity [MW]"}, axis=1)
 
     fig, ax = plt.subplots(1, 1)
     fig.set_size_inches(12, 7)
-    bus_regions_onshore.to_crs(epsg=3857).plot(ax=ax, color="white", edgecolor="darkgrey", linewidth=0.5)
+    bus_regions_onshore.to_crs(epsg=3857).plot(
+        ax=ax, color="white", edgecolor="darkgrey", linewidth=0.5
+    )
     df.loc[(df.amount_states_passed > 1)].to_crs(epsg=3857).plot(
-                                                    ax=ax,
-                                                    column='capacity [MW]',
-                                                    linewidth=2.5,
-                                                    #linewidth=df['capacity [MW]'],
-                                                    #alpha=0.8,
-                                                    categorical=False,
-                                                    cmap='viridis_r',
-                                                    #legend=True,
-                                                    #legend_kwds={'label':'Pipeline capacity [MW]'},
-                                                    )
+        ax=ax,
+        column="capacity [MW]",
+        linewidth=2.5,
+        # linewidth=df['capacity [MW]'],
+        # alpha=0.8,
+        categorical=False,
+        cmap="viridis_r",
+        # legend=True,
+        # legend_kwds={'label':'Pipeline capacity [MW]'},
+    )
 
     df.loc[(df.amount_states_passed <= 1)].to_crs(epsg=3857).plot(
-                                                    ax=ax,
-                                                    column='capacity [MW]',
-                                                    linewidth=2.5,
-                                                    #linewidth=df['capacity [MW]'],
-                                                    alpha=0.5,
-                                                    categorical=False,
-                                                    # color='darkgrey',
-                                                    ls = 'dotted', 
-                                                    )
+        ax=ax,
+        column="capacity [MW]",
+        linewidth=2.5,
+        # linewidth=df['capacity [MW]'],
+        alpha=0.5,
+        categorical=False,
+        # color='darkgrey',
+        ls="dotted",
+    )
 
     # # Create custom legend handles for line types
     # line_types = [ 'solid', 'dashed', 'dotted'] # solid
     # legend_handles = [Line2D([0], [0], color='black', linestyle=line_type) for line_type in line_types]
 
     # Define line types and labels
-    line_types = ['solid', 'dotted']
-    line_labels = ['Operating', 'Not considered \n(within-state)']
+    line_types = ["solid", "dotted"]
+    line_labels = ["Operating", "Not considered \n(within-state)"]
 
     # Create custom legend handles for line types
-    legend_handles = [Line2D([0], [0], color='black', linestyle=line_type, label=line_label)
-                    for line_type, line_label in zip(line_types, line_labels)]
-
+    legend_handles = [
+        Line2D([0], [0], color="black", linestyle=line_type, label=line_label)
+        for line_type, line_label in zip(line_types, line_labels)
+    ]
 
     # Add the line type legend
-    ax.legend(handles=legend_handles, title='Status',borderpad=1,
-                title_fontproperties={'weight':'bold'}, fontsize=11, loc=1,)
+    ax.legend(
+        handles=legend_handles,
+        title="Status",
+        borderpad=1,
+        title_fontproperties={"weight": "bold"},
+        fontsize=11,
+        loc=1,
+    )
 
     # # create the colorbar
-    norm = colors.Normalize(vmin=df['capacity [MW]'].min(), vmax=df['capacity [MW]'].max())
-    cbar = plt.cm.ScalarMappable(norm=norm, cmap='viridis_r')
+    norm = colors.Normalize(
+        vmin=df["capacity [MW]"].min(), vmax=df["capacity [MW]"].max()
+    )
+    cbar = plt.cm.ScalarMappable(norm=norm, cmap="viridis_r")
     # fig.colorbar(cbar, ax=ax).set_label('Capacity [MW]')
 
     # add colorbar
-    ax_cbar = fig.colorbar(cbar, ax=ax, location='left', shrink=0.8, pad=0.01)
+    ax_cbar = fig.colorbar(cbar, ax=ax, location="left", shrink=0.8, pad=0.01)
     # add label for the colorbar
-    ax_cbar.set_label('Natural gas pipeline capacity [MW]', fontsize=15)
+    ax_cbar.set_label("Natural gas pipeline capacity [MW]", fontsize=15)
 
-    ax.set_axis_off()        
+    ax.set_axis_off()
     fig.savefig(snakemake.output.gas_network_fig, dpi=300, bbox_inches="tight")
-
 
 
 if not snakemake.config["custom_data"]["gas_grid"]:
     if snakemake.config["sector"]["gas_network"]:
-        if snakemake.config["sector"]["gas_network_dataset"] == 'GGIT':
-
+        if snakemake.config["sector"]["gas_network_dataset"] == "GGIT":
             pipelines = download_GGIT_gas_network()
             pipelines = prepare_GGIT_data(pipelines)
 
-        elif snakemake.config["sector"]["gas_network_dataset"] == 'IGGIELGN':
-            
+        elif snakemake.config["sector"]["gas_network_dataset"] == "IGGIELGN":
             download_IGGIELGN_gas_network()
 
             pipelines = load_IGGIELGN_data(snakemake.input.gas_network)
             pipelines = prepare_IGGIELGN_data(pipelines)
 
-        bus_regions_onshore = load_bus_region(snakemake.input.regions_onshore, pipelines)[0]
+        bus_regions_onshore = load_bus_region(
+            snakemake.input.regions_onshore, pipelines
+        )[0]
         country_borders = load_bus_region(snakemake.input.regions_onshore, pipelines)[1]
 
         pipelines = parse_states(pipelines, bus_regions_onshore)
 
         plot_gas_network(pipelines, country_borders, bus_regions_onshore)
 
-        pipelines = cluster_gas_network(pipelines, bus_regions_onshore, length_factor=1.25)
+        pipelines = cluster_gas_network(
+            pipelines, bus_regions_onshore, length_factor=1.25
+        )
 
         pipelines.to_csv(snakemake.output.clustered_gas_network, index=False)
 
-        average_length = pipelines['length'].mean
-        print('average_length = ', average_length)
+        average_length = pipelines["length"].mean
+        print("average_length = ", average_length)
 
-        total_system_capacity = pipelines['GWKm'].sum()
-        print('total_system_capacity = ', total_system_capacity)
+        total_system_capacity = pipelines["GWKm"].sum()
+        print("total_system_capacity = ", total_system_capacity)

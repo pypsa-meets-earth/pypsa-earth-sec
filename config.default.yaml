@@ -74,7 +74,7 @@ custom_data:
   h2_underground: false
   add_existing: false
   custom_sectors: false
-  gas_grid: true 
+  gas_grid: true
 
 
 costs:
