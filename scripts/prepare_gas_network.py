@@ -164,7 +164,9 @@ def prepare_GGIT_data(GGIT_gas_pipeline):
     df = df[df["WKTFormat"] != "--"]
 
     # Keep pipelines that are as below
-    df = df[df['Status'].isin(snakemake.config["sector"]["gas_network_GGIT_dataset_status"])]
+    df = df[
+        df["Status"].isin(snakemake.config["sector"]["gas_network_GGIT_dataset_status"])
+    ]
 
     # Convert the WKT column to a GeoDataFrame
     df = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkt(df["WKTFormat"]))
