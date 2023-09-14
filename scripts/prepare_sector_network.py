@@ -322,7 +322,7 @@ def add_hydrogen(n, costs):
         carrier="H2 Store",
         capital_cost=h2_capital_cost,
     )
-    if snakemake.config["custom_data"]["gas_grid"]:
+    if snakemake.config["custom_data"]["gas_grid"] or snakemake.config["sector"]["gas_network"]:
         h2_links = pd.read_csv(snakemake.input.pipelines)
 
         # Order buses to detect equal pairs for bidirectional pipelines
@@ -2316,13 +2316,13 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_sector_network",
             simpl="",
-            clusters="14",
+            clusters="5",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="24H",
+            sopts="144H",
             discountrate="0.071",
-            demand="XX",
+            demand="DF",
         )
 
     # Load population layout

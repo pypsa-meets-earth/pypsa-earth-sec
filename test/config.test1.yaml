@@ -76,8 +76,9 @@ custom_data:
   h2_underground: false
   add_existing: false
   custom_sectors: false
-  gas_grid: false # If "false" -> Then distance between shapes centroids will be taken only, without capacity weighting
-  gas_grid_dataset: GGIT # Global dataset -> 'GGIT' , European dataset -> 'IGGIELGN'
+  gas_grid: true 
+
+
 costs:
   lifetime: 25 #default lifetime
   # From a Lion Hirth paper, also reflects average of Noothout et al 2016
@@ -158,7 +159,8 @@ solar_thermal:
     azimuth: 180.
 
 sector:
-  gas_network: true
+  gas_network: true # If "false" & gas_grid is "false" -> Then distance between shapes centroids will be taken for pipelines only, without capacity weighting ++ AND ++ NO SPATIAL GAS AT ALL !!!!!
+  gas_network_dataset: GGIT # Global dataset -> 'GGIT' , European dataset -> 'IGGIELGN'
   oil_network: true
   district_heating:
     potential: 0.3 #maximum fraction of urban demand which can be supplied by district heating
