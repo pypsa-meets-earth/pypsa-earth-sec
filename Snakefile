@@ -438,7 +438,8 @@ rule solve_network:
         + "/logs/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export_python.log",
         memory=RDIR
         + "/logs/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export_memory.log",
-    threads: 25
+    threads: 
+        config["solving"]["solver"].get("threads", 4)
     resources:
         mem_mb=config["solving"]["mem"],
     benchmark:
