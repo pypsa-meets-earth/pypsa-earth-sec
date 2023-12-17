@@ -301,6 +301,7 @@ def add_hydrogen(n, costs):
             h2_pot = h2_cavern_ct.loc[cavern_nodes.country]
             h2_pot.index = cavern_nodes.index
             # h2_pot = h2_pot * cavern_nodes.fraction * 1e6
+            h2_pot = h2_pot * 1e6 # Convert from TWh to MWh
 
             n.madd(
                 "Store",
