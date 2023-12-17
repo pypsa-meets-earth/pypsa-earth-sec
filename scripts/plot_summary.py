@@ -10,8 +10,8 @@ plt.style.use("ggplot")
 # consolidate and rename
 def rename_techs(label):
     prefix_to_remove = [
-        "residential ",
-        "services ",
+        #"residential ", # Comment out, to avoid mix up of oil supply and oil demands starting with1 "residential"
+        #"services ", # Comment out, to avoid mix up of oil supply and oil demands starting with "services"
         "urban ",
         "rural ",
         "central ",
