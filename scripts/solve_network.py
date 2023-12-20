@@ -166,6 +166,49 @@ def add_h2_network_cap(n, cap):
     rhs = cap * 1000
     define_constraints(n, lhs, "<=", rhs, "h2_network_cap")
 
+# https://github.com/PyPSA/247-cfe/blob/b70bf33f808c839deff466f3fbf469b296963067/scripts/resolve_network.py#L216-L231
+def H2_annual_constraint(n):
+
+    res = [
+        "csp",
+        "rooftop-solar",
+        "solar",
+        "onwind",
+        "onwind2",
+        "offwind",
+        "offwind2",
+        "ror",
+    ]
+    res_index = n.generators.loc[n.generators.carrier.isin(res)].index
+
+    weightings = pd.DataFrame(
+        np.outer(n.snapshot_weightings["generators"], [1.0] * len(res_index)),
+        index=n.snapshots,
+        columns=res_index,
+    )
+    res = join_exprs(
+        linexpr((weightings, get_var(n, "Generator", "p")[res_index]))
+    )  # single line sum
+
+    electrolysis = get_var(n, "Link", "p")[
+        n.links.index[n.links.index.str.contains("H2 Electrolysis")]
+    ]
+
+    weightings_electrolysis = pd.DataFrame(
+        np.outer(
+            n.snapshot_weightings["generators"], [1.0] * len(electrolysis.columns)
+        ),
+        index=n.snapshots,
+        columns=electrolysis.columns,
+    )
+
+    load = join_exprs(linexpr((weightings_electrolysis,electrolysis)))
+
+    lhs = res + "\n" + load
+
+    con = define_constraints(n, lhs, '>=', 0., 'RESconstraints','REStarget')
+
+    return
 
 def H2_export_yearly_constraint(n):
     res = [
@@ -189,12 +232,6 @@ def H2_export_yearly_constraint(n):
         linexpr((weightings, get_var(n, "Generator", "p")[res_index]))
     )  # single line sum
 
-    load_ind = n.loads[n.loads.carrier == "AC"].index
-
-    load = (
-        n.loads_t.p_set[load_ind].sum(axis=1) * n.snapshot_weightings["generators"]
-    ).sum()
-
     #h2_export = n.loads.loc["H2 export load"].p_set * 8760
     h2_export = n.loads_t.p_set.loc[: ,"H2 export load"].sum() * n.snapshot_weightings["generators"][0]
 
@@ -209,6 +246,10 @@ def H2_export_yearly_constraint(n):
         )
 
     if include_country_load:
+        load_ind = n.loads[n.loads.carrier == "AC"].index
+        load = (
+            n.loads_t.p_set[load_ind].sum(axis=1) * n.snapshot_weightings["generators"]
+        ).sum()
         rhs = (
             h2_export * (1 / elec_efficiency) + load
         ) 
@@ -390,6 +431,10 @@ def extra_functionality(n, snapshots):
     if snakemake.config["policy_config"]["policy"] == "H2_export_yearly_constraint":
         logger.info("setting h2 export to yearly greenness constraint")
         H2_export_yearly_constraint(n)
+    
+    elif snakemake.config["policy_config"]["policy"] == "H2_annual_constraint":
+        logger.info("setting h2 export to yearly greenness constraint")
+        H2_annual_constraint(n)
 
     elif snakemake.config["policy_config"]["policy"] == "H2_export_monthly_constraint":
         logger.info("setting h2 export to monthly greenness constraint")
