@@ -195,7 +195,8 @@ def H2_export_yearly_constraint(n):
         n.loads_t.p_set[load_ind].sum(axis=1) * n.snapshot_weightings["generators"]
     ).sum()
 
-    h2_export = n.loads.loc["H2 export load"].p_set * 8760
+    #h2_export = n.loads.loc["H2 export load"].p_set * 8760
+    h2_export = n.loads_t.p_set.loc[: ,"H2 export load"].sum() * n.snapshot_weightings["generators"][0]
 
     lhs = res
 
@@ -203,15 +204,16 @@ def H2_export_yearly_constraint(n):
         "re_country_load"
     ]
 
-    if include_country_load:
-        elec_efficiency = (
+    elec_efficiency = (
             n.links.filter(like="Electrolysis", axis=0).loc[:, "efficiency"].mean()
         )
+
+    if include_country_load:
         rhs = (
             h2_export * (1 / elec_efficiency) + load
-        )  # 0.7 is approximation of electrloyzer efficiency # TODO obtain value from network
+        ) 
     else:
-        rhs = h2_export * (1 / 0.7)
+        rhs = h2_export * (1 / elec_efficiency)
 
     con = define_constraints(n, lhs, ">=", rhs, "H2ExportConstraint", "RESproduction")
 
@@ -482,11 +484,11 @@ if __name__ == "__main__":
             "solve_network",
             simpl="",
             clusters="4",
-            ll="c1.0",
-            opts="Co2L",
+            ll="c3.0",
+            opts="Co2L2.0",
             planning_horizons="2030",
-            sopts="144H",
-            discountrate=0.071,
+            sopts="3H",
+            discountrate=0.13,
             demand="DF",
             h2export="120",
         )
