@@ -179,6 +179,9 @@ def H2_annual_constraint(n):
         "offwind2",
         "ror",
     ]
+
+    allowed_excess = snakemake.config["policy_config"]["annual"]["allowed_excess"]
+
     res_index = n.generators.loc[n.generators.carrier.isin(res)].index
 
     weightings = pd.DataFrame(
@@ -186,9 +189,10 @@ def H2_annual_constraint(n):
         index=n.snapshots,
         columns=res_index,
     )
-    res = join_exprs(
-        linexpr((weightings, get_var(n, "Generator", "p")[res_index]))
+    res = linexpr((weightings, get_var(n, "Generator", "p")[res_index])).sum(
+        axis=1
     )  # single line sum
+    res = res.groupby(res.index.year).sum()
 
     electrolysis = get_var(n, "Link", "p")[
         n.links.index[n.links.index.str.contains("H2 Electrolysis")]
@@ -202,11 +206,21 @@ def H2_annual_constraint(n):
         columns=electrolysis.columns,
     )
 
-    load = join_exprs(linexpr((weightings_electrolysis,electrolysis)))
+    elec_input = linexpr((-allowed_excess * weightings_electrolysis, electrolysis)).sum(
+        axis=1
+    )
 
-    lhs = res + "\n" + load
+    elec_input = elec_input.groupby(elec_input.index.year).sum()
 
-    con = define_constraints(n, lhs, '>=', 0., 'RESconstraints','REStarget')
+    if eval(snakemake.wildcards["h2export"]) != 0:
+        for i in range(len(res.index)):
+            lhs = res.iloc[i] + "\n" + elec_input.iloc[i]
+
+            con = define_constraints(
+                n, lhs, ">=", 0.0, f"RESconstraints_{i}", f"REStarget_{i}"
+            )
+    else:
+        logger.info("ignoring H2 export constraint as wildcard is set to 0")
 
     return
 
@@ -257,6 +271,56 @@ def H2_export_yearly_constraint(n):
         rhs = h2_export * (1 / elec_efficiency)
 
     con = define_constraints(n, lhs, ">=", rhs, "H2ExportConstraint", "RESproduction")
+
+def hourly_constraints(n):
+    res_techs = [
+        "csp",
+        "rooftop-solar",
+        "solar",
+        "onwind",
+        "onwind2",
+        "offwind",
+        #"offwind2",
+        "ror",
+    ]
+    allowed_excess = snakemake.config["policy_config"]["hourly"]["allowed_excess"]
+
+    res_index = n.generators.loc[n.generators.carrier.isin(res_techs)].index
+
+    weightings = pd.DataFrame(
+        np.outer(n.snapshot_weightings["generators"], [1.0] * len(res_index)),
+        index=n.snapshots,
+        columns=res_index,
+    )
+
+    res = linexpr((weightings, get_var(n, "Generator", "p")[res_index])).sum(
+        axis=1
+    )  # single line sum
+    #res = res.groupby(res.index.hour).sum()
+
+    electrolysis = get_var(n, "Link", "p")[
+        n.links.index[n.links.index.str.contains("H2 Electrolysis")]
+    ]
+    weightings_electrolysis = pd.DataFrame(
+        np.outer(
+            n.snapshot_weightings["generators"], [1.0] * len(electrolysis.columns)
+        ),
+        index=n.snapshots,
+        columns=electrolysis.columns,
+    )
+
+    elec_input = linexpr((-allowed_excess * weightings_electrolysis, electrolysis)).sum(
+        axis=1
+    )
+
+    #elec_input = elec_input.groupby(elec_input.index.hour).sum()
+
+    for i in range(len(res.index)):
+        lhs = res.iloc[i] + "\n" + elec_input.iloc[i]
+
+        con = define_constraints(
+            n, lhs, ">=", 0.0, f"RESconstraints_{i}", f"REStarget_{i}"
+        )
 
 
 def monthly_constraints(n, n_ref):
@@ -432,13 +496,17 @@ def extra_functionality(n, snapshots):
         logger.info("setting h2 export to yearly greenness constraint")
         H2_export_yearly_constraint(n)
     
-    elif snakemake.config["policy_config"]["policy"] == "H2_annual_constraint":
+    elif snakemake.config["policy_config"]["policy"] == "H2_export_annual_constraint":
         logger.info("setting h2 export to yearly greenness constraint")
         H2_annual_constraint(n)
 
     elif snakemake.config["policy_config"]["policy"] == "H2_export_monthly_constraint":
         logger.info("setting h2 export to monthly greenness constraint")
         monthly_constraints(n, n_ref)
+    
+    elif snakemake.config["policy_config"]["policy"] == "H2_export_hourly_constraint":
+        logger.info("setting h2 export to hourly greenness constraint")
+        hourly_constraints(n)
 
     elif snakemake.config["policy_config"]["policy"] == "no_res_matching":
         logger.info("no h2 export constraint set")
@@ -535,7 +603,7 @@ if __name__ == "__main__":
             sopts="3H",
             discountrate=0.13,
             demand="DF",
-            h2export="120",
+            h2export="100",
         )
 
         sets_path_to_root("pypsa-earth-sec")
