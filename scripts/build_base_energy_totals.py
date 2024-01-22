@@ -120,9 +120,9 @@ def calc_sector(sector):
                     .Quantity_TWh.sum(), 4)
                 )
                 energy_totals_base.at[country, "services biomass"] = (
+                    round(
                     df_sector[df_sector.Commodity.isin(biomass_fuels)]
-                    .Quantity_TWh.sum()
-                    .round(4)
+                    .Quantity_TWh.sum(), 4)
                 )
                 energy_totals_base.at[country, "services gas"] = (
                     round(
