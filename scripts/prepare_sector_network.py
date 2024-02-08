@@ -2229,14 +2229,23 @@ def add_residential(n, costs):
         )
 
         heat_buses = (n.loads_t.p_set.filter(regex="heat").filter(like=country)).columns
-        n.loads_t.p_set.loc[:, heat_buses] = (
-            (
-                n.loads_t.p_set.filter(like=country)[heat_buses]
-                / n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum()
+          
+        # Check if the denominator is equal to zero before performing the division
+        denominator = n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum()
+
+        if denominator != 0:
+        # Perform the division only if the denominator is not zero
+            n.loads_t.p_set.loc[:, heat_buses] = (
+                (
+                    n.loads_t.p_set.filter(like=country)[heat_buses]
+                    / n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum()
+                )
+                * rem_heat_demand
+                * 1e6
             )
-            * rem_heat_demand
-            * 1e6
-        )
+        else:
+            # If the denominator is zero, set the result to 0 to avoid ZeroDivisionError
+            n.loads_t.p_set.loc[:, heat_buses] = 0
 
         # if snakemake.config["custom_data"]["elec_demand"]:
     for country in countries:
