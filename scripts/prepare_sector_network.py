@@ -2229,12 +2229,12 @@ def add_residential(n, costs):
         )
 
         heat_buses = (n.loads_t.p_set.filter(regex="heat").filter(like=country)).columns
-          
+
         # Check if the denominator is equal to zero before performing the division
         denominator = n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum()
 
         if denominator != 0:
-        # Perform the division only if the denominator is not zero
+            # Perform the division only if the denominator is not zero
             n.loads_t.p_set.loc[:, heat_buses] = (
                 (
                     n.loads_t.p_set.filter(like=country)[heat_buses]
