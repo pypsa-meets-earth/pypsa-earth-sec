@@ -120,7 +120,8 @@ rule prepare_urban_percent:
         "scripts/prepare_urban_percent.py"
 
 
-if not config["custom_data"]["gas_network"]:
+if not config["custom_data"]["gas_network"] and not (config["sector"]["hydrogen"]["network_routes"] == "greenfield" \
+    and not config["sector"]["hydrogen"]["gas_network_repurposing"]):
 
     rule prepare_gas_network:
         input:
@@ -161,9 +162,10 @@ rule prepare_sector_network:
         shapes_path=pypsaearth(
             "resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson"
         ),
-        pipelines="resources/custom_data/pipelines.csv"
-        if config["custom_data"]["gas_network"]
-        else "resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv",
+        pipelines= "resources/custom_data/pipelines.csv" 
+        if config["custom_data"]["gas_network"] 
+        else "resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv" if not (config["sector"]["hydrogen"]["network_routes"] == "greenfield" and not config["sector"]["hydrogen"]["gas_network_repurposing"]) 
+        else "data/pipelines.csv",
     output:
         RDIR
         + "/prenetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}.nc",
