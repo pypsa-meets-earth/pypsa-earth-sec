@@ -2231,8 +2231,13 @@ def add_residential(n, costs):
 
         heat_buses = (n.loads_t.p_set.filter(regex="heat").filter(like=country)).columns
 
-        safe_division = safe_divide(n.loads_t.p_set.filter(like=country)[heat_buses], n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum())
-        n.loads_t.p_set.loc[:, heat_buses] = np.where(~np.isnan(safe_division), safe_division * rem_heat_demand * 1e6, 0.0)
+        safe_division = safe_divide(
+            n.loads_t.p_set.filter(like=country)[heat_buses],
+            n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum(),
+        )
+        n.loads_t.p_set.loc[:, heat_buses] = np.where(
+            ~np.isnan(safe_division), safe_division * rem_heat_demand * 1e6, 0.0
+        )
 
         # if snakemake.config["custom_data"]["elec_demand"]:
     for country in countries:
