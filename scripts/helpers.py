@@ -747,12 +747,15 @@ def read_csv_nafix(file, **kwargs):
     else:
         return pd.DataFrame()
 
+
 def safe_divide(numerator, denominator):
     """
     Safe division function that returns NaN when the denominator is zero
     """
-    if (denominator != 0.0):
+    if denominator != 0.0:
         return numerator / denominator
     else:
-        logging.warning(f"Division by zero: {numerator} / {denominator}, returning NaN.")
+        logging.warning(
+            f"Division by zero: {numerator} / {denominator}, returning NaN."
+        )
         return np.nan

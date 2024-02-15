@@ -16,9 +16,9 @@ from helpers import (
     mock_snakemake,
     override_component_attrs,
     prepare_costs,
+    safe_divide,
     three_2_two_digits_country,
     two_2_three_digits_country,
-    safe_divide,
 )
 from prepare_transport_data import prepare_transport_data
 
@@ -2230,12 +2230,24 @@ def add_residential(n, costs):
         )
 
         heat_buses = (n.loads_t.p_set.filter(regex="heat").filter(like=country)).columns
-          
-        n.loads_t.p_set.loc[:, heat_buses] = ( 
-            safe_divide(n.loads_t.p_set.filter(like=country)[heat_buses], n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum())
+
+        n.loads_t.p_set.loc[:, heat_buses] = (
+            (
+                safe_divide(
+                    n.loads_t.p_set.filter(like=country)[heat_buses],
+                    n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum(),
+                )
                 * rem_heat_demand
                 * 1e6
-        ) if not np.isnan(safe_divide(n.loads_t.p_set.filter(like=country)[heat_buses], n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum())) else 0.0
+            )
+            if not np.isnan(
+                safe_divide(
+                    n.loads_t.p_set.filter(like=country)[heat_buses],
+                    n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum(),
+                )
+            )
+            else 0.0
+        )
 
         # if snakemake.config["custom_data"]["elec_demand"]:
     for country in countries:
