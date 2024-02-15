@@ -18,6 +18,7 @@ from helpers import (
     prepare_costs,
     three_2_two_digits_country,
     two_2_three_digits_country,
+    safe_divide,
 )
 from prepare_transport_data import prepare_transport_data
 
@@ -2230,22 +2231,11 @@ def add_residential(n, costs):
 
         heat_buses = (n.loads_t.p_set.filter(regex="heat").filter(like=country)).columns
           
-        # Check if the denominator is equal to zero before performing the division
-        denominator = n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum()
-
-        if denominator != 0:
-        # Perform the division only if the denominator is not zero
-            n.loads_t.p_set.loc[:, heat_buses] = (
-                (
-                    n.loads_t.p_set.filter(like=country)[heat_buses]
-                    / n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum()
-                )
+        n.loads_t.p_set.loc[:, heat_buses] = ( 
+            safe_divide(n.loads_t.p_set.filter(like=country)[heat_buses], n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum())
                 * rem_heat_demand
                 * 1e6
-            )
-        else:
-            # If the denominator is zero, set the result to 0 to avoid ZeroDivisionError
-            n.loads_t.p_set.loc[:, heat_buses] = 0
+        ) if not np.isnan(safe_divide(n.loads_t.p_set.filter(like=country)[heat_buses], n.loads_t.p_set.filter(like=country)[heat_buses].sum().sum())) else 0.0
 
         # if snakemake.config["custom_data"]["elec_demand"]:
     for country in countries:
