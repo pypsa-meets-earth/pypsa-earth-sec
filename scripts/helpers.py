@@ -748,7 +748,7 @@ def read_csv_nafix(file, **kwargs):
         return pd.DataFrame()
 
 
-def safe_divide(numerator, denominator):
+def safe_divide(numerator, denominator, default_value=np.nan):
     """
     Safe division function that returns NaN when the denominator is zero
     """
