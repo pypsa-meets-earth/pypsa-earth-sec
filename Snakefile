@@ -166,12 +166,11 @@ rule prepare_sector_network:
         ),
         pipelines="resources/custom_data/pipelines.csv"
         if config["custom_data"]["gas_network"]
-        else "resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv"
-        if not (
+        or (
             config["sector"]["hydrogen"]["network_routes"] == "greenfield"
             and not config["sector"]["hydrogen"]["gas_network_repurposing"]
         )
-        else "data/pipelines.csv",
+        else "resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv",
     output:
         RDIR
         + "/prenetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}.nc",
