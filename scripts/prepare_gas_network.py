@@ -39,7 +39,7 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "prepare_gas_network",
             simpl="",
-            clusters="56",
+            clusters="74",
         )
         sets_path_to_root("pypsa-earth-sec")
         rootpath = ".."
@@ -460,7 +460,10 @@ def get_GADM_layer(
 
         # create a subindex column that is useful
         # in the GADM processing of sub-national zones
-        geodf_temp["GADM_ID"] = geodf_temp[f"GID_{cur_layer_id}"]
+        # Fix issues with missing "." in selected cases
+        geodf_temp["GADM_ID"] = geodf_temp[f"GID_{cur_layer_id}"].apply(
+            lambda x: x if x[3] == "." else x[:3] + "." + x[3:]
+        )
 
         # append geodataframes
         geodf_list.append(geodf_temp)

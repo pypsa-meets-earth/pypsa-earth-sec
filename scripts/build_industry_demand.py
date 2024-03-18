@@ -57,7 +57,7 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "build_industry_demand",
             simpl="",
-            clusters=4,
+            clusters=74,
             planning_horizons=2030,
             demand="AB",
         )
@@ -93,7 +93,8 @@ if __name__ == "__main__":
     production_base = cagr.applymap(lambda x: 1)
     production_tom = production_base * growth_factors
 
-    industry_totals = (production_tom * industry_base_totals).fillna(0)
+    # not-used line throws error for multicountries
+    # industry_totals = (production_tom * industry_base_totals).fillna(0)
 
     industry_util_factor = snakemake.config["sector"]["industry_util_factor"]
 
@@ -161,7 +162,9 @@ if __name__ == "__main__":
         df["industry"] = df["technology"].map(industry_mapping)
         return df
 
-    geo_locs = match_technology(geo_locs).loc[countries]
+    geo_locs = match_technology(geo_locs).loc[
+        geo_locs.index.unique().intersection(countries)
+    ]
 
     AL = read_csv_nafix("data/AL_production.csv", index_col=0)
     AL_prod_tom = AL["production[ktons/a]"].loc[countries]
@@ -196,6 +199,11 @@ if __name__ == "__main__":
         * industry_util_factor
     )
 
+    # fill industry_base_totals
+    level_2nd = industry_base_totals.index.get_level_values(1).unique()
+    mlv_index = pd.MultiIndex.from_product([countries, level_2nd])
+    industry_base_totals = industry_base_totals.reindex(mlv_index, fill_value=0)
+
     for country in countries:
         industry_base_totals.loc[(country, "process emissions"), :] = 0
         try:
@@ -214,7 +222,7 @@ if __name__ == "__main__":
         try:
             industry_base_totals.loc[
                 (country, "process emissions"), "non-ferrous metals"
-            ] = AL_emissions.loc[country]
+            ] = AL_emissions.loc[country].sum()
         except KeyError:
             pass  # Code to handle the KeyError
         try:
@@ -236,11 +244,17 @@ if __name__ == "__main__":
     ]
 
     for country in countries:
-        carriers_present = industry_base_totals.xs(country, level="country").index
+        carriers_present = industry_base_totals.xs(country, level=0).index
         missing_carriers = set(all_carriers) - set(carriers_present)
         for carrier in missing_carriers:
             # Add the missing carrier with a value of 0
             industry_base_totals.loc[(country, carrier), :] = 0
+
+    # temporary fix: merge other manufacturing, construction and non-fuel into other and drop the column
+    other_cols = list(set(industry_base_totals.columns) - set(clean_industry_list))
+    if len(other_cols) > 0:
+        industry_base_totals["other"] += industry_base_totals[other_cols].sum(axis=1)
+        industry_base_totals.drop(columns=other_cols, inplace=True)
 
     nodal_df = pd.DataFrame()
 
