@@ -276,9 +276,9 @@ def create_cement_db():
     )
     avg_c_cap = df_cement.groupby(df_cement.country)["capacity"].mean()
     df_cement["capacity"] = df_cement.apply(
-        lambda x: avg_c_cap[x["country"]]
-        if math.isnan(x["capacity"])
-        else x["capacity"],
+        lambda x: (
+            avg_c_cap[x["country"]] if math.isnan(x["capacity"]) else x["capacity"]
+        ),
         axis=1,
     )
 
@@ -454,9 +454,9 @@ def create_paper_df():
     na_index
 
     df_paper["capacity"] = df_paper.apply(
-        lambda x: avg_c_cap[x["country"]]
-        if math.isnan(x["capacity"])
-        else x["capacity"],
+        lambda x: (
+            avg_c_cap[x["country"]] if math.isnan(x["capacity"]) else x["capacity"]
+        ),
         axis=1,
     )
 

@@ -76,9 +76,9 @@ def calc_sector(sector):
                 energy_totals_base.at[country, "total domestic aviation"] = np.NaN
 
             elif sector == "navigation":
-                energy_totals_base.at[
-                    country, "total international navigation"
-                ] = np.NaN
+                energy_totals_base.at[country, "total international navigation"] = (
+                    np.NaN
+                )
                 energy_totals_base.at[country, "total domestic navigation"] = np.NaN
 
             _logger.warning("No data for " + country + " in the sector " + sector + ".")
@@ -229,13 +229,13 @@ def calc_sector(sector):
                 )
 
             elif sector == "navigation":
-                energy_totals_base.at[
-                    country, "total international navigation"
-                ] = round(
-                    df_sector[
-                        df_sector.Transaction == "International marine bunkers"
-                    ].Quantity_TWh.sum(),
-                    4,
+                energy_totals_base.at[country, "total international navigation"] = (
+                    round(
+                        df_sector[
+                            df_sector.Transaction == "International marine bunkers"
+                        ].Quantity_TWh.sum(),
+                        4,
+                    )
                 )
                 energy_totals_base.at[country, "total domestic navigation"] = round(
                     df_sector[
