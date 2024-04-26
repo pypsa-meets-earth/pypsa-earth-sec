@@ -13,11 +13,11 @@ countries: ["MA"]
 # Can be replaced by country ["NG", "BJ"], continent ["Africa"] or user-specific region, see more at https://pypsa-earth.readthedocs.io/en/latest/configuration.html#top-level-configuration
 
 enable:
-  retrieve_databundle: true  #  Recommended 'true', for the first run. Otherwise data might be missing.
+  retrieve_databundle: false  #  Recommended 'true', for the first run. Otherwise data might be missing.
   retrieve_cost_data: true  # true: retrieves cost data from technology data and saves in resources/costs.csv, false: uses cost data in data/costs.csv
   download_osm_data: true  # If 'true', OpenStreetMap data will be downloaded for the above given countries
   build_natura_raster: true  # If True, than an exclusion raster will be build
-  build_cutout: false
+  build_cutout: true
   # If "build_cutout" : true, then environmental data is extracted according to `snapshots` date range and `countries`
   # requires cds API key https://cds.climate.copernicus.eu/api-how-to
   # More information https://atlite.readthedocs.io/en/latest/introduction.html#datasets
@@ -128,8 +128,8 @@ load_options:
 electricity:
   base_voltage: 380.
   voltages: [220., 300., 380.]
-  co2limit: 72.0e+6  # European default, 0.05 * 3.1e9*0.5, needs to be adjusted for Africa
-  co2base: 72.0e+6  # European default, adjustment to Africa necessary
+  co2limit: 96.0e+6  # European default, 0.05 * 3.1e9*0.5, needs to be adjusted for Africa
+  co2base: 96.0e+6  # European default, adjustment to Africa necessary
   agg_p_nom_limits: data/agg_p_nom_minmax.csv
   hvdc_as_lines: false  # should HVDC lines be modeled as `Line` or as `Link` component?
   automatic_emission: false
@@ -324,7 +324,7 @@ costs:
     investment: 0
     lifetime: 25
     CO2 intensity: 0
-    discount rate: 0.15
+    discount rate: 0.13
   marginal_cost: # EUR/MWh
     solar: 0.01
     onwind: 0.015
