@@ -743,7 +743,7 @@ if __name__ == "__main__":
             "plot_network",
             simpl="",
             clusters=4,
-            planning_horizons=2030
+            planning_horizons=2030,
             # lv=1.5,
             # opts='',
             # sector_opts='Co2L0-168H-T-H-B-I-solar+p3-dist1',
