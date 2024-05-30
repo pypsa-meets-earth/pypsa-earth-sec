@@ -930,9 +930,8 @@ if not snakemake.config["custom_data"]["gas_network"]:
 
     else:
         print(
-            "Countries:"
-            + bus_regions_onshore.country.unique().tolist()
-            + "has no existing Natral Gas network between the chosen bus regions"
+            "Countries: ".join(bus_regions_onshore.country.unique().tolist())
+            + " has no existing Natral Gas network between the chosen bus regions"
         )
 
         # Create an empty DataFrame with the specified column names
