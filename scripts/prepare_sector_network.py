@@ -1719,8 +1719,6 @@ def add_heat(n, costs):
                 factor * (1 + options["district_heating"]["district_heating_loss"])
             )
 
-        heat_load.to_csv("./data/heat_load.csv")
-
         n.madd(
             "Load",
             nodes[name],
