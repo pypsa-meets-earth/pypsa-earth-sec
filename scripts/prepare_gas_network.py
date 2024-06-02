@@ -462,7 +462,9 @@ def get_GADM_layer(
         # in the GADM processing of sub-national zones
         # Fix issues with missing "." in selected cases
         geodf_temp["GADM_ID"] = geodf_temp[f"GID_{cur_layer_id}"].apply(
-            lambda x: x if len(x) > 3 and x[3] == "." else x[:3] + "." + x[3:]
+            lambda x: x
+            if len(x) > 3 and x[3] == "."
+            else (x if len(x) <= 3 else x[:3] + "." + x[3:])
         )
 
         # append geodataframes
