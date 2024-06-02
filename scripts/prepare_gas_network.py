@@ -915,10 +915,14 @@ if not snakemake.config["custom_data"]["gas_network"]:
         # Conversion of GADM id to from 3 to 2-digit
         pipelines["bus0"] = pipelines["bus0"].apply(
             lambda id: three_2_two_digits_country(id[:3]) + id[3:]
+            if len(id[:3]) == 3
+            else id
         )
 
         pipelines["bus1"] = pipelines["bus1"].apply(
             lambda id: three_2_two_digits_country(id[:3]) + id[3:]
+            if len(id[:3]) == 3
+            else id
         )
 
         pipelines.to_csv(snakemake.output.clustered_gas_network, index=False)
