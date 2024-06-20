@@ -459,10 +459,9 @@ def get_GADM_layer(
         )
 
         if layer_id == 0:
-            geodf_temp["GADM_ID"] = (
-                geodf_temp[f"GID_{cur_layer_id}"] +
-                pd.Series(range(1, geodf_temp.shape[0]+1)).astype(str)
-            )
+            geodf_temp["GADM_ID"] = geodf_temp[f"GID_{cur_layer_id}"] + pd.Series(
+                range(1, geodf_temp.shape[0] + 1)
+            ).astype(str)
         else:
             # create a subindex column that is useful
             # in the GADM processing of sub-national zones
