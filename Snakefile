@@ -522,6 +522,8 @@ rule copy_config:
 
 
 rule solve_network:
+    params:
+        solving=config["solving"],
     input:
         overrides="data/override_component_attrs",
         # network=RDIR
