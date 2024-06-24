@@ -8,11 +8,7 @@ import numpy as np
 import pandas as pd
 import pypsa
 from helpers import override_component_attrs
-
-# from pypsa.linopf import ilopf, network_lopf
 from linopy import merge
-
-# from pypsa.optimization.compat import define_constraints, get_var, join_exprs, linexpr
 from pypsa.optimization.abstract import optimize_transmission_expansion_iteratively
 from pypsa.optimization.optimize import optimize
 from vresutils.benchmark import memory_logger
@@ -564,14 +560,14 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "solve_network",
             simpl="",
-            clusters="10",
+            clusters="18",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="144H",
+            sopts="24H",
             discountrate=0.071,
             demand="AB",
-            h2export="10",
+            h2export="0",
         )
 
         sets_path_to_root("pypsa-earth-sec")
