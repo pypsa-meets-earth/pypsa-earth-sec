@@ -67,7 +67,8 @@ def _add_land_use_constraint_m(n):
             ind2 = [
                 i for i in ind if i + " " + carrier + "-" + p_year in existing.index
             ]
-            sel_current = [i + " " + carrier + "-" + current_horizon for i in ind2]
+            sel_current = [i + " " + carrier +
+                           "-" + current_horizon for i in ind2]
             sel_p_year = [i + " " + carrier + "-" + p_year for i in ind2]
             n.generators.loc[sel_current, "p_nom_max"] -= existing.loc[
                 sel_p_year
@@ -197,7 +198,8 @@ def H2_export_yearly_constraint(n):
     )
 
     load = (
-        n.loads_t.p_set[load_ind].sum(axis=1) * n.snapshot_weightings["generators"]
+        n.loads_t.p_set[load_ind].sum(
+            axis=1) * n.snapshot_weightings["generators"]
     ).sum()
 
     h2_export = n.loads.loc["H2 export load"].p_set * 8760
@@ -210,7 +212,8 @@ def H2_export_yearly_constraint(n):
 
     if include_country_load:
         elec_efficiency = (
-            n.links.filter(like="Electrolysis", axis=0).loc[:, "efficiency"].mean()
+            n.links.filter(like="Electrolysis",
+                           axis=0).loc[:, "efficiency"].mean()
         )
         rhs = (
             h2_export * (1 / elec_efficiency) + load
@@ -218,7 +221,8 @@ def H2_export_yearly_constraint(n):
     else:
         rhs = h2_export * (1 / 0.7)
 
-    n.model.add_constraints(lhs >= rhs, name="H2ExportConstraint-RESproduction")
+    n.model.add_constraints(
+        lhs >= rhs, name="H2ExportConstraint-RESproduction")
 
 
 def monthly_constraints(n, n_ref):
@@ -254,7 +258,8 @@ def monthly_constraints(n, n_ref):
 
     weightings_electrolysis = pd.DataFrame(
         np.outer(
-            n.snapshot_weightings["generators"], [1.0] * len(electrolysis.columns)
+            n.snapshot_weightings["generators"], [
+                1.0] * len(electrolysis.columns)
         ),
         index=n.snapshots,
         columns=electrolysis.columns,
@@ -268,7 +273,8 @@ def monthly_constraints(n, n_ref):
 
     if snakemake.config["policy_config"]["hydrogen"]["additionality"]:
         res_ref = n_ref.generators_t.p[res_index] * weightings
-        res_ref = res_ref.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1)
+        res_ref = res_ref.groupby(
+            n_ref.generators_t.p.index.month).sum().sum(axis=1)
 
         elec_input_ref = (
             n_ref.links_t.p0.loc[
@@ -348,7 +354,8 @@ def add_chp_constraints(n):
 
         rhs = n.links.loc[electric_fix, "p_nom"]
 
-        n.model.add_constraints(lhs <= rhs, name="chplink-top_iso_fuel_line_fix")
+        n.model.add_constraints(
+            lhs <= rhs, name="chplink-top_iso_fuel_line_fix")
 
     if not electric.empty:
         # backpressure
@@ -397,7 +404,8 @@ def set_h2_colors(n):
     ].index
 
     load_fuelcell = (
-        n.loads_t.p_set[fuelcell_ind].sum(axis=1) * n.snapshot_weightings["generators"]
+        n.loads_t.p_set[fuelcell_ind].sum(
+            axis=1) * n.snapshot_weightings["generators"]
     ).sum()
 
     load_other_h2 = n.loads.loc[other_ind].p_set.sum() * 8760
@@ -405,13 +413,15 @@ def set_h2_colors(n):
     load_h2 = load_fuelcell + load_other_h2
 
     weightings_blue = pd.DataFrame(
-        np.outer(n.snapshot_weightings["generators"], [1.0] * len(blue_h2.columns)),
+        np.outer(n.snapshot_weightings["generators"], [
+                 1.0] * len(blue_h2.columns)),
         index=n.snapshots,
         columns=blue_h2.columns,
     )
 
     weightings_pink = pd.DataFrame(
-        np.outer(n.snapshot_weightings["generators"], [1.0] * len(pink_h2.columns)),
+        np.outer(n.snapshot_weightings["generators"], [
+                 1.0] * len(pink_h2.columns)),
         index=n.snapshots,
         columns=pink_h2.columns,
     )
@@ -450,7 +460,8 @@ def extra_functionality(n, snapshots):
             logger.info("setting h2 export to monthly greenness constraint")
             monthly_constraints(n, n_ref)
         else:
-            logger.info("preparing reference case for additionality constraint")
+            logger.info(
+                "preparing reference case for additionality constraint")
 
     elif (
         snakemake.config["policy_config"]["hydrogen"]["temporal_matching"]
@@ -488,7 +499,6 @@ def solve_network(n, config, solving, **kwargs):
 
     if kwargs["solver_name"] == "gurobi":
         logging.getLogger("gurobipy").setLevel(logging.CRITICAL)
-    rolling_horizon = cf_solving.pop("rolling_horizon", False)
     skip_iterations = cf_solving.pop("skip_iterations", False)
     if not n.lines.s_nom_extendable.any():
         skip_iterations = True
@@ -507,7 +517,7 @@ def solve_network(n, config, solving, **kwargs):
             **kwargs
         )
 
-    if status != "ok" and not rolling_horizon:
+    if status != "ok":
         logger.warning(
             f"Solving status '{status}' with termination condition '{condition}'"
         )
@@ -534,7 +544,8 @@ def add_existing(n):
             .replace("_presec", "")
             .replace(".nc", ".csv")
         )
-        df = pd.read_csv(directory + "/electrolyzer_caps_" + n_name, index_col=0)
+        df = pd.read_csv(directory + "/electrolyzer_caps_" +
+                         n_name, index_col=0)
         existing_electrolyzers = df.p_nom_opt.values
 
         h2_index = n.links[n.links.carrier == "H2 Electrolysis"].index
@@ -547,7 +558,8 @@ def add_existing(n):
         for tech in snakemake.config["custom_data"]["renewables"]:
             # df = pd.read_csv(snakemake.config["custom_data"]["existing_renewables"], index_col=0)
             existing_res = df.loc[tech]
-            existing_res.index = existing_res.index.str.apply(lambda x: x + tech)
+            existing_res.index = existing_res.index.str.apply(
+                lambda x: x + tech)
             tech_index = n.generators[n.generators.carrier == tech].index
             n.generators.loc[tech_index, tech] = existing_res
 
@@ -585,7 +597,8 @@ if __name__ == "__main__":
     fn = getattr(snakemake.log, "memory", None)
     with memory_logger(filename=fn, interval=30.0) as mem:
         overrides = override_component_attrs(snakemake.input.overrides)
-        n = pypsa.Network(snakemake.input.network, override_component_attrs=overrides)
+        n = pypsa.Network(snakemake.input.network,
+                          override_component_attrs=overrides)
 
         if (
             snakemake.config["custom_data"]["add_existing"]
@@ -613,7 +626,8 @@ if __name__ == "__main__":
             log_fn=snakemake.log.solver,
         )
 
-        n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
+        n.meta = dict(snakemake.config, **
+                      dict(wildcards=dict(snakemake.wildcards)))
         n.export_to_netcdf(snakemake.output[0])
 
     logger.info("Objective function: {}".format(n.objective))
