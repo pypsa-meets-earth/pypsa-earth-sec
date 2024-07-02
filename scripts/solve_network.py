@@ -335,9 +335,9 @@ def add_chp_constraints(n):
 
         # top_iso_fuel_line for extendable
         lhs = (
-            (1 * link_p.loc[heat_ext]),
-            (1 * link_p.loc[electric_ext]),
-            (1 * link_p_nom.loc[electric_ext]),
+            (1 * link_p.loc[heat_ext])
+            + (1 * link_p.loc[electric_ext])
+            + (-1 * link_p_nom.loc[electric_ext])
         )
 
         n.model.add_contraints(lhs <= 0, name="chplink-top_iso_fuel_line_ext")
