@@ -299,66 +299,57 @@ def monthly_constraints(n, n_ref):
 
 
 def add_chp_constraints(n):
-    electric_bool = (
+    electric = (
         n.links.index.str.contains("urban central")
         & n.links.index.str.contains("CHP")
         & n.links.index.str.contains("electric")
     )
-    heat_bool = (
+    heat = (
         n.links.index.str.contains("urban central")
         & n.links.index.str.contains("CHP")
         & n.links.index.str.contains("heat")
     )
 
-    electric = n.links.index[electric_bool]
-    heat = n.links.index[heat_bool]
+    electric_ext = n.links[electric].query("p_nom_extendable").index
+    heat_ext = n.links[heat].query("p_nom_extendable").index
 
-    electric_ext = n.links.index[electric_bool & n.links.p_nom_extendable]
-    heat_ext = n.links.index[heat_bool & n.links.p_nom_extendable]
+    electric_fix = n.links[electric].query("~p_nom_extendable").index
+    heat_fix = n.links[heat].query("~p_nom_extendable").index
 
-    electric_fix = n.links.index[electric_bool & ~n.links.p_nom_extendable]
-    heat_fix = n.links.index[heat_bool & ~n.links.p_nom_extendable]
+    p = n.model["Link-p"]  # dimension: [time, link]
 
-    link_p = n.model["Link-p"]
-
+    # output ratio between heat and electricity and top_iso_fuel_line for extendable
     if not electric_ext.empty:
-        link_p_nom = n.model["Link-p_nom"]
+        p_nom = n.model["Link-p_nom"]
 
-        # ratio of output heat to electricity set by p_nom_ratio
         lhs = (
-            n.links.loc[electric_ext, "efficiency"]
-            * n.links.loc[electric_ext, "p_nom_ratio"]
-            * link_p_nom.loc[electric_ext]
-        ) + (-n.links.loc[heat_ext, "efficiency"] * link_p_nom.loc[heat_ext])
-
+            p_nom.loc[electric_ext]
+            * (n.links.p_nom_ratio * n.links.efficiency)[electric_ext].values
+            - p_nom.loc[heat_ext] * n.links.efficiency[heat_ext].values
+        )
         n.model.add_constraints(lhs == 0, name="chplink-fix_p_nom_ratio")
 
-        # top_iso_fuel_line for extendable
+        rename = {"Link-ext": "Link"}
         lhs = (
-            (1 * link_p.loc[heat_ext])
-            + (1 * link_p.loc[electric_ext])
-            + (-1 * link_p_nom.loc[electric_ext])
+            p.loc[:, electric_ext]
+            + p.loc[:, heat_ext]
+            - p_nom.rename(rename).loc[electric_ext]
         )
+        n.model.add_constraints(lhs <= 0, name="chplink-top_iso_fuel_line_ext")
 
-        n.model.add_contraints(lhs <= 0, name="chplink-top_iso_fuel_line_ext")
-
+    # top_iso_fuel_line for fixed
     if not electric_fix.empty:
-        # top_iso_fuel_line for fixed
-        lhs = (1 * link_p[heat_fix]) + (1 * link_p.loc[electric_fix])
-
-        rhs = n.links.loc[electric_fix, "p_nom"]
-
+        lhs = p.loc[:, electric_fix] + p.loc[:, heat_fix]
+        rhs = n.links.p_nom[electric_fix]
         n.model.add_constraints(lhs <= rhs, name="chplink-top_iso_fuel_line_fix")
 
+    # back-pressure
     if not electric.empty:
-        # backpressure
         lhs = (
-            n.links.loc[electric, "c_b"].values
-            * n.links.loc[heat, "efficiency"]
-            * link_p.loc[heat]
-        ) + (-n.links.loc[electric, "efficiency"].values * link_p.loc[electric])
-
-        n.model.add_constraints(lhs <= 0, name="chplink-backpressure")
+            p.loc[:, heat] * (n.links.efficiency[heat] * n.links.c_b[electric].values)
+            - p.loc[:, electric] * n.links.efficiency[electric]
+        )
+        n.model.add_constraints(lhs <= rhs, name="chplink-backpressure")
 
 
 def add_co2_sequestration_limit(n, sns):
