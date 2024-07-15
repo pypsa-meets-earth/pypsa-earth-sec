@@ -10,6 +10,7 @@ import pypsa
 from helpers import override_component_attrs
 from linopy import merge
 from pypsa.optimization.abstract import optimize_transmission_expansion_iteratively
+from pypsa.optimization.compat import define_constraints, get_var, linexpr
 from pypsa.optimization.optimize import optimize
 from vresutils.benchmark import memory_logger
 
@@ -299,22 +300,25 @@ def monthly_constraints(n, n_ref):
 
 
 def add_chp_constraints(n):
-    electric = (
+    electric_bool = (
         n.links.index.str.contains("urban central")
         & n.links.index.str.contains("CHP")
         & n.links.index.str.contains("electric")
     )
-    heat = (
+    heat_bool = (
         n.links.index.str.contains("urban central")
         & n.links.index.str.contains("CHP")
         & n.links.index.str.contains("heat")
     )
 
-    electric_ext = n.links[electric].query("p_nom_extendable").index
-    heat_ext = n.links[heat].query("p_nom_extendable").index
+    electric = n.links.index[electric_bool]
+    heat = n.links.index[heat_bool]
 
-    electric_fix = n.links[electric].query("~p_nom_extendable").index
-    heat_fix = n.links[heat].query("~p_nom_extendable").index
+    electric_ext = n.links[electric_bool].query("p_nom_extendable").index
+    heat_ext = n.links[heat_bool].query("p_nom_extendable").index
+
+    electric_fix = n.links[electric_bool].query("~p_nom_extendable").index
+    heat_fix = n.links[heat_bool].query("~p_nom_extendable").index
 
     p = n.model["Link-p"]  # dimension: [time, link]
 
@@ -550,14 +554,14 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "solve_network",
             simpl="",
-            clusters="18",
+            clusters="10",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="24H",
+            sopts="144H",
             discountrate=0.071,
             demand="AB",
-            h2export="0",
+            h2export="10",
         )
 
         sets_path_to_root("pypsa-earth-sec")
