@@ -426,6 +426,10 @@ def set_h2_colors(n):
 def extra_functionality(n, snapshots):
     add_battery_constraints(n)
 
+    if snakemake.config["sector"]["chp"]:
+        logger.info("setting CHP constraints")
+        add_chp_constraints(n)
+
     if (
         snakemake.config["policy_config"]["hydrogen"]["temporal_matching"]
         == "h2_yearly_matching"
