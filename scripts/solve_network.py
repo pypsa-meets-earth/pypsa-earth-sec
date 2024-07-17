@@ -8,10 +8,6 @@ import numpy as np
 import pandas as pd
 import pypsa
 from helpers import override_component_attrs
-from linopy import merge
-from pypsa.optimization.abstract import optimize_transmission_expansion_iteratively
-from pypsa.optimization.compat import define_constraints, get_var, linexpr
-from pypsa.optimization.optimize import optimize
 from vresutils.benchmark import memory_logger
 
 logger = logging.getLogger(__name__)
