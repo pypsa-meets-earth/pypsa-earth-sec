@@ -558,14 +558,14 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "solve_network",
             simpl="",
-            clusters="10",
+            clusters="18",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="144H",
+            sopts="24H",
             discountrate=0.071,
             demand="AB",
-            h2export="10",
+            h2export="0",
         )
 
         sets_path_to_root("pypsa-earth-sec")
