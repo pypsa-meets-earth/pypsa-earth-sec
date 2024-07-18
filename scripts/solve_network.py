@@ -158,10 +158,19 @@ def add_battery_constraints(n):
 
 def add_h2_network_cap(n, cap):
     h2_network = n.links.loc[n.links.carrier == "H2 pipeline"]
-    if h2_network.empty:
+    if h2_network.index.empty:
         return
     h2_network_cap = n.model["Link-p_nom"]
-    lhs = (h2_network_cap.loc[h2_network.index] * h2_network.length).sum()
+    h2_network_cap_index = h2_network_cap.indexes["Link-ext"]
+    subset_index = h2_network.index.intersection(h2_network_cap_index)
+    diff_index = h2_network_cap_index.difference(subset_index)
+    if len(diff_index) > 0:
+        logger.warning(
+            f"Impossible to set H2 cap for the following links: {diff_index}"
+        )
+    lhs = (
+        h2_network_cap.loc[subset_index] * h2_network.loc[subset_index, "length"]
+    ).sum()
     rhs = cap * 1000
     n.model.add_constraints(lhs <= rhs, name="h2_network_cap")
 
