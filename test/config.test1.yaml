@@ -5,7 +5,11 @@ results_dir: results/
 summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
-run: test1
+run:
+  name: "tutorial" # use this to keep track of runs with different settings
+  name_subworkflow: "tutorial"  # scenario name of the pypsa-earth subworkflow
+  shared_cutouts: true  # set to true to share the default cutout(s) across runs
+                        # Note: value false requires build_cutout to be enabled
 
 foresight: overnight
 
@@ -24,7 +28,7 @@ scenario:
   opts:
   - "Co2L"
   sopts:
-  - "144H"
+  - "24H"
   demand:
   - "AB"
 
@@ -147,6 +151,8 @@ sector:
     set_color_shares: false
     blue_share: 0.40
     pink_share: 0.05
+  coal:
+    shift_to_elec: true # If true, residential and services demand of coal is shifted to electricity. If false, the final energy demand of coal is disregarded
 
   international_bunkers: false #Whether or not to count the emissions of international aviation and navigation
 
@@ -322,7 +328,7 @@ solving:
   options:
     formulation: kirchhoff
     clip_p_max_pu: 1.e-2
-    load_shedding: false
+    load_shedding: true
     noisy_costs: true
     skip_iterations: true
     track_iterations: false
