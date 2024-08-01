@@ -8,8 +8,6 @@ import numpy as np
 import pandas as pd
 import pypsa
 from helpers import override_component_attrs
-from pypsa.linopf import ilopf, network_lopf
-from pypsa.linopt import define_constraints, get_var, join_exprs, linexpr
 from vresutils.benchmark import memory_logger
 
 logger = logging.getLogger(__name__)
@@ -136,43 +134,45 @@ def prepare_network(n, solve_opts=None):
 
 
 def add_battery_constraints(n):
-    chargers_b = n.links.carrier.str.contains("battery charger")
-    chargers = n.links.index[chargers_b & n.links.p_nom_extendable]
-    dischargers = chargers.str.replace("charger", "discharger")
-
-    if chargers.empty or ("Link", "p_nom") not in n.variables.index:
+    """
+    Add constraint ensuring that charger = discharger, i.e.
+    1 * charger_size - efficiency * discharger_size = 0
+    """
+    if not n.links.p_nom_extendable.any():
         return
 
-    link_p_nom = get_var(n, "Link", "p_nom")
+    discharger_bool = n.links.index.str.contains("battery discharger")
+    charger_bool = n.links.index.str.contains("battery charger")
 
-    lhs = linexpr(
-        (1, link_p_nom[chargers]),
-        (
-            -n.links.loc[dischargers, "efficiency"].values,
-            link_p_nom[dischargers].values,
-        ),
+    dischargers_ext = n.links[discharger_bool].query("p_nom_extendable").index
+    chargers_ext = n.links[charger_bool].query("p_nom_extendable").index
+
+    eff = n.links.efficiency[dischargers_ext].values
+    lhs = (
+        n.model["Link-p_nom"].loc[chargers_ext]
+        - n.model["Link-p_nom"].loc[dischargers_ext] * eff
     )
 
-    define_constraints(n, lhs, "=", 0, "Link", "charger_ratio")
+    n.model.add_constraints(lhs == 0, name="Link-charger_ratio")
 
 
 def add_h2_network_cap(n, cap):
     h2_network = n.links.loc[n.links.carrier == "H2 pipeline"]
-    if h2_network.index.empty or ("Link", "p_nom") not in n.variables.index:
+    if h2_network.index.empty:
         return
-    h2_network_cap = get_var(n, "Link", "p_nom")
-    subset_index = h2_network.index.intersection(h2_network_cap.index)
-    diff_index = h2_network_cap.index.difference(subset_index)
+    h2_network_cap = n.model["Link-p_nom"]
+    h2_network_cap_index = h2_network_cap.indexes["Link-ext"]
+    subset_index = h2_network.index.intersection(h2_network_cap_index)
+    diff_index = h2_network_cap_index.difference(subset_index)
     if len(diff_index) > 0:
         logger.warning(
             f"Impossible to set H2 cap for the following links: {diff_index}"
         )
-    lhs = linexpr(
-        (h2_network.loc[subset_index, "length"], h2_network_cap[subset_index])
+    lhs = (
+        h2_network_cap.loc[subset_index] * h2_network.loc[subset_index, "length"]
     ).sum()
-    # lhs = linexpr((1, h2_network_cap[h2_network.index])).sum()
     rhs = cap * 1000
-    define_constraints(n, lhs, "<=", rhs, "h2_network_cap")
+    n.model.add_constraints(lhs <= rhs, name="h2_network_cap")
 
 
 def H2_export_yearly_constraint(n):
@@ -193,9 +193,10 @@ def H2_export_yearly_constraint(n):
         index=n.snapshots,
         columns=res_index,
     )
-    res = join_exprs(
-        linexpr((weightings, get_var(n, "Generator", "p")[res_index]))
-    )  # single line sum
+    capacity_variable = n.model["Generator-p"]
+
+    # single line sum
+    res = (weightings * capacity_variable.loc[res_index]).sum()
 
     load_ind = n.loads[n.loads.carrier == "AC"].index.intersection(
         n.loads_t.p_set.columns
@@ -223,7 +224,7 @@ def H2_export_yearly_constraint(n):
     else:
         rhs = h2_export * (1 / 0.7)
 
-    con = define_constraints(n, lhs, ">=", rhs, "H2ExportConstraint", "RESproduction")
+    n.model.add_constraints(lhs >= rhs, name="H2ExportConstraint-RESproduction")
 
 
 def monthly_constraints(n, n_ref):
@@ -246,15 +247,17 @@ def monthly_constraints(n, n_ref):
         index=n.snapshots,
         columns=res_index,
     )
+    capacity_variable = n.model["Generator-p"]
 
-    res = linexpr((weightings, get_var(n, "Generator", "p")[res_index])).sum(
-        axis=1
-    )  # single line sum
+    # single line sum
+    res = (weightings * capacity_variable[res_index]).sum(axis=1)
     res = res.groupby(res.index.month).sum()
 
-    electrolysis = get_var(n, "Link", "p")[
+    link_p = n.model["Link-p"]
+    electrolysis = link_p.loc[
         n.links.index[n.links.index.str.contains("H2 Electrolysis")]
     ]
+
     weightings_electrolysis = pd.DataFrame(
         np.outer(
             n.snapshot_weightings["generators"], [1.0] * len(electrolysis.columns)
@@ -263,7 +266,7 @@ def monthly_constraints(n, n_ref):
         columns=electrolysis.columns,
     )
 
-    elec_input = linexpr((-allowed_excess * weightings_electrolysis, electrolysis)).sum(
+    elec_input = ((-allowed_excess * weightings_electrolysis) * electrolysis).sum(
         axis=1
     )
 
@@ -286,16 +289,16 @@ def monthly_constraints(n, n_ref):
         for i in range(len(res.index)):
             lhs = res.iloc[i] + "\n" + elec_input.iloc[i]
             rhs = res_ref.iloc[i] + elec_input_ref.iloc[i]
-            con = define_constraints(
-                n, lhs, ">=", rhs, f"RESconstraints_{i}", f"REStarget_{i}"
+            n.model.add_constraints(
+                lhs >= rhs, name=f"RESconstraints_{i}-REStarget_{i}"
             )
 
     else:
         for i in range(len(res.index)):
             lhs = res.iloc[i] + "\n" + elec_input.iloc[i]
 
-            con = define_constraints(
-                n, lhs, ">=", 0.0, f"RESconstraints_{i}", f"REStarget_{i}"
+            n.model.add_constraints(
+                lhs >= 0.0, name=f"RESconstraints_{i}-REStarget_{i}"
             )
     # else:
     #     logger.info("ignoring H2 export constraint as wildcard is set to 0")
@@ -316,84 +319,72 @@ def add_chp_constraints(n):
     electric = n.links.index[electric_bool]
     heat = n.links.index[heat_bool]
 
-    electric_ext = n.links.index[electric_bool & n.links.p_nom_extendable]
-    heat_ext = n.links.index[heat_bool & n.links.p_nom_extendable]
+    electric_ext = n.links[electric_bool].query("p_nom_extendable").index
+    heat_ext = n.links[heat_bool].query("p_nom_extendable").index
 
-    electric_fix = n.links.index[electric_bool & ~n.links.p_nom_extendable]
-    heat_fix = n.links.index[heat_bool & ~n.links.p_nom_extendable]
+    electric_fix = n.links[electric_bool].query("~p_nom_extendable").index
+    heat_fix = n.links[heat_bool].query("~p_nom_extendable").index
 
-    link_p = get_var(n, "Link", "p")
+    p = n.model["Link-p"]  # dimension: [time, link]
 
+    # output ratio between heat and electricity and top_iso_fuel_line for extendable
     if not electric_ext.empty:
-        link_p_nom = get_var(n, "Link", "p_nom")
+        p_nom = n.model["Link-p_nom"]
 
-        # ratio of output heat to electricity set by p_nom_ratio
-        lhs = linexpr(
-            (
-                n.links.loc[electric_ext, "efficiency"]
-                * n.links.loc[electric_ext, "p_nom_ratio"],
-                link_p_nom[electric_ext],
-            ),
-            (-n.links.loc[heat_ext, "efficiency"].values, link_p_nom[heat_ext].values),
+        lhs = (
+            p_nom.loc[electric_ext]
+            * (n.links.p_nom_ratio * n.links.efficiency)[electric_ext].values
+            - p_nom.loc[heat_ext] * n.links.efficiency[heat_ext].values
         )
+        n.model.add_constraints(lhs == 0, name="chplink-fix_p_nom_ratio")
 
-        define_constraints(n, lhs, "=", 0, "chplink", "fix_p_nom_ratio")
-
-        # top_iso_fuel_line for extendable
-        lhs = linexpr(
-            (1, link_p[heat_ext]),
-            (1, link_p[electric_ext].values),
-            (-1, link_p_nom[electric_ext].values),
+        rename = {"Link-ext": "Link"}
+        lhs = (
+            p.loc[:, electric_ext]
+            + p.loc[:, heat_ext]
+            - p_nom.rename(rename).loc[electric_ext]
         )
+        n.model.add_constraints(lhs <= 0, name="chplink-top_iso_fuel_line_ext")
 
-        define_constraints(n, lhs, "<=", 0, "chplink", "top_iso_fuel_line_ext")
-
+    # top_iso_fuel_line for fixed
     if not electric_fix.empty:
-        # top_iso_fuel_line for fixed
-        lhs = linexpr((1, link_p[heat_fix]), (1, link_p[electric_fix].values))
+        lhs = p.loc[:, electric_fix] + p.loc[:, heat_fix]
+        rhs = n.links.p_nom[electric_fix]
+        n.model.add_constraints(lhs <= rhs, name="chplink-top_iso_fuel_line_fix")
 
-        rhs = n.links.loc[electric_fix, "p_nom"].values
-
-        define_constraints(n, lhs, "<=", rhs, "chplink", "top_iso_fuel_line_fix")
-
+    # back-pressure
     if not electric.empty:
-        # backpressure
-        lhs = linexpr(
-            (
-                n.links.loc[electric, "c_b"].values * n.links.loc[heat, "efficiency"],
-                link_p[heat],
-            ),
-            (-n.links.loc[electric, "efficiency"].values, link_p[electric].values),
+        lhs = (
+            p.loc[:, heat] * (n.links.efficiency[heat] * n.links.c_b[electric].values)
+            - p.loc[:, electric] * n.links.efficiency[electric]
         )
-
-        define_constraints(n, lhs, "<=", 0, "chplink", "backpressure")
+        n.model.add_constraints(lhs <= rhs, name="chplink-backpressure")
 
 
 def add_co2_sequestration_limit(n, sns):
     co2_stores = n.stores.loc[n.stores.carrier == "co2 stored"].index
 
-    if co2_stores.empty or ("Store", "e") not in n.variables.index:
+    if co2_stores.empty:  # or ("Store", "e") not in n.variables.index:
         return
 
-    vars_final_co2_stored = get_var(n, "Store", "e").loc[sns[-1], co2_stores]
+    vars_final_co2_stored = n.model["Store-e"].loc[sns[-1], co2_stores]
 
-    lhs = linexpr((1, vars_final_co2_stored)).sum()
+    lhs = (1 * vars_final_co2_stored).sum()
     rhs = (
         n.config["sector"].get("co2_sequestration_potential", 5) * 1e6
     )  # TODO change 200 limit (Europe)
 
     name = "co2_sequestration_limit"
-    define_constraints(
-        n, lhs, "<=", rhs, "GlobalConstraint", "mu", axes=pd.Index([name]), spec=name
-    )
+
+    n.model.add_constraints(lhs <= rhs, name=f"GlobalConstraint-{name}")
 
 
 def set_h2_colors(n):
-    blue_h2 = get_var(n, "Link", "p")[
+    blue_h2 = n.model["Link-p"].loc[
         n.links.index[n.links.index.str.contains("blue H2")]
     ]
 
-    pink_h2 = get_var(n, "Link", "p")[
+    pink_h2 = n.model["Link-p"].loc[
         n.links.index[n.links.index.str.contains("pink H2")]
     ]
 
@@ -425,20 +416,24 @@ def set_h2_colors(n):
         columns=pink_h2.columns,
     )
 
-    total_blue = linexpr((weightings_blue, blue_h2)).sum().sum()
+    total_blue = (weightings_blue * blue_h2).sum().sum()
 
-    total_pink = linexpr((weightings_pink, pink_h2)).sum().sum()
+    total_pink = (weightings_pink * pink_h2).sum().sum()
 
     rhs_blue = load_h2 * snakemake.config["sector"]["hydrogen"]["blue_share"]
     rhs_pink = load_h2 * snakemake.config["sector"]["hydrogen"]["pink_share"]
 
-    define_constraints(n, total_blue, "=", rhs_blue, "blue_h2_share")
+    n.model.add_constraints(total_blue == rhs_blue, name="blue_h2_share")
 
-    define_constraints(n, total_pink, "=", rhs_pink, "pink_h2_share")
+    n.model.add_constraints(total_pink == rhs_pink, name="pink_h2_share")
 
 
 def extra_functionality(n, snapshots):
     add_battery_constraints(n)
+
+    if snakemake.config["sector"]["chp"]:
+        logger.info("setting CHP constraints")
+        add_chp_constraints(n)
 
     if (
         snakemake.config["policy_config"]["hydrogen"]["temporal_matching"]
@@ -485,37 +480,46 @@ def extra_functionality(n, snapshots):
     add_co2_sequestration_limit(n, snapshots)
 
 
-def solve_network(n, config, opts="", **kwargs):
-    solver_options = config["solving"]["solver"].copy()
-    solver_name = solver_options.pop("name")
-    cf_solving = config["solving"]["options"]
-    track_iterations = cf_solving.get("track_iterations", False)
-    min_iterations = cf_solving.get("min_iterations", 4)
-    max_iterations = cf_solving.get("max_iterations", 6)
+def solve_network(n, config, solving, **kwargs):
+    set_of_options = solving["solver"]["options"]
+    cf_solving = solving["options"]
+
+    kwargs["solver_options"] = (
+        solving["solver_options"][set_of_options] if set_of_options else {}
+    )
+    kwargs["solver_name"] = solving["solver"]["name"]
+    kwargs["extra_functionality"] = extra_functionality
+
+    if kwargs["solver_name"] == "gurobi":
+        logging.getLogger("gurobipy").setLevel(logging.CRITICAL)
+    skip_iterations = cf_solving.pop("skip_iterations", False)
+    if not n.lines.s_nom_extendable.any():
+        skip_iterations = True
+        logger.info("No expandable lines found. Skipping iterative solving.")
 
     # add to network for extra_functionality
     n.config = config
-    n.opts = opts
 
-    if cf_solving.get("skip_iterations", False):
-        network_lopf(
-            n,
-            solver_name=solver_name,
-            solver_options=solver_options,
-            extra_functionality=extra_functionality,
-            **kwargs,
-        )
+    if skip_iterations:
+        status, condition = n.optimize(**kwargs)
     else:
-        ilopf(
-            n,
-            solver_name=solver_name,
-            solver_options=solver_options,
-            track_iterations=track_iterations,
-            min_iterations=min_iterations,
-            max_iterations=max_iterations,
-            extra_functionality=extra_functionality,
-            **kwargs,
+        kwargs["track_iterations"] = cf_solving["track_iterations"]
+        kwargs["min_iterations"] = cf_solving["min_iterations"]
+        kwargs["max_iterations"] = cf_solving["max_iterations"]
+        status, condition = n.optimize.optimize_transmission_expansion_iteratively(
+            **kwargs
         )
+
+    if status != "ok":
+        logger.warning(
+            f"Solving status '{status}' with termination condition '{condition}'"
+        )
+    if "infeasible" in condition:
+        labels = n.model.compute_infeasibilities()
+        logger.info(f"Labels:\n{labels}")
+        n.model.print_infeasibilities()
+        raise RuntimeError("Solving status 'infeasible'")
+
     return n
 
 
@@ -608,9 +612,8 @@ if __name__ == "__main__":
         n = solve_network(
             n,
             config=snakemake.config,
-            opts=snakemake.wildcards.opts.split("-"),
-            solver_dir=tmpdir,
-            solver_logfile=snakemake.log.solver,
+            solving=snakemake.params.solving,
+            log_fn=snakemake.log.solver,
         )
 
         n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
