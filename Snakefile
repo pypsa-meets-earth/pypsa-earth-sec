@@ -96,7 +96,7 @@ rule prepare_sector_networks:
             RDIR
             + "/prenetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}.nc",
             **config["scenario"],
-            **config["costs"]
+            **config["costs"],
         ),
 
 
@@ -107,7 +107,7 @@ rule override_res_all_nets:
             + "/prenetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_presec.nc",
             **config["scenario"],
             **config["costs"],
-            **config["export"]
+            **config["export"],
         ),
 
 
@@ -118,7 +118,7 @@ rule solve_all_networks:
             + "/postnetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export.nc",
             **config["scenario"],
             **config["costs"],
-            **config["export"]
+            **config["export"],
         ),
 
 
@@ -212,9 +212,11 @@ rule prepare_sector_network:
             + RDIR_PE
             + "bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson"
         ),
-        pipelines="data_custom/pipelines.csv"
-        if config["custom_data"]["gas_network"]
-        else "resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv",
+        pipelines=(
+            "data_custom/pipelines.csv"
+            if config["custom_data"]["gas_network"]
+            else "resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv"
+        ),
     output:
         RDIR
         + "/prenetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}.nc",
@@ -596,7 +598,7 @@ rule make_summary:
             + "/postnetworks/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export.nc",
             **config["scenario"],
             **config["costs"],
-            **config["export"]
+            **config["export"],
         ),
         costs=CDIR + "costs_{planning_horizons}.csv",
         plots=expand(
@@ -604,7 +606,7 @@ rule make_summary:
             + "/maps/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}-costs-all_{planning_horizons}_{discountrate}_{demand}_{h2export}export.pdf",
             **config["scenario"],
             **config["costs"],
-            **config["export"]
+            **config["export"],
         ),
     output:
         nodal_costs=SDIR + "/csvs/nodal_costs.csv",
