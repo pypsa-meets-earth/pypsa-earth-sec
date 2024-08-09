@@ -38,7 +38,7 @@ if __name__ == "__main__":
             simpl="",
             clusters="10",
         )
-        sets_path_to_root("pypsa-earth-sec")
+        os.chdir(snakemake.config["ROOT_PATH"])
         rootpath = ".."
     else:
         rootpath = "."
@@ -346,7 +346,6 @@ def download_GADM(country_code, update=False, out_logging=False):
     GADM_filename = get_GADM_filename(country_code)
 
     GADM_inputfile_gpkg = os.path.join(
-        os.getcwd() + "/pypsa-earth",
         "data",
         "gadm",
         GADM_filename,

@@ -363,7 +363,7 @@ if __name__ == "__main__":
             demand="AB",
             planning_horizons=2030,
         )
-        sets_path_to_root("pypsa-earth-sec")
+        os.chdir(snakemake.config["ROOT_PATH"])
 
     energy_stat_database = pd.read_excel(
         snakemake.input.unsd_paths, index_col=0, header=0
