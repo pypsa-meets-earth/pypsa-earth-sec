@@ -247,6 +247,8 @@ rule add_export:
         store=config["export"]["store"],
         store_capital_costs=config["export"]["store_capital_costs"],
         export_profile=config["export"]["export_profile"],
+        export_endogenous=config["export"]["endogenous"],
+        endogenous_price=config["export"]["endogenous_price"],
         snapshots=config["snapshots"],
         USD_to_EUR=config["costs"]["USD2013_to_EUR2013"],
         lifetime=config["costs"]["lifetime"],
@@ -567,7 +569,7 @@ if config["foresight"] == "overnight":
             + "/logs/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export_python.log",
             memory=RDIR
             + "/logs/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export_memory.log",
-        threads: 25
+        threads: 4
         resources:
             mem_mb=config["solving"]["mem"],
         benchmark:
