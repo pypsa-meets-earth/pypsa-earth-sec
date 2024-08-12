@@ -123,14 +123,30 @@ def add_export(n, hydrogen_buses_ports, export_profile):
     elif snakemake.params.store == False:
         pass
 
-    # add load
-    n.add(
-        "Load",
-        "H2 export load",
-        bus="H2 export bus",
-        carrier="H2",
-        p_set=export_profile,
-    )
+    if snakemake.params.export_endogenous == False:
+        # add load
+        n.add(
+            "Load",
+            "H2 export load",
+            bus="H2 export bus",
+            carrier="H2",
+            p_set=export_profile,
+        )   
+    elif snakemake.params.export_endogenous == True:
+        # add endogenous export by implementing a negative generation
+        n.add("Generator",
+                "H2 export load",
+                bus="H2 export bus", 
+                carrier="H2", 
+                sign=-1,
+                p_nom_extendable=True,
+                marginal_cost=snakemake.params.endogenous_price,
+        )
+
+    else:
+        logger.error(
+            f"Value {snakemake.params.export_endogenous} for ['export']['export_endogenous'] is not valid"
+        )
 
     return
 
@@ -183,13 +199,13 @@ if __name__ == "__main__":
             "add_export",
             simpl="",
             clusters="10",
-            ll="c1.0",
+            ll="c3.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="144H",
+            sopts="3H",
             discountrate="0.071",
             demand="AB",
-            h2export="120",
+            h2export="20",
         )
         sets_path_to_root("pypsa-earth-sec")
 
