@@ -140,7 +140,7 @@ def add_export(n, hydrogen_buses_ports, export_profile):
                 carrier="H2", 
                 sign=-1,
                 p_nom_extendable=True,
-                marginal_cost=snakemake.params.endogenous_price,
+                marginal_cost=snakemake.params.endogenous_price * (-1),
         )
 
     else:
