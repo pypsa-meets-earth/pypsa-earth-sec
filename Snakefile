@@ -269,6 +269,40 @@ rule add_export:
         "scripts/add_export.py"
 
 
+rule prepare_res_potentials:
+    input:
+        **{
+            f"{tech}_pot": f"resources/custom_renewables/raw_data/{tech}/respotentials.csv"
+            for tech in config["custom_data"]["renewables_enertile"]
+        },
+        **{
+            f"{tech}_pot_t": f"resources/custom_renewables/raw_data/{tech}/respotentialhourdata.csv"
+            for tech in config["custom_data"]["renewables_enertile"]
+        },
+        regions_onshore_elec_s=pypsaearth(
+            "resources/bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson"
+        ),
+    output:
+        **{
+            f"{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{{simpl}}_{{clusters}}.csv"
+            for tech in config["custom_data"]["renewables"]
+            for year in config["scenario"]["planning_horizons"]
+            for discountrate in config["costs"]["discountrate"]
+            for simpl in config["scenario"]["simpl"]
+            for clusters in config["scenario"]["clusters"]
+        },
+        **{
+            f"{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{{simpl}}_{{clusters}}.csv"
+            for tech in config["custom_data"]["renewables"]
+            for year in config["scenario"]["planning_horizons"]
+            for discountrate in config["costs"]["discountrate"]
+            for simpl in config["scenario"]["simpl"]
+            for clusters in config["scenario"]["clusters"]
+        },
+    script:
+        "scripts/prepare_res_potentials.py"
+
+
 rule override_respot:
     params:
         run=config["run"],
@@ -276,16 +310,20 @@ rule override_respot:
         countries=config["countries"],
     input:
         **{
-            f"custom_res_pot_{tech}_{planning_horizons}_{discountrate}": f"resources/custom_renewables/{tech}_{planning_horizons}_{discountrate}_potential.csv"
+            f"custom_res_pot_{tech}_{year}_{discountrate}_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}.csv"
             for tech in config["custom_data"]["renewables"]
+            for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
-            for planning_horizons in config["scenario"]["planning_horizons"]
+            for simpl in config["scenario"]["simpl"]
+            for clusters in config["scenario"]["clusters"]
         },
         **{
-            f"custom_res_ins_{tech}_{planning_horizons}_{discountrate}": f"resources/custom_renewables/{tech}_{planning_horizons}_{discountrate}_installable.csv"
+            f"custom_res_ins_{tech}_{year}_{discountrate}_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}.csv"
             for tech in config["custom_data"]["renewables"]
+            for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
-            for planning_horizons in config["scenario"]["planning_horizons"]
+            for simpl in config["scenario"]["simpl"]
+            for clusters in config["scenario"]["clusters"]
         },
         overrides="data/override_component_attrs",
         network=pypsaearth(
