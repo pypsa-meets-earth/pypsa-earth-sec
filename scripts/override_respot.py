@@ -12,19 +12,27 @@ import xarray as xr
 from helpers import mock_snakemake, override_component_attrs, sets_path_to_root
 
 
-def override_values(tech, year, dr):
+def override_values(tech, year, dr, simpl, clusters):
     custom_res_t = pd.read_csv(
-        snakemake.input["custom_res_pot_{0}_{1}_{2}".format(tech, year, dr)],
+        snakemake.input[
+            "custom_res_pot_{0}_{1}_{2}_s{3}_{4}".format(
+                tech, year, dr, simpl, clusters
+            )
+        ],
         index_col=0,
         parse_dates=True,
     ).filter(buses, axis=1)
 
     custom_res = (
         pd.read_csv(
-            snakemake.input["custom_res_ins_{0}_{1}_{2}".format(tech, year, dr)],
+            snakemake.input[
+                "custom_res_ins_{0}_{1}_{2}_s{3}_{4}".format(
+                    tech, year, dr, simpl, clusters
+                )
+            ],
             index_col=0,
         )
-        .filter(buses, axis=0)
+        .loc[buses]
         .reset_index()
     )
 
@@ -72,12 +80,12 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "override_respot",
             simpl="",
-            clusters="16",
-            ll="c1.0",
+            clusters="11",
+            ll="v2.0",
             opts="Co2L",
             planning_horizons="2030",
-            sopts="3H",
-            demand="AP",
+            sopts="144H",
+            demand="AB",
             discountrate=0.071,
         )
         sets_path_to_root("pypsa-earth-sec")
@@ -93,11 +101,13 @@ if __name__ == "__main__":
             techs = snakemake.params.custom_data["renewables"]
             year = snakemake.wildcards["planning_horizons"]
             dr = snakemake.wildcards["discountrate"]
+            simpl = snakemake.wildcards["simpl"]
+            clusters = snakemake.wildcards["clusters"]
 
             m = n.copy()
 
             for tech in techs:
-                override_values(tech, year, dr)
+                override_values(tech, year, dr, simpl, clusters)
 
         else:
             print("No RES potential techs to override...")
