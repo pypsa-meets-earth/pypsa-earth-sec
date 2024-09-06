@@ -72,19 +72,13 @@ def merge_onwind(onwind, onwind_rest):
     return {"potentials": merged_potentials, "hourdata": merged_hourdata}
 
 
-def prepare_enertile(technology):
+def prepare_enertile(df, df_t):
 
     tech_dict = {
         "windonshore": "onwind",
         "sopv": "solar",
     }
 
-    df_t = pd.read_csv(snakemake.input[f"{technology}_pot_t"])
-    df = pd.read_csv(snakemake.input[f"{technology}_pot"])
-    df = df.loc[df["simyear"].isin(snakemake.config["scenario"]["planning_horizons"])]
-    df_t = df_t.loc[
-        df_t["simyear"].isin(snakemake.config["scenario"]["planning_horizons"])
-    ]
     regions = gpd.read_file(snakemake.input.regions_onshore_elec_s)
 
     df_t["tech"] = df_t["tech"].map(tech_dict)
@@ -234,4 +228,6 @@ if __name__ == "__main__":
     }
     renewables_enertile.remove("onwind_rest")
     for technology in renewables_enertile:
-        prepare_enertile(technology=technology)
+        prepare_enertile(
+            df=data[technology]["potentials"], df_t=data[technology]["hourdata"]
+        )
