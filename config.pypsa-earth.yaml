@@ -2,14 +2,14 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-version: 0.3.0
+version: 0.4.0
 tutorial: false
 
 logging:
   level: INFO
   format: "%(levelname)s:%(name)s:%(message)s"
 
-countries: ["MA"]
+countries: ["BR"]
 # Can be replaced by country ["NG", "BJ"], continent ["Africa"] or user-specific region, see more at https://pypsa-earth.readthedocs.io/en/latest/configuration.html#top-level-configuration
 
 enable:
@@ -31,9 +31,9 @@ run:
 
 scenario:
   simpl: ['']
-  ll: ['1.0']
+  ll: ['copt']
   clusters: [10]
-  opts: [Co2L1-144H]
+  opts: [Co2L-3H]
 
 snapshots:
   start: "2013-01-01"
@@ -61,8 +61,8 @@ cluster_options:
     algorithm: kmeans # choose from: [hac, kmeans]
     feature: solar+onwind-time # only for hac. choose from: [solar+onwind-time, solar+onwind-cap, solar-time, solar-cap, solar+offwind-cap] etc.
     exclude_carriers: []
-    remove_stubs: true
-    remove_stubs_across_borders: false
+    remove_stubs: false
+    remove_stubs_across_borders: true
     p_threshold_drop_isolated: 20 # [MW] isolated buses are being discarded if bus mean power is below the specified threshold
     p_threshold_merge_isolated: 300 # [MW] isolated buses are being merged into a single isolated bus if a bus mean power is below the specified threshold
     s_threshold_fetch_isolated: 0.05 # [-] a share of the national load for merging an isolated network into a backbone network
@@ -110,10 +110,10 @@ clean_osm_data_options:  # osm = OpenStreetMap
 
 build_osm_network:  # Options of the build_osm_network script; osm = OpenStreetMap
   group_close_buses: true  # When "True", close buses are merged and guarantee the voltage matching among line endings
-  group_tolerance_buses: 10000  # [m] (default 5000) Tolerance in meters of the close buses to merge
+  group_tolerance_buses: 5000  # [m] (default 5000) Tolerance in meters of the close buses to merge
   split_overpassing_lines: true  # When True, lines overpassing buses are splitted and connected to the bueses
   overpassing_lines_tolerance: 1  # [m] (default 1) Tolerance to identify lines overpassing buses
-  force_ac: false  # When true, it forces all components (lines and substation) to be AC-only. To be used if DC assets create problem.
+  force_ac: true  # When true, it forces all components (lines and substation) to be AC-only. To be used if DC assets create problem.
 
 base_network:
   min_voltage_substation_offshore: 51000  # [V] minimum voltage of the offshore substations
@@ -148,14 +148,14 @@ electricity:
   extendable_carriers:
     Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT]
     StorageUnit: []  # battery, H2
-    Store: []
+    Store: [battery, H2]
     Link: []  # H2 pipeline
 
   powerplants_filter: (DateOut >= 2022 or DateOut != DateOut)
   custom_powerplants: false  #  "false" use only powerplantmatching (ppm) data, "merge" combines ppm and custom powerplants, "replace" use only custom powerplants
 
   conventional_carriers: [nuclear, oil, OCGT, CCGT, coal, lignite, geothermal, biomass]
-  renewable_carriers: [solar, onwind, offwind-ac, offwind-dc, hydro]
+  renewable_carriers: [solar, onwind, csp, offwind-ac, offwind-dc, hydro]
 
   estimate_renewable_capacities:
     stats: "irena"  # False, = greenfield expansion, 'irena' uses IRENA stats to add expansion limits
@@ -203,7 +203,7 @@ atlite:
       dy: 0.3  # cutout resolution
       # The cutout time is automatically set by the snapshot range. See `snapshot:` option above and 'build_cutout.py'.
       # time: ["2013-01-01", "2014-01-01"]  # to manually specify a different weather year (~70 years available)
-      # The cutout spatial extent [x,y] is automatically set by country selection. See `countries:` option above and 'build_cutout.py'.
+      # The cutout spatial extent [x,y] is automatically set by country selection. See `countires:` option above and 'build_cutout.py'.
       # x: [-12., 35.]  # set cutout range manual, instead of automatic by boundaries of country
       # y: [33., 72]    # manual set cutout range
 
@@ -313,6 +313,26 @@ renewable:
       method: hydro_capacities  # 'hydro_capacities' to rescale country hydro production by using hydro_capacities, 'eia' to rescale by eia data, false for no rescaling
       year: 2013  # (optional) year of statistics used to rescale the runoff time series. When not provided, the weather year of the snapshots is used
     multiplier: 1.1  # multiplier applied after the normalization of the hydro production; default 1.0
+  csp:
+    cutout: cutout-2013-era5
+    resource:
+      method: csp
+      installation: SAM_solar_tower
+    capacity_per_sqkm: 2.392 # From 1.7 to 4.6 addresses issue #361
+    # Determined by comparing uncorrected area-weighted full-load hours to those
+    # published in Supplementary Data to
+    # Pietzcker, Robert Carl, et al. "Using the sun to decarbonize the power
+    # sector: The economic potential of photovoltaics and concentrating solar
+    # power." Applied Energy 135 (2014): 704-720.
+    copernicus:
+      grid_codes: [20, 30, 40, 60, 90]
+      distancing_codes: [50]
+      distance_to_codes: 3000
+    natura: true
+    potential: simple # or conservative
+    clip_p_max_pu: 1.e-2
+    extendable: true
+    csp_model: advanced # simple or advanced
 
 # TODO: Needs to be adjusted for Africa.
 # Costs Configuration (Do not remove, needed for Sphynx documentation).
@@ -352,8 +372,8 @@ monte_carlo:
     add_to_snakefile: false # When set to true, enables Monte Carlo sampling
     samples: 9 # number of optimizations. Note that number of samples when using scipy has to be the square of a prime number
     sampling_strategy: "chaospy"  # "pydoe2", "chaospy", "scipy", packages that are supported
-    seed: 42 # set seedling for reproducibility
-  # Uncertainties on any PyPSA object are specified by declaring the specific PyPSA object under the key 'uncertainties'.
+    seed: 42 # set seedling for reproducibilty
+  # Uncertanties on any PyPSA object are specified by declaring the specific PyPSA object under the key 'uncertainties'.
   # For each PyPSA object, the 'type' and 'args' keys represent the type of distribution and its argument, respectively.
   # Supported distributions types are uniform, normal, lognormal, triangle, beta and gamma.
   # The arguments of the distribution are passed using the key 'args'  as follows, tailored by distribution type
@@ -461,13 +481,21 @@ plotting:
     "electricity": "#f9d002"
     "lines": "#70af1d"
     "transmission lines": "#70af1d"
+    "AC": "#70af1d"
     "AC-AC": "#70af1d"
     "AC line": "#70af1d"
     "links": "#8a1caf"
     "HVDC links": "#8a1caf"
+    "DC": "#8a1caf"
     "DC-DC": "#8a1caf"
     "DC link": "#8a1caf"
-    "load": "#FF0000"
+    "load": "#ff0000"
+    "load shedding": "#ff0000"
+    "battery discharger": slategray
+    "battery charger": slategray
+    "h2 fuel cell": '#c251ae'
+    "h2 electrolysis": '#ff29d9'
+    "csp": "#fdd404"
   nice_names:
     OCGT: "Open-Cycle Gas"
     CCGT: "Combined-Cycle Gas"
