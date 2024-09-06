@@ -5,7 +5,11 @@ results_dir: results/
 summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
-run: 0826_test_no_ls
+run: 
+  name: 0904_integrate_enertile
+  name_subworkflow: ""  # scenario name of the pypsa-earth subworkflow
+  shared_cutouts: true  # set to true to share the default cutout(s) across runs
+                        # Note: value false requires build_cutout to be enabled
 
 foresight: overnight
 
@@ -71,7 +75,7 @@ export:
     unload_time: 24 # hours for 48h see Hampp2021
 
 custom_data:
-  renewables_enertile: ["onwind", "solar"]
+  renewables_enertile: ["onwind", "onwind_rest", "solar"]
   renewables: ["onwind", "onwind2", "onwind3", "solar"] # ['csp', 'rooftop-solar', 'solar']
   elec_demand: false
   heat_demand: false
@@ -165,6 +169,17 @@ solar_thermal:
     slope: 45.
     azimuth: 180.
 
+existing_capacities:
+  grouping_years_power: [1960, 1965, 1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025, 2030]
+  grouping_years_heat: [1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2019] # these should not extend 2020
+  threshold_capacity: 10
+  default_heating_lifetime: 20
+  conventional_carriers:
+  - lignite
+  - coal
+  - oil
+  - uranium
+  
 sector:
   gas:
     spatial_gas: true # ALWAYS TRUE
@@ -181,7 +196,8 @@ sector:
     set_color_shares: false
     blue_share: 0.40
     pink_share: 0.05
-
+  coal:
+    shift_to_elec: true # If true, residential and services demand of coal is shifted to electricity. If false, the final energy demand of coal is disregarded
   international_bunkers: false #Whether or not to count the emissions of international aviation and navigation
 
   oil:
@@ -209,13 +225,6 @@ sector:
     # 2040: 0.16
     # 2045: 0.21
     # 2050: 0.29
-  retrofitting:   # co-optimises building renovation to reduce space heat demand
-    retro_endogen: false  # co-optimise space heat savings
-    cost_factor: 1.0   # weight costs for building renovation
-    interest_rate: 0.04  # for investment in building components
-    annualise_cost: true  # annualise the investment costs
-    tax_weighting: false   # weight costs depending on taxes in countries
-    construction_index: true   # weight costs depending on labour/material costs per country
   tes: true
   tes_tau: # 180 day time constant for centralised, 3 day for decentralised
     decentral: 3

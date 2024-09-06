@@ -25,6 +25,53 @@ def w_avg(df, values, weights):
         return (d * w).sum() / w.sum()
 
 
+def load_data(technology):
+    df_t = pd.read_csv(snakemake.input[f"{technology}_pot_t"])
+    df = pd.read_csv(snakemake.input[f"{technology}_pot"])
+    df = df.loc[df["simyear"].isin(snakemake.config["scenario"]["planning_horizons"])]
+    df_t = df_t.loc[
+        df_t["simyear"].isin(snakemake.config["scenario"]["planning_horizons"])
+    ]
+    return df, df_t
+
+
+def merge_onwind(onwind, onwind_rest):
+    """
+    Returns a merged onwind dataset as a dictionary containing the potentials and hourdata with respective keys.
+    The merged dataframes substitute the onwind_rest entries with the onwind entries for the regions where there are onwind entries.
+    Furthermore, the additional steps of onwind are added.
+    """
+    # Create copies of the dataframes
+    merged_potentials = onwind["potentials"].copy()
+    merged_hourdata = onwind["hourdata"].copy()
+
+    # Identify the indices to drop from onwind_rest
+    potentials_index_to_drop = merged_potentials.set_index(
+        ["region", "step", "simyear"]
+    ).index
+    hourdata_index_to_drop = merged_hourdata.set_index(
+        ["region", "step", "simyear"]
+    ).index
+
+    # Drop entries in onwind_rest that are already in onwind
+    filtered_potentials_rest = onwind_rest["potentials"].loc[
+        ~onwind_rest["potentials"]
+        .set_index(["region", "step", "simyear"])
+        .index.isin(potentials_index_to_drop)
+    ]
+    filtered_hourdata_rest = onwind_rest["hourdata"].loc[
+        ~onwind_rest["hourdata"]
+        .set_index(["region", "step", "simyear"])
+        .index.isin(hourdata_index_to_drop)
+    ]
+
+    # Concatenate the dataframes
+    merged_potentials = pd.concat([merged_potentials, filtered_potentials_rest])
+    merged_hourdata = pd.concat([merged_hourdata, filtered_hourdata_rest])
+
+    return {"potentials": merged_potentials, "hourdata": merged_hourdata}
+
+
 def prepare_enertile(technology):
 
     tech_dict = {
@@ -175,5 +222,16 @@ if __name__ == "__main__":
         )
         sets_path_to_root("pypsa-earth-sec")
 
-    for technology in snakemake.config["custom_data"]["renewables_enertile"]:
+    renewables_enertile = snakemake.config["custom_data"]["renewables_enertile"]
+    data = {}
+    for technology in renewables_enertile:
+        data_tech, data_tech_t = load_data(technology)
+        data[technology] = {"potentials": data_tech, "hourdata": data_tech_t}
+    onwind_merged = merge_onwind(data["onwind"], data["onwind_rest"])
+    data["onwind"] = {
+        "potentials": onwind_merged["potentials"],
+        "hourdata": onwind_merged["hourdata"],
+    }
+    renewables_enertile.remove("onwind_rest")
+    for technology in renewables_enertile:
         prepare_enertile(technology=technology)
