@@ -77,10 +77,11 @@ export:
 custom_data:
   renewables_enertile: ["onwind", "onwind_rest", "solar"]
   renewables: ["onwind", "onwind2", "onwind3", "solar"] # ['csp', 'rooftop-solar', 'solar']
+  energy_totals: true
   elec_demand: false
   heat_demand: false
   industry_demand: false
-  industry_database: false
+  industry_database: true
   transport_demand: false
   water_costs: false
   h2_underground: false
