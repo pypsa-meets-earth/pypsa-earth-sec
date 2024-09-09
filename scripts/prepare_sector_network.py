@@ -239,8 +239,6 @@ def H2_liquid_fossil_conversions(n, costs):
 def add_hydrogen(n, costs):
     "function to add hydrogen as an energy carrier with its conversion technologies from and to AC"
 
-    n.add("Carrier", "H2")
-
     n.madd(
         "Bus",
         spatial.nodes + " H2",
@@ -1081,7 +1079,6 @@ def add_aviation(n, cost):
 
 def add_storage(n, costs):
     "function to add the different types of storage systems"
-    n.add("Carrier", "battery")
 
     n.madd(
         "Bus",
