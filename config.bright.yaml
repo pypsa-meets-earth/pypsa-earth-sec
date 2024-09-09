@@ -418,18 +418,15 @@ solving:
 
   solver:
     name: gurobi
-    NumericFocus: 3       # Favour numeric stability over speed
-    method: 2             # barrier
-    crossover: 0          # do not use crossover
-    BarHomogeneous: 1     # Use homogeneous barrier if standard does not converge
-    BarConvTol: 1.e-5
-    FeasibilityTol: 1.e-4
-    OptimalityTol: 1.e-4
-    ObjScale: -0.5
-    threads: 8
+    threads: 25
+    method: 2 # barrier
+    crossover: 0
+    BarConvTol: 1.e-6
     Seed: 123
-
-    FeasibilityTol: 1.e-6
+    AggFill: 0
+    PreDual: 0
+    GURO_PAR_BARDENSETHRESH: 200
+    #FeasibilityTol: 1.e-6
 
   mem: 30000 #memory in MB; 20 GB enough for 50+B+I+H2; 100 GB for 181+B+I+H2
 
