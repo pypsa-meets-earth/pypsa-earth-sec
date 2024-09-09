@@ -402,12 +402,12 @@ rule prepare_heat_data:
     script:
         "scripts/prepare_heat_data.py"
 
-if config["customdata"]["energy_totals"]:
+if config["custom_data"]["energy_totals"]:
     rule copy_energy_totals:
         input:
-            source="data_custom/energy_totals{demand}{planning_horizons}.csv"
+            source="data_custom/energy_totals_{demand}_{planning_horizons}.csv"
         output:
-            destination="data/energy_totals{demand}_{planning_horizons}.csv"
+            destination="data/energy_totals_{demand}_{planning_horizons}.csv"
         shell:
             "cp {input.source} {output.destination}"
 
@@ -427,21 +427,21 @@ else:
             "scripts/build_base_energy_totals.py"
 
 
-rule prepare_energy_totals:
-    params:
-        countries=config["countries"],
-        base_year=config["demand_data"]["base_year"],
-        sector_options=config["sector"],
-    input:
-        unsd_paths="data/energy_totals_base.csv",
-        efficiency_gains_cagr="data/demand/efficiency_gains_cagr.csv",
-        growth_factors_cagr="data/demand/growth_factors_cagr.csv",
-        district_heating="data/demand/district_heating.csv",
-        fuel_shares="data/demand/fuel_shares.csv",
-    output:
-        energy_totals="data/energy_totals_{demand}_{planning_horizons}.csv",
-    script:
-        "scripts/prepare_energy_totals.py"
+    rule prepare_energy_totals:
+        params:
+            countries=config["countries"],
+            base_year=config["demand_data"]["base_year"],
+            sector_options=config["sector"],
+        input:
+            unsd_paths="data/energy_totals_base.csv",
+            efficiency_gains_cagr="data/demand/efficiency_gains_cagr.csv",
+            growth_factors_cagr="data/demand/growth_factors_cagr.csv",
+            district_heating="data/demand/district_heating.csv",
+            fuel_shares="data/demand/fuel_shares.csv",
+        output:
+            energy_totals="data/energy_totals_{demand}_{planning_horizons}.csv",
+        script:
+            "scripts/prepare_energy_totals.py"
 
 
 rule build_solar_thermal_profiles:
