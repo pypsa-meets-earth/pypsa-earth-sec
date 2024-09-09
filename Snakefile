@@ -402,37 +402,46 @@ rule prepare_heat_data:
     script:
         "scripts/prepare_heat_data.py"
 
+if config["custom_data"]["energy_totals"]:
+    rule copy_energy_totals:
+        input:
+            source="data_custom/energy_totals_{demand}_{planning_horizons}.csv"
+        output:
+            destination="data/energy_totals_{demand}_{planning_horizons}.csv"
+        shell:
+            "cp {input.source} {output.destination}"
 
-rule build_base_energy_totals:
-    params:
-        space_heat_share=config["sector"]["space_heat_share"],
-        update_data=config["demand_data"]["update_data"],
-        base_year=config["demand_data"]["base_year"],
-        countries=config["countries"],
-        shift_coal_to_elec=config["sector"]["coal"]["shift_to_elec"],
-    input:
-        unsd_paths="data/demand/unsd/paths/Energy_Statistics_Database.xlsx",
-    output:
-        energy_totals_base="data/energy_totals_base.csv",
-    script:
-        "scripts/build_base_energy_totals.py"
+else:
+    rule build_base_energy_totals:
+        params:
+            space_heat_share=config["sector"]["space_heat_share"],
+            update_data=config["demand_data"]["update_data"],
+            base_year=config["demand_data"]["base_year"],
+            countries=config["countries"],
+            shift_coal_to_elec=config["sector"]["coal"]["shift_to_elec"],
+        input:
+            unsd_paths="data/demand/unsd/paths/Energy_Statistics_Database.xlsx",
+        output:
+            energy_totals_base="data/energy_totals_base.csv",
+        script:
+            "scripts/build_base_energy_totals.py"
 
 
-rule prepare_energy_totals:
-    params:
-        countries=config["countries"],
-        base_year=config["demand_data"]["base_year"],
-        sector_options=config["sector"],
-    input:
-        unsd_paths="data/energy_totals_base.csv",
-        efficiency_gains_cagr="data/demand/efficiency_gains_cagr.csv",
-        growth_factors_cagr="data/demand/growth_factors_cagr.csv",
-        district_heating="data/demand/district_heating.csv",
-        fuel_shares="data/demand/fuel_shares.csv",
-    output:
-        energy_totals="data/energy_totals_{demand}_{planning_horizons}.csv",
-    script:
-        "scripts/prepare_energy_totals.py"
+    rule prepare_energy_totals:
+        params:
+            countries=config["countries"],
+            base_year=config["demand_data"]["base_year"],
+            sector_options=config["sector"],
+        input:
+            unsd_paths="data/energy_totals_base.csv",
+            efficiency_gains_cagr="data/demand/efficiency_gains_cagr.csv",
+            growth_factors_cagr="data/demand/growth_factors_cagr.csv",
+            district_heating="data/demand/district_heating.csv",
+            fuel_shares="data/demand/fuel_shares.csv",
+        output:
+            energy_totals="data/energy_totals_{demand}_{planning_horizons}.csv",
+        script:
+            "scripts/prepare_energy_totals.py"
 
 
 rule build_solar_thermal_profiles:
@@ -707,11 +716,22 @@ rule plot_summary:
         "scripts/plot_summary.py"
 
 
-rule build_industrial_database:
-    output:
-        industrial_database="data/industrial_database.csv",
-    script:
-        "scripts/build_industrial_database.py"
+if config["custom_data"]["industry_database"]:
+    rule copy_industry_database:
+        input:
+            source="data_custom/industrial_database.csv"
+        output:
+            destination="data/industrial_database.csv"
+        shell:
+            "cp {input.source} {output.destination}"
+
+
+else:
+    rule build_industrial_database:
+        output:
+            industrial_database="data/industrial_database.csv",
+        script:
+            "scripts/build_industrial_database.py"
 
 
 rule prepare_db:
