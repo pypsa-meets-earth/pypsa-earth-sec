@@ -4,9 +4,6 @@ Prepare gas network.
 """
 
 import logging
-
-logger = logging.getLogger(__name__)
-
 import os
 import zipfile
 from pathlib import Path
@@ -27,6 +24,9 @@ from pypsa.geo import haversine_pts
 from shapely.geometry import LineString, Point
 from shapely.ops import unary_union
 from shapely.validation import make_valid
+
+logger = logging.getLogger(__name__)
+
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
@@ -82,13 +82,26 @@ def download_GGIT_gas_network():
     """
     fn = "https://globalenergymonitor.org/wp-content/uploads/2022/12/GEM-GGIT-Gas-Pipelines-December-2022.xlsx"
     storage_options = {"User-Agent": "Mozilla/5.0"}
-    GGIT_gas_pipeline = pd.read_excel(
-        fn,
-        index_col=0,
-        storage_options=storage_options,
-        sheet_name="Gas Pipelines 2022-12-16",
-        header=0,
-    )
+    try:
+        GGIT_gas_pipeline = pd.read_excel(
+            fn,
+            index_col=0,
+            storage_options=storage_options,
+            sheet_name="Gas Pipelines 2022-12-16",
+            header=0,
+        )
+    except Exception as e:
+        ggit_gas_pipeline_datapath = os.path.join(
+            os.getcwd(),
+            "data/temp_hard_coded/gem_ggit_gas_pipelines_december_2022.xlsx",
+        )
+        GGIT_gas_pipeline = pd.read_excel(
+            ggit_gas_pipeline_datapath,
+        )
+        #     index_col=0,
+        #     sheet_name="Gas Pipelines 2022-12-16",
+        #     header=0,
+        # )
 
     return GGIT_gas_pipeline
 
@@ -185,7 +198,7 @@ def prepare_GGIT_data(GGIT_gas_pipeline):
         .apply(correct_Diameter_col)
         .apply(
             lambda d: inch_to_mm(float(d))
-        )  #         .apply(lambda ds: pd.Series(ds).apply(lambda d: inch_to_mm(float(d))))
+        )  # .apply(lambda ds: pd.Series(ds).apply(lambda d: inch_to_mm(float(d))))
     )
 
     # Convert Bcm/y to MW
