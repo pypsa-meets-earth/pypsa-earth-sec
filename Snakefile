@@ -176,10 +176,10 @@ if not config["custom_data"]["gas_network"]:
                 + "bus_regions/regions_onshore_elec_s{simpl}_{clusters}.geojson"
             ),
         output:
-            clustered_gas_network="resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv",
             # TODO: Should be a own snakemake rule
             # gas_network_fig_1="resources/gas_networks/existing_gas_pipelines_{simpl}_{clusters}.png",
             # gas_network_fig_2="resources/gas_networks/clustered_gas_pipelines_{simpl}_{clusters}.png",
+            clustered_gas_network="resources/gas_networks/gas_network_elec_s{simpl}_{clusters}.csv",
         script:
             "scripts/prepare_gas_network.py"
 
@@ -547,6 +547,8 @@ rule copy_config:
 if config["foresight"] == "overnight":
 
     rule solve_network:
+        params:
+            solving=config["solving"],
         input:
             overrides="data/override_component_attrs",
             # network=RDIR
