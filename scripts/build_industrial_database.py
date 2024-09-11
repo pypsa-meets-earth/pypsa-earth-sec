@@ -87,7 +87,7 @@ def create_steel_db():
     except Exception as e:
         steel_plant_path = os.path.join(
             os.getcwd(),
-            "../data/temp_hard_coded/global_steel_plant_tracker_2023_03.xlsx",
+            "data/temp_hard_coded/global_steel_plant_tracker_2023_03.xlsx",
         )
         steel_orig = pd.read_excel(
             steel_plant_path,
