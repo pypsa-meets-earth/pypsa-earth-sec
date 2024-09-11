@@ -5,7 +5,7 @@ results_dir: results/
 summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
-run: 
+run:
   name: 0904_integrate_enertile
   name_subworkflow: ""  # scenario name of the pypsa-earth subworkflow
   shared_cutouts: true  # set to true to share the default cutout(s) across runs
@@ -180,7 +180,7 @@ existing_capacities:
   - coal
   - oil
   - uranium
-  
+
 sector:
   gas:
     spatial_gas: true # ALWAYS TRUE

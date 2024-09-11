@@ -284,7 +284,7 @@ rule prepare_res_potentials:
         ),
     output:
         **{
-            f"{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{{simpl}}_{{clusters}}.csv"
+            f"{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
@@ -292,7 +292,7 @@ rule prepare_res_potentials:
             for clusters in config["scenario"]["clusters"]
         },
         **{
-            f"{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{{simpl}}_{{clusters}}.csv"
+            f"{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
@@ -402,16 +402,19 @@ rule prepare_heat_data:
     script:
         "scripts/prepare_heat_data.py"
 
+
 if config["custom_data"]["energy_totals"]:
+
     rule copy_energy_totals:
         input:
-            source="data_custom/energy_totals_{demand}_{planning_horizons}.csv"
+            source="data_custom/energy_totals_{demand}_{planning_horizons}.csv",
         output:
-            destination="data/energy_totals_{demand}_{planning_horizons}.csv"
+            destination="data/energy_totals_{demand}_{planning_horizons}.csv",
         shell:
             "cp {input.source} {output.destination}"
 
 else:
+
     rule build_base_energy_totals:
         params:
             space_heat_share=config["sector"]["space_heat_share"],
@@ -425,7 +428,6 @@ else:
             energy_totals_base="data/energy_totals_base.csv",
         script:
             "scripts/build_base_energy_totals.py"
-
 
     rule prepare_energy_totals:
         params:
@@ -654,26 +656,44 @@ rule make_summary:
             **config["export"]
         ),
     output:
-        nodal_costs=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_costs.csv",
-        nodal_capacities=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_capacities.csv",
-        nodal_cfs=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_cfs.csv",
-        cfs=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/cfs.csv",
-        costs=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/costs.csv",
-        capacities=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/capacities.csv",
-        curtailment=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/curtailment.csv",
-        energy=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/energy.csv",
-        supply=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply.csv",
-        supply_energy=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply_energy.csv",
-        prices=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/prices.csv",
-        weighted_prices=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/weighted_prices.csv",
-        market_values=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/market_values.csv",
-        price_statistics=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/price_statistics.csv",
-        metrics=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/metrics.csv",
+        nodal_costs=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_costs.csv",
+        nodal_capacities=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_capacities.csv",
+        nodal_cfs=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_cfs.csv",
+        cfs=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/cfs.csv",
+        costs=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/costs.csv",
+        capacities=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/capacities.csv",
+        curtailment=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/curtailment.csv",
+        energy=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/energy.csv",
+        supply=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply.csv",
+        supply_energy=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply_energy.csv",
+        prices=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/prices.csv",
+        weighted_prices=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/weighted_prices.csv",
+        market_values=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/market_values.csv",
+        price_statistics=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/price_statistics.csv",
+        metrics=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/metrics.csv",
     threads: 2
     resources:
         mem_mb=10000,
     benchmark:
-        SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/benchmarks/make_summary"
+        (
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/benchmarks/make_summary"
+        )
     script:
         "scripts/make_summary.py"
 
@@ -700,33 +720,43 @@ rule plot_network:
 
 rule plot_summary:
     input:
-        costs=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/costs.csv",
-        energy=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/energy.csv",
-        balances=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply_energy.csv",
+        costs=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/costs.csv",
+        energy=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/energy.csv",
+        balances=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply_energy.csv",
     output:
-        costs=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/costs.pdf",
-        energy=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/energy.pdf",
-        balances=SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/balances-energy.pdf",
+        costs=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/costs.pdf",
+        energy=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/energy.pdf",
+        balances=SDIR
+        + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/balances-energy.pdf",
     threads: 2
     resources:
         mem_mb=10000,
     benchmark:
-        SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/benchmarks/plot_summary"
+        (
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/benchmarks/plot_summary"
+        )
     script:
         "scripts/plot_summary.py"
 
 
 if config["custom_data"]["industry_database"]:
+
     rule copy_industry_database:
         input:
-            source="data_custom/industrial_database.csv"
+            source="data_custom/industrial_database.csv",
         output:
-            destination="data/industrial_database.csv"
+            destination="data/industrial_database.csv",
         shell:
             "cp {input.source} {output.destination}"
 
-
 else:
+
     rule build_industrial_database:
         output:
             industrial_database="data/industrial_database.csv",
@@ -1056,110 +1086,128 @@ if config["foresight"] == "myopic":
 rule all:
     input:
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_costs.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_costs.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_capacities.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_capacities.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_cfs.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/nodal_cfs.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/cfs.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/cfs.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/costs.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/costs.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/capacities.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/capacities.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/curtailment.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/curtailment.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/energy.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/energy.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply_energy.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/supply_energy.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/prices.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/prices.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/weighted_prices.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/weighted_prices.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/market_values.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/market_values.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/price_statistics.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/price_statistics.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/metrics.csv",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/csvs/metrics.csv",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/costs.pdf",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/costs.pdf",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/energy.pdf",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/energy.pdf",
             **config["scenario"],
             **config["costs"],
             **config["export"]
         ),
         expand(
-            SDIR + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/balances-energy.pdf",
+            SDIR
+            + "/{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export/graphs/balances-energy.pdf",
             **config["scenario"],
             **config["costs"],
             **config["export"]
-        )
+        ),

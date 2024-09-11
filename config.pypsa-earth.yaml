@@ -148,7 +148,7 @@ electricity:
   extendable_carriers:
     Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT]
     StorageUnit: []  # battery, H2
-    Store: [battery, H2]
+    Store: [] #battery, H2]
     Link: []  # H2 pipeline
 
   powerplants_filter: (DateOut >= 2022 or DateOut != DateOut)
