@@ -75,13 +75,26 @@ def create_steel_db():
 
     fn = "https://globalenergymonitor.org/wp-content/uploads/2023/03/Global-Steel-Plant-Tracker-2023-03.xlsx"
     storage_options = {"User-Agent": "Mozilla/5.0"}
-    steel_orig = pd.read_excel(
-        fn,
-        index_col=0,
-        storage_options=storage_options,
-        sheet_name="Steel Plants",
-        header=0,
-    )
+
+    try:
+        steel_orig = pd.read_excel(
+            fn,
+            index_col=0,
+            storage_options=storage_options,
+            sheet_name="Steel Plants",
+            header=0,
+        )
+    except Exception as e:
+        steel_plant_path = os.path.join(
+            os.getcwd(),
+            "data/temp_hard_coded/global_steel_plant_tracker_2023_03.xlsx",
+        )
+        steel_orig = pd.read_excel(
+            steel_plant_path,
+            index_col=0,
+            sheet_name="Steel Plants",
+            header=0,
+        )
 
     df_steel = steel_orig.copy()
     df_steel = df_steel[
@@ -506,7 +519,7 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "build_industrial_database",
             simpl="",
-            clusters="4",
+            clusters="10",
             ll="c1.0",
             opts="Co2L",
             planning_horizons="2030",
