@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 
+import logging
 import os
 
 import numpy as np
 import pandas as pd
-
 from helpers import mock_snakemake, sets_path_to_root
-import logging
 
 logger = logging.getLogger(__name__)
 
+from itertools import product
+
+import geopandas as gpd
 import numpy as np
 import pandas as pd
-import geopandas as gpd
-from itertools import product
 
 
 def w_avg(df, values, weights):
@@ -73,7 +73,6 @@ def merge_onwind(onwind, onwind_rest):
 
 
 def prepare_enertile(df, df_t):
-
     tech_dict = {
         "windonshore": "onwind",
         "sopv": "solar",
