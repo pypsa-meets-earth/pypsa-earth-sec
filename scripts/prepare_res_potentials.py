@@ -12,8 +12,6 @@ logger = logging.getLogger(__name__)
 from itertools import product
 
 import geopandas as gpd
-import numpy as np
-import pandas as pd
 
 
 def w_avg(df, values, weights):
