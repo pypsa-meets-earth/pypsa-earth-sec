@@ -87,7 +87,7 @@ if __name__ == "__main__":
             index_col=[0, 1],
         )
 
-        industry_demand = industry_demand * 1e6 #TWh -> MWh and MtCO2 to tCO2
+        industry_demand = industry_demand * 1e6  # TWh -> MWh and MtCO2 to tCO2
 
         keys_path = snakemake.input.industrial_distribution_key
 
@@ -110,19 +110,22 @@ if __name__ == "__main__":
             nodal_df_co = nodal_production_tom_co.dot(industry_base_totals_co.T)
             nodal_df = pd.concat([nodal_df, nodal_df_co])
 
-
         if snakemake.config["custom_data"]["rename_industry_carriers"]:
-
-            nodal_df.rename(columns=snakemake.config["custom_data"]["rename_industry_carriers"], inplace=True)
-        
+            nodal_df.rename(
+                columns=snakemake.config["custom_data"]["rename_industry_carriers"],
+                inplace=True,
+            )
 
         missing_carriers = set(all_carriers) - set(nodal_df.columns)
         if missing_carriers:
-            _logger.warning("The following carriers are missing in the industy custom data {}".format(missing_carriers))
+            _logger.warning(
+                "The following carriers are missing in the industy custom data {}".format(
+                    missing_carriers
+                )
+            )
 
         if "process emissions" not in nodal_df.columns:
             _logger.warning("No process emissions added to the custom industry data")
-
 
     else:
         no_years = int(snakemake.wildcards.planning_horizons) - int(
