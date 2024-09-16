@@ -23,6 +23,22 @@ def w_avg(df, values, weights):
         return (d * w).sum() / w.sum()
 
 
+def calculate_flh_classes(group):
+    """
+    Function to calculate flh_classes within each group
+    """
+    n = len(group)
+    if n < 4:
+        bins = [i / n for i in range(n + 1)]
+        labels = [f"Q{i+3}" for i in range(n)]
+    else:
+        bins = [0, 0.3, 0.6, 0.9, 1.0]
+        labels = ["Q1", "Q2", "Q3", "Q4"]
+
+    group["flh_class"] = pd.qcut(group["flh"], q=bins, labels=labels)
+    return group
+
+
 def load_data(technology):
     df_t = pd.read_csv(snakemake.input[f"{technology}_pot_t"])
     df = pd.read_csv(snakemake.input[f"{technology}_pot"])
@@ -50,6 +66,32 @@ def merge_onwind(onwind, onwind_rest):
     hourdata_index_to_drop = merged_hourdata.set_index(
         ["region", "step", "simyear"]
     ).index
+
+    # Sort by region, simyear, and flh in descending order
+    merged_potentials = merged_potentials.sort_values(
+        by=["region", "simyear", "flh"], ascending=[True, True, False]
+    )
+    # Group by region and simyear, then assign a rank starting from zero
+    merged_potentials["step_new"] = merged_potentials.groupby(
+        ["region", "simyear"]
+    ).cumcount()
+
+    # Add additional column step_new for merged_hourdata using the mapping from merged_potentials
+    merged_hourdata["step_new"] = merged_hourdata.set_index(
+        ["region", "step", "simyear"]
+    ).index.map(merged_potentials.set_index(["region", "step", "simyear"])["step_new"])
+
+    # Step_new should be named step and step discarded
+    merged_potentials.rename(
+        columns={"step": "step_old", "step_new": "step"}, inplace=True
+    )
+    merged_hourdata.rename(
+        columns={"step": "step_old", "step_new": "step"}, inplace=True
+    )
+
+    # Drop the old step column
+    merged_potentials.drop(columns=["step_old"], inplace=True)
+    merged_hourdata.drop(columns=["step_old"], inplace=True)
 
     # Drop entries in onwind_rest that are already in onwind
     filtered_potentials_rest = onwind_rest["potentials"].loc[
@@ -81,64 +123,76 @@ def prepare_enertile(df, df_t):
     df_t["tech"] = df_t["tech"].map(tech_dict)
     df_t["region"] = df_t["region"].replace({"BRA_": "BR.", "_1$": "_1_AC"}, regex=True)
 
-    # Append missing regions to timeseries data
-    missing = list(set(regions.name) - set(df.region.unique()))
-    df_t_miss = pd.DataFrame(
-        list(product(missing, range(8760))), columns=["region", "hour"]
-    )
-    df_t_miss["tech"] = technology
-    df_t_miss["step"] = pd.Series([df_t.step.unique().tolist()] * len(df_t_miss))
-    df_t_miss = df_t_miss.explode("step")
-    df_t_miss["value"] = 0
-
-    df_t_miss["simyear"] = pd.Series([df_t.simyear.unique().tolist()] * len(df_t_miss))
-    df_t_miss = df_t_miss.explode("simyear")
-    df_t = pd.concat([df_t, df_t_miss])
-    df_t.set_index(["region", "step", "simyear"], inplace=True)
-
     df["tech"] = df["tech"].map(tech_dict)
     df["region"] = df["region"].replace({"BRA_": "BR.", "_1$": "_1_AC"}, regex=True)
-    df_miss = pd.DataFrame(data=missing, columns=["region"])
 
-    df_miss["potstepsizeMW"] = 0
-    df_miss["simyear"] = pd.Series([df.simyear.unique().tolist()] * len(df_miss))
-    df_miss = df_miss.explode("simyear")
-    df_miss["tech"] = technology
-    df_miss["step"] = pd.Series([df.step.unique().tolist()] * len(df_miss))
-    df_miss = df_miss.explode("step")
-    df_miss["flh"] = 0
-    df_miss["installedcapacity"] = 0
-    df_miss["annualcostEuroPMW"] = df["annualcostEuroPMW"].mean()
-    df_miss["variablecostEuroPMWh"] = df["variablecostEuroPMWh"].mean()
-    df_miss["investmentEuroPKW"] = df["investmentEuroPKW"].mean()
-    df_miss["interestrate"] = df["interestrate"].mean().round(3)
-    df_miss["lifetime"] = df["lifetime"].mean()
-    df_miss["scenarioid"] = df["scenarioid"].mean()
-    df_miss["fixedomEuroPKW"] = df["fixedomEuroPKW"].mean()
+    # Append missing regions to timeseries data
+    missing = list(set(regions.name) - set(df.region.unique()))
+    if len(missing) > 0:
+        df_t_miss = pd.DataFrame(
+            list(product(missing, range(8760))), columns=["region", "hour"]
+        )
 
-    df = pd.concat([df, df_miss])
+        df_t_miss["tech"] = technology
+        df_t_miss["step"] = pd.Series([df_t.step.unique().tolist()] * len(df_t_miss))
+        df_t_miss = df_t_miss.explode("step")
+        df_t_miss["value"] = 0
+
+        df_t_miss["simyear"] = pd.Series(
+            [df_t.simyear.unique().tolist()] * len(df_t_miss)
+        )
+        df_t_miss = df_t_miss.explode("simyear")
+        df_t = pd.concat([df_t, df_t_miss])
+
+        df_miss = pd.DataFrame(data=missing, columns=["region"])
+
+        df_miss["potstepsizeMW"] = 0
+        df_miss["simyear"] = pd.Series([df.simyear.unique().tolist()] * len(df_miss))
+        df_miss = df_miss.explode("simyear")
+        df_miss["tech"] = technology
+        df_miss["step"] = pd.Series([df.step.unique().tolist()] * len(df_miss))
+        df_miss = df_miss.explode("step")
+        df_miss["flh"] = 0
+        df_miss["installedcapacity"] = 0
+        df_miss["annualcostEuroPMW"] = df["annualcostEuroPMW"].mean()
+        df_miss["variablecostEuroPMWh"] = df["variablecostEuroPMWh"].mean()
+        df_miss["investmentEuroPKW"] = df["investmentEuroPKW"].mean()
+        df_miss["interestrate"] = df["interestrate"].mean().round(3)
+        df_miss["lifetime"] = df["lifetime"].mean()
+        df_miss["scenarioid"] = df["scenarioid"].mean()
+        df_miss["fixedomEuroPKW"] = df["fixedomEuroPKW"].mean()
+
+        df = pd.concat([df, df_miss])
     df.rename(
         columns={"region": "Generator", "potstepsizeMW": "p_nom_max"}, inplace=True
     )
-    df = df.groupby(["Generator", "step", "simyear"]).mean(numeric_only=True)
-
-    if technology == "onwind":
-        bins = [-float("inf"), 1, 2, float("inf")]
-        labels = ["very good", "good", "remaining"]
-    else:
-        bins = [-float("inf"), float("inf")]
-        labels = ["very good"]
-
-    df_t["install_cap"] = df["p_nom_max"]
-    df_t.reset_index(inplace=True)
-    df_t["step_class"] = pd.cut(
-        df_t["step"],
-        bins=bins,
-        labels=labels,
+    df["potential"] = df["flh"] * df["p_nom_max"]
+    df = df.groupby(["Generator", "step", "simyear"], as_index=False).mean(
+        numeric_only=True
     )
+
+    # if technology == "onwind":
+    #     bins = [-float("inf"), 1, 2, float("inf")]
+    #     labels = ["very good", "good", "remaining"]
+    # else:
+    #     bins = [-float("inf"), float("inf")]
+    #     labels = ["very good"]
+
+    df = df.groupby(["Generator", "step", "simyear"], as_index=False).mean()
+    df = df.groupby(["Generator", "simyear"], as_index=False).apply(
+        calculate_flh_classes
+    )
+
+    df.set_index(["Generator", "step", "simyear"], inplace=True)
+    df_t.set_index(["region", "step", "simyear"], inplace=True)
+    df_t["install_cap"] = df["p_nom_max"]
+    df_t["potential"] = df["potential"]
+    df_t["flh_class"] = df["flh_class"]
+    df_t.reset_index(inplace=True)
+
     df_t.rename(columns={"region": "Generator"}, inplace=True)
     df_t = (
-        df_t.groupby(["Generator", "tech", "simyear", "step_class", "hour"])
+        df_t.groupby(["Generator", "tech", "simyear", "flh_class", "hour"])
         .apply(w_avg, "value", "install_cap")
         .reset_index()
     )
@@ -147,22 +201,18 @@ def prepare_enertile(df, df_t):
         df_t,
         values="value",
         index=["hour"],
-        columns=["Generator", "simyear", "step_class"],
+        columns=["Generator", "simyear", "flh_class"],
     )
     res_t.index = pd.date_range(
         start="01-01-2013 00:00:00", end="31-12-2013 23:00:00", freq="h"
     )
 
     df.reset_index(inplace=True)
-    df["step_class"] = pd.cut(
-        df["step"],
-        bins=bins,
-        labels=labels,
-    )
-    flh = df.groupby(["Generator", "simyear", "step_class"]).apply(
+
+    flh = df.groupby(["Generator", "simyear", "flh_class"]).apply(
         w_avg, "flh", "p_nom_max"
     )
-    installable = df.groupby(["Generator", "simyear", "step_class"]).agg(
+    installable = df.groupby(["Generator", "simyear", "flh_class"]).agg(
         {
             "p_nom_max": "sum",
             "annualcostEuroPMW": "mean",
@@ -175,24 +225,24 @@ def prepare_enertile(df, df_t):
 
     res_t = res_t.multiply(flh)
 
-    # Export for every simyear and step_class the sliced installable and res_t
-    step_class_dict = {"very good": "", "good": "2", "remaining": "3"}
-    for region, simyear, step_class in installable.index:
+    # Export for every simyear and flh_class the sliced installable and res_t
+    flh_class_dict = {"Q4": "", "Q3": "2", "Q2": "3", "Q1": "4"}
+    for region, simyear, flh_class in installable.index:
         ir = (
-            installable.loc[(slice(None), simyear, step_class)]
+            installable.loc[(slice(None), simyear, flh_class)]
             .interestrate.mode()
             .item()
         )
-        export_tech = technology + step_class_dict[step_class]
+        export_tech = technology + flh_class_dict[flh_class]
         logger.info(snakemake.output.keys())
-        installable.loc[(slice(None), simyear, step_class)].reset_index().to_csv(
+        installable.loc[(slice(None), simyear, flh_class)].reset_index().to_csv(
             snakemake.output[
                 f"{export_tech}_{simyear}_{ir}_installable_s{snakemake.wildcards.simpl}_{snakemake.wildcards.clusters}"
             ],
             index=False,
         )
-        res_t.loc[:, (slice(None), simyear, step_class)].droplevel(
-            ["simyear", "step_class"], axis=1
+        res_t.loc[:, (slice(None), simyear, flh_class)].droplevel(
+            ["simyear", "flh_class"], axis=1
         ).to_csv(
             snakemake.output[
                 f"{export_tech}_{simyear}_{ir}_potential_s{snakemake.wildcards.simpl}_{snakemake.wildcards.clusters}"
