@@ -284,7 +284,7 @@ rule prepare_res_potentials:
         ),
     output:
         **{
-            f"{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}.csv"
+            f"{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{{simpl}}_{{clusters}}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
@@ -292,7 +292,7 @@ rule prepare_res_potentials:
             for clusters in config["scenario"]["clusters"]
         },
         **{
-            f"{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}.csv"
+            f"{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{{simpl}}_{{clusters}}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]

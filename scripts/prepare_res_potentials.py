@@ -30,7 +30,7 @@ def calculate_flh_classes(group):
     n = len(group)
     if n < 4:
         bins = [i / n for i in range(n + 1)]
-        labels = [f"Q{i+3}" for i in range(n)]
+        labels = [f"Q{i}" for i in range(5 - n, 5)]
     else:
         bins = [0, 0.3, 0.6, 0.9, 1.0]
         labels = ["Q1", "Q2", "Q3", "Q4"]
@@ -171,17 +171,13 @@ def prepare_enertile(df, df_t):
         numeric_only=True
     )
 
-    # if technology == "onwind":
-    #     bins = [-float("inf"), 1, 2, float("inf")]
-    #     labels = ["very good", "good", "remaining"]
-    # else:
-    #     bins = [-float("inf"), float("inf")]
-    #     labels = ["very good"]
-
     df = df.groupby(["Generator", "step", "simyear"], as_index=False).mean()
-    df = df.groupby(["Generator", "simyear"], as_index=False).apply(
-        calculate_flh_classes
-    )
+    if technology == "solar":
+        df["flh_class"] = "Q4"
+    else:
+        df = df.groupby(["Generator", "simyear"], as_index=False).apply(
+            calculate_flh_classes
+        )
 
     df.set_index(["Generator", "step", "simyear"], inplace=True)
     df_t.set_index(["region", "step", "simyear"], inplace=True)
