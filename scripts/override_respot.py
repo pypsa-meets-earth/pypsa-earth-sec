@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import logging
 import os
 from itertools import dropwhile
 from types import SimpleNamespace
@@ -10,7 +11,6 @@ import pypsa
 import pytz
 import xarray as xr
 from helpers import mock_snakemake, override_component_attrs, sets_path_to_root
-import logging
 
 logger = logging.getLogger(__name__)
 
