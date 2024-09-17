@@ -742,6 +742,7 @@ def get_last_commit_message(path):
             subprocess.check_output(
                 ["git", "log", "-n", "1", "--pretty=format:%H %s"],
                 stderr=subprocess.STDOUT,
+                shell=True,
             )
             .decode()
             .strip()
