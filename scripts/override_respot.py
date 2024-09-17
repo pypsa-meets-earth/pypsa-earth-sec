@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import logging
 import os
 from itertools import dropwhile
 from types import SimpleNamespace
@@ -10,6 +11,8 @@ import pypsa
 import pytz
 import xarray as xr
 from helpers import mock_snakemake, override_component_attrs, sets_path_to_root
+
+logger = logging.getLogger(__name__)
 
 
 def override_values(tech, year, dr, simpl, clusters):
@@ -23,24 +26,27 @@ def override_values(tech, year, dr, simpl, clusters):
         parse_dates=True,
     ).filter(buses, axis=1)
 
-    custom_res = (
-        pd.read_csv(
-            snakemake.input[
-                "custom_res_ins_{0}_{1}_{2}_s{3}_{4}".format(
-                    tech, year, dr, simpl, clusters
-                )
-            ],
-            index_col=0,
-        )
-        .loc[buses]
-        .reset_index()
+    custom_res = pd.read_csv(
+        snakemake.input[
+            "custom_res_ins_{0}_{1}_{2}_s{3}_{4}".format(
+                tech, year, dr, simpl, clusters
+            )
+        ],
     )
 
-    custom_res["Generator"] = custom_res["Generator"].apply(lambda x: x + " " + tech)
-    custom_res = custom_res.set_index("Generator")
+    custom_res.index = custom_res["Generator"] + " " + tech
+    custom_res_t.columns = custom_res_t.columns + " " + tech
 
     if tech.replace("-", " ") in n.generators.carrier.unique():
         to_drop = n.generators[n.generators.carrier == tech].index
+        custom_res.loc[to_drop, "installedcapacity"] = n.generators.loc[
+            to_drop, "p_nom"
+        ]
+        mask = custom_res["installedcapacity"] > custom_res.p_nom_max
+        if mask.any():
+            logger.info(
+                f"Installed capacities exceed maximum installable capacities for {tech} at nodes {custom_res.loc[mask].index}."
+            )
         n.mremove("Generator", to_drop)
 
     if snakemake.wildcards["planning_horizons"] == 2050:
@@ -57,19 +63,18 @@ def override_values(tech, year, dr, simpl, clusters):
 
     n.madd(
         "Generator",
-        buses,
-        " " + tech,
-        bus=buses,
+        custom_res.index,
+        bus=custom_res["Generator"],
         carrier=tech,
         p_nom_extendable=True,
-        p_nom_max=custom_res["p_nom_max"].values,
+        p_nom_max=custom_res["p_nom_max"],
         # weight=ds["weight"].to_pandas(),
         # marginal_cost=custom_res["fixedomEuroPKW"].values * 1000,
-        capital_cost=custom_res["annualcostEuroPMW"].values,
+        capital_cost=custom_res["annualcostEuroPMW"],
         efficiency=1.0,
         p_max_pu=custom_res_t,
-        lifetime=custom_res["lifetime"][0],
-        p_nom_min=existing_res,
+        lifetime=custom_res["lifetime"],
+        p_nom_min=custom_res["installedcapacity"],
     )
 
 

@@ -6,7 +6,7 @@ summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
 run:
-  name: 0904_integrate_enertile
+  name: 0917_integrate_enertile_flh_classes
   name_subworkflow: ""  # scenario name of the pypsa-earth subworkflow
   shared_cutouts: true  # set to true to share the default cutout(s) across runs
                         # Note: value false requires build_cutout to be enabled
@@ -491,6 +491,7 @@ plotting:
     onwind: "dodgerblue"
     onwind2: "dodgerblue"
     onwind3: "dodgerblue"
+    onwind4: "dodgerblue"
     onshore wind: "#235ebc"
     offwind: "#6895dd"
     offshore wind: "#6895dd"
