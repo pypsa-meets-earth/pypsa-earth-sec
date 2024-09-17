@@ -2737,8 +2737,8 @@ if __name__ == "__main__":
     # clustering of regions must be double checked.. refer to regions onshore
 
     # Change the carrier "oil" so that it
-    n.carriers = n.carriers.rename({"oil": "Oil EOP"})
-    n.generators["carrier"].replace("oil", "Oil EOP", inplace=True)
+    n.carriers = n.carriers.rename({"oil": "oil EOP"})
+    n.generators["carrier"].replace("oil", "oil EOP", inplace=True)
 
     # Add location. TODO: move it into pypsa-earth
     n.buses.location = n.buses.index
