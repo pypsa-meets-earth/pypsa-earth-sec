@@ -520,6 +520,7 @@ plotting:
     natural gas: brown
     SMR: '#4F4F2F'
     oil: '#B5A642'
+    oil EOP: '#B5A677'
     oil boiler: '#B5A677'
     lines: k
     transmission lines: k
