@@ -54,7 +54,7 @@ def add_carrier_buses(n, carrier, nodes=None):
     if not isinstance(nodes, pd.Index):
         nodes = pd.Index(nodes)
 
-    n.add("Carrier", carrier, co2_emissions=costs.at[carrier, "CO2 intensity"])
+    n.add("Carrier", carrier)  # , co2_emissions=costs.at[carrier, "CO2 intensity"])
 
     n.madd("Bus", nodes, location=location, carrier=carrier)
 
@@ -121,15 +121,6 @@ def add_generation(n, costs):
 
 
 def add_oil(n, costs):
-    """
-    Function to add oil carrier and bus to network. If-Statements are required in
-    case oil was already added from config ['sector']['conventional_generation']
-    Oil is copper plated
-    """
-    # TODO function will not be necessary if conventionals are added using "add_carrier_buses()"
-    # TODO before using add_carrier_buses: remove_elec_base_techs(n), otherwise carriers are added double
-    # spatial.gas = SimpleNamespace()
-
     spatial.oil = SimpleNamespace()
 
     if options["oil"]["spatial_oil"]:
@@ -139,48 +130,11 @@ def add_oil(n, costs):
         spatial.oil.nodes = ["Africa oil"]
         spatial.oil.locations = ["Africa"]
 
-    if "oil" not in n.carriers.index:
-        n.add("Carrier", "oil")
+    spatial.oil.df = pd.DataFrame(vars(spatial.oil), index=spatial.nodes)
 
-    # Set the "co2_emissions" of the carrier "oil" to 0, because the emissions of oil usage taken from the spatial.oil.nodes are accounted seperately (directly linked to the co2 atmosphere bus). Setting the carrier to 0 here avoids double counting. Be aware to link oil emissions to the co2 atmosphere bus.
-    n.carriers.loc["oil", "co2_emissions"] = 0
-    # print("co2_emissions of oil set to 0 for testing")  # TODO add logger.info
+    oil_nodes = vars(spatial)["oil"].nodes
 
-    n.madd(
-        "Bus",
-        spatial.oil.nodes,
-        location=spatial.oil.locations,
-        carrier="oil",
-    )
-
-    # if "Africa oil" not in n.buses.index:
-
-    #     n.add("Bus", "Africa oil", location="Africa", carrier="oil")
-
-    # if "Africa oil Store" not in n.stores.index:
-
-    e_initial = (snakemake.config["fossil_reserves"]).get("oil", 0) * 1e6
-    # could correct to e.g. 0.001 EUR/kWh * annuity and O&M
-    n.madd(
-        "Store",
-        [oil_bus + " Store" for oil_bus in spatial.oil.nodes],
-        bus=spatial.oil.nodes,
-        e_nom_extendable=True,
-        e_cyclic=False,
-        carrier="oil",
-        e_initial=e_initial,
-        marginal_cost=costs.at["oil", "fuel"],
-    )
-
-    # TODO check non-unique generators
-    n.madd(
-        "Generator",
-        spatial.oil.nodes,
-        bus=spatial.oil.nodes,
-        p_nom_extendable=True,
-        carrier="oil",
-        marginal_cost=costs.at["oil", "fuel"],
-    )
+    add_carrier_buses(n, "oil", oil_nodes)
 
 
 def add_gas(n, costs):
@@ -2721,6 +2675,10 @@ if __name__ == "__main__":
 
     # Add location. TODO: move it into pypsa-earth
     n.buses.location = n.buses.index
+
+    # Change the carrier name of oil powerplants so include it in the emission counting
+    n.carriers = n.carriers.rename({"oil": "oil EOP"})
+    n.generators["carrier"].replace("oil", "oil EOP", inplace=True)
 
     # Set carrier of AC loads
     n.loads.loc[nodes, "carrier"] = "AC"
