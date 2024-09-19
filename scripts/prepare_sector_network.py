@@ -54,7 +54,7 @@ def add_carrier_buses(n, carrier, nodes=None):
     if not isinstance(nodes, pd.Index):
         nodes = pd.Index(nodes)
 
-    n.add("Carrier", carrier) #, co2_emissions=costs.at[carrier, "CO2 intensity"])
+    n.add("Carrier", carrier)  # , co2_emissions=costs.at[carrier, "CO2 intensity"])
 
     n.madd("Bus", nodes, location=location, carrier=carrier)
 
@@ -2675,11 +2675,10 @@ if __name__ == "__main__":
 
     # Add location. TODO: move it into pypsa-earth
     n.buses.location = n.buses.index
-    
-    # Change the carrier name of oil powerplants so include it in the emission counting
-    n.carriers = n.carriers.rename({"oil": "oil EOP"}) 
-    n.generators['carrier'].replace("oil", "oil EOP", inplace=True)
 
+    # Change the carrier name of oil powerplants so include it in the emission counting
+    n.carriers = n.carriers.rename({"oil": "oil EOP"})
+    n.generators["carrier"].replace("oil", "oil EOP", inplace=True)
 
     # Set carrier of AC loads
     n.loads.loc[nodes, "carrier"] = "AC"
