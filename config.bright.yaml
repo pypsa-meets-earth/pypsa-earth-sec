@@ -539,6 +539,7 @@ plotting:
     uranium: r
     Coal: k
     coal: k
+    industry coal emissions: '#444444'
     Coal marginal: k
     Lignite: grey
     lignite: grey
@@ -563,6 +564,7 @@ plotting:
     co2: '#123456'
     co2 vent: '#654321'
     agriculture heat: '#D07A7A'
+    agriculture oil: '#1e1e1e'
     agriculture machinery oil: '#1e1e1e'
     agriculture machinery oil emissions: '#111111'
     agriculture electricity: '#222222'
@@ -570,11 +572,13 @@ plotting:
     solid biomass for industry co2 to stored: '#654321'
     solid biomass for industry CC: '#654321'
     gas for industry co2 to atmosphere: '#654321'
+    gas emissions: '#654321'
     gas for industry co2 to stored: '#654321'
     Fischer-Tropsch: '#44DD33'
     kerosene for aviation: '#44BB11'
     naphtha for industry: '#44FF55'
     land transport oil: '#44DD33'
+    rail transport oil: '#44DD33'
     water tanks: '#BBBBBB'
     hot water storage: '#BBBBBB'
     hot water charging: '#BBBBBB'
