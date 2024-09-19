@@ -187,6 +187,10 @@ def plot_energy():
     energy_df = pd.read_csv(
         snakemake.input.energy, index_col=list(range(2)), header=list(range(n_header))
     )
+    # Strip whitespaces at index level 1
+    energy_df.index = energy_df.index.set_levels(
+        energy_df.index.levels[1].str.strip(), level=1
+    )
 
     df = energy_df.groupby(energy_df.index.get_level_values(1)).sum()
 
@@ -269,9 +273,11 @@ def plot_balances():
 
         # remove trailing link ports
         df.index = [
-            i[:-1]
-            if ((i != "co2") and (i != "H2") and (i[-1:] in ["0", "1", "2", "3"]))
-            else i
+            (
+                i[:-1]
+                if ((i != "co2") and (i != "H2") and (i[-1:] in ["0", "1", "2", "3"]))
+                else i
+            )
             for i in df.index
         ]
 
@@ -543,7 +549,18 @@ if __name__ == "__main__":
         from helpers import mock_snakemake
 
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
-        snakemake = mock_snakemake("plot_summary")
+        snakemake = mock_snakemake(
+            "plot_summary",
+            simpl="",
+            clusters="11",
+            ll="v2.0",
+            opts="Co2L",
+            planning_horizons="2030",
+            sopts="144H",
+            discountrate="0.071",
+            demand="BI",
+            h2export=0,
+        )
 
     n_header = 7  # Header lines in the csv files
 

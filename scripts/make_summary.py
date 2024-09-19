@@ -678,34 +678,38 @@ def to_csv(df):
 
 if __name__ == "__main__":
     if "snakemake" not in globals():
-        # os.chdir(os.path.dirname(os.path.abspath(__file__)))
+        import os
+
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
         from helpers import mock_snakemake
 
-        snakemake = mock_snakemake("make_summary")
+        snakemake = mock_snakemake(
+            "make_summary",
+            simpl="",
+            clusters="11",
+            ll="v2.0",
+            opts="Co2L",
+            planning_horizons="2030",
+            sopts="144H",
+            discountrate="0.071",
+            demand="BI",
+            h2export=0,
+        )
 
     networks_dict = {
         # (cluster, lv, opt+sector_opt, planning_horizon) :
         (
-            cluster,
-            ll,
-            opt + "-" + sopt,
-            planning_horizon,
-            discountrate,
-            demand,
-            export,
+            snakemake.wildcards["clusters"],
+            snakemake.wildcards["ll"],
+            snakemake.wildcards["opts"] + "-" + snakemake.wildcards["sopts"],
+            snakemake.wildcards["planning_horizons"],
+            snakemake.wildcards["discountrate"],
+            snakemake.wildcards["demand"],
+            snakemake.wildcards["h2export"],
         ): snakemake.params.results_dir
-        + snakemake.params.run
-        + f"/postnetworks/elec_s{simpl}_{cluster}_ec_l{ll}_{opt}_{sopt}_{planning_horizon}_{discountrate}_{demand}_{export}export.nc"  # snakemake.config['results_dir'] + snakemake.config['run'] + f'/postnetworks/elec_s{simpl}_{cluster}_lv{lv}_{opt}_{sector_opt}_{planning_horizon}.nc' \
-        for simpl in snakemake.params.scenario_config["simpl"]
-        for cluster in snakemake.params.scenario_config["clusters"]
-        for ll in snakemake.params.scenario_config["ll"]
-        for opt in snakemake.params.scenario_config["opts"]
-        for sopt in snakemake.params.scenario_config["sopts"]
-        for planning_horizon in snakemake.params.scenario_config["planning_horizons"]
-        for discountrate in snakemake.params.costs_config["discountrate"]
-        for demand in snakemake.params.scenario_config["demand"]
-        for export in snakemake.params.h2export_qty
+        + snakemake.params.run["name"]
+        + f"/postnetworks/elec_s{snakemake.wildcards['simpl']}_{snakemake.wildcards['clusters']}_ec_l{snakemake.wildcards['ll']}_{snakemake.wildcards['opts']}_{snakemake.wildcards['sopts']}_{snakemake.wildcards['planning_horizons']}_{snakemake.wildcards['discountrate']}_{snakemake.wildcards['demand']}_{snakemake.wildcards['h2export']}export.nc"
     }
 
     print(networks_dict)
