@@ -56,7 +56,7 @@ if __name__ == "__main__":
             simpl="",
             clusters=11,
             planning_horizons=2030,
-            demand="GH",
+            demand="BI",
         )
 
         sets_path_to_root("pypsa-earth-sec")
@@ -85,7 +85,7 @@ if __name__ == "__main__":
                 snakemake.wildcards["demand"], snakemake.wildcards["planning_horizons"]
             ),
             index_col=[0, 1],
-        )
+        ).dropna(axis=1)
 
         industry_demand = industry_demand * 1e6  # TWh -> MWh and MtCO2 to tCO2
 
@@ -341,6 +341,7 @@ if __name__ == "__main__":
         "elec": "electricity",
         "biomass": "solid biomass",
         "heat": "low-temperature heat",
+        "process emission": "process emissions",
     }
     nodal_df.rename(columns=rename_sectors, inplace=True)
 
