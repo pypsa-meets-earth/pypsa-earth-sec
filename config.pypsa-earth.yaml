@@ -158,7 +158,7 @@ electricity:
   renewable_carriers: [solar, onwind, csp, offwind-ac, offwind-dc, hydro]
 
   estimate_renewable_capacities:
-    stats: "irena"  # False, = greenfield expansion, 'irena' uses IRENA stats to add expansion limits
+    stats: False # False, = greenfield expansion, 'irena' uses IRENA stats to add expansion limits
     year: 2020  # Reference year, available years for IRENA stats are 2000 to 2020
     p_nom_min: 1  # any float, scales the minimum expansion acquired from stats, i.e. 110% of <years>'s capacities => p_nom_min: 1.1
     p_nom_max: false  # sets the expansion constraint, False to deactivate this option and use estimated renewable potentials determine by the workflow, float scales the p_nom_min factor accordingly
