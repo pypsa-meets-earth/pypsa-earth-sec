@@ -2421,6 +2421,15 @@ def add_agriculture(n, costs):
     n.madd(
         "Load",
         spatial.nodes,
+        suffix=" agriculture biomass",
+        bus=spatial.biomass.nodes,
+        carrier="agriculture biomass",
+        p_set=nodal_energy_totals.loc[spatial.nodes, "agriculture biomass"] * 1e6 / 8760,
+    )
+    
+    n.madd(
+        "Load",
+        spatial.nodes,
         suffix=" agriculture oil",
         bus=spatial.oil.nodes,
         carrier="agriculture oil",
