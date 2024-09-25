@@ -6,7 +6,7 @@ summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
 run:
-  name: 0917_integrate_enertile_flh_classes
+  name: 092524_test
   name_subworkflow: ""  # scenario name of the pypsa-earth subworkflow
   shared_cutouts: true  # set to true to share the default cutout(s) across runs
                         # Note: value false requires build_cutout to be enabled
@@ -28,7 +28,7 @@ scenario:
   opts:
   - "Co2L"
   sopts:
-  - "144H"
+  - "8H"
   demand:
   - "BI" # BI/DE/GH
 
