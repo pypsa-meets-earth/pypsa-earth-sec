@@ -65,7 +65,7 @@ def prepare_transport_data(n):
         snakemake.input.energy_totals_name,
         index_col=0,
         keep_default_na=False,
-        na_values=[""],
+        na_values=["", "x"],
     )  # TODO change with real numbers
 
     nodal_energy_totals = energy_totals.loc[pop_layout.ct].fillna(0.0)
@@ -208,8 +208,8 @@ if __name__ == "__main__":
             "prepare_transport_data",
             simpl="",
             clusters="11",
-            demand="NI",
-            planning_horizons=2030,
+            demand="BI",
+            planning_horizons=2035,
         )
 
         sets_path_to_root("pypsa-earth-sec")
