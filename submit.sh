@@ -13,7 +13,7 @@ snakemake --profile slurm all
 
 NEXTCLOUD_URL="https://tubcloud.tu-berlin.de/remote.php/webdav/BRIGHT/results/"
 USERNAME="cpschau"
-PASSWORD=$(get_nextcloud_password)
+PASSWORD=$(cat ~/.nextcloud_password)
 
 # Upload the file to Nextcloud via WebDAV
 tar -czf results_0925.tar.gz /results/092524_test/
