@@ -55,7 +55,7 @@ def prepare_heat_data(n):
         snakemake.input.energy_totals_name,
         index_col=0,
         keep_default_na=False,
-        na_values=[""],
+        na_values=["", "x"],
     )
 
     nodal_energy_totals = energy_totals.loc[pop_layout.ct].fillna(0.0)
