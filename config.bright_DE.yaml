@@ -354,7 +354,7 @@ sector:
   co2_sequestration_cost: 10 #EUR/tCO2 for sequestration of CO2
   hydrogen_underground_storage: false
   shipping_hydrogen_liquefaction: false
-  shipping_average_efficiency: 0.4 #For conversion of fuel oil to propulsion in 2011
+  shipping_average_efficiency: 0.575 #For conversion of fuel oil to propulsion in 2011
 
   shipping_hydrogen_share: #1.0
     BU_2030: 0.00
