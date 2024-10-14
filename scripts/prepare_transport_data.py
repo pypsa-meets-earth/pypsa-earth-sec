@@ -72,6 +72,9 @@ def prepare_transport_data(n):
     nodal_energy_totals.index = pop_layout.index
     # # district heat share not weighted by population
     # district_heat_share = nodal_energy_totals["district heat share"].round(2)
+        
+    # Assuming df is your DataFrame
+    nodal_energy_totals = nodal_energy_totals.replace("x", 0)
     nodal_energy_totals = nodal_energy_totals.multiply(pop_layout.fraction, axis=0)
 
     # Get overall demand curve for all vehicles
@@ -206,7 +209,7 @@ if __name__ == "__main__":
             "prepare_transport_data",
             simpl="",
             clusters="11",
-            demand="NI",
+            demand="AB",
             planning_horizons=2030,
         )
 

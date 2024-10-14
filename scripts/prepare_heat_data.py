@@ -61,6 +61,7 @@ def prepare_heat_data(n):
     nodal_energy_totals = energy_totals.loc[pop_layout.ct].fillna(0.0)
     nodal_energy_totals.index = pop_layout.index
     # # district heat share not weighted by population
+    nodal_energy_totals = nodal_energy_totals.replace("x", 0)
     district_heat_share = nodal_energy_totals["district heat share"]  # .round(2)
     nodal_energy_totals = nodal_energy_totals.multiply(pop_layout.fraction, axis=0)
 
