@@ -1522,8 +1522,8 @@ def add_industry(n, costs):
             p_nom_extendable=True,
             capital_cost=costs.at["cement capture", "fixed"]
             * costs.at["solid biomass", "CO2 intensity"],
-            #marginal_cost = 70, # TODO: make config option
-            efficiency=options["cc_fraction"],  
+            # marginal_cost = 70, # TODO: make config option
+            efficiency=options["cc_fraction"],
             efficiency2=-costs.at["solid biomass", "CO2 intensity"]
             * costs.at["cement capture", "capture_rate"],
             efficiency3=costs.at["solid biomass", "CO2 intensity"]
@@ -1929,15 +1929,14 @@ def add_land_transport(n, costs):
             )
 
     if bio_transport_share > 0:
-            n.madd(
-                "Load",
-                nodes,
-                suffix=" land transport biomass",
-                bus=nodes + " biomass",
-                carrier="land transport biomass",
-                p_set=bio_transport_share
-                * transport[nodes],
-            )
+        n.madd(
+            "Load",
+            nodes,
+            suffix=" land transport biomass",
+            bus=nodes + " biomass",
+            carrier="land transport biomass",
+            p_set=bio_transport_share * transport[nodes],
+        )
     if ice_share > 0:
         if "oil" not in n.buses.carrier.unique():
             n.madd(
@@ -2462,9 +2461,11 @@ def add_agriculture(n, costs):
         suffix=" agriculture biomass",
         bus=spatial.biomass.nodes,
         carrier="agriculture biomass",
-        p_set=nodal_energy_totals.loc[spatial.nodes, "agriculture biomass"] * 1e6 / 8760,
+        p_set=nodal_energy_totals.loc[spatial.nodes, "agriculture biomass"]
+        * 1e6
+        / 8760,
     )
-    
+
     n.madd(
         "Load",
         spatial.nodes,
