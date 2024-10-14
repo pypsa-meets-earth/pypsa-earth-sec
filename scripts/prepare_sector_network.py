@@ -199,6 +199,25 @@ def add_oil(n, costs):
 
     add_carrier_buses(n, "oil", oil_nodes)
 
+    if options["oil"]["spatial_oil"]:
+        logger.info("Adding Oil network.")
+        oil_links = create_network_topology(n, "oil pipeline ")
+
+        capital_cost = costs.at["oil pipeline", "fixed"] * oil_links.length
+
+        n.madd(
+            "Link",
+            oil_links.index,
+            bus0=oil_links.bus0.values + " oil",
+            bus1=oil_links.bus1.values + " oil",
+            p_min_pu=-1,
+            p_nom_extendable=True,
+            length=oil_links.length.values,
+            capital_cost=capital_cost.values,
+            carrier="oil pipeline",
+            lifetime=costs.at["oil pipeline", "lifetime"],
+        )
+
 
 def add_gas(n, costs):
     spatial.gas = SimpleNamespace()
@@ -1503,7 +1522,8 @@ def add_industry(n, costs):
             p_nom_extendable=True,
             capital_cost=costs.at["cement capture", "fixed"]
             * costs.at["solid biomass", "CO2 intensity"],
-            efficiency=0.9,  # TODO: make config option
+            #marginal_cost = 70, # TODO: make config option
+            efficiency=options["cc_fraction"],  
             efficiency2=-costs.at["solid biomass", "CO2 intensity"]
             * costs.at["cement capture", "capture_rate"],
             efficiency3=costs.at["solid biomass", "CO2 intensity"]
@@ -1570,7 +1590,7 @@ def add_industry(n, costs):
             p_nom_extendable=True,
             capital_cost=costs.at["cement capture", "fixed"]
             * costs.at["gas", "CO2 intensity"],
-            efficiency=0.9,
+            efficiency=options["cc_fraction"],
             efficiency2=costs.at["gas", "CO2 intensity"]
             * (1 - costs.at["cement capture", "capture_rate"]),
             efficiency3=costs.at["gas", "CO2 intensity"]
@@ -1777,6 +1797,10 @@ def add_land_transport(n, costs):
             options["land_transport_electric_share"],
             demand_sc + "_" + str(investment_year),
         )
+        bio_transport_share = get(
+            options["bio_transport_share"],
+            demand_sc + "_" + str(investment_year),
+        )
 
     elif options["dynamic_transport"]["enable"] == True:
         fuel_cell_share = options["dynamic_transport"][
@@ -1785,11 +1809,15 @@ def add_land_transport(n, costs):
         electric_share = options["dynamic_transport"]["land_transport_electric_share"][
             snakemake.wildcards.opts
         ]
+        bio_transport_share = options["dynamic_transport"]["bio_transport_share"][
+            snakemake.wildcards.opts
+        ]
 
-    ice_share = 1 - fuel_cell_share - electric_share
+    ice_share = 1 - fuel_cell_share - electric_share - bio_transport_share
 
     logger.info("FCEV share: {}".format(fuel_cell_share))
     logger.info("EV share: {}".format(electric_share))
+    logger.info("BCEV  share: {}".format(bio_transport_share))
     logger.info("ICEV share: {}".format(ice_share))
 
     assert ice_share >= 0, "Error, more FCEV and EV share than 1."
@@ -1900,6 +1928,16 @@ def add_land_transport(n, costs):
                 * transport[nodes],
             )
 
+    if bio_transport_share > 0:
+            n.madd(
+                "Load",
+                nodes,
+                suffix=" land transport biomass",
+                bus=nodes + " biomass",
+                carrier="land transport biomass",
+                p_set=bio_transport_share
+                * transport[nodes],
+            )
     if ice_share > 0:
         if "oil" not in n.buses.carrier.unique():
             n.madd(
@@ -1922,7 +1960,7 @@ def add_land_transport(n, costs):
             * transport[spatial.nodes].sum().sum()
             / 8760
             * costs.at["oil", "CO2 intensity"]
-        )
+        ) * snakemake.config["custom_data"]["biomass_to_oil_mobility"]
 
         n.add(
             "Load",
@@ -2718,12 +2756,12 @@ if __name__ == "__main__":
             "prepare_sector_network",
             simpl="",
             clusters="11",
-            ll="c1.0",
+            ll="v1.0",
             opts="Co2L",
-            planning_horizons="2030",
-            sopts="144H",
+            planning_horizons="2035",
+            sopts="8H",
             discountrate="0.071",
-            demand="NI",
+            demand="GH",
         )
 
     # Load population layout
@@ -2748,6 +2786,7 @@ if __name__ == "__main__":
     # Change the carrier "oil" so that it
     n.carriers = n.carriers.rename({"oil": "oil EOP"})
     n.generators["carrier"].replace("oil", "oil EOP", inplace=True)
+    n.generators.index = n.generators.index.str.replace("oil", "oil EOP")
 
     # Add location. TODO: move it into pypsa-earth
     n.buses.location = n.buses.index
