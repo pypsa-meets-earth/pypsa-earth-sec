@@ -72,6 +72,9 @@ def prepare_transport_data(n):
     nodal_energy_totals.index = pop_layout.index
     # # district heat share not weighted by population
     # district_heat_share = nodal_energy_totals["district heat share"].round(2)
+
+    # Assuming df is your DataFrame
+    nodal_energy_totals = nodal_energy_totals.replace("x", 0)
     nodal_energy_totals = nodal_energy_totals.multiply(pop_layout.fraction, axis=0)
 
     # Get overall demand curve for all vehicles
@@ -138,7 +141,9 @@ def prepare_transport_data(n):
 
     # divide out the heating/cooling demand from ICE totals
     # and multiply back in the heating/cooling demand for EVs
-    ice_correction = (transport_shape * (1 + dd_ICE)).sum() / transport_shape.sum() # currently not used same for dd_EV
+    ice_correction = (
+        transport_shape * (1 + dd_ICE)
+    ).sum() / transport_shape.sum()  # currently not used same for dd_EV
 
     # if snakemake.config["custom_data"]["transport_demand"]:
     energy_totals_transport = nodal_energy_totals["total road"]
@@ -206,7 +211,7 @@ if __name__ == "__main__":
             "prepare_transport_data",
             simpl="",
             clusters="11",
-            demand="NI",
+            demand="AB",
             planning_horizons=2030,
         )
 
