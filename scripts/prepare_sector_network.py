@@ -1929,14 +1929,15 @@ def add_land_transport(n, costs):
             )
 
     if bio_transport_share > 0:
-        n.madd(
-            "Load",
-            nodes,
-            suffix=" land transport biomass",
-            bus=nodes + " biomass",
-            carrier="land transport biomass",
-            p_set=bio_transport_share * transport[nodes],
-        )
+            n.madd(
+                "Load",
+                nodes,
+                suffix=" land transport biomass",
+                bus=nodes + " solid biomass",
+                carrier="land transport biomass",
+                p_set=bio_transport_share
+                * transport[nodes],
+            )
     if ice_share > 0:
         if "oil" not in n.buses.carrier.unique():
             n.madd(
