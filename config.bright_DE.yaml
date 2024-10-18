@@ -64,11 +64,7 @@ fossil_reserves:
 
 
 export:
-<<<<<<< Updated upstream
   h2export: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] # Yearly export demand in TWh
-=======
-  h2export: [10] #,20,30,40,50,60,70,80,90,100] # Yearly export demand in TWh
->>>>>>> Stashed changes
   store: false # [True, False] # specifies wether an export store to balance demand is implemented
   store_capital_costs: "no_costs" # ["standard_costs", "no_costs"] # specifies the costs of the export store. "standard_costs" takes CAPEX of "hydrogen storage tank type 1 including compressor"
   export_profile: "constant" # use "ship" or "constant"
