@@ -1933,7 +1933,7 @@ def add_land_transport(n, costs):
             "Load",
             nodes,
             suffix=" land transport biomass",
-            bus=nodes + " biomass",
+            bus=nodes + " solid biomass",
             carrier="land transport biomass",
             p_set=bio_transport_share * transport[nodes],
         )
