@@ -284,7 +284,7 @@ rule prepare_res_potentials:
         ),
     output:
         **{
-            f"{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}.csv"
+            f"{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{{simpl}}_{{clusters}}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
@@ -292,7 +292,7 @@ rule prepare_res_potentials:
             for clusters in config["scenario"]["clusters"]
         },
         **{
-            f"{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}.csv"
+            f"{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{{simpl}}_{{clusters}}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
@@ -310,7 +310,7 @@ rule override_respot:
         countries=config["countries"],
     input:
         **{
-            f"custom_res_pot_{tech}_{year}_{discountrate}_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{simpl}_{clusters}.csv"
+            f"custom_res_pot_{tech}_{year}_{discountrate}_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_potential_s{{simpl}}_{{clusters}}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
@@ -318,7 +318,7 @@ rule override_respot:
             for clusters in config["scenario"]["clusters"]
         },
         **{
-            f"custom_res_ins_{tech}_{year}_{discountrate}_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{simpl}_{clusters}.csv"
+            f"custom_res_ins_{tech}_{year}_{discountrate}_s{simpl}_{clusters}": f"resources/custom_renewables/{tech}/{tech}_{year}_{discountrate}_installable_s{{simpl}}_{{clusters}}.csv"
             for tech in config["custom_data"]["renewables"]
             for year in config["scenario"]["planning_horizons"]
             for discountrate in config["costs"]["discountrate"]
@@ -848,26 +848,35 @@ rule build_industrial_distribution_key:  #default data
     script:
         "scripts/build_industrial_distribution_key.py"
 
+if config["custom_data"]["industry_demand"]:
 
-rule build_base_industry_totals:  #default data
-    params:
-        base_year=config["demand_data"]["base_year"],
-        countries=config["countries"],
-        other_industries=config["demand_data"]["other_industries"],
-    input:
-        #industrial_production_per_country="data/industrial_production_per_country.csv",
-        #unsd_path="data/demand/unsd/data/",
-        energy_totals_base="data/energy_totals_base.csv",
-        transactions_path="data/unsd_transactions.csv",
-    output:
-        base_industry_totals="resources/demand/base_industry_totals_{planning_horizons}_{demand}.csv",
-    threads: 1
-    resources:
-        mem_mb=1000,
-    benchmark:
-        "benchmarks/build_base_industry_totals_{planning_horizons}_{demand}"
-    script:
-        "scripts/build_base_industry_totals.py"
+    rule copy_industry_demand:
+        input:
+            source="data_custom/industry_demand_{demand}_{planning_horizons}.csv",
+        output:
+            destination="resources/demand/industry_demand_{demand}_{planning_horizons}.csv",
+        shell:
+            "cp {input.source} {output.destination}"
+else:
+    rule build_base_industry_totals:  #default data
+        params:
+            base_year=config["demand_data"]["base_year"],
+            countries=config["countries"],
+            other_industries=config["demand_data"]["other_industries"],
+        input:
+            #industrial_production_per_country="data/industrial_production_per_country.csv",
+            #unsd_path="data/demand/unsd/data/",
+            energy_totals_base="data/energy_totals_base.csv",
+            transactions_path="data/unsd_transactions.csv",
+        output:
+            base_industry_totals="resources/demand/base_industry_totals_{planning_horizons}_{demand}.csv",
+        threads: 1
+        resources:
+            mem_mb=1000,
+        benchmark:
+            "benchmarks/build_base_industry_totals_{planning_horizons}_{demand}"
+        script:
+            "scripts/build_base_industry_totals.py"
 
 
 rule build_industry_demand:  #default data
@@ -881,7 +890,7 @@ rule build_industry_demand:  #default data
         industrial_distribution_key="resources/demand/industrial_distribution_key_elec_s{simpl}_{clusters}_{planning_horizons}.csv",
         #industrial_production_per_country_tomorrow="resources/demand/industrial_production_per_country_tomorrow_{planning_horizons}_{demand}.csv",
         #industrial_production_per_country="data/industrial_production_per_country.csv",
-        base_industry_totals="resources/demand/base_industry_totals_{planning_horizons}_{demand}.csv",
+        base_industry_totals=lambda wildcards: "resources/demand/base_industry_totals_{planning_horizons}_{demand}.csv" if not config["custom_data"]["industry_demand"] else [],
         industrial_database="data/industrial_database.csv",
         costs=CDIR + "costs_{planning_horizons}.csv",
         industry_growth_cagr="data/demand/industry_growth_cagr.csv",
