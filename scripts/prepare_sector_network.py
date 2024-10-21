@@ -826,9 +826,9 @@ def add_biomass(n, costs):
         p_nom = p_set.max()
         p_minmax_pu = p_set / p_nom
 
-        n.add(
+        n.madd(
             "Link",
-            spatial.biomass.nodes,
+            p_nom.index,
             suffix=" biomass to liquid",
             bus0=spatial.biomass.nodes,
             bus1=spatial.oil.nodes,
@@ -1973,7 +1973,7 @@ def add_land_transport(n, costs):
             * transport[spatial.nodes].sum().sum()
             / 8760
             * costs.at["oil", "CO2 intensity"]
-        ) * snakemake.config["custom_data"]["biomass_to_oil_mobility"]
+        )
 
         n.add(
             "Load",

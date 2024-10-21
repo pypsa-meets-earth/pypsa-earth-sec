@@ -653,3 +653,5 @@ plotting:
     high-temp electrolysis: "magenta"
     oil pipeline: "grey"
     agriculture biomass: "green"
+    biomass to liquid: "green"
+
