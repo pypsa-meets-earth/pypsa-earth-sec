@@ -311,56 +311,40 @@ sector:
       Co2L0.00: 0.01
 
   land_transport_fuel_cell_share: # 1 means all FCEVs HERE
-    BU_2030: 0.00
-    BI_2030: 0.00
-    GH_2030: 0.20
+    BI_2030: 0.006
+    GH_2030: 0.036
     DE_2030: 0.00
-    AP_2030: 0.004
-    NZ_2030: 0.02
-    DF_2030: 0.01
     AB_2030: 0.01
-    BU_2050: 0.00
-    AP_2050: 0.06
-    NZ_2050: 0.28
-    DF_2050: 0.08
-    BI_2035: 0.001
-    GH_2035: 0.039
+    BI_2035: 0.023
+    GH_2035: 0.133
     DE_2035: 0.00
-    BI_2040: 0.002
-    GH_2040: 0.099
+    BI_2040: 0.055
+    GH_2040: 0.266
     DE_2040: 0.00
-    BI_2045: 0.010
-    GH_2045: 0.197
-    DE_2045: 0.00
-    BI_2050: 0.039
-    GH_2050: 0.336
-    DE_2050: 0.00
+    BI_2045: 0.102
+    GH_2045: 0.410
+    DE_2045: 0.021
+    BI_2050: 0.188
+    GH_2050: 0.584
+    DE_2050: 0.056
 
   land_transport_electric_share: # 1 means all EVs  # This leads to problems when non-zero HERE
-    BU_2030: 0.00
-    BI_2030: 0.002
-    GH_2030: 0.002
-    DE_2030: 0.005
-    AP_2030: 0.075
-    NZ_2030: 0.13
-    DF_2030: 0.01
+    BI_2030: 0.022
+    GH_2030: 0.018
+    DE_2030: 0.038
     AB_2030: 0.01
-    BU_2050: 0.00
-    AP_2050: 0.42
-    NZ_2050: 0.68
-    DF_2050: 0.011
-    BI_2035: 0.014
-    GH_2035: 0.031
-    DE_2035: 0.053
-    BI_2040: 0.044
-    GH_2040: 0.092
-    DE_2040: 0.152
-    BI_2045: 0.066
-    GH_2045: 0.197
-    DE_2045: 0.332
-    BI_2050: 0.090
-    GH_2050: 0.320
-    DE_2050: 0.593
+    BI_2035: 0.065
+    GH_2035: 0.054
+    DE_2035: 0.133
+    BI_2040: 0.112
+    GH_2040: 0.090
+    DE_2040: 0.264
+    BI_2045: 0.183
+    GH_2045: 0.164
+    DE_2045: 0.457
+    BI_2050: 0.287
+    GH_2050: 0.263
+    DE_2050: 0.742
 
   bio_transport_share: # 1 means all EVs  # This leads to problems when non-zero HERE
     BI_2035: 0.356
@@ -375,24 +359,21 @@ sector:
   shipping_average_efficiency: 0.575 #For conversion of fuel oil to propulsion in 2011
 
   shipping_hydrogen_share: #1.0
-    BU_2030: 0.00
-    BI_2030: 0.00
+    BI_2030: 0.0
+    GH_2030: 0.0
+    DE_2030: 0.0
     BI_2035: 0.014
-    GH_2030: 0.00
     GH_2035: 0.014
-    DE_2030: 0.00
     DE_2035: 0.014
-    AP_2030: 0.00
-    NZ_2030: 0.10
-    DF_2030: 0.05
-    AB_2030: 0.05
-    BU_2050: 0.00
-    BI_2050: 0.24
+    BI_2040: 0.064
+    GH_2040: 0.064
+    DE_2040: 0.065
+    BI_2045: 0.128
+    GH_2045: 0.130
+    DE_2045: 0.131
+    BI_2050: 0.240
     GH_2050: 0.248
     DE_2050: 0.254
-    AP_2050: 0.25
-    NZ_2050: 0.36
-    DF_2050: 0.12
 
   gadm_level: 1
   marginal_cost_storage: 0
@@ -653,3 +634,4 @@ plotting:
     high-temp electrolysis: "magenta"
     oil pipeline: "grey"
     agriculture biomass: "green"
+    land transport biomass: "green"

@@ -41,6 +41,7 @@ policy_config:
     is_reference: false # Whether or not this network is a reference case network, relevant only if additionality is _true_
     remove_h2_load: false #Whether or not to remove the h2 load from the network, relevant only if is_reference is _true_
     path_to_ref: "/nimble/home/haz43975/pypsa-earth-sec/results/20241021_biofuels/postnetworks/elec_s_11_ec_lv1.0_Co2L_3H_2035_0.071_DE_0export.nc" # Path to the reference case network for additionality calculation, relevant only if additionality is _true_ and is_reference is _false_
+
     re_country_load: false # Set to "True" to force the RE electricity to be equal to the electricity required for hydrogen export and the country electricity load. "False" excludes the country electricity load from the constraint.
 
 clustering_options:
@@ -311,39 +312,27 @@ sector:
       Co2L0.00: 0.01
 
   land_transport_fuel_cell_share: # 1 means all FCEVs HERE
-    BU_2030: 0.00
-    BI_2030: 0.00
-    GH_2030: 0.20
+    BI_2030: 0.006
+    GH_2030: 0.036
     DE_2030: 0.00
-    AP_2030: 0.004
-    NZ_2030: 0.02
-    DF_2030: 0.01
     AB_2030: 0.01
-    BU_2050: 0.00
-    AP_2050: 0.06
-    NZ_2050: 0.28
-    DF_2050: 0.08
-    BI_2035: 0.001
-    GH_2035: 0.039
+    BI_2035: 0.023
+    GH_2035: 0.133
     DE_2035: 0.00
-    BI_2040: 0.002
-    GH_2040: 0.099
+    BI_2040: 0.055
+    GH_2040: 0.266
     DE_2040: 0.00
-    BI_2045: 0.010
-    GH_2045: 0.197
-    DE_2045: 0.00
-    BI_2050: 0.039
-    GH_2050: 0.336
-    DE_2050: 0.00
+    BI_2045: 0.102
+    GH_2045: 0.410
+    DE_2045: 0.021
+    BI_2050: 0.188
+    GH_2050: 0.584
+    DE_2050: 0.056
 
   land_transport_electric_share: # 1 means all EVs  # This leads to problems when non-zero HERE
-    BU_2030: 0.00
-    BI_2030: 0.002
-    GH_2030: 0.002
-    DE_2030: 0.005
-    AP_2030: 0.075
-    NZ_2030: 0.13
-    DF_2030: 0.01
+    BI_2030: 0.022
+    GH_2030: 0.018
+    DE_2030: 0.038
     AB_2030: 0.01
     BU_2050: 0.00
     AP_2050: 0.42
@@ -390,9 +379,6 @@ sector:
     BI_2050: 0.24
     GH_2050: 0.248
     DE_2050: 0.254
-    AP_2050: 0.25
-    NZ_2050: 0.36
-    DF_2050: 0.12
 
   gadm_level: 1
   marginal_cost_storage: 0
@@ -654,3 +640,4 @@ plotting:
     oil pipeline: "grey"
     agriculture biomass: "green"
     biomass to liquid: "green"
+
