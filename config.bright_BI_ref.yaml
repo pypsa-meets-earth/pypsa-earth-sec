@@ -6,7 +6,7 @@ summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
 run:
-  name: TEST_Octoober9th_BI_20kTWkmH2net_oilpipeline_dac_adaptedemissionICEMORE_co2seq70_3H_newscenario_correctPorts_addBioTransport
+  name: 20241021_biofuels
   name_subworkflow: ""  # scenario name of the pypsa-earth subworkflow
   shared_cutouts: true  # set to true to share the default cutout(s) across runs
                         # Note: value false requires build_cutout to be enabled
@@ -88,7 +88,6 @@ custom_data:
   add_existing: false
   custom_sectors: false
   gas_network: false # If "True" then a custom .csv file must be placed in "resources/custom_data/pipelines.csv" , If "False" the user can choose btw "greenfield" or Model built-in datasets. Please refer to ["sector"] below.
-  biomass_to_oil_mobility: 0.0
   rename_industry_carriers: {"Electricity": "electricity", "Biofuels": "solid biomass", "Heat": "low-temperature heat", "Natural Gas": "gas", "Coal": "coal", "Hydrogen": "hydrogen", "Oil": "oil"}
 
 costs: # Costs used in PyPSA-Earth-Sec. Year depends on the wildcard planning_horizon in the scenario section
@@ -263,6 +262,7 @@ sector:
   biomass_transport_default_cost: 0.1 #EUR/km/MWh
   solid_biomass_potential: 3604 # 4805 TWh/a for all bioenergy sources according to Welfle (2017), 75% solid, 0.28% gaseous according to IEA (2021)
   biogas_potential: 13.5 # TWh/a, Potential of whole modelled area
+  biomass_to_liquid: True
 
   efficiency_heat_oil_to_elec: 0.9
   efficiency_heat_biomass_to_elec: 0.9
