@@ -838,7 +838,8 @@ def add_biomass(n, costs):
             efficiency=costs.at["BtL", "efficiency"],
             efficiency2=-costs.at["solid biomass", "CO2 intensity"]
             + costs.at["BtL", "CO2 stored"],
-            p_nom_extendable=True,
+            p_nom=p_nom,
+            p_nom_extendable=False,
             p_min_pu=p_minmax_pu,
             p_max_pu=p_minmax_pu,
             capital_cost=costs.at["BtL", "fixed"] * costs.at["BtL", "efficiency"],
