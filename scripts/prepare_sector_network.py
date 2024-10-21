@@ -822,7 +822,12 @@ def add_biomass(n, costs):
             demand_sc + "_" + str(investment_year),
         )
         ice_efficiency = options["transport_internal_combustion_efficiency"]
-        p_set = bio_transport_share / ice_efficiency * transport[spatial.nodes]
+        p_set = (
+            bio_transport_share
+            / costs.at["BtL", "efficiency"]
+            / ice_efficiency
+            * transport[spatial.nodes]
+        )
         p_nom = p_set.max()
         p_minmax_pu = p_set / p_nom
 
