@@ -533,7 +533,7 @@ def extra_functionality(n, snapshots):
         set_h2_colors(n)
 
 
-    if snakemake.config["sector"]["Fix SMR (CC)"]:
+    if snakemake.config["policy_config"]["hydrogen"]["limit_SMR_dispatch"] and not snakemake.config["policy_config"]["hydrogen"]["is_reference"]:
         constrain_smr_dispatch(n, n_ref)
 
     add_co2_sequestration_limit(n, snapshots)

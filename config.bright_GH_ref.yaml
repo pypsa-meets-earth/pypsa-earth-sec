@@ -41,6 +41,7 @@ policy_config:
     is_reference: true # Whether or not this network is a reference case network, relevant only if additionality is _true_
     remove_h2_load: false #Whether or not to remove the h2 load from the network, relevant only if is_reference is _true_
     path_to_ref: "" # Path to the reference case network for additionality calculation, relevant only if additionality is _true_ and is_reference is _false_
+    limit_SMR_dispatch: true # Limits the dispatch of SMR to the reference case
     re_country_load: false # Set to "True" to force the RE electricity to be equal to the electricity required for hydrogen export and the country electricity load. "False" excludes the country electricity load from the constraint.
 
 clustering_options:
