@@ -314,20 +314,19 @@ sector:
       Co2L0.00: 0.01
 
   land_transport_fuel_cell_share: # 1 means all FCEVs HERE
-    BI_2030: 0.006
+    BI_2030: 0.007
     GH_2030: 0.036
     DE_2030: 0.00
-    AB_2030: 0.01
-    BI_2035: 0.023
+    BI_2035: 0.026
     GH_2035: 0.133
     DE_2035: 0.00
-    BI_2040: 0.055
+    BI_2040: 0.063
     GH_2040: 0.266
     DE_2040: 0.00
-    BI_2045: 0.102
+    BI_2045: 0.113
     GH_2045: 0.410
     DE_2045: 0.021
-    BI_2050: 0.188
+    BI_2050: 0.210
     GH_2050: 0.584
     DE_2050: 0.056
 
@@ -335,29 +334,35 @@ sector:
     BI_2030: 0.022
     GH_2030: 0.018
     DE_2030: 0.038
-    AB_2030: 0.01
-    BI_2035: 0.065
+    BI_2035: 0.067
     GH_2035: 0.054
     DE_2035: 0.133
-    BI_2040: 0.112
+    BI_2040: 0.117
     GH_2040: 0.090
     DE_2040: 0.264
-    BI_2045: 0.183
+    BI_2045: 0.190
     GH_2045: 0.164
     DE_2045: 0.457
-    BI_2050: 0.287
+    BI_2050: 0.301
     GH_2050: 0.263
     DE_2050: 0.742
 
   bio_transport_share: # 1 means all EVs  # This leads to problems when non-zero HERE
-    BI_2035: 0.356
+    BI_2030: 0.261
+    GH_2030: 0.231
+    DE_2030: 0.235
+    BI_2035: 0.343
     GH_2035: 0.237
     DE_2035: 0.253
-
-  bio_transport_share: # 1 means all EVs  # This leads to problems when non-zero HERE
-    BI_2035: 0.356
-    GH_2035: 0.237
-    DE_2035: 0.253
+    BI_2040: 0.414
+    GH_2040: 0.222
+    DE_2040: 0.254
+    BI_2045: 0.491
+    GH_2045: 0.213
+    DE_2045: 0.261
+    BI_2050: 0.433
+    GH_2050: 0.093
+    DE_2050: 0.123
 
   co2_network: true
   co2_sequestration_potential: 70 #MtCO2/a sequestration potential for Europe
