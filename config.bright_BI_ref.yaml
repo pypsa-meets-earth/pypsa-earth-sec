@@ -264,7 +264,7 @@ sector:
   biomass_transport_default_cost: 0.1 #EUR/km/MWh
   solid_biomass_potential: 3604 # 4805 TWh/a for all bioenergy sources according to Welfle (2017), 75% solid, 0.28% gaseous according to IEA (2021)
   biogas_potential: 13.5 # TWh/a, Potential of whole modelled area
-  biomass_to_liquid: True
+  biomass_to_liquid: true
 
   efficiency_heat_oil_to_elec: 0.9
   efficiency_heat_biomass_to_elec: 0.9

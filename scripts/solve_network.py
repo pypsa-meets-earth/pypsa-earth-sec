@@ -226,6 +226,7 @@ def H2_export_yearly_constraint(n):
 
     con = define_constraints(n, lhs, ">=", rhs, "H2ExportConstraint", "RESproduction")
 
+
 def hydrogen_temporal_constraint(n, n_ref, time_period):
     res_techs = [
         "csp",
@@ -238,13 +239,15 @@ def hydrogen_temporal_constraint(n, n_ref, time_period):
         "offwind2",
         "ror",
     ]
-    
+
     res_stor_techs = ["hydro"]
-    
+
     allowed_excess = snakemake.config["policy_config"]["hydrogen"]["allowed_excess"]
 
     res_gen_index = n.generators.loc[n.generators.carrier.isin(res_techs)].index
-    res_stor_index = n.storage_units.loc[n.storage_units.carrier.isin(res_stor_techs)].index
+    res_stor_index = n.storage_units.loc[
+        n.storage_units.carrier.isin(res_stor_techs)
+    ].index
 
     weightings_gen = pd.DataFrame(
         np.outer(n.snapshot_weightings["generators"], [1.0] * len(res_gen_index)),
@@ -291,9 +294,7 @@ def hydrogen_temporal_constraint(n, n_ref, time_period):
     elif time_period == "year":
         elec_input = elec_input.groupby(elec_input.index.year).sum()
 
-
     if snakemake.config["policy_config"]["hydrogen"]["additionality"]:
-
         res_ref_gen = n_ref.generators_t.p[res_gen_index] * weightings_gen
 
         if not res_stor_index.empty:
@@ -303,10 +304,11 @@ def hydrogen_temporal_constraint(n, n_ref, time_period):
             res_ref = res_ref_gen
 
         if time_period == "month":
-            res_ref = res_ref.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1)
+            res_ref = (
+                res_ref.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1)
+            )
         elif time_period == "year":
             res_ref = res_ref.groupby(n_ref.generators_t.p.index.year).sum().sum(axis=1)
-
 
         elec_input_ref = (
             -n_ref.links_t.p0.loc[
@@ -478,7 +480,9 @@ def set_h2_colors(n):
 
 
 def constrain_smr_dispatch(n, n_ref):
-    logger.info("Adding constraint to limit p0 of SMR units to reference case dispatch.")
+    logger.info(
+        "Adding constraint to limit p0 of SMR units to reference case dispatch."
+    )
 
     # Identify SMR units in both networks
     smr_units_ref = n_ref.links.loc[n_ref.links.index.str.contains("SMR")]
@@ -492,10 +496,10 @@ def constrain_smr_dispatch(n, n_ref):
         # Get the reference dispatch for the current SMR unit
         p0_ref = smr_ref_p0[unit]
 
-        # Define the constraint 
+        # Define the constraint
         # lhs = get_var(n, "Link", "p")[unit]
         lhs = linexpr((1, get_var(n, "Link", "p")[unit]))
-        rhs = p0_ref#.loc[t]
+        rhs = p0_ref  # .loc[t]
 
         # Add the constraint: p0 in 'n' must be less than or equal to the reference case
         define_constraints(n, lhs, "<=", rhs, f"smr_p0_limit_{unit}")
@@ -505,22 +509,33 @@ def extra_functionality(n, snapshots):
     add_battery_constraints(n)
 
     additionality = snakemake.config["policy_config"]["hydrogen"]["additionality"]
-    ref_for_additionality = snakemake.config["policy_config"]["hydrogen"]["is_reference"]
-    temportal_matching_period = snakemake.config["policy_config"]["hydrogen"]["temporal_matching"]
+    ref_for_additionality = snakemake.config["policy_config"]["hydrogen"][
+        "is_reference"
+    ]
+    temportal_matching_period = snakemake.config["policy_config"]["hydrogen"][
+        "temporal_matching"
+    ]
 
-    if temportal_matching_period== "no_temporal_matching":
+    if temportal_matching_period == "no_temporal_matching":
         logger.info("no h2 temporal constraint set")
 
     elif additionality:
         if ref_for_additionality:
             logger.info("preparing reference case for additionality constraint")
         else:
-            logger.info("setting h2 export to {}ly matching constraint with additionality".format(temportal_matching_period))
+            logger.info(
+                "setting h2 export to {}ly matching constraint with additionality".format(
+                    temportal_matching_period
+                )
+            )
             hydrogen_temporal_constraint(n, n_ref, temportal_matching_period)
     elif not additionality:
-            logger.info("setting h2 export to {}ly matching constraint without additionality".format(temportal_matching_period))
-            hydrogen_temporal_constraint(n, n_ref, temportal_matching_period)
-
+        logger.info(
+            "setting h2 export to {}ly matching constraint without additionality".format(
+                temportal_matching_period
+            )
+        )
+        hydrogen_temporal_constraint(n, n_ref, temportal_matching_period)
 
     if snakemake.config["sector"]["hydrogen"]["network"]:
         if snakemake.config["sector"]["hydrogen"]["network_limit"]:
@@ -532,8 +547,10 @@ def extra_functionality(n, snapshots):
         logger.info("setting H2 color mix")
         set_h2_colors(n)
 
-
-    if snakemake.config["policy_config"]["hydrogen"]["limit_SMR_dispatch"] and not snakemake.config["policy_config"]["hydrogen"]["is_reference"]:
+    if (
+        snakemake.config["policy_config"]["hydrogen"]["limit_SMR_dispatch"]
+        and not snakemake.config["policy_config"]["hydrogen"]["is_reference"]
+    ):
         constrain_smr_dispatch(n, n_ref)
 
     add_co2_sequestration_limit(n, snapshots)
