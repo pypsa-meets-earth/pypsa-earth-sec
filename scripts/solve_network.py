@@ -252,18 +252,19 @@ def hydrogen_temporal_constraint(n, n_ref, time_period):
         columns=res_gen_index,
     )
 
-    weightings_stor = pd.DataFrame(
-        np.outer(n.snapshot_weightings["generators"], [1.0] * len(res_stor_index)),
-        index=n.snapshots,
-        columns=res_stor_index,
-    )
     res = linexpr((weightings_gen, get_var(n, "Generator", "p")[res_gen_index])).sum(
         axis=1
-    ) + linexpr(
-        (weightings_stor, get_var(n, "StorageUnit", "p_dispatch")[res_stor_index])
-    ).sum(
-        axis=1
-    )  # single line sum
+    )
+
+    if not res_stor_index.empty:
+        weightings_stor = pd.DataFrame(
+            np.outer(n.snapshot_weightings["generators"], [1.0] * len(res_stor_index)),
+            index=n.snapshots,
+            columns=res_stor_index,
+        )
+        res += linexpr(
+            (weightings_stor, get_var(n, "StorageUnit", "p_dispatch")[res_stor_index])
+        ).sum(axis=1)
 
     if time_period == "month":
         res = res.groupby(res.index.month).sum()
@@ -294,10 +295,12 @@ def hydrogen_temporal_constraint(n, n_ref, time_period):
     if snakemake.config["policy_config"]["hydrogen"]["additionality"]:
 
         res_ref_gen = n_ref.generators_t.p[res_gen_index] * weightings_gen
-        res_ref_store = n_ref.generators_t.p[res_stor_index] * weightings_stor
-        res_ref = res_ref_gen.groupby(n_ref.generators_t.p.index.month).sum().sum(
-            axis=1
-        ) + res_ref_store.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1)
+
+        if not res_stor_index.empty:
+            res_ref_store = n_ref.generators_t.p[res_stor_index] * weightings_stor
+            res_ref = pd.concat([res_ref_gen, res_ref_store])
+        else:
+            res_ref = res_ref_gen
 
         if time_period == "month":
             res_ref = res_ref.groupby(n_ref.generators_t.p.index.month).sum().sum(axis=1)
@@ -469,9 +472,33 @@ def set_h2_colors(n):
     rhs_blue = load_h2 * snakemake.config["sector"]["hydrogen"]["blue_share"]
     rhs_pink = load_h2 * snakemake.config["sector"]["hydrogen"]["pink_share"]
 
-    define_constraints(n, total_blue, "=", rhs_blue, "blue_h2_share")
+    define_constraints(n, total_blue, "==", rhs_blue, "blue_h2_share")
 
-    define_constraints(n, total_pink, "=", rhs_pink, "pink_h2_share")
+    define_constraints(n, total_pink, "==", rhs_pink, "pink_h2_share")
+
+
+def constrain_smr_dispatch(n, n_ref):
+    logger.info("Adding constraint to limit p0 of SMR units to reference case dispatch.")
+
+    # Identify SMR units in both networks
+    smr_units_ref = n_ref.links.loc[n_ref.links.index.str.contains("SMR")]
+    smr_units = n.links.loc[n.links.index.str.contains("SMR")]
+
+    # Get the reference p0 values for each SMR unit at each timestep
+    smr_ref_p0 = n_ref.links_t.p0.loc[:, smr_units_ref.index]
+
+    # For each SMR unit, create a constraint that limits its p0 in 'n' to be at most the value from 'n_ref'
+    for unit in smr_units.index:
+        # Get the reference dispatch for the current SMR unit
+        p0_ref = smr_ref_p0[unit]
+
+        # Define the constraint 
+        # lhs = get_var(n, "Link", "p")[unit]
+        lhs = linexpr((1, get_var(n, "Link", "p")[unit]))
+        rhs = p0_ref#.loc[t]
+
+        # Add the constraint: p0 in 'n' must be less than or equal to the reference case
+        define_constraints(n, lhs, "<=", rhs, f"smr_p0_limit_{unit}")
 
 
 def extra_functionality(n, snapshots):
@@ -504,6 +531,10 @@ def extra_functionality(n, snapshots):
     if snakemake.config["sector"]["hydrogen"]["set_color_shares"]:
         logger.info("setting H2 color mix")
         set_h2_colors(n)
+
+
+    if snakemake.config["sector"]["Fix SMR (CC)"]:
+        constrain_smr_dispatch(n, n_ref)
 
     add_co2_sequestration_limit(n, snapshots)
 
