@@ -6,7 +6,7 @@ summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
 run:
-  name: U_BI_AdaptedScenario
+  name: 20241021_biofuels
   name_subworkflow: ""  # scenario name of the pypsa-earth subworkflow
   shared_cutouts: true  # set to true to share the default cutout(s) across runs
                         # Note: value false requires build_cutout to be enabled
@@ -40,7 +40,7 @@ policy_config:
     allowed_excess: 1.0
     is_reference: false # Whether or not this network is a reference case network, relevant only if additionality is _true_
     remove_h2_load: false #Whether or not to remove the h2 load from the network, relevant only if is_reference is _true_
-    path_to_ref: "/nimble/home/haz43975/pypsa-earth-sec/results/U_BI_AdaptedScenario/postnetworks/elec_s_11_ec_lv1.0_Co2L_3H_2035_0.071_BI_0export.nc" # Path to the reference case network for additionality calculation, relevant only if additionality is _true_ and is_reference is _false_
+    path_to_ref: "/nimble/home/haz43975/pypsa-earth-sec/results/20241021_biofuels/postnetworks/elec_s_11_ec_lv1.0_Co2L_3H_2035_0.071_BI_0export.nc" # Path to the reference case network for additionality calculation, relevant only if additionality is _true_ and is_reference is _false_
     re_country_load: false # Set to "True" to force the RE electricity to be equal to the electricity required for hydrogen export and the country electricity load. "False" excludes the country electricity load from the constraint.
 
 clustering_options:
@@ -88,7 +88,6 @@ custom_data:
   add_existing: false
   custom_sectors: false
   gas_network: false # If "True" then a custom .csv file must be placed in "resources/custom_data/pipelines.csv" , If "False" the user can choose btw "greenfield" or Model built-in datasets. Please refer to ["sector"] below.
-  biomass_to_oil_mobility: 0.56
   rename_industry_carriers: {"Electricity": "electricity", "Biofuels": "solid biomass", "Heat": "low-temperature heat", "Natural Gas": "gas", "Coal": "coal", "Hydrogen": "hydrogen", "Oil": "oil"}
 
 costs: # Costs used in PyPSA-Earth-Sec. Year depends on the wildcard planning_horizon in the scenario section
@@ -263,6 +262,7 @@ sector:
   biomass_transport_default_cost: 0.1 #EUR/km/MWh
   solid_biomass_potential: 3604 # 4805 TWh/a for all bioenergy sources according to Welfle (2017), 75% solid, 0.28% gaseous according to IEA (2021)
   biogas_potential: 13.5 # TWh/a, Potential of whole modelled area
+  biomass_to_liquid: True
 
   efficiency_heat_oil_to_elec: 0.9
   efficiency_heat_biomass_to_elec: 0.9
@@ -284,6 +284,19 @@ sector:
       Co2L0.10: 0.80
       Co2L0.00: 0.88
     land_transport_fuel_cell_share:
+      Co2L2.0: 0.01
+      Co2L1.0: 0.01
+      Co2L0.90: 0.01
+      Co2L0.80: 0.01
+      Co2L0.70: 0.01
+      Co2L0.60: 0.01
+      Co2L0.50: 0.01
+      Co2L0.40: 0.01
+      Co2L0.30: 0.01
+      Co2L0.20: 0.01
+      Co2L0.10: 0.01
+      Co2L0.00: 0.01
+    bio_transport_share:
       Co2L2.0: 0.01
       Co2L1.0: 0.01
       Co2L0.90: 0.01
@@ -338,6 +351,11 @@ sector:
     GH_2035: 0.237
     DE_2035: 0.253
 
+
+  bio_transport_share: # 1 means all EVs  # This leads to problems when non-zero HERE
+    BI_2035: 0.356
+    GH_2035: 0.237
+    DE_2035: 0.253
 
   co2_network: true
   co2_sequestration_potential: 70 #MtCO2/a sequestration potential for Europe
@@ -622,4 +640,4 @@ plotting:
     high-temp electrolysis: "magenta"
     oil pipeline: "grey"
     agriculture biomass: "green"
-    land transport biomass: "green"
+    biomass to liquid: "green"

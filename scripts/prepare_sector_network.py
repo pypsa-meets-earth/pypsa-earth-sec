@@ -815,6 +815,42 @@ def add_biomass(n, costs):
         p_nom_extendable=True,
     )
 
+    # Add BtL for biofuel representation in transport sector
+    if options["biomass_to_liquid"]:
+        bio_transport_share = get(
+            options["bio_transport_share"],
+            demand_sc + "_" + str(investment_year),
+        )
+        ice_efficiency = options["transport_internal_combustion_efficiency"]
+        p_set = (
+            bio_transport_share
+            / costs.at["BtL", "efficiency"]
+            / ice_efficiency
+            * transport[spatial.nodes]
+        )
+        p_nom = p_set.max()
+        p_minmax_pu = p_set / p_nom
+
+        n.madd(
+            "Link",
+            p_nom.index,
+            suffix=" biomass to liquid",
+            bus0=spatial.biomass.nodes,
+            bus1=spatial.oil.nodes,
+            bus2="co2 atmosphere",
+            carrier="biomass to liquid",
+            lifetime=costs.at["BtL", "lifetime"],
+            efficiency=costs.at["BtL", "efficiency"],
+            efficiency2=-costs.at["solid biomass", "CO2 intensity"]
+            + costs.at["BtL", "CO2 stored"],
+            p_nom=p_nom,
+            p_nom_extendable=False,
+            p_min_pu=p_minmax_pu,
+            p_max_pu=p_minmax_pu,
+            capital_cost=costs.at["BtL", "fixed"] * costs.at["BtL", "efficiency"],
+            marginal_cost=costs.at["BtL", "VOM"] * costs.at["BtL", "efficiency"],
+        )
+
     if options["biomass_transport"]:
         # TODO add biomass transport costs
         transport_costs = pd.read_csv(
@@ -1797,10 +1833,6 @@ def add_land_transport(n, costs):
             options["land_transport_electric_share"],
             demand_sc + "_" + str(investment_year),
         )
-        bio_transport_share = get(
-            options["bio_transport_share"],
-            demand_sc + "_" + str(investment_year),
-        )
 
     elif options["dynamic_transport"]["enable"] == True:
         fuel_cell_share = options["dynamic_transport"][
@@ -1809,15 +1841,11 @@ def add_land_transport(n, costs):
         electric_share = options["dynamic_transport"]["land_transport_electric_share"][
             snakemake.wildcards.opts
         ]
-        bio_transport_share = options["dynamic_transport"]["bio_transport_share"][
-            snakemake.wildcards.opts
-        ]
 
-    ice_share = 1 - fuel_cell_share - electric_share - bio_transport_share
+    ice_share = 1 - fuel_cell_share - electric_share
 
     logger.info("FCEV share: {}".format(fuel_cell_share))
     logger.info("EV share: {}".format(electric_share))
-    logger.info("BCEV  share: {}".format(bio_transport_share))
     logger.info("ICEV share: {}".format(ice_share))
 
     assert ice_share >= 0, "Error, more FCEV and EV share than 1."
@@ -1928,15 +1956,6 @@ def add_land_transport(n, costs):
                 * transport[nodes],
             )
 
-    if bio_transport_share > 0:
-        n.madd(
-            "Load",
-            nodes,
-            suffix=" land transport biomass",
-            bus=nodes + " solid biomass",
-            carrier="land transport biomass",
-            p_set=bio_transport_share * transport[nodes],
-        )
     if ice_share > 0:
         if "oil" not in n.buses.carrier.unique():
             n.madd(
@@ -1959,7 +1978,7 @@ def add_land_transport(n, costs):
             * transport[spatial.nodes].sum().sum()
             / 8760
             * costs.at["oil", "CO2 intensity"]
-        ) * snakemake.config["custom_data"]["biomass_to_oil_mobility"]
+        )
 
         n.add(
             "Load",
@@ -2760,9 +2779,9 @@ if __name__ == "__main__":
             ll="v1.0",
             opts="Co2L",
             planning_horizons="2035",
-            sopts="8H",
+            sopts="365H",
             discountrate="0.071",
-            demand="GH",
+            demand="BI",
         )
 
     # Load population layout

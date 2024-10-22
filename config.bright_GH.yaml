@@ -6,7 +6,8 @@ summary_dir: results/
 costs_dir: data/ #TODO change to the equivalent of technology data
 
 run:
-  name: U_GH_AdaptedScenario
+  name: 20241021_biofuels
+
   name_subworkflow: ""  # scenario name of the pypsa-earth subworkflow
   shared_cutouts: true  # set to true to share the default cutout(s) across runs
                         # Note: value false requires build_cutout to be enabled
@@ -264,6 +265,7 @@ sector:
   biomass_transport_default_cost: 0.1 #EUR/km/MWh
   solid_biomass_potential: 3604 # 4805 TWh/a for all bioenergy sources according to Welfle (2017), 75% solid, 0.28% gaseous according to IEA (2021)
   biogas_potential: 13.5 # TWh/a, Potential of whole modelled area
+  biomass_to_liquid: True
 
   efficiency_heat_oil_to_elec: 0.9
   efficiency_heat_biomass_to_elec: 0.9
@@ -285,6 +287,19 @@ sector:
       Co2L0.10: 0.80
       Co2L0.00: 0.88
     land_transport_fuel_cell_share:
+      Co2L2.0: 0.01
+      Co2L1.0: 0.01
+      Co2L0.90: 0.01
+      Co2L0.80: 0.01
+      Co2L0.70: 0.01
+      Co2L0.60: 0.01
+      Co2L0.50: 0.01
+      Co2L0.40: 0.01
+      Co2L0.30: 0.01
+      Co2L0.20: 0.01
+      Co2L0.10: 0.01
+      Co2L0.00: 0.01
+    bio_transport_share:
       Co2L2.0: 0.01
       Co2L1.0: 0.01
       Co2L0.90: 0.01
@@ -333,6 +348,11 @@ sector:
     BI_2050: 0.287
     GH_2050: 0.263
     DE_2050: 0.742
+
+  bio_transport_share: # 1 means all EVs  # This leads to problems when non-zero HERE
+    BI_2035: 0.356
+    GH_2035: 0.237
+    DE_2035: 0.253
 
   bio_transport_share: # 1 means all EVs  # This leads to problems when non-zero HERE
     BI_2035: 0.356
@@ -622,4 +642,4 @@ plotting:
     high-temp electrolysis: "magenta"
     oil pipeline: "grey"
     agriculture biomass: "green"
-    land transport biomass: "green"
+    biomass to liquid: "green"
