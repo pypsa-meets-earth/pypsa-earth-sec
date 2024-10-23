@@ -298,7 +298,9 @@ def hydrogen_temporal_constraint(n, n_ref, time_period):
         res_ref_gen = n_ref.generators_t.p[res_gen_index] * weightings_gen
 
         if not res_stor_index.empty:
-            res_ref_store = n_ref.generators_t.p[res_stor_index] * weightings_stor
+            res_ref_store = (
+                n_ref.storage_units_t.p_dispatch[res_stor_index] * weightings_stor
+            )
             res_ref = pd.concat([res_ref_gen, res_ref_store])
         else:
             res_ref = res_ref_gen
@@ -634,10 +636,10 @@ if __name__ == "__main__":
             ll="v1.0",
             opts="Co2L",
             planning_horizons="2035",
-            sopts="24H",
+            sopts="876H",
             discountrate=0.071,
-            demand="BI",
-            h2export="50",
+            demand="GH",
+            h2export="10",
         )
 
         sets_path_to_root("pypsa-earth-sec")
