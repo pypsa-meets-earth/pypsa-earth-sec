@@ -39,7 +39,7 @@ policy_config:
     allowed_excess: 1.0
     is_reference: false # Whether or not this network is a reference case network, relevant only if additionality is _true_
     remove_h2_load: false #Whether or not to remove the h2 load from the network, relevant only if is_reference is _true_
-    path_to_ref: "/scratch/htc/cschauss/BRIGHT/submodules/pypsa-earth-sec/results/241107_ir_sensitivity/postnetworks/elec_s_11_ec_lv1.0_Co2L_3H_2035_0.065_scenario_0export_endogenousmp.nc" # Path to the reference case network for additionality calculation, relevant only if additionality is _true_ and is_reference is _false_
+    path_to_ref: "/scratch/htc/cschauss/BRIGHT/submodules/pypsa-earth-sec/results/241107_ir_sensitivity/postnetworks/elec_s_11_ec_lv1.0_Co2L_3H_2035_0.06_scenario_0export_endogenousmp.nc" # Path to the reference case network for additionality calculation, relevant only if additionality is _true_ and is_reference is _false_
     limit_SMR_dispatch: true # Limits the dispatch of SMR to the reference case
     re_country_load: false # Set to "True" to force the RE electricity to be equal to the electricity required for hydrogen export and the country electricity load. "False" excludes the country electricity load from the constraint.
   renewables:
