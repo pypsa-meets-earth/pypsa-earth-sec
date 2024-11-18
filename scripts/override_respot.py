@@ -89,6 +89,7 @@ def override_values(tech, year, dr, simpl, clusters):
         p_max_pu=custom_res_t,
         lifetime=custom_res["lifetime"],
         p_nom=custom_res["installedcapacity"],
+        p_nom_min=custom_res["installedcapacity"],
     )
 
 
