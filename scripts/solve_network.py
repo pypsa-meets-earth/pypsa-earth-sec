@@ -75,6 +75,78 @@ def _add_land_use_constraint_m(n):
     n.generators.p_nom_max.clip(lower=0, inplace=True)
 
 
+def add_max_growth(n):
+    """
+    Add maximum growth rates for different carriers.
+    """
+
+    opts = snakemake.params["limit_max_growth"]
+    # take maximum yearly difference between investment periods since historic growth is per year
+    # factor = n.investment_period_weightings.years.max() * opts["factor"] # not working
+    factor = opts["factor"]
+    for carrier in opts["max_growth"].keys():
+        max_per_period = opts["max_growth"][carrier] * factor
+        logger.info(
+            f"set maximum growth rate per investment period of {carrier} to {max_per_period} GW."
+        )
+        n.carriers.loc[carrier, "max_growth"] = max_per_period * 1e3
+
+        # New addition, limit per generator
+        n.generators.loc[n.generators["carrier"] == carrier, "p_nom_max"] = max_per_period * 1e3 / len(n.generators[n.generators.carrier == carrier].index)
+
+    # for carrier in opts["max_relative_growth"].keys():
+    #     max_r_per_period = opts["max_relative_growth"][carrier]
+    #     logger.info(
+    #         f"set maximum relative growth per investment period of {carrier} to {max_r_per_period}."
+    #     )
+    #     n.carriers.loc[carrier, "max_relative_growth"] = max_r_per_period
+
+    return n
+
+
+def add_CCL_constraints(n):
+
+    config=snakemake.config
+    agg_p_nom_limits = config["electricity"].get("agg_p_nom_limits")
+
+    try:
+        agg_p_nom_minmax = pd.read_csv(agg_p_nom_limits, index_col=list(range(2)))
+    except IOError:
+        logger.exception(
+            "Need to specify the path to a .csv file containing "
+            "aggregate capacity limits per country in "
+            "config['electricity']['agg_p_nom_limit']."
+        )
+    logger.info(
+        "Adding per carrier generation capacity constraints for " "individual countries"
+    )
+
+    gen_country = n.generators.bus.map(n.buses.country)
+    # cc means country and carrier
+    p_nom_per_cc = (
+        pd.DataFrame(
+            {
+                "p_nom": linexpr((1, get_var(n, "Generator", "p_nom"))),
+                "country": gen_country,
+                "carrier": n.generators.carrier,
+            }
+        )
+        .dropna(subset=["p_nom"])
+        .groupby(["country", "carrier"])
+        .p_nom.apply(join_exprs)
+    )
+    minimum = agg_p_nom_minmax["min"].dropna()
+    if not minimum.empty:
+        minconstraint = define_constraints(
+            n, p_nom_per_cc[minimum.index], ">=", minimum, "agg_p_nom", "min"
+        )
+    maximum = agg_p_nom_minmax["max"].dropna()
+    if not maximum.empty:
+        maxconstraint = define_constraints(
+            n, p_nom_per_cc[maximum.index], "<=", maximum, "agg_p_nom", "max"
+        )
+
+
 def prepare_network(n, solve_opts=None):
     # if snakemake.config["rescale_emissions"]:
     #     pass
@@ -484,6 +556,14 @@ def extra_functionality(n, snapshots):
 
     add_co2_sequestration_limit(n, snapshots)
 
+    if snakemake.params["limit_max_growth"]["enable"]:
+        add_max_growth(n)
+
+    if snakemake.params["limit_max_growth"]["agg_p_nom_limits"]:
+        add_CCL_constraints(n)
+    
+
+
 
 def solve_network(n, config, opts="", **kwargs):
     solver_options = config["solving"]["solver"].copy()
@@ -559,14 +639,14 @@ if __name__ == "__main__":
         snakemake = mock_snakemake(
             "solve_network",
             simpl="",
-            clusters="18",
-            ll="c1.0",
+            clusters="10",
+            ll="c3.0",
             opts="Co2L",
-            planning_horizons="2030",
-            sopts="24H",
+            planning_horizons="2035",
+            sopts="3H",
             discountrate=0.071,
             demand="AB",
-            h2export="0",
+            h2export="10",
         )
 
         sets_path_to_root("pypsa-earth-sec")
@@ -615,6 +695,10 @@ if __name__ == "__main__":
 
         n.meta = dict(snakemake.config, **dict(wildcards=dict(snakemake.wildcards)))
         n.export_to_netcdf(snakemake.output[0])
+
+
+
+    
 
     # logging output to the terminal
     print("Objective function: {}".format(n.objective))

@@ -549,6 +549,9 @@ rule copy_config:
 if config["foresight"] == "overnight":
 
     rule solve_network:
+        params:
+            limit_max_growth=config["limit_max_growth"],
+            # Note: not all params are included yet
         input:
             overrides="data/override_component_attrs",
             # network=RDIR
@@ -569,7 +572,7 @@ if config["foresight"] == "overnight":
             + "/logs/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export_python.log",
             memory=RDIR
             + "/logs/elec_s{simpl}_{clusters}_ec_l{ll}_{opts}_{sopts}_{planning_horizons}_{discountrate}_{demand}_{h2export}export_memory.log",
-        threads: 4
+        threads: 10
         resources:
             mem_mb=config["solving"]["mem"],
         benchmark:
