@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Build clustered population layouts."""
+
 import os
 
 import atlite
