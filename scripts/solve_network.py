@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Solve network."""
+
 import logging
 import os
 from pathlib import Path
